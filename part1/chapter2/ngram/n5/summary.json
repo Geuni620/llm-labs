@@ -1,0 +1,14 @@
+{
+  "source": "data/daily_answers.txt",
+  "source_sha256": "9177948f74455769378ecff67767005a540678fadd5d7fc722f163d0dfa6952f",
+  "answer_count": 2380,
+  "unit": "Unicode character; spaces and punctuation included",
+  "n": 5,
+  "context_length": 4,
+  "ngram_occurrences": 23047,
+  "distinct_ngrams": 17103,
+  "distinct_contexts": 14911,
+  "boundary_tokens_added": false,
+  "smoothing_applied": false,
+  "probability": "count / sum of counts with the same context"
+}

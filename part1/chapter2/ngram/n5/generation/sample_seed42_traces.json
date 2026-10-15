@@ -1,0 +1,3206 @@
+{
+  "n": 5,
+  "context_length": 4,
+  "method": "sample",
+  "prefix": "마음이 조급해지면",
+  "seed": 42,
+  "count": 10,
+  "max_chars": 100,
+  "input": {
+    "counts_file": "ngram/n5/counts.csv",
+    "counts_sha256": "20bef0934a11aa72aeb1f064b1279a562cb8b5a03072b079850b0204684a5178",
+    "answers_file": "data/daily_answers.txt",
+    "answers_sha256": "9177948f74455769378ecff67767005a540678fadd5d7fc722f163d0dfa6952f",
+    "answer_count": 2380
+  },
+  "unique_sentences": 5,
+  "exact_answer_matches": 4,
+  "source_fragment_matches": 4,
+  "results": [
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 하지 않아요.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "하",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 하",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 3,
+          "context": "지면 하",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "지",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "지",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 하지",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 하지 ",
+          "context_total": 9,
+          "candidates": [
+            {
+              "next": "않",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "마",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "말",
+              "count": 1,
+              "probability": 0.1111111111111111
+            }
+          ],
+          "selected": "않",
+          "selected_count": 4,
+          "selected_model_probability": 0.4444444444444444,
+          "text": "마음이 조급해지면 하지 않",
+          "sampling_ticket": 3
+        },
+        {
+          "step": 6,
+          "context": "하지 않",
+          "context_total": 10,
+          "candidates": [
+            {
+              "next": "아",
+              "count": 5,
+              "probability": 0.5
+            },
+            {
+              "next": "을",
+              "count": 2,
+              "probability": 0.2
+            },
+            {
+              "next": "는",
+              "count": 2,
+              "probability": 0.2
+            },
+            {
+              "next": "고",
+              "count": 1,
+              "probability": 0.1
+            }
+          ],
+          "selected": "아",
+          "selected_count": 5,
+          "selected_model_probability": 0.5,
+          "text": "마음이 조급해지면 하지 않아",
+          "sampling_ticket": 2
+        },
+        {
+          "step": 7,
+          "context": "지 않아",
+          "context_total": 19,
+          "candidates": [
+            {
+              "next": "요",
+              "count": 14,
+              "probability": 0.7368421052631579
+            },
+            {
+              "next": "도",
+              "count": 4,
+              "probability": 0.21052631578947367
+            },
+            {
+              "next": "서",
+              "count": 1,
+              "probability": 0.05263157894736842
+            }
+          ],
+          "selected": "요",
+          "selected_count": 14,
+          "selected_model_probability": 0.7368421052631579,
+          "text": "마음이 조급해지면 하지 않아요",
+          "sampling_ticket": 3
+        },
+        {
+          "step": 8,
+          "context": " 않아요",
+          "context_total": 14,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 14,
+              "probability": 1.0
+            }
+          ],
+          "selected": ".",
+          "selected_count": 14,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않아요.",
+          "sampling_ticket": 10
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "자",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 자",
+          "sampling_ticket": 2
+        },
+        {
+          "step": 3,
+          "context": "지면 자",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "꾸",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "꾸",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 자꾸",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "만",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "만",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 자꾸만",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 6,
+          "context": "자꾸만 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "악",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "악",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 7,
+          "context": "꾸만 악",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "수",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "수",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 8,
+          "context": "만 악수",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "를",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "를",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 9,
+          "context": " 악수를",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 10,
+          "context": "악수를 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "둘",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "둘",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 11,
+          "context": "수를 둘",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 12,
+          "context": "를 둘 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "가",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "가",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 13,
+          "context": " 둘 가",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "능",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "능",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 14,
+          "context": "둘 가능",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "성",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "성",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 15,
+          "context": " 가능성",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "이",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 16,
+          "context": "가능성이",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 17,
+          "context": "능성이 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "높",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "높",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 18,
+          "context": "성이 높",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "아",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "아",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 19,
+          "context": "이 높아",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "집",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "집",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 20,
+          "context": " 높아집",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "니",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "니",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 21,
+          "context": "높아집니",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "다",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "다",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 22,
+          "context": "아집니다",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": ".",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+          "sampling_ticket": 0
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 하지 마세요.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "하",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 하",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 3,
+          "context": "지면 하",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "지",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "지",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 하지",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 하지 ",
+          "context_total": 9,
+          "candidates": [
+            {
+              "next": "않",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "마",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "말",
+              "count": 1,
+              "probability": 0.1111111111111111
+            }
+          ],
+          "selected": "마",
+          "selected_count": 4,
+          "selected_model_probability": 0.4444444444444444,
+          "text": "마음이 조급해지면 하지 마",
+          "sampling_ticket": 5
+        },
+        {
+          "step": 6,
+          "context": "하지 마",
+          "context_total": 22,
+          "candidates": [
+            {
+              "next": "세",
+              "count": 22,
+              "probability": 1.0
+            }
+          ],
+          "selected": "세",
+          "selected_count": 22,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 마세",
+          "sampling_ticket": 11
+        },
+        {
+          "step": 7,
+          "context": "지 마세",
+          "context_total": 55,
+          "candidates": [
+            {
+              "next": "요",
+              "count": 55,
+              "probability": 1.0
+            }
+          ],
+          "selected": "요",
+          "selected_count": 55,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 마세요",
+          "sampling_ticket": 38
+        },
+        {
+          "step": 8,
+          "context": " 마세요",
+          "context_total": 57,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 56,
+              "probability": 0.9824561403508771
+            },
+            {
+              "next": "!",
+              "count": 1,
+              "probability": 0.017543859649122806
+            }
+          ],
+          "selected": ".",
+          "selected_count": 56,
+          "selected_model_probability": 0.9824561403508771,
+          "text": "마음이 조급해지면 하지 마세요.",
+          "sampling_ticket": 16
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "자",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 자",
+          "sampling_ticket": 2
+        },
+        {
+          "step": 3,
+          "context": "지면 자",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "꾸",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "꾸",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 자꾸",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "만",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "만",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 자꾸만",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 6,
+          "context": "자꾸만 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "악",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "악",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 7,
+          "context": "꾸만 악",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "수",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "수",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 8,
+          "context": "만 악수",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "를",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "를",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 9,
+          "context": " 악수를",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 10,
+          "context": "악수를 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "둘",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "둘",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 11,
+          "context": "수를 둘",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 12,
+          "context": "를 둘 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "가",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "가",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 13,
+          "context": " 둘 가",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "능",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "능",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 14,
+          "context": "둘 가능",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "성",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "성",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 15,
+          "context": " 가능성",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "이",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 16,
+          "context": "가능성이",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 17,
+          "context": "능성이 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "높",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "높",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 18,
+          "context": "성이 높",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "아",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "아",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 19,
+          "context": "이 높아",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "집",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "집",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 20,
+          "context": " 높아집",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "니",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "니",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 21,
+          "context": "높아집니",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "다",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "다",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 22,
+          "context": "아집니다",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": ".",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+          "sampling_ticket": 0
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 하지 않는 사람한테 배워보고 싶어요.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 1
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "하",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 하",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 3,
+          "context": "지면 하",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "지",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "지",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 하지",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 하지 ",
+          "context_total": 9,
+          "candidates": [
+            {
+              "next": "않",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "마",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "말",
+              "count": 1,
+              "probability": 0.1111111111111111
+            }
+          ],
+          "selected": "않",
+          "selected_count": 4,
+          "selected_model_probability": 0.4444444444444444,
+          "text": "마음이 조급해지면 하지 않",
+          "sampling_ticket": 2
+        },
+        {
+          "step": 6,
+          "context": "하지 않",
+          "context_total": 10,
+          "candidates": [
+            {
+              "next": "아",
+              "count": 5,
+              "probability": 0.5
+            },
+            {
+              "next": "을",
+              "count": 2,
+              "probability": 0.2
+            },
+            {
+              "next": "는",
+              "count": 2,
+              "probability": 0.2
+            },
+            {
+              "next": "고",
+              "count": 1,
+              "probability": 0.1
+            }
+          ],
+          "selected": "는",
+          "selected_count": 2,
+          "selected_model_probability": 0.2,
+          "text": "마음이 조급해지면 하지 않는",
+          "sampling_ticket": 8
+        },
+        {
+          "step": 7,
+          "context": "지 않는",
+          "context_total": 6,
+          "candidates": [
+            {
+              "next": "다",
+              "count": 3,
+              "probability": 0.5
+            },
+            {
+              "next": " ",
+              "count": 3,
+              "probability": 0.5
+            }
+          ],
+          "selected": " ",
+          "selected_count": 3,
+          "selected_model_probability": 0.5,
+          "text": "마음이 조급해지면 하지 않는 ",
+          "sampling_ticket": 5
+        },
+        {
+          "step": 8,
+          "context": " 않는 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "사",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "건",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "어",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "사",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 하지 않는 사",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 9,
+          "context": "않는 사",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "람",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "람",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 10,
+          "context": "는 사람",
+          "context_total": 33,
+          "candidates": [
+            {
+              "next": "이",
+              "count": 15,
+              "probability": 0.45454545454545453
+            },
+            {
+              "next": "들",
+              "count": 5,
+              "probability": 0.15151515151515152
+            },
+            {
+              "next": " ",
+              "count": 4,
+              "probability": 0.12121212121212122
+            },
+            {
+              "next": "은",
+              "count": 3,
+              "probability": 0.09090909090909091
+            },
+            {
+              "next": "을",
+              "count": 1,
+              "probability": 0.030303030303030304
+            },
+            {
+              "next": "으",
+              "count": 1,
+              "probability": 0.030303030303030304
+            },
+            {
+              "next": "한",
+              "count": 1,
+              "probability": 0.030303030303030304
+            },
+            {
+              "next": "일",
+              "count": 1,
+              "probability": 0.030303030303030304
+            },
+            {
+              "next": "인",
+              "count": 1,
+              "probability": 0.030303030303030304
+            },
+            {
+              "next": "에",
+              "count": 1,
+              "probability": 0.030303030303030304
+            }
+          ],
+          "selected": "한",
+          "selected_count": 1,
+          "selected_model_probability": 0.030303030303030304,
+          "text": "마음이 조급해지면 하지 않는 사람한",
+          "sampling_ticket": 29
+        },
+        {
+          "step": 11,
+          "context": " 사람한",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "테",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "테",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 12,
+          "context": "사람한테",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 13,
+          "context": "람한테 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "배",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "배",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 14,
+          "context": "한테 배",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "워",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "워",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 15,
+          "context": "테 배워",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "보",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "보",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워보",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 16,
+          "context": " 배워보",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": "고",
+              "count": 1,
+              "probability": 0.5
+            },
+            {
+              "next": "세",
+              "count": 1,
+              "probability": 0.5
+            }
+          ],
+          "selected": "고",
+          "selected_count": 1,
+          "selected_model_probability": 0.5,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워보고",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 17,
+          "context": "배워보고",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워보고 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 18,
+          "context": "워보고 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "싶",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "싶",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워보고 싶",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 19,
+          "context": "보고 싶",
+          "context_total": 7,
+          "candidates": [
+            {
+              "next": "어",
+              "count": 4,
+              "probability": 0.5714285714285714
+            },
+            {
+              "next": "었",
+              "count": 1,
+              "probability": 0.14285714285714285
+            },
+            {
+              "next": "네",
+              "count": 1,
+              "probability": 0.14285714285714285
+            },
+            {
+              "next": "은",
+              "count": 1,
+              "probability": 0.14285714285714285
+            }
+          ],
+          "selected": "어",
+          "selected_count": 4,
+          "selected_model_probability": 0.5714285714285714,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워보고 싶어",
+          "sampling_ticket": 3
+        },
+        {
+          "step": 20,
+          "context": "고 싶어",
+          "context_total": 15,
+          "candidates": [
+            {
+              "next": "요",
+              "count": 13,
+              "probability": 0.8666666666666667
+            },
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.06666666666666667
+            },
+            {
+              "next": "지",
+              "count": 1,
+              "probability": 0.06666666666666667
+            }
+          ],
+          "selected": "요",
+          "selected_count": 13,
+          "selected_model_probability": 0.8666666666666667,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워보고 싶어요",
+          "sampling_ticket": 4
+        },
+        {
+          "step": 21,
+          "context": " 싶어요",
+          "context_total": 12,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 12,
+              "probability": 1.0
+            }
+          ],
+          "selected": ".",
+          "selected_count": 12,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 않는 사람한테 배워보고 싶어요.",
+          "sampling_ticket": 1
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "자",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 자",
+          "sampling_ticket": 2
+        },
+        {
+          "step": 3,
+          "context": "지면 자",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "꾸",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "꾸",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 자꾸",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "만",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "만",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 자꾸만",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 6,
+          "context": "자꾸만 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "악",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "악",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 7,
+          "context": "꾸만 악",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "수",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "수",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 8,
+          "context": "만 악수",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "를",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "를",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 9,
+          "context": " 악수를",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 10,
+          "context": "악수를 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "둘",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "둘",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 11,
+          "context": "수를 둘",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 12,
+          "context": "를 둘 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "가",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "가",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 13,
+          "context": " 둘 가",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "능",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "능",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 14,
+          "context": "둘 가능",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "성",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "성",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 15,
+          "context": " 가능성",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "이",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 16,
+          "context": "가능성이",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 17,
+          "context": "능성이 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "높",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "높",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 18,
+          "context": "성이 높",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "아",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "아",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 19,
+          "context": "이 높아",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "집",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "집",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 20,
+          "context": " 높아집",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "니",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "니",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 21,
+          "context": "높아집니",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "다",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "다",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 22,
+          "context": "아집니다",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": ".",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+          "sampling_ticket": 0
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "자",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 자",
+          "sampling_ticket": 2
+        },
+        {
+          "step": 3,
+          "context": "지면 자",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "꾸",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "꾸",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 자꾸",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "만",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "만",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 자꾸만",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 6,
+          "context": "자꾸만 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "악",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "악",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 7,
+          "context": "꾸만 악",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "수",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "수",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 8,
+          "context": "만 악수",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "를",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "를",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 9,
+          "context": " 악수를",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 10,
+          "context": "악수를 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "둘",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "둘",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 11,
+          "context": "수를 둘",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 12,
+          "context": "를 둘 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "가",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "가",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 13,
+          "context": " 둘 가",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "능",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "능",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 14,
+          "context": "둘 가능",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "성",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "성",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 15,
+          "context": " 가능성",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "이",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 16,
+          "context": "가능성이",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 17,
+          "context": "능성이 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "높",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "높",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 18,
+          "context": "성이 높",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "아",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "아",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 19,
+          "context": "이 높아",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "집",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "집",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 20,
+          "context": " 높아집",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "니",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "니",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 21,
+          "context": "높아집니",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "다",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "다",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 22,
+          "context": "아집니다",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": ".",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 자꾸만 악수를 둘 가능성이 높아집니다.",
+          "sampling_ticket": 0
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 하지 말고 형편에 맞게 넣으세요.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "하",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 하",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 3,
+          "context": "지면 하",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "지",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "지",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 하지",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 하지 ",
+          "context_total": 9,
+          "candidates": [
+            {
+              "next": "않",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "마",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "말",
+              "count": 1,
+              "probability": 0.1111111111111111
+            }
+          ],
+          "selected": "말",
+          "selected_count": 1,
+          "selected_model_probability": 0.1111111111111111,
+          "text": "마음이 조급해지면 하지 말",
+          "sampling_ticket": 8
+        },
+        {
+          "step": 6,
+          "context": "하지 말",
+          "context_total": 6,
+          "candidates": [
+            {
+              "next": "고",
+              "count": 6,
+              "probability": 1.0
+            }
+          ],
+          "selected": "고",
+          "selected_count": 6,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고",
+          "sampling_ticket": 4
+        },
+        {
+          "step": 7,
+          "context": "지 말고",
+          "context_total": 10,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 10,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 10,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 8,
+          "context": " 말고 ",
+          "context_total": 13,
+          "candidates": [
+            {
+              "next": "싸",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "그",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "마",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "저",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "쉬",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "온",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "적",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "좋",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "먹",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "형",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "제",
+              "count": 1,
+              "probability": 0.07692307692307693
+            },
+            {
+              "next": "주",
+              "count": 1,
+              "probability": 0.07692307692307693
+            }
+          ],
+          "selected": "형",
+          "selected_count": 1,
+          "selected_model_probability": 0.07692307692307693,
+          "text": "마음이 조급해지면 하지 말고 형",
+          "sampling_ticket": 9
+        },
+        {
+          "step": 9,
+          "context": "말고 형",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "편",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "편",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 10,
+          "context": "고 형편",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "에",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "에",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 11,
+          "context": " 형편에",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 12,
+          "context": "형편에 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "맞",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "맞",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 13,
+          "context": "편에 맞",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "게",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "게",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞게",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 14,
+          "context": "에 맞게",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞게 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 15,
+          "context": " 맞게 ",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "넣",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "넣",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞게 넣",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 16,
+          "context": "맞게 넣",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "으",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "으",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞게 넣으",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 17,
+          "context": "게 넣으",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "세",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "세",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞게 넣으세",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 18,
+          "context": " 넣으세",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "요",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "요",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞게 넣으세요",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 19,
+          "context": "넣으세요",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": ".",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 말고 형편에 맞게 넣으세요.",
+          "sampling_ticket": 0
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 하지 마세요.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 1
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "하",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 하",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 3,
+          "context": "지면 하",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "지",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "지",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 하지",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 하지 ",
+          "context_total": 9,
+          "candidates": [
+            {
+              "next": "않",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "마",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "말",
+              "count": 1,
+              "probability": 0.1111111111111111
+            }
+          ],
+          "selected": "마",
+          "selected_count": 4,
+          "selected_model_probability": 0.4444444444444444,
+          "text": "마음이 조급해지면 하지 마",
+          "sampling_ticket": 7
+        },
+        {
+          "step": 6,
+          "context": "하지 마",
+          "context_total": 22,
+          "candidates": [
+            {
+              "next": "세",
+              "count": 22,
+              "probability": 1.0
+            }
+          ],
+          "selected": "세",
+          "selected_count": 22,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 마세",
+          "sampling_ticket": 17
+        },
+        {
+          "step": 7,
+          "context": "지 마세",
+          "context_total": 55,
+          "candidates": [
+            {
+              "next": "요",
+              "count": 55,
+              "probability": 1.0
+            }
+          ],
+          "selected": "요",
+          "selected_count": 55,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 마세요",
+          "sampling_ticket": 10
+        },
+        {
+          "step": 8,
+          "context": " 마세요",
+          "context_total": 57,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 56,
+              "probability": 0.9824561403508771
+            },
+            {
+              "next": "!",
+              "count": 1,
+              "probability": 0.017543859649122806
+            }
+          ],
+          "selected": ".",
+          "selected_count": 56,
+          "selected_model_probability": 0.9824561403508771,
+          "text": "마음이 조급해지면 하지 마세요.",
+          "sampling_ticket": 16
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "method": "sample",
+      "prefix": "마음이 조급해지면",
+      "max_chars": 100,
+      "text": "마음이 조급해지면 하지 마세요.",
+      "stop_reason": "punctuation",
+      "steps": [
+        {
+          "step": 1,
+          "context": "급해지면",
+          "context_total": 2,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 2,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 2,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 ",
+          "sampling_ticket": 1
+        },
+        {
+          "step": 2,
+          "context": "해지면 ",
+          "context_total": 3,
+          "candidates": [
+            {
+              "next": "하",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "이",
+              "count": 1,
+              "probability": 0.3333333333333333
+            },
+            {
+              "next": "자",
+              "count": 1,
+              "probability": 0.3333333333333333
+            }
+          ],
+          "selected": "하",
+          "selected_count": 1,
+          "selected_model_probability": 0.3333333333333333,
+          "text": "마음이 조급해지면 하",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 3,
+          "context": "지면 하",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": "지",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": "지",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 4,
+          "context": "면 하지",
+          "context_total": 1,
+          "candidates": [
+            {
+              "next": " ",
+              "count": 1,
+              "probability": 1.0
+            }
+          ],
+          "selected": " ",
+          "selected_count": 1,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 ",
+          "sampling_ticket": 0
+        },
+        {
+          "step": 5,
+          "context": " 하지 ",
+          "context_total": 9,
+          "candidates": [
+            {
+              "next": "않",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "마",
+              "count": 4,
+              "probability": 0.4444444444444444
+            },
+            {
+              "next": "말",
+              "count": 1,
+              "probability": 0.1111111111111111
+            }
+          ],
+          "selected": "마",
+          "selected_count": 4,
+          "selected_model_probability": 0.4444444444444444,
+          "text": "마음이 조급해지면 하지 마",
+          "sampling_ticket": 6
+        },
+        {
+          "step": 6,
+          "context": "하지 마",
+          "context_total": 22,
+          "candidates": [
+            {
+              "next": "세",
+              "count": 22,
+              "probability": 1.0
+            }
+          ],
+          "selected": "세",
+          "selected_count": 22,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 마세",
+          "sampling_ticket": 21
+        },
+        {
+          "step": 7,
+          "context": "지 마세",
+          "context_total": 55,
+          "candidates": [
+            {
+              "next": "요",
+              "count": 55,
+              "probability": 1.0
+            }
+          ],
+          "selected": "요",
+          "selected_count": 55,
+          "selected_model_probability": 1.0,
+          "text": "마음이 조급해지면 하지 마세요",
+          "sampling_ticket": 41
+        },
+        {
+          "step": 8,
+          "context": " 마세요",
+          "context_total": 57,
+          "candidates": [
+            {
+              "next": ".",
+              "count": 56,
+              "probability": 0.9824561403508771
+            },
+            {
+              "next": "!",
+              "count": 1,
+              "probability": 0.017543859649122806
+            }
+          ],
+          "selected": ".",
+          "selected_count": 56,
+          "selected_model_probability": 0.9824561403508771,
+          "text": "마음이 조급해지면 하지 마세요.",
+          "sampling_ticket": 23
+        }
+      ]
+    }
+  ]
+}

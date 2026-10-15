@@ -1,0 +1,420 @@
+{
+  "n": 2,
+  "method": "greedy",
+  "prefix": "하",
+  "max_chars": 100,
+  "text": "하세요.",
+  "stop_reason": "punctuation",
+  "steps": [
+    {
+      "step": 1,
+      "context": "하",
+      "context_total": 559,
+      "candidates": [
+        {
+          "next": "세",
+          "count": 104,
+          "probability": 0.18604651162790697
+        },
+        {
+          "next": "는",
+          "count": 84,
+          "probability": 0.15026833631484796
+        },
+        {
+          "next": "고",
+          "count": 73,
+          "probability": 0.13059033989266547
+        },
+        {
+          "next": "지",
+          "count": 52,
+          "probability": 0.09302325581395349
+        },
+        {
+          "next": "면",
+          "count": 39,
+          "probability": 0.06976744186046512
+        },
+        {
+          "next": "게",
+          "count": 38,
+          "probability": 0.06797853309481217
+        },
+        {
+          "next": "나",
+          "count": 19,
+          "probability": 0.03398926654740608
+        },
+        {
+          "next": "겠",
+          "count": 19,
+          "probability": 0.03398926654740608
+        },
+        {
+          "next": "죠",
+          "count": 17,
+          "probability": 0.03041144901610018
+        },
+        {
+          "next": "시",
+          "count": 12,
+          "probability": 0.02146690518783542
+        },
+        {
+          "next": "기",
+          "count": 12,
+          "probability": 0.02146690518783542
+        },
+        {
+          "next": "네",
+          "count": 12,
+          "probability": 0.02146690518783542
+        },
+        {
+          "next": "다",
+          "count": 9,
+          "probability": 0.016100178890876567
+        },
+        {
+          "next": "셨",
+          "count": 7,
+          "probability": 0.012522361359570662
+        },
+        {
+          "next": "해",
+          "count": 7,
+          "probability": 0.012522361359570662
+        },
+        {
+          "next": "니",
+          "count": 6,
+          "probability": 0.01073345259391771
+        },
+        {
+          "next": "늘",
+          "count": 6,
+          "probability": 0.01073345259391771
+        },
+        {
+          "next": "루",
+          "count": 5,
+          "probability": 0.008944543828264758
+        },
+        {
+          "next": "길",
+          "count": 5,
+          "probability": 0.008944543828264758
+        },
+        {
+          "next": "셔",
+          "count": 4,
+          "probability": 0.007155635062611807
+        },
+        {
+          "next": "드",
+          "count": 4,
+          "probability": 0.007155635062611807
+        },
+        {
+          "next": "려",
+          "count": 3,
+          "probability": 0.005366726296958855
+        },
+        {
+          "next": "실",
+          "count": 3,
+          "probability": 0.005366726296958855
+        },
+        {
+          "next": "신",
+          "count": 2,
+          "probability": 0.0035778175313059034
+        },
+        {
+          "next": "라",
+          "count": 2,
+          "probability": 0.0035778175313059034
+        },
+        {
+          "next": "합",
+          "count": 2,
+          "probability": 0.0035778175313059034
+        },
+        {
+          "next": "더",
+          "count": 2,
+          "probability": 0.0035778175313059034
+        },
+        {
+          "next": "느",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "대",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "거",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "를",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "든",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "던",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "러",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "며",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "할",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "긴",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        },
+        {
+          "next": "우",
+          "count": 1,
+          "probability": 0.0017889087656529517
+        }
+      ],
+      "selected": "세",
+      "selected_count": 104,
+      "selected_model_probability": 0.18604651162790697,
+      "text": "하세"
+    },
+    {
+      "step": 2,
+      "context": "세",
+      "context_total": 881,
+      "candidates": [
+        {
+          "next": "요",
+          "count": 854,
+          "probability": 0.9693530079455165
+        },
+        {
+          "next": "상",
+          "count": 12,
+          "probability": 0.01362088535754824
+        },
+        {
+          "next": "히",
+          "count": 2,
+          "probability": 0.0022701475595913734
+        },
+        {
+          "next": "우",
+          "count": 2,
+          "probability": 0.0022701475595913734
+        },
+        {
+          "next": "워",
+          "count": 2,
+          "probability": 0.0022701475595913734
+        },
+        {
+          "next": "수",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "포",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "먼",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "어",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "죠",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "다",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "예",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "가",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        },
+        {
+          "next": "더",
+          "count": 1,
+          "probability": 0.0011350737797956867
+        }
+      ],
+      "selected": "요",
+      "selected_count": 854,
+      "selected_model_probability": 0.9693530079455165,
+      "text": "하세요"
+    },
+    {
+      "step": 3,
+      "context": "요",
+      "context_total": 2140,
+      "candidates": [
+        {
+          "next": ".",
+          "count": 1989,
+          "probability": 0.9294392523364486
+        },
+        {
+          "next": "!",
+          "count": 51,
+          "probability": 0.02383177570093458
+        },
+        {
+          "next": "해",
+          "count": 19,
+          "probability": 0.008878504672897197
+        },
+        {
+          "next": "한",
+          "count": 19,
+          "probability": 0.008878504672897197
+        },
+        {
+          "next": "?",
+          "count": 18,
+          "probability": 0.008411214953271028
+        },
+        {
+          "next": "하",
+          "count": 12,
+          "probability": 0.005607476635514018
+        },
+        {
+          "next": "즘",
+          "count": 8,
+          "probability": 0.003738317757009346
+        },
+        {
+          "next": " ",
+          "count": 5,
+          "probability": 0.002336448598130841
+        },
+        {
+          "next": "~",
+          "count": 3,
+          "probability": 0.0014018691588785046
+        },
+        {
+          "next": "는",
+          "count": 3,
+          "probability": 0.0014018691588785046
+        },
+        {
+          "next": "할",
+          "count": 2,
+          "probability": 0.0009345794392523365
+        },
+        {
+          "next": "라",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "청",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "했",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "가",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": ",",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "금",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "구",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "법",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "긴",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "리",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        },
+        {
+          "next": "없",
+          "count": 1,
+          "probability": 0.00046728971962616824
+        }
+      ],
+      "selected": ".",
+      "selected_count": 1989,
+      "selected_model_probability": 0.9294392523364486,
+      "text": "하세요."
+    }
+  ],
+  "input": {
+    "counts_file": "bigram/counts.csv",
+    "counts_sha256": "8f711317a0edffc57144df3d46cfb7f8c04b5bfb936af44486f1ba4ccbfeb414",
+    "answers_file": "data/daily_answers.txt",
+    "answers_sha256": "9177948f74455769378ecff67767005a540678fadd5d7fc722f163d0dfa6952f",
+    "answer_count": 2380
+  }
+}

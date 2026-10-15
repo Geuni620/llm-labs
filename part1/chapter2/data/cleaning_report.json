@@ -1,0 +1,89 @@
+{
+  "source": {
+    "file": "ChatbotData.csv",
+    "sha256": "287eb129695b577321c80ad397bb3c2279164d4ca577874d129fd3db5b30afe2",
+    "rows": 11823,
+    "labels_with_outer_spaces": 1
+  },
+  "selection": {
+    "label": "0",
+    "column": "A",
+    "rows": 5290
+  },
+  "rules": [
+    "Normalize label whitespace when selecting rows.",
+    "Normalize answer text to Unicode NFC.",
+    "Remove zero-width spaces (U+200B) and BOM characters (U+FEFF).",
+    "Replace control characters with spaces; trim and collapse whitespace.",
+    "Drop empty answers and deduplicate normalized answers in source order."
+  ],
+  "quality_checks_before_cleaning": {
+    "empty_answers": 0,
+    "answers_with_urls": 0,
+    "answers_with_html_tags": 0,
+    "answers_with_invisible_characters": 0,
+    "answers_with_control_characters": 0,
+    "answers_with_outer_spaces": 0,
+    "answers_with_repeated_whitespace": 0
+  },
+  "result": {
+    "normalized_answer_rows": 0,
+    "empty_answer_rows_removed": 0,
+    "duplicate_answer_rows_removed": 2910,
+    "output_sentences": 2380,
+    "file": "daily_answers.txt",
+    "sha256": "9177948f74455769378ecff67767005a540678fadd5d7fc722f163d0dfa6952f"
+  },
+  "duplicate_examples": [
+    {
+      "text": "맛있게 드세요.",
+      "source_count": 22,
+      "removed": 21
+    },
+    {
+      "text": "조심하세요.",
+      "source_count": 14,
+      "removed": 13
+    },
+    {
+      "text": "제가 있잖아요.",
+      "source_count": 14,
+      "removed": 13
+    },
+    {
+      "text": "감기 조심하세요.",
+      "source_count": 12,
+      "removed": 11
+    },
+    {
+      "text": "잘할 수 있을 거예요.",
+      "source_count": 10,
+      "removed": 9
+    },
+    {
+      "text": "맛있는 거 드세요.",
+      "source_count": 10,
+      "removed": 9
+    },
+    {
+      "text": "저랑 놀아요.",
+      "source_count": 9,
+      "removed": 8
+    },
+    {
+      "text": "지금도 늦지 않았어요.",
+      "source_count": 8,
+      "removed": 7
+    },
+    {
+      "text": "많이 만나보세요.",
+      "source_count": 8,
+      "removed": 7
+    },
+    {
+      "text": "다 잘 될 거예요.",
+      "source_count": 8,
+      "removed": 7
+    }
+  ]
+}

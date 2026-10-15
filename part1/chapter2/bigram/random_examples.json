@@ -1,0 +1,132 @@
+{
+  "n": 2,
+  "seed": 42,
+  "source": "bigram/counts.csv",
+  "source_sha256": "8f711317a0edffc57144df3d46cfb7f8c04b5bfb936af44486f1ba4ccbfeb414",
+  "observed_bigram_types": 5157,
+  "selection": "Uniformly sample 10 distinct observed bigram types without replacement.",
+  "continuation": "Choose the most frequent next character given the final character of the selected bigram.",
+  "sort": "Descending continuation percentage.",
+  "results": [
+    {
+      "draw": 9,
+      "bigram": "게요",
+      "bigram_count": 20,
+      "context": "요",
+      "next_bigram": "요.",
+      "next_character": ".",
+      "count": 1989,
+      "context_total": 2140,
+      "percent": 92.94392523364486,
+      "result": "게요."
+    },
+    {
+      "draw": 8,
+      "bigram": "차도",
+      "bigram_count": 1,
+      "context": "도",
+      "next_bigram": "도 ",
+      "next_character": " ",
+      "count": 289,
+      "context_total": 336,
+      "percent": 86.01190476190477,
+      "result": "차도 "
+    },
+    {
+      "draw": 5,
+      "bigram": "라질",
+      "bigram_count": 1,
+      "context": "질",
+      "next_bigram": "질 ",
+      "next_character": " ",
+      "count": 14,
+      "context_total": 30,
+      "percent": 46.666666666666664,
+      "result": "라질 "
+    },
+    {
+      "draw": 1,
+      "bigram": "국가",
+      "bigram_count": 1,
+      "context": "가",
+      "next_bigram": "가 ",
+      "next_character": " ",
+      "count": 158,
+      "context_total": 390,
+      "percent": 40.51282051282051,
+      "result": "국가 "
+    },
+    {
+      "draw": 7,
+      "bigram": "공급",
+      "bigram_count": 1,
+      "context": "급",
+      "next_bigram": "급하",
+      "next_character": "하",
+      "count": 3,
+      "context_total": 13,
+      "percent": 23.076923076923077,
+      "result": "공급하"
+    },
+    {
+      "draw": 2,
+      "bigram": " 천",
+      "bigram_count": 4,
+      "context": "천",
+      "next_bigram": "천해",
+      "next_character": "해",
+      "count": 3,
+      "context_total": 16,
+      "percent": 18.75,
+      "result": " 천해"
+    },
+    {
+      "draw": 10,
+      "bigram": "풀리",
+      "bigram_count": 1,
+      "context": "리",
+      "next_bigram": "리 ",
+      "next_character": " ",
+      "count": 26,
+      "context_total": 139,
+      "percent": 18.705035971223023,
+      "result": "풀리 "
+    },
+    {
+      "draw": 4,
+      "bigram": "료하",
+      "bigram_count": 1,
+      "context": "하",
+      "next_bigram": "하세",
+      "next_character": "세",
+      "count": 104,
+      "context_total": 559,
+      "percent": 18.6046511627907,
+      "result": "료하세"
+    },
+    {
+      "draw": 3,
+      "bigram": "모 ",
+      "bigram_count": 2,
+      "context": " ",
+      "next_bigram": " 거",
+      "next_character": "거",
+      "count": 246,
+      "context_total": 5670,
+      "percent": 4.338624338624339,
+      "result": "모 거"
+    },
+    {
+      "draw": 6,
+      "bigram": "꿩 ",
+      "bigram_count": 1,
+      "context": " ",
+      "next_bigram": " 거",
+      "next_character": "거",
+      "count": 246,
+      "context_total": 5670,
+      "percent": 4.338624338624339,
+      "result": "꿩 거"
+    }
+  ]
+}

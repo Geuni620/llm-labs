@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+*{box-sizing:border-box}html,body{margin:0;background:transparent;color:var(--foreground);font-family:var(--font-sans)}body{font-size:14px;line-height:1.65}
+p{margin:0 0 12px}h2{margin:22px 0 10px;font-size:16px;font-weight:500}.muted{color:var(--muted-foreground)}.source{font-size:12px}.data-flow{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr;align-items:center;gap:6px;margin-bottom:12px}.data-node{min-width:0}.data-node small{display:block;color:var(--muted-foreground);font-size:12px}.data-node strong{display:block;font-size:19px;font-weight:500}.arrow{color:var(--muted-foreground)}.chain{margin-bottom:16px;word-break:keep-all}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}button{font:inherit;color:inherit;border:1px solid var(--border);border-radius:var(--radius);padding:16px;background:transparent;cursor:pointer}button[aria-pressed=true]{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}button:disabled{opacity:.4;cursor:default}button:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+.context-label{margin:0 0 8px}.textline{font-family:var(--font-mono);font-size:19px;line-height:1.8;overflow-wrap:anywhere;margin:0 0 12px}.old{color:var(--muted-foreground);opacity:.65}.active{border-bottom:2px solid var(--foreground);padding-bottom:3px}.chosen{font-weight:500}.selection{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin:18px 0}.selection strong{font-size:20px;font-weight:500;display:block}.selection small{color:var(--muted-foreground)}
+.bar{height:12px;background:var(--secondary);border-radius:3px;overflow:hidden;margin:8px 0 10px}.fill{height:12px;background:var(--foreground)}.formula{font-family:var(--font-mono)}.trace-block{padding-bottom:18px;border-bottom:1px solid var(--border)}.progress{color:var(--muted-foreground);font-size:12px;margin-left:auto;align-self:center}
+table{width:100%;border-collapse:collapse;margin:12px 0}th,td{padding:10px 0;text-align:left;border-bottom:1px solid var(--border)}th{color:var(--muted-foreground);font-weight:400;font-size:12px}th:last-child,td:last-child{text-align:right}tr.current td{font-weight:500}.todo{padding-left:20px;margin:10px 0}.todo li{padding-bottom:7px}.note{font-size:12px;color:var(--muted-foreground)}.example{font-family:var(--font-mono);overflow-wrap:anywhere}
+@media(max-width:420px){.data-node strong{font-size:16px}.data-flow{gap:3px;grid-template-columns:1fr 16px 1fr 16px 1fr}.data-node small{font-size:11px}.textline{font-size:17px}.controls{gap:6px}button{padding:16px}.selection{gap:8px}.selection strong{font-size:18px}}
+</style></head><body>
+<p>우리는 <strong>앞의 글자를 보고 다음 글자를 고르는 모델</strong>을 만들었어.</p>
+<p class="source muted">학습 기록: 2026-10-14 · 한국어 답변 · 글자 단위 · 생성 기록의 처음 6단계</p>
+<h2>데이터는 이미 정제했어</h2>
+<div class="data-flow" role="img" aria-label="원본 문답 11823개에서 일상 답변 5290개를 선택하고 중복 2910개를 제거해 고유 답변 2380개를 얻었다">
+<div class="data-node"><small>원본 문답</small><strong>11,823개</strong></div><span class="arrow">→</span>
+<div class="data-node"><small>일상 답변 선택</small><strong>5,290개</strong></div><span class="arrow">→</span>
+<div class="data-node"><small>중복 제거 후</small><strong>2,380개</strong></div>
+</div>
+<p class="note">답변 전체가 같은 중복 2,910개를 제거했어. 원본은 보존했어.</p>
+<p class="chain">답변 → 글자 묶음 → 횟수 → 문맥별 확률 → 다음 글자 추첨 → 문장</p>
+<h2>N은 참고할 문맥의 길이를 바꿔</h2>
+<p>N=5는 앞의 4글자, N=7은 6글자, N=10은 9글자를 참고해. 매번 다음 글자 하나를 붙여.</p>
+<div class="controls" role="group" aria-label="N 선택">
+<button type="button" data-n="5" aria-pressed="true">N = 5</button>
+<button type="button" data-n="7" aria-pressed="false">N = 7</button>
+<button type="button" data-n="10" aria-pressed="false">N = 10</button>
+</div>
+<div class="trace-block" aria-live="polite" aria-atomic="true">
+<p id="context-label" class="context-label"></p>
+<div id="before" class="textline" aria-label="예측 직전 문장과 참고 문맥"></div>
+<p class="note">밑줄은 예측에 사용하는 문맥이야. ␣는 공백 한 글자야.</p>
+<div class="selection">
+<div><small>이 단계에서 선택한 글자</small><strong id="next"></strong></div>
+<div><small>관측된 다음 글자 후보</small><strong id="kinds"></strong></div>
+</div>
+<p id="formula" class="formula"></p>
+<div id="bar" class="bar" role="progressbar" aria-label="선택한 글자의 조건부 확률" aria-valuemin="0" aria-valuemax="100"><div id="fill" class="fill"></div></div>
+<p id="after" class="example"></p>
+<p id="ticket" class="note"></p>
+</div>
+<div class="controls" role="group" aria-label="생성 기록 재생">
+<button type="button" id="prev">이전 단계</button>
+<button type="button" id="next-step">다음 단계</button>
+<span id="progress" class="progress"></span>
+</div>
+<p class="note">같은 시작 문구와 seed 42로 저장한 첫 문장의 기록을 재생해. 각 단계의 분모는 해당 문맥 뒤의 전체 관측 횟수야.</p>
+<h2>긴 문맥에서는 원문 재현이 늘었어</h2>
+<table aria-label="N별로 문장 10개를 생성한 결과"><thead><tr><th>N</th><th>서로 다른 문장</th><th>원문과 같은 문장</th></tr></thead><tbody id="comparison"></tbody></table>
+<p>이번 시작 문구에서는 N=10의 결과 10개가 모두 학습 답변과 같았어. 긴 문맥 뒤에서 후보가 하나만 남으면 추첨해도 같은 글자를 고르게 돼.</p>
+<p class="note">이 일치율은 처음 보는 답변의 예측 성능을 평가한 점수가 아니야. 서로 다른 답변으로 평가하는 단계가 필요해.</p>
+<h2>다음에 확인할 질문</h2>
+<ol class="todo"><li>다른 시작 문구에서도 원문 재현이 늘어날까?</li><li>중복 제거 전후에 같은 문맥의 확률은 얼마나 달라질까?</li><li>처음 보는 문맥에서 멈추면 더 짧은 문맥을 쓸 수 있을까?</li><li>답변의 시작과 끝을 학습하면 생성 결과는 어떻게 달라질까?</li></ol>
+<script>
+const models=[{"n":5,"unique":5,"matches":4,"single":91.21,"steps":[{"context":"급해지면","next":" ","count":2,"total":2,"kinds":1,"ticket":0,"before":"마음이 조급해지면","after":"마음이 조급해지면 "},{"context":"해지면 ","next":"하","count":1,"total":3,"kinds":3,"ticket":0,"before":"마음이 조급해지면 ","after":"마음이 조급해지면 하"},{"context":"지면 하","next":"지","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하","after":"마음이 조급해지면 하지"},{"context":"면 하지","next":" ","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하지","after":"마음이 조급해지면 하지 "},{"context":" 하지 ","next":"않","count":4,"total":9,"kinds":3,"ticket":3,"before":"마음이 조급해지면 하지 ","after":"마음이 조급해지면 하지 않"},{"context":"하지 않","next":"아","count":5,"total":10,"kinds":4,"ticket":2,"before":"마음이 조급해지면 하지 않","after":"마음이 조급해지면 하지 않아"}]},{"n":7,"unique":3,"matches":6,"single":97.96,"steps":[{"context":" 조급해지면","next":" ","count":2,"total":2,"kinds":1,"ticket":0,"before":"마음이 조급해지면","after":"마음이 조급해지면 "},{"context":"조급해지면 ","next":"하","count":1,"total":2,"kinds":2,"ticket":0,"before":"마음이 조급해지면 ","after":"마음이 조급해지면 하"},{"context":"급해지면 하","next":"지","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하","after":"마음이 조급해지면 하지"},{"context":"해지면 하지","next":" ","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하지","after":"마음이 조급해지면 하지 "},{"context":"지면 하지 ","next":"않","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하지 ","after":"마음이 조급해지면 하지 않"},{"context":"면 하지 않","next":"을","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하지 않","after":"마음이 조급해지면 하지 않을"}]},{"n":10,"unique":2,"matches":10,"single":99.77,"steps":[{"context":"마음이 조급해지면","next":" ","count":2,"total":2,"kinds":1,"ticket":0,"before":"마음이 조급해지면","after":"마음이 조급해지면 "},{"context":"음이 조급해지면 ","next":"하","count":1,"total":2,"kinds":2,"ticket":0,"before":"마음이 조급해지면 ","after":"마음이 조급해지면 하"},{"context":"이 조급해지면 하","next":"지","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하","after":"마음이 조급해지면 하지"},{"context":" 조급해지면 하지","next":" ","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하지","after":"마음이 조급해지면 하지 "},{"context":"조급해지면 하지 ","next":"않","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하지 ","after":"마음이 조급해지면 하지 않"},{"context":"급해지면 하지 않","next":"을","count":1,"total":1,"kinds":1,"ticket":0,"before":"마음이 조급해지면 하지 않","after":"마음이 조급해지면 하지 않을"}]}];
+let n=5,step=1;
+const visible=s=>s.replaceAll(" ","␣");
+function render(){
+ const g=models.find(m=>m.n===n),s=g.steps[step],length=n-1,prob=s.count/s.total*100;
+ document.querySelectorAll("[data-n]").forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.n)===n)));
+ document.getElementById("context-label").textContent="단계 "+(step+1)+": 마지막 "+length+"글자를 참고해";
+ const before=document.getElementById("before");before.replaceChildren();
+ const old=document.createElement("span");old.className="old";old.textContent=visible(s.before.slice(0,-length));
+ const active=document.createElement("span");active.className="active";active.textContent=visible(s.context);before.append(old,active);
+ document.getElementById("next").textContent=visible(s.next);
+ document.getElementById("kinds").textContent=s.kinds+"종류";
+ document.getElementById("formula").textContent=s.count+" / "+s.total+" = "+prob.toFixed(2)+"%";
+ document.getElementById("fill").style.width=prob+"%";
+ document.getElementById("bar").setAttribute("aria-valuenow",String(prob));
+ document.getElementById("after").textContent="글자를 붙인 결과: "+visible(s.after);
+ document.getElementById("ticket").textContent="저장된 추첨 티켓: "+s.ticket+" · 티켓 범위: 0~"+(s.total-1)+" · 후보마다 등장 횟수만큼 추첨 기회를 줘.";
+ document.getElementById("prev").disabled=step===0;document.getElementById("next-step").disabled=step===5;
+ document.getElementById("progress").textContent=(step+1)+" / 6단계";
+ const body=document.getElementById("comparison");body.replaceChildren();
+ models.forEach(m=>{const row=document.createElement("tr");if(m.n===n)row.className="current";[m.n,m.unique+" / 10",m.matches+" / 10"].forEach(v=>{const td=document.createElement("td");td.textContent=String(v);row.append(td)});body.append(row)});
+}
+document.querySelectorAll("[data-n]").forEach(b=>b.addEventListener("click",()=>{n=Number(b.dataset.n);render()}));
+document.getElementById("prev").addEventListener("click",()=>{step=Math.max(0,step-1);render()});
+document.getElementById("next-step").addEventListener("click",()=>{step=Math.min(5,step+1);render()});
+for(const m of models){n=m.n;for(step=0;step<6;step++){render();if(!document.getElementById("before").textContent.endsWith(visible(m.steps[step].context)))throw new Error("문맥 표시 오류");if(document.getElementById("bar").getAttribute("aria-valuenow")!==String(m.steps[step].count/m.steps[step].total*100))throw new Error("확률 표시 오류");}}
+n=5;step=1;render();console.log("N=5,7,10의 18개 기록 상태에서 문맥과 확률 표시 확인");
+</script></body></html>
