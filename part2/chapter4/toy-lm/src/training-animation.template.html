@@ -1,0 +1,111 @@
+<style>
+#training-player { position:relative; color:var(--foreground); font-family:var(--font-sans); font-size:var(--font-size-base,14px); }
+#training-player h3 { font-weight:500; margin:0 0 12px; }
+#training-player .controls { display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; margin:12px 0; }
+#training-player .button-hit { display:inline-flex; align-items:center; justify-content:center; min-height:44px; min-width:44px; }
+#training-player .field { display:flex; flex-wrap:wrap; align-items:center; gap:7px; }
+#training-player .timeline { display:grid; gap:7px; margin:16px 0; }
+#training-player .timeline input { width:100%; margin-inline:0; min-width:0; box-sizing:border-box; }
+#training-player .metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:14px 0 18px; }
+#training-player .metric { display:flex; flex-direction:column; gap:6px; font-variant-numeric:tabular-nums; }
+#training-player .metric strong { font-weight:500; }
+#training-player .metric-label,#training-player .meta { color:var(--muted-foreground); }
+#training-player .meta { margin:9px 0; }
+#training-player .network-layout { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(0,1fr); gap:18px; }
+#training-player .metric-plots { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+#training-player .figure { min-width:0; }
+#training-player .plot { display:block; width:100%; overflow:visible; }
+#training-player .plot text { fill:var(--foreground); font-size:12px; }
+#training-player .plot .domain,#training-player .plot .tick line { stroke:var(--border); }
+#training-player .semantic-legend { display:flex; flex-wrap:wrap; gap:8px 18px; margin:8px 0; }
+#training-player .semantic-legend span { display:inline-flex; align-items:center; gap:6px; }
+#training-player .swatch { display:inline-block; width:9px; height:9px; }
+#training-player .mass { margin-top:22px; }
+#training-player .mass-track { position:relative; height:20px; overflow:hidden; background:var(--muted); }
+#training-player .mass-segment { position:absolute; inset:0; transform-origin:0 50%; }
+#training-player .training { background:var(--chart-1); }
+#training-player .novel { background:var(--chart-2); }
+#training-player .invalid { background:var(--chart-3); }
+#training-player .mass-values { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:8px 0; font-variant-numeric:tabular-nums; }
+#training-player .mass-values span { display:flex; flex-direction:column; gap:5px; }
+#training-player .mass-values b { font-weight:500; }
+#training-player .tooltip { position:absolute; z-index:3; pointer-events:none; padding:9px 12px; border-radius:var(--radius,6px); background:var(--popover); color:var(--popover-foreground); border:1px solid var(--border); }
+#training-player.is-playing .moving { transition:transform 200ms linear; }
+@media(max-width:679px) { #training-player .network-layout,#training-player .metric-plots { grid-template-columns:minmax(0,1fr); gap:20px; } }
+@media(prefers-reduced-motion:reduce) { #training-player .moving,#training-player .weight { transition:none !important; } }
+</style>
+<div id="training-player">
+  <h3>NPLM 학습 기록 재생</h3>
+  <div class="meta" data-model-settings>임베딩 2차원 · 은닉 뉴런 8개 · 학습률 0.3 · 학습 seed 123</div>
+  <div class="controls">
+    <label class="button-hit" for="training-play"><button class="btn btn-primary" type="button" id="training-play" data-play>재생</button></label>
+    <label class="button-hit" for="training-reset"><button class="btn" type="button" id="training-reset" data-reset>처음으로</button></label>
+    <label class="field form-label">그래프
+      <select class="form-select" data-view-select>
+        <option value="network">신경망·다음 토큰 확률</option>
+        <option value="embedding">임베딩 이동</option>
+        <option value="loss">loss·PPL 곡선</option>
+      </select>
+    </label>
+  </div>
+  <label class="timeline form-label">가중치 갱신 <span data-update>0 / 2,000회</span>
+    <input class="form-range" type="range" min="0" max="100" step="1" value="0" data-time aria-label="학습 기록 시점">
+  </label>
+  <div class="metrics">
+    <div class="metric"><span class="metric-label">학습 24쌍 평균 loss</span><strong data-loss></strong></div>
+    <div class="metric"><span class="metric-label">학습 PPL</span><strong data-ppl></strong></div>
+    <div class="metric"><span class="metric-label" data-probe-label></span><strong data-probe-p></strong></div>
+  </div>
+  <label class="field form-label">살펴볼 입력 문맥
+    <select class="form-select" data-probe>
+      <option value="0">철수는 + 사과를 · 학습에서 관측</option>
+      <option value="1">철수는 + 바나나를 · 학습에 없는 조합</option>
+      <option value="2">짱구는 + 사과를 · 학습에 없는 조합</option>
+    </select>
+  </label>
+  <div class="meta" data-motion-note>20회 갱신마다 기록 · 재생 속도 200ms/기록 · 자동 반복 없음</div>
+  <section data-panel="network">
+    <div class="network-layout">
+      <div class="figure"><svg class="plot" data-network role="img" aria-label="임베딩 4성분에서 은닉 뉴런 8개, 출력 11개로 이어지는 완전연결 신경망"></svg></div>
+      <div class="figure"><svg class="plot" data-probabilities role="img" aria-label="선택한 문맥의 다음 토큰 11개 확률"></svg></div>
+    </div>
+    <div class="meta" data-connections-note>연결: 4×8=32개, 8×11=88개 · 선 진하기: 가중치 절댓값 · 은닉 원 안: tanh 값</div>
+  </section>
+  <section data-panel="embedding" hidden>
+    <svg class="plot" data-embedding role="img" aria-label="학습 중 일반 단어 8개의 2차원 임베딩 좌표와 이동 경로"></svg>
+    <div class="semantic-legend">
+      <span><i class="swatch" style="background:var(--chart-1)" aria-hidden="true"></i>주체</span>
+      <span><i class="swatch" style="background:var(--chart-2)" aria-hidden="true"></i>과일</span>
+      <span><i class="swatch" style="background:var(--chart-3)" aria-hidden="true"></i>동사</span>
+    </div>
+    <div class="meta">연한 선: 기록된 이동 경로 · 좌표축은 임베딩의 두 숫자 성분</div>
+  </section>
+  <section data-panel="loss" hidden>
+    <div class="metric-plots">
+      <svg class="plot" data-loss-chart role="img" aria-label="가중치 갱신 횟수에 따른 학습 24쌍의 평균 크로스 엔트로피"></svg>
+      <svg class="plot" data-ppl-chart role="img" aria-label="가중치 갱신 횟수에 따른 학습 24쌍의 퍼플렉시티"></svg>
+    </div>
+    <div class="meta">각 갱신의 실제 loss 기록과 exp(loss) · 현재 시점까지 표시</div>
+  </section>
+  <section class="mass">
+    <h3>현재 모델의 자유 문장 생성 확률</h3>
+    <div class="mass-track" role="img" aria-label="현재 모델의 학습 문장, 새 조합, 오류 출력 확률">
+      <div class="mass-segment moving training" data-mass="training"></div>
+      <div class="mass-segment moving novel" data-mass="novel"></div>
+      <div class="mass-segment moving invalid" data-mass="invalid"></div>
+    </div>
+    <div class="mass-values">
+      <span>학습 문장과 일치<b data-mass-value="training"></b></span>
+      <span>형식에 맞는 새 조합<b data-mass-value="novel"></b></span>
+      <span>오류·미완성<b data-mass-value="invalid"></b></span>
+    </div>
+    <div class="meta">가능한 18문장의 확률을 합산한 계산값 · 10,000회 추첨 결과와 별도</div>
+  </section>
+  <div class="meta">loss·PPL: 학습 24쌍 전체 · 토큰 확률: 선택한 입력 문맥 · 문맥 변경은 학습 데이터를 바꾸지 않음</div>
+  <div class="meta" data-final-result></div>
+  <div class="tooltip" role="tooltip" hidden></div>
+</div>
+<script>__SVG_SOURCE__</script>
+<script>const chapter4TrainingData=__TRAINING_DATA__;</script>
+<script>__CHART_SOURCE__</script>
+<script>__PLAYER_SOURCE__</script>

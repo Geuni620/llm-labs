@@ -1,0 +1,22 @@
+{
+  "name": "hong-labs-chapter4",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "scripts": {
+    "data": "node src/cli.ts data",
+    "trigram": "node src/cli.ts trigram",
+    "trace": "node src/cli.ts trace",
+    "compare": "node src/cli.ts compare",
+    "animate": "node src/animate.ts",
+    "explain": "node scripts/build-guide.ts",
+    "typecheck": "tsc --noEmit",
+    "gradcheck": "node scripts/gradcheck.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

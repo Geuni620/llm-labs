@@ -1,0 +1,40 @@
+<style>
+#implementation-guide { color:var(--foreground); font-family:var(--font-sans); font-size:var(--font-size-base,14px); overflow-wrap:anywhere; }
+#implementation-guide h3 { margin:0 0 14px; font-weight:500; }
+#implementation-guide [data-title] { margin-top:20px; }
+#implementation-guide .controls { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:10px 0; }
+#implementation-guide .button-hit { display:inline-flex; min-height:44px; min-width:44px; align-items:center; justify-content:center; }
+#implementation-guide select { max-width:100%; min-width:0; }
+#implementation-guide .code-field { display:grid; grid-template-columns:minmax(0,1fr); gap:7px; min-width:0; margin:10px 0; }
+#implementation-guide [hidden] { display:none !important; }
+#implementation-guide .diagram { display:block; width:100%; }
+#implementation-guide .diagram text { fill:var(--foreground); }
+#implementation-guide .prose p { margin:10px 0; }
+#implementation-guide ul { padding-left:22px; }
+#implementation-guide li { margin:8px 0; }
+#implementation-guide pre { padding:16px; border-radius:var(--radius,6px); white-space:pre-wrap; overflow-wrap:anywhere; background:var(--code-background,var(--muted)); color:var(--code-foreground,var(--foreground)); font-family:var(--font-mono,ui-monospace,monospace); }
+#implementation-guide .snippet-label { font-weight:500; margin:14px 0 7px; }
+#implementation-guide .source-range,#implementation-guide .summary { color:var(--muted-foreground); margin:7px 0; }
+</style>
+<div id="implementation-guide">
+  <h3>Node·TypeScript 구현 — 그림과 실제 코드</h3>
+  <div class="summary">실행·학습·시각화 외부 라이브러리 0개 · 타입 검사 도구는 유지</div>
+  <div class="controls">
+    <label class="button-hit" for="guide-previous"><button class="btn" id="guide-previous" type="button" data-previous>이전</button></label>
+    <label class="button-hit" for="guide-next"><button class="btn" id="guide-next" type="button" data-next>다음</button></label>
+    <span data-progress></span>
+  </div>
+  <div class="code-field"><label class="form-label" for="guide-section">읽을 코드</label>
+    <select class="form-select" id="guide-section" data-section aria-label="파일별 구현 해설 선택"></select>
+  </div>
+  <h3 data-title></h3>
+  <svg class="diagram" role="img" aria-label="선택한 코드의 처리 흐름"></svg>
+  <div class="prose" data-paragraphs></div>
+  <ul data-bullets></ul>
+  <pre data-formula hidden></pre>
+  <div class="code-field" data-code-picker><label class="form-label" for="guide-code">코드 구간</label><select class="form-select" id="guide-code" data-code-section aria-label="살펴볼 실제 코드 구간"></select></div>
+  <div data-snippets></div>
+</div>
+<script>__SVG_SOURCE__</script>
+<script>const chapter4GuideData=__GUIDE_DATA__;</script>
+<script>__GUIDE_PLAYER__</script>
