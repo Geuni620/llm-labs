@@ -1,0 +1,36 @@
+{
+  "status": "short_benchmark_and_numerical_gate_verified",
+  "gpu_case": "metal_clip",
+  "factory": "optimization.engine_refined.build_model_optimizer",
+  "condition": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 128,
+    "seed": 42
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "foreach": true,
+    "fused": false,
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "clip_norm": 1
+  },
+  "dtype": "float32",
+  "device": "mps",
+  "source_sha256": {
+    "engine_refined.py": "249e121fffc8dcfc7ea4acd64ce3a2cb25b3aa54fe3797c1319993d941bcf056",
+    "engine.py": "76bb08a87ae1876bcfb93d19f3ec639c8f1f1c658d25cdbb421581033e01bd4b",
+    "metal_clip.py": "5838c54c7db04e8f20f78ee22b188a5baecf7c6370eb6be71ed41fac8eb5845f"
+  },
+  "evidence": "reports/mps-optimization-summary.json",
+  "quality_scope": "Actual long-run validation and generation quality not tested. Prior long training remains deferred.",
+  "combination_scope": "Individual option comparison only; combinations are not recommended as tested."
+}

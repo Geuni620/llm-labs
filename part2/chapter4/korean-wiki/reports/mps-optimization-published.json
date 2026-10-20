@@ -1,0 +1,90 @@
+{
+  "status": "published",
+  "published_at_utc": "2026-10-18 13:33:45 UTC",
+  "attachment": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-87293d11-fd53-4a7b-92f1-6c4be690697a-html",
+    "title": "GPU 최적화 전후 시간 비교",
+    "height": 845,
+    "heights": [
+      [
+        320,
+        845
+      ],
+      [
+        375,
+        813
+      ],
+      [
+        430,
+        813
+      ],
+      [
+        520,
+        813
+      ],
+      [
+        640,
+        813
+      ],
+      [
+        728,
+        813
+      ],
+      [
+        860,
+        813
+      ],
+      [
+        1000,
+        813
+      ],
+      [
+        1144,
+        813
+      ]
+    ],
+    "outline": "t0,1,59,5,1;t0,8,64,4,1;m0,15,182,91,1;t0,107,55,4,1;g0,113,182,61,6;t0,174,65,4,1;t0,188,67,4,1;t0,192,83,4,1;t0,196,81,4,1;t0,200,76,4,1"
+  },
+  "fragment": "reports/mps-optimization.html",
+  "summary": "reports/mps-optimization-summary.json",
+  "text_summary": "reports/mps-optimization-summary.txt",
+  "recommended_configuration": "gpu-benchmark/optimization/recommended-gpu-config.json",
+  "scope": "B128 FP32 same512 updates/65536 targets,15 measured trials. Full-five-epoch times extrapolated. Refined24 gates/768 comparisons pass; initial native-fused failures preserved and excluded. Individual options, not combinations; long-run quality unmeasured.",
+  "previews": [
+    {
+      "profile": {
+        "width": 728,
+        "appearance": "dark"
+      },
+      "contentHeight": 813,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "GPU optimization QA {\"width\":728,\"rows\":5,\"overflow\":false,\"collisions\":0,\"finite\":true,\"axes\":2,\"values\":5}"
+        },
+        {
+          "level": "log",
+          "text": "GPU optimization QA {\"width\":728,\"rows\":5,\"overflow\":false,\"collisions\":0,\"finite\":true,\"axes\":2,\"values\":5}"
+        }
+      ]
+    },
+    {
+      "profile": {
+        "width": 320,
+        "appearance": "light"
+      },
+      "contentHeight": 845,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "GPU optimization QA {\"width\":320,\"rows\":5,\"overflow\":false,\"collisions\":0,\"finite\":true,\"axes\":2,\"values\":5}"
+        },
+        {
+          "level": "log",
+          "text": "GPU optimization QA {\"width\":320,\"rows\":5,\"overflow\":false,\"collisions\":0,\"finite\":true,\"axes\":2,\"values\":5}"
+        }
+      ]
+    }
+  ],
+  "final_audit": "reports/mps-optimization-parent-audit-20261018.json"
+}

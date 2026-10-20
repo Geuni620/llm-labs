@@ -1,0 +1,2863 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "status": "PASS",
+  "cases": 444,
+  "comparison": "original norm vs fixed 4096-element double SIMD block sums and ordered merge",
+  "global_fast_math": false,
+  "openmp_version": 202011,
+  "acceptance": {
+    "declared_before_execution": true,
+    "rule": "abs(actual-reference)<=atol+rtol*abs(reference)",
+    "norm": {
+      "atol": 1e-12,
+      "rtol": 2e-07
+    },
+    "scale": {
+      "atol": 1e-12,
+      "rtol": 2e-07
+    },
+    "gradient": {
+      "atol": 1e-15,
+      "rtol": 4e-07
+    }
+  },
+  "scope": {
+    "counts": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      15,
+      16,
+      17,
+      31,
+      32,
+      33,
+      63,
+      64,
+      65,
+      127,
+      255,
+      256,
+      257,
+      1003,
+      1023,
+      1024,
+      1025,
+      4095,
+      4096,
+      4097,
+      8191,
+      8192,
+      8193,
+      6883968
+    ],
+    "threads": [
+      1,
+      4
+    ],
+    "clip_norms": [
+      1,
+      0.05
+    ],
+    "patterns": [
+      "zero",
+      "uniform_random_plusminus1",
+      "mixed_magnitudes",
+      "threshold_sparse",
+      "threshold_dense"
+    ],
+    "scalar_input_positions_before_thread_and_clip_repetition": 186092013,
+    "input_min": -999999995904,
+    "input_max": 999999995904
+  },
+  "active_clipping_cases": 298,
+  "guard_failures": 0,
+  "norm": {
+    "compared": 444,
+    "nonfinite_pairs": 0,
+    "outside_tolerance": 0,
+    "bitwise_differences": 0,
+    "max_absolute_error": 0,
+    "max_relative_error_nonzero_reference": 0,
+    "max_tolerance_fraction": 0,
+    "worst_absolute": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_relative": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_tolerance": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    }
+  },
+  "scale": {
+    "compared": 444,
+    "nonfinite_pairs": 0,
+    "outside_tolerance": 0,
+    "bitwise_differences": 0,
+    "max_absolute_error": 0,
+    "max_relative_error_nonzero_reference": 0,
+    "max_tolerance_fraction": 0,
+    "worst_absolute": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_relative": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_tolerance": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    }
+  },
+  "gradient": {
+    "compared": 413740932,
+    "nonfinite_pairs": 0,
+    "outside_tolerance": 0,
+    "bitwise_differences": 0,
+    "max_absolute_error": 0,
+    "max_relative_error_nonzero_reference": 0,
+    "max_tolerance_fraction": 0,
+    "worst_absolute": {
+      "count": 1,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_relative": {
+      "count": 1,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_tolerance": {
+      "count": 1,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    }
+  },
+  "compensated_oracle": {
+    "norm": {
+      "compared": 444,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    },
+    "scale": {
+      "compared": 444,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    },
+    "gradient": {
+      "compared": 413740932,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    }
+  },
+  "threshold_checks": {
+    "cases": 96,
+    "target_placement_failures": 0,
+    "original_target_misses": 0,
+    "fixed_target_misses": 0,
+    "original_clip_decision_differences": 0,
+    "oracle_clip_decision_differences": 0,
+    "records": [
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 4097,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_sparse",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.99999994,
+        "original_norm": 0.99999994,
+        "fixed_norm": 0.99999994,
+        "compensated_norm": 0.99999994,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 1,
+        "original_norm": 1,
+        "fixed_norm": 1,
+        "compensated_norm": 1,
+        "original_scale": 0.999999046,
+        "fixed_scale": 0.999999046,
+        "compensated_scale": 0.999999046,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 1.00000012,
+        "original_norm": 1.00000012,
+        "fixed_norm": 1.00000012,
+        "compensated_norm": 1.00000012,
+        "original_scale": 0.999998927,
+        "fixed_scale": 0.999998927,
+        "compensated_scale": 0.999998927,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.999999046,
+        "original_norm": 0.999999046,
+        "fixed_norm": 0.999999046,
+        "compensated_norm": 0.999999046,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.999999106,
+        "original_norm": 0.999999106,
+        "fixed_norm": 0.999999106,
+        "compensated_norm": 0.999999106,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.999999166,
+        "original_norm": 0.999999166,
+        "fixed_norm": 0.999999166,
+        "compensated_norm": 0.999999166,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": -1,
+        "target_norm": 0.049999997,
+        "original_norm": 0.049999997,
+        "fixed_norm": 0.049999997,
+        "compensated_norm": 0.049999997,
+        "original_scale": 0.999980092,
+        "fixed_scale": 0.999980092,
+        "compensated_scale": 0.999980092,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 0,
+        "target_norm": 0.0500000007,
+        "original_norm": 0.0500000007,
+        "fixed_norm": 0.0500000007,
+        "compensated_norm": 0.0500000007,
+        "original_scale": 0.999980032,
+        "fixed_scale": 0.999980032,
+        "compensated_scale": 0.999980032,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "clip_norm_adjacent",
+        "target_offset": 1,
+        "target_norm": 0.0500000045,
+        "original_norm": 0.0500000045,
+        "fixed_norm": 0.0500000045,
+        "compensated_norm": 0.0500000045,
+        "original_scale": 0.999979973,
+        "fixed_scale": 0.999979973,
+        "compensated_scale": 0.999979973,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": -1,
+        "target_norm": 0.0499990024,
+        "original_norm": 0.0499990024,
+        "fixed_norm": 0.0499990024,
+        "compensated_norm": 0.0499990024,
+        "original_scale": 1,
+        "fixed_scale": 1,
+        "compensated_scale": 1,
+        "original_clipped": false,
+        "fixed_clipped": false,
+        "compensated_clipped": false
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 0,
+        "target_norm": 0.0499990061,
+        "original_norm": 0.0499990061,
+        "fixed_norm": 0.0499990061,
+        "compensated_norm": 0.0499990061,
+        "original_scale": 0.99999994,
+        "fixed_scale": 0.99999994,
+        "compensated_scale": 0.99999994,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 1,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      },
+      {
+        "location": {
+          "count": 6883968,
+          "pattern": "threshold_dense",
+          "threads": 4,
+          "clip_norm": 0.0500000007,
+          "index": 0
+        },
+        "target_group": "epsilon_adjusted_clip_transition",
+        "target_offset": 1,
+        "target_norm": 0.0499990098,
+        "original_norm": 0.0499990098,
+        "fixed_norm": 0.0499990098,
+        "compensated_norm": 0.0499990098,
+        "original_scale": 0.999999881,
+        "fixed_scale": 0.999999881,
+        "compensated_scale": 0.999999881,
+        "original_clipped": true,
+        "fixed_clipped": true,
+        "compensated_clipped": true
+      }
+    ]
+  },
+  "scratch": {
+    "logical_block_size": 4096,
+    "actual_model_partials": 1681,
+    "actual_model_bytes": 13448,
+    "allocated_outside_each_call": true,
+    "contract_checks_passed": true
+  },
+  "thread_stability_same_binary": {
+    "pairs": 222,
+    "norm_different_pairs": 0,
+    "scale_different_pairs": 0,
+    "gradient_different_pairs": 0,
+    "partial_sum_different_pairs": 0
+  },
+  "failure_examples": [],
+  "limitations": [
+    "Standalone gradient norm and clipping numerical comparison only",
+    "Thread stability applies only to the tested binary and floating-point environment",
+    "Block reassociation need not match original bits or different platforms",
+    "No optimizer trajectory, convergence, generation quality or timing validation"
+  ],
+  "source_files_unchanged": true,
+  "compiler_evidence": {
+    "remarks": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:67:5: remark: vectorized loop (vectorization width: 2, interleaved count: 4) [-Rpass=loop-vectorize]\n   67 |     for (size_t block = 0; block < blocks; ++block) squares += partial_sums[block];\n      |     ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:80:13: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   80 |             for (size_t i = 0; i < count; ++i) gradients[i] *= scale;\n      |             ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:61:35: remark: loop not vectorized: call instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   61 |             partial_sums[block] = block_squared_norm(gradients + start, length);\n      |                                   ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:55:1: remark: loop not vectorized: instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   55 | #pragma omp parallel for schedule(static) num_threads(workers) if(workers > 1)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:55:1: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:30:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   30 | #pragma omp simd reduction(+:sum)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:76:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   76 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n",
+    "block_helper_noinline": true,
+    "double_vector_examples": [
+      "%68 = call double @llvm.vector.reduce.fadd.v2f64(double %59, <2 x double> %64)",
+      "%69 = call double @llvm.vector.reduce.fadd.v2f64(double %68, <2 x double> %65)",
+      "%70 = call double @llvm.vector.reduce.fadd.v2f64(double %69, <2 x double> %66)",
+      "%71 = call double @llvm.vector.reduce.fadd.v2f64(double %70, <2 x double> %67)",
+      "%21 = fpext <4 x float> %17 to <4 x double>",
+      "%22 = fpext <4 x float> %18 to <4 x double>",
+      "%23 = fpext <4 x float> %19 to <4 x double>",
+      "%24 = fpext <4 x float> %20 to <4 x double>",
+      "%25 = fmul <4 x double> %21, %21",
+      "%26 = fmul <4 x double> %22, %22",
+      "%27 = fmul <4 x double> %23, %23",
+      "%28 = fmul <4 x double> %24, %24",
+      "%29 = fadd <4 x double> %9, %25",
+      "%30 = fadd <4 x double> %10, %26",
+      "%31 = fadd <4 x double> %11, %27",
+      "%32 = fadd <4 x double> %12, %28",
+      "%36 = fadd <4 x double> %30, %29",
+      "%37 = fadd <4 x double> %31, %36",
+      "%38 = fadd <4 x double> %32, %37",
+      "%39 = tail call double @llvm.vector.reduce.fadd.v4f64(double -0.000000e+00, <4 x double> %38)",
+      "%54 = fpext <2 x float> %53 to <2 x double>",
+      "%55 = fmul <2 x double> %54, %54",
+      "%56 = fadd <2 x double> %51, %55",
+      "%60 = tail call double @llvm.vector.reduce.fadd.v2f64(double -0.000000e+00, <2 x double> %56)",
+      "declare double @llvm.vector.reduce.fadd.v2f64(double, <2 x double>) #8",
+      "declare double @llvm.vector.reduce.fadd.v4f64(double, <4 x double>) #8"
+    ],
+    "scope": "Only the norm block helper and final ordered merge are new; clipping write loop is preserved and the module defines no optimizer."
+  },
+  "verification_run": {
+    "completed_at": "2026-10-18T07:12:01.242478+00:00",
+    "test_elapsed_seconds": 8.384894707996864,
+    "exit_code": 0,
+    "commands": [
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-threshold-check-mbj791ot/original.o"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Rpass=loop-vectorize",
+        "-Rpass-missed=loop-vectorize",
+        "-Rpass-analysis=loop-vectorize",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-threshold-check-mbj791ot/fixedwork_norm.o"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-S",
+        "-emit-llvm",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-threshold-check-mbj791ot/fixedwork_norm.ll"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_norm.c",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-threshold-check-mbj791ot/original.o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-threshold-check-mbj791ot/fixedwork_norm.o",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-threshold-check-mbj791ot/test_fixedwork_norm"
+      ]
+    ],
+    "source_sha256": {
+      "fixedwork_norm.c": "30ee80ed77bbe3548eb2825604c029f6c958d54dc1c2505fddd6dd1cb6d8a865",
+      "test_fixedwork_norm.c": "87fd2145dd742ce5c705ed28c22326d35b56229d756ab09cfbcd294b15223a1b",
+      "fixedwork_api.h": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b",
+      "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+      "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+      "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    },
+    "coordination_lock": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/.timing.lock",
+    "thread_environment": {
+      "OMP_WAIT_POLICY": "PASSIVE",
+      "KMP_BLOCKTIME": "0",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "previous_verification_v1": {
+    "schema_version": 1,
+    "passed": true,
+    "status": "PASS",
+    "cases": 348,
+    "comparison": "original norm vs fixed 4096-element double SIMD block sums and ordered merge",
+    "global_fast_math": false,
+    "openmp_version": 202011,
+    "acceptance": {
+      "declared_before_execution": true,
+      "rule": "abs(actual-reference)<=atol+rtol*abs(reference)",
+      "norm": {
+        "atol": 1e-12,
+        "rtol": 2e-07
+      },
+      "scale": {
+        "atol": 1e-12,
+        "rtol": 2e-07
+      },
+      "gradient": {
+        "atol": 1e-15,
+        "rtol": 4e-07
+      }
+    },
+    "scope": {
+      "counts": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        15,
+        16,
+        17,
+        31,
+        32,
+        33,
+        63,
+        64,
+        65,
+        127,
+        255,
+        256,
+        257,
+        1003,
+        1023,
+        1024,
+        1025,
+        4095,
+        4096,
+        4097,
+        8191,
+        8192,
+        8193,
+        6883968
+      ],
+      "threads": [
+        1,
+        4
+      ],
+      "clip_norms": [
+        1,
+        0.05
+      ],
+      "patterns": [
+        "zero",
+        "uniform_random_plusminus1",
+        "mixed_magnitudes"
+      ],
+      "scalar_input_positions_before_thread_and_clip_repetition": 20778453,
+      "input_min": -999999995904,
+      "input_max": 999999995904
+    },
+    "active_clipping_cases": 218,
+    "guard_failures": 0,
+    "norm": {
+      "compared": 348,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    },
+    "scale": {
+      "compared": 348,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    },
+    "gradient": {
+      "compared": 83113812,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    },
+    "compensated_oracle": {
+      "norm": {
+        "compared": 348,
+        "nonfinite_pairs": 0,
+        "outside_tolerance": 0,
+        "bitwise_differences": 0,
+        "max_absolute_error": 0,
+        "max_relative_error_nonzero_reference": 0,
+        "max_tolerance_fraction": 0,
+        "worst_absolute": {
+          "count": 0,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "worst_relative": {
+          "count": 0,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "worst_tolerance": {
+          "count": 0,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        }
+      },
+      "scale": {
+        "compared": 348,
+        "nonfinite_pairs": 0,
+        "outside_tolerance": 0,
+        "bitwise_differences": 0,
+        "max_absolute_error": 0,
+        "max_relative_error_nonzero_reference": 0,
+        "max_tolerance_fraction": 0,
+        "worst_absolute": {
+          "count": 0,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "worst_relative": {
+          "count": 0,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "worst_tolerance": {
+          "count": 0,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        }
+      },
+      "gradient": {
+        "compared": 83113812,
+        "nonfinite_pairs": 0,
+        "outside_tolerance": 0,
+        "bitwise_differences": 0,
+        "max_absolute_error": 0,
+        "max_relative_error_nonzero_reference": 0,
+        "max_tolerance_fraction": 0,
+        "worst_absolute": {
+          "count": 1,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "worst_relative": {
+          "count": 1,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        },
+        "worst_tolerance": {
+          "count": 1,
+          "pattern": "zero",
+          "threads": 1,
+          "clip_norm": 1,
+          "index": 0
+        }
+      }
+    },
+    "scratch": {
+      "logical_block_size": 4096,
+      "actual_model_partials": 1681,
+      "actual_model_bytes": 13448,
+      "allocated_outside_each_call": true,
+      "contract_checks_passed": true
+    },
+    "thread_stability_same_binary": {
+      "pairs": 174,
+      "norm_different_pairs": 0,
+      "scale_different_pairs": 0,
+      "gradient_different_pairs": 0,
+      "partial_sum_different_pairs": 0
+    },
+    "failure_examples": [],
+    "limitations": [
+      "Standalone gradient norm and clipping numerical comparison only",
+      "Thread stability applies only to the tested binary and floating-point environment",
+      "Block reassociation need not match original bits or different platforms",
+      "No optimizer trajectory, convergence, generation quality or timing validation"
+    ],
+    "source_files_unchanged": true,
+    "compiler_evidence": {
+      "remarks": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:67:5: remark: vectorized loop (vectorization width: 2, interleaved count: 4) [-Rpass=loop-vectorize]\n   67 |     for (size_t block = 0; block < blocks; ++block) squares += partial_sums[block];\n      |     ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:80:13: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   80 |             for (size_t i = 0; i < count; ++i) gradients[i] *= scale;\n      |             ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:61:35: remark: loop not vectorized: call instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   61 |             partial_sums[block] = block_squared_norm(gradients + start, length);\n      |                                   ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:55:1: remark: loop not vectorized: instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   55 | #pragma omp parallel for schedule(static) num_threads(workers) if(workers > 1)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:55:1: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:30:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   30 | #pragma omp simd reduction(+:sum)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c:76:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   76 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n",
+      "block_helper_noinline": true,
+      "double_vector_examples": [
+        "%68 = call double @llvm.vector.reduce.fadd.v2f64(double %59, <2 x double> %64)",
+        "%69 = call double @llvm.vector.reduce.fadd.v2f64(double %68, <2 x double> %65)",
+        "%70 = call double @llvm.vector.reduce.fadd.v2f64(double %69, <2 x double> %66)",
+        "%71 = call double @llvm.vector.reduce.fadd.v2f64(double %70, <2 x double> %67)",
+        "%21 = fpext <4 x float> %17 to <4 x double>",
+        "%22 = fpext <4 x float> %18 to <4 x double>",
+        "%23 = fpext <4 x float> %19 to <4 x double>",
+        "%24 = fpext <4 x float> %20 to <4 x double>",
+        "%25 = fmul <4 x double> %21, %21",
+        "%26 = fmul <4 x double> %22, %22",
+        "%27 = fmul <4 x double> %23, %23",
+        "%28 = fmul <4 x double> %24, %24",
+        "%29 = fadd <4 x double> %9, %25",
+        "%30 = fadd <4 x double> %10, %26",
+        "%31 = fadd <4 x double> %11, %27",
+        "%32 = fadd <4 x double> %12, %28",
+        "%36 = fadd <4 x double> %30, %29",
+        "%37 = fadd <4 x double> %31, %36",
+        "%38 = fadd <4 x double> %32, %37",
+        "%39 = tail call double @llvm.vector.reduce.fadd.v4f64(double -0.000000e+00, <4 x double> %38)",
+        "%54 = fpext <2 x float> %53 to <2 x double>",
+        "%55 = fmul <2 x double> %54, %54",
+        "%56 = fadd <2 x double> %51, %55",
+        "%60 = tail call double @llvm.vector.reduce.fadd.v2f64(double -0.000000e+00, <2 x double> %56)",
+        "declare double @llvm.vector.reduce.fadd.v2f64(double, <2 x double>) #8",
+        "declare double @llvm.vector.reduce.fadd.v4f64(double, <4 x double>) #8"
+      ],
+      "scope": "Only the norm block helper and final ordered merge are new; clipping write loop is preserved and the module defines no optimizer."
+    },
+    "verification_run": {
+      "completed_at": "2026-10-18T07:05:48.306139+00:00",
+      "test_elapsed_seconds": 2.299214667000342,
+      "exit_code": 0,
+      "commands": [
+        [
+          "clang",
+          "-std=c11",
+          "-O3",
+          "-mcpu=native",
+          "-ffp-contract=off",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-DEXPERIMENT_VFORCE_EXP=1",
+          "-c",
+          "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+          "-o",
+          "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-norm-check-0d8kl_r5/original.o"
+        ],
+        [
+          "clang",
+          "-std=c11",
+          "-O3",
+          "-mcpu=native",
+          "-ffp-contract=off",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-DEXPERIMENT_VFORCE_EXP=1",
+          "-Rpass=loop-vectorize",
+          "-Rpass-missed=loop-vectorize",
+          "-Rpass-analysis=loop-vectorize",
+          "-c",
+          "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+          "-o",
+          "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-norm-check-0d8kl_r5/fixedwork_norm.o"
+        ],
+        [
+          "clang",
+          "-std=c11",
+          "-O3",
+          "-mcpu=native",
+          "-ffp-contract=off",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-DEXPERIMENT_VFORCE_EXP=1",
+          "-S",
+          "-emit-llvm",
+          "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+          "-o",
+          "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-norm-check-0d8kl_r5/fixedwork_norm.ll"
+        ],
+        [
+          "clang",
+          "-std=c11",
+          "-O3",
+          "-mcpu=native",
+          "-ffp-contract=off",
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-DEXPERIMENT_VFORCE_EXP=1",
+          "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_norm.c",
+          "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-norm-check-0d8kl_r5/original.o",
+          "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-norm-check-0d8kl_r5/fixedwork_norm.o",
+          "-framework",
+          "Accelerate",
+          "-L/opt/homebrew/opt/libomp/lib",
+          "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+          "-lomp",
+          "-lm",
+          "-o",
+          "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-fixedwork-norm-check-0d8kl_r5/test_fixedwork_norm"
+        ]
+      ],
+      "source_sha256": {
+        "fixedwork_norm.c": "30ee80ed77bbe3548eb2825604c029f6c958d54dc1c2505fddd6dd1cb6d8a865",
+        "test_fixedwork_norm.c": "69c48e926a2d68e43eb373d4d02f05f3f02eefec9cf1090a48f413ceab668aab",
+        "fixedwork_api.h": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b",
+        "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+        "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+        "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+      },
+      "coordination_lock": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/.timing.lock",
+      "thread_environment": {
+        "OMP_WAIT_POLICY": "PASSIVE",
+        "KMP_BLOCKTIME": "0",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      }
+    }
+  },
+  "kernel_unchanged_from_v1": true
+}

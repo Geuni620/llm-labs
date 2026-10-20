@@ -1,0 +1,91 @@
+노름 합산 SIMD 후보: 전체 처리량 개선 확인 못함
+
+목적
+GPU 없이 CPU 최적화 원리와 시간을 한 가지씩 학습합니다. 7시간 달성은 필수가 아니며 이번에는 기존 약31시간 외삽에서 더 줄일 후보를 검토했습니다.
+이 보고서는 완료된 작은 JSON·검증 문서만 읽고 산식을 확인했습니다. 새 모델·시험·타이밍은 실행하지 않았습니다.
+
+무엇을 비교했는가
+두 설정 모두 CPU native·Apple vvexpf·OpenMP4, 사전35,328·배치128·NPLM6,883,968매개변수·동일 초기화입니다.
+기준도 이미 SIMD입니다. 벡터 곱셈 뒤 순서에 따라 scalar 누산값을 이어받아 합산합니다.
+후보는 double 벡터 lane별 부분합을 누적한 후 마지막에 합칩니다. SIMD 없음/있음의 비교가 아닙니다.
+gradient 저장은 float32, 노름 합산은 double을 유지했습니다. 전역 fast-math는 사용하지 않았습니다.
+컴파일러 IR에서 후보의 double 벡터 누산·마지막 가로 합산이 확인됐습니다. 벡터화 폭4를 물리적 M1명령의 double lane수로 해석하지 않습니다.
+
+회차별 실제 측정
+초는 compute 벽시계, steps는 완료update, rate는 targets/s입니다.
+전체ms = 실제초/steps×1000. clipms = 노름·클리핑 구간초/steps×1000입니다. 모두 update당 밀리초입니다.
+1회
+  기준: native·vForce·OpenMP4, 기존 합산 순서: 20.026954000초, 260steps, 1,661.760445targets/s, 전체 77.026746ms/update, clip 9.823527ms/update.
+  후보: 같은 조합 + double SIMD 부분합 누적: 20.623406000초, 216steps, 1,340.612700targets/s, 전체 95.478731ms/update, clip 4.601796ms/update.
+  후보/기준 처리량 0.806742배, 처리량 변화 -19.33%, clip구간 변화는 +53.16% 단축입니다. 음수는 증가를 뜻합니다.
+2회
+  기준: native·vForce·OpenMP4, 기존 합산 순서: 20.015253000초, 517steps, 3,306.278467targets/s, 전체 38.714222ms/update, clip 5.369147ms/update.
+  후보: 같은 조합 + double SIMD 부분합 누적: 20.007044000초, 162steps, 1,036.434968targets/s, 전체 123.500272ms/update, clip 8.507877ms/update.
+  후보/기준 처리량 0.313475배, 처리량 변화 -68.65%, clip구간 변화는 -58.46% 단축입니다. 음수는 증가를 뜻합니다.
+3회
+  기준: native·vForce·OpenMP4, 기존 합산 순서: 20.267404000초, 290steps, 1,831.512314targets/s, 전체 69.887600ms/update, clip 8.640141ms/update.
+  후보: 같은 조합 + double SIMD 부분합 누적: 20.019536000초, 618steps, 3,951.340331targets/s, 전체 32.394071ms/update, clip 1.288830ms/update.
+  후보/기준 처리량 2.157419배, 처리량 변화 +115.74%, clip구간 변화는 +85.08% 단축입니다. 음수는 증가를 뜻합니다.
+
+3회 요약
+기준: native·vForce·OpenMP4, 기존 합산 순서: 중앙값 1,831.512314targets/s, 관측 범위 1,661.760445~3,306.278467targets/s.
+후보: 같은 조합 + double SIMD 부분합 누적: 중앙값 1,340.612700targets/s, 관측 범위 1,036.434968~3,951.340331targets/s.
+중앙값 처리량 변화는 -26.80%입니다. 그러나3회 편차가 크고 paired 방향이 바뀌므로 지속 속도 차이를 확정하지 않습니다.
+
+단계별 벽시계도 함께 변동
+이 캠페인의 3회 해당 phase 초를 합하고 같은 설정의 총 steps로 나눈 ms/update입니다.
+기준 / 후보 순서이며, 대기·스케줄링·타이머 비용도 포함됩니다.
+RAM에서 문맥·정답 모으기: 1.207997 / 1.981099ms/update.
+순전파·역전파 행렬곱: 22.018321 / 24.350433ms/update.
+softmax·교차 엔트로피: 16.047154 / 18.210825ms/update.
+편향 기울기 합산: 2.268887 / 3.325894ms/update.
+기울기 노름 계산과 배율 적용: 7.343587 / 3.181487ms/update.
+AdamW 갱신: 6.519651 / 8.456353ms/update.
+기타 호출·루프: 1.117001 / 1.387469ms/update.
+pooled clip구간은 56.68% 짧았지만, clip은 노름과 배율 적용을 합친 범위라 순수sum시간이 아닙니다.
+행렬곱·softmax·AdamW 등도 변했습니다. clip구간 축소만으로 전체 학습이 빨라졌다고 말할 수 없습니다.
+
+수치 검증은 통과
+기준과 후보 각각 tiny·irregular, 스레드1/4, clip상한1.0/0.05의8개 Torch검증 gate를 통과했습니다. 설정당184비교, 실패0입니다.
+독립 노름·클리핑 단위검사는276케이스, 길이23종, 스레드1/4, clip상한1/0.05, zero/random/mixed 입력을 포함합니다.
+clipped gradient 82,671,444개를 기존 계산과 비교하고 같은 수를 보상double합산 oracle과도 비교했습니다. 양쪽 모두 허용오차 위반0입니다.
+관측 norm·scale·clipped gradient의 float32 반환 출력은 최대차0이었습니다. 이는 모든 실수/float입력이나 내부double누산의 bit동일성을 증명하지 않습니다.
+수치 허용오차: norm/scale 절대1e-12+상대2e-7, gradient 절대1e-15+상대4e-7. 실제clip활성170케이스, 경계훼손0입니다.
+수치 gate PASS는 속도 향상 PASS나 장시간 학습 품질 검증이 아닙니다.
+
+결론
+전체 처리량 개선 확인 못함
+기존 native·vForce·OpenMP4 조합을 유지하고 norm SIMD 후보는 실험 자료로 보관합니다.
+이번 부하 큰 캠페인의 산식으로5에포크94.21/128.71시간이 나오지만, 실제5에포크를 실행하지 않았습니다.
+이 숫자를 이전 약31시간 대비 회귀·예상시간 수정·새 추천값으로 쓰지 않습니다. 비교 시점·코호트와 시스템 부하가 다릅니다.
+어느 SIMD 방식이 모든 조건에서 빠르다고 결론 내리지 않습니다. 이번 실험에서는 전체 처리량 개선을 재현하지 못했습니다.
+
+제한과 다음 학습
+20초를 요청해 설정마다3회 측정했습니다. 완료한 갱신 수는 달라 마지막loss로 품질을 비교할 수 없습니다.
+실제 compute 초는 완전한 update가 끝나는 시점까지이므로20초보다 길 수 있습니다.
+phase 벽시계에는 스케줄링 대기와 타이머 비용이 포함됩니다. 노름·배율 적용 구간은 순수한 합산 시간만을 뜻하지 않습니다.
+기울기 처리 외의 행렬곱·softmax·AdamW 단계도 변동했습니다. 단일 원인으로 전체 속도 변화를 단정하지 않습니다.
+모든3회에서 전체 처리량 향상이 재현되지 않았습니다. 수치 검증 PASS나 실행 성공을 속도 개선 PASS라고 부르지 않습니다.
+이번 중간값94.21시간·128.71시간은 이 캠페인의 처리량 산식만 재현한 값입니다. 이전 약31시간 대비 회귀나 실제 예상시간 갱신·추천값으로 사용하지 않습니다.
+코호트·실행 시점·시스템 부하가 달라 과거31시간 외삽과 이번 두 설정을 하나의 속도 곡선으로 합치지 않습니다.
+전체1에포크나5에포크를 실행하지 않았고 장시간 속도·발열·수렴·생성 품질을 검증하지 않았습니다.
+관측한 float32 norm·scale·clipped gradient 출력의 차이0은 모든 실수/float 입력이나 내부double 누산의 bit 동등성에 대한 증명이 아닙니다.
+OpenMP SIMD는 double 합산 순서를 바꿀 수 있습니다. 현재 검사 입력에서 같았더라도 일반적인 bit 동일성을 약속하지 않습니다.
+컴파일러의 벡터화 폭4 표시는 물리적인 M1 명령 하나가 double4개를 동시에 계산한다는 뜻이 아닙니다.
+/usr/bin/time의 프로세스 CPU 시간은 로딩·준비·warmup 등을 포함합니다. 이를 compute 초로 나누더라도 깨끗한 학습 연산 CPU 초라고 부르지 않습니다. 이 보고서는 그 값을 정규화하지 않았습니다.
+OpenMP4팀은 확인되었지만 Accelerate 내부 실제 worker 수와 Mac의 다른 작업 반응성은 측정하지 않았습니다.
+행렬곱 호출·메모리 사용 또는 softmax의 남은 순회처럼 큰 구간을 하나씩 살펴볼 수 있습니다. 모델·사전·배치 변경은 별도 실험으로 명시합니다.
+
+단위와 분모 감사
+각 trial은 target예측수=steps×128, rate=target예측수/compute초, phase초의합=compute초를 대조했습니다.
+median은3회 각각의 rate 중앙값입니다. pooled phase는 초합계/steps합계×1000이고 median rate로 역산한 phase가 아닙니다.
+기본 산식 33개와 출력 재독 산식 18개 대조 통과. 6/6 trial의 처리량·step·phase ledger 대조 통과. 캠페인 전후 source snapshot 동일.
+코퍼스나 대용량 파일 해시를 새로 읽지 않았습니다. /usr/bin/time의 setup 포함 CPU초는 compute CPU초로 정규화하지 않았습니다.
+
+근거 파일
+cpu-benchmark/results/cpu-norm-simd-mac-20261018-20s-v1.json
+SHA256 3e8dd044cb566c9ceb5a0fffa9bedd6a5364bfddaf07cffee7f313a9f32e1fca
+cpu-benchmark/experiments/norm-simd-verification.json
+SHA256 6b4b383a4f2f73f2e212452bc856de1bcc8f25442f928af4a0170264f227137f
+cpu-benchmark/experiments/norm-simd-verification.md
+SHA256 380fdab5c469cbe716115680bf18c2bc99d89fcd4031630f57c57867aeb922e9

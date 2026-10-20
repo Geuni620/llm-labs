@@ -1,0 +1,65 @@
+{
+  "created_at": "2026-10-18T12:11:09.538536+00:00",
+  "status": "complete",
+  "sources_sha256": {
+    "cpu-benchmark/experiments/fixedwork_benchmark.c": "8a0f06cdb52b1ffbef3f1ab3c22998cf2237f50e54b2a0c39a7e33f04a6190c4",
+    "cpu-benchmark/experiments/fixedwork_api.h": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b",
+    "gpu-benchmark/benchmark_mps.py": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935",
+    "gpu-benchmark/corpus_fixture.py": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6",
+    "gpu-benchmark/init_reference.c": "b009a15597ecbd84deb7bbc9df6c963c6db1805418ed7b8a26ee24eab7d12a30"
+  },
+  "c_binary_sha256": "c56725bec5629ef28fb70954ff70f6647d90823478c222a0acc08ade6e11e951",
+  "corpus": {
+    "training-corpora/wiki-k35328/train.paragraphs.npy": {
+      "sha256": "c11b005a48b8b24e3ac8849bb4ff1a3820060cb40ef3bdbf76697b633181d347",
+      "size": 42828964,
+      "mtime_ns": 1792245753119866873
+    },
+    "training-corpora/wiki-k35328/manifest.json": {
+      "sha256": "126c795f0872cd545d3f468ffb83faa4dc38edef3c7d8282ee5d3b75c0ea771e",
+      "size": 20999,
+      "mtime_ns": 1792245759050970630
+    },
+    "training-corpora/wiki-k35328/train.ids.npy": {
+      "sha256": "0353bfedbd50f8cb5dea6e1a17c6bbea281fb3947969ca280b704209cf8b6ed6",
+      "size": 272938782,
+      "mtime_ns": 1792251151118041941
+    }
+  },
+  "git_index_sha256": "b50df78101d69fcf3681efde90062f15b21480deeb8b960c599e2463b0a608db",
+  "long_training_status": "stopped",
+  "long_training_stop_exists": true,
+  "scope": "Short real-Wiki CPU/MPS FP32 fixed-work benchmarks only; no CUDA hardware, cloud rental or long training.",
+  "completed_at": "2026-10-18T12:35:12.948499+00:00",
+  "final": {
+    "sources_sha256": {
+      "cpu-benchmark/experiments/fixedwork_benchmark.c": "8a0f06cdb52b1ffbef3f1ab3c22998cf2237f50e54b2a0c39a7e33f04a6190c4",
+      "cpu-benchmark/experiments/fixedwork_api.h": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b",
+      "gpu-benchmark/benchmark_mps.py": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935",
+      "gpu-benchmark/corpus_fixture.py": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6",
+      "gpu-benchmark/init_reference.c": "b009a15597ecbd84deb7bbc9df6c963c6db1805418ed7b8a26ee24eab7d12a30"
+    },
+    "original_sources_unchanged": true,
+    "corpus_sha256_unchanged": true,
+    "c_binary_unchanged": true,
+    "git_index_unchanged": true,
+    "long_training_stopped": true,
+    "active_own_model_processes": [],
+    "numerical_gates_passed": 26,
+    "vector_scalar_comparisons_passed": 688,
+    "main_trials_passed": 18,
+    "confirmation_trials_passed": 12,
+    "reviewers": [
+      {
+        "agent": "numeric_tokens",
+        "scope": "C identity, independent CPU/MPS numerical gates, B512 warmup/reset and correctness",
+        "result": "passed"
+      },
+      {
+        "agent": "tiled_gemm",
+        "scope": "Code methodology, input/device/time arithmetic, main+confirmation reports and resource limits",
+        "result": "passed"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "published_at": "2026-10-18 05:25:56 UTC",
+  "scope": "Current vForce/OpenMP reference versus explicit norm SIMD partial reduction, 20 seconds x 3 per setting",
+  "render": {
+    "htmlRender": {
+      "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-35b619d0-888c-4c6e-8688-6f02a699ec66-html",
+      "title": "추가 SIMD 비교 — 노름 합산",
+      "height": 830,
+      "heights": [
+        [
+          320,
+          830
+        ],
+        [
+          375,
+          830
+        ],
+        [
+          430,
+          830
+        ],
+        [
+          520,
+          830
+        ],
+        [
+          640,
+          830
+        ],
+        [
+          728,
+          830
+        ],
+        [
+          860,
+          830
+        ],
+        [
+          1000,
+          830
+        ],
+        [
+          1144,
+          830
+        ]
+      ],
+      "outline": "t0,1,41,5,1;t0,10,61,4,1;t0,15,68,4,1;t0,20,61,4,1;t0,25,58,4,1;g0,33,182,61,4;t0,99,77,4,1;t0,104,71,4,1;t0,112,45,4,1;t0,122,62,4,1;m0,130,182,55,1;t0,189,74,4,1;t0,194,51,4,1;t0,199,66,4,1;t0,204,53,4,1"
+    },
+    "message": "Shown to the reader above your reply. Don't mention or describe the page; reply with only what it doesn't already say."
+  },
+  "previews": [
+    {
+      "width": 728,
+      "appearance": "dark",
+      "contentHeight": 830,
+      "labelOverflow": false,
+      "pageOverflow": false
+    },
+    {
+      "width": 320,
+      "appearance": "light",
+      "contentHeight": 830,
+      "labelOverflow": false,
+      "pageOverflow": false
+    }
+  ],
+  "numerical_model_gates_passed": 16,
+  "numerical_module_cases_passed": 276,
+  "visual_vs_independent_review_checks": 30,
+  "whole_throughput_improvement_reproduced": false,
+  "candidate_adopted": false,
+  "five_epoch_forecast_updated": false,
+  "full_epochs_executed": 0,
+  "reports": [
+    "reports/norm-simd-review.json",
+    "reports/norm-simd-review.txt"
+  ]
+}

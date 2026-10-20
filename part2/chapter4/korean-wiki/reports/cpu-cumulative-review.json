@@ -1,0 +1,1266 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_at": "2026-10-18T13:26:33+09:00",
+  "sources": [
+    {
+      "id": "cumulative",
+      "path": "cpu-benchmark/results/cpu-cumulative-mac-20261018-20s-v1.json",
+      "bytes": 811753,
+      "sha256": "f5c919391bb48928cf01c5ace1eaea2cee6b1eb9a01296b63874108caccef7dd"
+    },
+    {
+      "id": "vforce",
+      "path": "cpu-benchmark/results/cpu-vector-exp-mac-20261018-20s-v1.json",
+      "bytes": 478379,
+      "sha256": "9b1cba2bb6cf2e84a4cdf6a7feaac250a7751843cadf6ed30810ee048f3658a7"
+    },
+    {
+      "id": "vforce_numerical",
+      "path": "cpu-benchmark/experiments/vforce-exp-verification.json",
+      "bytes": 6550,
+      "sha256": "3cbbd55d5af35ffadab3f1b130f08b9fe5a1fa6fe0e8664ab56b180a216935c0"
+    },
+    {
+      "id": "fast_exp_numerical",
+      "path": "cpu-benchmark/experiments/fast-exp-verification.json",
+      "bytes": 2591,
+      "sha256": "8c33bc3d55db05e059443e542adf969e680eb14fe4bd1f0b91c70f6635da5fe2"
+    }
+  ],
+  "configuration": {
+    "label": "위키 NPLM CPU 단시간 최적화 학습용 비교",
+    "host_cpu": "Apple M1",
+    "host_memory_bytes": 17179869184,
+    "device": "CPU",
+    "gpu_used": false,
+    "model": "NPLM",
+    "parameter_count": 6883968,
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 128,
+    "seed": 42,
+    "train_target_windows_per_epoch": 124232535,
+    "train_ids": 136469327,
+    "train_paragraphs": 1529599,
+    "optimizer": {
+      "name": "AdamW",
+      "lr": 0.001,
+      "weight_decay": 0.01,
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "eps": 1e-08
+    },
+    "gradient_max_norm": 1.0,
+    "ram_owned_corpus_bytes": 328004218,
+    "warmup_steps": 2,
+    "seconds_per_trial_requested": 20,
+    "repeats_per_case": 2,
+    "thread_budget_requested": 4,
+    "openmp_probe_team_size": 4,
+    "accelerate_actual_worker_count": null,
+    "thread_environment": {
+      "VECLIB_MAXIMUM_THREADS": "4",
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "MKL_NUM_THREADS": "4",
+      "BLIS_NUM_THREADS": "4",
+      "OMP_WAIT_POLICY": "PASSIVE",
+      "KMP_BLOCKTIME": "0",
+      "OMP_DYNAMIC": "FALSE",
+      "OMP_MAX_ACTIVE_LEVELS": "1",
+      "OMP_NESTED": "FALSE",
+      "OMP_THREAD_LIMIT": "4"
+    },
+    "phase_labels": {
+      "ram_gather": "RAM에서 문맥·정답 모으기",
+      "matrix_multiply": "순전파·역전파 행렬곱",
+      "softmax": "softmax·교차 엔트로피",
+      "bias_reduce": "편향 기울기 합산",
+      "gradient_clip": "기울기 노름·클리핑",
+      "adamw": "AdamW 매개변수 갱신",
+      "other": "그 외 호출·루프 비용"
+    },
+    "phase_formula": "같은 설정의 각 phase 벽시계 초 합계 / 같은 설정의 총 완료 steps * 1000",
+    "throughput_median_formula": "두 회 각각 target_prediction_events/elapsed_seconds를 계산한 뒤 중앙값 사용",
+    "epoch5_formula": "5 * 124232535 / median_targets_per_second / 3600",
+    "epoch5_range_definition": "두 회 각각의 처리속도로 외삽한 시간의 최소·최대이며 신뢰구간이 아닙니다.",
+    "timing_includes": "RAM에서 문맥·정답 모으기, 순전파·역전파, softmax, 기울기 노름·클리핑, AdamW",
+    "timing_excludes": "파일을 RAM으로 읽기, 준비, 두 warmup와 상태 초기화, 마지막 loss 평가",
+    "cumulative_baseline_compiler": "O3, mcpu=native 없음",
+    "vforce_baseline_compiler": "O3 + mcpu=native",
+    "cross_cohort_baselines_merged": false,
+    "cpu_utilization_or_mac_responsiveness_measured": false
+  },
+  "cumulative_cases": [
+    {
+      "id": "baseline",
+      "label": "O3 기준: 추가 OpenMP 없음",
+      "name": "O3 기준: 추가 OpenMP 없음",
+      "compiler_variant": "O3",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno",
+      "runtime_args": [],
+      "reference_case": "baseline",
+      "median_targets_per_second": 1447.346085316697,
+      "min_targets_per_second": 690.9111991195286,
+      "max_targets_per_second": 2203.7809715138656,
+      "epoch5_hours": 119.21487835595657,
+      "epoch5_range_hours": [
+        78.29507093959151,
+        249.7356935592955
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 2.0444856514068728,
+        "matrix_multiply": 16.88446578411406,
+        "softmax": 41.37489624644237,
+        "bias_reduce": 1.3040022055410818,
+        "gradient_clip": 15.040774836110375,
+        "adamw": 10.548898455004307,
+        "other": 1.205675496933591
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 2.312682891611548,
+        "matrix_multiply": 19.099383322182153,
+        "softmax": 46.80248776776935,
+        "bias_reduce": 1.4750622433096363,
+        "gradient_clip": 17.013835541529794,
+        "adamw": 11.932711274079201,
+        "other": 1.363836959518313
+      },
+      "total_completed_steps": 453,
+      "total_compute_seconds": 40.046649000025354,
+      "precision_relaxed": false,
+      "user_polynomial_exp": false,
+      "exponential_implementation": "기본 expf",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 108,
+          "target_prediction_events": 13824,
+          "elapsed_seconds": 20.008359999977984,
+          "targets_per_second": 690.9111991195286,
+          "epoch5_hours": 249.7356935592955,
+          "measured_epoch_percent": 0.01112751985621158,
+          "phase_wall_seconds": {
+            "ram_gather": 0.7056059994501993,
+            "matrix_multiply": 4.576075998251326,
+            "softmax": 9.214034000295214,
+            "bias_reduce": 0.2473380008013919,
+            "gradient_clip": 2.4816259996732697,
+            "adamw": 2.46547400043346,
+            "other": 0.318206001073122
+          },
+          "peak_rss_bytes": 492290048,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 345,
+          "target_prediction_events": 44160,
+          "elapsed_seconds": 20.03828900004737,
+          "targets_per_second": 2203.7809715138656,
+          "epoch5_hours": 78.29507093959151,
+          "measured_epoch_percent": 0.035546243985120324,
+          "phase_wall_seconds": {
+            "ram_gather": 0.22054600063711405,
+            "matrix_multiply": 3.0725870019523427,
+            "softmax": 9.52879399934318,
+            "bias_reduce": 0.3433749983087182,
+            "gradient_clip": 4.33184500108473,
+            "adamw": 2.313176999683492,
+            "other": 0.22796499903779477
+          },
+          "peak_rss_bytes": 493322240,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true,
+      "throughput_gain_vs_reference_percent": 0.0,
+      "interpretation": "본 코호트의 O3 기준이며, 다음 코호트의 native 기준과 같은 설정이 아닙니다."
+    },
+    {
+      "id": "native_all_omp",
+      "label": "native + softmax·리덕션·AdamW OpenMP",
+      "name": "native + softmax·리덕션·AdamW OpenMP",
+      "compiler_variant": "native",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native",
+      "runtime_args": [
+        "--softmax-parallel",
+        "--reduction-parallel",
+        "--adam-parallel"
+      ],
+      "reference_case": "baseline",
+      "median_targets_per_second": 3909.1497398968822,
+      "min_targets_per_second": 3883.831954883914,
+      "max_targets_per_second": 3934.46752490985,
+      "epoch5_hours": 44.13880229222212,
+      "epoch5_range_hours": [
+        43.85477486027884,
+        44.426532739920596
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 0.4899140731080964,
+        "matrix_multiply": 11.669839604120586,
+        "softmax": 10.367698036420043,
+        "bias_reduce": 0.8668674282011699,
+        "gradient_clip": 4.6340409185586475,
+        "adamw": 3.9342168569770597,
+        "other": 0.781101478647087
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 1.496209641392812,
+        "matrix_multiply": 35.63997747282582,
+        "softmax": 31.663205065183575,
+        "bias_reduce": 2.6474344687742892,
+        "gradient_clip": 14.152475059491543,
+        "adamw": 12.015195145129876,
+        "other": 2.385503147202079
+      },
+      "total_completed_steps": 1222,
+      "total_compute_seconds": 40.012774999951944,
+      "precision_relaxed": false,
+      "user_polynomial_exp": false,
+      "exponential_implementation": "기본 expf",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 607,
+          "target_prediction_events": 77696,
+          "elapsed_seconds": 20.004985000006855,
+          "targets_per_second": 3883.831954883914,
+          "epoch5_hours": 44.426532739920596,
+          "measured_epoch_percent": 0.06254078289555953,
+          "phase_wall_seconds": {
+            "ram_gather": 0.3782529990421608,
+            "matrix_multiply": 7.160529996617697,
+            "softmax": 6.337020000559278,
+            "bias_reduce": 0.5262699986342341,
+            "gradient_clip": 2.7913800006499514,
+            "adamw": 2.351260000024922,
+            "other": 0.46027200447861105
+          },
+          "peak_rss_bytes": 465223680,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 615,
+          "target_prediction_events": 78720,
+          "elapsed_seconds": 20.00778999994509,
+          "targets_per_second": 3934.46752490985,
+          "epoch5_hours": 43.85477486027884,
+          "measured_epoch_percent": 0.06336504362564926,
+          "phase_wall_seconds": {
+            "ram_gather": 0.220421998295933,
+            "matrix_multiply": 7.1000139996176586,
+            "softmax": 6.332306999946013,
+            "bias_reduce": 0.5330419986275956,
+            "gradient_clip": 2.871418001828715,
+            "adamw": 2.4563529992010444,
+            "other": 0.4942340024281293
+          },
+          "peak_rss_bytes": 493322240,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true,
+      "throughput_gain_vs_reference_percent": 170.09087733439458,
+      "interpretation": "O3 기준보다 빠르지만 native 컴파일과 세 OpenMP 옵션을 함께 바꿨으므로 개별 효과를 이 코호트만으로 분해할 수 없습니다."
+    },
+    {
+      "id": "native_all_omp_fast_exp",
+      "label": "native·OpenMP + 다항식 fast-exp",
+      "name": "native·OpenMP + 다항식 fast-exp",
+      "compiler_variant": "native",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native",
+      "runtime_args": [
+        "--softmax-parallel",
+        "--reduction-parallel",
+        "--adam-parallel",
+        "--fast-exp"
+      ],
+      "reference_case": "native_all_omp",
+      "median_targets_per_second": 2763.2797835808797,
+      "min_targets_per_second": 1389.6346247397573,
+      "max_targets_per_second": 4136.924942422002,
+      "epoch5_hours": 62.44217054141441,
+      "epoch5_range_hours": [
+        41.70856128682427,
+        124.16586664448812
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 2.1712582487405294,
+        "matrix_multiply": 15.845271895943682,
+        "softmax": 14.307615470376387,
+        "bias_reduce": 1.3605449402988787,
+        "gradient_clip": 5.068004547180745,
+        "adamw": 7.025098979083209,
+        "other": 1.3079624597896506
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 4.611284618164421,
+        "matrix_multiply": 33.6519428800244,
+        "softmax": 30.38629199425199,
+        "bias_reduce": 2.8895042582617227,
+        "gradient_clip": 10.763349512550171,
+        "adamw": 14.919796335659303,
+        "other": 2.7778304010879924
+      },
+      "total_completed_steps": 879,
+      "total_compute_seconds": 41.3883799999021,
+      "precision_relaxed": false,
+      "user_polynomial_exp": true,
+      "exponential_implementation": "사용자 다항식 fast-exp",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 232,
+          "target_prediction_events": 29696,
+          "elapsed_seconds": 21.369645999977365,
+          "targets_per_second": 1389.6346247397573,
+          "epoch5_hours": 124.16586664448812,
+          "measured_epoch_percent": 0.02390356117260265,
+          "phase_wall_seconds": {
+            "ram_gather": 1.8115350002190098,
+            "matrix_multiply": 7.404186997562647,
+            "softmax": 5.156209998764098,
+            "bias_reduce": 0.6131950009148568,
+            "gradient_clip": 1.803729999344796,
+            "adamw": 3.870311001315713,
+            "other": 0.7104780018562451
+          },
+          "peak_rss_bytes": 493322240,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 647,
+          "target_prediction_events": 82816,
+          "elapsed_seconds": 20.018733999924734,
+          "targets_per_second": 4136.924942422002,
+          "epoch5_hours": 41.70856128682427,
+          "measured_epoch_percent": 0.06666208654600825,
+          "phase_wall_seconds": {
+            "ram_gather": 0.09700100042391568,
+            "matrix_multiply": 6.52380699897185,
+            "softmax": 7.4201839996967465,
+            "bias_reduce": 0.5827240016078576,
+            "gradient_clip": 2.6510459976270795,
+            "adamw": 2.3047510012984276,
+            "other": 0.4392210002988577
+          },
+          "peak_rss_bytes": 493322240,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true,
+      "throughput_gain_vs_reference_percent": -29.312511225170645,
+      "interpretation": "다항식 근사 오차는 작았으나 이번 두 회 중앙값은 native·OpenMP보다 낮습니다. 큰 편차가 있어 이 측정으로 추가 채택하지 않습니다."
+    },
+    {
+      "id": "relaxed_all_omp",
+      "label": "native·OpenMP + fast-math 허용",
+      "name": "native·OpenMP + fast-math 허용",
+      "compiler_variant": "relaxed_simd",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -ffast-math -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize",
+      "runtime_args": [
+        "--softmax-parallel",
+        "--reduction-parallel",
+        "--adam-parallel"
+      ],
+      "reference_case": "native_all_omp",
+      "median_targets_per_second": 2130.3012407686474,
+      "min_targets_per_second": 414.8570274027832,
+      "max_targets_per_second": 3845.7454541345114,
+      "epoch5_hours": 80.99567525846386,
+      "epoch5_range_hours": [
+        44.86651276269439,
+        415.91482390986835
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 3.890912912912913,
+        "matrix_multiply": 23.775681681681633,
+        "softmax": 16.394258258258265,
+        "bias_reduce": 2.4501861861861878,
+        "gradient_clip": 1.8327687687687684,
+        "adamw": 6.887289789789788,
+        "other": 4.916809309298766
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 6.468908251347306,
+        "matrix_multiply": 39.528693356668754,
+        "softmax": 27.256573173252956,
+        "bias_reduce": 4.073601746406339,
+        "gradient_clip": 3.047103154571502,
+        "adamw": 11.450589295568852,
+        "other": 8.174531022184288
+      },
+      "total_completed_steps": 666,
+      "total_compute_seconds": 40.058505999992946,
+      "precision_relaxed": true,
+      "user_polynomial_exp": false,
+      "exponential_implementation": "기본 expf",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 65,
+          "target_prediction_events": 8320,
+          "elapsed_seconds": 20.055102000049143,
+          "targets_per_second": 414.8570274027832,
+          "epoch5_hours": 415.91482390986835,
+          "measured_epoch_percent": 0.006697118431979191,
+          "phase_wall_seconds": {
+            "ram_gather": 2.2802159999999994,
+            "matrix_multiply": 6.2163459999999935,
+            "softmax": 5.456790999999997,
+            "bias_reduce": 0.8731720000000003,
+            "gradient_clip": 0.5559340000000002,
+            "adamw": 1.930422999999999,
+            "other": 2.7422200000491515
+          },
+          "peak_rss_bytes": 489848832,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 601,
+          "target_prediction_events": 76928,
+          "elapsed_seconds": 20.003403999943806,
+          "targets_per_second": 3845.7454541345114,
+          "epoch5_hours": 44.86651276269439,
+          "measured_epoch_percent": 0.06192258734799221,
+          "phase_wall_seconds": {
+            "ram_gather": 0.31113200000000046,
+            "matrix_multiply": 9.618257999999974,
+            "softmax": 5.461785000000006,
+            "bias_reduce": 0.7586520000000005,
+            "gradient_clip": 0.6646899999999996,
+            "adamw": 2.6565119999999993,
+            "other": 0.5323749999438263
+          },
+          "peak_rss_bytes": 492503040,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true,
+      "throughput_gain_vs_reference_percent": -45.504741887302536,
+      "interpretation": "전역 fast-math 허용은 이번 두 회 중앙값을 개선하지 못했습니다. 수치 의미를 완화하므로 자동 채택하지 않습니다."
+    },
+    {
+      "id": "relaxed_all_omp_tile64",
+      "label": "fast-math·OpenMP + 64칸 캐시 타일링",
+      "name": "fast-math·OpenMP + 64칸 캐시 타일링",
+      "compiler_variant": "relaxed_simd",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -ffast-math -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize",
+      "runtime_args": [
+        "--softmax-parallel",
+        "--reduction-parallel",
+        "--adam-parallel",
+        "--tiled-gemm",
+        "64"
+      ],
+      "reference_case": "relaxed_all_omp",
+      "median_targets_per_second": 521.4056908212151,
+      "min_targets_per_second": 432.16960512000884,
+      "max_targets_per_second": 610.6417765224213,
+      "epoch5_hours": 330.9230998768751,
+      "epoch5_range_hours": [
+        282.5636799411881,
+        399.2534075877133
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 2.4288433734939767,
+        "matrix_multiply": 216.7131807228916,
+        "softmax": 13.856150602409636,
+        "bias_reduce": 2.1263012048192773,
+        "gradient_clip": 2.442198795180723,
+        "adamw": 6.40478313253012,
+        "other": 1.1042228919208954
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 0.9910585033676876,
+        "matrix_multiply": 88.42704428417636,
+        "softmax": 5.653825202695984,
+        "bias_reduce": 0.8676100372522971,
+        "gradient_clip": 0.9965080125345429,
+        "adamw": 2.6133899184239238,
+        "other": 0.45056404154920965
+      },
+      "total_completed_steps": 166,
+      "total_compute_seconds": 40.68256300005888,
+      "precision_relaxed": true,
+      "user_polynomial_exp": false,
+      "exponential_implementation": "기본 expf",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 98,
+          "target_prediction_events": 12544,
+          "elapsed_seconds": 20.542322000039928,
+          "targets_per_second": 610.6417765224213,
+          "epoch5_hours": 282.5636799411881,
+          "measured_epoch_percent": 0.010097193943599396,
+          "phase_wall_seconds": {
+            "ram_gather": 0.14934700000000004,
+            "matrix_multiply": 18.300628999999994,
+            "softmax": 1.189881,
+            "bias_reduce": 0.161775,
+            "gradient_clip": 0.16940799999999998,
+            "adamw": 0.47342100000000004,
+            "other": 0.0978610000399378
+          },
+          "peak_rss_bytes": 483131392,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 68,
+          "target_prediction_events": 8704,
+          "elapsed_seconds": 20.140241000018946,
+          "targets_per_second": 432.16960512000884,
+          "epoch5_hours": 399.2534075877133,
+          "measured_epoch_percent": 0.007006216205762846,
+          "phase_wall_seconds": {
+            "ram_gather": 0.2538410000000001,
+            "matrix_multiply": 17.673759000000015,
+            "softmax": 1.1102400000000001,
+            "bias_reduce": 0.191191,
+            "gradient_clip": 0.235997,
+            "adamw": 0.5897729999999999,
+            "other": 0.08544000001893082
+          },
+          "peak_rss_bytes": 490455040,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true,
+      "throughput_gain_vs_reference_percent": -75.52432112215813,
+      "interpretation": "직접 만든 64칸 타일 행렬곱은 연결된 Accelerate BLAS보다 이번 조건에서 느렸습니다. 타일링 일반의 무효를 뜻하지 않습니다."
+    }
+  ],
+  "vforce_cohort": [
+    {
+      "id": "baseline",
+      "label": "native 기준: 추가 OpenMP 없음",
+      "name": "native 기준: 추가 OpenMP 없음",
+      "compiler_variant": "native",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native",
+      "runtime_args": [],
+      "reference_case": "baseline",
+      "median_targets_per_second": 2131.9647400124263,
+      "min_targets_per_second": 1609.7973255381141,
+      "max_targets_per_second": 2654.1321544867387,
+      "epoch5_hours": 80.93247710043943,
+      "epoch5_range_hours": [
+        65.01002115072417,
+        107.18441679751366
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 0.5709310337996062,
+        "matrix_multiply": 9.90405846949153,
+        "softmax": 29.52426387174432,
+        "bias_reduce": 1.032025486264361,
+        "gradient_clip": 12.284187405583808,
+        "adamw": 6.090038981724313,
+        "other": 0.641541228269407
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 0.9508061883101241,
+        "matrix_multiply": 16.49383117170524,
+        "softmax": 49.16855299971064,
+        "bias_reduce": 1.7186948348271698,
+        "gradient_clip": 20.45760470552727,
+        "adamw": 10.142112458552708,
+        "other": 1.0683976413668386
+      },
+      "total_completed_steps": 667,
+      "total_compute_seconds": 40.05138000007719,
+      "precision_relaxed": false,
+      "user_polynomial_exp": false,
+      "exponential_implementation": "standard scalar expf loop",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 252,
+          "target_prediction_events": 32256,
+          "elapsed_seconds": 20.03730500000529,
+          "targets_per_second": 1609.7973255381141,
+          "epoch5_hours": 107.18441679751366,
+          "measured_epoch_percent": 0.02596421299782702,
+          "phase_wall_seconds": {
+            "ram_gather": 0.31358400045428425,
+            "matrix_multiply": 3.6364239983959123,
+            "softmax": 9.828818000620231,
+            "bias_reduce": 0.32842699985485524,
+            "gradient_clip": 3.689442999660969,
+            "adamw": 2.0419250002596527,
+            "other": 0.19868400075938553
+          },
+          "peak_rss_bytes": 492355584,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 415,
+          "target_prediction_events": 53120,
+          "elapsed_seconds": 20.014075000071898,
+          "targets_per_second": 2654.1321544867387,
+          "epoch5_hours": 65.01002115072417,
+          "measured_epoch_percent": 0.04275852537340561,
+          "phase_wall_seconds": {
+            "ram_gather": 0.06722699909005314,
+            "matrix_multiply": 2.9695830007549375,
+            "softmax": 9.86386600183323,
+            "bias_reduce": 0.3599339994834736,
+            "gradient_clip": 4.504109999863431,
+            "adamw": 2.020131000550464,
+            "other": 0.22922399849630892
+          },
+          "peak_rss_bytes": 492732416,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true
+    },
+    {
+      "id": "native_all_omp",
+      "label": "native + softmax·리덕션·AdamW OpenMP",
+      "name": "native + softmax·리덕션·AdamW OpenMP",
+      "compiler_variant": "native",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native",
+      "runtime_args": [
+        "--softmax-parallel",
+        "--reduction-parallel",
+        "--adam-parallel"
+      ],
+      "reference_case": "baseline",
+      "median_targets_per_second": 4941.324362287256,
+      "min_targets_per_second": 4913.602342217069,
+      "max_targets_per_second": 4969.046382357444,
+      "epoch5_hours": 34.91881423872602,
+      "epoch5_range_hours": [
+        34.724004209866145,
+        35.11582246237407
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 0.13565048575401306,
+        "matrix_multiply": 9.171615534501218,
+        "softmax": 8.242677023534853,
+        "bias_reduce": 0.6021430428836098,
+        "gradient_clip": 3.765750162508399,
+        "adamw": 3.333756634453161,
+        "other": 0.6523624561353312
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 0.5236670769955645,
+        "matrix_multiply": 35.406235897959384,
+        "softmax": 31.82014837278458,
+        "bias_reduce": 2.324521622221661,
+        "gradient_clip": 14.53735583278592,
+        "adamw": 12.8696818332404,
+        "other": 2.518389364012503
+      },
+      "total_completed_steps": 1545,
+      "total_compute_seconds": 40.02161099994555,
+      "precision_relaxed": false,
+      "user_polynomial_exp": false,
+      "exponential_implementation": "standard scalar expf loop",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 777,
+          "target_prediction_events": 99456,
+          "elapsed_seconds": 20.015108000021428,
+          "targets_per_second": 4969.046382357444,
+          "epoch5_hours": 34.724004209866145,
+          "measured_epoch_percent": 0.08005632340996664,
+          "phase_wall_seconds": {
+            "ram_gather": 0.13234400132205337,
+            "matrix_multiply": 7.053847995819524,
+            "softmax": 6.379026002367027,
+            "bias_reduce": 0.4661090049194172,
+            "gradient_clip": 2.9055030004819855,
+            "adamw": 2.5756000014953315,
+            "other": 0.5026779936160892
+          },
+          "peak_rss_bytes": 492699648,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 768,
+          "target_prediction_events": 98304,
+          "elapsed_seconds": 20.006502999924123,
+          "targets_per_second": 4913.602342217069,
+          "epoch5_hours": 35.11582246237407,
+          "measured_epoch_percent": 0.07912903008861567,
+          "phase_wall_seconds": {
+            "ram_gather": 0.07723599916789681,
+            "matrix_multiply": 7.116298004984856,
+            "softmax": 6.355909998994321,
+            "bias_reduce": 0.46420199633575976,
+            "gradient_clip": 2.912581000593491,
+            "adamw": 2.575053998734802,
+            "other": 0.5052220011129975
+          },
+          "peak_rss_bytes": 492765184,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true
+    },
+    {
+      "id": "vforce_all_omp",
+      "label": "native·OpenMP + CPU 벡터 exp(vvexpf)",
+      "name": "native·OpenMP + CPU 벡터 exp(vvexpf)",
+      "compiler_variant": "vforce",
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1",
+      "runtime_args": [
+        "--softmax-parallel",
+        "--reduction-parallel",
+        "--adam-parallel"
+      ],
+      "reference_case": "native_all_omp",
+      "median_targets_per_second": 5488.655833963443,
+      "min_targets_per_second": 5321.0686006330525,
+      "max_targets_per_second": 5656.243067293833,
+      "epoch5_hours": 31.43669282965452,
+      "epoch5_range_hours": [
+        30.505263908779003,
+        32.426792520485854
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 0.1417989499317721,
+        "matrix_multiply": 8.499147435245897,
+        "softmax": 6.644329836587737,
+        "bias_reduce": 0.5895268074470184,
+        "gradient_clip": 3.3689702819356593,
+        "adamw": 3.4230099063576147,
+        "other": 0.6542092067485845
+      },
+      "phase_wall_share_percent": {
+        "ram_gather": 0.6080313708446579,
+        "matrix_multiply": 36.444192771173064,
+        "softmax": 28.49076795581609,
+        "bias_reduce": 2.5278804466052613,
+        "gradient_clip": 14.446084543262682,
+        "adamw": 14.677805489948268,
+        "other": 2.805237422349978
+      },
+      "total_completed_steps": 1716,
+      "total_compute_seconds": 40.01882300002035,
+      "precision_relaxed": false,
+      "user_polynomial_exp": false,
+      "exponential_implementation": "Apple Accelerate vForce vvexpf CPU vector API",
+      "trials": [
+        {
+          "repeat": 1,
+          "completed_steps": 832,
+          "target_prediction_events": 106496,
+          "elapsed_seconds": 20.01402500004042,
+          "targets_per_second": 5321.0686006330525,
+          "epoch5_hours": 32.426792520485854,
+          "measured_epoch_percent": 0.08572311592933365,
+          "phase_wall_seconds": {
+            "ram_gather": 0.11360699962824583,
+            "matrix_multiply": 7.288942001061514,
+            "softmax": 5.756297998828813,
+            "bias_reduce": 0.5205070013180375,
+            "gradient_clip": 2.896596000995487,
+            "adamw": 2.886634001159109,
+            "other": 0.5514409970492125
+          },
+          "peak_rss_bytes": 492388352,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        },
+        {
+          "repeat": 2,
+          "completed_steps": 884,
+          "target_prediction_events": 113152,
+          "elapsed_seconds": 20.004797999979928,
+          "targets_per_second": 5656.243067293833,
+          "epoch5_hours": 30.505263908779003,
+          "measured_epoch_percent": 0.091080810674917,
+          "phase_wall_seconds": {
+            "ram_gather": 0.12971999845467508,
+            "matrix_multiply": 7.295594997820444,
+            "softmax": 5.645372000755742,
+            "bias_reduce": 0.491121000261046,
+            "gradient_clip": 2.8845570028061047,
+            "adamw": 2.9872509981505573,
+            "other": 0.5711820017313585
+          },
+          "peak_rss_bytes": 492699648,
+          "initial_parameter_checksum": "b5b7b03ca89a72af",
+          "input_checksum": "1a55aed564d5b308",
+          "passed": true
+        }
+      ],
+      "measured_epochs_completed": 0,
+      "epoch5_is_extrapolation": true
+    }
+  ],
+  "comparison": {
+    "cohort": "vforce",
+    "reference_id": "native_all_omp",
+    "reference_label": "native + softmax·리덕션·AdamW OpenMP",
+    "candidate_id": "vforce_all_omp",
+    "candidate_label": "native·OpenMP + CPU 벡터 exp(vvexpf)",
+    "throughput_gain_percent": 11.076614922377548,
+    "epoch5_time_reduction_percent": 9.972049409426177,
+    "softmax_time_reduction_percent": 19.391117502037815,
+    "phase_ms_per_update_reference": 8.242677023534853,
+    "phase_ms_per_update_candidate": 6.644329836587737,
+    "paired_throughput_gain_percent": [
+      7.084301316354402,
+      15.11397694306853
+    ],
+    "interpretation": "동일한 native 컴파일·모델·배치·4스레드 예산에서 softmax의 exp만 CPU vvexpf로 바꾼 비교입니다.",
+    "formula_throughput_gain": "100*(후보의 중앙값 targets/s / 기준의 중앙값 targets/s - 1)",
+    "formula_epoch5_time_reduction": "100*(1 - 후보의 5에포크 외삽 시간 / 기준의 5에포크 외삽 시간)",
+    "formula_softmax_time_reduction": "100*(1 - (후보 softmax 초 합계/후보 총 steps) / (기준 softmax 초 합계/기준 총 steps))"
+  },
+  "numerical_validation": {
+    "scope_label": "이미 완료된 수치 검증 보고서를 읽어 확인; 새 모델·시험 실행 없음",
+    "model_one_step_gates": {
+      "scope": "작은 tiny·irregular 합성 입력의 순전파 loss·전체 기울기·클리핑·AdamW 갱신을 독립 Torch와 비교",
+      "cohorts": {
+        "cumulative": [
+          {
+            "id": "baseline",
+            "label": "O3 기준: 추가 OpenMP 없음",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          },
+          {
+            "id": "native_all_omp",
+            "label": "native + softmax·리덕션·AdamW OpenMP",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          },
+          {
+            "id": "native_all_omp_fast_exp",
+            "label": "native·OpenMP + 다항식 fast-exp",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          },
+          {
+            "id": "relaxed_all_omp",
+            "label": "native·OpenMP + fast-math 허용",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          },
+          {
+            "id": "relaxed_all_omp_tile64",
+            "label": "fast-math·OpenMP + 64칸 캐시 타일링",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          }
+        ],
+        "vforce": [
+          {
+            "id": "baseline",
+            "label": "native 기준: 추가 OpenMP 없음",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          },
+          {
+            "id": "native_all_omp",
+            "label": "native + softmax·리덕션·AdamW OpenMP",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          },
+          {
+            "id": "vforce_all_omp",
+            "label": "native·OpenMP + CPU 벡터 exp(vvexpf)",
+            "passed": true,
+            "passed_gates": 8,
+            "comparisons": 184,
+            "failed_comparisons": 0,
+            "maximum_absolute_error": 9.58460693034624e-07,
+            "fixtures": [
+              "irregular",
+              "tiny"
+            ],
+            "threads": [
+              1,
+              4
+            ],
+            "clip_norms": [
+              0.05,
+              1.0
+            ],
+            "tolerances": {
+              "atol": 2e-06,
+              "rtol": 0.0002,
+              "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+              "default_baseline_policy": true,
+              "unused_embedding_decay_rtol": 4.76837158203125e-07,
+              "unused_embedding_decay_atol": 0
+            }
+          }
+        ]
+      },
+      "long_training_quality_validated": false
+    },
+    "vforce_standalone_softmax": {
+      "label": "CPU vvexpf의 독립 softmax·dL/dlogits 검사",
+      "passed": true,
+      "cases": 1456,
+      "vocab_sizes": [
+        1,
+        2,
+        3,
+        7,
+        15,
+        16,
+        17,
+        31,
+        32,
+        33,
+        63,
+        64,
+        65,
+        127,
+        128,
+        129,
+        255,
+        256,
+        257,
+        1023,
+        1024,
+        1025,
+        16384,
+        32768,
+        35328,
+        65536
+      ],
+      "batches": [
+        1,
+        3
+      ],
+      "threads": [
+        1,
+        4
+      ],
+      "patterns": [
+        "uniform_zero",
+        "near_zero",
+        "moderate_random",
+        "wide_minus80_to0",
+        "wide_plusminus1000",
+        "positive_10000_offset",
+        "near_equal_maxima",
+        "one_dominant_class",
+        "mixed_exp_underflow_tail",
+        "log2_boundaries",
+        "finite_plusminus_1e30",
+        "row_translation_with_bias",
+        "subnormal_inputs",
+        "normal_subnormal_exp_boundaries"
+      ],
+      "gradient_elements_compared": 17313968,
+      "loss_comparisons": 1456,
+      "gradient_outside_tolerance": 0,
+      "loss_outside_tolerance": 0,
+      "max_loss_absolute_error": 2.384185791015625e-07,
+      "max_gradient_absolute_error": 5.960464477539063e-08,
+      "acceptance": {
+        "rule": "abs(actual-reference)<=atol+rtol*abs(reference)",
+        "declared_before_execution": true,
+        "loss": {
+          "atol": 1e-05,
+          "rtol": 2e-06
+        },
+        "gradient": {
+          "atol": 2e-07,
+          "rtol": 2e-06
+        }
+      },
+      "global_fast_math": false,
+      "scope_exclusion": "이 단위 검사는 전체 모델의 매개변수 갱신이나 수렴·최종 품질 검증이 아닙니다."
+    },
+    "custom_fast_exp_standalone": {
+      "label": "사용자 다항식 fast-exp의 함수·softmax 수치 검사",
+      "passed": true,
+      "total_in_domain_samples": 2001157,
+      "fast_domain": [
+        -80,
+        0
+      ],
+      "max_relative_error_vs_double_exp": 2.274072025778457e-07,
+      "max_ulp_difference_vs_expf": 3,
+      "fallback_samples": 16,
+      "fallback_failures": 0,
+      "max_softmax_probability_error": 5.960464477539063e-08,
+      "scope_exclusion": "밀집 샘플과 경계값 검사이며 모든 float32 입력에 대한 증명이나 학습 품질 검증이 아닙니다."
+    },
+    "source_snapshots_unchanged_during_campaigns": true
+  },
+  "learning_notes": {
+    "simd": "CPU 명령 하나로 여러 원소를 계산합니다. native 타깃 지정이나 CPU 벡터 수학 API가 활용할 수 있으며 GPU 사용을 뜻하지 않습니다.",
+    "openmp": "서로 독립적인 행·원소 작업을 CPU 스레드에 분배합니다. 이번에는 softmax, 합산·클리핑, AdamW 루프를 병렬화했습니다.",
+    "reduction": "여러 값을 합계·최댓값 같은 하나의 값으로 모으는 연산입니다. 부분 합을 계산한 뒤 합칠 수 있지만 부동소수점 덧셈 순서가 달라질 수 있습니다.",
+    "adamw": "오차에서 얻은 기울기의 이동평균·제곱 이동평균으로 가중치를 갱신하고 weight decay를 별도로 적용하는 최적화 알고리즘입니다. 기존부터 AdamW였고 이번에는 계산 루프를 병렬화했습니다.",
+    "cache_tiling": "큰 행렬곱을 작은 블록으로 나누어 캐시에서 데이터를 재사용합니다. 이번 직접 구현은 이미 최적화된 Accelerate BLAS보다 느렸습니다.",
+    "two_exp_methods": "다항식 fast-exp와 Apple CPU vvexpf는 별도 실험입니다. 전자의 오차가 작다고 후자와 실행 속도를 같다고 볼 수 없습니다."
+  },
+  "next_bottlenecks": [
+    {
+      "phase": "matrix_multiply",
+      "label": "순전파·역전파 행렬곱",
+      "phase_ms_per_update": 8.499147435245897,
+      "wall_share_percent": 36.444192771173064
+    },
+    {
+      "phase": "softmax",
+      "label": "softmax·교차 엔트로피",
+      "phase_ms_per_update": 6.644329836587737,
+      "wall_share_percent": 28.49076795581609
+    },
+    {
+      "phase": "gradient_clip",
+      "label": "기울기 노름·클리핑",
+      "phase_ms_per_update": 3.3689702819356593,
+      "wall_share_percent": 14.446084543262682
+    },
+    {
+      "phase": "adamw",
+      "label": "AdamW 매개변수 갱신",
+      "phase_ms_per_update": 3.4230099063576147,
+      "wall_share_percent": 14.677805489948268
+    }
+  ],
+  "next_candidates": [
+    "현재 행렬곱이 가장 큰 구간이므로 호출 형태·행렬 배치·메모리 재사용을 한 번에 하나씩 살펴봅니다. 기존 Accelerate를 비교 기준으로 유지합니다.",
+    "softmax도 큰 구간입니다. 합산·정규화 루프나 임시 메모리 이동을 한 가지씩 바꾸고 수치 검증 후 비교할 수 있습니다.",
+    "기울기 노름·클리핑의 전체 배열 순회를 줄이거나 병렬 합산 구조를 살펴볼 수 있습니다.",
+    "사전·모델·배치 크기 변경은 연산 구현 최적화와 다른 실험입니다. 현재 보고서에서는 값을 바꾸거나 몰래 채택하지 않습니다."
+  ],
+  "limitations": [
+    "모든 처리속도는 설정마다 약20초를 두 번 측정한 결과입니다. 전체1에포크나5에포크 학습을 실행하지 않았습니다.",
+    "5에포크 시간은 단시간 처리속도를 목표 예측124232535회/에포크에 적용한 외삽입니다. 평가·체크포인트·장시간 발열 및 대기 변화를 반영하지 못합니다.",
+    "phase는 호출자 벽시계 시간으로 스케줄링 대기·타이머 비용을 포함합니다. 순수 연산 시간이나 CPU 사용률이 아닙니다.",
+    "두 코호트는 기준 컴파일 옵션과 실행 시점·시스템 부하가 다르므로 합쳐서 하나의 단계별 속도 곡선으로 만들지 않습니다.",
+    "2회 사이 편차가 큰 설정이 있습니다. 범위는 관측된 두 처리속도의 시간 외삽 최소·최대이며 통계적 신뢰구간이 아닙니다.",
+    "20초 동안 완료한 update 수가 다르므로 마지막 학습 loss를 모델 품질 순위로 비교하지 않습니다.",
+    "수치 허용오차 통과는 장시간 수렴·생성 품질·완전한 bit 일치를 증명하지 않습니다.",
+    "OpenMP4팀은 확인되었지만 Accelerate 내부 실제 작업 스레드 수와 Mac의 다른 작업 반응성은 측정하지 않았습니다.",
+    "별도 과거 O0 약316시간과 최신 약31시간을 같은 코호트의 확정10배 향상으로 주장하지 않습니다.",
+    "강의3M 모델의 정확한 구조·CPU·배치 설정은 확인되지 않았습니다. 7시간은 참고치이며 목표에 억지로 맞추지 않습니다."
+  ],
+  "user_intent": {
+    "goal": "GPU 없이 CPU 최적화 방법을 하나씩 적용하면서 원리와 측정 결과를 함께 학습합니다.",
+    "seven_hour_result": "목표 시간이 아니라 비교 배경의 참고치입니다.",
+    "keep_fixed": "현재 사전35328종·NPLM6883968매개변수·배치128·동일 데이터와 초기화를 유지합니다.",
+    "not_claimed": "학습 품질 최적값이나 장시간 지속 속도가 입증되었다고 말하지 않습니다.",
+    "next_step": "실제로 오래 학습하기 전에 가장 큰 병목을 기준으로 다음 최적화 한 가지를 선택합니다."
+  },
+  "arithmetic_audit": {
+    "passed": true,
+    "checks_completed": 72,
+    "new_benchmark_or_model_run": false,
+    "formulas_recomputed_from_trials": true,
+    "cohort_baselines_kept_separate": true
+  }
+}

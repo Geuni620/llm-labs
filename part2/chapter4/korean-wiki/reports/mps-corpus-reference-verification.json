@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "reference_trial_count": 16,
+  "steps": 285,
+  "events": 36480,
+  "parameter_count": 6883968,
+  "parameter_layout": [
+    {
+      "name": "embedding",
+      "shape": [
+        35328,
+        64
+      ],
+      "offset": 0,
+      "length": 2260992
+    },
+    {
+      "name": "hidden_weight",
+      "shape": [
+        128,
+        512
+      ],
+      "offset": 2260992,
+      "length": 65536
+    },
+    {
+      "name": "hidden_bias",
+      "shape": [
+        128
+      ],
+      "offset": 2326528,
+      "length": 128
+    },
+    {
+      "name": "output_weight",
+      "shape": [
+        35328,
+        128
+      ],
+      "offset": 2326656,
+      "length": 4521984
+    },
+    {
+      "name": "output_bias",
+      "shape": [
+        35328
+      ],
+      "offset": 6848640,
+      "length": 35328
+    }
+  ],
+  "initial_parameter_checksum": "b5b7b03ca89a72af",
+  "input_checksum": "1a55aed564d5b308",
+  "final_input_checksum": "28e44a0ea66df230",
+  "sampler_initial": {
+    "position": 0,
+    "multiplier": 19277647,
+    "shift": 17673442,
+    "consumed": 0,
+    "random": 141905977
+  },
+  "sampler_final": {
+    "position": 36480,
+    "multiplier": 19277647,
+    "shift": 17673442,
+    "consumed": 36480,
+    "random": 141905977
+  },
+  "first_windows": [
+    {
+      "window_index": 17673442,
+      "paragraph_index": 218608,
+      "contexts": [
+        20,
+        85,
+        4,
+        200,
+        7,
+        4,
+        1067,
+        7
+      ],
+      "target": 4
+    },
+    {
+      "window_index": 36951089,
+      "paragraph_index": 458298,
+      "contexts": [
+        1835,
+        37,
+        28,
+        4,
+        3096,
+        6,
+        12,
+        4
+      ],
+      "target": 383
+    },
+    {
+      "window_index": 56228736,
+      "paragraph_index": 692331,
+      "contexts": [
+        14818,
+        12,
+        4,
+        2962,
+        11,
+        4,
+        5384,
+        31
+      ],
+      "target": 4
+    },
+    {
+      "window_index": 75506383,
+      "paragraph_index": 925563,
+      "contexts": [
+        833,
+        11,
+        10,
+        4,
+        15045,
+        231,
+        4,
+        5059
+      ],
+      "target": 26
+    }
+  ],
+  "corpus": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328",
+    "split": "train",
+    "stored_ids": 136469327,
+    "paragraphs": 1529599,
+    "target_windows": 124232535,
+    "owned_ram_bytes": 328004218,
+    "context_size": 8,
+    "vocab_size": 35328,
+    "manifest_sha256": "126c795f0872cd545d3f468ffb83faa4dc38edef3c7d8282ee5d3b75c0ea771e",
+    "sampling_policy": "C-compatible affine permutation with coprime multiplier and exact uint32 xorshift state"
+  },
+  "helper_library": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.dylib",
+  "scope": "Initialization and integer gathering only; no CPU/MPS model, training, or timing."
+}

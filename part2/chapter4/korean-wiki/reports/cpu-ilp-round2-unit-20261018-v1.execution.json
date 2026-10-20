@@ -1,0 +1,9 @@
+{
+  "start": "2026-10-18T23:21:40.075277+09:00",
+  "end": "2026-10-18T23:21:47.526676+09:00",
+  "command": [
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp"
+  ],
+  "exit_code": 0,
+  "binary_sha256": "2ca4f690d29120675db012bea7fc6af2495a91bc251a1f81bbc39cf65d40c36a"
+}

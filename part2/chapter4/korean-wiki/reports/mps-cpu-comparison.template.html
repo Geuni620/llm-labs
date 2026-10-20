@@ -1,0 +1,128 @@
+<section id="mps-cpu-timing-20261018">
+  <style>
+    #mps-cpu-timing-20261018 { --viz-accent:var(--foreground); }
+    #mps-cpu-timing-20261018 h2, #mps-cpu-timing-20261018 h3 { margin-bottom:8px; }
+    #mps-cpu-timing-20261018 figure { margin:12px 0; }
+    #mps-cpu-timing-20261018 .timing-plot { display:block; width:100%; height:320px; }
+    #mps-cpu-timing-20261018 .timing-plot text { fill:var(--foreground); font-size:12px; font-weight:400; }
+    #mps-cpu-timing-20261018 .timing-plot .domain { stroke:var(--border); }
+    #mps-cpu-timing-20261018 .timing-plot .tick line { stroke:var(--border); }
+    #mps-cpu-timing-20261018 figcaption { margin-top:6px; }
+    #mps-cpu-timing-20261018 hr { margin:20px 0; }
+    #mps-cpu-timing-20261018 .table { table-layout:fixed; }
+    #mps-cpu-timing-20261018 .table th:first-child { width:40%; }
+    #mps-cpu-timing-20261018 .table th:not(:first-child) { width:30%; }
+  </style>
+  <h2>CPU와 M1 GPU · 5에폭 시간 환산</h2>
+  <div class="text-small">V 35,328 · C8 / D64 / H128 · FP32 · AdamW · CPU 4스레드</div>
+  <figure>
+    <svg class="timing-plot" role="img" aria-label="C CPU와 M1 GPU의 전체 5에폭 환산 시간. 점은 3회 중앙값, 선은 3회 관측 범위입니다."></svg>
+    <figcaption class="text-small">점: 중앙값 · 선: 3회 범위 · 회당 65,536개 예측</figcaption>
+    <figcaption class="text-small">MPS 옵션: 입력 일괄 준비 + 결과 읽기 지연 + AdamW foreach</figcaption>
+  </figure>
+  <table class="table table-sm">
+    <thead><tr><th scope="col">확인 조건</th><th scope="col">실제 측정<br>(초, 3회 범위)</th><th scope="col">중앙 처리량<br>(예측/초)</th></tr></thead>
+    <tbody data-confirmation-rows></tbody>
+  </table>
+  <div class="text-small">B128: 512회 갱신 · B512*: 128회 갱신 · B512는 별도 학습 조건</div>
+  <hr>
+  <h3>MPS 옵션 비교 · 초기 3회 측정</h3>
+  <div class="text-small">동일 B128 · 64회 갱신 · 회당 8,192개 예측</div>
+  <table class="table table-sm">
+    <thead><tr><th scope="col">실행 방식</th><th scope="col">실제 측정<br>(초, 3회 범위)</th><th scope="col">5에폭 환산<br>(시간, 중앙값)</th></tr></thead>
+    <tbody data-main-rows></tbody>
+  </table>
+  <div class="text-small">전체 5에폭: 621,162,675개 예측 · 학습 전체 실행 시간은 외삽</div>
+  <hr>
+  <div class="text-small" data-numerical-summary></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+  (() => {
+    const root = document.getElementById('mps-cpu-timing-20261018');
+    const data = __MPS_DATA__;
+    const number = new Intl.NumberFormat('ko-KR', {maximumFractionDigits:0});
+    const fixed = n => n.toFixed(2);
+    function populate(selector, rows, confirmation) {
+      const target = root.querySelector(selector);
+      for (const row of rows) {
+        const tr = document.createElement('tr');
+        const name = document.createElement('th');
+        name.scope = 'row'; name.textContent = row.label;
+        const actual = document.createElement('td');
+        actual.className = 'tabular-nums';
+        actual.textContent = fixed(Math.min(...row.seconds)) + '–' + fixed(Math.max(...row.seconds));
+        const value = document.createElement('td');
+        value.className = 'tabular-nums';
+        value.textContent = confirmation ? number.format(row.rate) : row.hours.toFixed(1);
+        tr.append(name, actual, value); target.append(tr);
+      }
+    }
+    populate('[data-confirmation-rows]', data.confirmation, true);
+    populate('[data-main-rows]', data.main, false);
+    root.querySelector('[data-numerical-summary]').textContent =
+      '수치 검증: ' + data.gates + '개 통과 · ' + number.format(data.comparisons) + '개 비교 · 장시간 학습 품질 미검증';
+    const svg = d3.select(root.querySelector('.timing-plot'));
+    const labels = new Map(data.confirmation.map(row => [row.id, row.axisLabel]));
+    function draw() {
+      const width = Math.floor(root.getBoundingClientRect().width);
+      if (width < 1) return;
+      const height = 320, left = 102, right = width - 12, top = 22, bottom = 258;
+      svg.attr('viewBox', '0 0 ' + width + ' ' + height);
+      svg.selectAll('*').remove();
+      svg.append('title').text('전체 5에폭 시간 환산 · C CPU와 M1 GPU');
+      svg.append('desc').text(data.confirmation.map(row => row.label + ': ' + row.hours.toFixed(1) + '시간').join(', '));
+      const values = [0, ...data.confirmation.flatMap(row => row.hoursRange)];
+      const extent = d3.extent(values);
+      const x = d3.scaleLinear().domain([extent[0], extent[1] + (extent[1]-extent[0])*.24])
+        .nice().range([left + 6, right - 6]);
+      const y = d3.scalePoint().domain(data.confirmation.map(row => row.id))
+        .range([top + 32, bottom - 28]);
+      svg.append('rect').attr('data-chart-frame','').attr('x',left).attr('y',top)
+        .attr('width',right-left).attr('height',bottom-top)
+        .attr('fill','none').attr('stroke','var(--border)');
+      const ticks = x.ticks(width <= 400 ? 3 : 5).filter(v => v >= extent[0]);
+      svg.append('g').attr('transform','translate(0,'+bottom+')')
+        .call(d3.axisBottom(x).tickValues(ticks).tickFormat(d3.format('~g')).tickSize(-(bottom-top)))
+        .call(g => g.selectAll('.tick text').attr('dy','1.2em'));
+      svg.append('g').attr('transform','translate('+left+',0)')
+        .call(d3.axisLeft(y).tickFormat(id => labels.get(id)).tickSize(0).tickPadding(9))
+        .call(g => g.select('.domain').remove());
+      for (const row of data.confirmation) {
+        const yy = y(row.id);
+        svg.append('line').attr('x1',x(row.hoursRange[0])).attr('x2',x(row.hoursRange[1]))
+          .attr('y1',yy).attr('y2',yy).attr('stroke','var(--muted-foreground)').attr('stroke-width',1.5);
+        svg.append('circle').attr('cx',x(row.hours)).attr('cy',yy).attr('r',5)
+          .attr('fill','var(--viz-series-1)');
+        svg.append('text').attr('class','value-label').attr('x',x(row.hours)).attr('y',yy-12)
+          .attr('text-anchor','middle').text(row.hours.toFixed(1)+'시간');
+      }
+      svg.append('text').attr('class','axis-title').attr('data-axis','x')
+        .attr('x',(left+right)/2).attr('y',height-10).attr('text-anchor','middle').text('전체 5에폭 환산 (시간)');
+      svg.append('text').attr('class','axis-title').attr('data-axis','y')
+        .attr('transform','translate(13,'+((top+bottom)/2)+') rotate(-90)')
+        .attr('text-anchor','middle').text('실행 조건');
+      svg.selectAll('.value-label').each(function() {
+        const box = this.getBBox(), label = d3.select(this);
+        if (box.x < left+4) label.attr('text-anchor','start').attr('x',left+4);
+        else if (box.x+box.width > right-4) label.attr('text-anchor','end').attr('x',right-4);
+      });
+      const textBounds = [...svg.node().querySelectorAll('text')].map(el => el.getBoundingClientRect());
+      let collisions = 0;
+      for (let i=0;i<textBounds.length;i++) for (let j=i+1;j<textBounds.length;j++) {
+        const a=textBounds[i],b=textBounds[j];
+        if (a.left < b.right+4 && a.right+4 > b.left && a.top < b.bottom+4 && a.bottom+4 > b.top) collisions++;
+      }
+      console.log('MPS comparison QA', JSON.stringify({
+        width, horizontalOverflow:root.scrollWidth>width+1,
+        mainRows:data.main.length, confirmationRows:data.confirmation.length,
+        finite:data.confirmation.every(row => [row.hours,row.rate,...row.seconds,...row.hoursRange].every(Number.isFinite)),
+        textCollisions:collisions,
+        axes:svg.node().querySelectorAll('text.axis-title[data-axis]').length,
+        values:svg.node().querySelectorAll('.value-label').length
+      }));
+    }
+    new ResizeObserver(draw).observe(root);
+    draw();
+  })();
+  </script>
+</section>

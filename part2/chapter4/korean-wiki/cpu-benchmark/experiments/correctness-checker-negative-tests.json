@@ -1,0 +1,144 @@
+{
+  "kind": "EXPERIMENTAL_CHECKER_NEGATIVE_TESTS",
+  "passed": true,
+  "checks": 34,
+  "results": [
+    {
+      "case": "nonfinite_or_bool_initial_params_nan",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_initial_params_inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_initial_params_-inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_initial_params_True",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_grads_nan",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_grads_inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_grads_-inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_grads_True",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_optimizer_grads_nan",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_optimizer_grads_inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_optimizer_grads_-inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_optimizer_grads_True",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_updated_params_nan",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_updated_params_inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_updated_params_-inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_updated_params_True",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_loss_nan",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_loss_inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_loss_-inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_loss_True",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_gradient_norm_nan",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_gradient_norm_inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_gradient_norm_-inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_gradient_norm_True",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_clipping_scale_nan",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_clipping_scale_inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_clipping_scale_-inf",
+      "passed": true
+    },
+    {
+      "case": "nonfinite_or_bool_clipping_scale_True",
+      "passed": true
+    },
+    {
+      "case": "invalid_json_{\"value\":NaN}",
+      "passed": true
+    },
+    {
+      "case": "invalid_json_{\"value\":Infinity}",
+      "passed": true
+    },
+    {
+      "case": "invalid_json_{\"value\":1,\"value\":2}",
+      "passed": true
+    },
+    {
+      "case": "C_flag_not_authoritative_when_all_arrays_are_finite",
+      "passed": true
+    },
+    {
+      "case": "corrupted_grads_cannot_pass",
+      "passed": true
+    },
+    {
+      "case": "corrupted_updated_params_cannot_pass",
+      "passed": true
+    }
+  ],
+  "scope": "Checker failure detection only; no throughput measurements."
+}

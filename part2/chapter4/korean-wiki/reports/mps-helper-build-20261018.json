@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-10-18T12:08:45.444213+00:00",
+  "command": [
+    "clang",
+    "-O3",
+    "-std=c11",
+    "-ffp-contract=off",
+    "-dynamiclib",
+    "gpu-benchmark/init_reference.c",
+    "-o",
+    "gpu-benchmark/init_reference.dylib"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 0.5929499590420164,
+  "sources_sha256": {
+    "corpus_fixture.py": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6",
+    "init_reference.c": "b009a15597ecbd84deb7bbc9df6c963c6db1805418ed7b8a26ee24eab7d12a30"
+  },
+  "stdout": "",
+  "stderr": "",
+  "scope": "Build of exact initializer/hash helper only; no CPU/MPS model or timing.",
+  "library_sha256": "6724c42a0815ec35c7c001e8983bbeed3b2c8fede3a9be54576550155a406dd5"
+}

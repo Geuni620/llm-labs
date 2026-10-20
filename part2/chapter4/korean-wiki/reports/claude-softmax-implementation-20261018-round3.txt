@@ -1,0 +1,53 @@
+Claude Opus5.5 Ultrathink 원문. 작성·읽기검토 시점의 정보이며 실제 최종 수치와 루트의 판정은 별도 요약을 확인하세요.
+
+I wrote the 4-row softmax candidate, its bitwise test and the build notes. Per your instructions nothing was compiled, tested, benchmarked or measured; I only wrote and read files. All results and speed claims are still open. I touched no other file; the existing originals, reports and indexes are unchanged.
+
+**Files I own (all new):**
+- `part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/softmax_ilp.c`
+- `part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp.c`
+- `part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/NOTES.md`
+
+## A) `softmax_ilp.c`
+- **API:** `fw_softmax` has the same signature as the original and can replace `../fixedwork_softmax.c` directly.
+- **What changed:** only the scheduling. Each group of 4 rows keeps its own `m0..m3` and `s0..s3`, so the max chains and the sum chains run as 4 independent chains.
+- **What stayed the same within each row:**
+  - bias add (row value as the left operand), then the strict `>` max update;
+  - target logit read after the bias add;
+  - shift by the max, then one in-place `vvexpf` call per row with that row's own vocab length;
+  - float32 sum starting at 0.0f in ascending v order;
+  - `logf(sum)+max-target`;
+  - `(row/sum)*inverse_batch`, then the target subtraction;
+  - losses summed in the original row order, then `/ (float)batch`.
+- **Paths kept from the original:**
+  - batches that are not a power of two, and invalid batches, still delegate to `experiment_softmax`;
+  - `fast_exp` uses a verbatim copy of the original single-row function;
+  - the same `#error` guards (no `EXPERIMENT_VFORCE_EXP`, not Apple, or fast-math on).
+- **Leftover rows** (batch not a multiple of 4) use the original single-row function. Among power-of-two batches this is only B1 and B2.
+- **Threading:** each OpenMP worker owns whole 4-row groups. With 1 thread or parallel off, the same 4-row code runs serially.
+- **No explicit NEON.** I added `#pragma STDC FP_CONTRACT OFF` as a safeguard, but the `-ffp-contract=off` flag is still required.
+- **Extra exported symbol:** `fw_softmax_ilp_rows`, so the test can check mixed group + leftover cases (such as 7 rows). The public path never reaches those.
+
+## B) `test_softmax_ilp.c`
+- **Pass rule:** memcmp of the whole guarded output buffer, guard values included, plus identical loss bits, unchanged bias/targets, and finite outputs. No tolerance. Exit code 0 means everything matched; 1 means the finite check failed.
+- **Small sizes:** B {1,2,3,4,5,7,8,15,16,71,128,256,512} × V {1,2,3,4,5,7,8,16,17,64,257,1025} × 19 input patterns. Thread/parallel settings are (1,0), (1,1), (4,0), (4,1), (8,1) and (0,1), plus `fast_exp` runs.
+- **Actual vocab V35328:** a few cases only, with B512 run once.
+- **Group + leftover rows:** compared bit for bit against the original at B8 and B16. A guard value right after the last row catches overruns, and loss bits are cross-checked between the leftover-row path and the group path.
+- **Batches not a power of two:** both sides run the same delegated function, so these comparisons are trivially equal. They are reported under their own count rather than dropped.
+- **Self-check:** the test confirms its comparison detects a 1-ulp change, a +0/-0 difference and a damaged guard value.
+- **NaN/Inf inputs** are checked with memcmp but reported separately (exit code 3 if only these differ). Only the standard `NAN` bit pattern is used; mixed NaN bit patterns are not tested, and the JSON output says so.
+
+## C) `NOTES.md`
+It has the exact build commands: the original compiled as its own object with `-Dfw_softmax=baseline_fw_softmax`, the candidate as a separate object, the shared `vector_vforce.o`, and the link line. It also has the command for the combined benchmark build with only the softmax source swapped. It states clearly that none of this has been run.
+
+## Remaining checks and issues for you
+1. Compiling and running the test has not happened yet, so compile errors or warnings are still possible.
+2. `check_fixedwork.py` writes `--report`/`--markdown` to the existing `fixedwork-model-verification.*` by default. Give it a different path for this candidate or the existing reports will be overwritten.
+3. The benchmark binary does not report which softmax source it was built from. Record the sha256 of `softmax_ilp.c` in the build manifest.
+4. B71 (the irregular fixture) goes through the delegated function, not the 4-row path. So the independent CPU check does not exercise the new code on irregular input; only the B128 real training run does.
+5. **Performance risks (estimates only, not measured):**
+   - 4 rows at V35328 touch about 565KB, more than the P-core L1, so L2 bandwidth may eat into the gain.
+   - At 6 threads, B128's 32 groups split 6/5 per worker, which balances worse than splitting by rows.
+   - 8 threads (with the E-cores) needs its own check.
+6. Accelerate does not document that `vvexpf` output is independent of length or memory alignment. The candidate calls it with the same row pointers and lengths as the original, and the test aligns both sides to 64 bytes.
+7. Inputs must not share memory with bias or targets. The benchmark satisfies this, and it is stated in the code and the notes.
+8. The final verdict depends on your cohort run: the independent CPU check, 3 runs of 512 real Wiki updates against the baseline, and identical weights/m1/m2 checksums. Since the goal is a bit-identical result, any checksum difference means the candidate fails.

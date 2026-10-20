@@ -1,0 +1,94 @@
+<section id="wiki-cpu-learning">
+  <style>
+    #wiki-cpu-learning {display:grid;gap:16px;color:var(--foreground)}
+    #wiki-cpu-learning .scope {display:grid;gap:4px}
+    #wiki-cpu-learning table {width:100%;table-layout:fixed}
+    #wiki-cpu-learning th:first-child {width:42%}
+    #wiki-cpu-learning td {vertical-align:top;overflow-wrap:anywhere}
+    #wiki-cpu-learning .detail {display:block}
+    #wiki-cpu-learning .legend {display:flex;flex-wrap:wrap;gap:12px}
+    #wiki-cpu-learning .key {display:inline-flex;gap:5px;align-items:center}
+    #wiki-cpu-learning .swatch {width:10px;height:10px}
+    #wiki-cpu-learning .chart {display:block;width:100%;height:220px}
+    #wiki-cpu-learning .chart text {fill:var(--foreground);font-size:12px;font-weight:400}
+    #wiki-cpu-learning .frame,#wiki-cpu-learning .grid {fill:none;stroke:var(--border);stroke-width:1}
+    #wiki-cpu-learning .gemm {fill:var(--chart-1);background:var(--chart-1)}
+    #wiki-cpu-learning .softmax {fill:var(--chart-2);background:var(--chart-2)}
+    #wiki-cpu-learning .clip {fill:var(--chart-3);background:var(--chart-3)}
+    #wiki-cpu-learning .adam {fill:var(--chart-4);background:var(--chart-4)}
+    #wiki-cpu-learning .other {fill:var(--muted-foreground);background:var(--muted-foreground)}
+    @media(min-width:600px) {#wiki-cpu-learning h2 {padding-right:90px}}
+  </style>
+  <h2>CPU 최적화 · 누적 적용 결과</h2>
+  <div class="scope text-small text-muted">
+    <span>같은 Wiki 입력 · 사전 35,328 · 모델 6,883,968개 · 배치 128</span>
+    <span>CPU만 사용 · OpenMP 팀 4 · 각 설정 20초 × 2회</span>
+    <span>출발점: 컴파일 최적화 O3 + native 적용 상태</span>
+  </div>
+  <table class="table table-sm" aria-label="최신 동일 코호트의 누적 CPU 최적화 결과">
+    <thead><tr><th scope="col">누적 적용</th><th scope="col" class="text-end">예측/초</th><th scope="col" class="text-end">5에폭 예상</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="text-small text-muted">시간 범위: 두 관측 처리량에서 환산 · 전체 5에폭 미실행</div>
+  <h3>업데이트 1회에 걸린 시간</h3>
+  <div class="legend text-small" aria-label="연산 종류">
+    <span class="key"><i class="swatch gemm" aria-hidden="true"></i>행렬곱</span>
+    <span class="key"><i class="swatch softmax" aria-hidden="true"></i>softmax</span>
+    <span class="key"><i class="swatch clip" aria-hidden="true"></i>기울기 처리</span>
+    <span class="key"><i class="swatch adam" aria-hidden="true"></i>AdamW</span>
+    <span class="key"><i class="swatch other" aria-hidden="true"></i>기타</span>
+  </div>
+  <div class="plot"><svg class="chart" role="img" aria-label="OpenMP 통합 전후가 아닌, OpenMP 통합과 CPU 벡터 지수함수 추가의 업데이트 시간 구성 비교"></svg></div>
+  <div class="scope text-small text-muted">
+    <span>두 시험의 연산 시간 합 ÷ 두 시험의 업데이트 수 합</span>
+    <span>실제 경과시간 · CPU 대기 포함 · 로딩과 최종 평가 제외</span>
+    <span>수치 오차 검증 통과 · 장시간 학습 품질 미평가</span>
+  </div>
+  <script type="application/json" id="wiki-cpu-learning-data">__DATA__</script>
+  <script>
+    (() => {
+      const root=document.getElementById('wiki-cpu-learning');
+      const data=JSON.parse(root.querySelector('#wiki-cpu-learning-data').textContent);
+      const labels={baseline:'O3 + native',native_all_omp:'+ OpenMP 통합',vforce_all_omp:'+ CPU 벡터 exp'};
+      const number=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:0});
+      const body=root.querySelector('tbody');
+      for (const row of data.vforce_cohort) {
+        const tr=document.createElement('tr');
+        const label=document.createElement('td'); label.textContent=labels[row.id];
+        const rate=document.createElement('td'); rate.className='text-end tabular-nums'; rate.textContent=number.format(row.median_targets_per_second);
+        const time=document.createElement('td'); time.className='text-end tabular-nums'; time.textContent=`${row.epoch5_hours.toFixed(1)}시간`;
+        const range=document.createElement('span'); range.className='detail text-small text-muted'; range.textContent=`${row.epoch5_range_hours.map(x=>x.toFixed(1)).join('~')}`;
+        time.appendChild(range); tr.append(label,rate,time); body.appendChild(tr);
+      }
+      const selected=data.vforce_cohort.filter(x=>x.id!=='baseline');
+      const segments=[['matrix_multiply','gemm'],['softmax','softmax'],['gradient_clip','clip'],['adamw','adam'],['other','other']];
+      const bars=selected.map(row=>{
+        const phase=row.phase_ms_per_update;
+        return {id:row.id,values:{...phase,other:phase.ram_gather+phase.bias_reduce+phase.other},total:Object.values(phase).reduce((a,b)=>a+b,0)};
+      });
+      const svg=root.querySelector('.chart'); const ns='http://www.w3.org/2000/svg';
+      const make=(name,attrs={},content)=>{const e=document.createElementNS(ns,name);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(content!==undefined)e.textContent=content;return e;};
+      const render=()=>{
+        const width=Math.floor(root.querySelector('.plot').getBoundingClientRect().width);if(width<200)return;
+        const left=64,right=width-8,top=24,bottom=164;
+        const domain=Math.ceil(Math.max(...bars.map(b=>b.total))/10)*10*1.04;
+        const scale=value=>left+6+value/domain*(right-left-12);
+        svg.setAttribute('viewBox',`0 0 ${width} 220`);svg.replaceChildren();
+        svg.appendChild(make('title',{},'CPU 벡터 exp 추가 전후의 업데이트 시간 구성'));
+        svg.appendChild(make('rect',{x:left,y:top,width:right-left,height:bottom-top,class:'frame','data-chart-frame':''}));
+        for(let tick=0;tick<=domain;tick+=10){const x=scale(tick);svg.appendChild(make('line',{x1:x,x2:x,y1:top,y2:bottom,class:'grid'}));svg.appendChild(make('text',{x,y:bottom+20,'text-anchor':'middle'},String(tick)));}
+        svg.appendChild(make('text',{x:0,y:15,class:'axis-title','data-axis':'y'},'구현'));
+        svg.appendChild(make('text',{x:(left+right)/2,y:210,'text-anchor':'middle',class:'axis-title','data-axis':'x'},'시간 (ms/업데이트)'));
+        bars.forEach((bar,index)=>{
+          const y=54+index*68;
+          svg.appendChild(make('text',{x:left+4,y:y-10},bar.id==='native_all_omp'?'OpenMP 통합':'+ 벡터 exp'));
+          svg.appendChild(make('text',{x:right-4,y:y-10,'text-anchor':'end'},`${bar.total.toFixed(2)} ms`));
+          let offset=0;
+          for(const[key,style]of segments){const value=bar.values[key];svg.appendChild(make('rect',{x:scale(offset),y,width:scale(offset+value)-scale(offset),height:20,class:style}));offset+=value;}
+        });
+        requestAnimationFrame(()=>{const b=svg.getBoundingClientRect();const overflow=[...svg.querySelectorAll('text')].some(e=>{const r=e.getBoundingClientRect();return r.left<b.left-1||r.right>b.right+1;});console.log(JSON.stringify({chartWidth:width,labelOverflow:overflow,pageOverflow:document.documentElement.scrollWidth>window.innerWidth}));});
+      };
+      new ResizeObserver(render).observe(root.querySelector('.plot'));render();
+    })();
+  </script>
+</section>

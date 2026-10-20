@@ -1,0 +1,25 @@
+{
+  "kind": "MPS_EVENT_PHASE_DIAGNOSTIC",
+  "status": "failed",
+  "started_at": "2026-10-18T21:44:44.148730+09:00",
+  "source_before": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py",
+      "bytes": 6437,
+      "sha256": "22573104e89ac27474524efe3299ee1a2786fce10022436e7f27285ebeb0aaab"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py",
+      "bytes": 20822,
+      "sha256": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py",
+      "bytes": 17283,
+      "sha256": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6"
+    }
+  },
+  "error": "RuntimeError: End event 102 was not recorded after start event 101",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py\", line 116, in main\n    report.update(profile())\n                  ~~~~~~~^^\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py\", line 79, in profile\n    milliseconds = start.elapsed_time(end)\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/mps/event.py\", line 45, in elapsed_time\n    return torch._C._mps_elapsedTimeOfEvents(self.__eventId, end_event.__eventId)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: End event 102 was not recorded after start event 101\n",
+  "completed_at": "2026-10-18T21:44:59.230527+09:00"
+}

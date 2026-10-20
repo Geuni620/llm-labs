@@ -1,0 +1,88 @@
+{
+  "published_at_utc": "2026-10-18T14:57:32.536Z",
+  "scope": "NPLM only: CPU/GPU optimization, real short observations and 2/3/5 epoch forecasts; B512 H128/H64 budget confirmation. No actual full-epoch loss claim.",
+  "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-7095007e-232b-4ac3-89d8-334a90ae3bf1-html",
+  "title": "NPLM CPU·GPU 최적화와 2·3·5에폭 시간",
+  "height": 1575,
+  "heights": [
+    [
+      320,
+      1575
+    ],
+    [
+      375,
+      1520
+    ],
+    [
+      430,
+      1488
+    ],
+    [
+      520,
+      1488
+    ],
+    [
+      640,
+      1488
+    ],
+    [
+      728,
+      1488
+    ],
+    [
+      860,
+      1488
+    ],
+    [
+      1000,
+      1488
+    ],
+    [
+      1144,
+      1488
+    ]
+  ],
+  "outline": "t0,1,51,5,1;t0,8,81,4,1;m0,15,182,58,1;t0,74,67,4,1;g0,83,182,27,3;t0,113,91,4,1;t0,119,96,4,1;t0,128,42,4,1;g0,136,182,47,5;t0,189,55,4,1;g0,196,182,57,6;t0,259,41,4,1;g0,266,182,37,4;t0,309,46,4,1;g0,317,182,37,4;t0,356,62,4,1;t0,362,95,4,1;t0,368,53,4,1",
+  "previews": {
+    "desktop728_dark": {
+      "width": 728,
+      "contentHeight": 1488,
+      "capturedHeight": 1488,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "nplm-time-qa {\"width\":728,\"overflow\":false,\"collisions\":[],\"tableRows\":17,\"axes\":2,\"finite\":true}"
+        },
+        {
+          "level": "log",
+          "text": "nplm-time-qa {\"width\":728,\"overflow\":false,\"collisions\":[],\"tableRows\":17,\"axes\":2,\"finite\":true}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 728,
+        "height": 1488
+      }
+    },
+    "mobile320_light": {
+      "width": 320,
+      "contentHeight": 1575,
+      "capturedHeight": 1575,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "nplm-time-qa {\"width\":320,\"overflow\":false,\"collisions\":[],\"tableRows\":17,\"axes\":2,\"finite\":true}"
+        },
+        {
+          "level": "log",
+          "text": "nplm-time-qa {\"width\":320,\"overflow\":false,\"collisions\":[],\"tableRows\":17,\"axes\":2,\"finite\":true}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 320,
+        "height": 1575
+      }
+    }
+  }
+}

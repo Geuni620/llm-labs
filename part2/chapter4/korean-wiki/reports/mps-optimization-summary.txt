@@ -1,0 +1,30 @@
+M1 GPU 최적화 비교 — 실제 짧은 측정 / 5에폭 외삽
+
+조건: V35328/C8/D64/H128, B128, FP32, AdamW foreach=True/fused=False, clip1, seed42.
+각 실행은 동일한512회 갱신 / 65,536개 예측. 각조건3회, 순서정방향/역방향/정방향.
+원본.npy 전체를 RAM으로 읽지만 일부 target만 측정. 5에폭은621,162,675개 예측에서 환산.
+
+조건	실제초 3회	중앙초	예측/초	5에폭 환산시간	기존 MPS 대비 시간변화
+C/CPU (기존 최적화)	10.069370, 10.404567, 11.093383	10.404567	6298.77	27.393	CPU참고
+기존 MPS	31.718943, 30.655029, 27.991457	30.655029	2137.85	80.709	+0.00%
+기울기 None 초기화	28.801918, 28.639974, 28.114997	28.639974	2288.27	75.404	-6.57%
+Metal 블록 리덕션	24.284987, 23.646025, 22.259203	23.646025	2771.54	62.256	-22.86%
+모델 컴파일	27.540697, 29.533791, 27.922863	27.922863	2347.04	73.516	-8.91%
+
+현재 GPU 후보의 최선: Metal 블록 리덕션 / 기존 MPS 대비 중앙 처리시간 22.86% 감소.
+GPU는같은학습조건에서옵션을하나씩변경했으며옵션조합은미측정입니다.
+GPU후보24개 gate·768개 vector/scalar비교 통과. 원래오차허용기준 유지.
+1차 전체 캠페인(control포함)은30gate/960비교. Native fused AdamW4후보(24gate/768비교)의각1성분이기준을넘어기본채택과속도비교에서제외. 기존실패보고서는보존.
+기울기 None 초기화: grad=None으로설정하여0을덮어쓰는메모리작업을줄입니다.
+이실패만으로학습품질저하나지원불가를단정하지않습니다. 실제fused API/컴파일은작동했습니다.
+Metal clip: 256threads×4elements 블록부분합→최종norm/scale→제자리scaling, GPU커널3개. scratch NaNpoison·scalar history·두clip·실제모델4연속갱신검증.
+모델compile: strict Inductor, fullgraph=True/dynamic=False, 실제fwd/back 및codegen/cache확인, 측정중재컴파일없음.
+초기실행시간은공유cache의컴파일또는캐시로딩+실행을포함하며순수cold compile시간이아닙니다.
+구간진단은phase마다동기화를강제하여오버헤드가있습니다. 그phase비율을무계측훈련시간·GPU사용률로해석하면안됩니다.
+C/CPU는동일기존코드재측정입니다. PyTorch도수치연산은GPU커널에서실행하며커널구성·호출·메모리·동기화경로차이가이번비교에포함됩니다.
+실제전체5에폭/장기품질/장시간발열/MacUI반응성은측정하지않았습니다. 장시간학습은다음챕터로보류한상태입니다.
+
+재사용 API: gpu-benchmark/optimization/engine_refined.py의 build_model_optimizer(config,case), train_update, reset_after_warmup.
+권장GPU case: metal_clip
+
+공식참고: https://docs.pytorch.org/tutorials/recipes/recipes/tuning_guide.html#fuse-operations

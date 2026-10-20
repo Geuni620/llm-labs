@@ -1,0 +1,183 @@
+{
+  "status": "complete",
+  "visual_data": {
+    "created_at": "2026-10-18T12:32:17.729516+00:00",
+    "gates": 26,
+    "comparisons": 688,
+    "main": [
+      {
+        "id": "c_cpu_optimized",
+        "label": "C/CPU (기존 최적화)",
+        "seconds": [
+          1.2841000000480562,
+          1.2156180000165477,
+          1.2415719999698922
+        ],
+        "rate": 6598.0869415536545,
+        "hours": 26.15079022577576
+      },
+      {
+        "id": "torch_cpu",
+        "label": "PyTorch/CPU",
+        "seconds": [
+          2.569162082974799,
+          2.3552798330201767,
+          2.8011584160267375
+        ],
+        "rate": 3188.5882382767345,
+        "hours": 54.11334879452848
+      },
+      {
+        "id": "mps_default",
+        "label": "MPS 기본",
+        "seconds": [
+          4.0889767499757,
+          4.1530489579890855,
+          3.5606077919946983
+        ],
+        "rate": 2003.4352115229522,
+        "hours": 86.12466552828342
+      },
+      {
+        "id": "mps_preload_defer",
+        "label": "MPS 준비·읽기 지연",
+        "seconds": [
+          4.175495542003773,
+          3.6656842079828493,
+          3.73548849998042
+        ],
+        "rate": 2193.019734913637,
+        "hours": 78.67926802163272
+      },
+      {
+        "id": "mps_preload_defer_foreach",
+        "label": "위 조건 + foreach",
+        "seconds": [
+          3.340582084027119,
+          3.344407916010823,
+          3.7722707080538385
+        ],
+        "rate": 2449.4619692717797,
+        "hours": 70.4420765313198
+      },
+      {
+        "id": "mps_preload_defer_foreach_metal",
+        "label": "위 조건 + Metal 선호",
+        "seconds": [
+          4.504044958972372,
+          4.294278540997766,
+          4.409231832949445
+        ],
+        "rate": 1857.9199983957676,
+        "hours": 92.87008463711311
+      }
+    ],
+    "confirmation": [
+      {
+        "id": "c_cpu_optimized_b128",
+        "label": "C/CPU · B128",
+        "axisLabel": "C/CPU",
+        "batch": 128,
+        "updates": 512,
+        "seconds": [
+          11.00618900009431,
+          10.31684999994468,
+          10.420908000087366
+        ],
+        "rate": 6288.895363000092,
+        "hours": 27.43648566887397,
+        "hoursRange": [
+          27.162518579861903,
+          28.977431406886446
+        ],
+        "median_cpu_cores_observed": 2.559591154290466
+      },
+      {
+        "id": "mps_default_b128",
+        "label": "MPS 기본 · B128",
+        "axisLabel": "MPS 기본",
+        "batch": 128,
+        "updates": 512,
+        "seconds": [
+          30.790151167020667,
+          29.808825083018746,
+          32.22746129200095
+        ],
+        "rate": 2128.4728238098296,
+        "hours": 81.06525278117256,
+        "hoursRange": [
+          78.4815874191921,
+          84.84944688838648
+        ],
+        "median_cpu_cores_observed": 0.15703420791187553
+      },
+      {
+        "id": "mps_foreach_b128",
+        "label": "MPS 옵션 · B128",
+        "axisLabel": "MPS 옵션",
+        "batch": 128,
+        "updates": 512,
+        "seconds": [
+          29.74787591601489,
+          28.731515957973897,
+          29.542978167010006
+        ],
+        "rate": 2218.3274695434266,
+        "hours": 77.78165751854168,
+        "hoursRange": [
+          75.64521496777112,
+          78.32111858605231
+        ],
+        "median_cpu_cores_observed": 0.1567823871918582
+      },
+      {
+        "id": "mps_foreach_b512",
+        "label": "MPS 옵션 · B512*",
+        "axisLabel": "MPS B512*",
+        "batch": 512,
+        "updates": 128,
+        "seconds": [
+          18.70192845800193,
+          16.931187083013356,
+          17.586872500018217
+        ],
+        "rate": 3726.4158252089514,
+        "hours": 46.303256424777786,
+        "hoursRange": [
+          44.57694778192318,
+          49.23900989376112
+        ],
+        "median_cpu_cores_observed": 0.07973504100848786
+      }
+    ],
+    "epoch5_target_prediction_events": 621162675
+  },
+  "scope": {
+    "hardware": "MacBook Air M1, 8-core GPU, 16GB unified RAM",
+    "model": "NPLM V35328/C8/D64/H128, 6,883,968 parameters",
+    "common": "FP32, seed42 exact C initializer, same affine real-Wiki target stream, AdamW lr.001/betas.9,.999/eps1e-8/wd.01/clip1, two warmups then reset",
+    "input": "Whole preserved train .npy corpus loaded into RAM; each confirmation measures only 65,536 sampled target predictions",
+    "epoch5_forecast": "621,162,675 / measured target predictions per second / 3600; not actual five-epoch training time",
+    "main": "All six cases have exactly64 B128 updates; N64 cap caused 1.2-4.5s windows. All 18 trials retained.",
+    "confirmation": "C+B128MPS use512 updates; B512MPS uses128 updates. Identical target stream, different Adam update count for B512. All12 trials retained, including two over30s.",
+    "cuda": "No NVIDIA hardware or CUDA performance/quality measurements",
+    "quality": "Independent numerical backend checks, not a long-run learned-quality equivalence test",
+    "cpu_history": "The optimized C executable is unchanged. This is a fresh same-time measurement, not a new CPU code optimization.",
+    "excluded": "File RAM loading, initialization, warmup/reset, final all-array audit, evaluation/checkpoint saving; long-run heat and UI responsiveness not measured",
+    "long_training": "Remains deferred to next chapter; existing STOP preserved"
+  },
+  "recommendation": "For this current FP32/B128 NPLM implementation, retain the optimized C/CPU path for shortest observed compute time. MPS B512 has a different update schedule and needs validation-quality comparison before training adoption.",
+  "possible_future_tests": [
+    "torch.compile for this MPS model and backward/optimizer path; support and speed not yet tested",
+    "Custom fused Metal kernels, especially optimizer/reductions; numerical verification required",
+    "FP16/AMP with full numerical and validation-quality checks; changes precision",
+    "Larger-batch learning-rate/update-schedule comparison with a shared held-out set"
+  ],
+  "evidence": [
+    "reports/mps-comparison-20261018-v1.json",
+    "reports/mps-confirmation-20261018-v1.json",
+    "reports/mps-model-verification-20261018-v1.json",
+    "reports/mps-batch512-verification-20261018-v1.json",
+    "reports/mps-corpus-reference-verification.json"
+  ]
+}

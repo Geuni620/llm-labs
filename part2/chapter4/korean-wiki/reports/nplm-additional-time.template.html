@@ -1,0 +1,125 @@
+<section id="kowiki-additional-time" aria-label="NPLM 추가 최적화 시간 비교">
+  <style>
+    #kowiki-additional-time { color: var(--foreground); background: transparent; }
+    #kowiki-additional-time figure { margin: 12px 0 20px; }
+    #kowiki-additional-time h3 { margin: 20px 0 8px; }
+    #kowiki-additional-time .chart { width: 100%; }
+    #kowiki-additional-time .chart text { fill: var(--foreground); font-size: 12px; font-weight: 400; }
+    #kowiki-additional-time .chart .domain { display: none; }
+    #kowiki-additional-time .chart .tick line { stroke: var(--border); }
+    #kowiki-additional-time .caption { margin-top: 6px; color: var(--muted-foreground); }
+    #kowiki-additional-time .hours { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    #kowiki-additional-time .table th:first-child { width: 40%; }
+    #kowiki-additional-time .table td:first-child { overflow-wrap: anywhere; }
+    #kowiki-additional-time .small-gap { margin-top: 8px; }
+  </style>
+  <h2>추가 최적화 · 2·3·5에폭 시간</h2>
+  <div class="text-small text-muted small-gap">M1 · 각 설정 3회 짧은 실측 · 전체 시간은 환산 · 에폭별 Loss 미측정</div>
+  <figure aria-label="밤새 학습 후보인 두 NPLM의 2에폭 시간과 6~8시간 예산">
+    <div class="chart"></div>
+    <figcaption class="caption text-small">CPU/C 배치 512 · 6스레드 · 음영 6–8h · 선: 관측 범위</figcaption>
+  </figure>
+  <div class="table-responsive"><table class="table table-sm" aria-label="은닉층 크기를 달리한 예산 후보">
+    <thead><tr><th>NPLM · 배치 512</th><th>2에폭</th><th>3에폭</th><th>5에폭</th></tr></thead>
+    <tbody data-table="budget"></tbody>
+  </table></div>
+  <div class="text-small text-muted small-gap">별도 확인 측정 · 같은 어휘·전체 데이터 · H64는 모델 용량 감소 · 품질 미검증</div>
+  <div class="text-small text-muted small-gap">부하 변동 · 같은 H128/배치512의 2에폭 환산: 앞선 측정 10.6h / 이번 확인 7.4h</div>
+  <h3>CPU · 배치 128 추가 튜닝</h3>
+  <div class="table-responsive"><table class="table table-sm" aria-label="CPU 같은 학습 조건 비교">
+    <thead><tr><th>CPU / 스레드</th><th>2에폭</th><th>3에폭</th><th>5에폭</th></tr></thead>
+    <tbody data-table="cpu"></tbody>
+  </table></div>
+  <h3>GPU 조합 · 같은 시점의 CPU 대조</h3>
+  <div class="table-responsive"><table class="table table-sm" aria-label="MPS 최적화 조합별 시간 비교">
+    <thead><tr><th>구현 · 배치 128</th><th>2에폭</th><th>3에폭</th><th>5에폭</th></tr></thead>
+    <tbody data-table="gpu"></tbody>
+  </table></div>
+  <h3>앞선 부하 상태 · 배치 변경</h3>
+  <div class="table-responsive"><table class="table table-sm" aria-label="배치 크기를 바꾼 별도 CPU 실험">
+    <thead><tr><th>기존 CPU / 6스레드</th><th>2에폭</th><th>3에폭</th><th>5에폭</th></tr></thead>
+    <tbody data-table="batch"></tbody>
+  </table></div>
+  <h3>6~8시간 예산 · 필요한 처리량</h3>
+  <div class="table-responsive"><table class="table table-sm" aria-label="6시간 및 8시간 안에 완료하는 데 필요한 처리량">
+    <thead><tr><th>전체 데이터</th><th>6시간</th><th>8시간</th></tr></thead>
+    <tbody data-table="required"></tbody>
+  </table></div>
+  <div class="text-small text-muted small-gap">단위: 타깃/초 · 평가·저장·장시간 부하 추가 비용 제외</div>
+  <div class="small-gap text-small" data-memory></div>
+  <div class="small-gap text-small text-muted">Intel i5-8250U · NVIDIA: 동일 작업 미측정</div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+    (() => {
+      const root = document.getElementById('kowiki-additional-time');
+      const report = __REPORT_DATA__;
+      const fmt = x => Number(x).toFixed(1) + 'h';
+      const labels = { baseline_t4: '기존 / 4', ilp_t4: '4행 / 4', baseline_t6: '기존 / 6', ilp_t6: '4행 / 6' };
+      const gpuLabels = { c_cpu: 'CPU/C · 4스레드', metal_clip: 'Metal clip', metal_zero: 'clip + None', metal_compiled: 'clip + compile', metal_compiled_zero: 'clip + None + compile' };
+      const cpu = report.cpu.summary.filter(x => x.batch_size === 128 && x.passed);
+      const plotted = report.budget.summary.map(r => ({case:'H'+r.hidden_dim,epoch2_hours:r.epoch_hours['2'],range:r.epoch2_observed_range}));
+      function row(tbody, name, values, details) {
+        const tr = document.createElement('tr');
+        const label = document.createElement('td'); label.textContent = name;
+        if (details) label.setAttribute('data-tooltip', details);
+        tr.append(label);
+        for (const v of values) {
+          const td = document.createElement('td'); td.className = 'hours'; td.textContent = v; tr.append(td);
+        }
+        tbody.append(tr);
+      }
+      function hours(r) { return [fmt(r.epoch2_hours), fmt(r.epoch3_hours), fmt(r.epoch5_hours)]; }
+      for (const r of report.budget.summary) row(root.querySelector('[data-table="budget"]'), 'H'+r.hidden_dim+' · '+(r.parameter_count/1e6).toFixed(2)+'M', [2,3,5].map(e=>fmt(r.epoch_hours[String(e)])), '실측 '+r.actual_seconds.map(x=>x.toFixed(3)+'s').join(' / '));
+      for (const r of cpu) row(root.querySelector('[data-table="cpu"]'), labels[r.case], hours(r), '실측 ' + r.actual_seconds.map(x => x.toFixed(3)+'s').join(' / '));
+      for (const r of report.gpu.summary) {
+        const h = r.epoch5_hours_extrapolated;
+        row(root.querySelector('[data-table="gpu"]'), gpuLabels[r.case], [fmt(h*2/5),fmt(h*3/5),fmt(h)], '실측 ' + r.actual_seconds.map(x=>x.toFixed(3)+'s').join(' / '));
+      }
+      for (const r of report.cpu.summary.filter(x => ['baseline_t6','batch256_t6','batch512_t6'].includes(x.case))) {
+        row(root.querySelector('[data-table="batch"]'), '배치 ' + r.batch_size, hours(r), r.same_training_conditions_as_B128 ? '배치 128 대조군' : '같은 타깃 수 · Adam 갱신 횟수 감소 · 품질 미검증');
+      }
+      for (const epochs of [2,3,5]) row(root.querySelector('[data-table="required"]'), epochs + '에폭', [6,8].map(h => Math.ceil(epochs*124232535/(h*3600)).toLocaleString('ko-KR')));
+      root.querySelector('[data-memory]').textContent = report.memory_label;
+      const host = root.querySelector('.chart');
+      const svg = d3.select(host).append('svg').attr('role','img');
+      let resizePending = null;
+      function draw() {
+        const width = host.getBoundingClientRect().width;
+        const height = 230, margin = {left:64,right:12,top:22,bottom:48};
+        const right = width-margin.right, bottom = height-margin.bottom;
+        svg.attr('viewBox',`0 0 ${width} ${height}`).attr('width',width).attr('height',height);
+        svg.selectAll('*').remove();
+        svg.append('title').text('CPU NPLM 두 후보의 전체 2에폭 시간 환산');
+        svg.append('desc').text(plotted.map(r=>r.case+': '+fmt(r.epoch2_hours)).join(', ')+'; H64는 모델 용량이 작습니다. 관측 범위는 통계적 신뢰구간이 아니며 실제 장기 학습시간을 보장하지 않습니다.');
+        const all = [...plotted.flatMap(r => [...r.range,r.epoch2_hours]),6,8];
+        const extent = d3.extent(all), maximum = extent[1]*1.08;
+        const x = d3.scaleLinear().domain([0,maximum]).range([margin.left+5,right-5]);
+        const y = d3.scaleBand().domain(plotted.map(r=>r.case)).range([margin.top,bottom]).paddingInner(.32).paddingOuter(.2);
+        svg.append('rect').attr('data-chart-frame','').attr('x',margin.left).attr('y',margin.top).attr('width',right-margin.left).attr('height',bottom-margin.top).attr('fill','none').attr('stroke','var(--border)');
+        const axis = svg.append('g').attr('transform',`translate(0,${bottom})`).call(d3.axisBottom(x).ticks(width<400?3:5).tickSize(4));
+        axis.selectAll('text').attr('dy','1em');
+        svg.append('g').attr('transform',`translate(${margin.left},0)`).call(d3.axisLeft(y).tickSize(0).tickPadding(7));
+        svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(margin.left+right)/2).attr('y',height-5).attr('text-anchor','middle').text('2에폭 환산 시간 (h)');
+        svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform',`translate(12,${(margin.top+bottom)/2}) rotate(-90)`).attr('text-anchor','middle').text('NPLM 은닉층');
+        svg.append('rect').attr('x',x(6)).attr('y',margin.top+1).attr('width',x(8)-x(6)).attr('height',bottom-margin.top-2).attr('fill','var(--foreground)').attr('opacity',.06);
+        for (const r of plotted) {
+          const cy=y(r.case)+y.bandwidth()/2+5;
+          const low=x(r.range[0]), high=x(r.range[1]), median=x(r.epoch2_hours);
+          svg.append('rect').attr('x',x(0)).attr('y',cy-5).attr('width',median-x(0)).attr('height',10).attr('fill','var(--viz-series-1)').attr('opacity',.45);
+          svg.append('line').attr('x1',low).attr('x2',high).attr('y1',cy).attr('y2',cy).attr('stroke','var(--foreground)');
+          for (const px of [low,high]) svg.append('line').attr('x1',px).attr('x2',px).attr('y1',cy-4).attr('y2',cy+4).attr('stroke','var(--foreground)');
+          svg.append('text').attr('data-value-label','').attr('x',Math.min(right-3,Math.max(margin.left+30,median))).attr('y',cy-10).attr('text-anchor','end').text(fmt(r.epoch2_hours));
+        }
+        const boxes = [...host.querySelectorAll('svg text')].map(el=>({text:el.textContent,box:el.getBoundingClientRect(),element:el}));
+        const collisions=[];
+        for(let i=0;i<boxes.length;i++) for(let j=i+1;j<boxes.length;j++) {
+          const a=boxes[i].box,b=boxes[j].box;
+          if(Math.min(a.right,b.right)-Math.max(a.left,b.left)>-4 && Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>-4) collisions.push([boxes[i].text,boxes[j].text]);
+        }
+        console.log('nplm-time-qa',JSON.stringify({width,overflow:root.scrollWidth>root.clientWidth+1,collisions,tableRows:root.querySelectorAll('tbody tr').length,axes:host.querySelectorAll('[data-axis]').length,finite:all.every(Number.isFinite)}));
+      }
+      new ResizeObserver(()=>{ if(resizePending) cancelAnimationFrame(resizePending); resizePending=requestAnimationFrame(draw); }).observe(host);
+      draw();
+    })();
+  </script>
+</section>

@@ -1,0 +1,102 @@
+CPU NPLM 추가 최적화 후보 종합
+
+Claude Opus 5.5 / Ultrathink 독립 리뷰와 현재 코드·실측을 종합했습니다.
+후보 목록과 독립 조언 종합만 수행. 새 구현·시험·학습 실행 없음.
+
+현재 약31시간은 5에폭 완료 실측이 아닌 단시간 처리량 환산입니다.
+네 범주(컴파일러·캐시타일링·SIMD·멀티스레딩)는 모두 시험했습니다.
+현재 조합은 O3+native, Accelerate 행렬곱, OpenMP4, CPU vForce입니다. 직접 만든 타일링과 추가 노름 SIMD가 모두 채택된 조합은 아닙니다.
+
+추천 순서
+
+0. 측정 조건 정리
+같은 업데이트 수로 번갈아 실행하고, 실제 경과시간·CPU 시간·구간별 분포를 함께 기록합니다.
+대상: 전체 비교의 신뢰도; 난도: 낮음~중간.
+직접 가속이 아닌 필수 준비. 작거나 불안정한 이득을 판별하기 위한 단계.
+검증: 입력·초기 가중치·업데이트 수 일치, 클리핑 활성 빈도, 부하·대기 기록
+코드: cpu-benchmark/experiments/vforce_benchmark.c:691
+종합 근거: Codex·Claude 공통
+
+1. 고정 블록 노름 리덕션
+기울기를 고정된 블록으로 나누고, SIMD 부분합을 일정한 순서로 합칩니다.
+대상: 노름·클리핑 구간 약 14.4%; 난도: 중간.
+기존 추가 SIMD는 전체 이득 판정 보류. 고정 블록 방식은 새 후보이며 개선량 미측정.
+검증: double 유지, 1/4스레드·불규칙 길이·실제 파라미터 길이 검증, 반올림·결정성 확인
+코드: cpu-benchmark/experiments/vector_vforce.c:117
+종합 근거: Claude 우선 제안·Codex 재검토
+
+2. softmax 반복 연산 줄이기
+배치의 역수 등 공통값을 한 번 계산하고, 나눗셈·최댓값·합산 루프를 하나씩 최적화합니다.
+대상: softmax 구간 약 28.5% 중 일부; 난도: 낮음~중간.
+반복 나눗셈과 의존 합산을 줄일 후보. 지수함수 외 세부 시간은 아직 분리하지 않았습니다.
+검증: B128 전용 최적화와 일반 배치 경로 분리, loss·모든 logits gradient·특수값 오차 검사
+코드: cpu-benchmark/experiments/vector_vforce.c:29
+종합 근거: Codex·Claude 공통
+
+3. 기울기 버퍼 중복 초기화 제거
+행렬곱이 바로 덮어쓰는 구간의 0 초기화를 생략하고, 누적에 필요한 임베딩 구간만 초기화합니다.
+대상: 기타 구간 약 2.8% 중 일부; 난도: 낮음.
+배열 쓰기를 줄이는 작은 실험. 직접 효과는 제한적일 수 있고 캐시 영향은 따로 확인해야 합니다.
+검증: NaN으로 채운 출력, 겹치는 임베딩 ID, 연속 업데이트 검증. 임베딩 누적 초기화는 보존.
+코드: cpu-benchmark/experiments/vforce_benchmark.c:517
+종합 근거: Codex 제안·Claude 확인
+
+4. 클리핑과 AdamW 메모리 통과 합치기
+기울기에 배율을 곱해 다시 저장하는 대신, AdamW에서 읽으며 배율을 적용합니다.
+대상: 클리핑이 활성인 경우의 메모리 왕복; 난도: 중간.
+클리핑이 비활성이면 제거할 통과가 없으므로 먼저 실제 활성 빈도를 측정합니다.
+검증: raw/clipped gradient 구분, 배율·감쇠·모멘트 순서·반올림·여러 단계 갱신 검증
+코드: cpu-benchmark/experiments/vector_vforce.c:135, cpu-benchmark/experiments/vector_vforce.c:148
+종합 근거: Codex·Claude 공통
+
+5. OpenMP·BLAS 스레드와 대기 정책 조절
+스레드 예산과 작업 분배를 바꾸어 느린 작업자·대기·라이브러리 간 자원 경합을 줄입니다.
+대상: 여러 단계의 실행·대기 시간; 난도: 낮음~중간.
+4개보다 많은 스레드가 빠를지는 미확인. Mac의 다른 작업 반응성과 함께 평가합니다.
+검증: 실제 작업자 수 관찰, 플랫폼 지원 확인, 노름 합산 순서 영향, 처리량·응답성 동시 기록
+코드: cpu-benchmark/experiments/vforce_benchmark.c:222
+종합 근거: Codex·Claude 공통
+
+6. 행렬곱 메모리 배치·CPU 경로 비교
+실제 SGEMM 크기부터 단독 측정한 뒤, 작업 배열의 행 간격과 가중치 배치를 바꾸어 비교합니다.
+대상: 행렬곱 구간 약 36.4%; 난도: 중간~높음.
+큰 비중이지만 현재 Accelerate도 최적화된 구현입니다. 레이아웃 변경의 이득은 미측정.
+검증: 초기 가중치 의미와 gradient 매핑 보존, 패딩 경계, 갱신된 가중치 반영, 정밀도·형상별 검증
+코드: cpu-benchmark/experiments/vforce_benchmark.c:471
+종합 근거: Codex·Claude 공통·CPU API 연구
+
+7. softmax와 편향 기울기 순회 융합
+softmax gradient를 만든 뒤 편향 합산을 위해 다시 읽는 통과를 줄입니다.
+대상: 편향 합산 약 2.5%와 관련 메모리 이동; 난도: 중간~높음.
+스레드별 부분 버퍼·추가 합산 비용과 맞바꾸므로 순이익은 미확인입니다.
+검증: 합산 순서·스레드별 버퍼·메모리 경계·loss와 bias gradient 검증
+코드: cpu-benchmark/experiments/vforce_benchmark.c:522, cpu-benchmark/experiments/vector_vforce.c:65
+종합 근거: Codex 추가 후보
+
+학습 조건이 달라지는 별도 실험
+- 배치 128 → 256/512: 업데이트당 고정 비용을 더 많은 예제에 나눕니다. 업데이트 횟수·학습 노이즈가 달라져 검증 loss와 함께 비교해야 합니다.
+- 사전·모델·문맥 크기 변경: 연산량을 줄일 수 있지만 표현력과 OOV 통과 문장도 달라집니다. 기존 전체 데이터와 같은 기준으로 간주하지 않습니다.
+- 출력 손실 근사·저정밀도·희소 옵티마이저: sampled softmax, 저정밀 상태, lazy AdamW 등은 별도의 수치·수렴 실험입니다. sampled softmax 평가는 전체 softmax 손실로 합니다.
+
+후순위 후보
+- 숨은층 tanh의 CPU 벡터화: 기타 작은 구간의 일부라 우선순위 낮음
+- 어휘 블록 단위 cross-entropy 스트리밍: 재계산 비용·복잡도 높아 후순위
+
+Claude 원문을 그대로 확정 사실로 옮기지 않은 부분
+- 기존 phase 비중은 해당 구간의 관측 비중이지 예상 절감률이 아닙니다.
+- 논리적 배열 읽기·쓰기량은 실제 DRAM 트래픽/대역폭 측정이 아닙니다. AdamW 메모리 병목은 추가 검증할 가설입니다.
+- bit 동일성·스레드 수와 무관한 결정성은 구현과 환경에 조건을 두며 새 구현마다 수치 게이트로 확인합니다.
+- 정확한 최소 검출 이득이나 특정 코어 배정은 측정하지 않았습니다.
+- 기존 노름 SIMD는 효과가 없다고 확정한 것이 아니라 현 부하에서 전체 가속을 판정하지 못한 후보입니다.
+- 고정 가중치 추론의 사전 패킹 연구를 매 단계 가중치가 갱신되는 학습에 그대로 적용할 수 없습니다.
+
+검토 원문: reports/claude-cpu-advice-20261018.txt
+
+참고 자료
+현재 단계별 실측: reports/cpu-cumulative-review.json
+추가 노름 SIMD 실측: reports/norm-simd-review.json
+BLAS SGEMM beta=0 명세: https://www.netlib.org/blas/sgemm.f
+OpenMP 대기 정책: https://www.openmp.org/spec-html/5.1/openmpse64.html
+공식 CPU BNNS 소개: https://developer.apple.com/videos/play/wwdc2024/10211/
+M1 AMX 행렬곱 연구 (고정 가중치 추론, 우리 학습 성능으로 전용하지 않음): https://arxiv.org/abs/2606.25426
+Sampled softmax 학습·평가 구분: https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss

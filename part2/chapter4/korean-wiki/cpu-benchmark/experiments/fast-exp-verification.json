@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "compiler": "Apple LLVM 17.0.0 (clang-1700.4.4.1)",
+  "fast_domain": [
+    -80,
+    0
+  ],
+  "relative_error_limit": 0.0001,
+  "dense_samples": 2000001,
+  "boundary_samples": 1150,
+  "total_in_domain_samples": 2001157,
+  "max_relative_error_vs_double_exp": 2.274072025778457e-07,
+  "max_relative_error_input": -16.2887592,
+  "max_absolute_error_vs_double_exp": 1.4269665704613743e-07,
+  "max_ulp_difference_vs_expf": 3,
+  "fallback_samples": 16,
+  "fallback_failures": 0,
+  "softmax_rows": 120,
+  "softmax_values": 733100,
+  "max_probability_absolute_error_double_normalization": 4.009557985629186e-08,
+  "max_probability_absolute_error_float32_normalization": 5.960464477539063e-08,
+  "max_cross_entropy_absolute_error_float32_normalization": 4.76837158203125e-07,
+  "max_kl_divergence_double_normalization": 3.2948369633274763e-15,
+  "schema_version": 1,
+  "verified_at": "2026-10-18T12:14:56+09:00",
+  "architecture": "arm64",
+  "compile_command": "cc -std=c11 -O3 -Wall -Wextra -Wpedantic -Werror cpu-benchmark/experiments/test_fast_exp.c -lm -o /tmp/kowiki-test-fast-exp",
+  "global_fast_math": false,
+  "method": "split-ln2 range reduction; degree-6 Taylor polynomial; memcpy binary32 power-of-two scaling",
+  "dense_sampling": "2,000,001 uniformly spaced real locations cast to float32 over [-80,0]",
+  "boundary_sampling": "115 nearest-log2 boundaries, center plus four adjacent float32 inputs on both sides",
+  "softmax_vocab_sizes": [
+    1,
+    7,
+    37,
+    257,
+    1025,
+    35328
+  ],
+  "softmax_widths": [
+    0.0001,
+    8,
+    80,
+    150
+  ],
+  "softmax_seed_hex": "726e3532",
+  "fallback_policy": "For x outside [-80,0], including NaN and infinities, return expf(x). Non-binary32 implementations also return expf(x).",
+  "taylor_real_arithmetic_relative_remainder_bound_at_half_ln2": 2.3832396568843496e-07,
+  "scope": "Short numerical characterization only; no training benchmark or learned-quality evaluation.",
+  "limitations": [
+    "Dense and edge sampling is not an exhaustive proof for every float32 input.",
+    "Taylor remainder bound covers real-arithmetic polynomial truncation, excluding range-reduction and floating-point rounding.",
+    "Fast-domain errno and floating-point exception flags are not promised to match libm.",
+    "Performance and full-step numerical checks are evaluated separately by the shared experiment runner."
+  ],
+  "sources": {
+    "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5",
+    "test_fast_exp.c": "275afcb3fe9fcf801249d4210c3c64fe96df66caf7fe318170547021519b02cc"
+  }
+}

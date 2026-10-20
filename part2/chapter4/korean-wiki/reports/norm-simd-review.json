@@ -1,0 +1,752 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_at": "2026-10-18T14:23:15+09:00",
+  "label": "double 노름 합산 SIMD 후보 검토: 전체 처리량 개선 확인 못함",
+  "user_intent": "GPU 없이 CPU 최적화 원리와 시간을 한 가지씩 학습합니다. 7시간 달성은 필수가 아니며 이번에는 기존 약31시간 외삽에서 더 줄일 후보를 검토했습니다.",
+  "configuration": {
+    "device": "CPU",
+    "cpu": "Apple M1",
+    "model": "NPLM",
+    "parameters": 6883968,
+    "vocab": 35328,
+    "batch": 128,
+    "context": 8,
+    "embedding": 64,
+    "hidden": 128,
+    "seed": 42,
+    "openmp_requested_threads": 4,
+    "openmp_probe_team_size": 4,
+    "accelerate_actual_threads": null,
+    "vforce_exp_enabled_in_both": true,
+    "native_enabled_in_both": true,
+    "double_norm_accumulator_in_both": true,
+    "global_fast_math": false,
+    "phase_labels": {
+      "ram_gather": "RAM에서 문맥·정답 모으기",
+      "matrix_multiply": "순전파·역전파 행렬곱",
+      "softmax": "softmax·교차 엔트로피",
+      "bias_reduce": "편향 기울기 합산",
+      "gradient_clip": "기울기 노름 계산과 배율 적용",
+      "adamw": "AdamW 갱신",
+      "other": "기타 호출·루프"
+    },
+    "requested_seconds_per_trial": 20,
+    "repeats_per_setting": 3,
+    "warmup_steps": 2
+  },
+  "units": {
+    "seconds": "측정 구간 compute 벽시계 초; 로딩·준비·warmup·마지막loss평가 제외",
+    "steps": "완료한 매개변수 update 수",
+    "rate": "초당 실제 정답 타깃 예측 수 targets/s",
+    "total_ms": "전체 compute 벽시계 밀리초/update",
+    "clip_ms": "노름 계산+클리핑 배율 적용 벽시계 밀리초/update",
+    "rate_range": "관측된3회 처리량의 최소·최대; 신뢰구간 아님"
+  },
+  "formulas": {
+    "rate": "target_prediction_events / seconds",
+    "events": "steps * batch128",
+    "total_ms": "seconds / steps * 1000",
+    "clip_ms": "phase_wall_seconds.gradient_clip / steps * 1000",
+    "pooled_phase_ms_per_update": "같은 설정의 해당phase 초 합계 / 같은 설정의 완료steps 합계 * 1000",
+    "median_rate": "3회 각각의 targets/s의 중앙값",
+    "paired_ratio": "같은repeat 후보 rate / 기준 rate"
+  },
+  "rows": [
+    {
+      "id": "baseline",
+      "label": "기준: native·vForce·OpenMP4, 기존 합산 순서",
+      "median_rate": 1831.512314054778,
+      "rate_range": [
+        1661.7604454476002,
+        3306.2784667337305
+      ],
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 20.026954000000842,
+          "steps": 260,
+          "target_prediction_events": 33280,
+          "rate": 1661.7604454476002,
+          "total_ms": 77.0267461538494,
+          "clip_ms": 9.823526920249256,
+          "phase_ms_per_update": {
+            "ram_gather": 1.5927807692115983,
+            "matrix_multiply": 30.77273461340855,
+            "softmax": 20.727430768490123,
+            "bias_reduce": 4.129750003071072,
+            "gradient_clip": 9.823526920249256,
+            "adamw": 8.725353847078692,
+            "other": 1.2551692323400996
+          },
+          "phase_wall_seconds": {
+            "ram_gather": 0.41412299999501556,
+            "matrix_multiply": 8.000910999486223,
+            "softmax": 5.389131999807432,
+            "bias_reduce": 1.0737350007984787,
+            "gradient_clip": 2.5541169992648065,
+            "adamw": 2.26859200024046,
+            "other": 0.3263440004084259
+          },
+          "process_wall_seconds": 21.58960545802256,
+          "load_average_before": [
+            42.4365234375,
+            19.23779296875,
+            13.1748046875
+          ],
+          "load_average_after": [
+            35.03271484375,
+            19.37353515625,
+            13.39892578125
+          ],
+          "passed_execution_and_numerical_gate": true
+        },
+        {
+          "repeat": 2,
+          "seconds": 20.015252999961376,
+          "steps": 517,
+          "target_prediction_events": 66176,
+          "rate": 3306.2784667337305,
+          "total_ms": 38.714222437062624,
+          "clip_ms": 5.369147002549276,
+          "phase_ms_per_update": {
+            "ram_gather": 0.42159961175346455,
+            "matrix_multiply": 14.726864609721423,
+            "softmax": 11.727197293004803,
+            "bias_reduce": 1.0922998057073072,
+            "gradient_clip": 5.369147002549276,
+            "adamw": 4.468137331710448,
+            "other": 0.9089767826159036
+          },
+          "phase_wall_seconds": {
+            "ram_gather": 0.21796699927654117,
+            "matrix_multiply": 7.613789003225975,
+            "softmax": 6.062961000483483,
+            "bias_reduce": 0.5647189995506778,
+            "gradient_clip": 2.775849000317976,
+            "adamw": 2.3100270004943013,
+            "other": 0.46994099661242217
+          },
+          "process_wall_seconds": 20.728334124956746,
+          "load_average_before": [
+            39.01953125,
+            22.2412109375,
+            14.71484375
+          ],
+          "load_average_after": [
+            29.56201171875,
+            21.17138671875,
+            14.50537109375
+          ],
+          "passed_execution_and_numerical_gate": true
+        },
+        {
+          "repeat": 3,
+          "seconds": 20.267404000042006,
+          "steps": 290,
+          "target_prediction_events": 37120,
+          "rate": 1831.512314054778,
+          "total_ms": 69.88760000014486,
+          "clip_ms": 8.640141380501204,
+          "phase_ms_per_update": {
+            "ram_gather": 2.264975863187735,
+            "matrix_multiply": 27.16844138962313,
+            "softmax": 19.552482760125965,
+            "bias_reduce": 2.698096548656708,
+            "gradient_clip": 8.640141380501204,
+            "adamw": 8.199479309681417,
+            "other": 1.3639827483686908
+          },
+          "phase_wall_seconds": {
+            "ram_gather": 0.656843000324443,
+            "matrix_multiply": 7.878848002990708,
+            "softmax": 5.6702200004365295,
+            "bias_reduce": 0.7824479991104454,
+            "gradient_clip": 2.5056410003453493,
+            "adamw": 2.377848999807611,
+            "other": 0.3955549970269203
+          },
+          "process_wall_seconds": 20.897122750000563,
+          "load_average_before": [
+            29.56201171875,
+            21.17138671875,
+            14.50537109375
+          ],
+          "load_average_after": [
+            23.54248046875,
+            20.40673828125,
+            14.42041015625
+          ],
+          "passed_execution_and_numerical_gate": true
+        }
+      ],
+      "pooled_phase_ms_per_update": {
+        "ram_gather": 1.2079971879999998,
+        "matrix_multiply": 22.01832053018079,
+        "softmax": 16.0471537026499,
+        "bias_reduce": 2.2688865974316794,
+        "gradient_clip": 7.343586691591501,
+        "adamw": 6.519651359458643,
+        "other": 1.1170009316286489
+      },
+      "pooled_total_ms_per_update": 56.52259700094116,
+      "total_steps": 1067,
+      "total_compute_seconds": 60.309611000004224,
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize",
+      "campaign_epoch5_arithmetic_only": {
+        "hours": 94.20913317148432,
+        "interpretation": "이번 부하 큰 캠페인의 산식 재현 값이며 실제5에포크 시간·기존 약31시간의 수정 예측·기본 설정 회귀 판정으로 사용하지 않습니다."
+      }
+    },
+    {
+      "id": "norm_simd",
+      "label": "후보: 같은 조합 + double SIMD 부분합 누적",
+      "median_rate": 1340.6126999604544,
+      "rate_range": [
+        1036.4349675999836,
+        3951.340330769259
+      ],
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 20.62340599996969,
+          "steps": 216,
+          "target_prediction_events": 27648,
+          "rate": 1340.6126999604544,
+          "total_ms": 95.47873148134116,
+          "clip_ms": 4.601796295631815,
+          "phase_ms_per_update": {
+            "ram_gather": 4.667050932227911,
+            "matrix_multiply": 37.27710186460711,
+            "softmax": 29.0097036965933,
+            "bias_reduce": 5.093981476319541,
+            "gradient_clip": 4.601796295631815,
+            "adamw": 12.812115736542856,
+            "other": 2.0169814794186363
+          },
+          "phase_wall_seconds": {
+            "ram_gather": 1.0080830013612285,
+            "matrix_multiply": 8.051854002755135,
+            "softmax": 6.266095998464152,
+            "bias_reduce": 1.1002999988850206,
+            "gradient_clip": 0.993987999856472,
+            "adamw": 2.767416999093257,
+            "other": 0.4356679995544255
+          },
+          "process_wall_seconds": 21.972349874966312,
+          "load_average_before": [
+            35.03271484375,
+            19.37353515625,
+            13.39892578125
+          ],
+          "load_average_after": [
+            36.4130859375,
+            20.64306640625,
+            13.98876953125
+          ],
+          "passed_execution_and_numerical_gate": true
+        },
+        {
+          "repeat": 2,
+          "seconds": 20.007044000085443,
+          "steps": 162,
+          "target_prediction_events": 20736,
+          "rate": 1036.4349675999836,
+          "total_ms": 123.5002716054657,
+          "clip_ms": 8.507876536941133,
+          "phase_ms_per_update": {
+            "ram_gather": 4.180271601028464,
+            "matrix_multiply": 50.22987037003155,
+            "softmax": 31.49699999729493,
+            "bias_reduce": 9.620938275475055,
+            "gradient_clip": 8.507876536941133,
+            "adamw": 16.68508025029973,
+            "other": 2.7792345743948297
+          },
+          "phase_wall_seconds": {
+            "ram_gather": 0.6772039993666112,
+            "matrix_multiply": 8.137238999945112,
+            "softmax": 5.102513999561779,
+            "bias_reduce": 1.558592000626959,
+            "gradient_clip": 1.3782759989844635,
+            "adamw": 2.7029830005485564,
+            "other": 0.4502360010519624
+          },
+          "process_wall_seconds": 21.235143875004724,
+          "load_average_before": [
+            36.4130859375,
+            20.64306640625,
+            13.98876953125
+          ],
+          "load_average_after": [
+            39.01953125,
+            22.2412109375,
+            14.71484375
+          ],
+          "passed_execution_and_numerical_gate": true
+        },
+        {
+          "repeat": 3,
+          "seconds": 20.01953599997796,
+          "steps": 618,
+          "target_prediction_events": 79104,
+          "rate": 3951.340330769259,
+          "total_ms": 32.39407119737534,
+          "clip_ms": 1.2888300956323333,
+          "phase_ms_per_update": {
+            "ram_gather": 0.4658381854753616,
+            "matrix_multiply": 13.04844336193899,
+            "softmax": 10.95367637975292,
+            "bias_reduce": 1.0577637510461595,
+            "gradient_clip": 1.2888300956323333,
+            "adamw": 4.776906151087912,
+            "other": 0.8026132724416657
+          },
+          "phase_wall_seconds": {
+            "ram_gather": 0.28788799862377346,
+            "matrix_multiply": 8.063937997678295,
+            "softmax": 6.769372002687305,
+            "bias_reduce": 0.6536979981465265,
+            "gradient_clip": 0.796496999100782,
+            "adamw": 2.95212800137233,
+            "other": 0.49601500236894935
+          },
+          "process_wall_seconds": 20.602784291957505,
+          "load_average_before": [
+            23.54248046875,
+            20.40673828125,
+            14.42041015625
+          ],
+          "load_average_after": [
+            18.83544921875,
+            19.53759765625,
+            14.24658203125
+          ],
+          "passed_execution_and_numerical_gate": true
+        }
+      ],
+      "pooled_phase_ms_per_update": {
+        "ram_gather": 1.9810993969393706,
+        "matrix_multiply": 24.350432731303755,
+        "softmax": 18.21082530192092,
+        "bias_reduce": 3.325893571946291,
+        "gradient_clip": 3.181486945724616,
+        "adamw": 8.456353414672835,
+        "other": 1.3874688784892943
+      },
+      "pooled_total_ms_per_update": 60.89356024099708,
+      "total_steps": 996,
+      "total_compute_seconds": 60.649986000033095,
+      "build_flags": "-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DEXPERIMENT_NORM_SIMD=1 -Rpass=loop-vectorize -Rpass-missed=loop-vectorize -Rpass-analysis=loop-vectorize",
+      "campaign_epoch5_arithmetic_only": {
+        "hours": 128.70621582586065,
+        "interpretation": "이번 부하 큰 캠페인의 산식 재현 값이며 실제5에포크 시간·기존 약31시간의 수정 예측·기본 설정 회귀 판정으로 사용하지 않습니다."
+      }
+    }
+  ],
+  "paired_comparison": [
+    {
+      "repeat": 1,
+      "throughput_ratio": 0.8067424541443796,
+      "throughput_gain_percent": -19.325754585562038,
+      "total_ms_reduction_percent": -23.955296372816616,
+      "clip_ms_reduction_percent": 53.1553551693728
+    },
+    {
+      "repeat": 2,
+      "throughput_ratio": 0.31347479591574656,
+      "throughput_gain_percent": -68.65252040842535,
+      "total_ms_reduction_percent": -219.00491300384252,
+      "clip_ms_reduction_percent": -58.45862541855502
+    },
+    {
+      "repeat": 3,
+      "throughput_ratio": 2.157419472665953,
+      "throughput_gain_percent": 115.7419472665953,
+      "total_ms_reduction_percent": 53.64832789034364,
+      "clip_ms_reduction_percent": 85.08322909459648
+    }
+  ],
+  "aggregate_comparison": {
+    "median_rate_gain_percent": -26.802965523476217,
+    "median_rate_ratio": 0.7319703447652378,
+    "pooled_clip_ms_reduction_percent": 56.67666115567944,
+    "overall_improvement_reproduced": false,
+    "paired_faster_runs": 1,
+    "paired_runs": 3,
+    "caution": "pooled clip 구간의 축소 관측은 전체 처리량의 재현 가능한 향상이나 순수 노름 합산 시간의 인과 효과를 증명하지 않습니다."
+  },
+  "numerical_validation": {
+    "scope_label": "이미 완료된 검증 보고서 확인; 새 모델·수치 시험 실행 없음",
+    "model_one_step": [
+      {
+        "id": "baseline",
+        "label": "기준: native·vForce·OpenMP4, 기존 합산 순서",
+        "passed": true,
+        "gates_passed": 8,
+        "comparisons": 184,
+        "failed_comparisons": 0,
+        "tolerances": {
+          "atol": 2e-06,
+          "rtol": 0.0002,
+          "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+          "default_baseline_policy": true,
+          "unused_embedding_decay_rtol": 4.76837158203125e-07,
+          "unused_embedding_decay_atol": 0
+        },
+        "maximum_absolute_error": 9.58460693034624e-07,
+        "scope": "tiny·irregular 입력, 스레드1/4, clip상한1.0/0.05의 한 번 갱신; 독립 Torch와 loss·기울기·클리핑·AdamW 결과 비교"
+      },
+      {
+        "id": "norm_simd",
+        "label": "후보: 같은 조합 + double SIMD 부분합 누적",
+        "passed": true,
+        "gates_passed": 8,
+        "comparisons": 184,
+        "failed_comparisons": 0,
+        "tolerances": {
+          "atol": 2e-06,
+          "rtol": 0.0002,
+          "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+          "default_baseline_policy": true,
+          "unused_embedding_decay_rtol": 4.76837158203125e-07,
+          "unused_embedding_decay_atol": 0
+        },
+        "maximum_absolute_error": 9.58460693034624e-07,
+        "scope": "tiny·irregular 입력, 스레드1/4, clip상한1.0/0.05의 한 번 갱신; 독립 Torch와 loss·기울기·클리핑·AdamW 결과 비교"
+      }
+    ],
+    "norm_module": {
+      "passed": true,
+      "cases": 276,
+      "counts": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        15,
+        16,
+        17,
+        31,
+        32,
+        33,
+        63,
+        64,
+        65,
+        127,
+        255,
+        256,
+        257,
+        1003,
+        1023,
+        1024,
+        1025,
+        6883968
+      ],
+      "threads": [
+        1,
+        4
+      ],
+      "clip_norms": [
+        1,
+        0.05
+      ],
+      "patterns": [
+        "zero",
+        "uniform_random_plusminus1",
+        "mixed_magnitudes"
+      ],
+      "input_min": -999999995904,
+      "input_max": 999999995904,
+      "active_clipping_cases": 170,
+      "acceptance": {
+        "declared_before_execution": true,
+        "rule": "abs(actual-reference)<=atol+rtol*abs(reference)",
+        "norm": {
+          "atol": 1e-12,
+          "rtol": 2e-07
+        },
+        "scale": {
+          "atol": 1e-12,
+          "rtol": 2e-07
+        },
+        "gradient": {
+          "atol": 1e-15,
+          "rtol": 4e-07
+        }
+      },
+      "reference_original": {
+        "norm": {
+          "compared": 276,
+          "nonfinite_pairs": 0,
+          "outside_tolerance": 0,
+          "bitwise_differences": 0,
+          "max_absolute_error": 0,
+          "max_relative_error_nonzero_reference": 0,
+          "max_tolerance_fraction": 0,
+          "worst_absolute": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_relative": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_tolerance": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          }
+        },
+        "scale": {
+          "compared": 276,
+          "nonfinite_pairs": 0,
+          "outside_tolerance": 0,
+          "bitwise_differences": 0,
+          "max_absolute_error": 0,
+          "max_relative_error_nonzero_reference": 0,
+          "max_tolerance_fraction": 0,
+          "worst_absolute": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_relative": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_tolerance": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          }
+        },
+        "gradient": {
+          "compared": 82671444,
+          "nonfinite_pairs": 0,
+          "outside_tolerance": 0,
+          "bitwise_differences": 0,
+          "max_absolute_error": 0,
+          "max_relative_error_nonzero_reference": 0,
+          "max_tolerance_fraction": 0,
+          "worst_absolute": {
+            "count": 1,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_relative": {
+            "count": 1,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_tolerance": {
+            "count": 1,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          }
+        }
+      },
+      "reference_compensated_double_oracle": {
+        "norm": {
+          "compared": 276,
+          "nonfinite_pairs": 0,
+          "outside_tolerance": 0,
+          "bitwise_differences": 0,
+          "max_absolute_error": 0,
+          "max_relative_error_nonzero_reference": 0,
+          "max_tolerance_fraction": 0,
+          "worst_absolute": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_relative": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_tolerance": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          }
+        },
+        "scale": {
+          "compared": 276,
+          "nonfinite_pairs": 0,
+          "outside_tolerance": 0,
+          "bitwise_differences": 0,
+          "max_absolute_error": 0,
+          "max_relative_error_nonzero_reference": 0,
+          "max_tolerance_fraction": 0,
+          "worst_absolute": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_relative": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_tolerance": {
+            "count": 0,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          }
+        },
+        "gradient": {
+          "compared": 82671444,
+          "nonfinite_pairs": 0,
+          "outside_tolerance": 0,
+          "bitwise_differences": 0,
+          "max_absolute_error": 0,
+          "max_relative_error_nonzero_reference": 0,
+          "max_tolerance_fraction": 0,
+          "worst_absolute": {
+            "count": 1,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_relative": {
+            "count": 1,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          },
+          "worst_tolerance": {
+            "count": 1,
+            "pattern": "zero",
+            "threads": 1,
+            "clip_norm": 1,
+            "index": 0
+          }
+        }
+      },
+      "guard_failures": 0,
+      "observed_float32_output_errors_zero": true,
+      "all_float_inputs_proved": false
+    },
+    "whole_training_quality_validated": false,
+    "distinction": "수치 허용오차 통과와 속도 향상 재현은 별개입니다."
+  },
+  "vectorization": {
+    "baseline_already_simd": true,
+    "simd_off_vs_on_comparison": false,
+    "baseline": "기존도 곱셈은 벡터화되어 있고, 이전 scalar 누산값을 넘기며 순서에 따라 합산합니다.",
+    "candidate": "여러 double 벡터 lane의 부분합을 독립적으로 누적한 뒤 마지막에 가로 합산합니다.",
+    "precision": "gradient 저장은 float32, 노름 제곱합 누산은 double 유지; 전역 fast-math 없음.",
+    "baseline_ir_evidence": [
+      "fpext <4 x float> to <4 x double>",
+      "fmul <4 x double>",
+      "llvm.vector.reduce.fadd.v4f64에 이전 scalar 누산값 전달"
+    ],
+    "candidate_ir_evidence": [
+      "fpext <4 x float> to <4 x double>",
+      "fmul <4 x double>",
+      "반복 동안 fadd <4 x double> 부분합 누적",
+      "끝에서 llvm.vector.reduce.fadd.v4f64로 합산",
+      "2-double 나머지 경로"
+    ],
+    "compiler_remarks": {
+      "baseline": [
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:129:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  129 |         for (size_t i = 0; i < count; ++i)\n      |         ^",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:124:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  124 | #pragma omp parallel for reduction(+:squares) schedule(static) num_threads(threads)\n      | ^"
+      ],
+      "candidate": [
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:145:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  145 | #pragma omp simd reduction(+:squares)\n      | ^",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:136:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  136 | #pragma omp parallel for simd reduction(+:squares) schedule(static) num_threads(threads)\n      | ^"
+      ]
+    },
+    "candidate_simd_emitted": true,
+    "default_macro_zero_matches_original_tokens": true
+  },
+  "conclusion": {
+    "headline": "전체 처리량 개선 확인 못함",
+    "decision": "기존 native·vForce·OpenMP4 조합을 유지하고 norm SIMD 후보는 실험 자료로 보관합니다.",
+    "why": "3회 paired 처리량 비율이 약0.807/0.313/2.157로 방향이 바뀌었고 기준과 후보 모두 큰 편차를 보였습니다.",
+    "numerics": "관측 수치 gate는 통과했지만 속도 향상 gate를 통과했다는 뜻이 아닙니다.",
+    "timing_interpretation": "노름·클리핑 구간이 짧아지는 관측이 있었으나 다른 단계도 함께 변동하여 전체 속도 개선을 재현하지 못했습니다.",
+    "previous_31h_estimate": "이번 캠페인의 부하 큰 외삽으로 대체·수정하지 않습니다.",
+    "next_learning_candidate": "행렬곱 호출·메모리 사용 또는 softmax의 남은 순회처럼 큰 구간을 하나씩 살펴볼 수 있습니다. 모델·사전·배치 변경은 별도 실험으로 명시합니다."
+  },
+  "limitations": [
+    "20초를 요청해 설정마다3회 측정했습니다. 완료한 갱신 수는 달라 마지막loss로 품질을 비교할 수 없습니다.",
+    "실제 compute 초는 완전한 update가 끝나는 시점까지이므로20초보다 길 수 있습니다.",
+    "phase 벽시계에는 스케줄링 대기와 타이머 비용이 포함됩니다. 노름·배율 적용 구간은 순수한 합산 시간만을 뜻하지 않습니다.",
+    "기울기 처리 외의 행렬곱·softmax·AdamW 단계도 변동했습니다. 단일 원인으로 전체 속도 변화를 단정하지 않습니다.",
+    "모든3회에서 전체 처리량 향상이 재현되지 않았습니다. 수치 검증 PASS나 실행 성공을 속도 개선 PASS라고 부르지 않습니다.",
+    "이번 중간값94.21시간·128.71시간은 이 캠페인의 처리량 산식만 재현한 값입니다. 이전 약31시간 대비 회귀나 실제 예상시간 갱신·추천값으로 사용하지 않습니다.",
+    "코호트·실행 시점·시스템 부하가 달라 과거31시간 외삽과 이번 두 설정을 하나의 속도 곡선으로 합치지 않습니다.",
+    "전체1에포크나5에포크를 실행하지 않았고 장시간 속도·발열·수렴·생성 품질을 검증하지 않았습니다.",
+    "관측한 float32 norm·scale·clipped gradient 출력의 차이0은 모든 실수/float 입력이나 내부double 누산의 bit 동등성에 대한 증명이 아닙니다.",
+    "OpenMP SIMD는 double 합산 순서를 바꿀 수 있습니다. 현재 검사 입력에서 같았더라도 일반적인 bit 동일성을 약속하지 않습니다.",
+    "컴파일러의 벡터화 폭4 표시는 물리적인 M1 명령 하나가 double4개를 동시에 계산한다는 뜻이 아닙니다.",
+    "/usr/bin/time의 프로세스 CPU 시간은 로딩·준비·warmup 등을 포함합니다. 이를 compute 초로 나누더라도 깨끗한 학습 연산 CPU 초라고 부르지 않습니다. 이 보고서는 그 값을 정규화하지 않았습니다.",
+    "OpenMP4팀은 확인되었지만 Accelerate 내부 실제 worker 수와 Mac의 다른 작업 반응성은 측정하지 않았습니다."
+  ],
+  "sources": [
+    {
+      "path": "cpu-benchmark/results/cpu-norm-simd-mac-20261018-20s-v1.json",
+      "bytes": 472272,
+      "sha256": "3e8dd044cb566c9ceb5a0fffa9bedd6a5364bfddaf07cffee7f313a9f32e1fca"
+    },
+    {
+      "path": "cpu-benchmark/experiments/norm-simd-verification.json",
+      "bytes": 32042,
+      "sha256": "6b4b383a4f2f73f2e212452bc856de1bcc8f25442f928af4a0170264f227137f"
+    },
+    {
+      "path": "cpu-benchmark/experiments/norm-simd-verification.md",
+      "bytes": 4027,
+      "sha256": "380fdab5c469cbe716115680bf18c2bc99d89fcd4031630f57c57867aeb922e9"
+    }
+  ],
+  "integrity_audit": {
+    "arithmetic_checks_passed": 33,
+    "all_6_trial_rate_step_phase_ledgers_passed": true,
+    "campaign_source_snapshots_before_after_equal": true,
+    "module_sources_unchanged": true,
+    "same_initialization_and_first_batch": true,
+    "corpus_or_large_file_hashing_performed": false,
+    "new_model_test_or_timing_run": false,
+    "additional_output_readback_checks_passed": 18
+  }
+}

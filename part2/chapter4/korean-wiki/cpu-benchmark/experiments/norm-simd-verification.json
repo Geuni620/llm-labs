@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "status": "PASS",
+  "cases": 276,
+  "comparison": "original double gradient norm vs OpenMP SIMD double reduction",
+  "global_fast_math": false,
+  "openmp_version": 202011,
+  "acceptance": {
+    "declared_before_execution": true,
+    "rule": "abs(actual-reference)<=atol+rtol*abs(reference)",
+    "norm": {
+      "atol": 1e-12,
+      "rtol": 2e-07
+    },
+    "scale": {
+      "atol": 1e-12,
+      "rtol": 2e-07
+    },
+    "gradient": {
+      "atol": 1e-15,
+      "rtol": 4e-07
+    }
+  },
+  "scope": {
+    "counts": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      15,
+      16,
+      17,
+      31,
+      32,
+      33,
+      63,
+      64,
+      65,
+      127,
+      255,
+      256,
+      257,
+      1003,
+      1023,
+      1024,
+      1025,
+      6883968
+    ],
+    "threads": [
+      1,
+      4
+    ],
+    "clip_norms": [
+      1,
+      0.05
+    ],
+    "patterns": [
+      "zero",
+      "uniform_random_plusminus1",
+      "mixed_magnitudes"
+    ],
+    "scalar_input_positions_before_thread_and_clip_repetition": 20667861,
+    "input_min": -999999995904,
+    "input_max": 999999995904
+  },
+  "active_clipping_cases": 170,
+  "guard_failures": 0,
+  "norm": {
+    "compared": 276,
+    "nonfinite_pairs": 0,
+    "outside_tolerance": 0,
+    "bitwise_differences": 0,
+    "max_absolute_error": 0,
+    "max_relative_error_nonzero_reference": 0,
+    "max_tolerance_fraction": 0,
+    "worst_absolute": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_relative": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_tolerance": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    }
+  },
+  "scale": {
+    "compared": 276,
+    "nonfinite_pairs": 0,
+    "outside_tolerance": 0,
+    "bitwise_differences": 0,
+    "max_absolute_error": 0,
+    "max_relative_error_nonzero_reference": 0,
+    "max_tolerance_fraction": 0,
+    "worst_absolute": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_relative": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_tolerance": {
+      "count": 0,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    }
+  },
+  "gradient": {
+    "compared": 82671444,
+    "nonfinite_pairs": 0,
+    "outside_tolerance": 0,
+    "bitwise_differences": 0,
+    "max_absolute_error": 0,
+    "max_relative_error_nonzero_reference": 0,
+    "max_tolerance_fraction": 0,
+    "worst_absolute": {
+      "count": 1,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_relative": {
+      "count": 1,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    },
+    "worst_tolerance": {
+      "count": 1,
+      "pattern": "zero",
+      "threads": 1,
+      "clip_norm": 1,
+      "index": 0
+    }
+  },
+  "compensated_oracle": {
+    "norm": {
+      "compared": 276,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    },
+    "scale": {
+      "compared": 276,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 0,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    },
+    "gradient": {
+      "compared": 82671444,
+      "nonfinite_pairs": 0,
+      "outside_tolerance": 0,
+      "bitwise_differences": 0,
+      "max_absolute_error": 0,
+      "max_relative_error_nonzero_reference": 0,
+      "max_tolerance_fraction": 0,
+      "worst_absolute": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_relative": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      },
+      "worst_tolerance": {
+        "count": 1,
+        "pattern": "zero",
+        "threads": 1,
+        "clip_norm": 1,
+        "index": 0
+      }
+    }
+  },
+  "failure_examples": [],
+  "limitations": [
+    "Standalone gradient norm and clipping numerical comparison only",
+    "SIMD reduction reassociates double sums; bitwise equivalence is not promised",
+    "No optimizer trajectory, convergence, generation quality or timing validation"
+  ],
+  "default_macro_zero_preprocessed_tokens_match_original": true,
+  "source_files_unchanged": true,
+  "compiler_evidence": {
+    "original_norm_span": [
+      121,
+      132
+    ],
+    "candidate_norm_span": [
+      132,
+      150
+    ],
+    "original_norm_remarks": [
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:129:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  129 |         for (size_t i = 0; i < count; ++i)\n      |         ^",
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:124:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  124 | #pragma omp parallel for reduction(+:squares) schedule(static) num_threads(threads)\n      | ^"
+    ],
+    "candidate_norm_remarks": [
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:145:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  145 | #pragma omp simd reduction(+:squares)\n      | ^",
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:136:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  136 | #pragma omp parallel for simd reduction(+:squares) schedule(static) num_threads(threads)\n      | ^"
+    ],
+    "original_double_vector_instructions": [
+      "%36 = fpext <4 x float> %32 to <4 x double>",
+      "%37 = fpext <4 x float> %33 to <4 x double>",
+      "%38 = fpext <4 x float> %34 to <4 x double>",
+      "%39 = fpext <4 x float> %35 to <4 x double>",
+      "%40 = fmul <4 x double> %36, %36",
+      "%41 = fmul <4 x double> %37, %37",
+      "%42 = fmul <4 x double> %38, %38",
+      "%43 = fmul <4 x double> %39, %39",
+      "%44 = tail call double @llvm.vector.reduce.fadd.v4f64(double %27, <4 x double> %40)",
+      "%45 = tail call double @llvm.vector.reduce.fadd.v4f64(double %44, <4 x double> %41)",
+      "%46 = tail call double @llvm.vector.reduce.fadd.v4f64(double %45, <4 x double> %42)",
+      "%47 = tail call double @llvm.vector.reduce.fadd.v4f64(double %46, <4 x double> %43)",
+      "%67 = fpext <4 x float> %66 to <4 x double>",
+      "%68 = fmul <4 x double> %67, %67",
+      "%69 = tail call double @llvm.vector.reduce.fadd.v4f64(double %64, <4 x double> %68)",
+      "%42 = fpext <4 x float> %38 to <4 x double>",
+      "%43 = fpext <4 x float> %39 to <4 x double>",
+      "%44 = fpext <4 x float> %40 to <4 x double>",
+      "%45 = fpext <4 x float> %41 to <4 x double>",
+      "%46 = fmul <4 x double> %42, %42",
+      "%47 = fmul <4 x double> %43, %43",
+      "%48 = fmul <4 x double> %44, %44",
+      "%49 = fmul <4 x double> %45, %45",
+      "%50 = call double @llvm.vector.reduce.fadd.v4f64(double %33, <4 x double> %46)",
+      "%51 = call double @llvm.vector.reduce.fadd.v4f64(double %50, <4 x double> %47)",
+      "%52 = call double @llvm.vector.reduce.fadd.v4f64(double %51, <4 x double> %48)",
+      "%53 = call double @llvm.vector.reduce.fadd.v4f64(double %52, <4 x double> %49)",
+      "%73 = fpext <4 x float> %72 to <4 x double>",
+      "%74 = fmul <4 x double> %73, %73",
+      "%75 = call double @llvm.vector.reduce.fadd.v4f64(double %70, <4 x double> %74)",
+      "declare double @llvm.vector.reduce.fadd.v4f64(double, <4 x double>) #9"
+    ],
+    "candidate_double_vector_instructions": [
+      "%38 = fpext <4 x float> %34 to <4 x double>",
+      "%39 = fpext <4 x float> %35 to <4 x double>",
+      "%40 = fpext <4 x float> %36 to <4 x double>",
+      "%41 = fpext <4 x float> %37 to <4 x double>",
+      "%42 = fmul <4 x double> %38, %38",
+      "%43 = fmul <4 x double> %39, %39",
+      "%44 = fmul <4 x double> %40, %40",
+      "%45 = fmul <4 x double> %41, %41",
+      "%46 = fadd <4 x double> %26, %42",
+      "%47 = fadd <4 x double> %27, %43",
+      "%48 = fadd <4 x double> %28, %44",
+      "%49 = fadd <4 x double> %29, %45",
+      "%53 = fadd <4 x double> %47, %46",
+      "%54 = fadd <4 x double> %48, %53",
+      "%55 = fadd <4 x double> %49, %54",
+      "%56 = tail call double @llvm.vector.reduce.fadd.v4f64(double -0.000000e+00, <4 x double> %55)",
+      "%71 = fpext <2 x float> %70 to <2 x double>",
+      "%72 = fmul <2 x double> %71, %71",
+      "%73 = fadd <2 x double> %68, %72",
+      "%77 = tail call double @llvm.vector.reduce.fadd.v2f64(double -0.000000e+00, <2 x double> %73)",
+      "%45 = fpext <4 x float> %41 to <4 x double>",
+      "%46 = fpext <4 x float> %42 to <4 x double>",
+      "%47 = fpext <4 x float> %43 to <4 x double>",
+      "%48 = fpext <4 x float> %44 to <4 x double>",
+      "%49 = fmul <4 x double> %45, %45",
+      "%50 = fmul <4 x double> %46, %46",
+      "%51 = fmul <4 x double> %47, %47",
+      "%52 = fmul <4 x double> %48, %48",
+      "%53 = fadd <4 x double> %33, %49",
+      "%54 = fadd <4 x double> %34, %50",
+      "%55 = fadd <4 x double> %35, %51",
+      "%56 = fadd <4 x double> %36, %52",
+      "%60 = fadd <4 x double> %54, %53",
+      "%61 = fadd <4 x double> %55, %60",
+      "%62 = fadd <4 x double> %56, %61",
+      "%63 = call double @llvm.vector.reduce.fadd.v4f64(double -0.000000e+00, <4 x double> %62)",
+      "%81 = fpext <2 x float> %80 to <2 x double>",
+      "%82 = fmul <2 x double> %81, %81",
+      "%83 = fadd <2 x double> %78, %82",
+      "%87 = call double @llvm.vector.reduce.fadd.v2f64(double -0.000000e+00, <2 x double> %83)",
+      "declare double @llvm.vector.reduce.fadd.v4f64(double, <4 x double>) #9",
+      "declare double @llvm.vector.reduce.fadd.v2f64(double, <2 x double>) #9"
+    ],
+    "candidate_simd_emitted": true,
+    "original_all_remarks": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:84:25: remark: loop not vectorized: call instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   84 |             loss_sum += softmax_row(logits + (size_t)b * vocab, bias, targets[b],\n      |                         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:83:9: remark: loop not vectorized: instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   83 |         for (int b = 0; b < batch; ++b)\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:83:9: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:81:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   81 |         for (int b = 0; b < batch; ++b) loss_sum += losses[b];\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:79:25: remark: loop not vectorized: call instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   79 |             losses[b] = softmax_row(logits + (size_t)b * vocab, bias, targets[b],\n      |                         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:76:1: remark: loop not vectorized: instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   76 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:76:1: remark: loop not vectorized: could not determine number of loop iterations [-Rpass-analysis=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:76:1: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:32:5: remark: loop not vectorized: value that could not be identified as reduction is used outside the loop [-Rpass-analysis=loop-vectorize]\n   32 |     for (int v = 0; v < vocab; ++v) {\n      |     ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:32:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:39:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   39 |         for (int v = 0; v < vocab; ++v) {\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:48:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   48 |         for (int v = 0; v < vocab; ++v) row[v] -= maximum;\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:50:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   50 |         for (int v = 0; v < vocab; ++v) sum += row[v];\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:59:5: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   59 |     for (int v = 0; v < vocab; ++v)\n      |     ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:112:13: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  112 |             for (int column = 0; column < cols; ++column)\n      |             ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:107:17: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  107 |                 for (int column = start; column < end; ++column)\n      |                 ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:129:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  129 |         for (size_t i = 0; i < count; ++i)\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:142:13: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  142 |             for (size_t i = 0; i < count; ++i) gradients[i] *= scale;\n      |             ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:124:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  124 | #pragma omp parallel for reduction(+:squares) schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:138:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  138 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:168:9: remark: the cost-model indicates that interleaving is not beneficial [-Rpass-analysis=loop-vectorize]\n  168 |         for (size_t i = 0; i < count; ++i) {\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:168:9: remark: vectorized loop (vectorization width: 4, interleaved count: 1) [-Rpass=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:157:1: remark: the cost-model indicates that interleaving is not beneficial [-Rpass-analysis=loop-vectorize]\n  157 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c:157:1: remark: vectorized loop (vectorization width: 4, interleaved count: 1) [-Rpass=loop-vectorize]\n",
+    "candidate_all_remarks": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:95:25: remark: loop not vectorized: call instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   95 |             loss_sum += softmax_row(logits + (size_t)b * vocab, bias, targets[b],\n      |                         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:94:9: remark: loop not vectorized: instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   94 |         for (int b = 0; b < batch; ++b)\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:94:9: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:92:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   92 |         for (int b = 0; b < batch; ++b) loss_sum += losses[b];\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:90:25: remark: loop not vectorized: call instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   90 |             losses[b] = softmax_row(logits + (size_t)b * vocab, bias, targets[b],\n      |                         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:87:1: remark: loop not vectorized: instruction cannot be vectorized [-Rpass-analysis=loop-vectorize]\n   87 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:87:1: remark: loop not vectorized: could not determine number of loop iterations [-Rpass-analysis=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:87:1: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:43:5: remark: loop not vectorized: value that could not be identified as reduction is used outside the loop [-Rpass-analysis=loop-vectorize]\n   43 |     for (int v = 0; v < vocab; ++v) {\n      |     ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:43:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:50:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   50 |         for (int v = 0; v < vocab; ++v) {\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:59:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   59 |         for (int v = 0; v < vocab; ++v) row[v] -= maximum;\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:61:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   61 |         for (int v = 0; v < vocab; ++v) sum += row[v];\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:70:5: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n   70 |     for (int v = 0; v < vocab; ++v)\n      |     ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:123:13: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  123 |             for (int column = 0; column < cols; ++column)\n      |             ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:118:17: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  118 |                 for (int column = start; column < end; ++column)\n      |                 ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:145:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  145 | #pragma omp simd reduction(+:squares)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:160:13: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  160 |             for (size_t i = 0; i < count; ++i) gradients[i] *= scale;\n      |             ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:136:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  136 | #pragma omp parallel for simd reduction(+:squares) schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:156:1: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]\n  156 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:186:9: remark: the cost-model indicates that interleaving is not beneficial [-Rpass-analysis=loop-vectorize]\n  186 |         for (size_t i = 0; i < count; ++i) {\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:186:9: remark: vectorized loop (vectorization width: 4, interleaved count: 1) [-Rpass=loop-vectorize]\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:175:1: remark: the cost-model indicates that interleaving is not beneficial [-Rpass-analysis=loop-vectorize]\n  175 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c:175:1: remark: vectorized loop (vectorization width: 4, interleaved count: 1) [-Rpass=loop-vectorize]\n",
+    "interpretation": {
+      "original": "Rpass already reports width 4/interleave 4: products are vectorized, but llvm.vector.reduce.fadd calls carry the previous scalar sum into successive vector reductions, preserving ordered accumulation.",
+      "candidate": "Rpass reports width 4/interleave 4 with independent fadd <4 x double> lane accumulators and a final horizontal reduction; a <2 x double> remainder path is also present.",
+      "caution": "Compiler vectorization width is an IR grouping, not proof that one physical M1 instruction has four double lanes. Do not describe the original loop as wholly non-SIMD."
+    }
+  },
+  "verification_run": {
+    "completed_at": "2026-10-18T05:12:05.708025+00:00",
+    "test_elapsed_seconds": 2.5477850000024773,
+    "exit_code": 0,
+    "commands": [
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Rpass=loop-vectorize",
+        "-Rpass-missed=loop-vectorize",
+        "-Rpass-analysis=loop-vectorize",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-norm-simd-check-wm77512p/original.o"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Rpass=loop-vectorize",
+        "-Rpass-missed=loop-vectorize",
+        "-Rpass-analysis=loop-vectorize",
+        "-DEXPERIMENT_NORM_SIMD=1",
+        "-Dexperiment_softmax=normsimd_experiment_softmax",
+        "-Dexperiment_bias_reduce=normsimd_experiment_bias_reduce",
+        "-Dexperiment_clip_gradients=normsimd_experiment_clip_gradients",
+        "-Dexperiment_adamw=normsimd_experiment_adamw",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-norm-simd-check-wm77512p/normsimd.o"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-S",
+        "-emit-llvm",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-norm-simd-check-wm77512p/original.ll"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DEXPERIMENT_NORM_SIMD=1",
+        "-Dexperiment_softmax=normsimd_experiment_softmax",
+        "-Dexperiment_bias_reduce=normsimd_experiment_bias_reduce",
+        "-Dexperiment_clip_gradients=normsimd_experiment_clip_gradients",
+        "-Dexperiment_adamw=normsimd_experiment_adamw",
+        "-S",
+        "-emit-llvm",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-norm-simd-check-wm77512p/normsimd.ll"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DEXPERIMENT_NORM_SIMD=0",
+        "-E",
+        "-P",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DEXPERIMENT_NORM_SIMD=0",
+        "-E",
+        "-P",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_norm_simd.c",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-norm-simd-check-wm77512p/original.o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-norm-simd-check-wm77512p/normsimd.o",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-norm-simd-check-wm77512p/test_norm_simd"
+      ]
+    ],
+    "source_sha256": {
+      "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+      "vector_norm_simd.c": "2ab16bc6b6045c312a477750496a0556351ea2a0c22c3d17eec97c7f0ce1b1b2",
+      "test_norm_simd.c": "5becbf224099315df874367251e5720a563311f49eca14837310470fea8710e6",
+      "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+      "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    },
+    "coordination_lock": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/.timing.lock",
+    "thread_environment": {
+      "OMP_WAIT_POLICY": "PASSIVE",
+      "KMP_BLOCKTIME": "0",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "scope_source_diff": "--- vector_vforce.c\n+++ vector_norm_simd.c\n@@ -15,6 +15,17 @@\n \n #include <math.h>\n #include <string.h>\n+\n+/* This preserved-copy experiment changes only the double sum of squares.\n+ * OpenMP SIMD explicitly permits lane-wise reduction reassociation; all\n+ * clipping/scaling and AdamW loops remain the original implementations. */\n+#ifndef EXPERIMENT_NORM_SIMD\n+#define EXPERIMENT_NORM_SIMD 0\n+#endif\n+#if EXPERIMENT_NORM_SIMD && !defined(_OPENMP)\n+#error \"The norm SIMD experiment requires OpenMP SIMD support\"\n+#endif\n+\n #if EXPERIMENT_VFORCE_EXP\n #if !defined(__APPLE__)\n #error \"The vForce experiment requires Apple Accelerate on CPU\"\n@@ -121,11 +132,18 @@\n     double squares = 0.0;\n     if (options->reduction_parallel && threads > 1) {\n #ifdef _OPENMP\n+#if EXPERIMENT_NORM_SIMD\n+#pragma omp parallel for simd reduction(+:squares) schedule(static) num_threads(threads)\n+#else\n #pragma omp parallel for reduction(+:squares) schedule(static) num_threads(threads)\n+#endif\n #endif\n         for (size_t i = 0; i < count; ++i)\n             squares += (double)gradients[i] * gradients[i];\n     } else {\n+#if EXPERIMENT_NORM_SIMD && defined(_OPENMP)\n+#pragma omp simd reduction(+:squares)\n+#endif\n         for (size_t i = 0; i < count; ++i)\n             squares += (double)gradients[i] * gradients[i];\n     }\n"
+}

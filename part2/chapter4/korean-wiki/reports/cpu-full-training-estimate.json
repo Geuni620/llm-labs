@@ -1,0 +1,99 @@
+{
+  "source": "cpu-benchmark/results/cpu-optimizations-mac-real-wiki-20261018-12s.json",
+  "source_sha256": "c5e252d067665f160800901318847a613f86e3cef0e5d0ab6891b097b4bc28f9",
+  "prediction_events_per_epoch": 124232535,
+  "formula": "epochs * prediction_events_per_epoch / targets_per_second / 3600",
+  "scope": "Extrapolation only; no full epoch executed; no optimization ranking established",
+  "rows": [
+    {
+      "case": "baseline",
+      "label": "기준 O3",
+      "epoch1_hours": 28.077614902437478,
+      "epoch5_hours": 140.3880745121874,
+      "range5_hours": [
+        86.36068042055994,
+        374.96991535178273
+      ]
+    },
+    {
+      "case": "native",
+      "label": "native",
+      "epoch1_hours": 39.47233904170058,
+      "epoch5_hours": 197.36169520850288,
+      "range5_hours": [
+        137.19857179920137,
+        351.49717794108454
+      ]
+    },
+    {
+      "case": "relaxed_simd",
+      "label": "native + fast-math",
+      "epoch1_hours": 26.3913803370932,
+      "epoch5_hours": 131.956901685466,
+      "range5_hours": [
+        124.6014125537596,
+        140.2352923354093
+      ]
+    },
+    {
+      "case": "softmax_omp",
+      "label": "softmax OMP",
+      "epoch1_hours": 32.16958379200445,
+      "epoch5_hours": 160.84791896002224,
+      "range5_hours": [
+        149.83911952741852,
+        173.60264341627393
+      ]
+    },
+    {
+      "case": "reduction_omp",
+      "label": "리덕션 OMP",
+      "epoch1_hours": 19.005412941314944,
+      "epoch5_hours": 95.0270647065747,
+      "range5_hours": [
+        59.32694497685142,
+        238.61290631266345
+      ]
+    },
+    {
+      "case": "adamw_omp",
+      "label": "AdamW OMP",
+      "epoch1_hours": 24.300678248512515,
+      "epoch5_hours": 121.50339124256257,
+      "range5_hours": [
+        89.2190013246999,
+        190.40107513448146
+      ]
+    },
+    {
+      "case": "tiled32",
+      "label": "SGEMM 타일 32",
+      "epoch1_hours": 100.0438917815837,
+      "epoch5_hours": 500.2194589079185,
+      "range5_hours": [
+        417.92666899426393,
+        622.8663590223875
+      ]
+    },
+    {
+      "case": "tiled64",
+      "label": "SGEMM 타일 64",
+      "epoch1_hours": 57.83386809500611,
+      "epoch5_hours": 289.16934047503054,
+      "range5_hours": [
+        269.5008431660227,
+        311.934712890962
+      ]
+    },
+    {
+      "case": "fast_exp",
+      "label": "fast-exp",
+      "epoch1_hours": 28.37718018789283,
+      "epoch5_hours": 141.88590093946414,
+      "range5_hours": [
+        90.71215310821367,
+        325.5259153665612
+      ]
+    }
+  ]
+}

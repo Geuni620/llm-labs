@@ -1,0 +1,106 @@
+{
+  "policy": "Frozen old files unchanged; explicit source transformations only; mathematical oracle and tolerances unchanged.",
+  "derived": [
+    {
+      "from": "gpu-benchmark/optimization/benchmark.py",
+      "to": "gpu-benchmark/optimization_round2/benchmark.py",
+      "from_sha256": "106e36702e3f0c227982b3aeea87f669e5f5cec2228537a2fbe017b247da5791",
+      "to_sha256": "9b141673245eeca6a87f33a1a4928414ce0c878b0bb9cc1f811e8fefe64fef8f",
+      "changes": [
+        {
+          "from": "from optimization import engine_refined as engine",
+          "to": "from optimization_round2 import engine",
+          "count": 1
+        },
+        {
+          "from": "args.case == \"compiled_model\"",
+          "to": "engine.CASE_OPTIONS[args.case][\"compiled_model\"]",
+          "count": 2
+        },
+        {
+          "from": "args.case != \"compiled_model\"",
+          "to": "not engine.CASE_OPTIONS[args.case][\"compiled_model\"]",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "from": "gpu-benchmark/optimization/verify_refined.py",
+      "to": "gpu-benchmark/optimization_round2/verify.py",
+      "from_sha256": "3853af8bdbef019e6a057b0f42edd6f877c100335584025f3f1c4fd558eb1ec7",
+      "to_sha256": "cb70d2f706a9daf648d397de1bf3474303000a5b57df90b75d055112fac22cb8",
+      "changes": [
+        {
+          "from": "from optimization import engine_refined as refined",
+          "to": "from optimization_round2 import engine as refined",
+          "count": 1
+        },
+        {
+          "from": "BASE / \"verify.py\", BASE / \"engine_refined.py\", BASE / \"engine.py\",\n             BASE / \"compiled_path.py\", BASE / \"metal_clip.py\"",
+          "to": "GPU / \"optimization/verify.py\", BASE / \"engine.py\",\n             GPU / \"optimization/engine_refined.py\", GPU / \"optimization/engine.py\",\n             GPU / \"optimization/compiled_path.py\", GPU / \"optimization/metal_clip.py\"",
+          "count": 1
+        },
+        {
+          "from": "optimization.engine_refined",
+          "to": "optimization_round2.engine",
+          "count": 1
+        },
+        {
+          "from": "frozen.oracle.identity(BASE / \"engine_refined.py\")",
+          "to": "frozen.oracle.identity(BASE / \"engine.py\")",
+          "count": 1
+        },
+        {
+          "from": "frozen.oracle.identity(BASE / \"verify.py\")",
+          "to": "frozen.oracle.identity(GPU / \"optimization/verify.py\")",
+          "count": 1
+        },
+        {
+          "from": "Four orthogonal foreach=True/fused=False candidates",
+          "to": "Four composed foreach=True/fused=False candidates",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "from": "gpu-benchmark/optimization/run.py",
+      "to": "gpu-benchmark/optimization_round2/run.py",
+      "from_sha256": "f649c2207234d98628415af6fa9a6a72fc1c73f6b5a15dfe53420e40f0475c05",
+      "to_sha256": "28942e7072f4553431c0b265323cd8df049d01c5a20101fd434e6cc8ef3ac345",
+      "changes": [
+        {
+          "from": "from optimization import engine_refined as engine",
+          "to": "from optimization_round2 import engine",
+          "count": 1
+        },
+        {
+          "from": "mps-optimization-comparison-20261018-v1",
+          "to": "mps-combinations-round2-comparison-20261018-v1",
+          "count": 1
+        },
+        {
+          "from": "mps-optimization-refined-verification-20261018-v1",
+          "to": "mps-combinations-round2-verification-20261018-v1",
+          "count": 1
+        },
+        {
+          "from": "BASE / \"engine_refined.py\", BASE / \"engine.py\",\n        BASE / \"compiled_path.py\", BASE / \"metal_clip.py\"",
+          "to": "BASE / \"engine.py\", BASE.parent / \"optimization/engine_refined.py\",\n        BASE.parent / \"optimization/engine.py\", BASE.parent / \"optimization/compiled_path.py\",\n        BASE.parent / \"optimization/metal_clip.py\"",
+          "count": 1
+        },
+        {
+          "from": "if name == \"compiled_model\" else",
+          "to": "if name != \"c_cpu\" and engine.CASE_OPTIONS[name][\"compiled_model\"] else",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "followup_changes": [
+    {
+      "file": "gpu-benchmark/optimization_round2/run.py",
+      "change": "Gate control key changes from control to metal_clip, the previously accepted standalone control for this cohort.",
+      "sha256": "e10ba2616798e03784b726db0c57b19474a737e7bec2dce53e76ddcb3f7c49c2"
+    }
+  ]
+}

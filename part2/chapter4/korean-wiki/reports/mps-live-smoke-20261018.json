@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-18T21:02:13.150032+09:00",
+  "torch": "2.14.1",
+  "mps_built": true,
+  "mps_available": true,
+  "cpu_fallback": "0",
+  "scope": "Tiny correctness only; not a throughput or full-corpus training test",
+  "result": {
+    "status": "smoke-test-only",
+    "kind": "CORRECTNESS_ONLY",
+    "results": [
+      {
+        "device": "mps",
+        "status": "passed",
+        "finite_loss": true,
+        "parameter_updated": true,
+        "parameter_count": 325,
+        "batch_ids_sha256": "8de25b6c80b01886f254384490266cbfd2111e181120471825ed56a220cae724"
+      }
+    ],
+    "timing_comparison_valid": false,
+    "throughput": null,
+    "time_budgets": null,
+    "corpus_training_performed": false
+  }
+}

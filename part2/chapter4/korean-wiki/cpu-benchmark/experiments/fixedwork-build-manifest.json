@@ -1,0 +1,91 @@
+{
+  "status": "failed",
+  "started_at": "2026-10-18T16:16:38.220856+09:00",
+  "sources": {
+    "fixedwork_benchmark.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+      "bytes": 49982,
+      "sha256": "6c1caaca3c3589d8b2db1dc1d182fc2d000a712567d0ef94d3df35915d632ec2"
+    },
+    "gemm_kernels.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+      "bytes": 5993,
+      "sha256": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27"
+    },
+    "vector_vforce.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+      "bytes": 7300,
+      "sha256": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465"
+    },
+    "fixedwork_norm.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+      "bytes": 3348,
+      "sha256": "30ee80ed77bbe3548eb2825604c029f6c958d54dc1c2505fddd6dd1cb6d8a865"
+    },
+    "fixedwork_softmax.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+      "bytes": 2982,
+      "sha256": "d4fae1d19cce196edc6745614840192243ddc6ed3fb63b7e4890d8ffa5ae19fc"
+    },
+    "fixedwork_api.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_api.h",
+      "bytes": 1096,
+      "sha256": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b"
+    },
+    "experiment_kernels.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/experiment_kernels.h",
+      "bytes": 2380,
+      "sha256": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016"
+    },
+    "fast_exp.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fast_exp.h",
+      "bytes": 1881,
+      "sha256": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    }
+  },
+  "variants": {
+    "baseline": {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DFW_FIXED_NORM=0",
+        "-DFW_SOFTMAX_INV_BATCH=0",
+        "-DFW_MINIMAL_ZERO=0",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-DBENCH_BUILD_FLAGS=\"-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DFW_FIXED_NORM=0 -DFW_SOFTMAX_INV_BATCH=0 -DFW_MINIMAL_ZERO=0 -Xpreprocessor -fopenmp -isystem /opt/homebrew/opt/libomp/include\"",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_baseline"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:523:9: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]\n  523 |         cblas_sgemm(CblasRowMajor,trans_a ? CblasTrans : CblasNoTrans,\n      |         ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here\n  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,\n      |      ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:944:37: error: no member named 'ru_nvcsw' in 'struct rusage'\n  944 |            (int64_t)cpu_after.usage.ru_nvcsw-(int64_t)cpu_before.usage.ru_nvcsw,\n      |                     ~~~~~~~~~~~~~~~ ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:944:72: error: no member named 'ru_nvcsw' in 'struct rusage'\n  944 |            (int64_t)cpu_after.usage.ru_nvcsw-(int64_t)cpu_before.usage.ru_nvcsw,\n      |                                                       ~~~~~~~~~~~~~~~~ ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:945:37: error: no member named 'ru_nivcsw' in 'struct rusage'\n  945 |            (int64_t)cpu_after.usage.ru_nivcsw-(int64_t)cpu_before.usage.ru_nivcsw,\n      |                     ~~~~~~~~~~~~~~~ ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:945:73: error: no member named 'ru_nivcsw' in 'struct rusage'\n  945 |            (int64_t)cpu_after.usage.ru_nivcsw-(int64_t)cpu_before.usage.ru_nivcsw,\n      |                                                        ~~~~~~~~~~~~~~~~ ^\n1 warning and 4 errors generated.\n",
+      "features": {
+        "fixed_norm": false,
+        "softmax_inv_batch": false,
+        "minimal_zero": false
+      }
+    }
+  }
+}

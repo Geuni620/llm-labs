@@ -1,0 +1,62 @@
+{
+  "user_intent": "CPU 최적화를 하나씩 적용하며 원리와 측정 결과를 함께 학습. 7시간은 강의 참고치이며 필수 목표가 아님.",
+  "source": "cpu-benchmark/results/cpu-vector-exp-mac-20261018-20s-v1.json",
+  "source_sha256": "9b1cba2bb6cf2e84a4cdf6a7feaac250a7751843cadf6ed30810ee048f3658a7",
+  "vforce_cohort": [
+    {
+      "id": "baseline",
+      "median_targets_per_second": 2131.9647400124263,
+      "epoch5_hours": 80.93247710043943,
+      "epoch5_range_hours": [
+        65.01002115072417,
+        107.18441679751366
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 0.5709310337996062,
+        "matrix_multiply": 9.90405846949153,
+        "softmax": 29.52426387174432,
+        "bias_reduce": 1.032025486264361,
+        "gradient_clip": 12.284187405583808,
+        "adamw": 6.090038981724313,
+        "other": 0.641541228269407
+      }
+    },
+    {
+      "id": "native_all_omp",
+      "median_targets_per_second": 4941.324362287256,
+      "epoch5_hours": 34.91881423872602,
+      "epoch5_range_hours": [
+        34.724004209866145,
+        35.11582246237407
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 0.13565048575401306,
+        "matrix_multiply": 9.171615534501218,
+        "softmax": 8.242677023534853,
+        "bias_reduce": 0.6021430428836098,
+        "gradient_clip": 3.765750162508399,
+        "adamw": 3.333756634453161,
+        "other": 0.6523624561353312
+      }
+    },
+    {
+      "id": "vforce_all_omp",
+      "median_targets_per_second": 5488.655833963443,
+      "epoch5_hours": 31.43669282965452,
+      "epoch5_range_hours": [
+        30.505263908779003,
+        32.426792520485854
+      ],
+      "phase_ms_per_update": {
+        "ram_gather": 0.1417989499317721,
+        "matrix_multiply": 8.499147435245897,
+        "softmax": 6.644329836587737,
+        "bias_reduce": 0.5895268074470184,
+        "gradient_clip": 3.3689702819356593,
+        "adamw": 3.4230099063576147,
+        "other": 0.6542092067485845
+      }
+    }
+  ],
+  "timing_scope": "Two 20-second trials each, real Wiki RAM-resident CPU updates; no full epoch or quality evaluation."
+}

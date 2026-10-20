@@ -1,0 +1,8 @@
+/__pycache__/
+/build/
+/.artifacts/
+/lib*.dylib
+/lib*.so
+/*.dylib
+/*.so
+/*.o

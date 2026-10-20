@@ -1,0 +1,132 @@
+<section id="wiki-cpu-comparison">
+  <style>
+    #wiki-cpu-comparison { display:grid; gap:16px; color:var(--foreground); }
+    #wiki-cpu-comparison .conditions { display:grid; gap:4px; }
+    #wiki-cpu-comparison .legend { display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+    #wiki-cpu-comparison .key { display:inline-flex; gap:6px; align-items:center; }
+    #wiki-cpu-comparison .dot { width:9px; height:9px; background:var(--viz-series-1); border-radius:50%; }
+    #wiki-cpu-comparison .diamond { width:9px; height:9px; background:var(--chart-2); transform:rotate(45deg); }
+    #wiki-cpu-comparison .plot { width:100%; min-width:0; }
+    #wiki-cpu-comparison .chart { display:block; width:100%; height:518px; overflow:visible; }
+    #wiki-cpu-comparison .chart text { fill:var(--foreground); font-size:12px; font-weight:400; }
+    #wiki-cpu-comparison .chart .frame,
+    #wiki-cpu-comparison .chart .grid { fill:none; stroke:var(--border); stroke-width:1; }
+    #wiki-cpu-comparison .chart .range { stroke:var(--muted-foreground); stroke-width:1.5; }
+    #wiki-cpu-comparison .chart .first { fill:var(--viz-series-1); }
+    #wiki-cpu-comparison .chart .second { fill:var(--chart-2); }
+    #wiki-cpu-comparison .table { width:100%; table-layout:fixed; }
+    #wiki-cpu-comparison th:first-child { width:34%; }
+    #wiki-cpu-comparison td { vertical-align:top; overflow-wrap:anywhere; }
+    #wiki-cpu-comparison .observed { display:block; }
+    #wiki-cpu-comparison .stats { display:grid; gap:4px; }
+    @media(min-width:600px) { #wiki-cpu-comparison h2 { padding-right:90px; } }
+  </style>
+  <h2>CPU 최적화 비교</h2>
+  <div class="conditions text-small text-muted">
+    <span>Apple M1 · CPU · 실제 Wiki 전체 RAM 적재</span>
+    <span>사전 35,328 · 배치 128 · OpenMP 팀 4 · 12초 요청 × 2회</span>
+    <span>다른 앱 부하 변동 · 최적화 순위 미확정</span>
+  </div>
+  <div class="legend text-small" aria-label="관측값 표시">
+    <span class="key"><i class="dot" aria-hidden="true"></i>1회</span>
+    <span class="key"><i class="diamond" aria-hidden="true"></i>2회</span>
+    <span class="text-muted">선: 두 관측값의 범위</span>
+  </div>
+  <div class="plot">
+    <svg class="chart" role="img" aria-label="9개 CPU 설정의 두 차례 다음 토큰 예측 처리량. 기준 구현도 큰 변동을 보임."></svg>
+  </div>
+  <div class="text-small text-muted">관측값 · 예측/초 · 괄호 안은 실제 초, 업데이트 수</div>
+  <table class="table table-sm" aria-label="각 설정의 실제 시간과 처리량">
+    <thead><tr><th scope="col">설정</th><th scope="col" class="text-end">1회</th><th scope="col" class="text-end">2회</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="stats text-small text-muted" aria-label="계산 단위와 검증 결과">
+    <span>업데이트 1회 = 128개 다음 토큰 예측</span>
+    <span id="wiki-cpu-numeric"></span>
+    <span id="wiki-cpu-fast-exp"></span>
+    <span>수치 검증 범위: 합성 입력 · 2가지 크기 · 스레드 1/4 · 클리핑 1/0.05</span>
+    <span>native: CPU 타깃 지정 · fast-math: 부동소수점 규칙 완화 포함</span>
+  </div>
+  <script type="application/json" id="wiki-cpu-data">__DATA__</script>
+  <script>
+    (() => {
+      const root = document.getElementById('wiki-cpu-comparison');
+      const data = JSON.parse(root.querySelector('#wiki-cpu-data').textContent);
+      const number = new Intl.NumberFormat('ko-KR', {maximumFractionDigits:0});
+      const body = root.querySelector('tbody');
+      for (const row of data.rows) {
+        const tr = document.createElement('tr');
+        const name = document.createElement('td');
+        name.textContent = row.label;
+        name.setAttribute('data-tooltip', row.change);
+        tr.appendChild(name);
+        for (const value of row.trials) {
+          const cell = document.createElement('td');
+          cell.className = 'text-end tabular-nums';
+          const rate = document.createElement('span');
+          rate.className = 'observed';
+          rate.textContent = number.format(value.rate);
+          const detail = document.createElement('span');
+          detail.className = 'text-small text-muted';
+          detail.textContent = `(${value.seconds.toFixed(2)}초, ${value.steps}회)`;
+          cell.append(rate, detail);
+          tr.appendChild(cell);
+        }
+        body.appendChild(tr);
+      }
+      root.querySelector('#wiki-cpu-numeric').textContent = `수치 검증 ${data.numeric_cases_passed}/72 통과 · 최대 절대 오차 ${data.numeric_max_absolute_error.toExponential(2)}`;
+      root.querySelector('#wiki-cpu-fast-exp').textContent = `fast-exp 최대 상대 오차 ${data.fast_exp_max_relative_error.toExponential(2)} · ${number.format(data.fast_exp_samples)}개 표본`;
+      const svg = root.querySelector('.chart');
+      const ns = 'http://www.w3.org/2000/svg';
+      const make = (name, attrs, content) => {
+        const element = document.createElementNS(ns, name);
+        for (const [key, value] of Object.entries(attrs || {})) element.setAttribute(key, value);
+        if (content !== undefined) element.textContent = content;
+        return element;
+      };
+      const render = () => {
+        const width = Math.floor(root.querySelector('.plot').getBoundingClientRect().width);
+        if (width < 200) return;
+        const height = 518, left = 126, right = width - 8, top = 24, bottom = 456;
+        const maximum = Math.max(...data.rows.map(row => row.maximum));
+        const domain = maximum * 1.05;
+        const x = value => left + 8 + value / domain * (right - left - 16);
+        svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+        svg.replaceChildren();
+        svg.appendChild(make('title', {}, '단시간 CPU 처리량 비교'));
+        svg.appendChild(make('rect', {x:left,y:top,width:right-left,height:bottom-top,class:'frame','data-chart-frame':''}));
+        const tickStep = width < 450 ? 1000 : 500;
+        for (let tick = 0; tick <= domain; tick += tickStep) {
+          const location = x(tick);
+          svg.appendChild(make('line', {x1:location,x2:location,y1:top,y2:bottom,class:'grid'}));
+          svg.appendChild(make('text', {x:location,y:bottom+21,'text-anchor':'middle'}, tick ? `${tick/1000}k` : '0'));
+        }
+        svg.appendChild(make('text', {x:0,y:14,class:'axis-title','data-axis':'y'}, '설정'));
+        const title = make('text', {x:(left+right)/2,y:height-20,'text-anchor':'middle',class:'axis-title','data-axis':'x'});
+        title.appendChild(make('tspan', {x:(left+right)/2,dy:0}, '다음 토큰 예측'));
+        title.appendChild(make('tspan', {x:(left+right)/2,dy:16}, '횟수/초'));
+        svg.appendChild(title);
+        data.rows.forEach((row, index) => {
+          const y = top + 24 + index * 48;
+          svg.appendChild(make('text', {x:left-10,y:y+4,'text-anchor':'end'}, row.label));
+          svg.appendChild(make('line', {x1:x(row.minimum),x2:x(row.maximum),y1:y,y2:y,class:'range'}));
+          const first = make('circle', {cx:x(row.trials[0].rate),cy:y,r:5,class:'first'});
+          first.appendChild(make('title', {}, `${row.label} 1회: ${row.trials[0].rate.toFixed(2)}회/초`));
+          svg.appendChild(first);
+          const secondX = x(row.trials[1].rate);
+          const second = make('path', {d:`M ${secondX} ${y-6} L ${secondX+6} ${y} L ${secondX} ${y+6} L ${secondX-6} ${y} Z`,class:'second'});
+          second.appendChild(make('title', {}, `${row.label} 2회: ${row.trials[1].rate.toFixed(2)}회/초`));
+          svg.appendChild(second);
+        });
+        requestAnimationFrame(() => {
+          const labels = [...svg.querySelectorAll('text')].map(element => element.getBoundingClientRect());
+          const bounds = svg.getBoundingClientRect();
+          const clipped = labels.some(box => box.left < bounds.left-1 || box.right > bounds.right+1 || box.top < bounds.top-1 || box.bottom > bounds.bottom+1);
+          console.log(JSON.stringify({chartWidth:width,labelOverflow:clipped,pageOverflow:document.documentElement.scrollWidth > window.innerWidth}));
+        });
+      };
+      new ResizeObserver(render).observe(root.querySelector('.plot'));
+      render();
+    })();
+  </script>
+</section>

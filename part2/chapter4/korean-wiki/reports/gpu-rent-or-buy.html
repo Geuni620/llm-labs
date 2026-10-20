@@ -1,0 +1,32 @@
+<div id="wiki-gpu-rent-or-buy">
+  <h3>GPU 대여·구매 비용</h3>
+  <div class="text-small text-muted">2026-10-18 확인 · 원화 환산은 1달러 = 1,500원 가정</div>
+  <div class="comparison-label">필요할 때 대여: 한 달 GPU 서버를 켜둔 시간</div>
+  <table class="table table-sm" aria-label="월 GPU 사용시간에 따른 RunPod 컴퓨트 요금 계산 예시">
+    <colgroup><col style="width:24%"><col style="width:38%"><col style="width:38%"></colgroup>
+    <thead><tr><th scope="col">월 사용</th><th scope="col">RTX A5000<br><span class="text-small">24GB · $0.27/시간</span></th><th scope="col">RTX 4090<br><span class="text-small">24GB · $0.89/시간</span></th></tr></thead>
+    <tbody class="tabular-nums">
+      <tr><th scope="row">20시간</th><td>8,100원</td><td>26,700원</td></tr>
+      <tr><th scope="row">50시간</th><td>20,250원</td><td>66,750원</td></tr>
+      <tr><th scope="row">100시간</th><td>40,500원</td><td>133,500원</td></tr>
+    </tbody>
+  </table>
+  <div class="text-small text-muted"><a href="https://www.runpod.io/pricing" target="_blank" rel="noreferrer">공개 컴퓨트 요금</a>만 계산 · <a href="https://docs.runpod.io/pods/pricing" target="_blank" rel="noreferrer">저장소</a>·세금·카드 결제 비용 별도 · 같은 학습량의 완료 시간은 GPU별로 다름</div>
+  <div class="comparison-label">구매: 개인 AI 학습용으로 비교할 대표 후보</div>
+  <table class="table table-sm" aria-label="GPU 신품과 중고 판매 게시가격 예시">
+    <colgroup><col style="width:45%"><col style="width:18%"><col style="width:37%"></colgroup>
+    <thead><tr><th scope="col">GPU · 구분</th><th scope="col">VRAM</th><th scope="col">확인한 가격 예시</th></tr></thead>
+    <tbody class="tabular-nums">
+      <tr><th scope="row">RTX 3090 · 중고</th><td>24GB</td><td><a href="https://web.joongna.com/product/233235164" target="_blank" rel="noreferrer">160만</a>~<a href="https://web.joongna.com/product/233325989" target="_blank" rel="noreferrer">185만원</a></td></tr>
+      <tr><th scope="row">RTX 4090 · 중고</th><td>24GB</td><td><a href="https://web.joongna.com/product/233297121" target="_blank" rel="noreferrer">320만</a>~<a href="https://web.joongna.com/product/233207414" target="_blank" rel="noreferrer">400만원</a></td></tr>
+      <tr><th scope="row">RTX 5060 Ti · 신품<div class="text-small">ASUS DUAL OC 16GB</div></th><td>16GB</td><td><a href="https://prod.danawa.com/info/?pcode=82443086" target="_blank" rel="noreferrer">약 99.3만원</a></td></tr>
+      <tr><th scope="row">RTX 5090 · 신품<div class="text-small">GIGABYTE GAMING OC</div></th><td>32GB</td><td><a href="https://prod.danawa.com/info/?pcode=75184280" target="_blank" rel="noreferrer">약 999만원</a></td></tr>
+    </tbody>
+  </table>
+  <div class="text-small text-muted">VRAM = GPU 전용 메모리 · 판매 인기순위 아님 · 중고는 게시 호가이며 거래 완료 평균 아님 · 신품은 특정 제조사 제품 예시</div>
+  <div class="text-small text-muted">그래픽카드 단품 기준 · 실제 재고·결제가 별도 확인 · 데스크톱 본체·전원·냉각·전기료 별도</div>
+</div>
+<style>
+  #wiki-gpu-rent-or-buy { --viz-accent: var(--foreground); display: grid; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
+  #wiki-gpu-rent-or-buy .comparison-label { font-weight: 500; margin-top: 8px; }
+</style>

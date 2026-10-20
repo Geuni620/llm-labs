@@ -1,0 +1,25 @@
+{
+  "kind": "MPS_EVENT_PHASE_DIAGNOSTIC",
+  "status": "failed",
+  "started_at": "2026-10-18T21:43:40.765483+09:00",
+  "source_before": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile.py",
+      "bytes": 6437,
+      "sha256": "f0f43ccd7fe8e823bc329339b3b355e3e8f5635341fa7318a307f2af4c5382e6"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py",
+      "bytes": 20822,
+      "sha256": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py",
+      "bytes": 17283,
+      "sha256": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6"
+    }
+  },
+  "error": "AttributeError: module 'profile' has no attribute 'run' (consider renaming '/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile.py' since it has the same name as the standard library module named 'profile' and prevents importing that standard library module)",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile.py\", line 116, in main\n    report.update(profile())\n                  ~~~~~~~^^\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile.py\", line 32, in profile\n    bundle = baseline.build_model_optimizer(config, \"mps\", \"preload_defer_foreach\")\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py\", line 93, in build_model_optimizer\n    optimizer = torch.optim.AdamW(parameters, **OPTIMIZER, foreach=foreach, fused=False, capturable=False)\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/optim/adamw.py\", line 35, in __init__\n    super().__init__(\n    ~~~~~~~~~~~~~~~~^\n        params,\n        ^^^^^^^\n    ...<10 lines>...\n        decoupled_weight_decay=True,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/optim/adam.py\", line 102, in __init__\n    super().__init__(params, defaults)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/optim/optimizer.py\", line 424, in __init__\n    self.add_param_group(cast(dict[str, Any], param_group))\n    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/_compile.py\", line 47, in inner\n    import torch._dynamo\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/_dynamo/__init__.py\", line 13, in <module>\n    from . import (\n    ...<7 lines>...\n    )\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/_dynamo/aot_compile.py\", line 17, in <module>\n    from torch._dynamo.convert_frame import GraphRuntimeEnv\n  File \"/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/lib/python3.13/site-packages/torch/_dynamo/convert_frame.py\", line 28, in <module>\n    import cProfile\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/cProfile.py\", line 24, in <module>\n    run.__doc__ = _pyprofile.run.__doc__\n                  ^^^^^^^^^^^^^^\nAttributeError: module 'profile' has no attribute 'run' (consider renaming '/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile.py' since it has the same name as the standard library module named 'profile' and prevents importing that standard library module)\n",
+  "completed_at": "2026-10-18T21:43:59.864213+09:00"
+}

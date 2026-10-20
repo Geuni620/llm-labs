@@ -1,0 +1,120 @@
+{
+  "published_at_utc": "2026-10-18 09:02:35 UTC",
+  "html_render": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-22d0fc27-0dce-447e-8286-dd508184c8ba-html",
+    "title": "필요할 때 GPU 대여와 신품·중고 구매 비용",
+    "height": 665,
+    "heights": [
+      [
+        320,
+        665
+      ],
+      [
+        375,
+        649
+      ],
+      [
+        430,
+        633
+      ],
+      [
+        520,
+        617
+      ],
+      [
+        640,
+        601
+      ],
+      [
+        728,
+        601
+      ],
+      [
+        860,
+        601
+      ],
+      [
+        1000,
+        601
+      ],
+      [
+        1144,
+        601
+      ]
+    ],
+    "outline": "t0,1,32,4,1;t0,8,65,4,1;t0,17,62,4,1;g0,24,182,41,4;t0,67,122,4,1;t0,76,59,4,1;g0,83,182,55,5;t0,140,147,4,1;t0,146,106,4,1"
+  },
+  "previews": [
+    {
+      "width": 728,
+      "contentHeight": 601,
+      "capturedHeight": 601,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "GPU_COST_QA {\"width\":728,\"scrollWidth\":728,\"tables\":2,\"rows\":7,\"linkColor\":\"color(srgb 0.960784 0.960784 0.960784)\",\"invalidText\":false}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 728,
+        "height": 601
+      }
+    },
+    {
+      "width": 320,
+      "contentHeight": 665,
+      "capturedHeight": 665,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "GPU_COST_QA {\"width\":320,\"scrollWidth\":320,\"tables\":2,\"rows\":7,\"linkColor\":\"color(srgb 0.152941 0.152941 0.164706)\",\"invalidText\":false}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 320,
+        "height": 665
+      }
+    }
+  ],
+  "scope": "Read-only hardware and pricing research; no compute rented or GPU purchased",
+  "hardware_verified_live": {
+    "machine": "MacBook Air",
+    "model": "MacBookAir10,1",
+    "chip": "Apple M1",
+    "gpu_cores": 8,
+    "unified_memory_gb": 16
+  },
+  "rental": {
+    "currency": "USD",
+    "exchange_rate_krw_per_usd_assumption": 1500,
+    "exchange_is_not_a_live_quote": true,
+    "compute_hourly_usd": {
+      "RTX_A5000": 0.27,
+      "RTX_4090": 0.89
+    },
+    "excluded": [
+      "storage",
+      "tax",
+      "card conversion and fees"
+    ],
+    "source": "https://www.runpod.io/pricing"
+  },
+  "purchase": {
+    "price_basis": "Selected Korean listings and catalog offers observed on 2026-10-18; no completed-sale average, no stock/checkout verification, GPU card only",
+    "used_3090_krw": [
+      1600000,
+      1850000
+    ],
+    "used_4090_krw": [
+      3200000,
+      4000000
+    ],
+    "new_asus_5060ti16gb_krw": 992890,
+    "new_gigabyte_5090_gaming_oc_krw": 9989900,
+    "comparison_candidates_not_sales_rank": true
+  },
+  "existing_mps_test_record": "reports/nplm-benchmark.json",
+  "cpu_31_to_32_hours_is_short_run_c_cpu_extrapolation": true
+}

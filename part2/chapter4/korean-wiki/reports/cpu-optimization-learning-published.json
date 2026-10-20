@@ -1,0 +1,74 @@
+{
+  "published_at": "2026-10-18 04:29:39 UTC",
+  "user_intent": "GPU 없이 CPU 최적화 방법을 하나씩 적용하면서 원리와 효과를 학습. 7시간은 필수 목표가 아님.",
+  "render": {
+    "htmlRender": {
+      "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-156ffe42-f7a7-4145-bead-fb75a01edb65-html",
+      "title": "CPU 최적화 학습 — 누적 적용과 병목 비교",
+      "height": 723,
+      "heights": [
+        [
+          320,
+          723
+        ],
+        [
+          375,
+          723
+        ],
+        [
+          430,
+          723
+        ],
+        [
+          520,
+          723
+        ],
+        [
+          640,
+          723
+        ],
+        [
+          728,
+          723
+        ],
+        [
+          860,
+          723
+        ],
+        [
+          1000,
+          723
+        ],
+        [
+          1144,
+          723
+        ]
+      ],
+      "outline": "t0,1,51,5,1;t0,10,74,4,1;t0,15,61,4,1;t0,20,54,4,1;g0,28,182,49,4;t0,82,66,4,1;t0,90,40,4,1;t0,100,12,4,1;t15,100,14,4,1;t32,100,18,4,1;t52,100,14,4,1;t70,100,9,4,1;m0,108,182,55,1;t0,167,59,4,1;t0,172,66,4,1;t0,177,54,4,1"
+    },
+    "message": "Shown to the reader above your reply. Don't mention or describe the page; reply with only what it doesn't already say."
+  },
+  "previews": [
+    {
+      "width": 728,
+      "appearance": "dark",
+      "contentHeight": 723,
+      "labelOverflow": false,
+      "pageOverflow": false
+    },
+    {
+      "width": 320,
+      "appearance": "light",
+      "contentHeight": 723,
+      "labelOverflow": false,
+      "pageOverflow": false
+    }
+  ],
+  "independent_visual_vs_review_checks": 27,
+  "reports": [
+    "reports/cpu-cumulative-review.json",
+    "reports/cpu-cumulative-review.txt"
+  ],
+  "actual_full_epochs_executed": 0,
+  "approved_long_training_remains_deferred": true
+}

@@ -1,0 +1,324 @@
+{
+  "source": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/results/cpu-optimizations-mac-real-wiki-20261018-12s.json",
+  "source_sha256": "c5e252d067665f160800901318847a613f86e3cef0e5d0ab6891b097b4bc28f9",
+  "configuration": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 128,
+    "seed": 42,
+    "warmup_steps": 2,
+    "requested_threads": 4,
+    "seconds_per_trial": 12,
+    "repeats": 2,
+    "optimizer": "AdamW",
+    "gradient_max_norm": 1.0
+  },
+  "rows": [
+    {
+      "case": "baseline",
+      "label": "기준 O3",
+      "change": "O3 + Accelerate",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 15.577277999953367,
+          "steps": 56,
+          "targets": 7168,
+          "rate": 460.15741646399704
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.044285000069067,
+          "steps": 188,
+          "targets": 24064,
+          "rate": 1997.9600283339366
+        }
+      ],
+      "median": 1229.058722398967,
+      "minimum": 460.15741646399704,
+      "maximum": 1997.9600283339366,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "native",
+      "label": "native",
+      "change": "+ -mcpu=native",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 13.559145000064746,
+          "steps": 52,
+          "targets": 6656,
+          "rate": 490.8864091333353
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.111660000053234,
+          "steps": 119,
+          "targets": 15232,
+          "rate": 1257.6310761640477
+        }
+      ],
+      "median": 874.2587426486915,
+      "minimum": 490.8864091333353,
+      "maximum": 1257.6310761640477,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "relaxed_simd",
+      "label": "native + fast-math",
+      "change": "+ -mcpu=native -ffast-math",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 12.016373999967746,
+          "steps": 130,
+          "targets": 16640,
+          "rate": 1384.7771382652259
+        },
+        {
+          "repeat": 2,
+          "seconds": 15.084553000037722,
+          "steps": 145,
+          "targets": 18560,
+          "rate": 1230.3977452930549
+        }
+      ],
+      "median": 1307.5874417791404,
+      "minimum": 1230.3977452930549,
+      "maximum": 1384.7771382652259,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "softmax_omp",
+      "label": "softmax OMP",
+      "change": "softmax 행을 OpenMP로 분담",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 12.105739000020549,
+          "steps": 94,
+          "targets": 12032,
+          "rate": 993.9087568284411
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.00483200000599,
+          "steps": 108,
+          "targets": 13824,
+          "rate": 1151.5363147100352
+        }
+      ],
+      "median": 1072.7225357692382,
+      "minimum": 993.9087568284411,
+      "maximum": 1151.5363147100352,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "reduction_omp",
+      "label": "리덕션 OMP",
+      "change": "bias 합산·gradient norm 병렬화",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 12.014943999936804,
+          "steps": 273,
+          "targets": 34944,
+          "rate": 2908.3780998216716
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.036770000006072,
+          "steps": 68,
+          "targets": 8704,
+          "rate": 723.1175805465759
+        }
+      ],
+      "median": 1815.7478401841238,
+      "minimum": 723.1175805465759,
+      "maximum": 2908.3780998216716,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "adamw_omp",
+      "label": "AdamW OMP",
+      "change": "동일 AdamW의 파라미터 업데이트 병렬화",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 12.04580600000918,
+          "steps": 182,
+          "targets": 23296,
+          "rate": 1933.9511195832183
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.147166000097059,
+          "steps": 86,
+          "targets": 11008,
+          "rate": 906.2196071011167
+        }
+      ],
+      "median": 1420.0853633421675,
+      "minimum": 906.2196071011167,
+      "maximum": 1933.9511195832183,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "tiled32",
+      "label": "SGEMM 타일 32",
+      "change": "행렬곱을 직접 구현한 32×32 타일로 대체",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 12.091266999952495,
+          "steps": 39,
+          "targets": 4992,
+          "rate": 412.85995917711625
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.47572400001809,
+          "steps": 27,
+          "targets": 3456,
+          "rate": 277.0179910997541
+        }
+      ],
+      "median": 344.9389751384352,
+      "minimum": 277.0179910997541,
+      "maximum": 412.85995917711625,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "tiled64",
+      "label": "SGEMM 타일 64",
+      "change": "행렬곱을 직접 구현한 64×64 타일로 대체",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 12.033006999990903,
+          "steps": 52,
+          "targets": 6656,
+          "rate": 553.1451947135934
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.195428999955766,
+          "steps": 61,
+          "targets": 7808,
+          "rate": 640.2398800426225
+        }
+      ],
+      "median": 596.692537378108,
+      "minimum": 553.1451947135934,
+      "maximum": 640.2398800426225,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    },
+    {
+      "case": "fast_exp",
+      "label": "fast-exp",
+      "change": "softmax 내부 expf를 범위 제한 근사로 대체",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 16.662561999983154,
+          "steps": 69,
+          "targets": 8832,
+          "rate": 530.0505408477358
+        },
+        {
+          "repeat": 2,
+          "seconds": 12.045521999942139,
+          "steps": 179,
+          "targets": 22912,
+          "rate": 1902.117650037089
+        }
+      ],
+      "median": 1216.0840954424125,
+      "minimum": 530.0505408477358,
+      "maximum": 1902.117650037089,
+      "numeric_cases_passed": 8,
+      "numeric_max_absolute_error": 9.58460693034624e-07
+    }
+  ],
+  "actual_seconds_min": 12.00483200000599,
+  "actual_seconds_max": 16.662561999983154,
+  "corpus_owned_ram_bytes": 328004218,
+  "maximum_process_rss_bytes": 493404160,
+  "numeric_cases_passed": 72,
+  "numeric_comparisons_passed": 1656,
+  "numeric_max_absolute_error": 9.58460693034624e-07,
+  "fast_exp_samples": 2001157,
+  "fast_exp_max_relative_error": 2.274072025778457e-07,
+  "fast_exp_softmax_probability_max_absolute_error": 5.960464477539063e-08,
+  "interpretation": {
+    "measurement_status": "18_valid_observations_completed",
+    "pass_semantics": "Passed means built, independently numerically validated and completed the declared measurement; it does not mean faster.",
+    "ranking_status": "unconfirmed_under_variable_background_load",
+    "host_was_not_isolated": true,
+    "one_minute_load_min": 19.10009765625,
+    "one_minute_load_max": 74.4814453125,
+    "maximum_same_case_rate_ratio": 4.341905523737784,
+    "repeat_rate_max_over_min": {
+      "baseline": 4.341905523737784,
+      "native": 2.561959452868959,
+      "relaxed_simd": 1.1254711279850411,
+      "softmax_omp": 1.1585935900037574,
+      "reduction_omp": 4.021998881044136,
+      "adamw_omp": 2.134086599350555,
+      "tiled32": 1.4903723672894786,
+      "tiled64": 1.157453569445044,
+      "fast_exp": 3.588559021173602
+    },
+    "limitation": "The same setting changed substantially across its two repeats. Forward/reverse order does not remove this background-load confounding, so small differences and precise optimization rankings are unresolved.",
+    "combination_screening": "Exploratory paired-repeat screening only; not automatic adoption into the trainer or proof of a performance optimum.",
+    "no_actual_trainer_configuration_changed": true,
+    "no_full_epoch_or_five_epoch_training_performed": true,
+    "extrapolation_limit": "Existing target-count extrapolations are arithmetic consequences of noisy short-run rates, not reliable long-run completion predictions.",
+    "numerical_correctness_is_separate": "All9settings passed8synthetic cases each,1656PyTorch comparisons. Numerical validation is separate from timing, learned quality and generalization."
+  },
+  "combination": {
+    "status": "not_run",
+    "passed": false,
+    "reason": "No setting exceeded the observed baseline median by >=2% and beat its baseline in both paired repeats; no exploratory combined case qualified. This does not prove that optimizations cannot help."
+  },
+  "review": {
+    "calculation_recheck": "passed",
+    "source_hashes_unchanged": true,
+    "actual_input_hashes_postrun": {
+      "checked_at": "2026-10-18T12:28:18.800906+09:00",
+      "passed": true,
+      "scope": "Read-only full hashes after timings; actual train ID array matches verified NumPy export, paragraph index matches preserved corpus manifest. These hash reads were outside every compute trial.",
+      "files": [
+        {
+          "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.ids.npy",
+          "bytes": 272938782,
+          "sha256": "0353bfedbd50f8cb5dea6e1a17c6bbea281fb3947969ca280b704209cf8b6ed6",
+          "matches_preserved_verified_source": true
+        },
+        {
+          "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.paragraphs.npy",
+          "bytes": 42828964,
+          "sha256": "c11b005a48b8b24e3ac8849bb4ff1a3820060cb40ef3bdbf76697b633181d347",
+          "matches_preserved_verified_source": true
+        }
+      ]
+    },
+    "independent_reviewers": [
+      "integer_array_review",
+      "numeric_tokens"
+    ],
+    "learned_quality_evaluated": false,
+    "five_epochs_executed": false
+  }
+}

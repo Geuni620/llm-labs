@@ -1,0 +1,55 @@
+<div id="wiki-cloud-gpu-mcp-options">
+  <h3>GPU 학습과 MCP 관리</h3>
+  <div class="text-small text-muted">2026-10-18 공식 자료 확인 · 이번 NPLM 실험 기준</div>
+  <table class="table table-sm" aria-label="클라우드 서비스별 MCP 관리 지원과 GPU 학습 용도 비교">
+    <colgroup><col style="width:26%"><col style="width:34%"><col style="width:40%"></colgroup>
+    <thead><tr><th scope="col">서비스</th><th scope="col">MCP 연결 범위</th><th scope="col">적합한 용도</th></tr></thead>
+    <tbody>
+      <tr>
+        <th scope="row"><a href="https://docs.runpod.io/get-started/mcp-servers" target="_blank" rel="noreferrer">RunPod</a><div class="text-small">우선 추천</div></th>
+        <td>공식 관리 MCP<br>GPU 서버 생성·중지·요금 조회</td>
+        <td>GPU 1장으로 학습·속도 실험</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href="https://docs.digitalocean.com/reference/mcp/droplet-mcp-tools/" target="_blank" rel="noreferrer">Digital<wbr>Ocean</a></th>
+        <td>공식 관리 MCP<br>VM·디스크 관리</td>
+        <td>GPU VM과 일반 서버 운영</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href="https://docs.cloud.google.com/compute/docs/use-compute-engine-mcp" target="_blank" rel="noreferrer">Google Cloud</a></th>
+        <td>공식 관리 MCP<br>GPU VM 생성·수명주기 관리</td>
+        <td>GPU 학습·스토리지 통합</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href="https://docs.aws.amazon.com/agent-toolkit/latest/userguide/mcp-server.html" target="_blank" rel="noreferrer">AWS</a></th>
+        <td>공식 관리 MCP<br>AWS 서비스 API 실행</td>
+        <td>EC2 GPU 등 인프라 운영</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href="https://vast.ai/products/gpu-cloud" target="_blank" rel="noreferrer">Vast.ai</a></th>
+        <td>공식 관리 MCP 미확인<br>연동 별도 검토</td>
+        <td>GPU 매물·시세 비교 후보</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href="https://modal.com/docs/guide/gpu" target="_blank" rel="noreferrer">Modal</a></th>
+        <td><a href="https://modal.com/docs/examples/mcp_server_stateless" target="_blank" rel="noreferrer">맞춤 MCP 구현 가능</a><br>추가 개발 필요</td>
+        <td>Python GPU 학습 작업 실행</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href="https://vercel.com/docs/agent-resources/vercel-mcp" target="_blank" rel="noreferrer">Vercel</a></th>
+        <td>공식 관리 MCP<br>프로젝트·배포·로그</td>
+        <td>결과 대시보드·웹 배포</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href="https://developers.cloudflare.com/workers/get-started/prompting/" target="_blank" rel="noreferrer">Cloudflare</a></th>
+        <td>공식 관리 MCP<br>Cloudflare API 작업</td>
+        <td>웹/API·저장소·추론<br><a href="https://www.cloudflare.com/trust-hub/responsible-ai/" target="_blank" rel="noreferrer">학습용 GPU 미제공</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-small tabular-nums">RunPod 공개 컴퓨트 요금: RTX A5000 24GB $0.27/시간 · RTX 4090 24GB $0.89/시간 <a href="https://www.runpod.io/pricing" target="_blank" rel="noreferrer">요금표</a></div>
+  <div class="text-small text-muted">USD · 재고·최종 견적 별도 · <a href="https://docs.runpod.io/pods/pricing" target="_blank" rel="noreferrer">저장소 별도 과금</a> · 공식 MCP 지원과 이 대화의 연결 완료는 별개</div>
+</div>
+<style>
+  #wiki-cloud-gpu-mcp-options { --viz-accent: var(--foreground); min-width: 0; display: grid; gap: 8px; overflow-wrap: anywhere; }
+</style>

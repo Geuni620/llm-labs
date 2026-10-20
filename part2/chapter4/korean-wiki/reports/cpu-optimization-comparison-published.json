@@ -1,0 +1,65 @@
+{
+  "published_at": "2026-10-18 03:33:22 UTC",
+  "scope": "9 CPU settings, 18 real-Wiki RAM-resident observations; no full epoch or learned-quality evaluation",
+  "render": {
+    "htmlRender": {
+      "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-11aa3efd-32e6-424b-a4ba-d6fee9681c3f-html",
+      "title": "Mac CPU 최적화 비교 — 18회 실측",
+      "height": 1431,
+      "heights": [
+        [
+          320,
+          1431
+        ],
+        [
+          375,
+          1415
+        ],
+        [
+          430,
+          1415
+        ],
+        [
+          520,
+          1415
+        ],
+        [
+          640,
+          1415
+        ],
+        [
+          728,
+          1415
+        ],
+        [
+          860,
+          1415
+        ],
+        [
+          1000,
+          1415
+        ],
+        [
+          1144,
+          1415
+        ]
+      ],
+      "outline": "t0,1,31,5,1;t0,10,56,4,1;t0,15,72,4,1;t0,20,46,4,1;t0,28,8,4,1;t12,28,8,4,1;t24,28,24,4,1;m0,36,182,130,1;t0,170,58,4,1;g0,178,182,148,10;t0,330,45,4,1;t0,335,56,4,1;t0,340,64,4,1;t0,345,81,4,1;t0,350,76,4,1"
+    },
+    "message": "Shown to the reader above your reply. Don't mention or describe the page; reply with only what it doesn't already say."
+  },
+  "preview_desktop_728_dark": [
+    "{\"width\":728,\"contentHeight\":1415,\"capturedHeight\":1415,\"consoleMessages\":[{\"level\":\"log\",\"text\":\"{\\\"chartWidth\\\":728,\\\"labelOverflow\\\":false,\\\"pageOverflow\\\":false}\"},{\"level\":\"log\",\"text\":\"{\\\"chartWidth\\\":728,\\\"labelOverflow\\\":false,\\\"pageOverflow\\\":false}\"}],\"screenshot\":{\"mimeType\":\"image/png\",\"width\":728,\"height\":1415}}"
+  ],
+  "preview_mobile_320_light": [
+    "{\"width\":320,\"contentHeight\":1431,\"capturedHeight\":1431,\"consoleMessages\":[{\"level\":\"log\",\"text\":\"{\\\"chartWidth\\\":320,\\\"labelOverflow\\\":false,\\\"pageOverflow\\\":false}\"},{\"level\":\"log\",\"text\":\"{\\\"chartWidth\\\":320,\\\"labelOverflow\\\":false,\\\"pageOverflow\\\":false}\"}],\"screenshot\":{\"mimeType\":\"image/png\",\"width\":320,\"height\":1431}}"
+  ],
+  "numerical_validation": "72 cases / 1656 comparisons passed",
+  "ranking": "unconfirmed_under_variable_background_load",
+  "independent_reviewers": [
+    "integer_array_review",
+    "numeric_tokens"
+  ],
+  "source_report": "cpu-benchmark/results/cpu-optimizations-mac-real-wiki-20261018-12s.json",
+  "comparison_report": "reports/cpu-optimization-comparison.txt"
+}

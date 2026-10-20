@@ -1,0 +1,5 @@
+{
+  "time": "2026-10-18T23:34:05.431651+09:00",
+  "status": "cancelled_by_user",
+  "scope": "Dependency setup and library metadata inspection only; no Word2Vec model constructed or trained. User chose NPLM only. Task-owned isolated environment removed; original training environment unchanged."
+}

@@ -1,0 +1,75 @@
+{
+  "created_at_utc": "2026-10-18 07:38:06 UTC",
+  "initial": {
+    "git_index_sha256": "b50df78101d69fcf3681efde90062f15b21480deeb8b960c599e2463b0a608db",
+    "frozen_source_sha256": {
+      "vforce_benchmark.c": "45d25a5fcadf251bb5886e55d878f77cf0c4e8c80573335d59c6ec2fc4a4448c",
+      "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+      "benchmark.c": "348064671fc454c7a930d5468574ece3e8d708404eb29fe2b38a0e2dc231045f",
+      "cumulative_benchmark.c": "2eefe1cc43e867918d9c5f4c3995df9c272f31c6b1e59e139cbffebbee8b969f",
+      "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+      "vector_kernels.c": "4c7213b4425644ab42fd3ed427ea3f4992a490941f0704d02e95339b68c4f42e",
+      "gemm_kernels.c": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27",
+      "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5",
+      "run_vector_exp.py": "a69e30c2fcdd2d80f8ad346067d3f5e621f6046cd01109640084ec5949c55367",
+      "run_norm_simd.py": "769569381ea654808298cd933b7ca974f813c6103b97c9cb7a9f122e0a5ea680"
+    }
+  },
+  "final": {
+    "git_index_sha256": "b50df78101d69fcf3681efde90062f15b21480deeb8b960c599e2463b0a608db",
+    "frozen_source_sha256": {
+      "vforce_benchmark.c": "45d25a5fcadf251bb5886e55d878f77cf0c4e8c80573335d59c6ec2fc4a4448c",
+      "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+      "benchmark.c": "348064671fc454c7a930d5468574ece3e8d708404eb29fe2b38a0e2dc231045f",
+      "cumulative_benchmark.c": "2eefe1cc43e867918d9c5f4c3995df9c272f31c6b1e59e139cbffebbee8b969f",
+      "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+      "vector_kernels.c": "4c7213b4425644ab42fd3ed427ea3f4992a490941f0704d02e95339b68c4f42e",
+      "gemm_kernels.c": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27",
+      "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5",
+      "run_vector_exp.py": "a69e30c2fcdd2d80f8ad346067d3f5e621f6046cd01109640084ec5949c55367",
+      "run_norm_simd.py": "769569381ea654808298cd933b7ca974f813c6103b97c9cb7a9f122e0a5ea680"
+    },
+    "trials": 16,
+    "actual_compute_range_seconds": [
+      6.261595000047237,
+      15.534513000049628
+    ],
+    "outside_10_30_count": 5,
+    "checksum_distinct_counts": {
+      "initial_parameter_checksum": 1,
+      "input_checksum": 1,
+      "final_input_checksum": 1,
+      "final_parameter_checksum": 1,
+      "final_moment1_checksum": 1,
+      "final_moment2_checksum": 1
+    },
+    "clip_active_counts": [
+      66
+    ],
+    "loadavg_1m_range": [
+      3.48876953125,
+      5.38232421875
+    ],
+    "completed_at": "2026-10-18T16:27:52.321695+09:00",
+    "consistent_elapsed_projection": {
+      "fixed_norm": 57.418653822493646,
+      "softmax_inv_batch": 61.36768956903114,
+      "minimal_zero": 54.62840941927276,
+      "combined": 31.709915155250854
+    }
+  },
+  "original_sources_unchanged": true,
+  "git_index_unchanged": true,
+  "reviewers": [
+    {
+      "agent": "numeric_tokens",
+      "scope": "Independent timing arithmetic, fixed work, sampler, phases, CPU resources and identity audit",
+      "result": "passed"
+    },
+    {
+      "agent": "tiled_gemm",
+      "scope": "Source, method and bounded interpretation review",
+      "result": "passed"
+    }
+  ]
+}

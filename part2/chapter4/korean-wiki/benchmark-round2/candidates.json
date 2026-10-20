@@ -1,0 +1,28 @@
+{
+  "status": "short_timing_candidates_only_long_training_deferred",
+  "backend": "optimized C with Apple Accelerate and OpenMP; not the existing PyTorch training throughput",
+  "dataset": "training-corpora/wiki-k35328",
+  "vocab_size": 35328,
+  "context_size": 8,
+  "embedding_dim": 64,
+  "batch_size": 512,
+  "requested_threads": 6,
+  "dtype": "float32",
+  "optimizer": {"name": "AdamW", "lr": 0.001, "betas": [0.9, 0.999], "eps": 1e-8, "weight_decay": 0.01},
+  "clip_norm": 1.0,
+  "epoch_target_windows": 124232535,
+  "candidates": [
+    {"name": "retain_model_capacity", "hidden_dim": 128, "parameter_count": 6883968, "target_epochs": 2,
+     "low_load_epoch2_hours_extrapolated": 7.421885802739598, "prior_higher_load_epoch2_hours": 10.56872447102882},
+    {"name": "smaller_nplm", "hidden_dim": 64, "parameter_count": 4590144, "target_epochs": 2,
+     "low_load_epoch2_hours_extrapolated": 6.019938251085573, "quality": "Different capacity; evaluate held-out CE/PPL. Not proven better or equal."}
+  ],
+  "next_chapter_requirements": [
+    "Integrate the checked C kernels into an epoch trainer; the current benchmark supports at most 4096 updates.",
+    "Use a hard 8-hour wall limit with resumable checkpoints and validation; never infer epoch loss from these short tests.",
+    "Record actual elapsed time, target predictions, visited paragraphs, train and validation loss, PPL, and generation examples.",
+    "B512 changes optimizer update frequency compared with B128. Quality equivalence is unverified.",
+    "No automatic restart of the previous deferred 14-hour comparison queue."
+  ],
+  "evidence": ["reports/nplm-budget-model-20261018-v2.json", "reports/nplm-budget-model-verification-20261018-v1.json", "reports/nplm-additional-time-summary.txt"]
+}

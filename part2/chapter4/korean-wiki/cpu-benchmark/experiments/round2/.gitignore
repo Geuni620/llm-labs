@@ -1,0 +1,3 @@
+*.o
+cpu_fixedwork_ilp
+test_softmax_ilp

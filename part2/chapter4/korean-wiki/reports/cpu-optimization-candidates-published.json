@@ -1,0 +1,78 @@
+{
+  "published_at": "2026-10-18 06:46:38 UTC",
+  "claude_provider": "claudeAgent",
+  "claude_model": "claude-opus-5-5",
+  "claude_effort": "ultrathink",
+  "claude_task_status": "completed",
+  "claude_task_id": "node:delegated-task:command%3Amcp%3A72ee36ac-be7f-4177-bef9-23b774811929%3Adelegate-task%3Akowiki-cpu-advice-claude-ultrathink-20261018-round1",
+  "render": {
+    "htmlRender": {
+      "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-a5698ea0-ebb6-4dab-8666-4d344bd141f1-html",
+      "title": "CPU 최적화 후보 — Claude Ultrathink 종합",
+      "height": 1394,
+      "heights": [
+        [
+          320,
+          1394
+        ],
+        [
+          375,
+          1269
+        ],
+        [
+          430,
+          1166
+        ],
+        [
+          520,
+          1166
+        ],
+        [
+          640,
+          1102
+        ],
+        [
+          728,
+          1070
+        ],
+        [
+          860,
+          990
+        ],
+        [
+          1000,
+          990
+        ],
+        [
+          1144,
+          990
+        ]
+      ],
+      "outline": "t0,1,51,5,1;t0,10,71,4,1;t0,15,90,4,1;t0,20,55,4,1;t0,29,52,4,1;g0,38,182,147,9;t0,190,70,4,1;t0,195,77,4,1;t0,200,70,4,1;t0,208,45,4,1;t5,218,31,4,1;t5,224,142,4,1;t5,231,35,4,1;t5,238,140,4,1;t5,245,57,4,1;t5,251,166,4,1;t0,259,73,4,1;t0,264,60,4,1"
+    },
+    "message": "Shown to the reader above your reply. Don't mention or describe the page; reply with only what it doesn't already say."
+  },
+  "previews": [
+    {
+      "width": 728,
+      "appearance": "dark",
+      "contentHeight": 1070,
+      "pageOverflow": false
+    },
+    {
+      "width": 320,
+      "appearance": "light",
+      "contentHeight": 1394,
+      "pageOverflow": false
+    }
+  ],
+  "candidate_count": 8,
+  "training_condition_experiment_count": 3,
+  "new_optimization_implementations": 0,
+  "new_benchmarks": 0,
+  "existing_measured_sources_unchanged_count": 14,
+  "reports": [
+    "reports/cpu-optimization-candidates.txt",
+    "reports/claude-cpu-advice-20261018.txt"
+  ]
+}

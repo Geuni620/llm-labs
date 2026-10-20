@@ -7,3 +7,4 @@ processed-reference/LICENSE -text whitespace=-blank-at-eof
 reports/step1-3-examples.txt whitespace=-blank-at-eof
 reports/vocabulary-coverage.txt whitespace=-blank-at-eof
 reports/final-summary-published.json whitespace=-blank-at-eof
+reports/fixedwork-cpu-trials.tsv -text whitespace=cr-at-eol

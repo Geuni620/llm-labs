@@ -1,0 +1,200 @@
+<div id="wiki-fixedwork-cpu-comparison">
+  <h3>같은 학습량의 CPU 계산 시간</h3>
+  <div class="text-small" data-run-status>실측값 준비 중</div>
+  <div class="text-small text-muted" data-run-scope></div>
+  <div class="text-small text-muted" data-model-scope></div>
+  <div class="fixedwork-legend text-small">
+    <span><span class="control-swatch" aria-hidden="true"></span>각 후보의 로컬 기준 A₁·A₂</span>
+    <span><span class="candidate-swatch" aria-hidden="true"></span>후보 B₁·B₂</span>
+  </div>
+  <div class="fixedwork-facets" data-candidate-facets></div>
+  <div class="text-small text-muted">절감률: 주변 기준 평균 대비 · 후보 2회 범위(신뢰구간 아님)</div>
+  <div class="text-small text-muted">CPU 시간은 모든 스레드의 합 · 학습 시간 환산은 경과시간 기준</div>
+  <div class="text-small text-muted" data-extrapolation-scope></div>
+  <div class="tooltip" role="tooltip" hidden></div>
+  <script type="application/json" data-fixedwork-payload>{"kind":"REAL_WIKI_MAC_FIXED_WORK_ABBA","status":"complete","main_steps":285,"events_per_trial":36480,"config":{"vocab_size":35328,"context_size":8,"embedding_dim":64,"hidden_dim":128,"batch_size":128,"seed":42,"threads":4,"warmup_steps":2,"optimizer":"AdamW","gradient_max_norm":1.0,"V":35328,"C":8,"D":64,"H":128,"B":128},"trials":[{"trial_id":"fixed_norm-01-baseline","block":"fixed_norm","position":1,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":14.11064400000032,"process_cpu_seconds":25.048743,"thread_cpu_seconds":10.735089125,"thread_clock_available":true,"targets_per_second":2585.28242934902,"steps":285,"target_prediction_events":36480},"process_wall_seconds":15.002395041985437,"peak_rss_bytes":493338624},{"trial_id":"fixed_norm-02-fixed_norm","block":"fixed_norm","position":2,"variant":"fixed_norm","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":11.478752000024542,"process_cpu_seconds":21.114700000000003,"thread_cpu_seconds":9.479495166,"thread_clock_available":true,"targets_per_second":3178.045836334996,"steps":285,"target_prediction_events":36480},"process_wall_seconds":12.354109667008743,"peak_rss_bytes":493322240},{"trial_id":"fixed_norm-03-fixed_norm","block":"fixed_norm","position":3,"variant":"fixed_norm","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":12.800481999991462,"process_cpu_seconds":21.461598000000002,"thread_cpu_seconds":9.802225542,"thread_clock_available":true,"targets_per_second":2849.8926837305294,"steps":285,"target_prediction_events":36480},"process_wall_seconds":13.619048665976152,"peak_rss_bytes":493322240},{"trial_id":"fixed_norm-04-baseline","block":"fixed_norm","position":4,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":12.7124120000517,"process_cpu_seconds":25.249869,"thread_cpu_seconds":10.490760374999999,"thread_clock_available":true,"targets_per_second":2869.6363837052827,"steps":285,"target_prediction_events":36480},"process_wall_seconds":13.58189587504603,"peak_rss_bytes":492748800},{"trial_id":"softmax_inv_batch-01-baseline","block":"softmax_inv_batch","position":1,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":13.961916000000201,"process_cpu_seconds":25.44322,"thread_cpu_seconds":10.792627332999999,"thread_clock_available":true,"targets_per_second":2612.821907824075,"steps":285,"target_prediction_events":36480},"process_wall_seconds":14.827085208031349,"peak_rss_bytes":493322240},{"trial_id":"softmax_inv_batch-02-softmax_inv_batch","block":"softmax_inv_batch","position":2,"variant":"softmax_inv_batch","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":12.92201799992472,"process_cpu_seconds":25.331667999999997,"thread_cpu_seconds":10.611131625,"thread_clock_available":true,"targets_per_second":2823.0884680869913,"steps":285,"target_prediction_events":36480},"process_wall_seconds":14.011065958999097,"peak_rss_bytes":493338624},{"trial_id":"softmax_inv_batch-03-softmax_inv_batch","block":"softmax_inv_batch","position":3,"variant":"softmax_inv_batch","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":13.027049000025727,"process_cpu_seconds":24.239401,"thread_cpu_seconds":10.412349792,"thread_clock_available":true,"targets_per_second":2800.3272268284213,"steps":285,"target_prediction_events":36480},"process_wall_seconds":13.919396750046872,"peak_rss_bytes":493338624},{"trial_id":"softmax_inv_batch-04-baseline","block":"softmax_inv_batch","position":4,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":12.941221000044607,"process_cpu_seconds":24.972296,"thread_cpu_seconds":10.5238505,"thread_clock_available":true,"targets_per_second":2818.8993913228323,"steps":285,"target_prediction_events":36480},"process_wall_seconds":13.841719166957773,"peak_rss_bytes":492240896},{"trial_id":"minimal_zero-01-baseline","block":"minimal_zero","position":1,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":13.45421500003431,"process_cpu_seconds":24.714354,"thread_cpu_seconds":10.565003542,"thread_clock_available":true,"targets_per_second":2711.417945967637,"steps":285,"target_prediction_events":36480},"process_wall_seconds":14.28749895899091,"peak_rss_bytes":493338624},{"trial_id":"minimal_zero-02-minimal_zero","block":"minimal_zero","position":2,"variant":"minimal_zero","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":15.534513000049628,"process_cpu_seconds":23.646862,"thread_cpu_seconds":9.931536791,"thread_clock_available":true,"targets_per_second":2348.3195128088955,"steps":285,"target_prediction_events":36480},"process_wall_seconds":16.552259791991673,"peak_rss_bytes":492224512},{"trial_id":"minimal_zero-03-minimal_zero","block":"minimal_zero","position":3,"variant":"minimal_zero","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":7.564877999946475,"process_cpu_seconds":19.844742999999998,"thread_cpu_seconds":7.138836292,"thread_clock_available":true,"targets_per_second":4822.285303247206,"steps":285,"target_prediction_events":36480},"process_wall_seconds":8.443850542011205,"peak_rss_bytes":492748800},{"trial_id":"minimal_zero-04-baseline","block":"minimal_zero","position":4,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":11.701178999966942,"process_cpu_seconds":21.453208,"thread_cpu_seconds":8.453609125,"thread_clock_available":true,"targets_per_second":3117.634556321467,"steps":285,"target_prediction_events":36480},"process_wall_seconds":12.398978333047125,"peak_rss_bytes":493338624},{"trial_id":"combined-01-baseline","block":"combined","position":1,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":7.37394800002221,"process_cpu_seconds":19.377948,"thread_cpu_seconds":7.051224209,"thread_clock_available":true,"targets_per_second":4947.146359031841,"steps":285,"target_prediction_events":36480},"process_wall_seconds":8.06758912501391,"peak_rss_bytes":493404160},{"trial_id":"combined-02-combined","block":"combined","position":2,"variant":"combined","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":6.261595000047237,"process_cpu_seconds":15.801425,"thread_cpu_seconds":6.000388917,"thread_clock_available":true,"targets_per_second":5825.991620301984,"steps":285,"target_prediction_events":36480},"process_wall_seconds":6.9387101249885745,"peak_rss_bytes":493420544},{"trial_id":"combined-03-combined","block":"combined","position":3,"variant":"combined","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":7.1468080000486225,"process_cpu_seconds":16.535999,"thread_cpu_seconds":6.392358125,"thread_clock_available":true,"targets_per_second":5104.376667143124,"steps":285,"target_prediction_events":36480},"process_wall_seconds":7.802303124975879,"peak_rss_bytes":493371392},{"trial_id":"combined-04-baseline","block":"combined","position":4,"variant":"baseline","passed":true,"inputs_equal":true,"phase_accounting_passed":true,"measurement":{"elapsed_seconds":7.371971999993548,"process_cpu_seconds":19.041978999999998,"thread_cpu_seconds":6.953741,"thread_clock_available":true,"targets_per_second":4948.4724033178545,"steps":285,"target_prediction_events":36480},"process_wall_seconds":8.060527250054292,"peak_rss_bytes":492748800}],"comparisons":[{"candidate":"fixed_norm","status":"complete","control_trial_ids":["fixed_norm-01-baseline","fixed_norm-04-baseline"],"candidate_trial_ids":["fixed_norm-02-fixed_norm","fixed_norm-03-fixed_norm"],"control_elapsed_seconds":13.41152800002601,"control_effective_targets_per_second":2720.048006456032,"control_endpoint_rate_arithmetic_mean":2727.4594065271513,"control_drift_percent":10.998951260727976,"high_control_drift":false,"candidate_elapsed_seconds":[11.478752000024542,12.800481999991462],"candidate_process_cpu_seconds":[21.114700000000003,21.461598000000002],"candidate_targets_per_second":[3178.045836334996,2849.8926837305294],"wall_saved_percent_min":4.5561251487031384,"wall_saved_percent_max":14.411303469654758,"wall_saved_percent_median":9.483714309178948,"process_cpu_saved_percent_median":15.3529365780511,"per_trial":[{"trial_id":"fixed_norm-02-fixed_norm","time_speedup":1.1683785833161424,"wall_seconds_saved":1.9327760000014678,"wall_saved_percent":14.411303469654758,"process_cpu_saved_percent":16.04261366098929},{"trial_id":"fixed_norm-03-fixed_norm","time_speedup":1.0477361711875346,"wall_seconds_saved":0.6110460000345483,"wall_saved_percent":4.5561251487031384,"process_cpu_saved_percent":14.663259495112912}],"extrapolation_only":{"epoch5_targets":621162675,"candidate_epoch5_hours_per_trial":[54.29285680126739,60.54445084371989],"candidate_epoch5_hours_from_median_rate":57.2484894879533,"control_epoch5_hours":63.43461111365098,"caveat":"Short-run wall-throughput arithmetic only; no epoch or learned-quality result. Aggregate process CPU seconds are not used in wall-hour projections."},"checked_local_control_drift_percent":10.998951260727976},{"candidate":"softmax_inv_batch","status":"complete","control_trial_ids":["softmax_inv_batch-01-baseline","softmax_inv_batch-04-baseline"],"candidate_trial_ids":["softmax_inv_batch-02-softmax_inv_batch","softmax_inv_batch-03-softmax_inv_batch"],"control_elapsed_seconds":13.451568500022404,"control_effective_targets_per_second":2711.9513980796546,"control_endpoint_rate_arithmetic_mean":2715.860649573454,"control_drift_percent":7.887161496987603,"high_control_drift":false,"candidate_elapsed_seconds":[12.92201799992472,13.027049000025727],"candidate_process_cpu_seconds":[25.331667999999997,24.239401],"candidate_targets_per_second":[2823.0884680869913,2800.3272268284213],"wall_saved_percent_min":3.1559107772150874,"wall_saved_percent_max":3.9367193505857934,"wall_saved_percent_median":3.5463150639004404,"process_cpu_saved_percent_median":1.6749744265237732,"per_trial":[{"trial_id":"softmax_inv_batch-02-softmax_inv_batch","time_speedup":1.0409804799916522,"wall_seconds_saved":0.5295505000976846,"wall_saved_percent":3.9367193505857934,"process_cpu_saved_percent":-0.4915550204821706},{"trial_id":"softmax_inv_batch-03-softmax_inv_batch","time_speedup":1.0325875415065866,"wall_seconds_saved":0.42451949999667704,"wall_saved_percent":3.1559107772150874,"process_cpu_saved_percent":3.841503873529717}],"extrapolation_only":{"epoch5_targets":621162675,"candidate_epoch5_hours_per_trial":[61.11929875754895,61.61608038051334],"candidate_epoch5_hours_from_median_rate":61.36668418662775,"control_epoch5_hours":63.623996957386495,"caveat":"Short-run wall-throughput arithmetic only; no epoch or learned-quality result. Aggregate process CPU seconds are not used in wall-hour projections."},"checked_local_control_drift_percent":7.887161496987603},{"candidate":"minimal_zero","status":"complete","control_trial_ids":["minimal_zero-01-baseline","minimal_zero-04-baseline"],"candidate_trial_ids":["minimal_zero-02-minimal_zero","minimal_zero-03-minimal_zero"],"control_elapsed_seconds":12.577697000000626,"control_effective_targets_per_second":2900.3719838375964,"control_endpoint_rate_arithmetic_mean":2914.5262511445517,"control_drift_percent":14.98170398104602,"high_control_drift":false,"candidate_elapsed_seconds":[15.534513000049628,7.564877999946475],"candidate_process_cpu_seconds":[23.646862,19.844742999999998],"candidate_targets_per_second":[2348.3195128088955,4822.285303247206],"wall_saved_percent_min":-23.50840539447607,"wall_saved_percent_max":39.85482397973096,"wall_saved_percent_median":8.173209292627444,"process_cpu_saved_percent_median":5.796184342591026,"per_trial":[{"trial_id":"minimal_zero-02-minimal_zero","time_speedup":0.8096614937307943,"wall_seconds_saved":-2.9568160000490025,"wall_saved_percent":-23.50840539447607,"process_cpu_saved_percent":-2.439292765773504},{"trial_id":"minimal_zero-03-minimal_zero","time_speedup":1.6626437333278368,"wall_seconds_saved":5.012819000054151,"wall_saved_percent":39.85482397973096,"process_cpu_saved_percent":14.031661450955557}],"extrapolation_only":{"epoch5_targets":621162675,"candidate_epoch5_hours_per_trial":[73.47602681783856,35.78079202070695],"candidate_epoch5_hours_from_median_rate":48.12569983319801,"control_epoch5_hours":59.490709626735075,"caveat":"Short-run wall-throughput arithmetic only; no epoch or learned-quality result. Aggregate process CPU seconds are not used in wall-hour projections."},"checked_local_control_drift_percent":14.98170398104602},{"candidate":"combined","status":"complete","control_trial_ids":["combined-01-baseline","combined-04-baseline"],"candidate_trial_ids":["combined-02-combined","combined-03-combined"],"control_elapsed_seconds":7.372960000007879,"control_effective_targets_per_second":4947.809292327778,"control_endpoint_rate_arithmetic_mean":4947.809381174848,"control_drift_percent":0.02680422590677546,"high_control_drift":false,"candidate_elapsed_seconds":[6.261595000047237,7.1468080000486225],"candidate_process_cpu_seconds":[15.801425,16.535999],"candidate_targets_per_second":[5825.991620301984,5104.376667143124],"wall_saved_percent_min":3.067316246921381,"wall_saved_percent_max":15.073525422075463,"wall_saved_percent_median":9.070420834498421,"process_cpu_saved_percent_median":15.831636015341726,"per_trial":[{"trial_id":"combined-02-combined","time_speedup":1.1774891221729062,"wall_seconds_saved":1.1113649999606423,"wall_saved_percent":15.073525422075463,"process_cpu_saved_percent":17.743596962066064},{"trial_id":"combined-03-combined","time_speedup":1.0316437771880422,"wall_seconds_saved":0.2261519999592565,"wall_saved_percent":3.067316246921381,"process_cpu_saved_percent":13.919675068617387}],"extrapolation_only":{"epoch5_targets":621162675,"candidate_epoch5_hours_per_trial":[29.616449652747065,33.803380657754644],"candidate_epoch5_hours_from_median_rate":31.571706087559683,"control_epoch5_hours":34.87304730349121,"caveat":"Short-run wall-throughput arithmetic only; no epoch or learned-quality result. Aggregate process CPU seconds are not used in wall-hour projections."},"checked_local_control_drift_percent":0.02680422590677546}],"visual_validation":{"same_work_checked":true,"local_control_savings_checked":true,"wall_rate_extrapolation_checked":true,"cpu_seconds_not_used_for_extrapolation":true}}</script>
+</div>
+<style>
+  #wiki-fixedwork-cpu-comparison { position: relative; display: grid; gap: 8px; min-width: 0; }
+  #wiki-fixedwork-cpu-comparison .fixedwork-legend { display: flex; gap: 8px 16px; flex-wrap: wrap; }
+  #wiki-fixedwork-cpu-comparison .fixedwork-legend > span { display: inline-flex; align-items: center; gap: 6px; }
+  #wiki-fixedwork-cpu-comparison .control-swatch,
+  #wiki-fixedwork-cpu-comparison .candidate-swatch { display: inline-block; width: 8px; height: 8px; flex: none; }
+  #wiki-fixedwork-cpu-comparison .control-swatch { background: var(--viz-series-2); border-radius: 50%; }
+  #wiki-fixedwork-cpu-comparison .candidate-swatch { background: var(--viz-series-1); transform: rotate(45deg); }
+  #wiki-fixedwork-cpu-comparison .fixedwork-facets { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; min-width: 0; }
+  #wiki-fixedwork-cpu-comparison .fixedwork-facet { display: grid; gap: 6px; min-width: 0; align-content: start; }
+  #wiki-fixedwork-cpu-comparison .facet-title { font-weight: 500; }
+  #wiki-fixedwork-cpu-comparison .fixedwork-chart { display: block; width: 100%; height: 254px; overflow: visible; }
+  #wiki-fixedwork-cpu-comparison .fixedwork-chart text { fill: var(--foreground); font-size: 12px; font-weight: 400; }
+  #wiki-fixedwork-cpu-comparison .fixedwork-chart .axis-title { font-weight: 500; }
+  #wiki-fixedwork-cpu-comparison .axis path,
+  #wiki-fixedwork-cpu-comparison .axis line,
+  #wiki-fixedwork-cpu-comparison .grid line,
+  #wiki-fixedwork-cpu-comparison [data-chart-frame] { fill: none; stroke: var(--border); stroke-width: 1; }
+  #wiki-fixedwork-cpu-comparison .grid path { display: none; }
+  #wiki-fixedwork-cpu-comparison .trial-hit { fill: transparent; }
+  #wiki-fixedwork-cpu-comparison .trial-detail { display: grid; gap: 4px; margin-top: 12px; overflow-wrap: anywhere; }
+  #wiki-fixedwork-cpu-comparison .tooltip { position: absolute; pointer-events: none; box-sizing: border-box; padding: 16px; border-radius: var(--radius); background: var(--popover); color: var(--popover-foreground); max-width: calc(100% - 8px); white-space: normal; overflow-wrap: anywhere; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root = document.getElementById("wiki-fixedwork-cpu-comparison");
+  const run = JSON.parse(root.querySelector("[data-fixedwork-payload]").textContent);
+  const status = root.querySelector("[data-run-status]");
+  if (run.status !== "complete") {
+    status.textContent = `실측 미완료 · ${run.status ?? "준비 중"}`;
+    return;
+  }
+  const number = new Intl.NumberFormat("ko-KR");
+  const decimal = new Intl.NumberFormat("ko-KR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const signed = new Intl.NumberFormat("ko-KR", {minimumFractionDigits: 2, maximumFractionDigits: 2, signDisplay: "always"});
+  const fine = new Intl.NumberFormat("ko-KR", {minimumFractionDigits: 3, maximumFractionDigits: 3});
+  const seconds = value => `${(value < 1 ? fine : decimal).format(value)}초`;
+  const hours = value => `${decimal.format(value)}시간`;
+  const percent = value => `${signed.format(value)}%`;
+  const labels = {fixed_norm: "고정 블록 노름", softmax_inv_batch: "Softmax 역수 곱셈", minimal_zero: "필요한 gradient만 초기화", combined: "세 가지 모두 적용"};
+  const ids = ["fixed_norm", "softmax_inv_batch", "minimal_zero", "combined"];
+  const phaseLabels = ["A₁ 기준", "B₁ 후보", "B₂ 후보", "A₂ 기준"];
+  const tooltip = root.querySelector(".tooltip");
+  root.addEventListener("pointerdown", event => {
+    if (!event.target.closest("[data-chart-hit]")) {
+      tooltip.hidden = true;
+      tooltip.dataset.pinned = "false";
+    }
+  });
+  const trials = new Map(run.trials.map(trial => [trial.trial_id, trial]));
+  const measuredTimes = run.trials.map(trial => trial.measurement.elapsed_seconds);
+  const [minimum, maximum] = d3.extent([0, ...measuredTimes]);
+  const sharedDomain = [minimum, maximum + Math.max(maximum * 0.12, (maximum - minimum) * 0.12)];
+  const cfg = run.config;
+  status.textContent = `동일량 본 측정 ${number.format(run.trials.length)}회 완료 · 후보별 A–B–B–A`;
+  root.querySelector("[data-run-scope]").textContent = `각 ${number.format(run.main_steps)}스텝 · ${number.format(run.events_per_trial)}회 예측 · 기준 O3 native + CPU vForce + OpenMP ${cfg.threads}스레드`;
+  root.querySelector("[data-model-scope]").textContent = `V=${number.format(cfg.V)} · C=${cfg.C} · D=${cfg.D} · H=${cfg.H} · B=${cfg.B} · seed=${cfg.seed}`;
+  root.querySelector("[data-extrapolation-scope]").textContent = `5에폭: ${number.format(621162675)}회 예측 기준 단기 환산 · 실제 학습 완료 시간 아님`;
+
+  function showTooltip(event, trial, svgNode, pin = false) {
+    const value = trial.measurement;
+    const projection = 621162675 / value.targets_per_second / 3600;
+    tooltip.replaceChildren();
+    for (const text of [
+      `${phaseLabels[trial.position - 1]} · ${trial.trial_id}`,
+      `계산 경과시간 ${seconds(value.elapsed_seconds)}`,
+      `CPU 누적 사용시간 ${seconds(value.process_cpu_seconds)}`,
+      `초당 ${number.format(Math.round(value.targets_per_second))}회 예측`,
+      `5 epoch 단기 환산 ${hours(projection)}`
+    ]) {
+      const line = document.createElement("div");
+      line.textContent = text;
+      tooltip.append(line);
+    }
+    tooltip.hidden = false;
+    tooltip.dataset.pinned = pin ? "true" : "false";
+    const [pointerX, pointerY] = d3.pointer(event, svgNode);
+    const rootBox = root.getBoundingClientRect();
+    const svgBox = svgNode.getBoundingClientRect();
+    const left = Math.min(Math.max(4, svgBox.left - rootBox.left + pointerX + 10), rootBox.width - tooltip.offsetWidth - 4);
+    const top = Math.max(4, svgBox.top - rootBox.top + pointerY - tooltip.offsetHeight - 10);
+    tooltip.style.left = `${Math.max(4, left)}px`;
+    tooltip.style.top = `${top}px`;
+  }
+  function overlap(a, b) {
+    return a.left < b.right + 4 && a.right + 4 > b.left && a.top < b.bottom + 4 && a.bottom + 4 > b.top;
+  }
+  function declutter(svg) {
+    const titles = svg.selectAll(".axis-title").nodes().map(node => node.getBoundingClientRect());
+    const kept = [];
+    for (const node of svg.selectAll(".x-axis .tick text").nodes()) {
+      const box = node.getBoundingClientRect();
+      if (titles.some(title => overlap(box, title)) || kept.some(other => overlap(box, other))) d3.select(node.parentNode).remove();
+      else kept.push(box);
+    }
+  }
+
+  for (const id of ids) {
+    const comparison = run.comparisons.find(item => item.candidate === id);
+    if (!comparison) continue;
+    const block = [...comparison.control_trial_ids, ...comparison.candidate_trial_ids].map(identifier => trials.get(identifier)).filter(Boolean).sort((a, b) => a.position - b.position);
+    const panel = document.createElement("section");
+    panel.className = "fixedwork-facet";
+    const title = document.createElement("div");
+    title.className = "facet-title";
+    title.textContent = labels[id] ?? id;
+    const plot = document.createElement("div");
+    const verdict = document.createElement("div");
+    verdict.className = "text-small";
+    const highDrift = comparison.high_control_drift === true;
+    const minSaved = comparison.wall_saved_percent_min;
+    const maxSaved = comparison.wall_saved_percent_max;
+    verdict.textContent = highDrift ? "로컬 기준 변동 >20% · 판단 유보" : minSaved > 0 ? "후보 2회 모두 로컬 기준보다 짧음" : maxSaved < 0 ? "후보 2회 모두 로컬 기준보다 오래 걸림" : "개선·악화 방향이 섞임 · 판단 유보";
+    const local = document.createElement("div");
+    local.className = "text-small tabular-nums";
+    local.textContent = `로컬 기준 평균 ${seconds(comparison.control_elapsed_seconds)} · 후보 ${seconds(d3.min(comparison.candidate_elapsed_seconds))}–${seconds(d3.max(comparison.candidate_elapsed_seconds))}`;
+    const savings = document.createElement("div");
+    savings.className = "text-small tabular-nums";
+    savings.textContent = `계산 시간 절감률 ${percent(minSaved)}–${percent(maxSaved)}`;
+    const drift = document.createElement("div");
+    drift.className = "text-small text-muted tabular-nums";
+    drift.textContent = `기준 양끝 변동 ${decimal.format(comparison.checked_local_control_drift_percent ?? comparison.control_drift_percent)}%`;
+    const projection = document.createElement("div");
+    projection.className = "text-small tabular-nums";
+    const extra = comparison.extrapolation_only;
+    projection.textContent = `5 epoch 단기 환산: 기준 ${hours(extra.control_epoch5_hours)} · 후보 ${hours(d3.min(extra.candidate_epoch5_hours_per_trial))}–${hours(d3.max(extra.candidate_epoch5_hours_per_trial))}`;
+    const details = document.createElement("details");
+    details.className = "text-small";
+    const summary = document.createElement("summary");
+    summary.textContent = "4회 측정의 예측 속도·CPU 누적 시간";
+    details.append(summary);
+    for (const trial of block) {
+      const item = document.createElement("div");
+      item.className = "trial-detail tabular-nums";
+      const heading = document.createElement("div");
+      heading.textContent = `${phaseLabels[trial.position - 1]} · ${trial.trial_id}`;
+      const timing = document.createElement("div");
+      timing.textContent = `계산 ${seconds(trial.measurement.elapsed_seconds)} · CPU 누적 ${seconds(trial.measurement.process_cpu_seconds)}`;
+      const rate = document.createElement("div");
+      rate.textContent = `초당 ${number.format(Math.round(trial.measurement.targets_per_second))}회 예측 · 5 epoch 단기 환산 ${hours(621162675 / trial.measurement.targets_per_second / 3600)}`;
+      item.append(heading, timing, rate);
+      details.append(item);
+    }
+    panel.append(title, plot, verdict, local, savings, drift, projection, details);
+    root.querySelector("[data-candidate-facets]").append(panel);
+    const svg = d3.select(plot).append("svg").attr("class", "fixedwork-chart").attr("role", "img");
+    svg.append("title").text(`${title.textContent}: 각 후보의 기준 2회와 후보 2회 계산 시간`);
+    svg.append("desc").text(`공유 X축은 실제 계산 경과시간(초)입니다. A1, B1, B2, A2 순서의 네 측정값이 모두 표시됩니다. ${verdict.textContent}. ${savings.textContent}.`);
+    function draw() {
+      svg.selectAll(":not(title):not(desc)").remove();
+      const width = Math.max(1, plot.getBoundingClientRect().width);
+      const height = 254;
+      const bounds = {left: 74, right: Math.max(78, width - 12), top: 32, bottom: height - 54};
+      svg.attr("viewBox", `0 0 ${width} ${height}`).attr("data-shared-domain-max", sharedDomain[1]);
+      const x = d3.scaleLinear().domain(sharedDomain).range([bounds.left + 6, bounds.right - 6]);
+      const y = d3.scalePoint().domain([1, 2, 3, 4]).range([bounds.top + 14, bounds.bottom - 14]);
+      svg.append("rect").attr("data-chart-frame", "").attr("x", bounds.left).attr("y", bounds.top).attr("width", bounds.right - bounds.left).attr("height", bounds.bottom - bounds.top);
+      svg.append("g").attr("class", "grid").attr("transform", `translate(0,${bounds.bottom})`).call(d3.axisBottom(x).ticks(width <= 400 ? 3 : 4).tickFormat("").tickSize(-(bounds.bottom - bounds.top)).tickSizeOuter(0));
+      const xAxis = svg.append("g").attr("class", "axis x-axis").attr("transform", `translate(0,${bounds.bottom})`).call(d3.axisBottom(x).ticks(width <= 400 ? 3 : 4).tickSizeOuter(0));
+      const xTexts = xAxis.selectAll(".tick text").nodes();
+      xTexts.forEach((node, index) => d3.select(node).attr("text-anchor", index === 0 ? "start" : index === xTexts.length - 1 ? "end" : "middle"));
+      svg.append("g").attr("class", "axis y-axis").attr("transform", `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickFormat(position => phaseLabels[position - 1]).tickSize(0).tickPadding(8));
+      svg.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("x", (bounds.left + bounds.right) / 2).attr("y", height - 8).attr("text-anchor", "middle").text("계산 경과시간 (초)");
+      svg.append("text").attr("class", "axis-title").attr("data-axis", "y").attr("x", bounds.left).attr("y", 15).text("ABBA 순서");
+      for (const trial of block) {
+        const isControl = trial.variant === "baseline";
+        const pointX = x(trial.measurement.elapsed_seconds);
+        const pointY = y(trial.position);
+        const mark = d3.symbol().type(isControl ? d3.symbolCircle : d3.symbolDiamond).size(isControl ? 50 : 56);
+        svg.append("path").attr("d", mark).attr("transform", `translate(${pointX},${pointY})`).attr("fill", isControl ? "var(--viz-series-2)" : "var(--viz-series-1)");
+        const inward = pointX > bounds.right - 76;
+        svg.append("text").attr("x", pointX + (inward ? -10 : 10)).attr("y", pointY + 4).attr("text-anchor", inward ? "end" : "start").text(seconds(trial.measurement.elapsed_seconds));
+        const hitSize = window.matchMedia("(pointer: coarse)").matches ? 44 : 32;
+        const hit = svg.append("rect").attr("class", "trial-hit cursor-interaction").attr("data-chart-hit", "").attr("x", pointX - hitSize / 2).attr("y", pointY - hitSize / 2).attr("width", hitSize).attr("height", hitSize);
+        hit.on("pointermove", event => showTooltip(event, trial, svg.node())).on("pointerleave", () => { if (tooltip.dataset.pinned !== "true") tooltip.hidden = true; }).on("pointerdown", event => { if (event.pointerType === "touch") showTooltip(event, trial, svg.node(), true); });
+      }
+      declutter(svg);
+    }
+    if (typeof ResizeObserver === "function") new ResizeObserver(draw).observe(plot);
+    draw();
+  }
+})();
+</script>

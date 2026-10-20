@@ -1,0 +1,57 @@
+<section id="wiki-cpu-candidates">
+  <style>
+    #wiki-cpu-candidates {display:grid;gap:16px;color:var(--foreground)}
+    #wiki-cpu-candidates .scope {display:grid;gap:4px}
+    #wiki-cpu-candidates table {width:100%;table-layout:fixed}
+    #wiki-cpu-candidates th:first-child {width:12%}
+    #wiki-cpu-candidates th:last-child {width:30%}
+    #wiki-cpu-candidates td {vertical-align:top;overflow-wrap:anywhere}
+    #wiki-cpu-candidates .name {display:block;font-weight:500}
+    #wiki-cpu-candidates .detail {display:block;margin-top:4px}
+    #wiki-cpu-candidates ul {margin:0;padding-left:20px}
+    #wiki-cpu-candidates li+li {margin-top:10px}
+    @media(min-width:600px) {#wiki-cpu-candidates h2 {padding-right:90px}}
+  </style>
+  <h2>CPU 최적화 · 다음 실험 후보</h2>
+  <div class="scope text-small text-muted">
+    <span>현재 코드·실측 + Claude Opus 5.5 / Ultrathink 검토 종합</span>
+    <span>현재 조합: O3 + native · OpenMP 4 · CPU vForce · Accelerate 행렬곱</span>
+    <span>아래 후보의 추가 구현·속도 측정은 아직 미실시</span>
+  </div>
+  <h3>모델·데이터·배치를 유지하는 후보</h3>
+  <table class="table table-sm" aria-label="CPU 최적화 다음 실험 후보와 우선순위">
+    <thead><tr><th scope="col">순서</th><th scope="col">후보 · 바꾸는 점</th><th scope="col">대상 · 난도</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="scope text-small text-muted">
+    <span>구간 비중은 기존 측정값이며, 예상 시간 절감률이 아닙니다.</span>
+    <span>현재 추가 노름 SIMD와 수작업 캐시 타일링은 미채택 상태입니다.</span>
+    <span>매 후보마다 수치 오차·동일 작업량·반복 속도를 검증합니다.</span>
+  </div>
+  <h3>학습 조건도 바뀌는 별도 실험</h3>
+  <ul class="training"></ul>
+  <div class="scope text-small text-muted">
+    <span>이 후보들은 검증 loss·데이터 보존율과 함께 비교해야 합니다.</span>
+    <span>기존 약 31시간은 짧은 관측의 5에폭 환산치입니다.</span>
+  </div>
+  <script type="application/json" id="wiki-cpu-candidate-data">__DATA__</script>
+  <script>
+    (()=>{
+      const root=document.getElementById('wiki-cpu-candidates');
+      const data=JSON.parse(root.querySelector('#wiki-cpu-candidate-data').textContent);
+      const body=root.querySelector('tbody');
+      for(const row of data.candidates){
+        const tr=document.createElement('tr');
+        const order=document.createElement('td');order.textContent=row.rank===0?'준비':String(row.rank);
+        const item=document.createElement('td');const name=document.createElement('span');name.className='name';name.textContent=row.title;
+        const detail=document.createElement('span');detail.className='detail text-small';detail.textContent=row.summary;item.append(name,detail);
+        const target=document.createElement('td');target.className='text-small';target.textContent=row.target;
+        const difficulty=document.createElement('span');difficulty.className='detail text-small text-muted';difficulty.textContent=`난도 ${row.difficulty}`;target.appendChild(difficulty);
+        tr.append(order,item,target);body.appendChild(tr);
+      }
+      const list=root.querySelector('.training');
+      for(const row of data.training_condition_experiments){const li=document.createElement('li');const name=document.createElement('span');name.className='name';name.textContent=row.title;const detail=document.createElement('span');detail.className='detail text-small';detail.textContent=row.summary;li.append(name,detail);list.appendChild(li);}
+      requestAnimationFrame(()=>console.log(JSON.stringify({candidates:body.rows.length,pageOverflow:document.documentElement.scrollWidth>window.innerWidth})));
+    })();
+  </script>
+</section>

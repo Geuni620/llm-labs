@@ -1,0 +1,373 @@
+{
+  "kind": "CPU_SOFTMAX_ILP_BUILD",
+  "status": "complete",
+  "started_at": "2026-10-18T23:19:47.690339+09:00",
+  "sources_before": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/build_cpu_ilp.py": {
+      "bytes": 4892,
+      "sha256": "cc841d94047d42b35253e7cb4d2ab29be966aace2f2f92e72bb06ae9aaa2182d"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork-build-manifest.v2.json": {
+      "bytes": 18882,
+      "sha256": "1fdedf557eb88e6ad74cb69a18fe6eab250ef3487fa173ef7f4475a5230e1457"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/softmax_ilp.c": {
+      "bytes": 9812,
+      "sha256": "13f3f41d5327f9625129f3e3e110b31c162dca7aff5f682e19a080a1f04c2779"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp.c": {
+      "bytes": 29155,
+      "sha256": "3656b7251ef1867b707d5ac7891fe4656b2c434c25a1abee2616e317f07cdde9"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_combined": {
+      "bytes": 104552,
+      "sha256": "c56725bec5629ef28fb70954ff70f6647d90823478c222a0acc08ade6e11e951"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vforce_benchmark.c": {
+      "bytes": 40009,
+      "sha256": "45d25a5fcadf251bb5886e55d878f77cf0c4e8c80573335d59c6ec2fc4a4448c"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cumulative_benchmark.c": {
+      "bytes": 39815,
+      "sha256": "2eefe1cc43e867918d9c5f4c3995df9c272f31c6b1e59e139cbffebbee8b969f"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_norm_simd.c": {
+      "bytes": 13128,
+      "sha256": "5becbf224099315df874367251e5720a563311f49eca14837310470fea8710e6"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_gemm_kernels.c": {
+      "bytes": 5288,
+      "sha256": "1e3b156fa2082910e6a945b1d54457b75458b75d7ff3d0c600e603bf4ac1fa5d"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c": {
+      "bytes": 50146,
+      "sha256": "8a0f06cdb52b1ffbef3f1ab3c22998cf2237f50e54b2a0c39a7e33f04a6190c4"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/benchmark.c": {
+      "bytes": 37633,
+      "sha256": "348064671fc454c7a930d5468574ece3e8d708404eb29fe2b38a0e2dc231045f"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c": {
+      "bytes": 5993,
+      "sha256": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_softmax.c": {
+      "bytes": 11395,
+      "sha256": "77753b1e3bd2fb0403445679846c72e06cbbc0b4d6fa2d120477758346aa4886"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c": {
+      "bytes": 7300,
+      "sha256": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_vforce_exp.c": {
+      "bytes": 17434,
+      "sha256": "397a9401dda789b92437ba54f3cb523e3136b3493de657215d2cb17ab08fc5ab"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_norm.c": {
+      "bytes": 30237,
+      "sha256": "87fd2145dd742ce5c705ed28c22326d35b56229d756ab09cfbcd294b15223a1b"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c": {
+      "bytes": 3348,
+      "sha256": "30ee80ed77bbe3548eb2825604c029f6c958d54dc1c2505fddd6dd1cb6d8a865"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c": {
+      "bytes": 2982,
+      "sha256": "d4fae1d19cce196edc6745614840192243ddc6ed3fb63b7e4890d8ffa5ae19fc"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_kernels.c": {
+      "bytes": 6729,
+      "sha256": "4c7213b4425644ab42fd3ed427ea3f4992a490941f0704d02e95339b68c4f42e"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c": {
+      "bytes": 7925,
+      "sha256": "2ab16bc6b6045c312a477750496a0556351ea2a0c22c3d17eec97c7f0ce1b1b2"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fast_exp.c": {
+      "bytes": 7807,
+      "sha256": "275afcb3fe9fcf801249d4210c3c64fe96df66caf7fe318170547021519b02cc"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_vector_kernels.c": {
+      "bytes": 6617,
+      "sha256": "d08392fa66eb9a351b2154b4bfc52230297f4b7e48ee7ff38e79408bf5e0f4ab"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_api.h": {
+      "bytes": 1096,
+      "sha256": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/experiment_kernels.h": {
+      "bytes": 2380,
+      "sha256": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fast_exp.h": {
+      "bytes": 1881,
+      "sha256": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    }
+  },
+  "builds": [
+    {
+      "command": [
+        "cc",
+        "-I/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DFW_FIXED_NORM=1",
+        "-DFW_SOFTMAX_INV_BATCH=1",
+        "-DFW_MINIMAL_ZERO=1",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-DBENCH_BUILD_FLAGS=\"-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DFW_FIXED_NORM=1 -DFW_SOFTMAX_INV_BATCH=1 -DFW_MINIMAL_ZERO=1 -Xpreprocessor -fopenmp -isystem /opt/homebrew/opt/libomp/include\"",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/softmax_ilp.c",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/cpu_fixedwork_ilp"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:527:9: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]\n  527 |         cblas_sgemm(CblasRowMajor,trans_a ? CblasTrans : CblasNoTrans,\n      |         ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here\n  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,\n      |      ^\n1 warning generated.\n"
+    },
+    {
+      "command": [
+        "cc",
+        "-Dfw_softmax=baseline_fw_softmax",
+        "-O3",
+        "-std=c11",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-I/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments",
+        "-Rpass-missed=loop-vectorize",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/baseline_softmax.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c:68:9: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n   68 |         for (int b = 0; b < batch; ++b)\n      |         ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c:60:1: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n   60 | #pragma omp parallel for schedule(static) num_threads(threads)\n      | ^\n/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c:25:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]\n   25 |     for (int v = 0; v < vocab; ++v) {\n      |     ^\n"
+    },
+    {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-I/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/softmax_ilp.c",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/candidate_softmax.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-I/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/vector_vforce.o"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-I/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/baseline_softmax.o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/candidate_softmax.o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/vector_vforce.o",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "policy": "Only linked softmax source and output path differ from the frozen combined build; no global fast-math or contraction change.",
+  "binary": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/cpu_fixedwork_ilp",
+    "bytes": 104704,
+    "sha256": "f7e7719a164a3407526cee410a6ac633eeedd8cbaae5ce8f2ffa55d4c4d574d6"
+  },
+  "unit_binary": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp",
+    "bytes": 86080,
+    "sha256": "2ca4f690d29120675db012bea7fc6af2495a91bc251a1f81bbc39cf65d40c36a"
+  },
+  "sources_after": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/build_cpu_ilp.py": {
+      "bytes": 4892,
+      "sha256": "cc841d94047d42b35253e7cb4d2ab29be966aace2f2f92e72bb06ae9aaa2182d"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork-build-manifest.v2.json": {
+      "bytes": 18882,
+      "sha256": "1fdedf557eb88e6ad74cb69a18fe6eab250ef3487fa173ef7f4475a5230e1457"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/softmax_ilp.c": {
+      "bytes": 9812,
+      "sha256": "13f3f41d5327f9625129f3e3e110b31c162dca7aff5f682e19a080a1f04c2779"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp.c": {
+      "bytes": 29155,
+      "sha256": "3656b7251ef1867b707d5ac7891fe4656b2c434c25a1abee2616e317f07cdde9"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_combined": {
+      "bytes": 104552,
+      "sha256": "c56725bec5629ef28fb70954ff70f6647d90823478c222a0acc08ade6e11e951"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vforce_benchmark.c": {
+      "bytes": 40009,
+      "sha256": "45d25a5fcadf251bb5886e55d878f77cf0c4e8c80573335d59c6ec2fc4a4448c"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cumulative_benchmark.c": {
+      "bytes": 39815,
+      "sha256": "2eefe1cc43e867918d9c5f4c3995df9c272f31c6b1e59e139cbffebbee8b969f"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_norm_simd.c": {
+      "bytes": 13128,
+      "sha256": "5becbf224099315df874367251e5720a563311f49eca14837310470fea8710e6"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_gemm_kernels.c": {
+      "bytes": 5288,
+      "sha256": "1e3b156fa2082910e6a945b1d54457b75458b75d7ff3d0c600e603bf4ac1fa5d"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c": {
+      "bytes": 50146,
+      "sha256": "8a0f06cdb52b1ffbef3f1ab3c22998cf2237f50e54b2a0c39a7e33f04a6190c4"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/benchmark.c": {
+      "bytes": 37633,
+      "sha256": "348064671fc454c7a930d5468574ece3e8d708404eb29fe2b38a0e2dc231045f"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c": {
+      "bytes": 5993,
+      "sha256": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_softmax.c": {
+      "bytes": 11395,
+      "sha256": "77753b1e3bd2fb0403445679846c72e06cbbc0b4d6fa2d120477758346aa4886"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c": {
+      "bytes": 7300,
+      "sha256": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_vforce_exp.c": {
+      "bytes": 17434,
+      "sha256": "397a9401dda789b92437ba54f3cb523e3136b3493de657215d2cb17ab08fc5ab"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_norm.c": {
+      "bytes": 30237,
+      "sha256": "87fd2145dd742ce5c705ed28c22326d35b56229d756ab09cfbcd294b15223a1b"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c": {
+      "bytes": 3348,
+      "sha256": "30ee80ed77bbe3548eb2825604c029f6c958d54dc1c2505fddd6dd1cb6d8a865"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c": {
+      "bytes": 2982,
+      "sha256": "d4fae1d19cce196edc6745614840192243ddc6ed3fb63b7e4890d8ffa5ae19fc"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_kernels.c": {
+      "bytes": 6729,
+      "sha256": "4c7213b4425644ab42fd3ed427ea3f4992a490941f0704d02e95339b68c4f42e"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c": {
+      "bytes": 7925,
+      "sha256": "2ab16bc6b6045c312a477750496a0556351ea2a0c22c3d17eec97c7f0ce1b1b2"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fast_exp.c": {
+      "bytes": 7807,
+      "sha256": "275afcb3fe9fcf801249d4210c3c64fe96df66caf7fe318170547021519b02cc"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_vector_kernels.c": {
+      "bytes": 6617,
+      "sha256": "d08392fa66eb9a351b2154b4bfc52230297f4b7e48ee7ff38e79408bf5e0f4ab"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_api.h": {
+      "bytes": 1096,
+      "sha256": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/experiment_kernels.h": {
+      "bytes": 2380,
+      "sha256": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fast_exp.h": {
+      "bytes": 1881,
+      "sha256": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    }
+  },
+  "completed_at": "2026-10-18T23:19:53.732823+09:00"
+}

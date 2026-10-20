@@ -1,0 +1,84 @@
+{
+  "published_at_utc": "2026-10-18 08:45:45 UTC",
+  "html_render": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-430564a7-0434-459f-8360-8a41c83e6a5c-html",
+    "title": "GPU 학습 클라우드와 MCP 지원 비교",
+    "height": 826,
+    "heights": [
+      [
+        320,
+        826
+      ],
+      [
+        375,
+        712
+      ],
+      [
+        430,
+        712
+      ],
+      [
+        520,
+        635
+      ],
+      [
+        640,
+        635
+      ],
+      [
+        728,
+        635
+      ],
+      [
+        860,
+        635
+      ],
+      [
+        1000,
+        635
+      ],
+      [
+        1144,
+        635
+      ]
+    ],
+    "outline": "t0,1,38,4,1;t0,8,62,4,1;g0,14,182,133,9;t0,149,119,4,1;t0,155,112,4,1"
+  },
+  "scope": "Cloud GPU and MCP recommendations; no paid resources provisioned and no MCP configuration changed",
+  "sources_checked_live": true,
+  "runpod_control_mcp_connected": false,
+  "previews": [
+    {
+      "width": 728,
+      "contentHeight": 635,
+      "capturedHeight": 635,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "CLOUD_MCP_QA {\"width\":728,\"scrollWidth\":728,\"providers\":8,\"linkColor\":\"color(srgb 0.960784 0.960784 0.960784)\",\"textColor\":\"rgb(245, 245, 245)\",\"invalidText\":false}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 728,
+        "height": 635
+      }
+    },
+    {
+      "width": 320,
+      "contentHeight": 826,
+      "capturedHeight": 826,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "CLOUD_MCP_QA {\"width\":320,\"scrollWidth\":320,\"providers\":8,\"linkColor\":\"color(srgb 0.152941 0.152941 0.164706)\",\"textColor\":\"rgb(39, 39, 42)\",\"invalidText\":false}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 320,
+        "height": 826
+      }
+    }
+  ]
+}

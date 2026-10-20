@@ -1,0 +1,47 @@
+<section id="wiki-full-training-time">
+  <style>
+    #wiki-full-training-time {display:grid;gap:16px;color:var(--foreground)}
+    #wiki-full-training-time .scope {display:grid;gap:4px}
+    #wiki-full-training-time table {width:100%;table-layout:fixed}
+    #wiki-full-training-time th:first-child {width:38%}
+    #wiki-full-training-time th:nth-child(2) {width:20%}
+    #wiki-full-training-time td {vertical-align:top;overflow-wrap:anywhere}
+    #wiki-full-training-time .detail {display:block}
+    @media(min-width:600px) {#wiki-full-training-time h2 {padding-right:90px}}
+  </style>
+  <h2>전체 데이터 학습 시간 환산</h2>
+  <div class="scope text-small text-muted">
+    <span>Mac CPU · NPLM C8/D64/H128 · 사전 35,328 · 배치 128</span>
+    <span>OOV 통과 train 전체 · 1에폭 = 124,232,535개 다음 토큰 예측</span>
+    <span>12.00~16.66초 × 각 2회 관측에서 환산 · 전체 학습 미실행</span>
+  </div>
+  <table class="table table-sm" aria-label="각 기법의 전체 1에폭 및 5에폭 예상 시간">
+    <thead><tr><th scope="col">개별 설정</th><th scope="col" class="text-end">1에폭<br>시간</th><th scope="col" class="text-end">5에폭<br>시간 / 일</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="scope text-small text-muted">
+    <span>대표값: 2회 처리량 중앙값으로 환산</span>
+    <span>범위: 두 관측 처리량의 환산 범위 · 통계적 신뢰구간 아님</span>
+    <span>부하 변동으로 순위 미확정 · 기법 조합 미실행</span>
+    <span>로딩·검증·저장 추가 시간과 장시간 속도 변화 미반영</span>
+  </div>
+  <script type="application/json" id="wiki-full-time-data">{"source": "cpu-benchmark/results/cpu-optimizations-mac-real-wiki-20261018-12s.json", "source_sha256": "c5e252d067665f160800901318847a613f86e3cef0e5d0ab6891b097b4bc28f9", "prediction_events_per_epoch": 124232535, "formula": "epochs * prediction_events_per_epoch / targets_per_second / 3600", "scope": "Extrapolation only; no full epoch executed; no optimization ranking established", "rows": [{"case": "baseline", "label": "기준 O3", "epoch1_hours": 28.077614902437478, "epoch5_hours": 140.3880745121874, "range5_hours": [86.36068042055994, 374.96991535178273]}, {"case": "native", "label": "native", "epoch1_hours": 39.47233904170058, "epoch5_hours": 197.36169520850288, "range5_hours": [137.19857179920137, 351.49717794108454]}, {"case": "relaxed_simd", "label": "native + fast-math", "epoch1_hours": 26.3913803370932, "epoch5_hours": 131.956901685466, "range5_hours": [124.6014125537596, 140.2352923354093]}, {"case": "softmax_omp", "label": "softmax OMP", "epoch1_hours": 32.16958379200445, "epoch5_hours": 160.84791896002224, "range5_hours": [149.83911952741852, 173.60264341627393]}, {"case": "reduction_omp", "label": "리덕션 OMP", "epoch1_hours": 19.005412941314944, "epoch5_hours": 95.0270647065747, "range5_hours": [59.32694497685142, 238.61290631266345]}, {"case": "adamw_omp", "label": "AdamW OMP", "epoch1_hours": 24.300678248512515, "epoch5_hours": 121.50339124256257, "range5_hours": [89.2190013246999, 190.40107513448146]}, {"case": "tiled32", "label": "SGEMM 타일 32", "epoch1_hours": 100.0438917815837, "epoch5_hours": 500.2194589079185, "range5_hours": [417.92666899426393, 622.8663590223875]}, {"case": "tiled64", "label": "SGEMM 타일 64", "epoch1_hours": 57.83386809500611, "epoch5_hours": 289.16934047503054, "range5_hours": [269.5008431660227, 311.934712890962]}, {"case": "fast_exp", "label": "fast-exp", "epoch1_hours": 28.37718018789283, "epoch5_hours": 141.88590093946414, "range5_hours": [90.71215310821367, 325.5259153665612]}]}</script>
+  <script>
+    (() => {
+      const root=document.getElementById('wiki-full-training-time');
+      const data=JSON.parse(root.querySelector('#wiki-full-time-data').textContent);
+      const body=root.querySelector('tbody');
+      for (const row of data.rows) {
+        const tr=document.createElement('tr');
+        const name=document.createElement('td'); name.textContent=row.label;
+        const one=document.createElement('td'); one.className='text-end tabular-nums'; one.textContent=row.epoch1_hours.toFixed(1);
+        const five=document.createElement('td'); five.className='text-end tabular-nums';
+        const hours=document.createElement('span'); hours.textContent=row.epoch5_hours.toFixed(1);
+        const days=document.createElement('span'); days.className='detail text-small text-muted'; days.textContent=`약 ${(row.epoch5_hours/24).toFixed(1)}일`;
+        const range=document.createElement('span'); range.className='detail text-small text-muted'; range.textContent=`범위 ${Math.round(row.range5_hours[0])}~${Math.round(row.range5_hours[1])}시간`;
+        five.append(hours,days,range); tr.append(name,one,five); body.appendChild(tr);
+      }
+      requestAnimationFrame(() => console.log(JSON.stringify({rows:body.rows.length,pageOverflow:document.documentElement.scrollWidth>window.innerWidth})));
+    })();
+  </script>
+</section>

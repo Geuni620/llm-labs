@@ -1,0 +1,293 @@
+{
+  "kind": "MPS_SYNCHRONIZED_PHASE_DIAGNOSTIC",
+  "status": "complete",
+  "started_at": "2026-10-18T21:47:05.897451+09:00",
+  "source_before": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py",
+      "bytes": 6242,
+      "sha256": "1e724800e8a3d2bdad7c8e9552cd4204ed783f03e7a863777fc33b475378e9b2"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py",
+      "bytes": 20822,
+      "sha256": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py",
+      "bytes": 17283,
+      "sha256": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6"
+    }
+  },
+  "config": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 128,
+    "seed": 42,
+    "threads": 4,
+    "steps": 8,
+    "warmup_steps": 2
+  },
+  "phases": [
+    {
+      "phase": "gradient_clear",
+      "synchronized_wall_ms": [
+        1.3116250047460198,
+        6.952915980946273,
+        1.8241670331917703,
+        1.0288340272381902,
+        1.5952910180203617,
+        1.5986249782145023,
+        7.805209024809301,
+        1.9972920417785645
+      ],
+      "median_synchronized_wall_ms": 1.7113960057031363,
+      "total_synchronized_wall_ms": 24.113959108944982,
+      "phase_wall_fraction": 0.01632879560483238,
+      "host_call_ms": [
+        0.3031250089406967,
+        5.128041026182473,
+        0.2785419928841293,
+        0.24500000290572643,
+        0.5347499973140657,
+        0.2626249915920198,
+        0.4015840240754187,
+        0.2974590170197189
+      ],
+      "median_host_call_ms": 0.3002920129802078
+    },
+    {
+      "phase": "embedding_hidden_tanh",
+      "synchronized_wall_ms": [
+        2.585750014986843,
+        3.233625029679388,
+        0.7195830112323165,
+        1.8458330305293202,
+        0.7336669950746,
+        0.751374987885356,
+        1.4566670288331807,
+        6.963166990317404
+      ],
+      "median_synchronized_wall_ms": 1.6512500296812505,
+      "total_synchronized_wall_ms": 18.28966708853841,
+      "phase_wall_fraction": 0.012384869453410947,
+      "host_call_ms": [
+        1.0076250182464719,
+        1.7332920106127858,
+        0.35508302971720695,
+        0.3078750451095402,
+        0.4390000249259174,
+        0.3097499720752239,
+        0.4052920266985893,
+        0.36629202077165246
+      ],
+      "median_host_call_ms": 0.3857920237351209
+    },
+    {
+      "phase": "output_projection",
+      "synchronized_wall_ms": [
+        11.49741600966081,
+        22.77337503619492,
+        11.629082961007953,
+        8.467625011689961,
+        9.868166991509497,
+        6.377166020683944,
+        16.531500034034252,
+        37.487125024199486
+      ],
+      "median_synchronized_wall_ms": 11.563249485334381,
+      "total_synchronized_wall_ms": 124.63145708898082,
+      "phase_wall_fraction": 0.08439433688777798,
+      "host_call_ms": [
+        1.1739999754354358,
+        2.251917030662298,
+        1.1540830018930137,
+        1.4630420482717454,
+        1.3028749963268638,
+        1.0935830068774521,
+        1.2832910288125277,
+        2.0630829967558384
+      ],
+      "median_host_call_ms": 1.2930830125696957
+    },
+    {
+      "phase": "cross_entropy",
+      "synchronized_wall_ms": [
+        3.180750005412847,
+        9.231499978341162,
+        4.084250016603619,
+        3.59445798676461,
+        3.3790409797802567,
+        6.376790988724679,
+        3.060457995161414,
+        3.1825420446693897
+      ],
+      "median_synchronized_wall_ms": 3.4867494832724333,
+      "total_synchronized_wall_ms": 36.08978999545798,
+      "phase_wall_fraction": 0.024438243491860204,
+      "host_call_ms": [
+        1.0413749841973186,
+        4.524916992522776,
+        0.9780830005183816,
+        1.0800830204971135,
+        0.93962496612221,
+        1.203250023536384,
+        0.8666670182719827,
+        0.8552499930374324
+      ],
+      "median_host_call_ms": 1.00972899235785
+    },
+    {
+      "phase": "backward",
+      "synchronized_wall_ms": [
+        60.33416703576222,
+        61.772708024363965,
+        33.90024998225272,
+        29.644166002981365,
+        29.47812498314306,
+        36.023000022396445,
+        133.05095897521824,
+        185.97787496400997
+      ],
+      "median_synchronized_wall_ms": 48.17858352907933,
+      "total_synchronized_wall_ms": 570.181249990128,
+      "phase_wall_fraction": 0.38609890009073566,
+      "host_call_ms": [
+        2.986542007420212,
+        3.3697080216370523,
+        4.851416975725442,
+        3.8626250461675227,
+        2.6828329428099096,
+        3.650958009529859,
+        3.0597919831052423,
+        3.4346249885857105
+      ],
+      "median_host_call_ms": 3.4021665051113814
+    },
+    {
+      "phase": "global_norm_clip",
+      "synchronized_wall_ms": [
+        72.76116596767679,
+        41.722916008438915,
+        33.22854096768424,
+        30.623375030700117,
+        29.103958979249,
+        37.47341601410881,
+        134.78666602168232,
+        102.72675001760945
+      ],
+      "median_synchronized_wall_ms": 39.59816601127386,
+      "total_synchronized_wall_ms": 482.42678900714964,
+      "phase_wall_fraction": 0.32667586423298,
+      "host_call_ms": [
+        1.0140409576706588,
+        0.8520000264979899,
+        0.5729160038754344,
+        0.525916984770447,
+        2.604583976790309,
+        0.5002499674446881,
+        0.5220409948378801,
+        2.3567909956909716
+      ],
+      "median_host_call_ms": 0.7124580151867121
+    },
+    {
+      "phase": "adamw_foreach",
+      "synchronized_wall_ms": [
+        30.668499995954335,
+        26.848167006392032,
+        18.518916971515864,
+        19.221791008021683,
+        23.263541981577873,
+        20.514208008535206,
+        50.23104196880013,
+        31.77604201482609
+      ],
+      "median_synchronized_wall_ms": 25.055854493984953,
+      "total_synchronized_wall_ms": 221.0422089556232,
+      "phase_wall_fraction": 0.1496789902384028,
+      "host_call_ms": [
+        5.427666008472443,
+        2.367375011090189,
+        4.442834004294127,
+        6.408290995750576,
+        2.6792919961735606,
+        3.085165983065963,
+        2.4659999762661755,
+        5.141083034686744
+      ],
+      "median_host_call_ms": 3.763999993680045
+    }
+  ],
+  "instrumented_total_wall_seconds": 1.4785471659852192,
+  "sum_phase_wall_ms": 1476.775121234823,
+  "first_input_checksum": "1a55aed564d5b308",
+  "initial_parameter_checksum": "b5b7b03ca89a72af",
+  "runtime": {
+    "torch_version": "2.14.1",
+    "fallback_env": "0",
+    "mps_fast_math_env": "0",
+    "prefer_metal_env": null,
+    "cpu_threads": 4,
+    "cpu_interop_threads": 1
+  },
+  "actual_devices": {
+    "parameters": [
+      "mps:0"
+    ],
+    "inputs": [
+      "mps:0"
+    ],
+    "gradients": [
+      "mps:0"
+    ],
+    "moments": [
+      "mps:0"
+    ],
+    "optimizer_step_state": [
+      "cpu"
+    ]
+  },
+  "losses": [
+    10.470685005187988,
+    10.469385147094727,
+    10.4671630859375,
+    10.463184356689453,
+    10.45956802368164,
+    10.454910278320312,
+    10.449399948120117,
+    10.443885803222656
+  ],
+  "gradient_norms": [
+    0.31115785241127014,
+    0.2917983829975128,
+    0.2300705909729004,
+    0.3334294557571411,
+    0.31540462374687195,
+    0.3472156226634979,
+    0.3992971181869507,
+    0.339046835899353
+  ],
+  "scope": "Diagnostic 8 real-Wiki updates with synchronize before/after every phase. Forced barriers perturb overlap and include dispatch/wait costs; not pure kernel busy time, GPU utilization, or the uninstrumented throughput benchmark. CPU call durations may contain implicit waits.",
+  "input_scope": "Full corpus RAM loaded; eight preloaded B128 batches. Data preload excluded only for this phase diagnostic, not the main benchmark.",
+  "source_after": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py",
+      "bytes": 6242,
+      "sha256": "1e724800e8a3d2bdad7c8e9552cd4204ed783f03e7a863777fc33b475378e9b2"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py",
+      "bytes": 20822,
+      "sha256": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py",
+      "bytes": 17283,
+      "sha256": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6"
+    }
+  },
+  "completed_at": "2026-10-18T21:47:13.799592+09:00"
+}

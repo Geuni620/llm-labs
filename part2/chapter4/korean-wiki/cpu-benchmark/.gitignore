@@ -1,0 +1,6 @@
+/cpu_benchmark
+/cpu_benchmark_*
+/.timing.lock
+/results/*.tmp
+/*.o
+/__pycache__/

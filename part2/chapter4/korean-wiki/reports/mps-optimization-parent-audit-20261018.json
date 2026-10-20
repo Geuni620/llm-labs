@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "completed_at": "2026-10-18T13:29:38.903541+00:00",
+  "runtime_dependencies_sha256": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/verify_refined.py": "3853af8bdbef019e6a057b0f42edd6f877c100335584025f3f1c4fd558eb1ec7",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/verify.py": "a379ef4b8cad518b204a5c30ded9ececa451e3ddefcb73229cdd758a266fd86e",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/engine_refined.py": "249e121fffc8dcfc7ea4acd64ce3a2cb25b3aa54fe3797c1319993d941bcf056",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/engine.py": "76bb08a87ae1876bcfb93d19f3ec639c8f1f1c658d25cdbb421581033e01bd4b",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/compiled_path.py": "4a3f7eb985844f52a0547d1f9f7bc3430eef04734ca624c36c55bcb0ee5430ae",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/metal_clip.py": "5838c54c7db04e8f20f78ee22b188a5baecf7c6370eb6be71ed41fac8eb5845f",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_mps.py": "8d6eca734a154b36097610d52263d269a81f67d3f51cf60efa1eb07794f1feb0",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.c": "b009a15597ecbd84deb7bbc9df6c963c6db1805418ed7b8a26ee24eab7d12a30",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.dylib": "6724c42a0815ec35c7c001e8983bbeed3b2c8fede3a9be54576550155a406dd5"
+  },
+  "gate_file_sha256": "00a171581da2e94f2e8f504312b5d5c6e3e6eebb317ee03a4396893fb99e6461",
+  "all_runtime_dependencies_match_gate_after_measurements": true,
+  "timing_sources_unchanged": true,
+  "old_cpu_gpu_sources_unchanged": true,
+  "training_corpus_sha256_unchanged": true,
+  "git_index_unchanged": true,
+  "all_15_identical_initial_bits_and_first_final_input_and_sampler": true,
+  "same_steps": 512,
+  "same_target_predictions": 65536,
+  "numerical_gates_passed": 24,
+  "vector_scalar_comparisons_passed": 768,
+  "prior_native_fused_failure_preserved": true,
+  "timed_trials_passed": 15,
+  "out_of_10_30_seconds_retained": 2,
+  "active_own_model_processes": [],
+  "long_training_stopped": true,
+  "reviewers": [
+    "numeric_tokens: independent numerical/refined-engine/failure-preservation review",
+    "tiled_gemm: source/method/measurement review"
+  ],
+  "limits": [
+    "No full epoch or learned quality comparison",
+    "No CUDA hardware measurement",
+    "No option combination test",
+    "No measured UI responsiveness or long-run thermal forecast"
+  ]
+}

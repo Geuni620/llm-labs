@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "status": "PASS",
+  "comparison": "scalar expf vs Apple CPU vvexpf stable mean CE and all gradients",
+  "global_fast_math": false,
+  "openmp_version": 202011,
+  "cases": 1456,
+  "acceptance": {
+    "rule": "abs(actual-reference)<=atol+rtol*abs(reference)",
+    "declared_before_execution": true,
+    "loss": {
+      "atol": 1e-05,
+      "rtol": 2e-06
+    },
+    "gradient": {
+      "atol": 2e-07,
+      "rtol": 2e-06
+    }
+  },
+  "scope": {
+    "vocab_sizes": [
+      1,
+      2,
+      3,
+      7,
+      15,
+      16,
+      17,
+      31,
+      32,
+      33,
+      63,
+      64,
+      65,
+      127,
+      128,
+      129,
+      255,
+      256,
+      257,
+      1023,
+      1024,
+      1025,
+      16384,
+      32768,
+      35328,
+      65536
+    ],
+    "batches": [
+      1,
+      3
+    ],
+    "threads": [
+      1,
+      4
+    ],
+    "patterns": [
+      "uniform_zero",
+      "near_zero",
+      "moderate_random",
+      "wide_minus80_to0",
+      "wide_plusminus1000",
+      "positive_10000_offset",
+      "near_equal_maxima",
+      "one_dominant_class",
+      "mixed_exp_underflow_tail",
+      "log2_boundaries",
+      "finite_plusminus_1e30",
+      "row_translation_with_bias",
+      "subnormal_inputs",
+      "normal_subnormal_exp_boundaries"
+    ],
+    "input_min": -1.0000000150474662e+30,
+    "input_max": 1.0000000150474662e+30,
+    "biased_input_min": -1.0000000150474662e+30,
+    "biased_input_max": 1.0000000150474662e+30,
+    "unique_input_values": 8656984,
+    "unique_input_rows": 1456,
+    "input_checksum_fnv1a64": "94570e279042d671",
+    "target_seed_base": "0x6d2b79f5",
+    "unique_input_values_definition": "Scalar logit positions across shape/pattern cases counted before repeating thread budgets; not a count of distinct numeric values."
+  },
+  "guard_failures": 0,
+  "immutable_input_failures": 0,
+  "invalid_input_values": 0,
+  "loss": {
+    "compared": 1456,
+    "outside_tolerance": 0,
+    "nonfinite_pairs": 0,
+    "bitwise_differences": 6,
+    "zero_reference_differences": 0,
+    "max_absolute_error": 2.384185791015625e-07,
+    "max_relative_error_nonzero_reference": 1.225229309322923e-07,
+    "max_tolerance_fraction": 0.01716251606947833,
+    "worst_absolute": {
+      "pattern": "near_zero",
+      "batch": 3,
+      "vocab": 7,
+      "threads": 1,
+      "index": 0
+    },
+    "worst_tolerance": {
+      "pattern": "near_zero",
+      "batch": 3,
+      "vocab": 7,
+      "threads": 1,
+      "index": 0
+    }
+  },
+  "gradient": {
+    "compared": 17313968,
+    "outside_tolerance": 0,
+    "nonfinite_pairs": 0,
+    "bitwise_differences": 1557814,
+    "zero_reference_differences": 0,
+    "max_absolute_error": 5.960464477539063e-08,
+    "max_relative_error_nonzero_reference": 0.0008084074373484236,
+    "max_tolerance_fraction": 0.057040430782110324,
+    "worst_absolute": {
+      "pattern": "log2_boundaries",
+      "batch": 1,
+      "vocab": 2,
+      "threads": 1,
+      "index": 1
+    },
+    "worst_tolerance": {
+      "pattern": "near_equal_maxima",
+      "batch": 1,
+      "vocab": 7,
+      "threads": 1,
+      "index": 2
+    }
+  },
+  "failure_examples": [],
+  "limitations": [
+    "Finite-input standalone softmax numerical comparison only",
+    "No full model parameter updates or end-to-end optimizer equivalence in this test",
+    "No convergence or final training-quality validation",
+    "No throughput timing or five-epoch execution"
+  ],
+  "source_files_unchanged": true,
+  "verification_run": {
+    "completed_at": "2026-10-18T04:13:53.490937+00:00",
+    "test_elapsed_seconds": 0.9770438330015168,
+    "exit_code": 0,
+    "build_commands": [
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_kernels.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-vforce-check-geum1nda/scalar.o"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-Dexperiment_softmax=vforce_experiment_softmax",
+        "-Dexperiment_bias_reduce=vforce_experiment_bias_reduce",
+        "-Dexperiment_clip_gradients=vforce_experiment_clip_gradients",
+        "-Dexperiment_adamw=vforce_experiment_adamw",
+        "-c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-vforce-check-geum1nda/vforce.o"
+      ],
+      [
+        "clang",
+        "-std=c11",
+        "-O3",
+        "-mcpu=native",
+        "-ffp-contract=off",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_vforce_exp.c",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-vforce-check-geum1nda/scalar.o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-vforce-check-geum1nda/vforce.o",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/var/folders/1f/vkxc0sm17zx5ndqfvqp3dgmh0000gn/T/kowiki-vforce-check-geum1nda/test_vforce_exp"
+      ]
+    ],
+    "source_sha256": {
+      "test_vforce_exp.c": "397a9401dda789b92437ba54f3cb523e3136b3493de657215d2cb17ab08fc5ab",
+      "vector_kernels.c": "4c7213b4425644ab42fd3ed427ea3f4992a490941f0704d02e95339b68c4f42e",
+      "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+      "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+      "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    },
+    "thread_environment": {
+      "OMP_WAIT_POLICY": "PASSIVE",
+      "KMP_BLOCKTIME": "0",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "coordination_lock": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/.timing.lock"
+  }
+}

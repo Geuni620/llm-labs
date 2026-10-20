@@ -1,0 +1,370 @@
+{
+  "kind": "MPS_REAL_WIKI_BATCH512_ONE_UPDATE_GATE",
+  "status": "complete",
+  "passed": true,
+  "started_at": "2026-10-18T21:24:37.450096+09:00",
+  "variant": "preload_defer_foreach",
+  "tolerances_predeclared": {
+    "declared_before_execution": true,
+    "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+    "ordinary": {
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    "moment1": {
+      "atol": 2e-09,
+      "rtol": 0.0002
+    },
+    "moment2": {
+      "atol": 2e-11,
+      "rtol": 0.0005
+    },
+    "policy": "Same predeclared limits as the fixed-work CPU gate. Failures are retained, never relaxed after observing a device result."
+  },
+  "scope": "One actual Wiki batch, FP32, independent CPU oracle; no throughput measurement, complete epoch or quality comparison.",
+  "sources_before": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_batch512.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_batch512.py",
+      "bytes": 9661,
+      "sha256": "78d5d657308bfb65f4f80c7f86e80cf8ecadd14d5644dd4c4fd67b5811742540"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py",
+      "bytes": 20822,
+      "sha256": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_mps.py",
+      "bytes": 32997,
+      "sha256": "8d6eca734a154b36097610d52263d269a81f67d3f51cf60efa1eb07794f1feb0"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py",
+      "bytes": 17283,
+      "sha256": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.c",
+      "bytes": 2986,
+      "sha256": "b009a15597ecbd84deb7bbc9df6c963c6db1805418ed7b8a26ee24eab7d12a30"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.dylib": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.dylib",
+      "bytes": 17016,
+      "sha256": "6724c42a0815ec35c7c001e8983bbeed3b2c8fede3a9be54576550155a406dd5"
+    }
+  },
+  "backend": "mps",
+  "dtype": "float32",
+  "config": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 512,
+    "seed": 42,
+    "threads": 4,
+    "warmup_steps": 2,
+    "steps": 1
+  },
+  "parameter_count": 6883968,
+  "updates": 1,
+  "clip_norm": 1.0,
+  "target_prediction_events": 512,
+  "runtime": {
+    "torch_version": "2.14.1",
+    "fallback_env": "0",
+    "mps_fast_math_env": "0",
+    "prefer_metal_env": null,
+    "cpu_threads": 4,
+    "cpu_interop_threads": 1
+  },
+  "actual_devices": {
+    "parameters": [
+      "mps:0"
+    ],
+    "inputs": [
+      "mps:0"
+    ],
+    "gradients": [
+      "mps:0"
+    ],
+    "moments": [
+      "mps:0"
+    ],
+    "optimizer_step_state": [
+      "cpu"
+    ]
+  },
+  "warmup_updates": 2,
+  "total_optimizer_updates_executed": 3,
+  "warmup_scalar_evidence": [
+    {
+      "loss": 10.47099781036377,
+      "gradient_norm": 0.28178322315216064,
+      "clipping_scale": 1.0
+    },
+    {
+      "loss": 10.467660903930664,
+      "gradient_norm": 0.3295353353023529,
+      "clipping_scale": 1.0
+    }
+  ],
+  "warmup_reset_verified": {
+    "initial_parameter_bits_restored": true,
+    "adam_step_zero": true,
+    "moment1_zero": true,
+    "moment2_zero": true,
+    "gradients_zero": true,
+    "sampler_restored": true,
+    "optimizer_steps_before_reset": [
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ]
+  },
+  "all_arrays_finite_checked_on_CPU": true,
+  "second_moments_nonnegative_checked": true,
+  "initial_parameter_bits_match_C": true,
+  "initial_parameter_checksum": "b5b7b03ca89a72af",
+  "input_checksum": "c2b29b52ab4da95c",
+  "first128_input_checksum": "1a55aed564d5b308",
+  "sampler_initial": {
+    "position": 0,
+    "multiplier": 19277647,
+    "shift": 17673442,
+    "consumed": 0,
+    "random": 141905977
+  },
+  "sampler_after_one_batch": {
+    "position": 512,
+    "multiplier": 19277647,
+    "shift": 17673442,
+    "consumed": 512,
+    "random": 141905977
+  },
+  "first_windows": [
+    {
+      "window_index": 17673442,
+      "paragraph_index": 218608,
+      "contexts": [
+        20,
+        85,
+        4,
+        200,
+        7,
+        4,
+        1067,
+        7
+      ],
+      "target": 4
+    },
+    {
+      "window_index": 36951089,
+      "paragraph_index": 458298,
+      "contexts": [
+        1835,
+        37,
+        28,
+        4,
+        3096,
+        6,
+        12,
+        4
+      ],
+      "target": 383
+    },
+    {
+      "window_index": 56228736,
+      "paragraph_index": 692331,
+      "contexts": [
+        14818,
+        12,
+        4,
+        2962,
+        11,
+        4,
+        5384,
+        31
+      ],
+      "target": 4
+    },
+    {
+      "window_index": 75506383,
+      "paragraph_index": 925563,
+      "contexts": [
+        833,
+        11,
+        10,
+        4,
+        15045,
+        231,
+        4,
+        5059
+      ],
+      "target": 26
+    }
+  ],
+  "comparison_count": 8,
+  "failed_comparisons": 0,
+  "comparisons": [
+    {
+      "name": "batch512.update1.loss",
+      "family": "ordinary",
+      "passed": true,
+      "elements": 1,
+      "max_absolute_error": 0.0,
+      "max_relative_error": 0.0,
+      "failed_elements": 0,
+      "actual_at_worst": 10.47099781036377,
+      "expected_at_worst": 10.47099781036377,
+      "worst_absolute_error_index": 0,
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    {
+      "name": "batch512.update1.gradient_norm",
+      "family": "ordinary",
+      "passed": true,
+      "elements": 1,
+      "max_absolute_error": 1.2129545211791992e-05,
+      "max_relative_error": 4.3047514407960763e-05,
+      "failed_elements": 0,
+      "actual_at_worst": 0.28178322315216064,
+      "expected_at_worst": 0.28177109360694885,
+      "worst_absolute_error_index": 0,
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    {
+      "name": "batch512.update1.clipping_scale",
+      "family": "ordinary",
+      "passed": true,
+      "elements": 1,
+      "max_absolute_error": 0.0,
+      "max_relative_error": 0.0,
+      "failed_elements": 0,
+      "actual_at_worst": 1.0,
+      "expected_at_worst": 1.0,
+      "worst_absolute_error_index": 0,
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    {
+      "name": "batch512.update1.raw_gradients",
+      "family": "ordinary",
+      "passed": true,
+      "elements": 6883968,
+      "max_absolute_error": 3.259629011154175e-09,
+      "max_relative_error": 0.003533014117319138,
+      "failed_elements": 0,
+      "actual_at_worst": -0.007784444838762283,
+      "expected_at_worst": -0.007784441579133272,
+      "worst_absolute_error_index": 6848652,
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    {
+      "name": "batch512.update1.clipped_gradients",
+      "family": "ordinary",
+      "passed": true,
+      "elements": 6883968,
+      "max_absolute_error": 3.259629011154175e-09,
+      "max_relative_error": 0.003533014117319138,
+      "failed_elements": 0,
+      "actual_at_worst": -0.007784444838762283,
+      "expected_at_worst": -0.007784441579133272,
+      "worst_absolute_error_index": 6848652,
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    {
+      "name": "batch512.update1.updated_params",
+      "family": "ordinary",
+      "passed": true,
+      "elements": 6883968,
+      "max_absolute_error": 9.685754776000977e-08,
+      "max_relative_error": 0.014010507880910683,
+      "failed_elements": 0,
+      "actual_at_worst": 0.009513964876532555,
+      "expected_at_worst": 0.009514061734080315,
+      "worst_absolute_error_index": 2352148,
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    {
+      "name": "batch512.update1.moment1",
+      "family": "moment1",
+      "passed": true,
+      "elements": 6883968,
+      "max_absolute_error": 3.4924596548080444e-10,
+      "max_relative_error": 0.0035330430253187636,
+      "failed_elements": 0,
+      "actual_at_worst": -0.0007784445188008249,
+      "expected_at_worst": -0.0007784441695548594,
+      "worst_absolute_error_index": 6848652,
+      "atol": 2e-09,
+      "rtol": 0.0002,
+      "expected_nonzero_elements": 4689536,
+      "actual_nonzero_elements": 4689536,
+      "erased_strong_nonzero_elements": 0,
+      "entire_vector_incorrectly_zero": false
+    },
+    {
+      "name": "batch512.update1.moment2",
+      "family": "moment2",
+      "passed": true,
+      "elements": 6883968,
+      "max_absolute_error": 7.105427357601002e-14,
+      "max_relative_error": 0.007053527806345351,
+      "failed_elements": 0,
+      "actual_at_worst": 1.8615097019392124e-07,
+      "expected_at_worst": 1.8615104124819482e-07,
+      "worst_absolute_error_index": 6848650,
+      "atol": 2e-11,
+      "rtol": 0.0005,
+      "expected_nonzero_elements": 4689536,
+      "actual_nonzero_elements": 4689536,
+      "erased_strong_nonzero_elements": 0,
+      "entire_vector_incorrectly_zero": false
+    }
+  ],
+  "all_large_arrays_kept_in_memory": true,
+  "quality_comparison_valid": false,
+  "batch_size_scope": "B512 changes optimizer updates per target versus B128; this one-step correctness check does not establish equal quality or convergence.",
+  "sources_after": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_batch512.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_batch512.py",
+      "bytes": 9661,
+      "sha256": "78d5d657308bfb65f4f80c7f86e80cf8ecadd14d5644dd4c4fd67b5811742540"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py",
+      "bytes": 20822,
+      "sha256": "3757b3a5c5da8ecb9cd69bf9ba898d29dfe441617786ceaa9d36c2ab5a504935"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_mps.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/verify_mps.py",
+      "bytes": 32997,
+      "sha256": "8d6eca734a154b36097610d52263d269a81f67d3f51cf60efa1eb07794f1feb0"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py",
+      "bytes": 17283,
+      "sha256": "0e4feaa4682cdf2105130f77c10b856fd200a4ebf9ef5fe17b4cd01895e170c6"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.c",
+      "bytes": 2986,
+      "sha256": "b009a15597ecbd84deb7bbc9df6c963c6db1805418ed7b8a26ee24eab7d12a30"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.dylib": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/init_reference.dylib",
+      "bytes": 17016,
+      "sha256": "6724c42a0815ec35c7c001e8983bbeed3b2c8fede3a9be54576550155a406dd5"
+    }
+  },
+  "completed_at": "2026-10-18T21:24:43.241513+09:00"
+}

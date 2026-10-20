@@ -1,0 +1,377 @@
+{
+  "status": "short_benchmark_complete",
+  "created_at": "2026-10-18T16:38:07.246368+09:00",
+  "source": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/results/cpu-fixedwork-mac-20261018-v1.json",
+  "config": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 128,
+    "seed": 42,
+    "threads": 4,
+    "warmup_steps": 2,
+    "optimizer": "AdamW",
+    "gradient_max_norm": 1.0
+  },
+  "measurement": {
+    "updates_per_trial": 285,
+    "prediction_events_per_trial": 36480,
+    "main_trials": 16,
+    "actual_compute_seconds": [
+      6.261595000047237,
+      15.534513000049628
+    ],
+    "below_10_seconds": 5,
+    "distinct_timed_target_windows": 36480,
+    "full_train_target_windows": 124232535,
+    "corpus_full_train_preloaded_in_owned_ram": true,
+    "same_target_sequence_reused_across_trials": true,
+    "clip_active_updates_each_trial": 66,
+    "warmup_updates_reset_before_timing": 2
+  },
+  "validation": {
+    "model_cases": 80,
+    "model_comparisons": 3160,
+    "failed_comparisons": 0,
+    "norm_module_cases": 444,
+    "softmax_module_cases": 2288,
+    "legacy_baseline_crosscheck_passed": true,
+    "all_16_final_parameter_moment_checksums_identical": true,
+    "tolerances": {
+      "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+      "ordinary_loss_norm_scale_gradients_parameters": {
+        "atol": 2e-06,
+        "rtol": 0.0002
+      },
+      "moment1": {
+        "atol": 2e-09,
+        "rtol": 0.0002
+      },
+      "moment2": {
+        "atol": 2e-11,
+        "rtol": 0.0005
+      },
+      "declared_before_execution": true,
+      "moment_rationale": "An ordinary 2e-6 absolute allowance can hide incorrect zero moments. Separate smaller absolute limits retain float32 rounding room. C may form 1-.999f rather than Python's 1-.999; the approximately 1.29e-5 relative coefficient difference is covered by the declared moment2 rtol, not by loosening limits after results are seen. Explicit zero/nonzero checks supplement elementwise comparisons."
+    },
+    "scope": "Independent synthetic checks compare loss/norm/scale at every update and all final gradients/parameters/moments. Real timing uses C finite guards and checksums; no quality or complete epoch claim."
+  },
+  "comparisons": [
+    {
+      "candidate": "fixed_norm",
+      "label": "고정 블록 norm",
+      "control_elapsed_seconds": 13.41152800002601,
+      "candidate_elapsed_seconds": [
+        11.478752000024542,
+        12.800481999991462
+      ],
+      "candidate_median_elapsed_seconds": 12.139617000008002,
+      "wall_saved_percent_median": 9.483714309178948,
+      "wall_saved_percent_range": [
+        4.5561251487031384,
+        14.411303469654758
+      ],
+      "process_cpu_saved_percent_median": 15.3529365780511,
+      "control_endpoint_drift_percent": 10.998951260727976,
+      "epoch5_hours": {
+        "control": 63.43461111365098,
+        "candidate_per_trial": [
+          54.29285680126739,
+          60.54445084371989
+        ],
+        "candidate_center_from_median_wall": 57.418653822493646,
+        "raw_median_rate_projection": 57.2484894879533,
+        "primary_center_method": "Median/mean wall of two candidates; consistent with the reported median wall-time savings. The raw median-rate projection is a separately named statistic."
+      },
+      "phase_wall_profile": {
+        "ram_gather": {
+          "control_ms_per_update": 0.46544035042946535,
+          "candidate_ms_per_update": 0.5526789470183614
+        },
+        "matrix_multiply": {
+          "control_ms_per_update": 19.596508776630163,
+          "candidate_ms_per_update": 20.511321043554826
+        },
+        "softmax": {
+          "control_ms_per_update": 12.52231754591329,
+          "candidate_ms_per_update": 11.753978946638343
+        },
+        "bias_reduce": {
+          "control_ms_per_update": 1.6142403476119958,
+          "candidate_ms_per_update": 1.6693140355576026
+        },
+        "gradient_clip": {
+          "control_ms_per_update": 6.3429473682813216,
+          "candidate_ms_per_update": 1.6179929803975188
+        },
+        "adamw": {
+          "control_ms_per_update": 5.462905262972702,
+          "candidate_ms_per_update": 5.501185968648969
+        },
+        "other": {
+          "control_ms_per_update": 1.0536333307084675,
+          "candidate_ms_per_update": 0.988675446633511
+        }
+      },
+      "interpretation": "Most promising localized change; clip-phase time reduced in both fixed-work observations."
+    },
+    {
+      "candidate": "softmax_inv_batch",
+      "label": "softmax 배치 역수",
+      "control_elapsed_seconds": 13.451568500022404,
+      "candidate_elapsed_seconds": [
+        12.92201799992472,
+        13.027049000025727
+      ],
+      "candidate_median_elapsed_seconds": 12.974533499975223,
+      "wall_saved_percent_median": 3.5463150639004404,
+      "wall_saved_percent_range": [
+        3.1559107772150874,
+        3.9367193505857934
+      ],
+      "process_cpu_saved_percent_median": 1.6749744265237732,
+      "control_endpoint_drift_percent": 7.887161496987603,
+      "epoch5_hours": {
+        "control": 63.623996957386495,
+        "candidate_per_trial": [
+          61.11929875754895,
+          61.61608038051334
+        ],
+        "candidate_center_from_median_wall": 61.36768956903114,
+        "raw_median_rate_projection": 61.36668418662775,
+        "primary_center_method": "Median/mean wall of two candidates; consistent with the reported median wall-time savings. The raw median-rate projection is a separately named statistic."
+      },
+      "phase_wall_profile": {
+        "ram_gather": {
+          "control_ms_per_update": 0.7743140376221976,
+          "candidate_ms_per_update": 0.4607245593593178
+        },
+        "matrix_multiply": {
+          "control_ms_per_update": 19.66774912383571,
+          "candidate_ms_per_update": 19.37164561639197
+        },
+        "softmax": {
+          "control_ms_per_update": 12.77065438345042,
+          "candidate_ms_per_update": 12.090024561621249
+        },
+        "bias_reduce": {
+          "control_ms_per_update": 1.5528859605342804,
+          "candidate_ms_per_update": 1.367203507515226
+        },
+        "gradient_clip": {
+          "control_ms_per_update": 6.15972982405015,
+          "candidate_ms_per_update": 5.929233330677738
+        },
+        "adamw": {
+          "control_ms_per_update": 5.275196489559388,
+          "candidate_ms_per_update": 5.3281491250616675
+        },
+        "other": {
+          "control_ms_per_update": 0.9979561459387474,
+          "candidate_ms_per_update": 0.977698246654319
+        }
+      },
+      "interpretation": "Small whole-run improvement observed; control variability is larger than this effect."
+    },
+    {
+      "candidate": "minimal_zero",
+      "label": "embedding gradient만 초기화",
+      "control_elapsed_seconds": 12.577697000000626,
+      "candidate_elapsed_seconds": [
+        15.534513000049628,
+        7.564877999946475
+      ],
+      "candidate_median_elapsed_seconds": 11.549695499998052,
+      "wall_saved_percent_median": 8.173209292627444,
+      "wall_saved_percent_range": [
+        -23.50840539447607,
+        39.85482397973096
+      ],
+      "process_cpu_saved_percent_median": 5.796184342591026,
+      "control_endpoint_drift_percent": 14.98170398104602,
+      "epoch5_hours": {
+        "control": 59.490709626735075,
+        "candidate_per_trial": [
+          73.47602681783856,
+          35.78079202070695
+        ],
+        "candidate_center_from_median_wall": 54.62840941927276,
+        "raw_median_rate_projection": 48.12569983319801,
+        "primary_center_method": "Median/mean wall of two candidates; consistent with the reported median wall-time savings. The raw median-rate projection is a separately named statistic."
+      },
+      "phase_wall_profile": {
+        "ram_gather": {
+          "control_ms_per_update": 0.7659526292659473,
+          "candidate_ms_per_update": 0.6314894744080671
+        },
+        "matrix_multiply": {
+          "control_ms_per_update": 17.934405265310613,
+          "candidate_ms_per_update": 16.516370173511014
+        },
+        "softmax": {
+          "control_ms_per_update": 11.604356141801793,
+          "candidate_ms_per_update": 10.195168421456689
+        },
+        "bias_reduce": {
+          "control_ms_per_update": 1.8460052641386395,
+          "candidate_ms_per_update": 1.438254388988737
+        },
+        "gradient_clip": {
+          "control_ms_per_update": 5.823829826049246,
+          "candidate_ms_per_update": 5.162849123262914
+        },
+        "adamw": {
+          "control_ms_per_update": 5.220203509497081,
+          "candidate_ms_per_update": 6.166170173520713
+        },
+        "other": {
+          "control_ms_per_update": 0.9375175393774713,
+          "candidate_ms_per_update": 0.4149456132660832
+        }
+      },
+      "interpretation": "Mixed faster/slower observations; independent speed effect remains inconclusive."
+    },
+    {
+      "candidate": "combined",
+      "label": "세 후보 통합",
+      "control_elapsed_seconds": 7.372960000007879,
+      "candidate_elapsed_seconds": [
+        6.261595000047237,
+        7.1468080000486225
+      ],
+      "candidate_median_elapsed_seconds": 6.70420150004793,
+      "wall_saved_percent_median": 9.070420834498421,
+      "wall_saved_percent_range": [
+        3.067316246921381,
+        15.073525422075463
+      ],
+      "process_cpu_saved_percent_median": 15.831636015341726,
+      "control_endpoint_drift_percent": 0.02680422590677546,
+      "epoch5_hours": {
+        "control": 34.87304730349121,
+        "candidate_per_trial": [
+          29.616449652747065,
+          33.803380657754644
+        ],
+        "candidate_center_from_median_wall": 31.709915155250858,
+        "raw_median_rate_projection": 31.571706087559683,
+        "primary_center_method": "Median/mean wall of two candidates; consistent with the reported median wall-time savings. The raw median-rate projection is a separately named statistic."
+      },
+      "phase_wall_profile": {
+        "ram_gather": {
+          "control_ms_per_update": 0.13427368585804575,
+          "candidate_ms_per_update": 0.14481052609258577
+        },
+        "matrix_multiply": {
+          "control_ms_per_update": 9.427126312195407,
+          "candidate_ms_per_update": 9.615777190692985
+        },
+        "softmax": {
+          "control_ms_per_update": 7.43598771596066,
+          "candidate_ms_per_update": 7.5005526319472935
+        },
+        "bias_reduce": {
+          "control_ms_per_update": 0.679194737274788,
+          "candidate_ms_per_update": 0.7199561427625125
+        },
+        "gradient_clip": {
+          "control_ms_per_update": 3.8281052636815924,
+          "candidate_ms_per_update": 0.888887718074808
+        },
+        "adamw": {
+          "control_ms_per_update": 3.7070315774415796,
+          "candidate_ms_per_update": 4.325933333102353
+        },
+        "other": {
+          "control_ms_per_update": 0.6583157953348729,
+          "candidate_ms_per_update": 0.3275964925833569
+        }
+      },
+      "interpretation": "Both observations shorter than stable local controls; a verified experimental bundle, not a global optimum or learned-quality result."
+    }
+  ],
+  "preservation": {
+    "created_at_utc": "2026-10-18 07:38:06 UTC",
+    "initial": {
+      "git_index_sha256": "b50df78101d69fcf3681efde90062f15b21480deeb8b960c599e2463b0a608db",
+      "frozen_source_sha256": {
+        "vforce_benchmark.c": "45d25a5fcadf251bb5886e55d878f77cf0c4e8c80573335d59c6ec2fc4a4448c",
+        "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+        "benchmark.c": "348064671fc454c7a930d5468574ece3e8d708404eb29fe2b38a0e2dc231045f",
+        "cumulative_benchmark.c": "2eefe1cc43e867918d9c5f4c3995df9c272f31c6b1e59e139cbffebbee8b969f",
+        "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+        "vector_kernels.c": "4c7213b4425644ab42fd3ed427ea3f4992a490941f0704d02e95339b68c4f42e",
+        "gemm_kernels.c": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27",
+        "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5",
+        "run_vector_exp.py": "a69e30c2fcdd2d80f8ad346067d3f5e621f6046cd01109640084ec5949c55367",
+        "run_norm_simd.py": "769569381ea654808298cd933b7ca974f813c6103b97c9cb7a9f122e0a5ea680"
+      }
+    },
+    "final": {
+      "git_index_sha256": "b50df78101d69fcf3681efde90062f15b21480deeb8b960c599e2463b0a608db",
+      "frozen_source_sha256": {
+        "vforce_benchmark.c": "45d25a5fcadf251bb5886e55d878f77cf0c4e8c80573335d59c6ec2fc4a4448c",
+        "vector_vforce.c": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465",
+        "benchmark.c": "348064671fc454c7a930d5468574ece3e8d708404eb29fe2b38a0e2dc231045f",
+        "cumulative_benchmark.c": "2eefe1cc43e867918d9c5f4c3995df9c272f31c6b1e59e139cbffebbee8b969f",
+        "experiment_kernels.h": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016",
+        "vector_kernels.c": "4c7213b4425644ab42fd3ed427ea3f4992a490941f0704d02e95339b68c4f42e",
+        "gemm_kernels.c": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27",
+        "fast_exp.h": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5",
+        "run_vector_exp.py": "a69e30c2fcdd2d80f8ad346067d3f5e621f6046cd01109640084ec5949c55367",
+        "run_norm_simd.py": "769569381ea654808298cd933b7ca974f813c6103b97c9cb7a9f122e0a5ea680"
+      },
+      "trials": 16,
+      "actual_compute_range_seconds": [
+        6.261595000047237,
+        15.534513000049628
+      ],
+      "outside_10_30_count": 5,
+      "checksum_distinct_counts": {
+        "initial_parameter_checksum": 1,
+        "input_checksum": 1,
+        "final_input_checksum": 1,
+        "final_parameter_checksum": 1,
+        "final_moment1_checksum": 1,
+        "final_moment2_checksum": 1
+      },
+      "clip_active_counts": [
+        66
+      ],
+      "loadavg_1m_range": [
+        3.48876953125,
+        5.38232421875
+      ],
+      "completed_at": "2026-10-18T16:27:52.321695+09:00",
+      "consistent_elapsed_projection": {
+        "fixed_norm": 57.418653822493646,
+        "softmax_inv_batch": 61.36768956903114,
+        "minimal_zero": 54.62840941927276,
+        "combined": 31.709915155250854
+      }
+    },
+    "original_sources_unchanged": true,
+    "git_index_unchanged": true,
+    "reviewers": [
+      {
+        "agent": "numeric_tokens",
+        "scope": "Independent timing arithmetic, fixed work, sampler, phases, CPU resources and identity audit",
+        "result": "passed"
+      },
+      {
+        "agent": "tiled_gemm",
+        "scope": "Source, method and bounded interpretation review",
+        "result": "passed"
+      }
+    ]
+  },
+  "limitations": [
+    "Two candidate observations per local ABBA block; observed changes are not statistical proof of general improvement.",
+    "Execution time changed between blocks. No specific cause is established by load average.",
+    "Different blocks and historical 31.44h estimates must not be directly ranked as controlled comparisons.",
+    "The pilot selected a common N once. Five main runs fell below 10 seconds; all were retained.",
+    "5-epoch hours are extrapolations from 621,162,675 target predictions, not actual training results.",
+    "All work remains experimental C benchmark code. The deferred long training was not resumed."
+  ]
+}

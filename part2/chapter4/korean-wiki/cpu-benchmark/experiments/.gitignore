@@ -1,0 +1,15 @@
+/benchmark
+/benchmark_*
+/cpu_experiment_*
+/cpu_cumulative_*
+/cpu_vector_exp_*
+/cpu_norm_simd_*
+/cpu_fixedwork_*
+/test_norm_simd
+/test_gemm_kernels
+/test_vector_kernels
+/test_fast_exp
+/*.o
+/*.dSYM/
+/__pycache__/
+*.log

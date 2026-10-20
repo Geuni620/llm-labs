@@ -1,0 +1,76 @@
+{
+  "source": "cpu-benchmark/results/cpu-norm-simd-mac-20261018-20s-v1.json",
+  "source_sha256": "3e8dd044cb566c9ceb5a0fffa9bedd6a5364bfddaf07cffee7f313a9f32e1fca",
+  "rows": [
+    {
+      "id": "baseline",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 20.026954000000842,
+          "steps": 260,
+          "rate": 1661.7604454476002,
+          "total_ms": 77.0267461538494,
+          "clip_ms": 9.823526920249256
+        },
+        {
+          "repeat": 2,
+          "seconds": 20.015252999961376,
+          "steps": 517,
+          "rate": 3306.2784667337305,
+          "total_ms": 38.714222437062624,
+          "clip_ms": 5.369147002549276
+        },
+        {
+          "repeat": 3,
+          "seconds": 20.267404000042006,
+          "steps": 290,
+          "rate": 1831.512314054778,
+          "total_ms": 69.88760000014486,
+          "clip_ms": 8.640141380501204
+        }
+      ],
+      "clip_ms": 8.640141380501204,
+      "clip_range": [
+        5.369147002549276,
+        9.823526920249256
+      ]
+    },
+    {
+      "id": "norm_simd",
+      "trials": [
+        {
+          "repeat": 1,
+          "seconds": 20.62340599996969,
+          "steps": 216,
+          "rate": 1340.6126999604544,
+          "total_ms": 95.47873148134116,
+          "clip_ms": 4.601796295631815
+        },
+        {
+          "repeat": 2,
+          "seconds": 20.007044000085443,
+          "steps": 162,
+          "rate": 1036.4349675999836,
+          "total_ms": 123.5002716054657,
+          "clip_ms": 8.507876536941133
+        },
+        {
+          "repeat": 3,
+          "seconds": 20.01953599997796,
+          "steps": 618,
+          "rate": 3951.340330769259,
+          "total_ms": 32.39407119737534,
+          "clip_ms": 1.2888300956323333
+        }
+      ],
+      "clip_ms": 4.601796295631815,
+      "clip_range": [
+        1.2888300956323333,
+        8.507876536941133
+      ]
+    }
+  ],
+  "interpretation": "SIMD was already used. Explicit partial-sum SIMD passed numeric tests; overall throughput benefit was not reproduced in all three trials. Preserve candidate without changing default.",
+  "five_epoch_forecast_updated": false
+}

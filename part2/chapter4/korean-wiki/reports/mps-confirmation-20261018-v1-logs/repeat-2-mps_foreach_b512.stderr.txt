@@ -1,0 +1,19 @@
+OMP: Info #268: OMP_NESTED variable deprecated, please use OMP_MAX_ACTIVE_LEVELS instead.
+       21.07 real         3.63 user         1.08 sys
+          1098170368  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               97845  page reclaims
+                4260  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                2123  voluntary context switches
+               14774  involuntary context switches
+         17159068563  instructions retired
+          8570932389  cycles elapsed
+          2153697408  peak memory footprint

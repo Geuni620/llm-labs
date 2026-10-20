@@ -1,0 +1,103 @@
+<section id="mps-optimization-20261018">
+  <style>
+    #mps-optimization-20261018 { --viz-accent:var(--foreground); }
+    #mps-optimization-20261018 h2 { margin-bottom:8px; }
+    #mps-optimization-20261018 figure { margin:12px 0; }
+    #mps-optimization-20261018 .opt-chart { width:100%; height:365px; display:block; }
+    #mps-optimization-20261018 .opt-chart text { fill:var(--foreground); font-size:12px; font-weight:400; }
+    #mps-optimization-20261018 .opt-chart .domain, #mps-optimization-20261018 .opt-chart .tick line { stroke:var(--border); }
+    #mps-optimization-20261018 .table { table-layout:fixed; }
+    #mps-optimization-20261018 .table th:first-child { width:42%; }
+    #mps-optimization-20261018 .table th:not(:first-child) { width:29%; }
+    #mps-optimization-20261018 hr { margin:18px 0; }
+  </style>
+  <h2>GPU 최적화 · 동일 입력으로 비교</h2>
+  <div class="text-small">B128 · FP32 · 512회 갱신 · 65,536개 예측 · 각 3회</div>
+  <figure>
+    <svg class="opt-chart" role="img" aria-label="같은 예측 수를 처리하는 실제 시간. 점은 세 번의 중앙값, 선은 관측 범위입니다."></svg>
+    <figcaption class="text-small">점: 중앙값 · 선: 3회 범위 · 사전 준비·예열 제외</figcaption>
+  </figure>
+  <table class="table table-sm">
+    <thead><tr><th scope="col">실행 조건</th><th scope="col">5에폭 환산<br>(시간)</th><th scope="col">기존 MPS 대비<br>시간 변화</th></tr></thead>
+    <tbody data-result-rows></tbody>
+  </table>
+  <div class="text-small">전체 5에폭: 621,162,675개 예측 · 짧은 측정에서 외삽</div>
+  <hr>
+  <div class="text-small" data-accuracy-label></div>
+  <div class="text-small">fused AdamW: 기존 수치 기준 미달 → 시간 비교·기본 채택에서 제외</div>
+  <div class="text-small">그 외 후보: foreach AdamW·모델·배치·정밀도 유지, 한 항목씩 변경</div>
+  <div class="text-small" data-compile-label></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+  (() => {
+    const root=document.getElementById('mps-optimization-20261018');
+    const data=__OPT_DATA__;
+    const rows=data.rows;
+    const control=rows.find(row=>row.id==='control');
+    const table=root.querySelector('[data-result-rows]');
+    for (const row of rows) {
+      const tr=document.createElement('tr');
+      const name=document.createElement('th');name.scope='row';name.textContent=row.label;
+      const hours=document.createElement('td');hours.className='tabular-nums';hours.textContent=row.hours.toFixed(1);
+      const change=document.createElement('td');change.className='tabular-nums';
+      change.textContent=row.id==='c_cpu'?'참고':row.id==='control'?'기준':
+        ((row.seconds/control.seconds-1)*100>0?'+':'')+((row.seconds/control.seconds-1)*100).toFixed(1)+'%';
+      tr.append(name,hours,change);table.append(tr);
+    }
+    root.querySelector('[data-accuracy-label]').textContent=
+      '수치 검증: '+data.gates+'개 통과 · '+data.comparisons+'개 비교 · 기존 허용 오차 유지';
+    root.querySelector('[data-compile-label]').textContent=data.compileLabel;
+    const svg=d3.select(root.querySelector('.opt-chart'));
+    function draw() {
+      const width=Math.floor(root.getBoundingClientRect().width);
+      if(width<1)return;
+      const left=104,right=width-12,top=22,bottom=301,height=365;
+      const extent=d3.extent([0,...rows.flatMap(row=>row.range)]);
+      const x=d3.scaleLinear().domain([extent[0],extent[1]+(extent[1]-extent[0])*.24]).nice()
+        .range([left+6,right-6]);
+      const y=d3.scalePoint().domain(rows.map(row=>row.id)).range([top+32,bottom-28]);
+      const names=new Map(rows.map(row=>[row.id,row.axisLabel]));
+      svg.attr('viewBox','0 0 '+width+' '+height).selectAll('*').remove();
+      svg.append('title').text('GPU 최적화 실제 구간 시간');
+      svg.append('desc').text(rows.map(row=>row.label+': '+row.seconds.toFixed(2)+'초').join(', '));
+      svg.append('rect').attr('data-chart-frame','').attr('x',left).attr('y',top)
+        .attr('width',right-left).attr('height',bottom-top).attr('fill','none').attr('stroke','var(--border)');
+      svg.append('g').attr('transform','translate(0,'+bottom+')')
+        .call(d3.axisBottom(x).tickValues(x.ticks(width<=400?3:5)).tickFormat(d3.format('~g')).tickSize(-(bottom-top)))
+        .call(g=>g.selectAll('.tick text').attr('dy','1.2em'));
+      svg.append('g').attr('transform','translate('+left+',0)')
+        .call(d3.axisLeft(y).tickFormat(id=>names.get(id)).tickSize(0).tickPadding(9))
+        .call(g=>g.select('.domain').remove());
+      for(const row of rows) {
+        const yy=y(row.id);
+        svg.append('line').attr('x1',x(row.range[0])).attr('x2',x(row.range[1]))
+          .attr('y1',yy).attr('y2',yy).attr('stroke','var(--muted-foreground)').attr('stroke-width',1.5);
+        svg.append('circle').attr('cx',x(row.seconds)).attr('cy',yy).attr('r',5).attr('fill','var(--viz-series-1)');
+        svg.append('text').attr('class','value-label').attr('x',x(row.seconds)).attr('y',yy-12)
+          .attr('text-anchor','middle').text(row.seconds.toFixed(2)+'초');
+      }
+      svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(left+right)/2)
+        .attr('y',height-10).attr('text-anchor','middle').text('실제 측정 구간 (초)');
+      svg.append('text').attr('class','axis-title').attr('data-axis','y')
+        .attr('transform','translate(13,'+((top+bottom)/2)+') rotate(-90)').attr('text-anchor','middle').text('실행 조건');
+      svg.selectAll('.value-label').each(function(){
+        const b=this.getBBox(),label=d3.select(this);
+        if(b.x<left+4)label.attr('x',left+4).attr('text-anchor','start');
+        else if(b.x+b.width>right-4)label.attr('x',right-4).attr('text-anchor','end');
+      });
+      const boxes=[...svg.node().querySelectorAll('text')].map(el=>el.getBoundingClientRect());
+      let collisions=0;
+      for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++){
+        const a=boxes[i],b=boxes[j];
+        if(a.left<b.right+4&&a.right+4>b.left&&a.top<b.bottom+4&&a.bottom+4>b.top)collisions++;
+      }
+      console.log('GPU optimization QA',JSON.stringify({width,rows:rows.length,
+        overflow:root.scrollWidth>width+1,collisions,
+        finite:rows.every(row=>[row.seconds,row.hours,...row.range].every(Number.isFinite)),
+        axes:svg.node().querySelectorAll('text.axis-title[data-axis]').length,
+        values:svg.node().querySelectorAll('.value-label').length}));
+    }
+    new ResizeObserver(draw).observe(root);draw();
+  })();
+  </script>
+</section>

@@ -1,0 +1,92 @@
+{
+  "published_at_utc": "2026-10-18 12:36:41 UTC",
+  "status": "published",
+  "attachment": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-d339a332-c6b7-4a2d-8872-68efdef8db71-html",
+    "title": "M1 CPU·GPU NPLM 시간 비교",
+    "height": 1101,
+    "heights": [
+      [
+        320,
+        1101
+      ],
+      [
+        375,
+        1101
+      ],
+      [
+        430,
+        1101
+      ],
+      [
+        520,
+        1101
+      ],
+      [
+        640,
+        1101
+      ],
+      [
+        728,
+        1101
+      ],
+      [
+        860,
+        1101
+      ],
+      [
+        1000,
+        1101
+      ],
+      [
+        1144,
+        1101
+      ]
+    ],
+    "outline": "t0,1,62,5,1;t0,8,78,4,1;m0,15,182,80,1;t0,97,56,4,1;t0,102,77,4,1;g0,109,182,51,5;t0,160,79,4,1;t0,175,49,4,1;t0,183,52,4,1;g0,186,182,71,7;t0,257,74,4,1;t0,271,72,4,1"
+  },
+  "fragment": "reports/mps-cpu-comparison.html",
+  "report": "reports/mps-cpu-comparison.json",
+  "text_report": "reports/mps-cpu-comparison.txt",
+  "scope": "Actual CPU/M1 MPS short benchmark observations; full-five-epoch times extrapolated, B512 a separate training condition, CUDA and long-run quality unmeasured.",
+  "previews": [
+    {
+      "profile": {
+        "width": 728,
+        "appearance": "dark"
+      },
+      "contentHeight": 1101,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "MPS comparison QA {\"width\":728,\"horizontalOverflow\":false,\"mainRows\":6,\"confirmationRows\":4,\"finite\":true,\"textCollisions\":0,\"axes\":2,\"values\":4}"
+        },
+        {
+          "level": "log",
+          "text": "MPS comparison QA {\"width\":728,\"horizontalOverflow\":false,\"mainRows\":6,\"confirmationRows\":4,\"finite\":true,\"textCollisions\":0,\"axes\":2,\"values\":4}"
+        }
+      ]
+    },
+    {
+      "profile": {
+        "width": 320,
+        "appearance": "light"
+      },
+      "contentHeight": 1101,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "MPS comparison QA {\"width\":320,\"horizontalOverflow\":false,\"mainRows\":6,\"confirmationRows\":4,\"finite\":true,\"textCollisions\":0,\"axes\":2,\"values\":4}"
+        },
+        {
+          "level": "log",
+          "text": "MPS comparison QA {\"width\":320,\"horizontalOverflow\":false,\"mainRows\":6,\"confirmationRows\":4,\"finite\":true,\"textCollisions\":0,\"axes\":2,\"values\":4}"
+        }
+      ]
+    }
+  ],
+  "numerical_gates": 26,
+  "numerical_comparisons": 688,
+  "main_trials": 18,
+  "confirmation_trials": 12
+}

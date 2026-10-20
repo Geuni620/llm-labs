@@ -1,0 +1,332 @@
+{
+  "status": "complete",
+  "started_at": "2026-10-18T16:18:31.191360+09:00",
+  "previous_failed_attempt": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork-build-manifest.json",
+  "sources": {
+    "fixedwork_benchmark.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+      "bytes": 50146,
+      "sha256": "8a0f06cdb52b1ffbef3f1ab3c22998cf2237f50e54b2a0c39a7e33f04a6190c4"
+    },
+    "gemm_kernels.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+      "bytes": 5993,
+      "sha256": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27"
+    },
+    "vector_vforce.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+      "bytes": 7300,
+      "sha256": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465"
+    },
+    "fixedwork_norm.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+      "bytes": 3348,
+      "sha256": "30ee80ed77bbe3548eb2825604c029f6c958d54dc1c2505fddd6dd1cb6d8a865"
+    },
+    "fixedwork_softmax.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+      "bytes": 2982,
+      "sha256": "d4fae1d19cce196edc6745614840192243ddc6ed3fb63b7e4890d8ffa5ae19fc"
+    },
+    "fixedwork_api.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_api.h",
+      "bytes": 1096,
+      "sha256": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b"
+    },
+    "experiment_kernels.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/experiment_kernels.h",
+      "bytes": 2380,
+      "sha256": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016"
+    },
+    "fast_exp.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fast_exp.h",
+      "bytes": 1881,
+      "sha256": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    }
+  },
+  "variants": {
+    "baseline": {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DFW_FIXED_NORM=0",
+        "-DFW_SOFTMAX_INV_BATCH=0",
+        "-DFW_MINIMAL_ZERO=0",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-DBENCH_BUILD_FLAGS=\"-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DFW_FIXED_NORM=0 -DFW_SOFTMAX_INV_BATCH=0 -DFW_MINIMAL_ZERO=0 -Xpreprocessor -fopenmp -isystem /opt/homebrew/opt/libomp/include\"",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_baseline"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:527:9: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]\n  527 |         cblas_sgemm(CblasRowMajor,trans_a ? CblasTrans : CblasNoTrans,\n      |         ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here\n  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,\n      |      ^\n1 warning generated.\n",
+      "features": {
+        "fixed_norm": false,
+        "softmax_inv_batch": false,
+        "minimal_zero": false
+      },
+      "binary": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_baseline",
+        "bytes": 104552,
+        "sha256": "288c0f2ed0e41cadaec5a72758f81b28bfcf46581cbba20f6a67a3956d39ced4"
+      }
+    },
+    "fixed_norm": {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DFW_FIXED_NORM=1",
+        "-DFW_SOFTMAX_INV_BATCH=0",
+        "-DFW_MINIMAL_ZERO=0",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-DBENCH_BUILD_FLAGS=\"-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DFW_FIXED_NORM=1 -DFW_SOFTMAX_INV_BATCH=0 -DFW_MINIMAL_ZERO=0 -Xpreprocessor -fopenmp -isystem /opt/homebrew/opt/libomp/include\"",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_fixed_norm"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:527:9: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]\n  527 |         cblas_sgemm(CblasRowMajor,trans_a ? CblasTrans : CblasNoTrans,\n      |         ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here\n  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,\n      |      ^\n1 warning generated.\n",
+      "features": {
+        "fixed_norm": true,
+        "softmax_inv_batch": false,
+        "minimal_zero": false
+      },
+      "binary": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_fixed_norm",
+        "bytes": 104552,
+        "sha256": "349b86db9d528c71e2132cbfaafa5e000ef474cf0c3ee4448e3c52e141a52657"
+      }
+    },
+    "softmax_inv_batch": {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DFW_FIXED_NORM=0",
+        "-DFW_SOFTMAX_INV_BATCH=1",
+        "-DFW_MINIMAL_ZERO=0",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-DBENCH_BUILD_FLAGS=\"-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DFW_FIXED_NORM=0 -DFW_SOFTMAX_INV_BATCH=1 -DFW_MINIMAL_ZERO=0 -Xpreprocessor -fopenmp -isystem /opt/homebrew/opt/libomp/include\"",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_softmax_inv_batch"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:527:9: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]\n  527 |         cblas_sgemm(CblasRowMajor,trans_a ? CblasTrans : CblasNoTrans,\n      |         ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here\n  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,\n      |      ^\n1 warning generated.\n",
+      "features": {
+        "fixed_norm": false,
+        "softmax_inv_batch": true,
+        "minimal_zero": false
+      },
+      "binary": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_softmax_inv_batch",
+        "bytes": 104560,
+        "sha256": "b74d7c332153285c7b09eadfb6dcf5214341181302891ecf31f47dbe1d670841"
+      }
+    },
+    "minimal_zero": {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DFW_FIXED_NORM=0",
+        "-DFW_SOFTMAX_INV_BATCH=0",
+        "-DFW_MINIMAL_ZERO=1",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-DBENCH_BUILD_FLAGS=\"-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DFW_FIXED_NORM=0 -DFW_SOFTMAX_INV_BATCH=0 -DFW_MINIMAL_ZERO=1 -Xpreprocessor -fopenmp -isystem /opt/homebrew/opt/libomp/include\"",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_minimal_zero"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:527:9: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]\n  527 |         cblas_sgemm(CblasRowMajor,trans_a ? CblasTrans : CblasNoTrans,\n      |         ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here\n  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,\n      |      ^\n1 warning generated.\n",
+      "features": {
+        "fixed_norm": false,
+        "softmax_inv_batch": false,
+        "minimal_zero": true
+      },
+      "binary": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_minimal_zero",
+        "bytes": 104552,
+        "sha256": "ea0cb0e6924cd39ed1032f730f8f5866fee3ef3ba9f99535ffdee1f50a5ce83a"
+      }
+    },
+    "combined": {
+      "command": [
+        "cc",
+        "-O3",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-ffp-contract=off",
+        "-fno-math-errno",
+        "-mcpu=native",
+        "-DEXPERIMENT_VFORCE_EXP=1",
+        "-DFW_FIXED_NORM=1",
+        "-DFW_SOFTMAX_INV_BATCH=1",
+        "-DFW_MINIMAL_ZERO=1",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-isystem",
+        "/opt/homebrew/opt/libomp/include",
+        "-DBENCH_BUILD_FLAGS=\"-O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fno-math-errno -mcpu=native -DEXPERIMENT_VFORCE_EXP=1 -DFW_FIXED_NORM=1 -DFW_SOFTMAX_INV_BATCH=1 -DFW_MINIMAL_ZERO=1 -Xpreprocessor -fopenmp -isystem /opt/homebrew/opt/libomp/include\"",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+        "-framework",
+        "Accelerate",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-lm",
+        "-o",
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_combined"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c:527:9: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]\n  527 |         cblas_sgemm(CblasRowMajor,trans_a ? CblasTrans : CblasNoTrans,\n      |         ^\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here\n  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,\n      |      ^\n1 warning generated.\n",
+      "features": {
+        "fixed_norm": true,
+        "softmax_inv_batch": true,
+        "minimal_zero": true
+      },
+      "binary": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_combined",
+        "bytes": 104552,
+        "sha256": "c56725bec5629ef28fb70954ff70f6647d90823478c222a0acc08ade6e11e951"
+      }
+    }
+  },
+  "sources_after": {
+    "fixedwork_benchmark.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c",
+      "bytes": 50146,
+      "sha256": "8a0f06cdb52b1ffbef3f1ab3c22998cf2237f50e54b2a0c39a7e33f04a6190c4"
+    },
+    "gemm_kernels.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c",
+      "bytes": 5993,
+      "sha256": "87a5accdb58ae1af9a813b52ab037f32ca812453532cd5857c0464d08ed9cd27"
+    },
+    "vector_vforce.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c",
+      "bytes": 7300,
+      "sha256": "3087ca2cc1e95afca33e5e02912def29172bc722f56254144a28d5226dbec465"
+    },
+    "fixedwork_norm.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c",
+      "bytes": 3348,
+      "sha256": "30ee80ed77bbe3548eb2825604c029f6c958d54dc1c2505fddd6dd1cb6d8a865"
+    },
+    "fixedwork_softmax.c": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c",
+      "bytes": 2982,
+      "sha256": "d4fae1d19cce196edc6745614840192243ddc6ed3fb63b7e4890d8ffa5ae19fc"
+    },
+    "fixedwork_api.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_api.h",
+      "bytes": 1096,
+      "sha256": "ae2d52c4a94c18d26b4afe7c6071201bc9c33e75340497a09e2032db8573957b"
+    },
+    "experiment_kernels.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/experiment_kernels.h",
+      "bytes": 2380,
+      "sha256": "b8f96fb4dbf49b41e02299506851bc54456333885e5739357c23b6e26f3e0016"
+    },
+    "fast_exp.h": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fast_exp.h",
+      "bytes": 1881,
+      "sha256": "8951f09166e20d6358658d65a0fdd070273007803c1b0a84d8067cbd63ee0ab5"
+    }
+  },
+  "completed_at": "2026-10-18T16:19:30.452091+09:00"
+}

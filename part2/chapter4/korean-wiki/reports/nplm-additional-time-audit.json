@@ -1,0 +1,103 @@
+{
+  "created_at": "2026-10-18T23:53:57.439597+09:00",
+  "preserved_files": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vforce_benchmark.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cumulative_benchmark.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_norm_simd.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_gemm_kernels.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/benchmark.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_softmax.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_vforce_exp.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fixedwork_norm.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_kernels.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_norm_simd.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_fast_exp.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/test_vector_kernels.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_api.h": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/experiment_kernels.h": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fast_exp.h": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/cpu_fixedwork_combined": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/benchmark_mps.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/corpus_fixture.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/run.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/benchmark.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/profile_phases.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/verify_refined.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/build_report.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/engine.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/engine_refined.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/verify.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/compiled_path.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization/metal_clip.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.ids.npy": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.paragraphs.npy": true
+  },
+  "all_preserved_sources_and_corpora_unchanged": true,
+  "git_index_unchanged": true,
+  "long_training_status": "stopped",
+  "long_training_stop_present": true,
+  "word2vec_environment_removed": true,
+  "comparison_json": {
+    "bytes": 4847070,
+    "sha256": "80cf50b18e618bac5c5e119ebeb828a6333ccdd6d45f9be862c97151839a3bc2"
+  },
+  "new_code": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/run_budget_model.py": {
+      "bytes": 7090,
+      "sha256": "1d46aa4e4664f7798ce555ca6e67946f6ab821125d7cb530516560ea587976cc"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/run_cpu_threads.py": {
+      "bytes": 8017,
+      "sha256": "6d17d675e579b687917a9d3a6a407fb6b435914a5b759871f775c70f4140a3ed"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/build_report.py": {
+      "bytes": 15685,
+      "sha256": "6423f008d3acec6fe0873297ed343235b8ee29523b4361512d32ef66b9a037e1"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/verify_budget.py": {
+      "bytes": 6966,
+      "sha256": "9230be67eff77c457181885b123258440b0cb9ed1dba275a13cb975cfec54875"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/build_cpu_ilp.py": {
+      "bytes": 4892,
+      "sha256": "cc841d94047d42b35253e7cb4d2ab29be966aace2f2f92e72bb06ae9aaa2182d"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/confirm_budget_model.py": {
+      "bytes": 1078,
+      "sha256": "49725c6d36f6cdee7cc6893a2efffd5605c0b57b5a2c410d5e9c5ac52bee8328"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/benchmark-round2/run_cpu_ilp.py": {
+      "bytes": 10166,
+      "sha256": "fa6365c1da827f4b30ccdf755e0bbb4ffa96353bfd7a358c36ed8014db86edf8"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization_round2/run.py": {
+      "bytes": 10715,
+      "sha256": "e10ba2616798e03784b726db0c57b19474a737e7bec2dce53e76ddcb3f7c49c2"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization_round2/benchmark.py": {
+      "bytes": 10544,
+      "sha256": "9b141673245eeca6a87f33a1a4928414ce0c878b0bb9cc1f811e8fefe64fef8f"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization_round2/engine.py": {
+      "bytes": 3095,
+      "sha256": "29616dd6a1c561206b5aa85969a9762a85f5d10e67318821fe50fa063a7d4e01"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/gpu-benchmark/optimization_round2/verify.py": {
+      "bytes": 9830,
+      "sha256": "cb70d2f706a9daf648d397de1bf3474303000a5b57df90b75d055112fac22cb8"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/softmax_ilp.c": {
+      "bytes": 9812,
+      "sha256": "13f3f41d5327f9625129f3e3e110b31c162dca7aff5f682e19a080a1f04c2779"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/round2/test_softmax_ilp.c": {
+      "bytes": 29155,
+      "sha256": "3656b7251ef1867b707d5ac7891fe4656b2c434c25a1abee2616e317f07cdde9"
+    }
+  }
+}

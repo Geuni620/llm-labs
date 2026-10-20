@@ -1,0 +1,86 @@
+<section id="wiki-norm-simd">
+  <style>
+    #wiki-norm-simd {display:grid;gap:16px;color:var(--foreground)}
+    #wiki-norm-simd .scope {display:grid;gap:4px}
+    #wiki-norm-simd table {width:100%;table-layout:fixed}
+    #wiki-norm-simd th:first-child {width:14%}
+    #wiki-norm-simd td {vertical-align:top;overflow-wrap:anywhere}
+    #wiki-norm-simd .detail {display:block}
+    #wiki-norm-simd .chart {display:block;width:100%;height:220px}
+    #wiki-norm-simd .chart text {fill:var(--foreground);font-size:12px;font-weight:400}
+    #wiki-norm-simd .frame,#wiki-norm-simd .grid {fill:none;stroke:var(--border);stroke-width:1}
+    #wiki-norm-simd .baseline {fill:var(--muted-foreground)}
+    #wiki-norm-simd .candidate {fill:var(--chart-1)}
+    @media(min-width:600px) {#wiki-norm-simd h2 {padding-right:90px}}
+  </style>
+  <h2>기울기 합산 SIMD 비교</h2>
+  <div class="scope text-small text-muted">
+    <span>기준: O3 + native + OpenMP 4 + CPU 벡터 exp</span>
+    <span>같은 Wiki · 모델 6,883,968개 · 사전 35,328 · 배치 128</span>
+    <span>변경: 기울기 제곱합의 누적 방식 · 약 20초 × 각 3회</span>
+    <span>기존에도 SIMD 사용 · 후보는 벡터 부분합을 누적</span>
+  </div>
+  <table class="table table-sm" aria-label="각 회차의 전체 처리량과 기울기 노름 처리 시간">
+    <thead><tr><th scope="col">회차</th><th scope="col" class="text-end">기존 합산</th><th scope="col" class="text-end">벡터 부분합</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div class="scope text-small text-muted">
+    <span>위: 전체 예측/초 · 아래: 업데이트당 전체 시간과 노름·클리핑 시간</span>
+    <span>부하 변동으로 전체 속도 개선 미확인 · 5에폭 예상 갱신 보류</span>
+  </div>
+  <h3>노름·클리핑 시간의 관측 범위</h3>
+  <div class="text-small text-muted">막대: 회차별 평균 시간의 중앙값 · 선: 3회 최소~최대</div>
+  <div class="plot"><svg class="chart" role="img" aria-label="업데이트당 기울기 노름과 클리핑 처리 시간"></svg></div>
+  <div class="scope text-small text-muted">
+    <span>각 회의 연산 시간 ÷ 업데이트 수 · 대기를 포함한 실제 경과시간</span>
+    <span>전역 fast-math 미사용 · double 누적 유지</span>
+    <span>검증 입력에서 norm·scale·clipped gradient 비교 통과</span>
+    <span>장시간 지속 속도·학습 품질은 별도 평가 대상</span>
+  </div>
+  <script type="application/json" id="wiki-norm-simd-data">{"source": "cpu-benchmark/results/cpu-norm-simd-mac-20261018-20s-v1.json", "source_sha256": "3e8dd044cb566c9ceb5a0fffa9bedd6a5364bfddaf07cffee7f313a9f32e1fca", "rows": [{"id": "baseline", "trials": [{"repeat": 1, "seconds": 20.026954000000842, "steps": 260, "rate": 1661.7604454476002, "total_ms": 77.0267461538494, "clip_ms": 9.823526920249256}, {"repeat": 2, "seconds": 20.015252999961376, "steps": 517, "rate": 3306.2784667337305, "total_ms": 38.714222437062624, "clip_ms": 5.369147002549276}, {"repeat": 3, "seconds": 20.267404000042006, "steps": 290, "rate": 1831.512314054778, "total_ms": 69.88760000014486, "clip_ms": 8.640141380501204}], "clip_ms": 8.640141380501204, "clip_range": [5.369147002549276, 9.823526920249256]}, {"id": "norm_simd", "trials": [{"repeat": 1, "seconds": 20.62340599996969, "steps": 216, "rate": 1340.6126999604544, "total_ms": 95.47873148134116, "clip_ms": 4.601796295631815}, {"repeat": 2, "seconds": 20.007044000085443, "steps": 162, "rate": 1036.4349675999836, "total_ms": 123.5002716054657, "clip_ms": 8.507876536941133}, {"repeat": 3, "seconds": 20.01953599997796, "steps": 618, "rate": 3951.340330769259, "total_ms": 32.39407119737534, "clip_ms": 1.2888300956323333}], "clip_ms": 4.601796295631815, "clip_range": [1.2888300956323333, 8.507876536941133]}], "interpretation": "SIMD was already used. Explicit partial-sum SIMD passed numeric tests; overall throughput benefit was not reproduced in all three trials. Preserve candidate without changing default.", "five_epoch_forecast_updated": false}</script>
+  <script>
+    (()=>{
+      const root=document.getElementById('wiki-norm-simd');
+      const data=JSON.parse(root.querySelector('#wiki-norm-simd-data').textContent);
+      const names={baseline:'기존 순서 보존 합산',norm_simd:'벡터 부분합 누적'};
+      const number=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:0});
+      const body=root.querySelector('tbody');
+      for(let repeat=1;repeat<=3;repeat++){
+        const tr=document.createElement('tr');const name=document.createElement('td');name.textContent=`${repeat}회`;tr.appendChild(name);
+        for(const row of data.rows){
+          const trial=row.trials.find(t=>t.repeat===repeat);
+          const cell=document.createElement('td');cell.className='text-end tabular-nums';cell.textContent=`${number.format(trial.rate)}/s`;
+          cell.setAttribute('data-tooltip',`${trial.seconds.toFixed(3)}초 · ${trial.steps}업데이트`);
+          const total=document.createElement('span');total.className='detail text-small text-muted';total.textContent=`전체 ${trial.total_ms.toFixed(2)}ms`;
+          const clip=document.createElement('span');clip.className='detail text-small text-muted';clip.textContent=`노름·클립 ${trial.clip_ms.toFixed(2)}ms`;
+          cell.append(total,clip);tr.appendChild(cell);
+        }
+        body.appendChild(tr);
+      }
+      const svg=root.querySelector('.chart'),ns='http://www.w3.org/2000/svg';
+      const make=(name,attrs={},content)=>{const e=document.createElementNS(ns,name);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(content!==undefined)e.textContent=content;return e;};
+      const render=()=>{
+        const width=Math.floor(root.querySelector('.plot').getBoundingClientRect().width);if(width<200)return;
+        const left=64,right=width-8,top=24,bottom=164;
+        const maximum=Math.max(...data.rows.map(r=>r.clip_range[1]));const domain=Math.ceil(maximum)*1.04;
+        const x=v=>left+6+v/domain*(right-left-12);const step=Math.max(1,Math.ceil(domain/(width<450?3:5)));
+        svg.setAttribute('viewBox',`0 0 ${width} 220`);svg.replaceChildren();
+        svg.appendChild(make('title',{},'기울기 제곱합 SIMD 방식에 따른 노름·클리핑 시간'));
+        svg.appendChild(make('rect',{x:left,y:top,width:right-left,height:bottom-top,class:'frame','data-chart-frame':''}));
+        for(let tick=0;tick<=domain;tick+=step){const at=x(tick);svg.appendChild(make('line',{x1:at,x2:at,y1:top,y2:bottom,class:'grid'}));svg.appendChild(make('text',{x:at,y:184,'text-anchor':'middle'},String(tick)));}
+        svg.appendChild(make('text',{x:0,y:15,class:'axis-title','data-axis':'y'},'합산 방식'));
+        svg.appendChild(make('text',{x:(left+right)/2,y:210,'text-anchor':'middle',class:'axis-title','data-axis':'x'},'시간 (ms/업데이트)'));
+        data.rows.forEach((row,index)=>{
+          const y=54+index*68;
+          svg.appendChild(make('text',{x:left+4,y:y-10},index?'벡터 부분합':'기존 합산'));
+          svg.appendChild(make('text',{x:right-4,y:y-10,'text-anchor':'end'},`${row.clip_ms.toFixed(2)} ms`));
+          svg.appendChild(make('rect',{x:x(0),y,width:x(row.clip_ms)-x(0),height:20,class:index?'candidate':'baseline'}));
+          svg.appendChild(make('line',{x1:x(row.clip_range[0]),x2:x(row.clip_range[1]),y1:y+10,y2:y+10,stroke:'var(--foreground)','stroke-width':1.5}));
+          for(const value of row.clip_range)svg.appendChild(make('line',{x1:x(value),x2:x(value),y1:y+5,y2:y+15,stroke:'var(--foreground)','stroke-width':1.5}));
+        });
+        requestAnimationFrame(()=>{const b=svg.getBoundingClientRect();const over=[...svg.querySelectorAll('text')].some(e=>{const r=e.getBoundingClientRect();return r.left<b.left-1||r.right>b.right+1;});console.log(JSON.stringify({chartWidth:width,labelOverflow:over,pageOverflow:document.documentElement.scrollWidth>window.innerWidth}));});
+      };
+      new ResizeObserver(render).observe(root.querySelector('.plot'));render();
+    })();
+  </script>
+</section>

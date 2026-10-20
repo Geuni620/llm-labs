@@ -1,0 +1,151 @@
+{
+  "status": "complete",
+  "created_at": "2026-10-18T22:27:42.870580+09:00",
+  "visual_data": {
+    "rows": [
+      {
+        "id": "c_cpu",
+        "label": "C/CPU (기존 최적화)",
+        "axisLabel": "C/CPU",
+        "seconds": 10.404566999990493,
+        "observations": [
+          10.069369999924675,
+          10.404566999990493,
+          11.093382999999449
+        ],
+        "range": [
+          10.069369999924675,
+          11.093382999999449
+        ],
+        "hours": 27.393462583460572,
+        "hoursRange": [
+          26.510945658018155,
+          29.206998439700584
+        ],
+        "rate": 6298.772452525885
+      },
+      {
+        "id": "control",
+        "label": "기존 MPS",
+        "axisLabel": "기존 MPS",
+        "seconds": 30.65502920903964,
+        "observations": [
+          31.71894308400806,
+          30.65502920903964,
+          27.991457124997396
+        ],
+        "range": [
+          27.991457124997396,
+          31.71894308400806
+        ],
+        "hours": 80.70949955279116,
+        "hoursRange": [
+          73.69676541184825,
+          83.51060457965086
+        ],
+        "rate": 2137.854756330637
+      },
+      {
+        "id": "zero_none",
+        "label": "기울기 None 초기화",
+        "axisLabel": "grad=None",
+        "seconds": 28.639973666984588,
+        "observations": [
+          28.801917832985055,
+          28.639973666984588,
+          28.114997250027955
+        ],
+        "range": [
+          28.114997250027955,
+          28.801917832985055
+        ],
+        "hours": 75.40419962104671,
+        "hoursRange": [
+          74.0220256358041,
+          75.83057117999267
+        ],
+        "rate": 2288.270260372068
+      },
+      {
+        "id": "metal_clip",
+        "label": "Metal 블록 리덕션",
+        "axisLabel": "Metal 리덕션",
+        "seconds": 23.646024999965448,
+        "observations": [
+          24.284987084043678,
+          23.646024999965448,
+          22.259203249996062
+        ],
+        "range": [
+          22.259203249996062,
+          24.284987084043678
+        ],
+        "hours": 62.255978656749356,
+        "hoursRange": [
+          58.60471188920868,
+          63.93825759660942
+        ],
+        "rate": 2771.5440544487187
+      },
+      {
+        "id": "compiled_model",
+        "label": "모델 컴파일",
+        "axisLabel": "모델 컴파일",
+        "seconds": 27.922862541978247,
+        "observations": [
+          27.5406966250157,
+          29.533791417023167,
+          27.922862541978247
+        ],
+        "range": [
+          27.5406966250157,
+          29.533791417023167
+        ],
+        "hours": 73.5161674933222,
+        "hoursRange": [
+          72.50998936529466,
+          77.75747036187977
+        ],
+        "rate": 2347.0373032662924
+      }
+    ],
+    "gates": 24,
+    "comparisons": 768,
+    "compileLabel": "모델 컴파일: 실제 forward/backward 확인 · 측정 중 재컴파일 0",
+    "bestGpu": "metal_clip",
+    "bestGpuTimeReductionPercent": 22.864125038926264
+  },
+  "fixed_conditions": "V35328/C8/D64/H128, B128, FP32, seed42, exact C initializer and affine Wiki target stream, AdamW foreach=True/fused=False, clip1, same512 updates/65536 predictions",
+  "reference_cpu": "Same existing optimized C executable rerun in this cohort; no new CPU optimization.",
+  "actual_training": "No full epoch or long training. Previous training remains deferred to the next chapter.",
+  "forecast": "621162675 / measured targets per second / 3600; excludes setup/loading/warmup/reset/evaluation/checkpointing; long-run heat and UI responsiveness unmeasured.",
+  "independent_options": "Each GPU candidate changes exactly one control option. Their combination was not tested.",
+  "accepted_gate_scope": "Two small geometries and the full real-Wiki geometry, each at clip1 and.05, four consecutive updates after2 warmups and exact reset; independent CPU oracle.",
+  "native_fused": {
+    "status": "not_adopted_under_existing_tolerance",
+    "failed_comparisons": 4,
+    "failure_scope": "One moment1 element at full-Wiki update4/clip1 in each native-fused candidate; exact failing index not present in saved summaries. No tolerance relaxed. This is not evidence of degraded learned quality.",
+    "speed_measurement": "Excluded because the numerical gate failed.",
+    "prior_campaign_attempted_gates": 30,
+    "prior_campaign_comparisons": 960,
+    "native_fused_candidate_gates": 24,
+    "native_fused_candidate_comparisons": 768
+  },
+  "compile_initial_update_seconds_observed": [
+    1.7668548749643378,
+    1.5832520420080982,
+    1.466482374991756
+  ],
+  "compile_setup_scope": "Shared cache; initial update includes compilation or cache loading plus execution, not pure cold compiler time.",
+  "recommendation": {
+    "gpu_case": "metal_clip",
+    "shortest_observed_case": "c_cpu",
+    "quality": "Short numerical tests and throughput do not establish long-run quality equivalence."
+  },
+  "evidence": [
+    "reports/mps-optimization-comparison-20261018-v1.json",
+    "reports/mps-optimization-refined-verification-20261018-v1.json",
+    "reports/mps-optimization-verification-20261018-v1.json",
+    "reports/mps-optimization-phase-profile-20261018-v3.json"
+  ]
+}
