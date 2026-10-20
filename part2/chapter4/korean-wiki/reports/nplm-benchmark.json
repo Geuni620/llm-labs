@@ -1,0 +1,1882 @@
+{
+  "status": "complete",
+  "kind": "SYNTHETIC_MICROBENCHMARK",
+  "corpus_training_performed": false,
+  "actual_3h_or_8h_results": null,
+  "quality_results": null,
+  "script_sha256": "96593efc8235930e03fee1002bab6aa61a3eb0de32968c131f606d656953fa1d",
+  "pipeline_idle": {
+    "idle": true,
+    "blockers": [],
+    "reports": [
+      {
+        "file": "step5-progress.json",
+        "status": "complete",
+        "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+      },
+      {
+        "file": "step5-state.json",
+        "status": "complete",
+        "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+      },
+      {
+        "file": "step6-numeric-progress.json",
+        "status": "complete",
+        "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+      },
+      {
+        "file": "step6-numeric-state.json",
+        "status": "complete",
+        "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+      },
+      {
+        "file": "token-frequency-state.json",
+        "status": "complete",
+        "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+      }
+    ],
+    "active_processes": [],
+    "process_check_performed": true
+  },
+  "configuration_count": 12,
+  "results": [
+    {
+      "config": {
+        "vocab_size": 16384,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "cpu",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 35604
+      },
+      "memory_theoretical": {
+        "parameter_count": 3227776,
+        "float32_parameter_bytes": 12911104,
+        "gradient_bytes_lower_bound": 12911104,
+        "adam_first_second_moments_bytes_lower_bound": 25822208,
+        "parameter_gradient_adam_bytes_lower_bound": 51644416,
+        "single_logits_tensor_bytes": 8388608,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 3227776,
+      "batch_ids_sha256": "ca37ed3ccf7d7c4eae89644f606c004da7cbbe15a5f4f9f870c2a6653c947e5a",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": false,
+        "repeat_wall_seconds": [
+          0.20734587498009205,
+          0.2281630409997888,
+          0.32529879204230383,
+          0.31961858400609344,
+          0.2905145419645123
+        ],
+        "repeat_process_cpu_seconds": [
+          0.4191959999999999,
+          0.428496,
+          0.4396470000000008,
+          0.44478799999999996,
+          0.4529810000000003
+        ],
+        "median_repeat_seconds": 0.2905145419645123,
+        "min_repeat_seconds": 0.20734587498009205,
+        "max_repeat_seconds": 0.32529879204230383,
+        "median_step_seconds": 0.05810290839290246,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 1.3709408339927904,
+        "median_target_predictions_per_second": 2202.9878286718567,
+        "aggregate_target_predictions_per_second": 2334.163459614938,
+        "context_token_lookups_per_second": 17623.902629374854
+      },
+      "memory": {
+        "peak_host_rss_bytes": 366673920,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 130113,
+            "target_prediction_events": 16654464
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 346970,
+            "target_prediction_events": 44412160
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 32768,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "cpu",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 35626
+      },
+      "memory_theoretical": {
+        "parameter_count": 6389888,
+        "float32_parameter_bytes": 25559552,
+        "gradient_bytes_lower_bound": 25559552,
+        "adam_first_second_moments_bytes_lower_bound": 51119104,
+        "parameter_gradient_adam_bytes_lower_bound": 102238208,
+        "single_logits_tensor_bytes": 16777216,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 6389888,
+      "batch_ids_sha256": "e76561a3b7a1b8b1a2c93796273a39029b60b9a8f4c024324394f05eb4424947",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": false,
+        "repeat_wall_seconds": [
+          0.5395275420160033,
+          0.5252677079988644,
+          0.5424461670336314,
+          0.5118349579861388,
+          0.5945372909773141
+        ],
+        "repeat_process_cpu_seconds": [
+          0.8809050000000003,
+          0.8839839999999999,
+          0.9039140000000003,
+          0.8643369999999999,
+          0.8765049999999999
+        ],
+        "median_repeat_seconds": 0.5395275420160033,
+        "min_repeat_seconds": 0.5118349579861388,
+        "max_repeat_seconds": 0.5945372909773141,
+        "median_step_seconds": 0.10790550840320065,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 2.713613666011952,
+        "median_target_predictions_per_second": 1186.2230380465294,
+        "aggregate_target_predictions_per_second": 1179.2393442294472,
+        "context_token_lookups_per_second": 9489.784304372235
+      },
+      "memory": {
+        "peak_host_rss_bytes": 434257920,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 70061,
+            "target_prediction_events": 8967808
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 186830,
+            "target_prediction_events": 23914240
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 35328,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "cpu",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 35669
+      },
+      "memory_theoretical": {
+        "parameter_count": 6883968,
+        "float32_parameter_bytes": 27535872,
+        "gradient_bytes_lower_bound": 27535872,
+        "adam_first_second_moments_bytes_lower_bound": 55071744,
+        "parameter_gradient_adam_bytes_lower_bound": 110143488,
+        "single_logits_tensor_bytes": 18087936,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 6883968,
+      "batch_ids_sha256": "935faa8158d0b8db4f01b8a615462a0a17bf43a90042af069355f1971aba4a00",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": false,
+        "repeat_wall_seconds": [
+          0.6028386249672621,
+          1.162555374961812,
+          0.5907647919957526,
+          0.5653187089483254,
+          0.7083141660550609
+        ],
+        "repeat_process_cpu_seconds": [
+          0.8808480000000003,
+          0.8927230000000002,
+          0.9122070000000004,
+          0.9210520000000004,
+          0.8974139999999995
+        ],
+        "median_repeat_seconds": 0.6028386249672621,
+        "min_repeat_seconds": 0.5653187089483254,
+        "max_repeat_seconds": 1.162555374961812,
+        "median_step_seconds": 0.12056772499345243,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 3.629791666928213,
+        "median_target_predictions_per_second": 1061.6439847973509,
+        "aggregate_target_predictions_per_second": 881.5932961541197,
+        "context_token_lookups_per_second": 8493.151878378807
+      },
+      "memory": {
+        "peak_host_rss_bytes": 444497920,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 62703,
+            "target_prediction_events": 8025984
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 167208,
+            "target_prediction_events": 21402624
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 49152,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "cpu",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 35697
+      },
+      "memory_theoretical": {
+        "parameter_count": 9552000,
+        "float32_parameter_bytes": 38208000,
+        "gradient_bytes_lower_bound": 38208000,
+        "adam_first_second_moments_bytes_lower_bound": 76416000,
+        "parameter_gradient_adam_bytes_lower_bound": 152832000,
+        "single_logits_tensor_bytes": 25165824,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 9552000,
+      "batch_ids_sha256": "48bf3aa49d02a0bf1b439bd558f79d170ac25585c656f522a8ccc932c9fd2857",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": false,
+        "repeat_wall_seconds": [
+          0.8466166249709204,
+          0.7775479999836534,
+          0.8207655000151135,
+          0.7541258750134148,
+          0.7559047500253655
+        ],
+        "repeat_process_cpu_seconds": [
+          1.2907600000000006,
+          1.3408829999999998,
+          1.31879,
+          1.345084,
+          1.3339610000000004
+        ],
+        "median_repeat_seconds": 0.7775479999836534,
+        "min_repeat_seconds": 0.7541258750134148,
+        "max_repeat_seconds": 0.8466166249709204,
+        "median_step_seconds": 0.1555095999967307,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 3.9549607500084676,
+        "median_target_predictions_per_second": 823.1003102232337,
+        "aggregate_target_predictions_per_second": 809.1104317516043,
+        "context_token_lookups_per_second": 6584.8024817858695
+      },
+      "memory": {
+        "peak_host_rss_bytes": 501547008,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 48614,
+            "target_prediction_events": 6222592
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 129638,
+            "target_prediction_events": 16593664
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 65000,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "cpu",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 35724
+      },
+      "memory_theoretical": {
+        "parameter_count": 12610664,
+        "float32_parameter_bytes": 50442656,
+        "gradient_bytes_lower_bound": 50442656,
+        "adam_first_second_moments_bytes_lower_bound": 100885312,
+        "parameter_gradient_adam_bytes_lower_bound": 201770624,
+        "single_logits_tensor_bytes": 33280000,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 12610664,
+      "batch_ids_sha256": "f59777c06df61f34bdcdb2b091d3dfce4818a14a501189ec0ea5259a3d730778",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": false,
+        "repeat_wall_seconds": [
+          1.0852014170377515,
+          1.0158560409909114,
+          1.2139227910083719,
+          0.9795610829605721,
+          1.108770375023596
+        ],
+        "repeat_process_cpu_seconds": [
+          1.620158,
+          1.6416160000000009,
+          1.6051760000000002,
+          1.6959929999999996,
+          1.6363760000000003
+        ],
+        "median_repeat_seconds": 1.0852014170377515,
+        "min_repeat_seconds": 0.9795610829605721,
+        "max_repeat_seconds": 1.2139227910083719,
+        "median_step_seconds": 0.2170402834075503,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 5.403311707021203,
+        "median_target_predictions_per_second": 589.7522708245192,
+        "aggregate_target_predictions_per_second": 592.2293906979006,
+        "context_token_lookups_per_second": 4718.018166596154
+      },
+      "memory": {
+        "peak_host_rss_bytes": 567050240,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 34832,
+            "target_prediction_events": 4458496
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 92885,
+            "target_prediction_events": 11889280
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 65536,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "cpu",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 36115
+      },
+      "memory_theoretical": {
+        "parameter_count": 12714112,
+        "float32_parameter_bytes": 50856448,
+        "gradient_bytes_lower_bound": 50856448,
+        "adam_first_second_moments_bytes_lower_bound": 101712896,
+        "parameter_gradient_adam_bytes_lower_bound": 203425792,
+        "single_logits_tensor_bytes": 33554432,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 12714112,
+      "batch_ids_sha256": "61c6af200b2e525143c7124e0308132bd7c69446813727a11f9bc8c90d0044b7",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": false,
+        "repeat_wall_seconds": [
+          1.0639253749977797,
+          1.332854958018288,
+          1.087880958977621,
+          1.1412596669979393,
+          1.1940843750489876
+        ],
+        "repeat_process_cpu_seconds": [
+          1.7404599999999997,
+          1.699077,
+          1.698925000000001,
+          1.7232339999999997,
+          1.7030440000000002
+        ],
+        "median_repeat_seconds": 1.1412596669979393,
+        "min_repeat_seconds": 1.0639253749977797,
+        "max_repeat_seconds": 1.332854958018288,
+        "median_step_seconds": 0.22825193339958788,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 5.820005334040616,
+        "median_target_predictions_per_second": 560.7838588421399,
+        "aggregate_target_predictions_per_second": 549.8276747760913,
+        "context_token_lookups_per_second": 4486.270870737119
+      },
+      "memory": {
+        "peak_host_rss_bytes": 568950784,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 33121,
+            "target_prediction_events": 4239488
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 88323,
+            "target_prediction_events": 11305344
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 16384,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "mps",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 36149
+      },
+      "memory_theoretical": {
+        "parameter_count": 3227776,
+        "float32_parameter_bytes": 12911104,
+        "gradient_bytes_lower_bound": 12911104,
+        "adam_first_second_moments_bytes_lower_bound": 25822208,
+        "parameter_gradient_adam_bytes_lower_bound": 51644416,
+        "single_logits_tensor_bytes": 8388608,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 3227776,
+      "batch_ids_sha256": "ca37ed3ccf7d7c4eae89644f606c004da7cbbe15a5f4f9f870c2a6653c947e5a",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": true,
+        "repeat_wall_seconds": [
+          0.9737302089924924,
+          0.8415332909789868,
+          1.0199137500021607,
+          0.8962681669509038,
+          0.811700833030045
+        ],
+        "repeat_process_cpu_seconds": [
+          0.027281999999999584,
+          0.020218999999999987,
+          0.020205999999999946,
+          0.019237000000000393,
+          0.020828999999999986
+        ],
+        "median_repeat_seconds": 0.8962681669509038,
+        "min_repeat_seconds": 0.811700833030045,
+        "max_repeat_seconds": 1.0199137500021607,
+        "median_step_seconds": 0.17925363339018077,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 4.543146249954589,
+        "median_target_predictions_per_second": 714.0719971984213,
+        "aggregate_target_predictions_per_second": 704.3576904511903,
+        "context_token_lookups_per_second": 5712.57597758737
+      },
+      "memory": {
+        "peak_host_rss_bytes": 447021056,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [
+          {
+            "stage": "model_and_data",
+            "memory": {
+              "current_allocated_bytes": 12947968,
+              "driver_allocated_bytes": 42336256,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_warmup",
+            "memory": {
+              "current_allocated_bytes": 51681536,
+              "driver_allocated_bytes": 128598016,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_measurement",
+            "memory": {
+              "current_allocated_bytes": 51681536,
+              "driver_allocated_bytes": 128598016,
+              "recommended_max_bytes": 12713115648
+            }
+          }
+        ],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 42174,
+            "target_prediction_events": 5398272
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 112466,
+            "target_prediction_events": 14395648
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 32768,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "mps",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 36199
+      },
+      "memory_theoretical": {
+        "parameter_count": 6389888,
+        "float32_parameter_bytes": 25559552,
+        "gradient_bytes_lower_bound": 25559552,
+        "adam_first_second_moments_bytes_lower_bound": 51119104,
+        "parameter_gradient_adam_bytes_lower_bound": 102238208,
+        "single_logits_tensor_bytes": 16777216,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 6389888,
+      "batch_ids_sha256": "e76561a3b7a1b8b1a2c93796273a39029b60b9a8f4c024324394f05eb4424947",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": true,
+        "repeat_wall_seconds": [
+          2.2516493330476806,
+          1.8304673330276273,
+          2.05559699999867,
+          1.6680149580352008,
+          1.6355600419919938
+        ],
+        "repeat_process_cpu_seconds": [
+          0.028430000000000177,
+          0.024238999999999677,
+          0.02554199999999973,
+          0.023546999999999763,
+          0.02289999999999992
+        ],
+        "median_repeat_seconds": 1.8304673330276273,
+        "min_repeat_seconds": 1.6355600419919938,
+        "max_repeat_seconds": 2.2516493330476806,
+        "median_step_seconds": 0.36609346660552544,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 9.441288666101173,
+        "median_target_predictions_per_second": 349.63748789847455,
+        "aggregate_target_predictions_per_second": 338.93678216720133,
+        "context_token_lookups_per_second": 2797.0999031877964
+      },
+      "memory": {
+        "peak_host_rss_bytes": 448872448,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [
+          {
+            "stage": "model_and_data",
+            "memory": {
+              "current_allocated_bytes": 25596416,
+              "driver_allocated_bytes": 42336256,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_warmup",
+            "memory": {
+              "current_allocated_bytes": 102275328,
+              "driver_allocated_bytes": 1143619584,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_measurement",
+            "memory": {
+              "current_allocated_bytes": 102275328,
+              "driver_allocated_bytes": 1143619584,
+              "recommended_max_bytes": 12713115648
+            }
+          }
+        ],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 20650,
+            "target_prediction_events": 2643200
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 55067,
+            "target_prediction_events": 7048576
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 35328,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "mps",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 36243
+      },
+      "memory_theoretical": {
+        "parameter_count": 6883968,
+        "float32_parameter_bytes": 27535872,
+        "gradient_bytes_lower_bound": 27535872,
+        "adam_first_second_moments_bytes_lower_bound": 55071744,
+        "parameter_gradient_adam_bytes_lower_bound": 110143488,
+        "single_logits_tensor_bytes": 18087936,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 6883968,
+      "batch_ids_sha256": "935faa8158d0b8db4f01b8a615462a0a17bf43a90042af069355f1971aba4a00",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": true,
+        "repeat_wall_seconds": [
+          2.370876832981594,
+          1.4769631249946542,
+          2.1470427500316873,
+          3.2973771660472266,
+          3.1961407090420835
+        ],
+        "repeat_process_cpu_seconds": [
+          0.030988999999999933,
+          0.055151999999999646,
+          0.054974999999999774,
+          0.049861999999999185,
+          0.03264299999999931
+        ],
+        "median_repeat_seconds": 2.370876832981594,
+        "min_repeat_seconds": 1.4769631249946542,
+        "max_repeat_seconds": 3.2973771660472266,
+        "median_step_seconds": 0.47417536659631876,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 12.488400583097246,
+        "median_target_predictions_per_second": 269.94232306666964,
+        "aggregate_target_predictions_per_second": 256.23777670385783,
+        "context_token_lookups_per_second": 2159.538584533357
+      },
+      "memory": {
+        "peak_host_rss_bytes": 449298432,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [
+          {
+            "stage": "model_and_data",
+            "memory": {
+              "current_allocated_bytes": 27965952,
+              "driver_allocated_bytes": 42336256,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_warmup",
+            "memory": {
+              "current_allocated_bytes": 111753472,
+              "driver_allocated_bytes": 1145716736,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_measurement",
+            "memory": {
+              "current_allocated_bytes": 111753472,
+              "driver_allocated_bytes": 1145716736,
+              "recommended_max_bytes": 12713115648
+            }
+          }
+        ],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 15943,
+            "target_prediction_events": 2040704
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 42515,
+            "target_prediction_events": 5441920
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 49152,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "mps",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 36821
+      },
+      "memory_theoretical": {
+        "parameter_count": 9552000,
+        "float32_parameter_bytes": 38208000,
+        "gradient_bytes_lower_bound": 38208000,
+        "adam_first_second_moments_bytes_lower_bound": 76416000,
+        "parameter_gradient_adam_bytes_lower_bound": 152832000,
+        "single_logits_tensor_bytes": 25165824,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 9552000,
+      "batch_ids_sha256": "48bf3aa49d02a0bf1b439bd558f79d170ac25585c656f522a8ccc932c9fd2857",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": true,
+        "repeat_wall_seconds": [
+          4.810619957977906,
+          5.092744708003011,
+          4.341152457986027,
+          2.3036612499854527,
+          4.235285374976229
+        ],
+        "repeat_process_cpu_seconds": [
+          0.045094999999999885,
+          0.034879000000000104,
+          0.036434999999999995,
+          0.03855200000000014,
+          0.0651250000000001
+        ],
+        "median_repeat_seconds": 4.341152457986027,
+        "min_repeat_seconds": 2.3036612499854527,
+        "max_repeat_seconds": 5.092744708003011,
+        "median_step_seconds": 0.8682304915972054,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 20.783463748928625,
+        "median_target_predictions_per_second": 147.42628972236386,
+        "aggregate_target_predictions_per_second": 153.96856071043297,
+        "context_token_lookups_per_second": 1179.410317778911
+      },
+      "memory": {
+        "peak_host_rss_bytes": 450150400,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [
+          {
+            "stage": "model_and_data",
+            "memory": {
+              "current_allocated_bytes": 38244864,
+              "driver_allocated_bytes": 1082523648,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_warmup",
+            "memory": {
+              "current_allocated_bytes": 152869120,
+              "driver_allocated_bytes": 1118453760,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_measurement",
+            "memory": {
+              "current_allocated_bytes": 152869120,
+              "driver_allocated_bytes": 1118453760,
+              "recommended_max_bytes": 12713115648
+            }
+          }
+        ],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 8707,
+            "target_prediction_events": 1114496
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 23219,
+            "target_prediction_events": 2972032
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 65000,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "mps",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 36920
+      },
+      "memory_theoretical": {
+        "parameter_count": 12610664,
+        "float32_parameter_bytes": 50442656,
+        "gradient_bytes_lower_bound": 50442656,
+        "adam_first_second_moments_bytes_lower_bound": 100885312,
+        "parameter_gradient_adam_bytes_lower_bound": 201770624,
+        "single_logits_tensor_bytes": 33280000,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 12610664,
+      "batch_ids_sha256": "f59777c06df61f34bdcdb2b091d3dfce4818a14a501189ec0ea5259a3d730778",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": true,
+        "repeat_wall_seconds": [
+          6.001641540962737,
+          6.44899737497326,
+          5.670406458026264,
+          5.606127458973788,
+          5.670981167000718
+        ],
+        "repeat_process_cpu_seconds": [
+          0.042911000000000143,
+          0.038133000000000195,
+          0.039506999999999515,
+          0.03327800000000014,
+          0.0509460000000006
+        ],
+        "median_repeat_seconds": 5.670981167000718,
+        "min_repeat_seconds": 5.606127458973788,
+        "max_repeat_seconds": 6.44899737497326,
+        "median_step_seconds": 1.1341962334001436,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 29.398153999936767,
+        "median_target_predictions_per_second": 112.85525046779244,
+        "aggregate_target_predictions_per_second": 108.85037203379787,
+        "context_token_lookups_per_second": 902.8420037423396
+      },
+      "memory": {
+        "peak_host_rss_bytes": 451805184,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [
+          {
+            "stage": "model_and_data",
+            "memory": {
+              "current_allocated_bytes": 50891264,
+              "driver_allocated_bytes": 1082523648,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_warmup",
+            "memory": {
+              "current_allocated_bytes": 203454720,
+              "driver_allocated_bytes": 1126842368,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_measurement",
+            "memory": {
+              "current_allocated_bytes": 203454720,
+              "driver_allocated_bytes": 1126842368,
+              "recommended_max_bytes": 12713115648
+            }
+          }
+        ],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 6665,
+            "target_prediction_events": 853120
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 17774,
+            "target_prediction_events": 2275072
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    },
+    {
+      "config": {
+        "vocab_size": 65536,
+        "context_size": 8,
+        "embedding_dim": 64,
+        "hidden_dim": 128,
+        "batch_size": 128,
+        "device": "mps",
+        "cpu_threads": 4,
+        "interop_threads": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "warmup_steps": 3,
+        "repeats": 5,
+        "steps_per_repeat": 5,
+        "max_seconds": 120,
+        "utilization_margin": 0.7
+      },
+      "runtime": {
+        "python": "3.13.7",
+        "torch": "2.14.1",
+        "numpy": "2.5.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "logical_cpus": 8,
+        "torch_threads": 4,
+        "torch_interop_threads": 1,
+        "mps_built": true,
+        "mps_available": true,
+        "mps_cpu_fallback": "0",
+        "dtype": "float32",
+        "optimizer": "AdamW(foreach=False, fused=False)",
+        "loss": "full vocabulary cross_entropy",
+        "pid": 37488
+      },
+      "memory_theoretical": {
+        "parameter_count": 12714112,
+        "float32_parameter_bytes": 50856448,
+        "gradient_bytes_lower_bound": 50856448,
+        "adam_first_second_moments_bytes_lower_bound": 101712896,
+        "parameter_gradient_adam_bytes_lower_bound": 203425792,
+        "single_logits_tensor_bytes": 33554432,
+        "scope": "Theoretical lower bound, not peak memory; excludes allocator/framework, activations, logits gradients and optimizer temporaries."
+      },
+      "pipeline_idle": {
+        "idle": true,
+        "blockers": [],
+        "reports": [
+          {
+            "file": "step5-progress.json",
+            "status": "complete",
+            "sha256": "9132a2e8c41dcc8fed9123d3baefbe740bb13103cc39dd28e98b3c308ef1af33"
+          },
+          {
+            "file": "step5-state.json",
+            "status": "complete",
+            "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+          },
+          {
+            "file": "step6-numeric-progress.json",
+            "status": "complete",
+            "sha256": "16a419e5e5c577af201ef2c98afdd5e0929b67f2db3bd57319cbcf24f5eae87d"
+          },
+          {
+            "file": "step6-numeric-state.json",
+            "status": "complete",
+            "sha256": "1e1f7b8e24ce4e526e75c4ee17cda7242c9e8949be32bc703650e359d9ad2905"
+          },
+          {
+            "file": "token-frequency-state.json",
+            "status": "complete",
+            "sha256": "793829a21742f8a8a0e04f49a2ba33a5e6f5b928d80a51ae46e8d0696eaa64a8"
+          }
+        ],
+        "active_processes": [],
+        "process_check_performed": true
+      },
+      "kind": "SYNTHETIC_MICROBENCHMARK",
+      "corpus_training_performed": false,
+      "quality_results": null,
+      "status": "complete",
+      "actual_parameter_count": 12714112,
+      "batch_ids_sha256": "61c6af200b2e525143c7124e0308132bd7c69446813727a11f9bc8c90d0044b7",
+      "input_distribution": "four resident uniform random mini-batches; reused only to measure compute",
+      "timing": {
+        "warmup_excluded": true,
+        "mps_synchronized": true,
+        "repeat_wall_seconds": [
+          5.855491707974579,
+          6.256260667054448,
+          5.500943999970332,
+          5.9329145409865305,
+          6.466379416000564
+        ],
+        "repeat_process_cpu_seconds": [
+          0.04469499999999993,
+          0.04035100000000025,
+          0.039547000000000665,
+          0.03835299999999986,
+          0.03977599999999981
+        ],
+        "median_repeat_seconds": 5.9329145409865305,
+        "min_repeat_seconds": 5.500943999970332,
+        "max_repeat_seconds": 6.466379416000564,
+        "median_step_seconds": 1.186582908197306,
+        "measured_steps": 25,
+        "measured_target_prediction_events": 3200,
+        "measured_wall_seconds": 30.011990331986453,
+        "median_target_predictions_per_second": 107.87278252175535,
+        "aggregate_target_predictions_per_second": 106.62405140752944,
+        "context_token_lookups_per_second": 862.9822601740428
+      },
+      "memory": {
+        "peak_host_rss_bytes": 451723264,
+        "peak_host_rss_scope": "High-water mark of this fresh subprocess including imports/model/optimizer/batches; MPS unified memory is not separately additive.",
+        "mps_snapshots": [
+          {
+            "stage": "model_and_data",
+            "memory": {
+              "current_allocated_bytes": 50893312,
+              "driver_allocated_bytes": 1082523648,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_warmup",
+            "memory": {
+              "current_allocated_bytes": 203462912,
+              "driver_allocated_bytes": 1126842368,
+              "recommended_max_bytes": 12713115648
+            }
+          },
+          {
+            "stage": "after_measurement",
+            "memory": {
+              "current_allocated_bytes": 203462912,
+              "driver_allocated_bytes": 1126842368,
+              "recommended_max_bytes": 12713115648
+            }
+          }
+        ],
+        "mps_snapshot_scope": "Point-in-time allocator/driver samples; these are not a measured device peak."
+      },
+      "finite_loss_check": true,
+      "loss_check_scope": "Synthetic correctness only; loss values are not model-quality comparisons.",
+      "time_budgets": {
+        "kind": "EXTRAPOLATION_ONLY",
+        "utilization_margin": 0.7,
+        "budgets": {
+          "3h": {
+            "hours": 3,
+            "optimizer_steps": 6371,
+            "target_prediction_events": 815488
+          },
+          "8h": {
+            "hours": 8,
+            "optimizer_steps": 16989,
+            "target_prediction_events": 2174592
+          }
+        },
+        "unit": "Target prediction events, including repeated epochs; not unique tokens or paragraphs.",
+        "excluded": "Real data loading, evaluation/checkpoints, long-run thermal throttling and other app activity.",
+        "quality_results": null
+      }
+    }
+  ],
+  "experiment_design": "3시간·8시간 학습 결과를 비교하기 위한 실험 설계\n\n이 파일은 실험 계획입니다. 마이크로벤치마크나 토큰 보존율은 학습 품질 결과가 아닙니다.\n\n1. 시간 비교: 같은 8시간 학습 경로에서 3시간과 8시간 체크포인트를 저장합니다.\n   모델·사전·데이터 순서·초기 가중치 seed·옵티마이저·배치를 고정합니다.\n   두 독립 실행 대신 같은 경로를 사용하면 3시간 이후의 추가 학습 효과를 비교할 수 있습니다.\n   시작 직전 모델(0시간)과 짧은 시험 체크포인트도 보존합니다.\n   학습 시작 후 경과한 벽시계 시간을 기준으로 저장하고, 실제 업데이트 시간,\n   평가/저장 시간, 업데이트 횟수, 예측한 target 수, 고유 학습 데이터 수를 각각 기록합니다.\n\n2. 누수 방지: 원본 문서 ID 기준으로 train/validation/test를 먼저 고정합니다.\n   한 문서의 문단은 같은 split에 배치하고, exact 중복이 split을 넘지 않도록 확인합니다.\n   사전과 빈도는 train split에서만 만듭니다. 현재 전체 코퍼스 빈도는 탐색 자료입니다.\n   같은 held-out 원문·토큰화·숫자 분리 정책·프롬프트 목록과 평가 seed를 모든 실험에 사용합니다.\n   사전별 OOV 때문에 평가에서 빠진 문장/토큰 비율을 반드시 함께 기록합니다.\n   서로 다른 사전의 perplexity만 단순 비교하면 평가 대상이 달라질 수 있습니다.\n\n3. 사전 크기 비교: 16,384 / 32,768 / 49,152 / 65,000 / 65,536을 후보로 둡니다.\n   사전 크기 V에 따라 embedding과 full-softmax 비용이 바뀝니다.\n   이 축에서는 모델 나머지 설정과 원문 train pool을 고정하고, OOV 정책을 명시합니다.\n   공통으로 표현 가능한 동일 held-out 영역의 loss와 전체 영역 커버리지를 따로 보고합니다.\n   각자 유리한 평가 문장만 남긴 loss를 전체 품질 우위로 해석하지 않습니다.\n\n4. 데이터 양 비교: 사전을 한 개로 고정한 뒤 train 문서를 seed로 섞어\n   10% / 25% / 100%의 중첩 부분집합을 만듭니다. 빈도 높은 문단만 고르지 않습니다.\n   같은 업데이트 수 비교와 같은 시간 예산 비교를 나누면 데이터 효과와 계산량 효과를 구분할 수 있습니다.\n   시간과 데이터 양을 동시에 바꾼 한 쌍으로 어느 요인이 좋아졌다고 단정하지 않습니다.\n\n5. 관측 결과: 같은 프롬프트/생성 seed/temperature에서 생성 문장, 반복률,\n   held-out loss와 OOV율, 숫자·날짜 형식 보존, 학습 시간·메모리를 나란히 기록합니다.\n   가능하면 seed를 둘 이상 반복해 우연한 초기화 효과도 확인합니다.\n   context=8 NPLM은 짧은 다음 토큰 예측 모델이므로 장문 문단 품질을 보장하지 않습니다.\n\n6. 3시간·8시간 예산 환산: 이 도구는 합성 미니배치의 target 예측/초를 측정합니다.\n   예산 수치는 측정 속도 × 시간 × utilization margin의 외삽일 뿐입니다.\n   고유 토큰 수나 최적 문단 수가 아닙니다. 문단별 실제 학습 창 수와 epoch 수로 다시 환산해야 합니다.\n   실제 데이터 로딩, 평가, 체크포인트 저장, 장시간 발열과 앱 사용은 짧은 타이밍에 포함되지 않습니다.\n   따라서 최종 선택은 보존율·실측 속도·검증 품질의 절충으로 하며 단일 최적값을 미리 확정하지 않습니다.\n",
+  "official_references": {
+    "mps": "https://docs.pytorch.org/docs/2.14/notes/mps.html",
+    "synchronization": "https://docs.pytorch.org/docs/2.14/generated/torch.mps.synchronize.html",
+    "driver_memory": "https://docs.pytorch.org/docs/2.14/generated/torch.mps.driver_allocated_memory.html"
+  },
+  "started_at": "2026-10-17T21:31:02+0900",
+  "completed_at": "2026-10-17T21:34:40+0900"
+}

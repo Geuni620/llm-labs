@@ -1,0 +1,2302 @@
+{
+  "dataset": "/Users/geuni/Desktop/hong-labs/part2/chapter4/datasets/korean_wiki",
+  "status": "complete",
+  "modified_corpus": false,
+  "sentences": {
+    "rule": "Unicode NFKC + 모든 공백을 한 칸으로 정리; 영문 대소문자 보존",
+    "hash": "SHA-256 of normalized UTF-8 text",
+    "source": {
+      "sentences": 7099328,
+      "unique_sentences": 6677632,
+      "duplicate_extra_occurrences": 421696,
+      "duplicate_groups": 194939,
+      "top_examples": [
+        {
+          "occurrences": 2259,
+          "first": {
+            "file": "sentences/part_00.txt",
+            "line": 34236
+          },
+          "text": "참고: FIFA 자격 규정에 따라 소속된 국가대표팀 국기를 표시합니다."
+        },
+        {
+          "occurrences": 2259,
+          "first": {
+            "file": "sentences/part_00.txt",
+            "line": 34237
+          },
+          "text": "선수는 복수의 FIFA 비회원국 국적을 가지고 있을 수 있습니다."
+        },
+        {
+          "occurrences": 1217,
+          "first": {
+            "file": "sentences/part_00.txt",
+            "line": 54137
+          },
+          "text": "최저 시청률과 최고 시청률은 시청률 조사회사와 지역별로 시청률에 차이가 있을 수 있습니다."
+        },
+        {
+          "occurrences": 787,
+          "first": {
+            "file": "sentences/part_00.txt",
+            "line": 157221
+          },
+          "text": "단선 승강장 1면 1선의 구조를 갖춘 지상역이다."
+        },
+        {
+          "occurrences": 324,
+          "first": {
+            "file": "sentences/part_02.txt",
+            "line": 187100
+          },
+          "text": "사인은 심근 경색이다."
+        },
+        {
+          "occurrences": 304,
+          "first": {
+            "file": "sentences/part_00.txt",
+            "line": 63379
+          },
+          "text": "로스앤젤레스에서 태어났다."
+        },
+        {
+          "occurrences": 282,
+          "first": {
+            "file": "sentences/part_02.txt",
+            "line": 88084
+          },
+          "text": "본 문서에는 서울특별시에서 지식공유 프로젝트를 통해 퍼블릭 도메인으로 공개한 저작물을 기초로 작성된 내용이 포함되어 있습니다."
+        },
+        {
+          "occurrences": 280,
+          "first": {
+            "file": "sentences/part_01.txt",
+            "line": 196170
+          },
+          "text": "뉴욕에서 태어났다."
+        },
+        {
+          "occurrences": 240,
+          "first": {
+            "file": "sentences/part_00.txt",
+            "line": 304112
+          },
+          "text": "지구가 달의 반그림자를 지날 때 일어난다."
+        },
+        {
+          "occurrences": 238,
+          "first": {
+            "file": "sentences/part_02.txt",
+            "line": 187377
+          },
+          "text": "포리스트 론 메모리얼 파크에 매장되었다."
+        }
+      ]
+    },
+    "sentences_dedup": {
+      "sentences": 6677632,
+      "unique_sentences": 6677632,
+      "duplicate_extra_occurrences": 0,
+      "duplicate_groups": 0,
+      "examples": []
+    },
+    "missing_source_unique_sentences": 0,
+    "introduced_sentences": 0,
+    "same_normalized_sentence_set": true
+  },
+  "elapsed_seconds": 200.68,
+  "tokens": {
+    "sentences": 6677632,
+    "exact_token_line_duplicate_extra_occurrences": 472,
+    "exact_token_line_duplicate_groups": 470,
+    "ignoring_final_space_token_duplicate_extra_occurrences": 682,
+    "ignoring_final_space_token_duplicate_groups": 680,
+    "examples": [
+      {
+        "first": {
+          "file": "tokens/part_00.txt",
+          "line": 124424
+        },
+        "repeat": {
+          "file": "tokens/part_00.txt",
+          "line": 267688
+        },
+        "first_source_sentence": "출구는 4개다.",
+        "repeat_source_sentence": "출구는 4개이다.",
+        "tokens": "출구/NNG 는/JX <sp>/WS 4/SN 개/NNB 이/VCP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_00.txt",
+          "line": 270814
+        },
+        "repeat": {
+          "file": "tokens/part_00.txt",
+          "line": 270820
+        },
+        "first_source_sentence": "서로 다른 물체가 지상에서 똑같은 가속도로 떨어진다는 것을 가장 처음 보인 사람은 갈릴레오 갈릴레이이다.",
+        "repeat_source_sentence": "서로 다른 물체가 지상에서 똑같은 가속도로 떨어진다는 것을 가장 처음 보인 사람은 갈릴레오갈릴레이이다.",
+        "tokens": "서로/MAG <sp>/WS 다른/MM <sp>/WS 물체/NNG 가/JKS <sp>/WS 지상/NNG 에서/JKB <sp>/WS 똑같/VA 은/ETM <sp>/WS 가속도/NNG 로/JKB <sp>/WS 떨어지/VV ᆫ다는/ETM <sp>/WS 것/NNB 을/JKO <sp>/WS 가장/MAG <sp>/WS 처음/NNG <sp>/WS 보이/VV ᆫ/ETM <sp>/WS 사람/NNG 은/JX <sp>/WS 갈릴레오_갈릴레이/NNP 이/VCP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_00.txt",
+          "line": 299470
+        },
+        "repeat": {
+          "file": "tokens/part_00.txt",
+          "line": 299762
+        },
+        "first_source_sentence": "1990년 대한민국 건국훈장 애족장이 추서됐다.",
+        "repeat_source_sentence": "1990년 대한민국 건국훈장 애족장이 추서되었다.",
+        "tokens": "1990/SN 년/NNB <sp>/WS 대한민국/NNP <sp>/WS 건국/NNG 훈장/NNG <sp>/WS 애족/NNG 장/NNG 이/JKS <sp>/WS 추서/NNG 되/XSV 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_00.txt",
+          "line": 33069
+        },
+        "repeat": {
+          "file": "tokens/part_01.txt",
+          "line": 45132
+        },
+        "first_source_sentence": "2020년에 입단하였다.",
+        "repeat_source_sentence": "2020년에 입단했다.",
+        "tokens": "2020/SN 년/NNB 에/JKB <sp>/WS 입단/NNG 하/XSV 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_01.txt",
+          "line": 159583
+        },
+        "repeat": {
+          "file": "tokens/part_01.txt",
+          "line": 160528
+        },
+        "first_source_sentence": "고속버스 면허는 2006년 6월 15일에 취득했다.",
+        "repeat_source_sentence": "고속버스 면허는 2006년 6월 15일에 취득하였다.",
+        "tokens": "고속버스/NNG <sp>/WS 면허/NNG 는/JX <sp>/WS 2006/SN 년/NNB <sp>/WS 6/SN 월/NNB <sp>/WS 15/SN 일/NNB 에/JKB <sp>/WS 취득/NNG 하/XSV 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_01.txt",
+          "line": 192162
+        },
+        "repeat": {
+          "file": "tokens/part_01.txt",
+          "line": 192346
+        },
+        "first_source_sentence": "남성 아이돌 그룹 INI의 멤버이다.",
+        "repeat_source_sentence": "남성 아이돌 그룹 INI의 멤버다.",
+        "tokens": "남성/NNG <sp>/WS 아이돌/NNP <sp>/WS 그룹/NNG <sp>/WS INI/SL 의/JKG <sp>/WS 멤버/NNG 이/VCP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_00.txt",
+          "line": 99570
+        },
+        "repeat": {
+          "file": "tokens/part_01.txt",
+          "line": 212793
+        },
+        "first_source_sentence": "하였다.",
+        "repeat_source_sentence": "했다.",
+        "tokens": "하/VV 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_00.txt",
+          "line": 21913
+        },
+        "repeat": {
+          "file": "tokens/part_02.txt",
+          "line": 50011
+        },
+        "first_source_sentence": "부처님께서 말씀하셨다.",
+        "repeat_source_sentence": "부처님께서 말씀하시었다.",
+        "tokens": "부처/NNP 님/XSN 께서/JKS <sp>/WS 말씀/NNG 하/XSV 시/EP 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_01.txt",
+          "line": 240050
+        },
+        "repeat": {
+          "file": "tokens/part_02.txt",
+          "line": 51925
+        },
+        "first_source_sentence": "2021년 J2리그 준우승으로 J1리그로 승격했다.",
+        "repeat_source_sentence": "2021년 J2리그 준우승으로 J1리그로 승격하였다.",
+        "tokens": "2021/SN 년/NNB <sp>/WS J/SL 2/SN 리그/NNG <sp>/WS 준/XPN 우승/NNG 으로/JKB <sp>/WS J/SL 1/SN 리그/NNG 로/JKB <sp>/WS 승격/NNG 하/XSV 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_01.txt",
+          "line": 239859
+        },
+        "repeat": {
+          "file": "tokens/part_02.txt",
+          "line": 51985
+        },
+        "first_source_sentence": "2023년 J2리그 우승으로 J1리그로 승격했다.",
+        "repeat_source_sentence": "2023년 J2리그 우승으로 J1리그로 승격하였다.",
+        "tokens": "2023/SN 년/NNB <sp>/WS J/SL 2/SN 리그/NNG <sp>/WS 우승/NNG 으로/JKB <sp>/WS J/SL 1/SN 리그/NNG 로/JKB <sp>/WS 승격/NNG 하/XSV 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_00.txt",
+          "line": 249594
+        },
+        "repeat": {
+          "file": "tokens/part_02.txt",
+          "line": 53107
+        },
+        "first_source_sentence": "2022년 J2리그 우승으로 J1리그로 승격했다.",
+        "repeat_source_sentence": "2022년 J2리그 우승으로 J1리그로 승격하였다.",
+        "tokens": "2022/SN 년/NNB <sp>/WS J/SL 2/SN 리그/NNG <sp>/WS 우승/NNG 으로/JKB <sp>/WS J/SL 1/SN 리그/NNG 로/JKB <sp>/WS 승격/NNG 하/XSV 었/EP 다/EF ./SF"
+      },
+      {
+        "first": {
+          "file": "tokens/part_01.txt",
+          "line": 239635
+        },
+        "repeat": {
+          "file": "tokens/part_02.txt",
+          "line": 61330
+        },
+        "first_source_sentence": "2022년 J1리그의 FC 도쿄에 입단했다.",
+        "repeat_source_sentence": "2022년 J1리그의 FC 도쿄에 입단하였다.",
+        "tokens": "2022/SN 년/NNB <sp>/WS J1리그/NNP 의/JKG <sp>/WS FC/SL <sp>/WS 도쿄/NNP 에/JKB <sp>/WS 입단/NNG 하/XSV 었/EP 다/EF ./SF"
+      }
+    ],
+    "note": "문장 끝 <sp>/WS 유무를 제외한 비교를 별도로 집계한다. 원문이 달라도 형태소 열은 같아질 수 있다."
+  },
+  "style_variants": {
+    "sentences": 6677632,
+    "candidate_extra_occurrences": 7617,
+    "candidate_groups": 7145,
+    "rule": "NFKC 후 공백·문장부호 제거 및 영문 casefold",
+    "classification": "유사/서식 후보이며 동일 데이터로 확정한 수치가 아님",
+    "examples": [
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 20117
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 21527
+        },
+        "first_text": "2016년 5월 조선로동당 제7차 대회에서 조선로동당 중앙위원회 후보위원으로 선출되었다.",
+        "repeat_text": "2016년 5월, 조선로동당 제7차 대회에서 조선로동당 중앙위원회 후보위원으로 선출되었다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 29979
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 32243
+        },
+        "first_text": "아래는 일본 기상청 진도 계급 기준 진도 5약 이상을 관측한 지역이다.",
+        "repeat_text": "아래는 일본 기상청 진도 계급 기준 진도5약 이상을 관측한 지역이다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 37814
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 37817
+        },
+        "first_text": "다른 세션들은 런던의 모건 스튜디오에서 열렸고, 그곳에서 가수 도노반은 타이틀 곡에서 노래를 부르며 음반에 기여했다.",
+        "repeat_text": "다른 세션들은 런던의 모건 스튜디오에서 열렸고, 그곳에서 가수 도노반은 타이틀곡에서 노래를 부르며 음반에 기여했다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 71577
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 71581
+        },
+        "first_text": "요구 사양은 윈도우 98 이상, 400 MHz 펜티엄 II, 64 MB 램 이상, 다이렉트X 호환, 640x480 비디오 램 32MB 이상이다.",
+        "repeat_text": "요구사양은 윈도우 98 이상, 400 MHz 펜티엄 II, 64 MB 램 이상, 다이렉트X 호환, 640x480 비디오 램 32MB 이상이다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 33063
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 94878
+        },
+        "first_text": "그리고 1999년까지는 미국 합동태풍경보센터에서 이름을 지었기 때문에, SSHS로 열대저기압인 것은 이름을 붙이지 않았다.",
+        "repeat_text": "그리고 1999년까지는 미국 합동태풍경보센터에서 이름을 지었기 때문에, SSHS로 열대저기압인것은 이름을 붙이지 않았다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 98015
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 98104
+        },
+        "first_text": "대통령특사로 7회에 걸쳐 사우디아라비아·이란·에티오피아 등 24개국을 친선 방문했다.",
+        "repeat_text": "대통령특사로 7회에 걸쳐 사우디아라비아·이란·에티오피아 등 24개국을 친선방문했다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 97927
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 98378
+        },
+        "first_text": "2면 2선의 상대식 승강장이며 스크린도어가 설치되어 있다.",
+        "repeat_text": "2면 2선의 상대식 승강장이며, 스크린도어가 설치되어 있다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 99443
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 99467
+        },
+        "first_text": "9월 28일 윤보선의 지지 유세를 하던 김사만은 '박정희는 여순반란 사건에 관련되어 사형 선고까지 받았던 공산주의자였다'는 발언을 인용하면서 \"일제에 항거하다가 사형선고를 받았다면 몰라도, 우리의 주적인 공산당 혐의를 받았던 사람에게 어떻게 믿고 투표할 것이냐\"라며 박정희를 공격했다.",
+        "repeat_text": "9월 28일 윤보선의 지지 유세를 하던 김사만은 '박정희는 여순반란사건에 관련되어 사형 선고까지 받았던 공산주의자였다'는 발언을 인용하면서 \"일제에 항거하다가 사형선고를 받았다면 몰라도, 우리의 주적인 공산당 혐의를 받았던 사람에게 어떻게 믿고 투표할 것이냐\"라며 박정희를 공격했다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 101824
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 102259
+        },
+        "first_text": "상대식 승강장 2면 2선의 지상역이고 교상역사를 갖는다.",
+        "repeat_text": "상대식 승강장 2면 2선의 지상역이고, 교상역사를 갖는다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 60716
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 105428
+        },
+        "first_text": "시청률조사회사와 지역별로 시청률에 차이가 있을 수 있습니다.",
+        "repeat_text": "시청률 조사회사와 지역별로 시청률에 차이가 있을 수 있습니다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 16855
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 109119
+        },
+        "first_text": "2차산업은 경기도 전체의 비중(27.1%)보다 낮고, 3차산업은 경기도 전체 비중(72.9%)보다 높다.",
+        "repeat_text": "2차산업은 경기도 전체의 비중(27.1%)보다 낮고 3차 산업은 경기도 전체 비중(72.9%)보다 높다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 136355
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 136405
+        },
+        "first_text": "말 그대로 극장판이기 때문에 스토리와 연관을 지을 필요는 없지만 시기적으로 보면 알라바스타왕국 스토리이후 그리고 모크 타운 도착 전 시점으로 보인다.",
+        "repeat_text": "말 그대로 극장판이기 때문에 스토리와 연관을 지을 필요는 없지만 시기적으로 보면 알라바스타왕국 스토리 이후 그리고 모크 타운 도착 전 시점으로 보인다."
+      }
+    ]
+  },
+  "number_templates": {
+    "sentences": 6677632,
+    "candidate_extra_occurrences": 76127,
+    "candidate_groups": 18190,
+    "rule": "NFKC 및 공백 정리 후 숫자열을 <NUMBER>로 치환",
+    "classification": "유사/서식 후보이며 동일 데이터로 확정한 수치가 아님",
+    "examples": [
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 4459
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 4465
+        },
+        "first_text": "1982년에 건축하였으며, 면적은 72.00m²이고, 40명을 수용할 수 있다.",
+        "repeat_text": "1984년에 건축하였으며, 면적은 81.00m²이고, 50명을 수용할 수 있다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 4552
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 4564
+        },
+        "first_text": "2009년 10월부터 2010년 3월까지 진행된 전국 투어.",
+        "repeat_text": "2011년 10월부터 2012년 3월까지 진행된 전국 투어."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 4576
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 4650
+        },
+        "first_text": "8세기는 701년부터 800년까지이다.",
+        "repeat_text": "15세기는 1401년부터 1500년까지이다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 3792
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 8388
+        },
+        "first_text": "1761년은 목요일로 시작하는 평년이다.",
+        "repeat_text": "161년은 목요일로 시작하는 평년이다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 14515
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 14845
+        },
+        "first_text": "이듬해 3월 6일 개교하였다.",
+        "repeat_text": "이듬해 3월 8일 개교하였다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 16772
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 16778
+        },
+        "first_text": "캠퍼스 넓이는 45,542m2에 달한다.",
+        "repeat_text": "캠퍼스 넓이는 704,917m2에 달한다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 16891
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 16986
+        },
+        "first_text": "1987년 2월 12일 경기도의 기념물 제102호로 지정되었다.",
+        "repeat_text": "1988년 3월 21일 경기도의 기념물 제103호로 지정되었다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 17193
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 17299
+        },
+        "first_text": "다음은 2011년 대한민국의 베스트셀러 목록이다.",
+        "repeat_text": "다음은 2014년 대한민국의 베스트셀러 목록이다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 18401
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 18483
+        },
+        "first_text": "1947년에 설립되었으며 같은 해에 국제 올림픽 위원회의 승인을 받았다.",
+        "repeat_text": "1959년에 설립되었으며 같은 해에 국제 올림픽 위원회의 승인을 받았다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 19594
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 19890
+        },
+        "first_text": "1986년 8월 6일 경상남도의 기념물 제82호로 지정되었다.",
+        "repeat_text": "1998년 11월 13일 경상남도의 기념물 제212호로 지정되었다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 19908
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 19981
+        },
+        "first_text": "1971년 12월 16일 강원특별자치도의 유형문화재 제10호로 지정되었다.",
+        "repeat_text": "1971년 12월 16일 강원특별자치도의 유형문화재 제30호로 지정되었다."
+      },
+      {
+        "first": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 18104
+        },
+        "repeat": {
+          "file": "sentences_dedup/part_00.txt",
+          "line": 21119
+        },
+        "first_text": "2005년 12월, 8단으로 승단했다.",
+        "repeat_text": "2019년 4월, 2단으로 승단했다."
+      }
+    ]
+  },
+  "id_paragraphs": [
+    {
+      "vocab_size": 16384,
+      "tokens": 73437479,
+      "paragraphs": 1134023,
+      "unique_paragraphs": 1133927,
+      "duplicate_extra_occurrences": 96,
+      "duplicate_groups": 96,
+      "examples": [
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_01.npy",
+            "array_offset": 1334158
+          },
+          "paragraph_tokens": 26,
+          "token_ids_prefix": [
+            2,
+            12759,
+            4,
+            5796,
+            15,
+            4,
+            20,
+            18,
+            18,
+            41,
+            24,
+            4,
+            41,
+            42,
+            4,
+            14,
+            36,
+            54,
+            11,
+            4,
+            2095,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "고속버스/NNG",
+            "<sp>/WS",
+            "면허/NNG",
+            "는/JX",
+            "<sp>/WS",
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "6/SN",
+            "년/NNB",
+            "<sp>/WS",
+            "6/SN",
+            "월/NNB",
+            "<sp>/WS",
+            "1/SN",
+            "5/SN",
+            "일/NNB",
+            "에/JKB",
+            "<sp>/WS",
+            "취득/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_00.npy",
+            "array_offset": 816987
+          },
+          "paragraph_tokens": 7,
+          "token_ids_prefix": [
+            2,
+            55,
+            9,
+            8,
+            5,
+            4,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "하/VV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<sp>/WS",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_00.npy",
+            "array_offset": 190843
+          },
+          "paragraph_tokens": 12,
+          "token_ids_prefix": [
+            2,
+            5214,
+            1372,
+            4943,
+            4,
+            5653,
+            6,
+            1216,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "부처/NNP",
+            "님/XSN",
+            "께서/JKS",
+            "<sp>/WS",
+            "말씀/NNG",
+            "하/XSV",
+            "시/EP",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_01.npy",
+            "array_offset": 822898
+          },
+          "paragraph_tokens": 10,
+          "token_ids_prefix": [
+            2,
+            4368,
+            15,
+            4,
+            41,
+            97,
+            16,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "출구/NNG",
+            "는/JX",
+            "<sp>/WS",
+            "6/SN",
+            "개/NNB",
+            "이/VCP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_04.npy",
+            "array_offset": 389922
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            188,
+            4,
+            1746,
+            21,
+            4,
+            10057,
+            4,
+            4195,
+            31,
+            4,
+            1211,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "모든/MM",
+            "<sp>/WS",
+            "트랙/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "케이트/NNP",
+            "<sp>/WS",
+            "부시/NNP",
+            "가/JKS",
+            "<sp>/WS",
+            "작곡/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_00.npy",
+            "array_offset": 1898796
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            166,
+            12617,
+            13,
+            4,
+            829,
+            17,
+            166,
+            279,
+            11,
+            4,
+            434,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "~/SO",
+            "파멸/NNG",
+            "을/JKO",
+            "<sp>/WS",
+            "향하/VV",
+            "어/EC",
+            "~/SO",
+            "〉/SSC",
+            "에/JKB",
+            "<sp>/WS",
+            "참가/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_00.npy",
+            "array_offset": 296859
+          },
+          "paragraph_tokens": 18,
+          "token_ids_prefix": [
+            2,
+            9553,
+            21,
+            4,
+            351,
+            7,
+            4,
+            8290,
+            4,
+            5393,
+            26,
+            4,
+            13003,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "크레딧/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "음반/NNG",
+            "의/JKG",
+            "<sp>/WS",
+            "라이너/NNP",
+            "<sp>/WS",
+            "노트/NNG",
+            "에서/JKB",
+            "<sp>/WS",
+            "발췌/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_16384/part_04.npy",
+            "array_offset": 1064164
+          },
+          "paragraph_tokens": 10,
+          "token_ids_prefix": [
+            2,
+            4368,
+            15,
+            4,
+            14,
+            97,
+            16,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "출구/NNG",
+            "는/JX",
+            "<sp>/WS",
+            "1/SN",
+            "개/NNB",
+            "이/VCP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        }
+      ],
+      "rule": "동일 vocab 내 <bos>부터 <eos>까지의 전체 ID 시퀀스 완전 일치"
+    },
+    {
+      "vocab_size": 32768,
+      "tokens": 124445087,
+      "paragraphs": 1538413,
+      "unique_paragraphs": 1538312,
+      "duplicate_extra_occurrences": 101,
+      "duplicate_groups": 99,
+      "examples": [
+        {
+          "occurrences": 4,
+          "first": {
+            "file": "token_ids_32768/part_00.npy",
+            "array_offset": 3245478
+          },
+          "paragraph_tokens": 33,
+          "token_ids_prefix": [
+            2,
+            246,
+            4,
+            690,
+            4,
+            81,
+            16,
+            12,
+            4,
+            615,
+            21,
+            4,
+            25141,
+            13,
+            4,
+            1841,
+            49,
+            4,
+            79,
+            17,
+            4,
+            7019,
+            43,
+            4,
+            5066,
+            30,
+            4,
+            1189,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "현재/MAG",
+            "<sp>/WS",
+            "운행/NNG",
+            "<sp>/WS",
+            "중/NNB",
+            "이/VCP",
+            "ᆫ/ETM",
+            "<sp>/WS",
+            "차량/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "가독성/NNP",
+            "을/JKO",
+            "<sp>/WS",
+            "높이/VV",
+            "기/ETN",
+            "<sp>/WS",
+            "위하/VV",
+            "어/EC",
+            "<sp>/WS",
+            "굵/VA",
+            "은/ETM",
+            "<sp>/WS",
+            "글씨/NNG",
+            "로/JKB",
+            "<sp>/WS",
+            "표시/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_32768/part_01.npy",
+            "array_offset": 2252753
+          },
+          "paragraph_tokens": 26,
+          "token_ids_prefix": [
+            2,
+            12759,
+            4,
+            5796,
+            15,
+            4,
+            20,
+            18,
+            18,
+            41,
+            24,
+            4,
+            41,
+            42,
+            4,
+            14,
+            36,
+            54,
+            11,
+            4,
+            2095,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "고속버스/NNG",
+            "<sp>/WS",
+            "면허/NNG",
+            "는/JX",
+            "<sp>/WS",
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "6/SN",
+            "년/NNB",
+            "<sp>/WS",
+            "6/SN",
+            "월/NNB",
+            "<sp>/WS",
+            "1/SN",
+            "5/SN",
+            "일/NNB",
+            "에/JKB",
+            "<sp>/WS",
+            "취득/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_32768/part_00.npy",
+            "array_offset": 321774
+          },
+          "paragraph_tokens": 12,
+          "token_ids_prefix": [
+            2,
+            5214,
+            1372,
+            4943,
+            4,
+            5653,
+            6,
+            1216,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "부처/NNP",
+            "님/XSN",
+            "께서/JKS",
+            "<sp>/WS",
+            "말씀/NNG",
+            "하/XSV",
+            "시/EP",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_32768/part_03.npy",
+            "array_offset": 784676
+          },
+          "paragraph_tokens": 18,
+          "token_ids_prefix": [
+            2,
+            20521,
+            1517,
+            15,
+            4,
+            120,
+            7,
+            4,
+            1523,
+            4,
+            302,
+            4,
+            11756,
+            16,
+            8,
+            5,
+            4,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "파이낸셜/NNP",
+            "뉴스/NNG",
+            "는/JX",
+            "<sp>/WS",
+            "대한민국/NNP",
+            "의/JKG",
+            "<sp>/WS",
+            "종합/NNG",
+            "<sp>/WS",
+            "경제/NNG",
+            "<sp>/WS",
+            "일간지/NNG",
+            "이/VCP",
+            "다/EF",
+            "./SF",
+            "<sp>/WS",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_32768/part_04.npy",
+            "array_offset": 666517
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            188,
+            4,
+            1746,
+            21,
+            4,
+            10057,
+            4,
+            4195,
+            31,
+            4,
+            1211,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "모든/MM",
+            "<sp>/WS",
+            "트랙/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "케이트/NNP",
+            "<sp>/WS",
+            "부시/NNP",
+            "가/JKS",
+            "<sp>/WS",
+            "작곡/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_32768/part_00.npy",
+            "array_offset": 3205277
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            166,
+            12617,
+            13,
+            4,
+            829,
+            17,
+            166,
+            279,
+            11,
+            4,
+            434,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "~/SO",
+            "파멸/NNG",
+            "을/JKO",
+            "<sp>/WS",
+            "향하/VV",
+            "어/EC",
+            "~/SO",
+            "〉/SSC",
+            "에/JKB",
+            "<sp>/WS",
+            "참가/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_32768/part_00.npy",
+            "array_offset": 489449
+          },
+          "paragraph_tokens": 18,
+          "token_ids_prefix": [
+            2,
+            9553,
+            21,
+            4,
+            351,
+            7,
+            4,
+            8290,
+            4,
+            5393,
+            26,
+            4,
+            13003,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "크레딧/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "음반/NNG",
+            "의/JKG",
+            "<sp>/WS",
+            "라이너/NNP",
+            "<sp>/WS",
+            "노트/NNG",
+            "에서/JKB",
+            "<sp>/WS",
+            "발췌/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_32768/part_03.npy",
+            "array_offset": 1099688
+          },
+          "paragraph_tokens": 40,
+          "token_ids_prefix": [
+            2,
+            20,
+            523,
+            4,
+            20,
+            254,
+            7,
+            4,
+            4929,
+            4,
+            472,
+            700,
+            4,
+            1217,
+            13,
+            4,
+            950,
+            12,
+            4,
+            17549,
+            16,
+            61,
+            10,
+            4,
+            1350,
+            14335,
+            236,
+            4,
+            4191,
+            4798,
+            31,
+            4,
+            363,
+            23,
+            17,
+            4,
+            40,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "2/SN",
+            "면/NNG",
+            "<sp>/WS",
+            "2/SN",
+            "선/NNG",
+            "의/JKG",
+            "<sp>/WS",
+            "곡선/NNG",
+            "<sp>/WS",
+            "상대/NNG",
+            "식/NNB",
+            "<sp>/WS",
+            "승강장/NNG",
+            "을/JKO",
+            "<sp>/WS",
+            "갖추/VV",
+            "ᆫ/ETM",
+            "<sp>/WS",
+            "지하역/NNP",
+            "이/VCP",
+            "며/EC",
+            ",/SP",
+            "<sp>/WS",
+            "완전/NNG",
+            "밀폐/NNG",
+            "형/XSN",
+            "<sp>/WS",
+            "스크린/NNG",
+            "도어/NNG",
+            "가/JKS",
+            "<sp>/WS",
+            "설치/NNG",
+            "되/XSV",
+            "어/EC",
+            "<sp>/WS",
+            "있/VX",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        }
+      ],
+      "rule": "동일 vocab 내 <bos>부터 <eos>까지의 전체 ID 시퀀스 완전 일치"
+    },
+    {
+      "vocab_size": 49152,
+      "tokens": 153222754,
+      "paragraphs": 1721891,
+      "unique_paragraphs": 1721797,
+      "duplicate_extra_occurrences": 94,
+      "duplicate_groups": 92,
+      "examples": [
+        {
+          "occurrences": 4,
+          "first": {
+            "file": "token_ids_49152/part_00.npy",
+            "array_offset": 3987985
+          },
+          "paragraph_tokens": 33,
+          "token_ids_prefix": [
+            2,
+            246,
+            4,
+            690,
+            4,
+            81,
+            16,
+            12,
+            4,
+            615,
+            21,
+            4,
+            25141,
+            13,
+            4,
+            1841,
+            49,
+            4,
+            79,
+            17,
+            4,
+            7019,
+            43,
+            4,
+            5066,
+            30,
+            4,
+            1189,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "현재/MAG",
+            "<sp>/WS",
+            "운행/NNG",
+            "<sp>/WS",
+            "중/NNB",
+            "이/VCP",
+            "ᆫ/ETM",
+            "<sp>/WS",
+            "차량/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "가독성/NNP",
+            "을/JKO",
+            "<sp>/WS",
+            "높이/VV",
+            "기/ETN",
+            "<sp>/WS",
+            "위하/VV",
+            "어/EC",
+            "<sp>/WS",
+            "굵/VA",
+            "은/ETM",
+            "<sp>/WS",
+            "글씨/NNG",
+            "로/JKB",
+            "<sp>/WS",
+            "표시/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_49152/part_01.npy",
+            "array_offset": 2759984
+          },
+          "paragraph_tokens": 26,
+          "token_ids_prefix": [
+            2,
+            12759,
+            4,
+            5796,
+            15,
+            4,
+            20,
+            18,
+            18,
+            41,
+            24,
+            4,
+            41,
+            42,
+            4,
+            14,
+            36,
+            54,
+            11,
+            4,
+            2095,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "고속버스/NNG",
+            "<sp>/WS",
+            "면허/NNG",
+            "는/JX",
+            "<sp>/WS",
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "6/SN",
+            "년/NNB",
+            "<sp>/WS",
+            "6/SN",
+            "월/NNB",
+            "<sp>/WS",
+            "1/SN",
+            "5/SN",
+            "일/NNB",
+            "에/JKB",
+            "<sp>/WS",
+            "취득/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_49152/part_00.npy",
+            "array_offset": 402452
+          },
+          "paragraph_tokens": 12,
+          "token_ids_prefix": [
+            2,
+            5214,
+            1372,
+            4943,
+            4,
+            5653,
+            6,
+            1216,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "부처/NNP",
+            "님/XSN",
+            "께서/JKS",
+            "<sp>/WS",
+            "말씀/NNG",
+            "하/XSV",
+            "시/EP",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_49152/part_01.npy",
+            "array_offset": 2820458
+          },
+          "paragraph_tokens": 12,
+          "token_ids_prefix": [
+            2,
+            14158,
+            4,
+            37530,
+            19,
+            4,
+            632,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "중앙대학교/NNP",
+            "<sp>/WS",
+            "연극영화과/NNG",
+            "를/JKO",
+            "<sp>/WS",
+            "졸업/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_49152/part_04.npy",
+            "array_offset": 822218
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            188,
+            4,
+            1746,
+            21,
+            4,
+            10057,
+            4,
+            4195,
+            31,
+            4,
+            1211,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "모든/MM",
+            "<sp>/WS",
+            "트랙/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "케이트/NNP",
+            "<sp>/WS",
+            "부시/NNP",
+            "가/JKS",
+            "<sp>/WS",
+            "작곡/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_49152/part_00.npy",
+            "array_offset": 3937076
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            166,
+            12617,
+            13,
+            4,
+            829,
+            17,
+            166,
+            279,
+            11,
+            4,
+            434,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "~/SO",
+            "파멸/NNG",
+            "을/JKO",
+            "<sp>/WS",
+            "향하/VV",
+            "어/EC",
+            "~/SO",
+            "〉/SSC",
+            "에/JKB",
+            "<sp>/WS",
+            "참가/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_49152/part_00.npy",
+            "array_offset": 609830
+          },
+          "paragraph_tokens": 18,
+          "token_ids_prefix": [
+            2,
+            9553,
+            21,
+            4,
+            351,
+            7,
+            4,
+            8290,
+            4,
+            5393,
+            26,
+            4,
+            13003,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "크레딧/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "음반/NNG",
+            "의/JKG",
+            "<sp>/WS",
+            "라이너/NNP",
+            "<sp>/WS",
+            "노트/NNG",
+            "에서/JKB",
+            "<sp>/WS",
+            "발췌/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_49152/part_03.npy",
+            "array_offset": 1353986
+          },
+          "paragraph_tokens": 40,
+          "token_ids_prefix": [
+            2,
+            20,
+            523,
+            4,
+            20,
+            254,
+            7,
+            4,
+            4929,
+            4,
+            472,
+            700,
+            4,
+            1217,
+            13,
+            4,
+            950,
+            12,
+            4,
+            17549,
+            16,
+            61,
+            10,
+            4,
+            1350,
+            14335,
+            236,
+            4,
+            4191,
+            4798,
+            31,
+            4,
+            363,
+            23,
+            17,
+            4,
+            40,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "2/SN",
+            "면/NNG",
+            "<sp>/WS",
+            "2/SN",
+            "선/NNG",
+            "의/JKG",
+            "<sp>/WS",
+            "곡선/NNG",
+            "<sp>/WS",
+            "상대/NNG",
+            "식/NNB",
+            "<sp>/WS",
+            "승강장/NNG",
+            "을/JKO",
+            "<sp>/WS",
+            "갖추/VV",
+            "ᆫ/ETM",
+            "<sp>/WS",
+            "지하역/NNP",
+            "이/VCP",
+            "며/EC",
+            ",/SP",
+            "<sp>/WS",
+            "완전/NNG",
+            "밀폐/NNG",
+            "형/XSN",
+            "<sp>/WS",
+            "스크린/NNG",
+            "도어/NNG",
+            "가/JKS",
+            "<sp>/WS",
+            "설치/NNG",
+            "되/XSV",
+            "어/EC",
+            "<sp>/WS",
+            "있/VX",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        }
+      ],
+      "rule": "동일 vocab 내 <bos>부터 <eos>까지의 전체 ID 시퀀스 완전 일치"
+    },
+    {
+      "vocab_size": 65536,
+      "tokens": 171806989,
+      "paragraphs": 1828788,
+      "unique_paragraphs": 1828695,
+      "duplicate_extra_occurrences": 93,
+      "duplicate_groups": 91,
+      "examples": [
+        {
+          "occurrences": 4,
+          "first": {
+            "file": "token_ids_65536/part_00.npy",
+            "array_offset": 4469917
+          },
+          "paragraph_tokens": 33,
+          "token_ids_prefix": [
+            2,
+            246,
+            4,
+            690,
+            4,
+            81,
+            16,
+            12,
+            4,
+            615,
+            21,
+            4,
+            25141,
+            13,
+            4,
+            1841,
+            49,
+            4,
+            79,
+            17,
+            4,
+            7019,
+            43,
+            4,
+            5066,
+            30,
+            4,
+            1189,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "현재/MAG",
+            "<sp>/WS",
+            "운행/NNG",
+            "<sp>/WS",
+            "중/NNB",
+            "이/VCP",
+            "ᆫ/ETM",
+            "<sp>/WS",
+            "차량/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "가독성/NNP",
+            "을/JKO",
+            "<sp>/WS",
+            "높이/VV",
+            "기/ETN",
+            "<sp>/WS",
+            "위하/VV",
+            "어/EC",
+            "<sp>/WS",
+            "굵/VA",
+            "은/ETM",
+            "<sp>/WS",
+            "글씨/NNG",
+            "로/JKB",
+            "<sp>/WS",
+            "표시/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_65536/part_01.npy",
+            "array_offset": 3073790
+          },
+          "paragraph_tokens": 26,
+          "token_ids_prefix": [
+            2,
+            12759,
+            4,
+            5796,
+            15,
+            4,
+            20,
+            18,
+            18,
+            41,
+            24,
+            4,
+            41,
+            42,
+            4,
+            14,
+            36,
+            54,
+            11,
+            4,
+            2095,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "고속버스/NNG",
+            "<sp>/WS",
+            "면허/NNG",
+            "는/JX",
+            "<sp>/WS",
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "6/SN",
+            "년/NNB",
+            "<sp>/WS",
+            "6/SN",
+            "월/NNB",
+            "<sp>/WS",
+            "1/SN",
+            "5/SN",
+            "일/NNB",
+            "에/JKB",
+            "<sp>/WS",
+            "취득/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_65536/part_00.npy",
+            "array_offset": 452410
+          },
+          "paragraph_tokens": 12,
+          "token_ids_prefix": [
+            2,
+            5214,
+            1372,
+            4943,
+            4,
+            5653,
+            6,
+            1216,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "부처/NNP",
+            "님/XSN",
+            "께서/JKS",
+            "<sp>/WS",
+            "말씀/NNG",
+            "하/XSV",
+            "시/EP",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_65536/part_04.npy",
+            "array_offset": 927001
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            188,
+            4,
+            1746,
+            21,
+            4,
+            10057,
+            4,
+            4195,
+            31,
+            4,
+            1211,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "모든/MM",
+            "<sp>/WS",
+            "트랙/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "케이트/NNP",
+            "<sp>/WS",
+            "부시/NNP",
+            "가/JKS",
+            "<sp>/WS",
+            "작곡/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_65536/part_00.npy",
+            "array_offset": 4409578
+          },
+          "paragraph_tokens": 17,
+          "token_ids_prefix": [
+            2,
+            166,
+            12617,
+            13,
+            4,
+            829,
+            17,
+            166,
+            279,
+            11,
+            4,
+            434,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "~/SO",
+            "파멸/NNG",
+            "을/JKO",
+            "<sp>/WS",
+            "향하/VV",
+            "어/EC",
+            "~/SO",
+            "〉/SSC",
+            "에/JKB",
+            "<sp>/WS",
+            "참가/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_65536/part_00.npy",
+            "array_offset": 684763
+          },
+          "paragraph_tokens": 18,
+          "token_ids_prefix": [
+            2,
+            9553,
+            21,
+            4,
+            351,
+            7,
+            4,
+            8290,
+            4,
+            5393,
+            26,
+            4,
+            13003,
+            6,
+            9,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "크레딧/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "음반/NNG",
+            "의/JKG",
+            "<sp>/WS",
+            "라이너/NNP",
+            "<sp>/WS",
+            "노트/NNG",
+            "에서/JKB",
+            "<sp>/WS",
+            "발췌/NNG",
+            "하/XSV",
+            "었/EP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_65536/part_03.npy",
+            "array_offset": 1512117
+          },
+          "paragraph_tokens": 40,
+          "token_ids_prefix": [
+            2,
+            20,
+            523,
+            4,
+            20,
+            254,
+            7,
+            4,
+            4929,
+            4,
+            472,
+            700,
+            4,
+            1217,
+            13,
+            4,
+            950,
+            12,
+            4,
+            17549,
+            16,
+            61,
+            10,
+            4,
+            1350,
+            14335,
+            236,
+            4,
+            4191,
+            4798,
+            31,
+            4,
+            363,
+            23,
+            17,
+            4,
+            40,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "2/SN",
+            "면/NNG",
+            "<sp>/WS",
+            "2/SN",
+            "선/NNG",
+            "의/JKG",
+            "<sp>/WS",
+            "곡선/NNG",
+            "<sp>/WS",
+            "상대/NNG",
+            "식/NNB",
+            "<sp>/WS",
+            "승강장/NNG",
+            "을/JKO",
+            "<sp>/WS",
+            "갖추/VV",
+            "ᆫ/ETM",
+            "<sp>/WS",
+            "지하역/NNP",
+            "이/VCP",
+            "며/EC",
+            ",/SP",
+            "<sp>/WS",
+            "완전/NNG",
+            "밀폐/NNG",
+            "형/XSN",
+            "<sp>/WS",
+            "스크린/NNG",
+            "도어/NNG",
+            "가/JKS",
+            "<sp>/WS",
+            "설치/NNG",
+            "되/XSV",
+            "어/EC",
+            "<sp>/WS",
+            "있/VX",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        },
+        {
+          "occurrences": 2,
+          "first": {
+            "file": "token_ids_65536/part_00.npy",
+            "array_offset": 2902967
+          },
+          "paragraph_tokens": 10,
+          "token_ids_prefix": [
+            2,
+            1679,
+            21,
+            4,
+            5857,
+            544,
+            16,
+            8,
+            5,
+            3
+          ],
+          "tokens_prefix": [
+            "<bos>",
+            "포지션/NNG",
+            "은/JX",
+            "<sp>/WS",
+            "윙/NNG",
+            "어/NNG",
+            "이/VCP",
+            "다/EF",
+            "./SF",
+            "<eos>"
+          ]
+        }
+      ],
+      "rule": "동일 vocab 내 <bos>부터 <eos>까지의 전체 ID 시퀀스 완전 일치"
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+<div id="kiwi-vocabulary-coverage">
+  <figure>
+    <h3>사전 크기와 데이터 보존율</h3>
+    <div class="text-small text-muted" data-source-scope></div>
+    <div class="viz-controls">
+      <label class="form-label">선택 K
+        <select class="form-select" data-selected-k aria-label="강조할 전체 사전 크기"></select>
+      </label>
+      <label class="form-label">사전 크기 축
+        <select class="form-select" data-axis-scale aria-label="사전 크기 축 눈금">
+          <option value="linear">일반 눈금</option>
+          <option value="log">로그 눈금</option>
+        </select>
+      </label>
+      <label class="form-label">표시 범위
+        <select class="form-select" data-display-range aria-label="보존율 곡선에 표시할 사전 크기 범위">
+          <option value="focus">0–200,000</option>
+          <option value="all">전체 어휘</option>
+        </select>
+      </label>
+    </div>
+    <div class="text-small text-muted" data-view-scope></div>
+    <div class="text-small text-muted">K는 특수 토큰 4개를 포함 · 각 지표의 분모는 토큰 등장 횟수 / 문장 수 / 문단 수</div>
+    <div class="coverage-legend text-small" data-metric-legend></div>
+    <div class="coverage-facets" data-curve-facets></div>
+    <div class="text-small text-muted">곡선: 측정 K의 보존율 · 세로 실선: 선택 K · 세로 점선: 보존율과 사전 크기의 절충 후보</div>
+  </figure>
+  <figure>
+    <h3>선택 K에서 남는 데이터</h3>
+    <div class="text-small" data-bar-label></div>
+    <div data-grouped-bars></div>
+    <div class="text-small">65,000·65,536의 문단 보존 / 제거</div>
+    <div class="text-small text-muted">일부 문단: 사전 밖 토큰을 포함한 문장을 제외한 뒤 1문장 이상 남음 · 완전 문단: 모든 문장이 통과</div>
+    <div class="coverage-facets" data-paragraph-facets></div>
+  </figure>
+  <div class="tooltip" role="tooltip" hidden></div>
+  <script type="application/json" data-coverage-payload>__VOCABULARY_COVERAGE_PLOT_DATA__</script>
+</div>
+<style>
+  #kiwi-vocabulary-coverage { position: relative; display: grid; gap: 24px; min-width: 0; }
+  #kiwi-vocabulary-coverage figure { display: grid; gap: 12px; margin: 0; min-width: 0; }
+  #kiwi-vocabulary-coverage .coverage-facets { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; min-width: 0; }
+  #kiwi-vocabulary-coverage .coverage-panel { display: grid; gap: 8px; min-width: 0; }
+  #kiwi-vocabulary-coverage .coverage-panel-title { font-weight: 500; overflow-wrap: anywhere; }
+  #kiwi-vocabulary-coverage .coverage-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  #kiwi-vocabulary-coverage .coverage-legend-item { display: inline-flex; gap: 6px; align-items: center; }
+  #kiwi-vocabulary-coverage .coverage-swatch { display: inline-block; width: 14px; height: 3px; flex: none; }
+  #kiwi-vocabulary-coverage .coverage-chart { display: block; width: 100%; overflow: visible; }
+  #kiwi-vocabulary-coverage .coverage-chart text { fill: var(--foreground); font-size: 12px; font-weight: 400; }
+  #kiwi-vocabulary-coverage .coverage-chart .axis-title { font-weight: 500; }
+  #kiwi-vocabulary-coverage .coverage-chart .axis path,
+  #kiwi-vocabulary-coverage .coverage-chart .axis line,
+  #kiwi-vocabulary-coverage .coverage-chart .grid line,
+  #kiwi-vocabulary-coverage .coverage-chart [data-chart-frame] { stroke: var(--border); stroke-width: 1; fill: none; }
+  #kiwi-vocabulary-coverage .coverage-chart .grid path { display: none; }
+  #kiwi-vocabulary-coverage .metric-line { fill: none; stroke-width: 2; }
+  #kiwi-vocabulary-coverage .selected-guide { stroke: var(--foreground); stroke-width: 1; opacity: 0.6; }
+  #kiwi-vocabulary-coverage .candidate-guide { stroke: var(--muted-foreground); stroke-width: 1; stroke-dasharray: 3 3; }
+  #kiwi-vocabulary-coverage [data-chart-hover-guide] { stroke: var(--muted-foreground); stroke-width: 1; }
+  #kiwi-vocabulary-coverage [data-chart-hover-overlay] { fill: transparent; touch-action: pan-y; }
+  #kiwi-vocabulary-coverage .tooltip { position: absolute; pointer-events: none; box-sizing: border-box; padding: 16px; border-radius: var(--radius); background: var(--popover); color: var(--popover-foreground); max-width: calc(100% - 8px); white-space: normal; overflow-wrap: anywhere; }
+  #kiwi-vocabulary-coverage .tooltip-heading { font-weight: 500; margin-bottom: 8px; }
+  #kiwi-vocabulary-coverage .tooltip-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+  #kiwi-vocabulary-coverage .paragraph-row { display: grid; gap: 4px; }
+  #kiwi-vocabulary-coverage .paragraph-track { display: flex; width: 100%; height: 12px; }
+  #kiwi-vocabulary-coverage .paragraph-kept,
+  #kiwi-vocabulary-coverage .paragraph-removed { height: 100%; }
+  #kiwi-vocabulary-coverage .paragraph-removed { background: var(--muted-foreground); opacity: 0.2; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root = document.getElementById("kiwi-vocabulary-coverage");
+  const data = JSON.parse(root.querySelector("[data-coverage-payload]").textContent);
+  const number = new Intl.NumberFormat("ko-KR");
+  const percent = new Intl.NumberFormat("ko-KR", {maximumFractionDigits: 2});
+  const compact = d3.format(".3~s");
+  const colors = data.metrics.map((_, index) => `var(--viz-series-${index + 1})`);
+  const tooltip = root.querySelector(".tooltip");
+  const kControl = root.querySelector("[data-selected-k]");
+  const axisControl = root.querySelector("[data-axis-scale]");
+  const viewControl = root.querySelector("[data-display-range]");
+  const saved = window.openai?.widgetState?.privateContent;
+  let selectedK = data.selected_ks.includes(saved?.selectedK) ? saved.selectedK : 65000;
+  let axisScale = saved?.axisScale === "log" ? "log" : "linear";
+  let displayRange = saved?.displayRange === "all" ? "all" : "focus";
+  let pinned = false;
+  const curveCharts = [];
+  const formatPercent = value => `${percent.format(value)}%`;
+  const valueAt = (variant, point, metricIndex) => point[metricIndex + 1] / variant.totals[metricIndex] * 100;
+  const scope = data.scope;
+  root.querySelector("[data-source-scope]").textContent = `${data.status === "partial" ? "중간 집계 · 완료된 동일 원본 샤드만 비교" : "전체 데이터 · 동일 원본 비교"} · ${scope.shard_count}/${scope.expected_shard_count}개 샤드${data.variants.some(variant => variant.derived_frequency) ? " · 숫자 분리 후는 동일 원본의 정확한 규칙 변환 집계" : ""}`;
+  for (const k of data.selected_ks) {
+    const option = document.createElement("option");
+    option.value = String(k);
+    option.textContent = number.format(k);
+    kControl.append(option);
+  }
+  kControl.value = String(selectedK);
+  axisControl.value = axisScale;
+  viewControl.value = displayRange;
+  for (let index = 0; index < data.metrics.length; index += 1) {
+    const item = document.createElement("span");
+    item.className = "coverage-legend-item";
+    const swatch = document.createElement("span");
+    swatch.className = "coverage-swatch";
+    swatch.style.background = colors[index];
+    swatch.setAttribute("aria-hidden", "true");
+    const label = document.createElement("span");
+    label.textContent = data.metrics[index].label;
+    item.append(swatch, label);
+    root.querySelector("[data-metric-legend]").append(item);
+  }
+
+  function saveState() {
+    window.openai?.setWidgetState?.({modelContent: {selectedVocabularySize: selectedK, specialTokensIncluded: 4, vocabularyDisplayRange: displayRange}, privateContent: {selectedK, axisScale, displayRange}})?.catch(() => {});
+  }
+  function hideTooltip() {
+    if (pinned) return;
+    tooltip.hidden = true;
+    for (const chart of curveCharts) chart.hideHover();
+  }
+  function showTooltip(variant, point, svgNode, cursorX, cursorY, label) {
+    tooltip.replaceChildren();
+    const heading = document.createElement("div");
+    heading.className = "tooltip-heading";
+    heading.textContent = `${variant.label} · ${label} K=${number.format(point[0])}`;
+    tooltip.append(heading);
+    for (let index = 0; index < data.metrics.length; index += 1) {
+      const row = document.createElement("div");
+      row.className = "tooltip-row text-small tabular-nums";
+      const name = document.createElement("span");
+      name.textContent = data.metrics[index].short_label;
+      const value = document.createElement("span");
+      value.textContent = `${number.format(point[index + 1])}/${number.format(variant.totals[index])} (${formatPercent(valueAt(variant, point, index))})`;
+      row.append(name, value);
+      tooltip.append(row);
+    }
+    tooltip.hidden = false;
+    const rootBox = root.getBoundingClientRect();
+    const chartBox = svgNode.getBoundingClientRect();
+    const left = Math.min(Math.max(4, chartBox.left - rootBox.left + cursorX + 10), rootBox.width - tooltip.offsetWidth - 4);
+    const top = Math.max(4, chartBox.top - rootBox.top + cursorY - tooltip.offsetHeight - 10);
+    tooltip.style.left = `${Math.max(4, left)}px`;
+    tooltip.style.top = `${top}px`;
+  }
+  function boxesOverlap(a, b) {
+    return a.left < b.right + 4 && a.right + 4 > b.left && a.top < b.bottom + 4 && a.bottom + 4 > b.top;
+  }
+  function declutter(svg, xAxis, yAxis) {
+    const titles = svg.selectAll(".axis-title").nodes().map(node => node.getBoundingClientRect());
+    for (const axis of [xAxis, yAxis]) {
+      const texts = axis.selectAll(".tick text").nodes();
+      const kept = [];
+      for (let index = 0; index < texts.length; index += 1) {
+        const node = texts[index];
+        const box = node.getBoundingClientRect();
+        if (titles.some(title => boxesOverlap(box, title))) {
+          d3.select(node.parentNode).remove();
+          continue;
+        }
+        const collision = kept.find(item => boxesOverlap(box, item.box));
+        if (!collision) kept.push({node, box});
+        else if (index === texts.length - 1) {
+          d3.select(collision.node.parentNode).remove();
+          kept.splice(kept.indexOf(collision), 1);
+          if (!kept.some(item => boxesOverlap(box, item.box))) kept.push({node, box});
+          else d3.select(node.parentNode).remove();
+        } else d3.select(node.parentNode).remove();
+      }
+    }
+  }
+  function createChart(container, height, description) {
+    const svg = d3.select(container).append("svg").attr("class", "coverage-chart").attr("height", height).attr("role", "img");
+    svg.append("title").text(description);
+    svg.append("desc").text("비율의 분모는 각 토큰 등장 횟수, 문장 수 또는 문단 수입니다. 곡선의 툴팁은 가장 가까운 실제 측정 K의 정확한 개수를 표시합니다.");
+    return svg;
+  }
+  function xTicks(scale, minimum, maximum, budget) {
+    let values;
+    if (axisScale === "log") {
+      const firstPower = Math.ceil(Math.log10(minimum));
+      const finalPower = Math.floor(Math.log10(maximum));
+      values = [minimum, ...d3.range(firstPower, finalPower + 1).map(power => 10 ** power), maximum];
+    } else {
+      values = [minimum, ...scale.ticks(budget).filter(value => value > minimum && value < maximum), maximum];
+    }
+    values = [...new Set(values)];
+    if (values.length > budget) values = d3.range(budget).map(index => values[Math.round(index * (values.length - 1) / (budget - 1))]);
+    return values;
+  }
+  const percentages = data.variants.flatMap(variant => variant.curve.flatMap(point => data.metrics.map((_, index) => valueAt(variant, point, index))));
+  const yDomain = d3.extent([0, 100, ...percentages]);
+
+  function makeCurve(variant) {
+    const panel = document.createElement("div");
+    panel.className = "coverage-panel";
+    const title = document.createElement("div");
+    title.className = "coverage-panel-title";
+    title.textContent = variant.label;
+    const chartContainer = document.createElement("div");
+    const candidate = document.createElement("div");
+    candidate.className = "text-small text-muted";
+    candidate.textContent = `문장 보존율 기준 절충 후보 K=${number.format(variant.candidate_knee.k)}`;
+    panel.append(title, chartContainer, candidate);
+    root.querySelector("[data-curve-facets]").append(panel);
+    const height = 300;
+    const svg = createChart(chartContainer, height, `${variant.label}: 사전 크기별 네 가지 데이터 보존율`);
+    const frame = svg.append("rect").attr("data-chart-frame", "");
+    const grid = svg.append("g").attr("class", "grid");
+    const paths = data.metrics.map((_, index) => svg.append("path").attr("class", "metric-line").attr("stroke", colors[index]));
+    const selectedGuide = svg.append("line").attr("class", "selected-guide");
+    const candidateGuide = svg.append("line").attr("class", "candidate-guide");
+    const selectedPoints = data.metrics.map((_, index) => svg.append("circle").attr("r", 3).attr("fill", colors[index]));
+    const xAxis = svg.append("g").attr("class", "axis");
+    const yAxis = svg.append("g").attr("class", "axis");
+    const xTitle = svg.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("text-anchor", "middle");
+    const yTitle = svg.append("text").attr("class", "axis-title").attr("data-axis", "y");
+    const hoverGuide = svg.append("line").attr("data-chart-hover-guide", "").attr("visibility", "hidden");
+    const hoverPoints = data.metrics.map((_, index) => svg.append("circle").attr("data-chart-hover-marker", "").attr("r", 4).attr("fill", colors[index]).attr("visibility", "hidden"));
+    const overlay = svg.append("rect").attr("data-chart-hit", "").attr("data-chart-hover-overlay", "cross-series").attr("class", "cursor-interaction");
+    let x, y, bounds, shownCurve;
+    let priorAxis = axisScale;
+    const hideHover = () => {
+      hoverGuide.attr("visibility", "hidden");
+      hoverPoints.forEach(point => point.attr("visibility", "hidden"));
+    };
+    const chart = {hideHover, draw};
+    curveCharts.push(chart);
+    function draw(animate = false) {
+      const width = Math.max(1, chartContainer.getBoundingClientRect().width);
+      bounds = {left: 64, right: Math.max(68, width - 12), top: 32, bottom: height - 54};
+      svg.attr("viewBox", `0 0 ${width} ${height}`);
+      const domain = data.display_ranges[displayRange][axisScale];
+      shownCurve = variant.curve.filter(point => point[0] >= domain[0] && point[0] <= domain[1]);
+      x = (axisScale === "log" ? d3.scaleLog() : d3.scaleLinear()).domain(domain).range([bounds.left + 4, bounds.right - 4]);
+      y = d3.scaleLinear().domain(yDomain).range([bounds.bottom - 4, bounds.top + 4]);
+      svg.attr("data-display-range", displayRange).attr("data-domain-min", domain[0]).attr("data-domain-max", domain[1]);
+      root.querySelector("[data-view-scope]").textContent = `표시 범위: K=${number.format(domain[0])}–${number.format(domain[1])}${displayRange === "focus" ? " · 200,000을 넘는 측정점은 전체 어휘 보기에서 표시" : " · 전체 어휘의 100% 보존 끝점 포함"}`;
+      frame.attr("x", bounds.left).attr("y", bounds.top).attr("width", bounds.right - bounds.left).attr("height", bounds.bottom - bounds.top);
+      const ticks = xTicks(x, domain[0], domain[1], width <= 400 ? 4 : 6);
+      xAxis.attr("transform", `translate(0,${bounds.bottom})`).call(d3.axisBottom(x).tickValues(ticks).tickFormat(value => compact(value)).tickSizeOuter(0));
+      xAxis.selectAll(".tick text").attr("text-anchor", (_, index) => index === 0 ? "start" : index === ticks.length - 1 ? "end" : "middle");
+      yAxis.attr("transform", `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues([0, 25, 50, 75, 100]).tickSizeOuter(0));
+      grid.attr("transform", `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues([0, 25, 50, 75, 100]).tickFormat("").tickSize(-(bounds.right - bounds.left)).tickSizeOuter(0));
+      xTitle.attr("x", (bounds.left + bounds.right) / 2).attr("y", height - 8).text(`사전 크기 K (개)${axisScale === "log" ? " · 로그" : ""}`);
+      yTitle.attr("x", bounds.left).attr("y", 15).text("보존율 (%)");
+      const motion = animate && priorAxis !== axisScale && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      for (let index = 0; index < paths.length; index += 1) {
+        const line = d3.line().x(point => x(point[0])).y(point => y(valueAt(variant, point, index)));
+        paths[index].interrupt();
+        const target = motion ? paths[index].transition().duration(220) : paths[index];
+        target.attr("d", line(shownCurve));
+      }
+      const selected = variant.selected.find(point => point[0] === selectedK);
+      selectedGuide.attr("x1", x(selectedK)).attr("x2", x(selectedK)).attr("y1", bounds.top).attr("y2", bounds.bottom);
+      candidateGuide.attr("x1", x(variant.candidate_knee.k)).attr("x2", x(variant.candidate_knee.k)).attr("y1", bounds.top).attr("y2", bounds.bottom);
+      selectedPoints.forEach((point, index) => point.attr("cx", x(selectedK)).attr("cy", y(valueAt(variant, selected, index))));
+      overlay.attr("x", bounds.left).attr("y", bounds.top).attr("width", bounds.right - bounds.left).attr("height", bounds.bottom - bounds.top);
+      declutter(svg, xAxis, yAxis);
+      priorAxis = axisScale;
+      hideHover();
+    }
+    function pointer(event, pin = false) {
+      const [cursor, cursorY] = d3.pointer(event, svg.node());
+      const cursorX = Math.max(bounds.left, Math.min(bounds.right, cursor));
+      const domain = data.display_ranges[displayRange][axisScale];
+      const targetK = Math.max(domain[0], Math.min(domain[1], x.invert(cursorX)));
+      const point = shownCurve[d3.bisector(item => item[0]).center(shownCurve, targetK)];
+      for (const other of curveCharts) if (other !== chart) other.hideHover();
+      hoverGuide.attr("x1", cursorX).attr("x2", cursorX).attr("y1", bounds.top).attr("y2", bounds.bottom).attr("visibility", "visible");
+      hoverPoints.forEach((marker, index) => marker.attr("cx", x(point[0])).attr("cy", y(valueAt(variant, point, index))).attr("visibility", "visible"));
+      if (pin) pinned = true;
+      showTooltip(variant, point, svg.node(), cursorX, cursorY, "측정");
+    }
+    overlay.on("pointermove", event => { if (!pinned || event.pointerType !== "touch") pointer(event); }).on("pointerleave", hideTooltip).on("pointerdown", event => { if (event.pointerType === "touch") pointer(event, true); });
+    if (typeof ResizeObserver === "function") new ResizeObserver(() => draw()).observe(chartContainer);
+    draw();
+  }
+  data.variants.forEach(makeCurve);
+
+  const numeric = data.variants.find(variant => variant.id === "numeric");
+  root.querySelector("[data-bar-label]").textContent = `${numeric.label} · 선택한 다섯 K의 보존율`;
+  const barContainer = root.querySelector("[data-grouped-bars]");
+  const barHeight = 280;
+  const barsSvg = createChart(barContainer, barHeight, `${numeric.label}: 16,384 / 32,768 / 49,152 / 65,000 / 65,536의 보존율 비교`);
+  function drawBars() {
+    barsSvg.selectAll(":not(title):not(desc)").remove();
+    const width = Math.max(1, barContainer.getBoundingClientRect().width);
+    const bounds = {left: 64, right: Math.max(68, width - 12), top: 32, bottom: barHeight - 54};
+    barsSvg.attr("viewBox", `0 0 ${width} ${barHeight}`);
+    barsSvg.append("rect").attr("data-chart-frame", "").attr("x", bounds.left).attr("y", bounds.top).attr("width", bounds.right - bounds.left).attr("height", bounds.bottom - bounds.top);
+    const selected = data.selected_ks.map(k => numeric.selected.find(point => point[0] === k));
+    const x = d3.scaleBand().domain(data.selected_ks).range([bounds.left + 4, bounds.right - 4]).padding(0.2);
+    const sub = d3.scaleBand().domain(d3.range(4)).range([0, x.bandwidth()]).padding(0.1);
+    const y = d3.scaleLinear().domain(yDomain).range([bounds.bottom - 4, bounds.top + 4]);
+    barsSvg.append("g").attr("class", "grid").attr("transform", `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues([0, 25, 50, 75, 100]).tickFormat("").tickSize(-(bounds.right - bounds.left)).tickSizeOuter(0));
+    for (const point of selected) {
+      for (let index = 0; index < 4; index += 1) {
+        barsSvg.append("rect").attr("x", x(point[0]) + sub(index)).attr("y", y(valueAt(numeric, point, index))).attr("width", sub.bandwidth()).attr("height", Math.max(0, y(0) - y(valueAt(numeric, point, index)))).attr("fill", colors[index]);
+      }
+    }
+    const xAxis = barsSvg.append("g").attr("class", "axis").attr("transform", `translate(0,${bounds.bottom})`).call(d3.axisBottom(x).tickFormat(k => width <= 400 ? compact(k).replace("k", "K") : number.format(k)).tickSizeOuter(0));
+    const yAxis = barsSvg.append("g").attr("class", "axis").attr("transform", `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues([0, 25, 50, 75, 100]).tickSizeOuter(0));
+    barsSvg.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("x", (bounds.left + bounds.right) / 2).attr("y", barHeight - 8).attr("text-anchor", "middle").text("사전 크기 K (개)");
+    barsSvg.append("text").attr("class", "axis-title").attr("data-axis", "y").attr("x", bounds.left).attr("y", 15).text("보존율 (%)");
+    const overlay = barsSvg.append("rect").attr("data-chart-hit", "").attr("data-chart-hover-overlay", "cross-series").attr("class", "cursor-interaction").attr("x", bounds.left).attr("y", bounds.top).attr("width", bounds.right - bounds.left).attr("height", bounds.bottom - bounds.top);
+    function pointer(event, pin = false) {
+      const [cursorX, cursorY] = d3.pointer(event, barsSvg.node());
+      const point = selected.reduce((closest, item) => Math.abs(x(item[0]) + x.bandwidth() / 2 - cursorX) < Math.abs(x(closest[0]) + x.bandwidth() / 2 - cursorX) ? item : closest, selected[0]);
+      curveCharts.forEach(chart => chart.hideHover());
+      if (pin) pinned = true;
+      showTooltip(numeric, point, barsSvg.node(), cursorX, cursorY, "선택");
+    }
+    overlay.on("pointermove", event => { if (!pinned || event.pointerType !== "touch") pointer(event); }).on("pointerleave", hideTooltip).on("pointerdown", event => { if (event.pointerType === "touch") pointer(event, true); });
+    declutter(barsSvg, xAxis, yAxis);
+  }
+  if (typeof ResizeObserver === "function") new ResizeObserver(drawBars).observe(barContainer);
+  drawBars();
+
+  for (const variant of data.variants) {
+    const panel = document.createElement("div");
+    panel.className = "coverage-panel";
+    const title = document.createElement("div");
+    title.className = "coverage-panel-title";
+    title.textContent = `${variant.label} · 전체 ${number.format(variant.totals[2])}문단`;
+    panel.append(title);
+    for (const k of [65000, 65536]) {
+      const point = variant.selected.find(item => item[0] === k);
+      for (const index of [2, 3]) {
+        const kept = point[index + 1], total = variant.totals[index], removed = total - kept;
+        const keepPercent = kept / total * 100, removePercent = removed / total * 100;
+        const row = document.createElement("div");
+        row.className = "paragraph-row text-small tabular-nums";
+        const label = document.createElement("div");
+        label.textContent = `K=${number.format(k)} · ${index === 2 ? "일부 문단 (1문장 이상)" : "완전 문단 (모든 문장)"}`;
+        const counts = document.createElement("div");
+        counts.textContent = `보존 ${number.format(kept)} (${formatPercent(keepPercent)}) · 제거 ${number.format(removed)} (${formatPercent(removePercent)})`;
+        const track = document.createElement("div");
+        track.className = "paragraph-track";
+        track.setAttribute("role", "img");
+        track.setAttribute("aria-label", `${variant.label}. ${label.textContent}. 전체 ${number.format(total)}문단 중 ${counts.textContent}`);
+        const keptMark = document.createElement("span");
+        keptMark.className = "paragraph-kept";
+        keptMark.style.width = `${keepPercent}%`;
+        keptMark.style.background = colors[index];
+        const removedMark = document.createElement("span");
+        removedMark.className = "paragraph-removed";
+        removedMark.style.width = `${removePercent}%`;
+        track.append(keptMark, removedMark);
+        row.append(label, counts, track);
+        panel.append(row);
+      }
+    }
+    root.querySelector("[data-paragraph-facets]").append(panel);
+  }
+  kControl.addEventListener("change", () => {
+    selectedK = Number(kControl.value);
+    pinned = false;
+    curveCharts.forEach(chart => chart.draw());
+    hideTooltip();
+    saveState();
+  });
+  axisControl.addEventListener("change", () => {
+    axisScale = axisControl.value;
+    pinned = false;
+    curveCharts.forEach(chart => chart.draw(true));
+    hideTooltip();
+    saveState();
+  });
+  viewControl.addEventListener("change", () => {
+    displayRange = viewControl.value;
+    pinned = false;
+    curveCharts.forEach(chart => chart.draw());
+    hideTooltip();
+    saveState();
+  });
+  window.addEventListener("openai:set_globals", event => {
+    const state = event.detail?.globals?.widgetState?.privateContent;
+    if (!state) return;
+    selectedK = data.selected_ks.includes(state.selectedK) ? state.selectedK : 65000;
+    axisScale = state.axisScale === "log" ? "log" : "linear";
+    displayRange = state.displayRange === "all" ? "all" : "focus";
+    kControl.value = String(selectedK);
+    axisControl.value = axisScale;
+    viewControl.value = displayRange;
+    pinned = false;
+    curveCharts.forEach(chart => chart.draw());
+    hideTooltip();
+  });
+})();
+</script>

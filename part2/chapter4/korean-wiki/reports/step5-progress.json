@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "sentences": 6677632,
+  "paragraphs": 2496587,
+  "tokens": 292363011,
+  "space_tokens": 88101556,
+  "completed_shards": 32,
+  "elapsed_seconds": 9063.262793458998
+}

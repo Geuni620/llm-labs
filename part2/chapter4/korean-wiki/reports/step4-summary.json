@@ -1,0 +1,429 @@
+{
+  "input_sentences": 7099328,
+  "kept_sentences": 6677632,
+  "removed_sentences": 421696,
+  "removed_percent": 5.939942484697143,
+  "duplicate_groups": 194939,
+  "normalization": "NFKC + whitespace; English case preserved",
+  "examples": [
+    {
+      "removed": "1994년 발매.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 4620
+      },
+      "kept": "1994년 발매.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 4614
+      },
+      "total_occurrences": 2
+    },
+    {
+      "removed": "2020년 데뷔 20주년을 맞이했다.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 4889
+      },
+      "kept": "2020년 데뷔 20주년을 맞이했다.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 4666
+      },
+      "total_occurrences": 2
+    },
+    {
+      "removed": "같은 해 12월에는 20주년 기념이자 열 번째 정규 음반 《BETTER》을 발매했다.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 4890
+      },
+      "kept": "같은 해 12월에는 20주년 기념이자 열 번째 정규 음반 《BETTER》을 발매했다.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 4667
+      },
+      "total_occurrences": 2
+    },
+    {
+      "removed": "김성수는 경성방직을 운영하며 물산장려운동에 참여하였고, 1920년에는 양기탁, 유근, 장덕수 등과 동아일보를 설립하였다.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 6017
+      },
+      "kept": "김성수는 경성방직을 운영하며 물산장려운동에 참여하였고, 1920년에는 양기탁, 유근, 장덕수 등과 동아일보를 설립하였다.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 5790
+      },
+      "total_occurrences": 2
+    },
+    {
+      "removed": "늘 드러나지 않게 은미하게 교육인으로서 지내고 싶어했으며 고려대학교는 직접 경영도 하면서 학교에 애착을 갖고 돌보셨다.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 6143
+      },
+      "kept": "늘 드러나지 않게 은미하게 교육인으로서 지내고 싶어했으며 고려대학교는 직접 경영도 하면서 학교에 애착을 갖고 돌보셨다.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 6127
+      },
+      "total_occurrences": 2
+    },
+    {
+      "removed": "세계의 명문대들을 둘러본 후에 고려대학교 건물 모양을 듀크대학교의 모습에서 영감을 얻고 그 모습으로 미학적으로 학교건물도 짓고 손수 나무도 사재로 심고 가꾸면서 교육인으로 살고자 했다.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 6144
+      },
+      "kept": "세계의 명문대들을 둘러본 후에 고려대학교 건물 모양을 듀크대학교의 모습에서 영감을 얻고 그 모습으로 미학적으로 학교건물도 짓고 손수 나무도 사재로 심고 가꾸면서 교육인으로 살고자 했다.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 6128
+      },
+      "total_occurrences": 2
+    },
+    {
+      "removed": "그에게 명예나 권세를 추구할 야심만 있었다면, 그는 해방 후 자신의 야심을 손쉽게 달성할 많은 기회를 가졌을 것이다.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 6619
+      },
+      "kept": "그에게 명예나 권세를 추구할 야심만 있었다면, 그는 해방 후 자신의 야심을 손쉽게 달성할 많은 기회를 가졌을 것이다.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 6515
+      },
+      "total_occurrences": 2
+    },
+    {
+      "removed": "그러나 그는 자신의 명예나 권세에는 조금도 뜻이 없었다.",
+      "removed_source": {
+        "file": "part_00.txt",
+        "line": 6620
+      },
+      "kept": "그러나 그는 자신의 명예나 권세에는 조금도 뜻이 없었다.",
+      "kept_source": {
+        "file": "part_00.txt",
+        "line": 6516
+      },
+      "total_occurrences": 2
+    }
+  ],
+  "top_duplicates": [
+    {
+      "text": "참고: FIFA 자격 규정에 따라 소속된 국가대표팀 국기를 표시합니다.",
+      "occurrences_before": 2259,
+      "occurrences_after": 1,
+      "removed": 2258,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 34236
+      }
+    },
+    {
+      "text": "선수는 복수의 FIFA 비회원국 국적을 가지고 있을 수 있습니다.",
+      "occurrences_before": 2259,
+      "occurrences_after": 1,
+      "removed": 2258,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 34237
+      }
+    },
+    {
+      "text": "최저 시청률과 최고 시청률은 시청률 조사회사와 지역별로 시청률에 차이가 있을 수 있습니다.",
+      "occurrences_before": 1217,
+      "occurrences_after": 1,
+      "removed": 1216,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 54137
+      }
+    },
+    {
+      "text": "단선 승강장 1면 1선의 구조를 갖춘 지상역이다.",
+      "occurrences_before": 787,
+      "occurrences_after": 1,
+      "removed": 786,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 157221
+      }
+    },
+    {
+      "text": "사인은 심근 경색이다.",
+      "occurrences_before": 324,
+      "occurrences_after": 1,
+      "removed": 323,
+      "first_source": {
+        "file": "part_02.txt",
+        "line": 187100
+      }
+    },
+    {
+      "text": "로스앤젤레스에서 태어났다.",
+      "occurrences_before": 304,
+      "occurrences_after": 1,
+      "removed": 303,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 63379
+      }
+    },
+    {
+      "text": "본 문서에는 서울특별시에서 지식공유 프로젝트를 통해 퍼블릭 도메인으로 공개한 저작물을 기초로 작성된 내용이 포함되어 있습니다.",
+      "occurrences_before": 282,
+      "occurrences_after": 1,
+      "removed": 281,
+      "first_source": {
+        "file": "part_02.txt",
+        "line": 88084
+      }
+    },
+    {
+      "text": "뉴욕에서 태어났다.",
+      "occurrences_before": 280,
+      "occurrences_after": 1,
+      "removed": 279,
+      "first_source": {
+        "file": "part_01.txt",
+        "line": 196170
+      }
+    },
+    {
+      "text": "지구가 달의 반그림자를 지날 때 일어난다.",
+      "occurrences_before": 240,
+      "occurrences_after": 1,
+      "removed": 239,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 304112
+      }
+    },
+    {
+      "text": "포리스트 론 메모리얼 파크에 매장되었다.",
+      "occurrences_before": 238,
+      "occurrences_after": 1,
+      "removed": 237,
+      "first_source": {
+        "file": "part_02.txt",
+        "line": 187377
+      }
+    },
+    {
+      "text": "특정도서로 지정하여 관리되고 있다.",
+      "occurrences_before": 231,
+      "occurrences_after": 1,
+      "removed": 230,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 17692
+      }
+    },
+    {
+      "text": "본 항의 어항구역은 다음과 같다.",
+      "occurrences_before": 228,
+      "occurrences_after": 1,
+      "removed": 227,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 123651
+      }
+    },
+    {
+      "text": "상대식 승강장 2면 2선의 구조를 갖춘 지상역이다.",
+      "occurrences_before": 226,
+      "occurrences_after": 1,
+      "removed": 225,
+      "first_source": {
+        "file": "part_01.txt",
+        "line": 148605
+      }
+    },
+    {
+      "text": "서장은 총경으로 보한다.",
+      "occurrences_before": 223,
+      "occurrences_after": 1,
+      "removed": 222,
+      "first_source": {
+        "file": "part_01.txt",
+        "line": 79119
+      }
+    },
+    {
+      "text": "본작의 주인공.",
+      "occurrences_before": 213,
+      "occurrences_after": 1,
+      "removed": 212,
+      "first_source": {
+        "file": "part_00.txt",
+        "line": 61681
+      }
+    }
+  ],
+  "shards": [
+    {
+      "file": "part_00.txt",
+      "input_sentences": 226170,
+      "kept_sentences": 224183
+    },
+    {
+      "file": "part_01.txt",
+      "input_sentences": 213115,
+      "kept_sentences": 210698
+    },
+    {
+      "file": "part_02.txt",
+      "input_sentences": 215811,
+      "kept_sentences": 212258
+    },
+    {
+      "file": "part_03.txt",
+      "input_sentences": 208041,
+      "kept_sentences": 204543
+    },
+    {
+      "file": "part_04.txt",
+      "input_sentences": 213734,
+      "kept_sentences": 209185
+    },
+    {
+      "file": "part_05.txt",
+      "input_sentences": 227257,
+      "kept_sentences": 211400
+    },
+    {
+      "file": "part_06.txt",
+      "input_sentences": 243287,
+      "kept_sentences": 226804
+    },
+    {
+      "file": "part_07.txt",
+      "input_sentences": 243321,
+      "kept_sentences": 227590
+    },
+    {
+      "file": "part_08.txt",
+      "input_sentences": 230287,
+      "kept_sentences": 218780
+    },
+    {
+      "file": "part_09.txt",
+      "input_sentences": 223925,
+      "kept_sentences": 208968
+    },
+    {
+      "file": "part_10.txt",
+      "input_sentences": 232797,
+      "kept_sentences": 217319
+    },
+    {
+      "file": "part_11.txt",
+      "input_sentences": 232077,
+      "kept_sentences": 221151
+    },
+    {
+      "file": "part_12.txt",
+      "input_sentences": 232219,
+      "kept_sentences": 214985
+    },
+    {
+      "file": "part_13.txt",
+      "input_sentences": 228507,
+      "kept_sentences": 206084
+    },
+    {
+      "file": "part_14.txt",
+      "input_sentences": 220591,
+      "kept_sentences": 202859
+    },
+    {
+      "file": "part_15.txt",
+      "input_sentences": 228993,
+      "kept_sentences": 220377
+    },
+    {
+      "file": "part_16.txt",
+      "input_sentences": 214147,
+      "kept_sentences": 205744
+    },
+    {
+      "file": "part_17.txt",
+      "input_sentences": 211437,
+      "kept_sentences": 204689
+    },
+    {
+      "file": "part_18.txt",
+      "input_sentences": 220921,
+      "kept_sentences": 213845
+    },
+    {
+      "file": "part_19.txt",
+      "input_sentences": 213556,
+      "kept_sentences": 206028
+    },
+    {
+      "file": "part_20.txt",
+      "input_sentences": 225057,
+      "kept_sentences": 201487
+    },
+    {
+      "file": "part_21.txt",
+      "input_sentences": 224771,
+      "kept_sentences": 194271
+    },
+    {
+      "file": "part_22.txt",
+      "input_sentences": 206864,
+      "kept_sentences": 178152
+    },
+    {
+      "file": "part_23.txt",
+      "input_sentences": 232558,
+      "kept_sentences": 198296
+    },
+    {
+      "file": "part_24.txt",
+      "input_sentences": 227850,
+      "kept_sentences": 202476
+    },
+    {
+      "file": "part_25.txt",
+      "input_sentences": 215750,
+      "kept_sentences": 207759
+    },
+    {
+      "file": "part_26.txt",
+      "input_sentences": 228941,
+      "kept_sentences": 218815
+    },
+    {
+      "file": "part_27.txt",
+      "input_sentences": 205096,
+      "kept_sentences": 194739
+    },
+    {
+      "file": "part_28.txt",
+      "input_sentences": 207790,
+      "kept_sentences": 198724
+    },
+    {
+      "file": "part_29.txt",
+      "input_sentences": 216467,
+      "kept_sentences": 206799
+    },
+    {
+      "file": "part_30.txt",
+      "input_sentences": 213210,
+      "kept_sentences": 203511
+    },
+    {
+      "file": "part_31.txt",
+      "input_sentences": 214781,
+      "kept_sentences": 205113
+    }
+  ],
+  "elapsed_seconds": 75.19
+}

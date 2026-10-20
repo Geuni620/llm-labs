@@ -1,0 +1,289 @@
+{
+  "kind": "ACTUAL_CHECKPOINT_COMPARISON",
+  "status": "in_progress",
+  "shared_conditions": {
+    "corpus_identity": {
+      "bytes": 20999,
+      "sha256": "126c795f0872cd545d3f468ffb83faa4dc38edef3c7d8282ee5d3b75c0ea771e"
+    },
+    "vocabulary_identity": {
+      "bytes": 688610,
+      "sha256": "641a9ffe566d1252afa76dac5186489e0e744624716826c77fa0d63a8d075a66"
+    },
+    "initialization_sha256": "d4f893ba2ed252cabd158fe72769cd3bf0311f93bfc0028150e6d51ff9b09580",
+    "evaluation_window_sha256": "98812c723f2be1239a9667b64774ac228437fb3ed8b67f79dad1e6953eb5abd4",
+    "scripts": {
+      "train_nplm.py": {
+        "bytes": 20648,
+        "sha256": "0fc8f8cd8fa8b39e4efcbcefd6f5bb63970867b973e6f5d897340aa86f1f0241"
+      },
+      "training_corpus.py": {
+        "bytes": 7362,
+        "sha256": "7cf6806a5641960d3d359741f66ef4a9a8d0af7fc75bcc205860a30818e21b0b"
+      },
+      "benchmark_nplm.py": {
+        "bytes": 28848,
+        "sha256": "96593efc8235930e03fee1002bab6aa61a3eb0de32968c131f606d656953fa1d"
+      }
+    },
+    "runtime": {
+      "python": "3.13.7",
+      "torch": "2.14.1",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+    },
+    "config": {
+      "device": "cpu",
+      "cpu_threads": 4,
+      "context_size": 8,
+      "embedding_dim": 64,
+      "hidden_dim": 128,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "gradient_clip_norm": 1.0,
+      "seed": 42,
+      "evaluation_windows": 16384,
+      "generation_tokens": 64,
+      "temperature": 0.8,
+      "top_k": 40
+    }
+  },
+  "rows": [
+    {
+      "data_percent": 10,
+      "nominal_hours": 3.0,
+      "status": "pending",
+      "result": null,
+      "training_paragraphs": 153358,
+      "training_target_windows": 12333995
+    },
+    {
+      "data_percent": 25,
+      "nominal_hours": 3.0,
+      "status": "pending",
+      "result": null,
+      "training_paragraphs": null,
+      "training_target_windows": null
+    },
+    {
+      "data_percent": 100,
+      "nominal_hours": 3.0,
+      "status": "pending",
+      "result": null,
+      "training_paragraphs": null,
+      "training_target_windows": null
+    },
+    {
+      "data_percent": 100,
+      "nominal_hours": 8.0,
+      "status": "pending",
+      "result": null,
+      "training_paragraphs": null,
+      "training_target_windows": null
+    }
+  ],
+  "curves": {
+    "data-10pct": [
+      {
+        "elapsed_seconds": 2.26249685510993e-05,
+        "steps": 0,
+        "epochs_equivalent": 0.0,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 172767.06967639923,
+          "correct": 0,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 120936.91022205353,
+          "content_correct": 0,
+          "loss": 10.544865092553664,
+          "perplexity": 37981.90315663843,
+          "accuracy": 0.0,
+          "content_loss": 10.49890704245625,
+          "content_perplexity": 36275.83305419793,
+          "content_accuracy": 0.0
+        }
+      },
+      {
+        "elapsed_seconds": 600.0284257499734,
+        "steps": 9689,
+        "epochs_equivalent": 0.10055071369819754,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 59169.6380363428,
+          "correct": 7077,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 57130.74298199499,
+          "content_correct": 2603,
+          "loss": 3.611428102804126,
+          "perplexity": 37.01888185217439,
+          "accuracy": 0.43194580078125,
+          "content_loss": 4.959696413056254,
+          "content_perplexity": 142.5505128527116,
+          "content_accuracy": 0.22597447695112424
+        }
+      },
+      {
+        "elapsed_seconds": 1200.0340984999784,
+        "steps": 20186,
+        "epochs_equivalent": 0.2094867072671912,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 56806.613396826666,
+          "correct": 7307,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 55040.667713027215,
+          "content_correct": 2823,
+          "loss": 3.467200524708659,
+          "perplexity": 32.04690223972554,
+          "accuracy": 0.44598388671875,
+          "content_loss": 4.778250517668827,
+          "content_perplexity": 118.89616125325085,
+          "content_accuracy": 0.24507335706224498
+        }
+      },
+      {
+        "elapsed_seconds": 1800.0737263750052,
+        "steps": 30639,
+        "epochs_equivalent": 0.31796607668480487,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 55637.575476304744,
+          "correct": 7465,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 53939.21467528585,
+          "content_correct": 2970,
+          "loss": 3.3958481125674282,
+          "perplexity": 29.839950383040197,
+          "accuracy": 0.45562744140625,
+          "content_loss": 4.6826299744149535,
+          "content_perplexity": 108.0538781420711,
+          "content_accuracy": 0.25783488150013023
+        }
+      },
+      {
+        "elapsed_seconds": 2400.2482703339774,
+        "steps": 39479,
+        "epochs_equivalent": 0.40970601982569316,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 54510.075991111575,
+          "correct": 7540,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 52734.86666945089,
+          "content_correct": 3077,
+          "loss": 3.3270310053168686,
+          "perplexity": 27.8555159307451,
+          "accuracy": 0.460205078125,
+          "content_loss": 4.578076800889911,
+          "content_perplexity": 97.3270348333333,
+          "content_accuracy": 0.26712388228144807
+        }
+      },
+      {
+        "elapsed_seconds": 3000.586635124986,
+        "steps": 46262,
+        "epochs_equivalent": 0.480098783889567,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 54109.39806068782,
+          "correct": 7532,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 52328.6280666939,
+          "content_correct": 3067,
+          "loss": 3.302575565227528,
+          "perplexity": 27.182559294278345,
+          "accuracy": 0.459716796875,
+          "content_loss": 4.5428099719327975,
+          "content_perplexity": 93.95443887344756,
+          "content_accuracy": 0.26625575136730617
+        }
+      },
+      {
+        "elapsed_seconds": 3600.0398799589602,
+        "steps": 56974,
+        "epochs_equivalent": 0.5912660091073493,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 53438.523439993616,
+          "correct": 7624,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 51665.60490011866,
+          "content_correct": 3170,
+          "loss": 3.261628627929298,
+          "perplexity": 26.091996712289443,
+          "accuracy": 0.46533203125,
+          "content_loss": 4.4852508811631795,
+          "content_perplexity": 88.69920098048502,
+          "content_accuracy": 0.27519749978296726
+        }
+      },
+      {
+        "elapsed_seconds": 3602.3277942499844,
+        "steps": 56975,
+        "epochs_equivalent": 0.5912763869289716,
+        "validation": {
+          "targets": 16384,
+          "negative_log_likelihood_sum": 53439.642686649924,
+          "correct": 7629,
+          "content_targets": 11519,
+          "content_negative_log_likelihood_sum": 51666.017730459804,
+          "content_correct": 3171,
+          "loss": 3.261696941323848,
+          "perplexity": 26.093779206038857,
+          "accuracy": 0.46563720703125,
+          "content_loss": 4.485286720241323,
+          "content_perplexity": 88.70237993504529,
+          "content_accuracy": 0.27528431287438143
+        }
+      }
+    ]
+  },
+  "corpus_statistics": {
+    "train_source_paragraphs": 2445492,
+    "train_source_sentences": 6540153,
+    "train_eligible_sentences": 6539471,
+    "train_eligible_tokens": 296063134,
+    "train_oov_removed_sentences": 3561611,
+    "train_partially_trimmed_paragraphs": 977666,
+    "train_kept_sentences": 2977860,
+    "train_kept_paragraphs": 1529599,
+    "train_target_windows": 124232535,
+    "train_10pct_paragraphs": 153358,
+    "train_10pct_sentences": 297474,
+    "train_10pct_target_windows": 12333995,
+    "train_25pct_paragraphs": 380848,
+    "train_25pct_sentences": 740631,
+    "train_25pct_target_windows": 30892699,
+    "train_100pct_paragraphs": 1529599,
+    "train_100pct_sentences": 2977860,
+    "train_100pct_target_windows": 124232535,
+    "train_oov_removed_paragraphs": 915751,
+    "test_source_paragraphs": 24704,
+    "test_source_sentences": 66543,
+    "test_eligible_sentences": 66543,
+    "test_eligible_tokens": 3011762,
+    "test_oov_removed_sentences": 36502,
+    "test_kept_sentences": 30041,
+    "test_kept_paragraphs": 15477,
+    "test_target_windows": 1247937,
+    "test_partially_trimmed_paragraphs": 9942,
+    "validation_source_paragraphs": 26391,
+    "validation_source_sentences": 70936,
+    "validation_eligible_sentences": 70935,
+    "validation_eligible_tokens": 3190347,
+    "validation_oov_removed_sentences": 39537,
+    "validation_kept_sentences": 31398,
+    "validation_kept_paragraphs": 16365,
+    "validation_target_windows": 1286701,
+    "validation_partially_trimmed_paragraphs": 10525,
+    "validation_oov_removed_paragraphs": 10026,
+    "test_oov_removed_paragraphs": 9227,
+    "train_heldout_overlap_removed_sentences": 32,
+    "train_tokenized_duplicates_removed_sentences": 650,
+    "validation_tokenized_duplicates_removed_sentences": 1,
+    "train_documents": 390716,
+    "validation_documents": 3999,
+    "test_documents": 3929
+  },
+  "note": "No estimates fill missing results. The same validation targets, vocabulary and initialization are required. Test split remains unused; one seed only."
+}

@@ -1,0 +1,112 @@
+<style>
+  #kw-removal-charts { display: grid; gap: 24px; width: 100%; }
+  #kw-removal-charts figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+  #kw-removal-charts .kw-chart { width: 100%; min-width: 0; }
+  #kw-removal-charts svg { display: block; width: 100%; overflow: visible; }
+  #kw-removal-charts svg text { fill: var(--foreground); font-size: 12px; font-family: var(--font-sans); }
+  #kw-removal-charts .kw-tick { stroke: var(--border); stroke-width: 1; }
+  #kw-removal-charts .kw-frame { fill: none; stroke: var(--border); stroke-width: 1; }
+  #kw-removal-charts .kw-bar { fill: var(--viz-series-1); }
+  #kw-removal-charts .kw-track { fill: color-mix(in srgb, var(--foreground) 7%, transparent); }
+  #kw-removal-charts .kw-caption { display: grid; gap: 6px; }
+</style>
+<div id="kw-removal-charts">
+  <figure aria-labelledby="kw-overview-heading">
+    <h3 id="kw-overview-heading">단계별 제거율</h3>
+    <div class="text-small">각 행에 표시한 대상 수가 분모 · 막대는 제거 비율 · 옅은 바탕은 대상 전체 100%</div>
+    <div id="kw-overview-chart" class="kw-chart"></div>
+  </figure>
+  <figure aria-labelledby="kw-content-heading">
+    <h3 id="kw-content-heading">본문행에서 어떤 필터가 많이 제거했나?</h3>
+    <div class="text-small">공통 분모: 구조 행 제외 후 본문행 3,227,444개 · 같은 축에서 비교</div>
+    <div id="kw-content-chart" class="kw-chart"></div>
+    <figcaption class="text-small kw-caption">
+      <div>5번은 괄호·공백을 바꾼 1,031,684행 중, 빈 행이 되어 완전히 제외된 1,634행을 표시했습니다.</div>
+      <div>각 행은 처음 탈락한 사유에 한 번만 집계합니다. 문서·행·문장의 수를 합산하지 않습니다.</div>
+    </figcaption>
+  </figure>
+</div>
+<script type="application/json" id="kw-removal-data">{"stages": [{"label": "1. 수식 문서", "removed": 7259, "base": 582035, "unit": "개 문서", "baseUnit": "개 문서", "percent": 1.2471758571219944}, {"label": "2. 구조 행", "removed": 15396959, "base": 18624403, "unit": "행", "baseUnit": "행", "percent": 82.67088614867279}, {"label": "3~8. 본문행", "removed": 608715, "base": 3227444, "unit": "행", "baseUnit": "행", "percent": 18.86059060978285}, {"label": "중복 문장", "removed": 421696, "base": 7099328, "unit": "개 문장", "baseUnit": "개 문장", "percent": 5.939942484697143}], "content": [{"label": "3. 수학 기호", "removed": 1459, "percent": 0.045206051599965796, "base": 3227444, "unit": "행", "baseUnit": "행"}, {"label": "4. 한자 비율", "removed": 33334, "percent": 1.0328296943339683, "base": 3227444, "unit": "행", "baseUnit": "행"}, {"label": "5. 괄호 정리", "removed": 1634, "percent": 0.050628299050270116, "base": 3227444, "unit": "행", "baseUnit": "행"}, {"label": "6. 문자 비율", "removed": 68907, "percent": 2.1350331717606874, "base": 3227444, "unit": "행", "baseUnit": "행"}, {"label": "7. 한글 비율", "removed": 123633, "percent": 3.8306783944198566, "base": 3227444, "unit": "행", "baseUnit": "행"}, {"label": "8. 종결부호 없음", "removed": 379748, "percent": 11.766214998618102, "base": 3227444, "unit": "행", "baseUnit": "행"}]}</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root = document.getElementById('kw-removal-charts');
+  const data = JSON.parse(document.getElementById('kw-removal-data').textContent);
+  if (!window.d3) throw new Error('D3 did not load');
+  const fmt = value => Number(value).toLocaleString('ko-KR');
+  const percent = value => Number(value).toFixed(2) + '%';
+  function chart(id, rows, whole, title) {
+    const container = root.querySelector('#' + id);
+    function draw() {
+      const width = Math.floor(container.getBoundingClientRect().width);
+      if (!width) return;
+      const compact = width < 460;
+      const left = compact ? 116 : 164, right = compact ? 112 : 146;
+      const top = 32, rowHeight = 50, bottom = 54;
+      const height = top + rowHeight * rows.length + bottom;
+      const plotRight = width - right, plotBottom = height - bottom;
+      const values = rows.map(row => row.percent);
+      const extent = d3.extent([0, ...values, ...(whole ? [100] : [])]);
+      const scale = d3.scaleLinear().domain([0, whole ? extent[1] : extent[1] * 1.08]);
+      if (!whole) scale.nice(compact ? 3 : 5);
+      scale.range([left + 3, plotRight - 3]);
+      const max = scale.domain()[1];
+      const ticks = whole ? [0, 50, 100] : scale.ticks(compact ? 3 : 5);
+      container.replaceChildren();
+      const svg = d3.select(container).append('svg')
+        .attr('viewBox', `0 0 ${width} ${height}`).attr('height', height)
+        .attr('role', 'img').attr('aria-label', title);
+      svg.append('title').text(title);
+      svg.append('desc').text(rows.map(row => `${row.label}: ${fmt(row.removed)}${row.unit} 제외, ${percent(row.percent)}. 분모 ${fmt(row.base)}${row.baseUnit}.`).join(' '));
+      svg.append('rect').attr('class', 'kw-frame').attr('data-chart-frame', '')
+        .attr('x', left).attr('y', top).attr('width', plotRight - left).attr('height', plotBottom - top);
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', 'y').attr('x', 0).attr('y', 17)
+        .text(whole ? '단계 / 대상 수' : '필터');
+      svg.append('text').attr('x', plotRight + 12).attr('y', 17).text('제외 수 · 비율');
+      for (const tick of ticks) {
+        const x = scale(tick);
+        svg.append('line').attr('class', 'kw-tick').attr('x1', x).attr('x2', x)
+          .attr('y1', top).attr('y2', plotBottom);
+        svg.append('text').attr('x', x).attr('y', plotBottom + 21)
+          .attr('text-anchor', tick === 0 ? 'start' : tick === max ? 'end' : 'middle').text(d3.format('~g')(tick));
+      }
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', 'x')
+        .attr('x', (left + plotRight) / 2).attr('y', height - 6).attr('text-anchor', 'middle').text('제외율 (%)');
+      rows.forEach((row, index) => {
+        const center = top + rowHeight * (index + 0.5);
+        const label = svg.append('text').attr('class', 'kw-row-label').attr('x', 0).attr('y', center - (whole ? 4 : -4));
+        label.append('tspan').text(row.label);
+        if (whole) label.append('tspan').attr('x', 0).attr('dy', 17).text(fmt(row.base) + row.baseUnit + ' 중');
+        if (whole) svg.append('rect').attr('class', 'kw-track')
+          .attr('x', scale(0)).attr('y', center - 9).attr('width', scale(100) - scale(0)).attr('height', 18);
+        svg.append('rect').attr('class', 'kw-bar').attr('x', scale(0)).attr('y', center - 9)
+          .attr('width', scale(row.percent) - scale(0)).attr('height', 18);
+        if (scale(row.percent) - scale(0) < 2) svg.append('circle').attr('class', 'kw-bar')
+          .attr('cx', scale(row.percent)).attr('cy', center).attr('r', 2);
+        const value = svg.append('text').attr('class', 'kw-value').attr('x', plotRight + 12).attr('y', center - 3);
+        value.append('tspan').text(fmt(row.removed) + row.unit);
+        value.append('tspan').attr('x', plotRight + 12).attr('dy', 17).text(percent(row.percent));
+      });
+      const labels = Array.from(container.querySelectorAll('text'));
+      const boxes = labels.map(el => el.getBBox());
+      const outside = boxes.filter(box => box.x < -0.5 || box.x + box.width > width + 0.5 || box.y < -0.5 || box.y + box.height > height + 0.5);
+      if (outside.length) throw new Error(`Chart label overflow at ${width}px: ${id}`);
+      const overlaps = [];
+      for (let i = 0; i < boxes.length; i++) {
+        for (let j = i + 1; j < boxes.length; j++) {
+          const a = boxes[i], b = boxes[j];
+          if (a.x < b.x + b.width + 4 && b.x < a.x + a.width + 4 && a.y < b.y + b.height && b.y < a.y + a.height) overlaps.push([i, j]);
+        }
+      }
+      if (overlaps.length) throw new Error(`Chart label overlap at ${width}px: ${id}`);
+      console.info(`Chart checked: ${id}, width ${width}, ${rows.length} rows, no label overflow or overlap.`);
+    }
+    draw();
+    new ResizeObserver(draw).observe(container);
+  }
+  const rejected = data.content.reduce((sum, row) => sum + row.removed, 0);
+  if (rejected !== data.stages[2].removed) throw new Error('Filter counts do not match paragraph removal total');
+  chart('kw-overview-chart', data.stages, true, '각 단계의 제거율. 문서·행·문장은 대상 수를 구분해 읽습니다.');
+  chart('kw-content-chart', data.content, false, '본문행 3,227,444개를 공통 분모로 한 필터 3~8번의 제거율');
+})();
+</script>

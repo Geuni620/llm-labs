@@ -1,0 +1,116 @@
+{
+  "id": "kowiki/1792712",
+  "title": "리우데자네이루나무쥐",
+  "source_file": "parquet/data/kowiki/000_00000.parquet",
+  "source_row_index": 1,
+  "step1_row": {
+    "text": "# 리우데자네이루나무쥐\n리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n",
+    "id": "kowiki/1792712",
+    "wikiname": "kowiki",
+    "page_id": 1792712,
+    "title": "리우데자네이루나무쥐",
+    "url": "https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%9A%B0%EB%8D%B0%EC%9E%90%EB%84%A4%EC%9D%B4%EB%A3%A8%EB%82%98%EB%AC%B4%EC%A5%90",
+    "date_modified": "2023-08-24T13:29:04Z",
+    "in_language": "ko",
+    "wikidata_id": "Q1763562",
+    "bytes_html": 112148,
+    "wikitext": "{{위키데이터 속성 추적}}\n{{생물 분류\n|이름=리우데자네이루나무쥐\n|색=동물\n|그림=\n|그림_설명=리우데자네이루나무쥐\n|상태=VU\n|상태_기준=iucn3.1\n|상태_출처=<ref name=iucn>{{IUCN2008|assessor=Bonvicino, C.|assessor2=Percequillo, A.|last-assessor-amp=yes|year=2008|id=16799|title=Phaenomys ferrugineus|downloaded=15 March 2009}}</ref>\n|계=[[동물|동물계]]\n|문=[[척삭동물|척삭동물문]]\n|강=[[포유류|포유강]]\n|목=[[설치류|쥐목]]\n|아목=[[쥐아목]]\n|상과=[[쥐상과]]\n|과=[[비단털쥐과]]\n|아과=[[목화쥐아과]]\n|족=[[올드필드쥐족]]\n|속='''리우데자네이루나무쥐속'''<br />(''Phaenomys'')\n|속_명명=Thomas, 1917\n|종='''리우데자네이루나무쥐'''<br />(''P. ferrugineus'')\n|학명=''Phaenomys ferrugineus''\n|학명_명명=(Thomas, 1894)\n|하위_링크=아종\n|하위=\n|지도=\n|지도_설명=리우데자네이루나무쥐의 분포 지역\n|이명=\n}}\n\n'''리우데자네이루나무쥐'''(''Phaenomys ferrugineus'')는 [[비단털쥐과]] [[목화쥐아과]]에 속하는 [[남아메리카]] [[설치류]]의 일종이다.<ref name=MSW3>{{MSW3 Muroidea | id = 13000849 | page = }}</ref> [[브라질]]에서 발견된다. '''리우데자네이루나무쥐속'''(''Phaenomys'')의 유일종이다.\n\n== 각주 ==\n{{각주}}\n\n{{목화쥐아과}}\n\n{{분류군 식별자|from=Q1763562}}\n\n[[분류:목화쥐아과]]\n[[분류:1894년 기재된 포유류]]\n[[분류:올드필드 토머스가 명명한 분류군]]",
+    "version": 35471326,
+    "infoboxes": "[{\"title\": \"\\uc0dd\\ubb3c \\ubd84\\ub958\\u2139\\ufe0f\", \"data\": {\"\\uacc4\": \"\\ub3d9\\ubb3c\\uacc4\", \"\\ubb38\": \"\\ucc99\\uc0ad\\ub3d9\\ubb3c\\ubb38\", \"\\uac15\": \"\\ud3ec\\uc720\\uac15\", \"\\ubaa9\": \"\\uc950\\ubaa9\", \"\\uc544\\ubaa9\": \"\\uc950\\uc544\\ubaa9\", \"\\uc0c1\\uacfc\": \"\\uc950\\uc0c1\\uacfc\", \"\\uacfc\": \"\\ube44\\ub2e8\\ud138\\uc950\\uacfc\", \"\\uc544\\uacfc\": \"\\ubaa9\\ud654\\uc950\\uc544\\uacfc\", \"\\uc871\": \"\\uc62c\\ub4dc\\ud544\\ub4dc\\uc950\\uc871\", \"\\uc18d\": \"\\ub9ac\\uc6b0\\ub370\\uc790\\ub124\\uc774\\ub8e8\\ub098\\ubb34\\uc950\\uc18d \\u00b7 (Phaenomys) \\u00b7 Thomas, 1917\", \"\\uc885\": \"\\ub9ac\\uc6b0\\ub370\\uc790\\ub124\\uc774\\ub8e8\\ub098\\ubb34\\uc950 \\u00b7 (P. ferrugineus)\"}}, {\"title\": \"\\ud559\\uba85\", \"data\": {\"\\ud559\\uba85\": [\"Phaenomys ferrugineus\", \"(Thomas, 1894)\"]}}, {\"title\": \"\\ubcf4\\uc804\\uc0c1\\ud0dc\", \"data\": {\"\\ubcf4\\uc804\\uc0c1\\ud0dc\": \"\\u00b7 \\ucde8\\uc57d(VU): \\uc808\\uba78\\uac00\\ub2a5\\uc131 \\ub192\\uc74c \\u00b7 \\ud3c9\\uac00\\uae30\\uad00: IUCN \\uc801\\uc0c9 \\ubaa9\\ub85d 3.1\"}}]",
+    "has_math": false
+  },
+  "step2_file": "examples/kowiki-1792712.text.txt",
+  "step2_equals_source_text": true,
+  "step3": {
+    "before": "# 리우데자네이루나무쥐\n리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n",
+    "document_rejected": false,
+    "document_rejected_by": null,
+    "raw_paragraphs": "리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n\n",
+    "paragraphs": "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속의 유일종이다.\n\n",
+    "sentences": "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다.\n브라질에서 발견된다.\n리우데자네이루나무쥐속의 유일종이다.\n\n",
+    "counts": {
+      "source_lines": 3,
+      "documents_without_formula": 1,
+      "lines_after_document_filter": 3,
+      "rejected_is_structural": 2,
+      "lines_entering_clean_paragraph": 1,
+      "lines_changed_by_clean_paragraph": 1,
+      "characters_removed_by_clean_paragraph": 34,
+      "documents": 1,
+      "raw_paragraphs": 1,
+      "raw_characters": 111,
+      "clean_paragraphs": 1,
+      "clean_characters": 77,
+      "sentences": 3
+    },
+    "filter_snapshots": [
+      {
+        "number": 1,
+        "filter": "has_formula",
+        "text": "# 리우데자네이루나무쥐\n리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n"
+      },
+      {
+        "number": 2,
+        "filter": "is_structural",
+        "text": "리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n\n"
+      },
+      {
+        "number": 3,
+        "filter": "has_math_symbol",
+        "text": "리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n\n"
+      },
+      {
+        "number": 4,
+        "filter": "hanja_ratio",
+        "text": "리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n\n"
+      },
+      {
+        "number": 5,
+        "filter": "clean_paragraph",
+        "text": "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속의 유일종이다.\n\n"
+      },
+      {
+        "number": 6,
+        "filter": "letter_ratio",
+        "text": "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속의 유일종이다.\n\n"
+      },
+      {
+        "number": 7,
+        "filter": "hangul_ratio",
+        "text": "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속의 유일종이다.\n\n"
+      },
+      {
+        "number": 8,
+        "filter": "is_sentence_shape",
+        "text": "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속의 유일종이다.\n\n"
+      }
+    ],
+    "line_decisions": [
+      {
+        "line": 1,
+        "before": "# 리우데자네이루나무쥐",
+        "after": null,
+        "rejected_by": "is_structural",
+        "sentences": []
+      },
+      {
+        "line": 2,
+        "before": "리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.",
+        "after": "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속의 유일종이다.",
+        "rejected_by": null,
+        "sentences": [
+          "리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다.",
+          "브라질에서 발견된다.",
+          "리우데자네이루나무쥐속의 유일종이다."
+        ]
+      },
+      {
+        "line": 3,
+        "before": "",
+        "after": null,
+        "rejected_by": "is_structural",
+        "sentences": []
+      }
+    ]
+  }
+}

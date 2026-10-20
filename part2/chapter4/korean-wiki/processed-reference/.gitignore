@@ -1,0 +1,20 @@
+# 원본 데이터 (2.1 GB, HuggingFace에서 다운로드)
+parquet/
+
+# 중간/최종 데이터 — 대용량, 파이프라인으로 재생성 가능
+paragraphs_raw/
+paragraphs/
+sentences/
+sentences_dedup/
+tokens/
+tokens_filtered_*/
+token_ids_*/
+
+# 생성된 텍스트 파일 (vocab, 로그, 테스트 출력 등)
+*.txt
+
+# step5b 불일치 로그 (~1GB)
+tokens_verify_mismatches*.txt
+
+# N-gram 캐시 (compare_ngram.py가 첫 실행 시 재생성)
+ngram_*.pkl

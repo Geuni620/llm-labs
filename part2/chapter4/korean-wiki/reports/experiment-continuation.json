@@ -1,0 +1,56 @@
+{
+  "status": "stopped",
+  "phase": "data-10pct",
+  "child_pid": null,
+  "started_at": "2026-10-17T21:21:47+0900",
+  "driver": {
+    "bytes": 12511,
+    "sha256": "a8c59d8b974f1d99a4f1bf834a90f3561ddb8f787ed82caa962e8ce51de0ad06"
+  },
+  "completed_phases": [
+    "step5-full-verification",
+    "token-frequency-verification",
+    "step6-numeric-verification",
+    "vocabulary-coverage-full",
+    "vocabulary-coverage-plot-full",
+    "token-frequency-plot-full",
+    "nplm-benchmark"
+  ],
+  "updated_at": "2026-10-18T00:25:29+0900",
+  "reused_step5_verification": {
+    "policy": "reuse full SHA/CRC verification with unchanged bound manifests and file size/mtime",
+    "verified_shards": 32,
+    "report": {
+      "bytes": 46883,
+      "sha256": "40b92613d8b270f3d9a247ffc45fceaa845befdf3035ab5a0115aa66baaba1da"
+    },
+    "summary": {
+      "bytes": 21933,
+      "sha256": "f833ab8e3eb9f842e3a3d070a189994705d8262236172536e9f1d340aacedc31"
+    },
+    "state": {
+      "bytes": 27783,
+      "sha256": "16c128e271b3911baa7324de1a42fca34bb6dfd8ab0c2934013665cc9f86a4a1"
+    }
+  },
+  "log": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/training-comparison-queue.log",
+  "decision": {
+    "vocab_size": 35328,
+    "device": "cpu",
+    "profile_target_predictions_per_second": 1061.6439847973509,
+    "criterion": "Numeric vocabulary retention knee in K=16,384..65,536; fastest measured matching CPU/MPS configuration",
+    "quality_optimum_proven": false
+  },
+  "supervision": {
+    "mode": "adopt_existing_queue",
+    "observer_pid": 83932,
+    "queue_pid": 37631,
+    "previous_parent_cancelled_by_server_restart": true,
+    "training_restarted": false,
+    "queue_restarted": false,
+    "adopted_at": "2026-10-18T00:12:47+0900"
+  },
+  "user_deferred_training": true,
+  "user_scope_change_at": "2026-10-18T00:26:39.250887+09:00",
+  "handoff_report": "reports/chapter4-handoff.json"
+}

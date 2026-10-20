@@ -1,0 +1,34 @@
+어휘 수 K와 실제 데이터 보존율: 정확한 순위 기반 분석
+상태: complete
+범위: 32/32 완료 샤드
+K는 pad/unk/bos/eos용 4개 예약 슬롯을 포함합니다. 실제 보통 토큰은 상위 K-4개입니다.
+숫자 분리 모드는 SN/W_SERIAL을 문자 단위로 변환한 뒤 빈도·순위·OOV를 계산합니다.
+문장 보존은 모든 토큰이 어휘에 있을 때만 성립합니다. 문단 ANY는 한 문장 이상 남김, ALL은 문단 전체를 보존합니다.
+모든 수치는 원본 위키 문서가 아닌 실제 토큰화 문장/문단을 분모로 사용합니다.
+
+숫자 분리 전: 실제 Kiwi 형태소/품사
+빈도 총 토큰 292,363,011 / 종류 1,570,824 / 문장 6,677,632 / 문단 2,496,587
+K=16,384: 토큰 빈도 커버 95.7102%, 문장 24.9275%, 문단 ANY 41.7995%, 문단 ALL 9.4311%; 실제 남는 학습 토큰 60,386,119
+K=32,768: 토큰 빈도 커버 97.2760%, 문장 41.0227%, 문단 ANY 58.6177%, 문단 ALL 19.1545%; 실제 남는 학습 토큰 107,474,559
+K=49,152: 토큰 빈도 커버 97.8953%, 문장 50.0444%, 문단 ANY 66.4029%, 문단 ALL 26.2264%; 실제 남는 학습 토큰 135,194,956
+K=65,000: 토큰 빈도 커버 98.2288%, 문장 55.7120%, 문단 ANY 70.8761%, 문단 ALL 31.3604%; 실제 남는 학습 토큰 152,971,588
+K=65,536: 토큰 빈도 커버 98.2376%, 문장 55.8682%, 문단 ANY 70.9982%, 문단 ALL 31.5069%; 실제 남는 학습 토큰 153,459,522
+운영 비교용 무릎 후보 K=36352: maximum normalized distance above the endpoint chord
+무릎 후보는 데이터 보존율과 어휘 크기만 비교한 휴리스틱이며 모델 품질의 최적값이 아닙니다.
+K × 남는 학습 토큰은 단순 비용 대리값이며 CPU 시간이나 처리량을 측정한 결과가 아닙니다.
+문장/문단 50·60·70·80·90%를 처음 만족하는 정확한 K:
+{"sentence_keep": [{"target_percent": 50, "k": 49044, "within_uint16": true}, {"target_percent": 60, "k": 81981, "within_uint16": false}, {"target_percent": 70, "k": 150548, "within_uint16": false}, {"target_percent": 80, "k": 308779, "within_uint16": false}, {"target_percent": 90, "k": 726388, "within_uint16": false}], "lecture_paragraph_keep": [{"target_percent": 50, "k": 22568, "within_uint16": true}, {"target_percent": 60, "k": 35018, "within_uint16": true}, {"target_percent": 70, "k": 61245, "within_uint16": true}, {"target_percent": 80, "k": 134527, "within_uint16": false}, {"target_percent": 90, "k": 412351, "within_uint16": false}], "strict_paragraph_keep": [{"target_percent": 50, "k": 177540, "within_uint16": false}, {"target_percent": 60, "k": 300451, "within_uint16": false}, {"target_percent": 70, "k": 506030, "within_uint16": false}, {"target_percent": 80, "k": 848046, "within_uint16": false}, {"target_percent": 90, "k": 1263120, "within_uint16": false}]}
+
+숫자 분리 후: 강의의 SN/W_SERIAL 문자 분리
+빈도 총 토큰 302,281,587 / 종류 1,484,881 / 문장 6,677,632 / 문단 2,496,587
+K=16,384: 토큰 빈도 커버 96.1588%, 문장 27.6312%, 문단 ANY 45.0587%, 문단 ALL 10.7912%; 실제 남는 학습 토큰 70,341,671
+K=32,768: 토큰 빈도 커버 97.5582%, 문장 43.8441%, 문단 ANY 61.1103%, 문단 ALL 21.2669%; 실제 남는 학습 토큰 119,916,594
+K=49,152: 토큰 빈도 커버 98.1033%, 문장 52.5407%, 문단 ANY 68.3217%, 문단 ALL 28.4914%; 실제 남는 학습 토큰 147,730,654
+K=65,000: 토큰 빈도 커버 98.3994%, 문장 57.9197%, 문단 ANY 72.4721%, 문단 ALL 33.5990%; 실제 남는 학습 토큰 165,221,184
+K=65,536: 토큰 빈도 커버 98.4073%, 문장 58.0700%, 문단 ANY 72.5842%, 문단 ALL 33.7484%; 실제 남는 학습 토큰 165,709,695
+운영 비교용 무릎 후보 K=35328: maximum normalized distance above the endpoint chord
+무릎 후보는 데이터 보존율과 어휘 크기만 비교한 휴리스틱이며 모델 품질의 최적값이 아닙니다.
+K × 남는 학습 토큰은 단순 비용 대리값이며 CPU 시간이나 처리량을 측정한 결과가 아닙니다.
+문장/문단 50·60·70·80·90%를 처음 만족하는 정확한 K:
+{"sentence_keep": [{"target_percent": 50, "k": 43463, "within_uint16": true}, {"target_percent": 60, "k": 72969, "within_uint16": false}, {"target_percent": 70, "k": 134743, "within_uint16": false}, {"target_percent": 80, "k": 278494, "within_uint16": false}, {"target_percent": 90, "k": 652103, "within_uint16": false}], "lecture_paragraph_keep": [{"target_percent": 50, "k": 19923, "within_uint16": true}, {"target_percent": 60, "k": 31001, "within_uint16": true}, {"target_percent": 70, "k": 54777, "within_uint16": true}, {"target_percent": 80, "k": 121285, "within_uint16": false}, {"target_percent": 90, "k": 373439, "within_uint16": false}], "strict_paragraph_keep": [{"target_percent": 50, "k": 157878, "within_uint16": false}, {"target_percent": 60, "k": 268203, "within_uint16": false}, {"target_percent": 70, "k": 448387, "within_uint16": false}, {"target_percent": 80, "k": 762102, "within_uint16": false}, {"target_percent": 90, "k": 1177178, "within_uint16": false}]}
+

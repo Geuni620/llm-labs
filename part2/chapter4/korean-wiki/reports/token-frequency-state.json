@@ -1,0 +1,973 @@
+{
+  "status": "complete",
+  "model_type": "cong-global",
+  "tokenizer_fingerprint": "58390631e1b57268b9e70630d82c76b2d9f3c7819c5c55595f91b846b685d1d0",
+  "config": {
+    "schema_version": 1,
+    "model_type": "cong-global",
+    "kiwipiepy_version": "0.24.0",
+    "kiwipiepy_model_version": "0.24.0",
+    "python_version": "3.13.7",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "workers": 8,
+    "batch_size": 1024,
+    "newline": "CRLF",
+    "space_token": "<sp>/WS",
+    "model_files": {
+      "combiningRule.txt": {
+        "bytes": 3611,
+        "sha256": "4f78771daa3dd8a52aa0b5c8824396578ece8e8bbaa11cf3add82721b046bc15",
+        "crc32": "daa2e48a"
+      },
+      "cong.mdl": {
+        "bytes": 75854705,
+        "sha256": "5f64105e45f04e5313f41c0ff1db5fe629780c8076c4a6fd3b1b2cf78c2cc934",
+        "crc32": "4fab305d"
+      },
+      "default.dict": {
+        "bytes": 3090954,
+        "sha256": "d4293e44b2588d0c3aabbce607a0f41ad3534abd31b34139847b127254e01549",
+        "crc32": "18c62ac2"
+      },
+      "dialect.dict": {
+        "bytes": 644,
+        "sha256": "bb6f0ab37dbfcc0fd33dc679121218d24725ae438f31bb362f9b24703e93cda2",
+        "crc32": "dd0cd4f4"
+      },
+      "extract.mdl": {
+        "bytes": 17370,
+        "sha256": "a0c92ffc051e43ae497845cdb8d4c8b9e2f359893cb55c67279c76d1d531ee17",
+        "crc32": "30a844b2"
+      },
+      "multi.dict": {
+        "bytes": 12064440,
+        "sha256": "e9eff7712d163b214c750333a5d388ab77b50ec386ae55b360babcd24c0c3195",
+        "crc32": "33093a84"
+      },
+      "nounchr.mdl": {
+        "bytes": 9734234,
+        "sha256": "4b687e36836dd60dcb7addcfcf369ac082b339bab76549574ac1ce2b7ccd6836",
+        "crc32": "9bda57d7"
+      },
+      "sj.morph": {
+        "bytes": 8462892,
+        "sha256": "d0af27b3863799cc2058f66c8058cb2bc0d16e8ae0daaf42c7739b4e375523d7",
+        "crc32": "85bc56ac"
+      },
+      "typo.dict": {
+        "bytes": 395,
+        "sha256": "aa15e48fcd32886441fc1ff9719a3109d3192e91d4b67efbd64260610d68322d",
+        "crc32": "875eec02"
+      }
+    },
+    "tokenizer_sha256": "af2200e1b788a5251b1b278f16a056ee0878cf46870ad8168ab7c7c30f70b4dd"
+  },
+  "counter_runtime": {
+    "python_version": "3.13.7",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "script_sha256": "4bff1ed31a6e5f7d43e699b8705b35c02feff53d6202ededde1cf4fb8730d83c"
+  },
+  "shard_count": 32,
+  "source_shards": [
+    {
+      "file": "part_00.txt",
+      "sentences": 224183,
+      "paragraphs": 82354,
+      "tokens": 9765059,
+      "space_tokens": 2941027,
+      "input": {
+        "bytes": 86266708,
+        "mtime_ns": 1792230065132608198,
+        "sha256": "ff9550642fb47c841a3adf6a08c081b454cf4a4192e7dd7991691a9bab1afc9d",
+        "crc32": "064e13b2"
+      },
+      "unique_types": 166505,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_00.json.gz",
+        "bytes": 1390104,
+        "mtime_ns": 1792230364069523862,
+        "sha256": "d15d6191e55d222bfb09da8deff39e25508b4ed4173509882a2c07396d98ff32",
+        "crc32": "c38b355c"
+      }
+    },
+    {
+      "file": "part_01.txt",
+      "sentences": 210698,
+      "paragraphs": 78475,
+      "tokens": 9062673,
+      "space_tokens": 2731875,
+      "input": {
+        "bytes": 80081550,
+        "mtime_ns": 1792230239212164046,
+        "sha256": "a225d2bc816fd7e7c5d47386a5013dda45ac0cb22fcad2b4ba39a6b7b119ad9e",
+        "crc32": "7edd61c8"
+      },
+      "unique_types": 159406,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_01.json.gz",
+        "bytes": 1327637,
+        "mtime_ns": 1792230377791900720,
+        "sha256": "76b0f79f2c9d368d32861bcbf841b4ce97fec43b121a868bd6c464d56d2c792b",
+        "crc32": "9fd823a1"
+      }
+    },
+    {
+      "file": "part_02.txt",
+      "sentences": 212258,
+      "paragraphs": 79287,
+      "tokens": 9267074,
+      "space_tokens": 2794137,
+      "input": {
+        "bytes": 81911583,
+        "mtime_ns": 1792230444989162656,
+        "sha256": "16e0d4869b06737b64e497753097cdae5ecf150fe8b69f4b310df7be4d2eae56",
+        "crc32": "18227da2"
+      },
+      "unique_types": 162994,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_02.json.gz",
+        "bytes": 1360959,
+        "mtime_ns": 1792230475029638615,
+        "sha256": "fbf790fd90d16317494f6b151e435689b6e841ba7c2aa2586550c2554a98e268",
+        "crc32": "8f7cb73d"
+      }
+    },
+    {
+      "file": "part_03.txt",
+      "sentences": 204543,
+      "paragraphs": 77925,
+      "tokens": 8833262,
+      "space_tokens": 2658287,
+      "input": {
+        "bytes": 78050775,
+        "mtime_ns": 1792230662930859293,
+        "sha256": "dfa9c776024964b10d5a524082bf8b03959000624af99db4872870c67d9af48a",
+        "crc32": "f7357c6d"
+      },
+      "unique_types": 160173,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_03.json.gz",
+        "bytes": 1334289,
+        "mtime_ns": 1792230689629435990,
+        "sha256": "d69e6a4be9be78d40954fb463fd32a3636fc0b11f87a772d5075ce59dc0b83c4",
+        "crc32": "41156392"
+      }
+    },
+    {
+      "file": "part_04.txt",
+      "sentences": 209185,
+      "paragraphs": 79131,
+      "tokens": 9029654,
+      "space_tokens": 2719069,
+      "input": {
+        "bytes": 79812460,
+        "mtime_ns": 1792230896073209780,
+        "sha256": "e1f7c10222ac614b25384a3b45e734a637425417b48bcea8a6a29793d7b1045f",
+        "crc32": "0f1d7964"
+      },
+      "unique_types": 162776,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_04.json.gz",
+        "bytes": 1359447,
+        "mtime_ns": 1792230915507706236,
+        "sha256": "c84126ad91116cfaed8f1daa9c4b22761a560dd507aa7810f06e895720a8c6fe",
+        "crc32": "b8061bd7"
+      }
+    },
+    {
+      "file": "part_05.txt",
+      "sentences": 211400,
+      "paragraphs": 79653,
+      "tokens": 9269216,
+      "space_tokens": 2791762,
+      "input": {
+        "bytes": 81882120,
+        "mtime_ns": 1792231090402943755,
+        "sha256": "4d8de2c05216d0efd57d14ae00af62314df233f3d6180b267c5c2d78b43eb829",
+        "crc32": "3f75d53c"
+      },
+      "unique_types": 162177,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_05.json.gz",
+        "bytes": 1353905,
+        "mtime_ns": 1792231103354444067,
+        "sha256": "1a894a69f21215dd6f61113d2b9d8bc074cb7d8599919a597f2d47a270e82d1c",
+        "crc32": "fb6612b2"
+      }
+    },
+    {
+      "file": "part_06.txt",
+      "sentences": 226804,
+      "paragraphs": 85057,
+      "tokens": 9912331,
+      "space_tokens": 2979877,
+      "input": {
+        "bytes": 87530165,
+        "mtime_ns": 1792231321526758177,
+        "sha256": "f9238d709eeaf44566bb85d8977880bc0fa57791d884dc60e0f09d33db6150cf",
+        "crc32": "94baac53"
+      },
+      "unique_types": 171432,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_06.json.gz",
+        "bytes": 1430967,
+        "mtime_ns": 1792231343347380796,
+        "sha256": "5a002cfeb8745fc12b28d6879bbaed7d316be1c8cf25309f93dbd0aa904bf091",
+        "crc32": "05e2c827"
+      }
+    },
+    {
+      "file": "part_07.txt",
+      "sentences": 227590,
+      "paragraphs": 84033,
+      "tokens": 10043375,
+      "space_tokens": 3022711,
+      "input": {
+        "bytes": 88722312,
+        "mtime_ns": 1792231527574095866,
+        "sha256": "e0ecb3bfd81fbc2f41952d4275f3c8d704f289dc33a08f2542036bb5468c761f",
+        "crc32": "8e940f5e"
+      },
+      "unique_types": 171125,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_07.json.gz",
+        "bytes": 1427078,
+        "mtime_ns": 1792231546095257718,
+        "sha256": "77f73978d5a71305a68b4fb6f62f970708282cb1cf130e13a95002f4b91180a7",
+        "crc32": "b9ac589f"
+      }
+    },
+    {
+      "file": "part_08.txt",
+      "sentences": 218780,
+      "paragraphs": 82104,
+      "tokens": 9538516,
+      "space_tokens": 2871778,
+      "input": {
+        "bytes": 84287573,
+        "mtime_ns": 1792231719972526844,
+        "sha256": "56430d576e96575a4cc62111b67e442cea0663f4ebd1c9ad47906526471fa801",
+        "crc32": "91d6030b"
+      },
+      "unique_types": 166651,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_08.json.gz",
+        "bytes": 1391863,
+        "mtime_ns": 1792231734583893292,
+        "sha256": "9d1e24de3448f81822056b8415ab13b99d462129acc6049a187df7cd50504697",
+        "crc32": "94126beb"
+      }
+    },
+    {
+      "file": "part_09.txt",
+      "sentences": 208968,
+      "paragraphs": 78829,
+      "tokens": 9061237,
+      "space_tokens": 2726367,
+      "input": {
+        "bytes": 80054656,
+        "mtime_ns": 1792231881189214685,
+        "sha256": "e2dbd6d2b81d33423c404bfc919466b3afbb15531ae9a9ac6d52fc61993e8f1a",
+        "crc32": "0cce57b1"
+      },
+      "unique_types": 161459,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_09.json.gz",
+        "bytes": 1348076,
+        "mtime_ns": 1792231900049771815,
+        "sha256": "2e1916134182d5031a305c69902893935db8a617157f26504c8f4e3f73ae4d1c",
+        "crc32": "36b75411"
+      }
+    },
+    {
+      "file": "part_10.txt",
+      "sentences": 217319,
+      "paragraphs": 80738,
+      "tokens": 9579589,
+      "space_tokens": 2888437,
+      "input": {
+        "bytes": 84637737,
+        "mtime_ns": 1792232067645219048,
+        "sha256": "149037a03653b2d40758432945a09390b2d511a6402e656b8f5e0cd1c0af474e",
+        "crc32": "6d1d4287"
+      },
+      "unique_types": 164952,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_10.json.gz",
+        "bytes": 1374835,
+        "mtime_ns": 1792232080877467798,
+        "sha256": "591eb31013b3e4ba3f0d8e75e62f22d4f29e118563f58850bdc5c41017888436",
+        "crc32": "c5b38823"
+      }
+    },
+    {
+      "file": "part_11.txt",
+      "sentences": 221151,
+      "paragraphs": 82180,
+      "tokens": 9740243,
+      "space_tokens": 2939702,
+      "input": {
+        "bytes": 86114925,
+        "mtime_ns": 1792232248740264251,
+        "sha256": "6e9c5d10de8d2f14af029ee4c9dbef8e8b3dbb250c1dc2708ff78debd795b588",
+        "crc32": "ff9e257c"
+      },
+      "unique_types": 166394,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_11.json.gz",
+        "bytes": 1386854,
+        "mtime_ns": 1792232265816495253,
+        "sha256": "8d193a1d79744eeb48048e92844176cd7f76d08222af9cadeca6031f3c11346b",
+        "crc32": "31d74e62"
+      }
+    },
+    {
+      "file": "part_12.txt",
+      "sentences": 214985,
+      "paragraphs": 79358,
+      "tokens": 9513131,
+      "space_tokens": 2865272,
+      "input": {
+        "bytes": 84046996,
+        "mtime_ns": 1792232435392104917,
+        "sha256": "ff37dfb40384cccdef8f3cd4a2581d04cc97ae06650b0c7f66851ce7d53ddd38",
+        "crc32": "6c2a318c"
+      },
+      "unique_types": 164874,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_12.json.gz",
+        "bytes": 1371592,
+        "mtime_ns": 1792232456063115258,
+        "sha256": "fc55a0ee683e0c7f3e044f16f05d14f19a7d40e3733cb45eadd63bf3b278d6bb",
+        "crc32": "2ba845b5"
+      }
+    },
+    {
+      "file": "part_13.txt",
+      "sentences": 206084,
+      "paragraphs": 76934,
+      "tokens": 9156723,
+      "space_tokens": 2759707,
+      "input": {
+        "bytes": 80922487,
+        "mtime_ns": 1792233009403830810,
+        "sha256": "d1e118f404bd712fbea261d06d7f9254897d358db3990d2f30e236685d37e01f",
+        "crc32": "04ebbfcd"
+      },
+      "unique_types": 160372,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_13.json.gz",
+        "bytes": 1339101,
+        "mtime_ns": 1792233056024358473,
+        "sha256": "bf3a1ea1828e3ad32126bc290443b57ab7ec235b3b15e63fcec493215df534f6",
+        "crc32": "a880ae18"
+      }
+    },
+    {
+      "file": "part_14.txt",
+      "sentences": 202859,
+      "paragraphs": 76322,
+      "tokens": 8909043,
+      "space_tokens": 2684923,
+      "input": {
+        "bytes": 78719299,
+        "mtime_ns": 1792233543872387951,
+        "sha256": "87228ec8330475ad8be327880693d557e6b9472e8ea7aae8239cec0707964443",
+        "crc32": "c42fdfca"
+      },
+      "unique_types": 159033,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_14.json.gz",
+        "bytes": 1324040,
+        "mtime_ns": 1792233583628659615,
+        "sha256": "4f5fcb798ff21556f182e4cc2ad5f4a631802044b08c5ca8c3e51591a6c847f2",
+        "crc32": "0b7c9502"
+      }
+    },
+    {
+      "file": "part_15.txt",
+      "sentences": 220377,
+      "paragraphs": 81702,
+      "tokens": 9788747,
+      "space_tokens": 2950747,
+      "input": {
+        "bytes": 86448638,
+        "mtime_ns": 1792233884581115919,
+        "sha256": "af3cdd688f19cced5a9a0bc43b8bf06b9b4be454da3ff5869191dba350b0b3c9",
+        "crc32": "5a95bc1e"
+      },
+      "unique_types": 164334,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_15.json.gz",
+        "bytes": 1371440,
+        "mtime_ns": 1792233899106115575,
+        "sha256": "2365154d20995754b3d6ae9fc19119d822eb57eb64b723da43afb5c03d87d7c6",
+        "crc32": "42e8d059"
+      }
+    },
+    {
+      "file": "part_16.txt",
+      "sentences": 205744,
+      "paragraphs": 76125,
+      "tokens": 9100919,
+      "space_tokens": 2750066,
+      "input": {
+        "bytes": 80440773,
+        "mtime_ns": 1792234074428704794,
+        "sha256": "7791fa8a5eb6822d3ac354d2e019b226e944a27b791348fbf7d4ebe7377ba4df",
+        "crc32": "ed65666f"
+      },
+      "unique_types": 160566,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_16.json.gz",
+        "bytes": 1338186,
+        "mtime_ns": 1792234085196797373,
+        "sha256": "b05b7c177d2b0e0e2a0eeca5372c032c0b3e0f74d9aef257f6c2f81fe553e690",
+        "crc32": "20502a8e"
+      }
+    },
+    {
+      "file": "part_17.txt",
+      "sentences": 204689,
+      "paragraphs": 76338,
+      "tokens": 8877380,
+      "space_tokens": 2678696,
+      "input": {
+        "bytes": 78524008,
+        "mtime_ns": 1792234254182241916,
+        "sha256": "9ff77de3f24b4dc9051ef490e7087dff7ac6faf5eacb51ea09faa5784d6c3057",
+        "crc32": "fdf68c76"
+      },
+      "unique_types": 161537,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_17.json.gz",
+        "bytes": 1345773,
+        "mtime_ns": 1792234265958308373,
+        "sha256": "c608ebd897297002278990971cfecfde50aa356aa33b6a7b99219099c033904d",
+        "crc32": "88f8b4c5"
+      }
+    },
+    {
+      "file": "part_18.txt",
+      "sentences": 213845,
+      "paragraphs": 79337,
+      "tokens": 9429077,
+      "space_tokens": 2842665,
+      "input": {
+        "bytes": 83239194,
+        "mtime_ns": 1792234478374771824,
+        "sha256": "1b74d489e5be04f27d66dda8ccad88dbcffb4b445da1d91019ab13e49d87c7a3",
+        "crc32": "179f51ec"
+      },
+      "unique_types": 166877,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_18.json.gz",
+        "bytes": 1391257,
+        "mtime_ns": 1792234507811912169,
+        "sha256": "9997d8ba00797ee5e8c06f1914ae69eccc3977c0d8ea539b35988b4314e61997",
+        "crc32": "1d0e346e"
+      }
+    },
+    {
+      "file": "part_19.txt",
+      "sentences": 206028,
+      "paragraphs": 75396,
+      "tokens": 8994960,
+      "space_tokens": 2710661,
+      "input": {
+        "bytes": 79509584,
+        "mtime_ns": 1792234681380297128,
+        "sha256": "605330db2d2855703bc3e88cec13e09ef1796e75da3cc4161375418a0d0f941e",
+        "crc32": "ff3ff99c"
+      },
+      "unique_types": 162428,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_19.json.gz",
+        "bytes": 1354188,
+        "mtime_ns": 1792234699547430419,
+        "sha256": "270599afd911fe44b597af6d4f5fdda2dd2d528f2b99bd7fd74efda8f0188356",
+        "crc32": "82eb5c16"
+      }
+    },
+    {
+      "file": "part_20.txt",
+      "sentences": 201487,
+      "paragraphs": 74926,
+      "tokens": 8940322,
+      "space_tokens": 2697522,
+      "input": {
+        "bytes": 78983262,
+        "mtime_ns": 1792234994052696045,
+        "sha256": "ef4a6aef3213952cc63852fda2598dd740c4ea04c77af61798185bfe806fe412",
+        "crc32": "1498354e"
+      },
+      "unique_types": 160991,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_20.json.gz",
+        "bytes": 1341532,
+        "mtime_ns": 1792235044821335703,
+        "sha256": "d7e92caaf1f85e9b0f55586a812ec965e89807593ac13ec1fced704ddd68964c",
+        "crc32": "89ecb6cd"
+      }
+    },
+    {
+      "file": "part_21.txt",
+      "sentences": 194271,
+      "paragraphs": 72632,
+      "tokens": 8555204,
+      "space_tokens": 2575840,
+      "input": {
+        "bytes": 75586150,
+        "mtime_ns": 1792235358578627597,
+        "sha256": "6417d5a8a72abe5262b0c55e44c748903f94b4fbd6b5e9ad57c4ffc2b8265d0d",
+        "crc32": "478afe05"
+      },
+      "unique_types": 155474,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_21.json.gz",
+        "bytes": 1293811,
+        "mtime_ns": 1792235377511211004,
+        "sha256": "3d048c6291512465362c03070a856411bf4a479172c7e889185a5197bdeb085a",
+        "crc32": "2dda9d8d"
+      }
+    },
+    {
+      "file": "part_22.txt",
+      "sentences": 178152,
+      "paragraphs": 68382,
+      "tokens": 7802114,
+      "space_tokens": 2348414,
+      "input": {
+        "bytes": 68896045,
+        "mtime_ns": 1792235582481570386,
+        "sha256": "f6894d6a60a70d493b67aa1d9a06ca11f691b0fc15959dc973ec1d1e2c5c3ff8",
+        "crc32": "1774f035"
+      },
+      "unique_types": 150571,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_22.json.gz",
+        "bytes": 1244155,
+        "mtime_ns": 1792235592416551245,
+        "sha256": "5ab730f82308c04ac7f1761e8ea58cc3510ac2df5856cc6faef873cb05ac1d18",
+        "crc32": "e9749dc9"
+      }
+    },
+    {
+      "file": "part_23.txt",
+      "sentences": 198296,
+      "paragraphs": 74726,
+      "tokens": 8735291,
+      "space_tokens": 2631784,
+      "input": {
+        "bytes": 77149767,
+        "mtime_ns": 1792235793436907088,
+        "sha256": "a483d67b19da21f5569041152f6e903e514b1afd716ec4a5dc19f31cbebc030d",
+        "crc32": "ea989d27"
+      },
+      "unique_types": 157923,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_23.json.gz",
+        "bytes": 1312236,
+        "mtime_ns": 1792235830444980439,
+        "sha256": "14accd87107ca2920328d6d8696f8e944c6eb79a4ed8f590ae57d5e038678c78",
+        "crc32": "be9eb6c2"
+      }
+    },
+    {
+      "file": "part_24.txt",
+      "sentences": 202476,
+      "paragraphs": 74652,
+      "tokens": 8922099,
+      "space_tokens": 2692651,
+      "input": {
+        "bytes": 78835922,
+        "mtime_ns": 1792236222198841136,
+        "sha256": "f3508ca561881ea09b582e3deb03280f174fb537b07ef18d48227cbd73610fbf",
+        "crc32": "848a1cb8"
+      },
+      "unique_types": 158148,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_24.json.gz",
+        "bytes": 1314122,
+        "mtime_ns": 1792236304776972488,
+        "sha256": "7c3d8a1941ff8a258a7d9330c49f302a1ecb683f5d20e5639534bd6d74695147",
+        "crc32": "43ff2cc1"
+      }
+    },
+    {
+      "file": "part_25.txt",
+      "sentences": 207759,
+      "paragraphs": 77872,
+      "tokens": 9148547,
+      "space_tokens": 2757456,
+      "input": {
+        "bytes": 80839001,
+        "mtime_ns": 1792236678977625047,
+        "sha256": "6f7f5f5cbedf0ae5855f4eae6b39d9cb2c986c32382b01d7be56418859bed85d",
+        "crc32": "1882bc41"
+      },
+      "unique_types": 163354,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_25.json.gz",
+        "bytes": 1360854,
+        "mtime_ns": 1792236709689922634,
+        "sha256": "a0c4245799127ffd563e709dada3fc379626dc008d0e819d77a766c2af38771b",
+        "crc32": "a45fe1e5"
+      }
+    },
+    {
+      "file": "part_26.txt",
+      "sentences": 218815,
+      "paragraphs": 80863,
+      "tokens": 9662706,
+      "space_tokens": 2914821,
+      "input": {
+        "bytes": 85409190,
+        "mtime_ns": 1792237060296458230,
+        "sha256": "b0a04afd4c10dbcf607d28d239962f57a57ab579eaa98db23573e10124fd8fb8",
+        "crc32": "c2ca6439"
+      },
+      "unique_types": 169108,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_26.json.gz",
+        "bytes": 1408634,
+        "mtime_ns": 1792237088880800591,
+        "sha256": "48b6ae1b12ab3a625a7c0fe8e8f02904f3425b0e0cc30e3d9650a5429a194387",
+        "crc32": "52d8e7db"
+      }
+    },
+    {
+      "file": "part_27.txt",
+      "sentences": 194739,
+      "paragraphs": 73909,
+      "tokens": 8487373,
+      "space_tokens": 2553176,
+      "input": {
+        "bytes": 74986372,
+        "mtime_ns": 1792237400334911584,
+        "sha256": "f8f5120cd5025f83fa4b7f3fb3f1f741d0a38f47063ee9dd58b62d9982fc3f9d",
+        "crc32": "050c1a15"
+      },
+      "unique_types": 156925,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_27.json.gz",
+        "bytes": 1308676,
+        "mtime_ns": 1792237423659678556,
+        "sha256": "54753d3a081c581ce5849fbb679c0bd4dadb738d13a7ebfe0ba833f50fcec936",
+        "crc32": "2c28c2c9"
+      }
+    },
+    {
+      "file": "part_28.txt",
+      "sentences": 198724,
+      "paragraphs": 76380,
+      "tokens": 8612460,
+      "space_tokens": 2595154,
+      "input": {
+        "bytes": 76081651,
+        "mtime_ns": 1792237743417884000,
+        "sha256": "cc7071cf697dccad34c9a486de2a9a1560fdd3b3a2107a650745971f5bfbcf3d",
+        "crc32": "edf85388"
+      },
+      "unique_types": 158554,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_28.json.gz",
+        "bytes": 1319532,
+        "mtime_ns": 1792237761638465054,
+        "sha256": "7444e42e7a7b99cf167a74d024f0c3dc41f3df51e9edec0003c251a342c082ea",
+        "crc32": "11bc0a1b"
+      }
+    },
+    {
+      "file": "part_29.txt",
+      "sentences": 206799,
+      "paragraphs": 77883,
+      "tokens": 8988862,
+      "space_tokens": 2708615,
+      "input": {
+        "bytes": 79425114,
+        "mtime_ns": 1792238099791719188,
+        "sha256": "94e41bd2f81e1ecc4701ff4d4f2e2cf46b039fedea0d55e4ae91617035659e99",
+        "crc32": "8f75e691"
+      },
+      "unique_types": 159683,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_29.json.gz",
+        "bytes": 1333269,
+        "mtime_ns": 1792238126240989853,
+        "sha256": "9cce81db99394af6bd3d4deb6ef9e2dead1c3e27a072d6fecd0cd6ff7bb9cc45",
+        "crc32": "8b390a7b"
+      }
+    },
+    {
+      "file": "part_30.txt",
+      "sentences": 203511,
+      "paragraphs": 76704,
+      "tokens": 8778914,
+      "space_tokens": 2645618,
+      "input": {
+        "bytes": 77571364,
+        "mtime_ns": 1792238415674518823,
+        "sha256": "44ac39e885c5be669fcada21bc8cdce119e8a4f4b0f4eff3476284381dbffe91",
+        "crc32": "3982b8dd"
+      },
+      "unique_types": 161160,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_30.json.gz",
+        "bytes": 1339781,
+        "mtime_ns": 1792238432657244432,
+        "sha256": "4992a4b795ceab2537c42358524765e06829cfed685bda9026bb07db0e7c6971",
+        "crc32": "ad116861"
+      }
+    },
+    {
+      "file": "part_31.txt",
+      "sentences": 205113,
+      "paragraphs": 76380,
+      "tokens": 8856910,
+      "space_tokens": 2672739,
+      "input": {
+        "bytes": 78233349,
+        "mtime_ns": 1792238730489001492,
+        "sha256": "9a6052907b75779d162aacf44d2bf91b2a71d6417eaf10adc03a2698e0354247",
+        "crc32": "8992efa4"
+      },
+      "unique_types": 159804,
+      "cache": {
+        "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/frequency-cache/part_31.json.gz",
+        "bytes": 1330935,
+        "mtime_ns": 1792238746299677401,
+        "sha256": "f652873191e946f90fb4e11d08507e55e3a6e73beab2522814c6b99c4dc13743",
+        "crc32": "989fb0c0"
+      }
+    }
+  ],
+  "sentences": 6677632,
+  "paragraphs": 2496587,
+  "tokens": 292363011,
+  "space_tokens": 88101556,
+  "unique_types": 1570824,
+  "top30": [
+    {
+      "rank": 1,
+      "token": "<sp>/WS",
+      "count": 88101556,
+      "percent": 30.13430313864157,
+      "cumulative_percent": 30.13430313864157
+    },
+    {
+      "rank": 2,
+      "token": "./SF",
+      "count": 6713064,
+      "percent": 2.2961399860531606,
+      "cumulative_percent": 32.43044312469473
+    },
+    {
+      "rank": 3,
+      "token": "하/XSV",
+      "count": 5884326,
+      "percent": 2.012677999133071,
+      "cumulative_percent": 34.4431211238278
+    },
+    {
+      "rank": 4,
+      "token": "의/JKG",
+      "count": 5637548,
+      "percent": 1.9282699205748706,
+      "cumulative_percent": 36.37139104440267
+    },
+    {
+      "rank": 5,
+      "token": "다/EF",
+      "count": 5360452,
+      "percent": 1.8334918571487828,
+      "cumulative_percent": 38.20488290155146
+    },
+    {
+      "rank": 6,
+      "token": "었/EP",
+      "count": 5193508,
+      "percent": 1.7763902424715416,
+      "cumulative_percent": 39.98127314402299
+    },
+    {
+      "rank": 7,
+      "token": ",/SP",
+      "count": 4495846,
+      "percent": 1.5377615604047805,
+      "cumulative_percent": 41.519034704427774
+    },
+    {
+      "rank": 8,
+      "token": "에/JKB",
+      "count": 4412311,
+      "percent": 1.5091892045126052,
+      "cumulative_percent": 43.02822390894038
+    },
+    {
+      "rank": 9,
+      "token": "ᆫ/ETM",
+      "count": 4113263,
+      "percent": 1.406902667314505,
+      "cumulative_percent": 44.43512657625489
+    },
+    {
+      "rank": 10,
+      "token": "을/JKO",
+      "count": 4061861,
+      "percent": 1.3893210998569172,
+      "cumulative_percent": 45.82444767611181
+    },
+    {
+      "rank": 11,
+      "token": "는/JX",
+      "count": 3471088,
+      "percent": 1.187252788281073,
+      "cumulative_percent": 47.01170046439288
+    },
+    {
+      "rank": 12,
+      "token": "이/VCP",
+      "count": 3184375,
+      "percent": 1.0891853210528057,
+      "cumulative_percent": 48.10088578544568
+    },
+    {
+      "rank": 13,
+      "token": "어/EC",
+      "count": 3060510,
+      "percent": 1.04681847048018,
+      "cumulative_percent": 49.14770425592586
+    },
+    {
+      "rank": 14,
+      "token": "를/JKO",
+      "count": 2585099,
+      "percent": 0.8842086388281177,
+      "cumulative_percent": 50.03191289475398
+    },
+    {
+      "rank": 15,
+      "token": "은/JX",
+      "count": 2427927,
+      "percent": 0.8304494442356116,
+      "cumulative_percent": 50.8623623389896
+    },
+    {
+      "rank": 16,
+      "token": "이/JKS",
+      "count": 2204956,
+      "percent": 0.7541843246374282,
+      "cumulative_percent": 51.61654666362702
+    },
+    {
+      "rank": 17,
+      "token": "되/XSV",
+      "count": 2109750,
+      "percent": 0.7216200136890778,
+      "cumulative_percent": 52.3381666773161
+    },
+    {
+      "rank": 18,
+      "token": "년/NNB",
+      "count": 2084231,
+      "percent": 0.7128914813372202,
+      "cumulative_percent": 53.05105815865332
+    },
+    {
+      "rank": 19,
+      "token": "고/EC",
+      "count": 2000518,
+      "percent": 0.6842582422302389,
+      "cumulative_percent": 53.73531640088356
+    },
+    {
+      "rank": 20,
+      "token": "에서/JKB",
+      "count": 1979449,
+      "percent": 0.6770517902485277,
+      "cumulative_percent": 54.41236819113209
+    },
+    {
+      "rank": 21,
+      "token": "는/ETM",
+      "count": 1921090,
+      "percent": 0.6570906468055222,
+      "cumulative_percent": 55.06945883793761
+    },
+    {
+      "rank": 22,
+      "token": "으로/JKB",
+      "count": 1820963,
+      "percent": 0.6228431543961627,
+      "cumulative_percent": 55.69230199233377
+    },
+    {
+      "rank": 23,
+      "token": "로/JKB",
+      "count": 1565735,
+      "percent": 0.5355448333373471,
+      "cumulative_percent": 56.227846825671115
+    },
+    {
+      "rank": 24,
+      "token": "가/JKS",
+      "count": 1528084,
+      "percent": 0.522666665243778,
+      "cumulative_percent": 56.7505134909149
+    },
+    {
+      "rank": 25,
+      "token": "ᆫ다/EF",
+      "count": 1180572,
+      "percent": 0.4038034756729195,
+      "cumulative_percent": 57.154316966587814
+    },
+    {
+      "rank": 26,
+      "token": "하/XSA",
+      "count": 1104515,
+      "percent": 0.3777888988836553,
+      "cumulative_percent": 57.53210586547147
+    },
+    {
+      "rank": 27,
+      "token": "들/XSN",
+      "count": 1085830,
+      "percent": 0.37139787153170345,
+      "cumulative_percent": 57.90350373700317
+    },
+    {
+      "rank": 28,
+      "token": "적/XSN",
+      "count": 952047,
+      "percent": 0.32563866295658034,
+      "cumulative_percent": 58.229142399959755
+    },
+    {
+      "rank": 29,
+      "token": "있/VX",
+      "count": 845139,
+      "percent": 0.2890717936955438,
+      "cumulative_percent": 58.5182141936553
+    },
+    {
+      "rank": 30,
+      "token": "월/NNB",
+      "count": 833140,
+      "percent": 0.28496764934467034,
+      "cumulative_percent": 58.80318184299996
+    }
+  ],
+  "frequency_sum_matches_step5": true,
+  "space_token_count_matches_step5": true,
+  "output": {
+    "bytes": 80136977,
+    "mtime_ns": 1792238784965724335,
+    "sha256": "0d48b4cb27f8cc24aa371b03c8d96386e6e8e5c667041f8eca93dc603df6ff8e",
+    "crc32": "0f90e024"
+  },
+  "elapsed_seconds": 8433.535593833949,
+  "expected_shard_count": 32
+}

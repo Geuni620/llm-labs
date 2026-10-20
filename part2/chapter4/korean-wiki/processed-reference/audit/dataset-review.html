@@ -1,0 +1,102 @@
+<div id="wiki-review">
+  <div class="nav nav-pills" role="tablist" aria-label="데이터 검사 내용">
+    <button type="button" id="wiki-tab-duplicates" class="nav-link active" role="tab" aria-controls="wiki-duplicates" aria-selected="true">중복 검사</button>
+    <button type="button" id="wiki-tab-formats" class="nav-link" role="tab" aria-controls="wiki-formats" aria-selected="false">파일 형식</button>
+  </div>
+  <section id="wiki-duplicates" role="tabpanel" aria-labelledby="wiki-tab-duplicates">
+    <h3>문장과 토큰열 · 32개 파일 전수 검사</h3>
+    <table class="table table-sm" aria-label="단계별 문장과 토큰의 중복">
+      <thead><tr><th scope="col">단계</th><th scope="col" class="text-end">전체</th><th scope="col" class="text-end">추가 중복</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">문장 분할 직후</th><td class="text-end">7,099,328</td><td class="text-end">421,696</td></tr>
+        <tr><th scope="row">중복 제거 후</th><td class="text-end">6,677,632</td><td class="text-end">0</td></tr>
+        <tr><th scope="row">형태소 토큰열</th><td class="text-end">6,677,632</td><td class="text-end">472</td></tr>
+        <tr><th scope="row">토큰열 · 끝 공백 무시</th><td class="text-end">6,677,632</td><td class="text-end">682</td></tr>
+      </tbody>
+    </table>
+    <div class="text-small text-muted">문장 비교: NFKC + 공백 정리 · 중복 수: 첫 항목을 제외한 추가 등장 · 682개는 472개를 포함</div>
+    <div class="card" style="padding:16px">
+      <div class="text-small text-muted">형태소 토큰열이 완전히 같은 실제 두 문장</div>
+      <div>2020년에 입단하였다.</div>
+      <div>2020년에 입단했다.</div>
+    </div>
+    <h3>최종 ID 배열 · 같은 문단 전체가 반복되는 경우</h3>
+    <table class="table table-sm" aria-label="어휘 크기별 최종 ID 문단 중복">
+      <thead><tr><th scope="col">어휘 수</th><th scope="col" class="text-end">전체 문단</th><th scope="col" class="text-end">추가 중복</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">16,384</th><td class="text-end">1,134,023</td><td class="text-end">96</td></tr>
+        <tr><th scope="row">32,768</th><td class="text-end">1,538,413</td><td class="text-end">101</td></tr>
+        <tr><th scope="row">49,152</th><td class="text-end">1,721,891</td><td class="text-end">94</td></tr>
+        <tr><th scope="row">65,536</th><td class="text-end">1,828,788</td><td class="text-end">93</td></tr>
+      </tbody>
+    </table>
+    <div class="text-small text-muted">각 어휘 버전 안에서 &lt;bos&gt;부터 &lt;eos&gt;까지 ID 전체 일치</div>
+    <h3>표현이 다른 후보 · 확정 중복과 별도 집계</h3>
+    <dl class="wiki-candidates">
+      <dt>공백·문장부호·영문 대소문자 차이</dt><dd class="tabular-nums">7,617개</dd>
+      <dt>숫자만 바뀐 문장 틀</dt><dd class="tabular-nums">76,127개</dd>
+    </dl>
+    <div class="text-small text-muted">숫자가 다르면 서로 다른 사실일 수 있음 · 후보끼리 중첩 가능 · 의미 전체를 비교한 검사는 아님</div>
+  </section>
+  <section id="wiki-formats" role="tabpanel" aria-labelledby="wiki-tab-formats" hidden>
+    <h3>배포 원본과 전처리 파일</h3>
+    <table class="table table-sm" aria-label="위키 데이터셋의 파일 형식">
+      <thead><tr><th scope="col">파일·폴더</th><th scope="col">실제 형식</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Hugging Face 원본</th><td>Parquet 2개 · 14개 컬럼<br><span class="text-small text-muted">현재 패키지에는 원본 파일 제외</span></td></tr>
+        <tr><th scope="row"><code>sentences_dedup/*.txt</code></th><td>UTF-8 · 한 줄에 한 문장<br>32개 파일 · 빈 줄은 문단 경계</td></tr>
+        <tr><th scope="row"><code>tokens/*.txt</code></th><td>UTF-8 · 형태소/품사 토큰열<br>32개 파일 · 공백은 <code>&lt;sp&gt;/WS</code></td></tr>
+        <tr><th scope="row"><code>vocab_*.txt</code></th><td>탭으로 구분한 토큰·빈도 2열<br>5개 파일 · 0부터 세는 행 번호가 ID</td></tr>
+        <tr><th scope="row"><code>token_ids_*/*.npy</code></th><td>NumPy · 1차원 <code>uint16</code><br>128개 파일 = 32개 × 어휘 크기 4종</td></tr>
+        <tr><th scope="row"><code>ngram_*.pkl</code></th><td>Python pickle 직렬화<br>N-gram 집계 파일 2개</td></tr>
+      </tbody>
+    </table>
+    <h3>실제 데이터 예</h3>
+    <div class="card" style="padding:16px">
+      <div class="text-small text-muted">문장</div><div>이름은 못이지만 커다란 석호다.</div>
+      <div class="text-small text-muted">형태소·품사</div><div class="wiki-code">이름/NNG 은/JX &lt;sp&gt;/WS 못/NNG 이/VCP 지만/EC …</div>
+      <div class="text-small text-muted">ID 배열 · 어휘 32,768의 첫 부분</div><div class="wiki-code">[2, 152, 21, 4, 9065, 16, 77, 4, …]</div>
+      <div class="text-small text-muted">part_00.npy shape: (4210724,) · 토큰당 2바이트</div>
+    </div>
+  </section>
+</div>
+<style>
+#wiki-review {display:grid;gap:16px;min-width:0}
+#wiki-review section:not([hidden]) {display:grid;gap:12px}
+#wiki-review h3 {margin:4px 0 0}
+#wiki-review code,.wiki-code {overflow-wrap:anywhere}
+.wiki-candidates {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;margin:0}
+.wiki-candidates dt,.wiki-candidates dd {margin:0}
+</style>
+<script>
+(() => {
+  const root = document.getElementById('wiki-review');
+  const tabs = [...root.querySelectorAll('[role="tab"]')];
+  function select(id) {
+    for (const tab of tabs) {
+      const active = tab.id === id;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', String(active));
+      root.querySelector('#' + tab.getAttribute('aria-controls')).hidden = !active;
+    }
+  }
+  for (const tab of tabs) {
+    tab.addEventListener('click', () => {
+      select(tab.id);
+      if (window.openai && typeof window.openai.setWidgetState === 'function') {
+        window.openai.setWidgetState({modelContent:{section:tab.id},privateContent:null}).catch(() => {});
+      }
+    });
+  }
+  if (window.openai && window.openai.widgetState) {
+    const state = window.openai.widgetState.modelContent || window.openai.widgetState;
+    if (tabs.some(tab => tab.id === state.section)) select(state.section);
+  }
+  window.addEventListener('openai:set_globals', event => {
+    const state = event.detail && event.detail.globals && event.detail.globals.widgetState;
+    const value = state && (state.modelContent || state).section;
+    if (tabs.some(tab => tab.id === value)) select(value);
+  });
+  console.log('Dataset audit report ready.');
+})();
+</script>

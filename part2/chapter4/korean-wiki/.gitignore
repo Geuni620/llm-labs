@@ -1,0 +1,42 @@
+# 한국어 위키 원본과 Hugging Face 다운로드 캐시
+parquet/
+
+# 강의 참고용 압축본
+*.7z
+
+__pycache__/
+
+# 직접 재생성하는 전체 문단·문장 결과
+paragraphs_raw/
+paragraphs/
+sentences/
+sentences_dedup/
+sentences_dedup_removed.txt
+.step3-*/
+.step4-*/
+
+# Kiwi 실행 환경과 재생성 가능한 전체 토큰 출력
+.venv-kiwi/
+.venv-kiwi-x86/
+.python-kiwi-x86/
+tokens/
+.step5-*/
+frequency-cache/
+token_frequencies.txt
+tokens_numeric/
+token_frequencies.numeric.txt
+reports/token_frequencies.partial.all.txt
+reports/token_frequencies.partial.txt
+.venv-training/
+.training-prep-*/
+training-corpora/
+training-runs/
+
+# 실행 잠금·로그·부분 분석과 미리보기 (원본은 로컬에 보존)
+reports/.*.lock
+reports/**/*.log
+reports/*partial*
+reports/*.preview.html
+
+# 전체 분석으로 재생성할 수 있는 대용량 순위 히스토그램 캐시
+reports/*.histograms.json.gz

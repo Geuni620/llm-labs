@@ -1,0 +1,86 @@
+{
+  "repo_id": "HuggingFaceFW/finewiki",
+  "revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "wikipedia_snapshot": "2025-08",
+  "download_verified_at_utc": "2026-10-17T08:19:24.442383+00:00",
+  "total_bytes": 2189740360,
+  "total_rows": 582035,
+  "columns": [
+    {
+      "name": "text",
+      "type": "string"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "wikiname",
+      "type": "string"
+    },
+    {
+      "name": "page_id",
+      "type": "int64"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "url",
+      "type": "string"
+    },
+    {
+      "name": "date_modified",
+      "type": "string"
+    },
+    {
+      "name": "in_language",
+      "type": "string"
+    },
+    {
+      "name": "wikidata_id",
+      "type": "string"
+    },
+    {
+      "name": "bytes_html",
+      "type": "int64"
+    },
+    {
+      "name": "wikitext",
+      "type": "string"
+    },
+    {
+      "name": "version",
+      "type": "int64"
+    },
+    {
+      "name": "infoboxes",
+      "type": "string"
+    },
+    {
+      "name": "has_math",
+      "type": "bool"
+    }
+  ],
+  "files": [
+    {
+      "file": "parquet/data/kowiki/000_00000.parquet",
+      "bytes": 1136708888,
+      "rows": 310045,
+      "row_groups": 311,
+      "sha256": "9d81151055ea2da4b483a1314c56d8f355f730d6a49a1144eaf0faca51d41e80",
+      "sha256_matches_hugging_face": true,
+      "compression": "ZSTD"
+    },
+    {
+      "file": "parquet/data/kowiki/000_00001.parquet",
+      "bytes": 1053031472,
+      "rows": 271990,
+      "row_groups": 272,
+      "sha256": "ac7668e599cda4dbc426b9f5fdc6c5878adde302cb66ae97006700a5000b21c9",
+      "sha256_matches_hugging_face": true,
+      "compression": "ZSTD"
+    }
+  ]
+}

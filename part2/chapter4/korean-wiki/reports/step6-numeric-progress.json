@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "shard_count": 32,
+  "expected_shard_count": 32,
+  "input_tokens": 292363011,
+  "tokens": 302281587,
+  "sentences": 6677632,
+  "paragraphs": 2496587,
+  "space_tokens": 88101556,
+  "numeric_source_occurrences": 6599476,
+  "numeric_expansion_tokens": 16518052,
+  "numeric_changed_occurrences": 4315388,
+  "added_tokens": 9918576,
+  "lines": 9174219,
+  "blank_lines": 2496587
+}

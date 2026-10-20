@@ -1,0 +1,704 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-18T11:09:11.458933+09:00",
+  "purpose": "사용자가 요청한 데이터 처리·분석·실제 학습 비교의 누락 방지",
+  "workspace": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki",
+  "execution_note": "각 단계는 순서대로 이어진다. 서브에이전트의 코드 구현 완료는 전체 데이터 처리 또는 모델 학습 완료와 다르다.",
+  "training_scope": {
+    "total_nominal_hours": 14,
+    "runs": [
+      {
+        "training_document_fraction": 0.1,
+        "hours": 3
+      },
+      {
+        "training_document_fraction": 0.25,
+        "hours": 3
+      },
+      {
+        "training_document_fraction": 1,
+        "hours": 8,
+        "compare_checkpoint_hours": [
+          3,
+          8
+        ]
+      }
+    ],
+    "vocabulary": "전체 보존율·실측 속도로 고른 K 하나를 공통으로 사용하며, 빈도는 train 자료로만 다시 산출",
+    "quality_scope": "데이터 양·시간 비교. 모든 K를 각각 3h/8h 학습하는 추가 실험까지 승인된 것으로 확대하지 않는다.",
+    "status": "deferred_by_user",
+    "automatic_execution_authorized_now": false
+  },
+  "completion_policy": "모든 required 항목에 대해 실제 전체 범위 결과·독립 검증·요청된 전달을 확인할 때만 전체 완료로 표시한다. 코드/샘플/부분 분석/속도 외삽은 전체 또는 장시간 학습 결과를 대체하지 않는다.",
+  "items": [
+    {
+      "id": "R01",
+      "title": "참고 압축본과 원본 데이터 보존",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "ko_wiki_cleaning.7z",
+        "processed-reference/archive_manifest.json",
+        "reports/verification.json"
+      ],
+      "acceptance": [
+        "제공된 압축본은 참고용으로 유지하고 새 학습 결과와 구분한다.",
+        "원본 및 참고 파일의 변경 여부를 검증한다."
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "Chapter 4 안의 독립 작업 폴더",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "README.md",
+        "download_manifest.json"
+      ],
+      "acceptance": [
+        "현재 작업 위치는 part2/chapter4/korean-wiki이다.",
+        "기존 Chapter 4 데이터와 섞거나 덮어쓰지 않는다."
+      ]
+    },
+    {
+      "id": "R03",
+      "title": "Hugging Face 2025년 8월 원본과 파일 형식 확인",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "download_manifest.json",
+        "reports/step1-3-comparison.json"
+      ],
+      "acceptance": [
+        "공급처·스냅샷·리비전·파일 해시·문서 수·Parquet 열 구성을 기록한다.",
+        "2024년 11월이라는 초기 추정과 실제 확인된 출처를 혼동하지 않는다."
+      ]
+    },
+    {
+      "id": "R04",
+      "title": "원문 TXT 5개와 한 문서의 원본 예시",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "examples/kowiki-282586.raw.json",
+        "examples/kowiki-282586.text.txt",
+        "examples/kowiki-1792712.text.txt",
+        "examples/kowiki-3110350.text.txt",
+        "examples/kowiki-660723.text.txt",
+        "examples/kowiki-303062.text.txt"
+      ],
+      "acceptance": [
+        "TXT는 원본 text와 동일한 정제 전 예시이다.",
+        "전체 처리 입력을 5개 샘플로 제한하지 않는다."
+      ]
+    },
+    {
+      "id": "R05",
+      "title": "강의와 같은 8단계 필터",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "step3_extract_paragraphs.py",
+        "tests/test_preprocessing.py",
+        "reports/step3-summary.json"
+      ],
+      "acceptance": [
+        "수식은 문서 단위, 나머지는 강의의 본문 행 단위로 처리한다.",
+        "제목·표·목록·빈 행, 수학기호, 한자 비율, 괄호 정리, 문자 비율, 한글 비율, 종결부호 규칙을 모두 적용한다."
+      ]
+    },
+    {
+      "id": "R06",
+      "title": "괄호와 약어 예외 보존",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "tests/test_preprocessing.py",
+        "reports/step1-3-examples.txt"
+      ],
+      "acceptance": [
+        "서울(Seoul)의 외국어 괄호는 제거한다.",
+        "(약 100만명) 같은 한글·숫자 괄호는 보존한다.",
+        "D. Watson 같은 이니셜을 잘못 분리한 문장은 다시 합친다."
+      ]
+    },
+    {
+      "id": "R07",
+      "title": "1·2·3단계 데이터 변화 비교",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/step1-3-examples.txt",
+        "reports/step1-3-comparison.json",
+        "reports/examples/"
+      ],
+      "acceptance": [
+        "같은 문서의 원본·텍스트·필터 후 문단·문장을 실제 내용으로 비교한다.",
+        "각 단계의 입력 범위와 문서·문단·문장 단위를 명시한다."
+      ]
+    },
+    {
+      "id": "R08",
+      "title": "전역 중복 문장 제거와 잔여 중복 검사",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/step4-summary.json",
+        "reports/verification.json",
+        "sentences_dedup_removed.txt"
+      ],
+      "acceptance": [
+        "NFKC·공백 정규화 후 동일 문장을 전역에서 한 번만 보존한다.",
+        "독립 검사에서 정규화 기준 잔여 동일 문장이 0인지 확인한다.",
+        "의미가 비슷한 모든 문장까지 제거했다고 주장하지 않는다."
+      ]
+    },
+    {
+      "id": "R09",
+      "title": "제거 사유별 실제 예시·수·비율 표",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/preprocessing-summary.txt",
+        "reports/preprocessing-results.json"
+      ],
+      "acceptance": [
+        "필터마다 실제 사례와 처리 결과를 한 개 이상 제시한다.",
+        "문서·행·문장별 분모를 구분하고 괄호 정리로 변경된 행과 삭제된 행을 구분한다."
+      ]
+    },
+    {
+      "id": "R10",
+      "title": "전처리 제거량·전체 비율 그래프",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/preprocessing-graphs.html",
+        "reports/preprocessing-review.html"
+      ],
+      "acceptance": [
+        "표와 그래프를 함께 제공한다.",
+        "전체 원본 행 기준, 본문 행 기준, 중복 제거 문장 기준을 섞지 않는다."
+      ]
+    },
+    {
+      "id": "R11",
+      "title": "전체 Kiwi cong-global 토큰화",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "tokens/",
+        "reports/step5-progress.json",
+        "reports/step5-summary.json",
+        "reports/step5-verification.json"
+      ],
+      "acceptance": [
+        "모든 6,677,632개 입력 문장과 32개 샤드를 처리한다.",
+        "형태소/품사와 <sp>/WS를 저장하고 문장·문단 경계를 유지한다.",
+        "최종 전체 요약과 passed=true, scope=full 독립 검증을 확인한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T21:15:16+09:00",
+        "writer_status": "complete",
+        "shards": 32,
+        "sentences": 6677632,
+        "paragraphs": 2496587,
+        "tokens": 292363011,
+        "independent_full_verification": "passed",
+        "verification_report": "reports/step5-verification.json",
+        "verification_sha256": "40b92613d8b270f3d9a247ffc45fceaa845befdf3035ab5a0115aa66baaba1da",
+        "verified_shards": 32,
+        "verification_failures": 0
+      }
+    },
+    {
+      "id": "R12",
+      "title": "토큰화 실제 예시·복원 차이 설명",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/step5-examples.txt",
+        "reports/step5-samples.json",
+        "reports/step5-verification.json"
+      ],
+      "acceptance": [
+        "실제 입력 문장·토큰열·복원 결과를 함께 전달한다.",
+        "차(car)와 차(tea)는 둘 다 차/NNG일 수 있음을 설명한다.",
+        "복원 일치율을 형태소 분석 정확도나 무손실 보장으로 취급하지 않는다."
+      ],
+      "observation": {
+        "at": "2026-10-17T21:12:20+09:00",
+        "actual_samples": 1024,
+        "sample_method": "First 32 source sentences in each sorted shard; source line numbers are 1-based.",
+        "restoration_errors": 0,
+        "example_txt_link_delivered": true,
+        "restoration_equality_is_not_analysis_accuracy": true
+      }
+    },
+    {
+      "id": "R13",
+      "title": "전체 빈도 사전 TXT 내림차순",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "token_frequencies.txt",
+        "reports/token-frequency-summary.json",
+        "reports/token-frequency-verification.json"
+      ],
+      "acceptance": [
+        "형태소/품사별 모든 토큰 종류를 빠짐없이 집계한다.",
+        "숫자·공백·기호·조사·어미도 실제 입력 그대로 포함한다.",
+        "순위·토큰·횟수·비율·누적비율이 있는 전체 TXT 링크를 제공한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T21:12:20+09:00",
+        "writer_status": "complete",
+        "shards": 32,
+        "types": 1570824,
+        "occurrences": 292363011,
+        "sum_matches_tokenizer": true,
+        "space_count_matches_tokenizer": true,
+        "full_txt_link_delivered": true,
+        "independent_full_verification": "passed",
+        "recovery_report": "reports/pipeline-recovery.json",
+        "verification_report": "reports/token-frequency-verification.json"
+      }
+    },
+    {
+      "id": "R14",
+      "title": "토큰 순위-등장 횟수 그래프",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/token-frequency-plot.html",
+        "reports/full-plots-published.json"
+      ],
+      "acceptance": [
+        "X축은 토큰 순위, Y축은 등장 횟수이다.",
+        "일반/로그 눈금, 전체 순위와 정확한 횟수를 제공한다.",
+        "전체 자료로 미리보기 확인 후 이 대화에 게시한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T23:11:14+09:00",
+        "source_shards": 32,
+        "scope": "full",
+        "published_marker": "reports/full-plots-published.json",
+        "desktop_mobile_preview_checked": true
+      }
+    },
+    {
+      "id": "R15",
+      "title": "빈도 1 토큰의 개수·비율 그래프 표기",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/token-frequency-plot.html",
+        "reports/token-frequency-summary.json"
+      ],
+      "acceptance": [
+        "빈도 1인 종류 수와 전체 종류 대비 비율을 표시한다.",
+        "빈도 1인 등장량과 전체 등장량 대비 비율도 별도로 표시한다.",
+        "꼬리 구간의 화면상 폭을 비율로 오해하지 않도록 한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T23:11:14+09:00",
+        "source_shards": 32,
+        "scope": "full",
+        "published_marker": "reports/full-plots-published.json",
+        "desktop_mobile_preview_checked": true
+      }
+    },
+    {
+      "id": "R16",
+      "title": "OOV와 단어·문장·문단 제거의 차이",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/vocabulary-coverage.json",
+        "reports/vocabulary-coverage.txt",
+        "reports/vocabulary-coverage-plot.html"
+      ],
+      "acceptance": [
+        "빈도순 상위 K개 토큰을 고르는 것과 해당 토큰 밖 문장을 버리는 것을 구분한다.",
+        "강의식 문단 유지(한 문장 이상 생존)와 문단 전체 보존(모든 문장 생존)을 함께 제시한다.",
+        "문장 빈도순이 아니라 토큰 빈도순으로 사전을 선택함을 명확히 한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T23:11:14+09:00",
+        "source_shards": 32,
+        "scope": "full",
+        "published_marker": "reports/full-plots-published.json",
+        "desktop_mobile_preview_checked": true
+      }
+    },
+    {
+      "id": "R17",
+      "title": "65,000 전후 및 사전 크기별 보존율 비교",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/vocabulary-coverage.json",
+        "reports/vocabulary-coverage.selected.tsv",
+        "reports/vocabulary-coverage.curve.tsv",
+        "reports/vocabulary-coverage-plot.html"
+      ],
+      "acceptance": [
+        "K=16,384·32,768·49,152·65,000·65,536을 모두 비교한다.",
+        "토큰 커버리지·문장 유지율·강의식 문단 유지율·문단 전체 보존율과 제거 개수를 제시한다.",
+        "막대그래프와 연속 K 꺾은선, 숫자 분리 전후 비교를 제공한다.",
+        "K에 예약 토큰 4개가 포함됨과 경계의 빈도 동률 처리 기준을 명시한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T23:11:14+09:00",
+        "source_shards": 32,
+        "scope": "full",
+        "published_marker": "reports/full-plots-published.json",
+        "desktop_mobile_preview_checked": true
+      }
+    },
+    {
+      "id": "R18",
+      "title": "효율적인 사전·문단 수 후보와 급변 구간",
+      "required": true,
+      "status": "partial",
+      "evidence": [
+        "reports/vocabulary-coverage.json",
+        "reports/nplm-benchmark.json",
+        "reports/training-comparison.json"
+      ],
+      "acceptance": [
+        "곡선의 꺾임점 후보·보존율 목표별 최소 K·실측 계산 비용을 함께 설명한다.",
+        "실제 학습 후보의 문서·문단·문장·학습 타깃 수를 제시한다.",
+        "검증한 후보 중 추천 범위를 제시하며 보존율 꺾임점을 모델 품질의 절대 최적값으로 단정하지 않는다."
+      ],
+      "observation": {
+        "at": "2026-10-18T00:41:55.381130+09:00",
+        "operational_knee_candidate_k": 35328,
+        "chosen_device": "cpu",
+        "model_quality_optimum_proven": false,
+        "awaiting_actual_training_comparison": false,
+        "operational_candidate_ready": true,
+        "model_quality_comparison_deferred_by_user": true,
+        "whole_corpus_k35328_sentence_keep_percent": 45.53614215338611,
+        "whole_corpus_k35328_paragraph_any_keep_percent": 62.557483476442044,
+        "whole_corpus_k35328_paragraph_all_keep_percent": 22.58058701739615,
+        "frequency_and_retention_recommendation_prepared": true,
+        "current_chapter_candidate_recommendation_delivered": true
+      }
+    },
+    {
+      "id": "R19",
+      "title": "숫자 자릿수 분리와 전후 비교",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "tokens_numeric/",
+        "token_frequencies.numeric.txt",
+        "reports/step6-numeric-summary.json",
+        "reports/numeric-token-frequency-summary.json",
+        "reports/step6-numeric-verification.json"
+      ],
+      "acceptance": [
+        "SN·W_SERIAL을 자릿수/SN 및 구분자/SW로 나누고 원본 tokens를 유지한다.",
+        "2010, 2-1, 996,000 등 실제/설명용 예시와 고유 종류 수·총 토큰 수 전후를 제시한다.",
+        "문장·문단 경계와 공백을 유지하고 전체 구조 및 명시된 범위의 변환 검증을 통과한다.",
+        "분리는 학습 전 규칙이며 숫자 조합 패턴을 모델이 학습하는 것임을 설명한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T23:11:14+09:00",
+        "writer_status": "complete",
+        "shards": 32,
+        "types_before": 1570824,
+        "types_after": 1484881,
+        "tokens_after": 302281587,
+        "independent_full_verification": "passed",
+        "sentence_count_unchanged": true,
+        "paragraph_count_unchanged": true,
+        "space_token_count_unchanged": true,
+        "numeric_source_types": 85958,
+        "numeric_expansion_types": 16,
+        "frequency_sum_matches_materialized_outputs": true,
+        "verified_shards": 32,
+        "verification_report": "reports/step6-numeric-verification.json",
+        "before_after_counts_delivered": true
+      }
+    },
+    {
+      "id": "R20",
+      "title": "이 컴퓨터의 CPU·MPS 자원 측정",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "reports/nplm-benchmark.json",
+        "requirements-training.lock"
+      ],
+      "acceptance": [
+        "다른 무거운 데이터 작업이 끝난 뒤 같은 모델 설정으로 CPU·MPS를 측정한다.",
+        "속도·메모리·모델 크기·측정 조건을 기록한다.",
+        "3h·8h 속도 외삽을 실제 학습 품질 결과로 표시하지 않는다."
+      ],
+      "observation": {
+        "at": "2026-10-17T23:11:14+09:00",
+        "profiles": 12,
+        "all_complete": true,
+        "selected_k": 35328,
+        "selected_device": "cpu",
+        "scope": "synthetic compute profile, not 3h/8h quality"
+      }
+    },
+    {
+      "id": "R21",
+      "title": "학습·평가 자료 분리와 공정한 비교 준비",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "training-corpora/",
+        "prepare_training_experiment.py",
+        "training_corpus.py",
+        "reports/training-experiment-tests.log",
+        "reports/integer-encoding-npy.json"
+      ],
+      "acceptance": [
+        "원본 문서 ID별 train/validation/test를 먼저 고정하고 train만으로 사전을 만든다.",
+        "평가와 겹치는 토큰열은 학습에서 제외하고 문장 끝 WS 차이로 중복을 놓치지 않는다.",
+        "사전을 공통으로 고정한 중첩 10%·25%·100% 문서 부분집합을 만든다.",
+        "문서 비율과 실제 문단·토큰 비율 및 학습에서 실제 방문한 데이터 양을 구분한다."
+      ],
+      "observation": {
+        "at": "2026-10-17T23:11:14+09:00",
+        "manifest": "training-corpora/wiki-k35328/manifest.json",
+        "manifest_sha256": "126c795f0872cd545d3f468ffb83faa4dc38edef3c7d8282ee5d3b75c0ea771e",
+        "train_only_vocabulary_k": 35328,
+        "training_paragraph_counts": {
+          "10": 153358,
+          "25": 380848,
+          "100": 1529599
+        },
+        "train_validation_test_articles_disjoint": true,
+        "heldout_sentences_excluded_from_training": true
+      }
+    },
+    {
+      "id": "R22",
+      "title": "10% 데이터 실제 3시간 학습",
+      "required": true,
+      "status": "deferred",
+      "evidence": [
+        "training-runs/",
+        "reports/training-comparison.json",
+        "reports/chapter4-handoff.json"
+      ],
+      "acceptance": [
+        "10% 문서 실행의 실제 3시간 체크포인트와 평가·생성 예시를 저장한다.",
+        "사전·초기 가중치·모델·평가 대상·생성 조건을 다른 실행과 고정한다."
+      ],
+      "observation": {
+        "at": "2026-10-18T00:26:39.250887+09:00",
+        "current_training_status": "stopped",
+        "process_alive": false,
+        "actual_3h_8h_results_complete": false,
+        "reason": "User moved training/comparison to the next chapter.",
+        "elapsed_seconds": 4138.119650834007,
+        "steps": 63510,
+        "target_prediction_events": 8129280,
+        "epochs_equivalent": 0.6590954512305218,
+        "checkpoint_1h_saved": true,
+        "latest_full_state_checkpoint_saved": true
+      },
+      "deferred_by_user_at": "2026-10-18T00:26:39.250887+09:00"
+    },
+    {
+      "id": "R23",
+      "title": "25% 데이터 실제 3시간 학습",
+      "required": true,
+      "status": "deferred",
+      "evidence": [
+        "training-runs/",
+        "reports/training-comparison.json",
+        "reports/chapter4-handoff.json"
+      ],
+      "acceptance": [
+        "25% 문서 실행의 실제 3시간 체크포인트와 평가·생성 예시를 저장한다.",
+        "10%·100% 실행과 같은 평가 타깃 및 모델 조건을 사용한다."
+      ],
+      "deferred_by_user_at": "2026-10-18T00:26:39.250887+09:00",
+      "observation": {
+        "at": "2026-10-18T00:26:39.250887+09:00",
+        "current_training_status": "stopped",
+        "process_alive": false,
+        "actual_3h_8h_results_complete": false,
+        "reason": "User moved training/comparison to the next chapter."
+      }
+    },
+    {
+      "id": "R24",
+      "title": "100% 데이터 실제 3시간·8시간 비교",
+      "required": true,
+      "status": "deferred",
+      "evidence": [
+        "training-runs/",
+        "reports/training-comparison.json",
+        "reports/chapter4-handoff.json"
+      ],
+      "acceptance": [
+        "같은 8시간 학습 경로의 3시간과 8시간 가중치를 보존한다.",
+        "초기 모델·중간 결과·업데이트 수·실제 경과·반복 횟수를 기록한다.",
+        "총 승인 범위는 3h+3h+8h이며 준비 시간은 별도로 기록한다."
+      ],
+      "deferred_by_user_at": "2026-10-18T00:26:39.250887+09:00",
+      "observation": {
+        "at": "2026-10-18T00:26:39.250887+09:00",
+        "current_training_status": "stopped",
+        "process_alive": false,
+        "actual_3h_8h_results_complete": false,
+        "reason": "User moved training/comparison to the next chapter."
+      }
+    },
+    {
+      "id": "R25",
+      "title": "학습된 모델의 결과 표·그래프·해석",
+      "required": true,
+      "status": "deferred",
+      "evidence": [
+        "reports/training-comparison.json",
+        "reports/training-comparison.txt",
+        "reports/training-plots-published.json",
+        "reports/chapter4-handoff.json"
+      ],
+      "acceptance": [
+        "10%·25%·100%의 공통 3h 결과와 100%의 3h→8h 결과를 구분해 비교한다.",
+        "평가 loss/PPL·공백/EOS 제외 지표·동일 프롬프트 생성·반복률·숫자 예시를 제공한다.",
+        "실제 학습 시간-평가 결과 꺾은선 그래프를 이 대화에 게시한다.",
+        "문단 수·예측 횟수·반복 횟수·메모리·검증 품질을 근거로 효율적인 후보를 추천한다.",
+        "한 사전·한 seed·고정 문맥 NPLM 비교라는 범위를 밝히며 장문 LLM이나 모든 K의 품질 최적값을 검증했다고 주장하지 않는다."
+      ],
+      "deferred_by_user_at": "2026-10-18T00:26:39.250887+09:00",
+      "observation": {
+        "at": "2026-10-18T00:26:39.250887+09:00",
+        "current_training_status": "stopped",
+        "process_alive": false,
+        "actual_3h_8h_results_complete": false,
+        "reason": "User moved training/comparison to the next chapter."
+      }
+    },
+    {
+      "id": "R26",
+      "title": "전체 결과 전달과 누락 없는 최종 점검",
+      "required": true,
+      "status": "deferred",
+      "evidence": [
+        "reports/task-checklist.json",
+        "reports/experiment-continuation.json",
+        "reports/experiment-monitor.json",
+        "reports/chapter4-handoff.json"
+      ],
+      "acceptance": [
+        "매시간 실제 상태와 프로세스를 확인하고 완료·진행·대기를 구분한다.",
+        "전체 데이터 기반 결과를 부분 결과로 대체하지 않는다.",
+        "파일 생성과 사용자에게 실제 TXT·예시·표·그래프를 전달한 것을 구분한다.",
+        "모든 필수 항목의 결과와 검증 근거를 점검한 뒤 전체 완료를 선언한다."
+      ],
+      "observation": {
+        "at": "2026-10-18T00:41:55.381130+09:00",
+        "current_training_status": "stopped",
+        "process_alive": false,
+        "actual_3h_8h_results_complete": false,
+        "reason": "User moved training/comparison to the next chapter.",
+        "current_chapter_final_review": "passed",
+        "review_report": "reports/final-preprocessing-review.json",
+        "whole_original_training_task_complete": false
+      },
+      "deferred_by_user_at": "2026-10-18T00:26:39.250887+09:00"
+    },
+    {
+      "id": "R27",
+      "title": "정수 인코딩 결과를 NumPy .npy로 추가 저장",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "export_integer_npy.py",
+        "training-corpora/wiki-k35328/train.ids.npy",
+        "training-corpora/wiki-k35328/validation.ids.npy",
+        "training-corpora/wiki-k35328/test.ids.npy",
+        "training-corpora/wiki-k35328/vocabulary.json",
+        "reports/integer-encoding-npy.json",
+        "npy_corpus.py",
+        "tests/test_npy_corpus.py",
+        "reports/integer-encoding-example.txt",
+        "reports/final-preprocessing-review.json"
+      ],
+      "acceptance": [
+        "기존 원본·토큰·정수 배열·사전을 보존한다.",
+        "uint16 1차원 .npy 배열 3개를 생성하고 기존 모든 정수 값과 비교한다.",
+        "np.load(..., mmap_mode=\"r\", allow_pickle=False)로 읽을 수 있고 같은 사전 ID 및 문단 경계를 유지한다."
+      ],
+      "observation": {
+        "at": "2026-10-18T00:41:55.381130+09:00",
+        "all_integer_values_equal": true,
+        "vocabulary_size": 35328,
+        "arrays": {
+          "train": 136469327,
+          "validation": 1417621,
+          "test": 1371753
+        },
+        "training_restarted": false,
+        "npy_training_batch_reader_ready": true,
+        "focused_loader_tests_passed": 5,
+        "independent_loader_real_windows_matched": 132,
+        "original_training_scripts_unchanged": true
+      }
+    },
+    {
+      "id": "R28",
+      "title": "강의 이미지 형식의 최종 데이터·시간 요약",
+      "required": true,
+      "status": "done",
+      "evidence": [
+        "build_final_dataset_summary.py",
+        "reports/final-dataset-summary.json",
+        "reports/final-dataset-summary.html",
+        "reports/final-summary-published.json"
+      ],
+      "acceptance": [
+        "실제 K=35,328 train-only 자료로 문서·문장·문단·본문/타깃/정수 ID·NPY 용량을 구분한다.",
+        "기록된 경과시간·부분합·대기·미기록 시간을 구분하고 병행 단계 시간을 합산하지 않는다.",
+        "서브에이전트 수치 검토와 728px/dark·320px/light 미리보기 및 범위 전환 확인 후 대화에 게시한다."
+      ],
+      "observation": {
+        "at": "2026-10-18T11:09:11.458933+09:00",
+        "published": true,
+        "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-c731144f-5f7d-4874-b238-a7ef3ffb7145-html",
+        "review_agents": 2,
+        "console_errors": 0,
+        "training_restarted": false
+      }
+    }
+  ],
+  "checklist_validation": {
+    "at": "2026-10-18T11:09:11.458933+09:00",
+    "item_count": 28,
+    "status_counts": {
+      "done": 22,
+      "partial": 1,
+      "deferred": 5
+    },
+    "whole_original_task_complete": false,
+    "scope_note": "Actual training/comparisons explicitly deferred by the user. Completed preprocessing artifacts remain valid.",
+    "evidence": "reports/chapter4-handoff.json"
+  },
+  "scope_change": {
+    "at": "2026-10-18T00:26:39.250887+09:00",
+    "reason": "아하 학습에 대한건 일단 지금 진행하기보단 다음 챕터로 넘기는게 나아보이네",
+    "preprocessing_scope": "complete",
+    "actual_training_scope": "deferred_to_next_chapter_by_user",
+    "evidence": "reports/chapter4-handoff.json"
+  },
+  "current_chapter_final_review": {
+    "status": "passed",
+    "at": "2026-10-18T00:41:55.381130+09:00",
+    "report": "reports/final-preprocessing-review.json",
+    "all_current_scope_blockers_resolved": true,
+    "training_comparisons_deferred": true,
+    "review_agents": 3
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "published_at": "2026-10-18T02:09:11.215Z",
+  "scope": "Actual K=35,328 train-only corpus; train/validation/test/aggregate counts and sizes; recorded elapsed durations with partial sums, waiting and unrecorded times distinguished.",
+  "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-c731144f-5f7d-4874-b238-a7ef3ffb7145-html",
+  "title": "한국어 위키 · 최종 데이터와 처리 시간",
+  "heights": [
+    [
+      320,
+      1776
+    ],
+    [
+      375,
+      1720
+    ],
+    [
+      430,
+      1640
+    ],
+    [
+      520,
+      1624
+    ],
+    [
+      640,
+      996
+    ],
+    [
+      728,
+      996
+    ],
+    [
+      860,
+      964
+    ],
+    [
+      1000,
+      964
+    ],
+    [
+      1144,
+      964
+    ]
+  ],
+  "fragment": "reports/final-dataset-summary.html",
+  "data": "reports/final-dataset-summary.json",
+  "previews": [
+    {
+      "width": 728,
+      "contentHeight": 996,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "summary scope checks [{\"scope\":\"train\",\"rows\":8,\"ids\":136469327,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"validation\",\"rows\":8,\"ids\":1417621,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"test\",\"rows\":8,\"ids\":1371753,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"all\",\"rows\":8,\"ids\":139258701,\"bodyPlusEOS\":true,\"targetPlusBOS\":true}]"
+        },
+        {
+          "level": "log",
+          "text": "summary layout OK 728 train"
+        },
+        {
+          "level": "log",
+          "text": "summary layout OK 728 train"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "contentHeight": 1776,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "summary scope checks [{\"scope\":\"train\",\"rows\":8,\"ids\":136469327,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"validation\",\"rows\":8,\"ids\":1417621,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"test\",\"rows\":8,\"ids\":1371753,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"all\",\"rows\":8,\"ids\":139258701,\"bodyPlusEOS\":true,\"targetPlusBOS\":true}]"
+        },
+        {
+          "level": "log",
+          "text": "summary layout OK 320 train"
+        },
+        {
+          "level": "log",
+          "text": "summary layout OK 320 train"
+        }
+      ]
+    }
+  ],
+  "interaction_preview": {
+    "width": 320,
+    "contentHeight": 1776,
+    "consoleMessages": [
+      {
+        "level": "log",
+        "text": "summary scope checks [{\"scope\":\"train\",\"rows\":8,\"ids\":136469327,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"validation\",\"rows\":8,\"ids\":1417621,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"test\",\"rows\":8,\"ids\":1371753,\"bodyPlusEOS\":true,\"targetPlusBOS\":true},{\"scope\":\"all\",\"rows\":8,\"ids\":139258701,\"bodyPlusEOS\":true,\"targetPlusBOS\":true}]"
+      },
+      {
+        "level": "log",
+        "text": "summary layout OK 320 train"
+      },
+      {
+        "level": "log",
+        "text": "scope interaction passed: all splits, 139,258,701 IDs"
+      },
+      {
+        "level": "log",
+        "text": "summary layout OK 320 all"
+      },
+      {
+        "level": "log",
+        "text": "summary layout OK 320 all"
+      }
+    ]
+  },
+  "reviewed_by": [
+    "/root/pipeline_scope_review",
+    "/root/integer_array_review"
+  ],
+  "resolved_review_findings": [
+    "Clarified model_training_started_by_summary=false, preserving historical partial-training record.",
+    "Included numeric frequency table standalone generation among unrecorded durations."
+  ],
+  "training_remains_deferred": true
+}
+

@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-10-18T00:41:55.381130+09:00",
+  "scope": "Current chapter: source preservation, full preprocessing/tokenization/numeric frequency/coverage, selected-vocabulary integer arrays, NumPy export, NPY data loading and requested applied-order summary.",
+  "whole_original_training_comparison_complete": false,
+  "training_deferred_by_user": true,
+  "training_status": "stopped",
+  "active_data_or_training_processes": [],
+  "reviewers": [
+    {
+      "agent": "/root/integer_array_review",
+      "review": "All 139,258,701 IDs equal existing raw integer arrays; all hashes, vocabulary, paragraph boundaries and checkpoint bindings verified.",
+      "implementation": "Added npy_corpus.py and focused tests; 3,789 real windows across 3 splits and 3 fractions matched legacy batches."
+    },
+    {
+      "agent": "/root/numeric_boundaries_review",
+      "review": "Independent full arrays/boundaries and doc split checks; 12 actual source paragraphs reconstructed, first 100 raw lines independently numeric-split.",
+      "final_loader_review": "Five focused tests passed; real train25% read-only mmap and 132 actual/boundary/sampler windows matched legacy contexts, targets and paragraph indices."
+    },
+    {
+      "agent": "/root/pipeline_scope_review",
+      "review": "Full current-scope checklist/evidence/publication/handoff audit and final documentation pass found no remaining actual inconsistency."
+    }
+  ],
+  "resolved_findings": [
+    "README overview previously stopped at frequency counting; expanded to all current stages and linked complete applied-order/actual ID example TXT.",
+    "Added actual .npy batch reader using readonly NumPy mmap, shared original batch semantics and bound manifest/vocabulary/export identities.",
+    "Exporter scope description now derives the vocabulary size for other corpus exports.",
+    "Clarified global exploratory coverage vs train-only vocabulary, retained corpus vs all numeric occurrences, BOS-inclusive array lengths vs prediction windows, paragraph EOS and token-vs-original-character round trips."
+  ],
+  "numpy_validation": {
+    "splits": {
+      "train": {
+        "ids": 136469327,
+        "dtype": "uint16",
+        "all_integer_values_equal": true
+      },
+      "validation": {
+        "ids": 1417621,
+        "dtype": "uint16",
+        "all_integer_values_equal": true
+      },
+      "test": {
+        "ids": 1371753,
+        "dtype": "uint16",
+        "all_integer_values_equal": true
+      }
+    },
+    "vocabulary_size": 35328,
+    "total_ids": 139258701,
+    "report": "reports/integer-encoding-npy.json"
+  },
+  "loader_validation": {
+    "focused_tests_passed": 5,
+    "command": ".venv-training/bin/python -m unittest discover -s tests -p test_npy_corpus.py -v",
+    "implementation_real_windows_compared": 3789,
+    "independent_real_windows_compared": 132,
+    "model_computation_run": false,
+    "original_training_scripts_unchanged": true
+  },
+  "verification_limits": [
+    "Full numeric structural/hash/frequency validation plus 1,024 sampled independent sentence transformations; not independent regeneration of every numeric occurrence.",
+    "Integer-to-token reversal preserves selected form/POS keys, not every original character.",
+    "Vocabulary retention knee is an operational candidate; model-quality optimum and actual 3h/8h comparisons remain deferred.",
+    "NPY data is OOV-filtered and uses a train-only vocabulary; NpyArrayCorpus performs initial full structural/ID scans even with verify=False."
+  ],
+  "remaining_current_scope_blockers": [],
+  "deliverables": [
+    "reports/applied-steps.txt",
+    "reports/integer-encoding-example.txt",
+    "training-corpora/wiki-k35328/vocabulary.json",
+    "training-corpora/wiki-k35328/train.ids.npy",
+    "training-corpora/wiki-k35328/validation.ids.npy",
+    "training-corpora/wiki-k35328/test.ids.npy",
+    "npy_corpus.py",
+    "README.md"
+  ],
+  "final_source_bindings": {
+    "export_integer_npy.py": {
+      "bytes": 6514,
+      "sha256": "9fd22fb2107e7f2140aecd9114cc2353ae8123649027401cc00808b453a44755"
+    },
+    "npy_corpus.py": {
+      "bytes": 6382,
+      "sha256": "2a2646d9d5027cdde7e831aeebedb41c93b12477c9d09ce8a873e8ad644cacf1"
+    },
+    "tests/test_npy_corpus.py": {
+      "bytes": 5927,
+      "sha256": "46062b0bd6d82fedf32f84aa0e28a8b36bb575cf44badde53e16fb193e7a52ca"
+    },
+    "README.md": {
+      "bytes": 26357,
+      "sha256": "e2ef40b67aec6ec4dfc9ea6591d0a5ade4b338a5a3a83250248a7a75705c0c37"
+    },
+    "reports/applied-steps.txt": {
+      "bytes": 5822,
+      "sha256": "fd642cbe5cbb662eb1881701052c582abf16993d25f7f2370816e6dfd118b435"
+    },
+    "reports/integer-encoding-example.txt": {
+      "bytes": 1516,
+      "sha256": "6b229178bd1b28539d5664f7abd78d07192d2dc52a07db928c23542e3366b86e"
+    }
+  },
+  "final_dataset_summary_review": {
+    "status": "passed",
+    "at": "2026-10-18T11:09:11.458933+09:00",
+    "published_report": "reports/final-summary-published.json",
+    "review_agents": 2,
+    "previews_passed": true,
+    "scope_switch_passed": true
+  }
+}

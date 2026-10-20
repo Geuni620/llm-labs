@@ -21,3 +21,16 @@ npm run gradcheck
 ```
 
 실험과 학습 재생은 실습 README에서 이어집니다. toy-lm의 모델 학습 데이터는 원래 여섯 문장으로 유지합니다.
+
+## 한국어 위키백과 데이터셋
+
+`korean-wiki/`에 원본 Parquet과 제공받은 `ko_wiki_cleaning.7z`를 보관합니다.
+이전 이름 `korea-wiki`를 `korean-wiki`로 통일했습니다. 출처는
+`HuggingFaceFW/finewiki`의 한국어 데이터이며, 고정 revision과 실제 파일 해시는
+[다운로드 기록](korean-wiki/download_manifest.json)에서 확인합니다.
+
+기존 `datasets/korean_wiki/`는 같은 압축 파일을 해제한 가공본이었습니다.
+337개 파일의 크기·CRC 검증 후 중복 데이터 약 9.07GB를 제거했습니다.
+기존 문서·전처리 코드·검토 기록 37개는 [processed-reference](korean-wiki/processed-reference/ARCHIVE_STATUS.md)에 보존했습니다.
+
+`toy-lm/`의 `data`·`compare`·`animate`는 원래 6문장 예제를 계속 사용합니다.

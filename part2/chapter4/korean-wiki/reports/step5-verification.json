@@ -1,0 +1,1258 @@
+{
+  "scope": "full",
+  "passed": true,
+  "verified_shards": 32,
+  "expected_shards": 32,
+  "scan_workers": 4,
+  "unverified_shards": [],
+  "kiwipiepy_version": "0.24.0",
+  "model_type": "cong-global",
+  "counts": {
+    "source_lines": 9174219,
+    "token_lines": 9174219,
+    "source_sentences": 6677632,
+    "token_sentences": 6677632,
+    "source_paragraphs": 2496587,
+    "token_paragraphs": 2496587,
+    "source_blank_lines": 2496587,
+    "token_blank_lines": 2496587,
+    "tokens": 292363011,
+    "space_tokens": 88101556,
+    "trailing_space_tokens": 4181045,
+    "invalid_tokens": 0
+  },
+  "inventory_errors": [],
+  "input_identity": {
+    "checked_files": 35,
+    "mismatches": [],
+    "sha256_unverified": [],
+    "sha256_missing_from_snapshot": [],
+    "sha256_checked_source_shards": 32
+  },
+  "writer_summary_available": true,
+  "writer_summary_mismatches": [],
+  "step4_count_mismatches": [],
+  "round_trip": {
+    "sentences": 1024,
+    "exact": 637,
+    "mismatch": 387,
+    "join_errors": 0,
+    "examples": [
+      {
+        "file": "part_00.txt",
+        "line": 8229,
+        "original": "불타에서 타가 떨어져 불이 된 것처럼 승가에서 가가 떨어져 나가 승으로 단독 사용되면서 탁발승, 객승, 화주승,동자승등 승이 개인의 의미로 사용되었다.",
+        "tokens": "불/NNG 타/NNG 에서/JKB <sp>/WS 타/NNG 가/JKS <sp>/WS 떨어지/VV 어/EC <sp>/WS 불/NNG 이/JKC <sp>/WS 되/VV ᆫ/ETM <sp>/WS 것/NNB 처럼/JKB <sp>/WS 승/NNG 가/NNG 에서/JKB <sp>/WS 가/NNG 가/JKS <sp>/WS 떨어지/VV 어/EC <sp>/WS 나가/VX 어/EC <sp>/WS 승/NNG 으로/JKB <sp>/WS 단독/NNG <sp>/WS 사용/NNG 되/XSV 면서/EC <sp>/WS 탁/MAG 발/NNG 승/NNG ,/SP <sp>/WS 객승/NNG ,/SP <sp>/WS 화주/NNG 승/NNG ,/SP 동자/NNG 승/NNG 등/NNB <sp>/WS 승/NNG 이/JKS <sp>/WS 개인/NNG 의/JKG <sp>/WS 의미/NNG 로/JKB <sp>/WS 사용/NNG 되/XSV 었/EP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "불타에서 타가 떨어져 불이 된 것처럼 승가에서 가가 떨어져 나가 승으로 단독 사용되면서 탁발승, 객승, 화주승,동자승등 승이 개인의 의미로 사용됐다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 35429,
+        "original": "원래 해초 잎 (부분적으로 영양 함량이 낮기 때문에)에 직접 공급하는 것으로 간주된 종은 거의 없지만 과학적인 리뷰와 향상된 작업 방법은 해초 섭취가 먹이 사슬에서 중요한 연결고리이며 바다거북이, 듀공, 매너티, 물고기, 거위, 백조, 성게 및 게를 포함한 수백 종의 먹이를 주는 것으로 나타났다.",
+        "tokens": "원래/MAG <sp>/WS 해초/NNG <sp>/WS 잎/NNG <sp>/WS (/SSO 부분/NNG 적/XSN 으로/JKB <sp>/WS 영양/NNG <sp>/WS 함량/NNG 이/JKS <sp>/WS 낮/VA 기/ETN <sp>/WS 때문/NNB 에/JKB )/SSC 에/JKB <sp>/WS 직접/MAG <sp>/WS 공급/NNG 하/XSV 는/ETM <sp>/WS 것/NNB 으로/JKB <sp>/WS 간주/NNG 되/XSV ᆫ/ETM <sp>/WS 종/NNG 은/JX <sp>/WS 거의/MAG <sp>/WS 없/VA 지만/EC <sp>/WS 과학/NNG 적/XSN 이/VCP ᆫ/ETM <sp>/WS 리뷰/NNG 와/JC <sp>/WS 향상/NNG 되/XSV ᆫ/ETM <sp>/WS 작업/NNG <sp>/WS 방법/NNG 은/JX <sp>/WS 해초/NNG <sp>/WS 섭취/NNG 가/JKS <sp>/WS 먹이/NNG <sp>/WS 사슬/NNG 에서/JKB <sp>/WS 중요/NNG 하/XSA ᆫ/ETM <sp>/WS 연결/NNG 고리/NNG 이/VCP 며/EC <sp>/WS 바다거북이/NNP ,/SP <sp>/WS 듀공/NNP ,/SP <sp>/WS 매너티/NNP ,/SP <sp>/WS 물고기/NNG ,/SP <sp>/WS 거위/NNG ,/SP <sp>/WS 백조/NNP ,/SP <sp>/WS 성게/NNG <sp>/WS 및/MAG <sp>/WS 게/NNG 를/JKO <sp>/WS 포함/NNG 하/XSV ᆫ/ETM <sp>/WS 수백/NR <sp>/WS 종/NNG 의/JKG <sp>/WS 먹이/NNG 를/JKO <sp>/WS 주/VV 는/ETM <sp>/WS 것/NNB 으로/JKB <sp>/WS 나타나/VV 었/EP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "원래 해초 잎 (부분적으로 영양 함량이 낮기 때문에)에 직접 공급하는 것으로 간주된 종은 거의 없지만 과학적인 리뷰와 향상된 작업 방법은 해초 섭취가 먹이 사슬에서 중요한 연결고리며 바다거북이, 듀공, 매너티, 물고기, 거위, 백조, 성게 및 게를 포함한 수백 종의 먹이를 주는 것으로 나타났다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 43271,
+        "original": "덧붙여서, 개인 봉사는 보통 청소년의 부모에 의해 승인되어야 한다.",
+        "tokens": "덧붙이/VV 어서/EC ,/SP <sp>/WS 개인/NNG <sp>/WS 봉사/NNG 는/JX <sp>/WS 보통/MAG <sp>/WS 청소년/NNG 의/JKG <sp>/WS 부모/NNG 에/JKB <sp>/WS 의하/VV 어/EC <sp>/WS 승인/NNG 되/XSV 어야/EC <sp>/WS 하/VX ᆫ다/EF ./SF",
+        "kind": "mismatch",
+        "restored": "덧붙여서, 개인 봉사는 보통 청소년의 부모에 의해 승인돼야 한다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 49730,
+        "original": "일부 자료에서는 캐서린을 언어학자이자 음악가로 설명하고 있기도 하다.",
+        "tokens": "일부/NNG <sp>/WS 자료/NNG 에서/JKB 는/JX <sp>/WS 캐서린/NNP 을/JKO <sp>/WS 언어학자/NNG 이/VCP 자/EC <sp>/WS 음악가/NNG 로/JKB <sp>/WS 설명/NNG 하/XSV 고/EC <sp>/WS 있/VX 기/ETN 도/JX <sp>/WS 하/VX 다/EF ./SF",
+        "kind": "mismatch",
+        "restored": "일부 자료에서는 캐서린을 언어학자자 음악가로 설명하고 있기도 하다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 56842,
+        "original": "사원으로 들어갈 수 있는 입구는 총 16개이다.",
+        "tokens": "사원/NNG 으로/JKB <sp>/WS 들어가/VV ᆯ/ETM <sp>/WS 수/NNB <sp>/WS 있/VA 는/ETM <sp>/WS 입구/NNG 는/JX <sp>/WS 총/MM <sp>/WS 16/SN 개/NNB 이/VCP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "사원으로 들어갈 수 있는 입구는 총 16개다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 70140,
+        "original": "자신의 미래를 위해 자신의 주변을 철저히 이용하는 냉혈한 엘리트이다.",
+        "tokens": "자신/NNG 의/JKG <sp>/WS 미래/NNG 를/JKO <sp>/WS 위하/VV 어/EC <sp>/WS 자신/NNG 의/JKG <sp>/WS 주변/NNG 을/JKO <sp>/WS 철저히/MAG <sp>/WS 이용/NNG 하/XSV 는/ETM <sp>/WS 냉혈한/NNG <sp>/WS 엘리트/NNG 이/VCP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "자신의 미래를 위해 자신의 주변을 철저히 이용하는 냉혈한 엘리트다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 92275,
+        "original": "음력 12월 다카우지는 닛타 군을 하코네·다케노시타 전투에서 격파하고, 교토로 진군하였다.",
+        "tokens": "음력/NNG <sp>/WS 12/SN 월/NNB <sp>/WS 다카우지/NNG 는/JX <sp>/WS 닛타/NNG <sp>/WS 군/NNG 을/JKO <sp>/WS 하코네/NNG ·/SP 다케노시타/NNG <sp>/WS 전투/NNG 에서/JKB <sp>/WS 격파/NNG 하/XSV 고/EC ,/SP <sp>/WS 교토/NNP 로/JKB <sp>/WS 진군/NNG 하/XSV 었/EP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "음력 12월 다카우지는 닛타 군을 하코네·다케노시타 전투에서 격파하고, 교토로 진군했다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 99704,
+        "original": "신민당 진영에서는 박정희의 남로당 경력과 사회주의 사상 경력을 집중 부각, 지적하였다.",
+        "tokens": "신민당/NNP <sp>/WS 진영/NNG 에서/JKB 는/JX <sp>/WS 박정희/NNP 의/JKG <sp>/WS 남로당/NNP <sp>/WS 경력/NNG 과/JC <sp>/WS 사회주의/NNG <sp>/WS 사상/NNG <sp>/WS 경력/NNG 을/JKO <sp>/WS 집중/NNG <sp>/WS 부각/NNG ,/SP <sp>/WS 지적/NNG 하/XSV 었/EP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "신민당 진영에서는 박정희의 남로당 경력과 사회주의 사상 경력을 집중 부각, 지적했다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 163073,
+        "original": "즉, 흑점은 스스로도 약 4000~5000K 라는 고온에서 매우 밝은 빛을 발하지만, 주변의 6000K 정도의 온도에 비해서는 낮기 때문에 상대적으로 어두운 점으로 관측된다.",
+        "tokens": "즉/MAG ,/SP <sp>/WS 흑점/NNP 은/JX <sp>/WS 스스로/NNG 도/JX <sp>/WS 약/MM <sp>/WS 4000/SN ~/SO 5000/SN K/SL <sp>/WS 이/VCP 라는/ETM <sp>/WS 고온/NNG 에서/JKB <sp>/WS 매우/MAG <sp>/WS 밝/VA 은/ETM <sp>/WS 빛/NNG 을/JKO <sp>/WS 발하/VV 지만/EC ,/SP <sp>/WS 주변/NNG 의/JKG <sp>/WS 6000/SN K/SL <sp>/WS 정도/NNG 의/JKG <sp>/WS 온도/NNG 에/JKB <sp>/WS 비하/VV 어서/EC 는/JX <sp>/WS 낮/VA 기/ETN <sp>/WS 때문/NNB 에/JKB <sp>/WS 상대/NNG 적/XSN 으로/JKB <sp>/WS 어둡/VA-I 은/ETM <sp>/WS 점/NNG 으로/JKB <sp>/WS 관측/NNG 되/XSV ᆫ다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "즉, 흑점은 스스로도 약 4000~5000K 이라는 고온에서 매우 밝은 빛을 발하지만, 주변의 6000K 정도의 온도에 비해서는 낮기 때문에 상대적으로 어두운 점으로 관측된다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 173401,
+        "original": "또한 검도 실력이 상당하며, 법의학 등의 지식이 풍부하고, 수영과 영어가 자신있는 분야이다.",
+        "tokens": "또한/MAG <sp>/WS 검도/NNG <sp>/WS 실력/NNG 이/JKS <sp>/WS 상당/NNG 하/XSA 며/EC ,/SP <sp>/WS 법의학/NNG <sp>/WS 등/NNB 의/JKG <sp>/WS 지식/NNG 이/JKS <sp>/WS 풍부/XR 하/XSA 고/EC ,/SP <sp>/WS 수영/NNG 과/JC <sp>/WS 영어/NNP 가/JKS <sp>/WS 자신/NNG 있/VV 는/ETM <sp>/WS 분야/NNG 이/VCP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "또한 검도 실력이 상당하며, 법의학 등의 지식이 풍부하고, 수영과 영어가 자신있는 분야다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 198579,
+        "original": "빌링스는 대통령이 댈러스에서 암살되기 9일 전인 1963년 11월 13일 백악관에서 그레타 가르보와 함께 식사를 하였을 때 마지막으로 대통령을 보았다.",
+        "tokens": "빌/NNP 링스/NNP 는/JX <sp>/WS 대통령/NNG 이/JKS <sp>/WS 댈러스/NNP 에서/JKB <sp>/WS 암살/NNG 되/XSV 기/ETN <sp>/WS 9/SN 일/NNB <sp>/WS 전/NNG 이/VCP ᆫ/ETM <sp>/WS 1963/SN 년/NNB <sp>/WS 11/SN 월/NNB <sp>/WS 13/SN 일/NNB <sp>/WS 백악관/NNP 에서/JKB <sp>/WS 그레타/NNP <sp>/WS 가르보/NNP 와/JKB <sp>/WS 함께/MAG <sp>/WS 식사/NNG 를/JKO <sp>/WS 하/VV 었/EP 을/ETM <sp>/WS 때/NNG <sp>/WS 마지막/NNG 으로/JKB <sp>/WS 대통령/NNG 을/JKO <sp>/WS 보/VV 었/EP 다/EF ./SF",
+        "kind": "mismatch",
+        "restored": "빌링스는 대통령이 댈러스에서 암살되기 9일 전인 1963년 11월 13일 백악관에서 그레타 가르보와 함께 식사를 했을 때 마지막으로 대통령을 봤다."
+      },
+      {
+        "file": "part_00.txt",
+        "line": 254525,
+        "original": "그러자, 시골 사람들이 그가 비루하고 인색하다고 의심하였으나, 곽재우는 태연스레 지내면서 돌아보지 않았다.'고 한다.",
+        "tokens": "그러/VV 자/EC ,/SP <sp>/WS 시골/NNG <sp>/WS 사람/NNG 들/XSN 이/JKS <sp>/WS 그/NP 가/JKS <sp>/WS 비루/XR 하/XSA 고/EC <sp>/WS 인색/NNG 하/XSA 다고/EC <sp>/WS 의심/NNG 하/XSV 었/EP 으나/EC ,/SP <sp>/WS 곽재우/NNP 는/JX <sp>/WS 태연/NNG 스레/XSM <sp>/WS 지내/VV 면서/EC <sp>/WS 돌아보/VV 지/EC <sp>/WS 않/VX 었/EP 다/EF ./SF '/SSC 고/JKQ <sp>/WS 하/VV ᆫ다/EF ./SF",
+        "kind": "mismatch",
+        "restored": "그러자, 시골 사람들이 그가 비루하고 인색하다고 의심했으나, 곽재우는 태연스레 지내면서 돌아보지 않았다.'고 한다."
+      },
+      {
+        "file": "part_01.txt",
+        "line": 1097,
+        "original": "야노스 지역은 국토의 1/3을 이루며, 오리노코강 북쪽에 펼쳐져 있다.",
+        "tokens": "야노스/NNP <sp>/WS 지역/NNG 은/JX <sp>/WS 국토/NNG 의/JKG <sp>/WS 1/3/W_SERIAL 을/JKO <sp>/WS 이루/VV 며/EC ,/SP <sp>/WS 오리노코강/NNP <sp>/WS 북쪽/NNG 에/JKB <sp>/WS 펼쳐지/VV 어/EC <sp>/WS 있/VX 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "야노스 지역은 국토의 1/3를 이루며, 오리노코강 북쪽에 펼쳐져 있다."
+      },
+      {
+        "file": "part_01.txt",
+        "line": 3948,
+        "original": "감상적인 경향에서 출발하여 민요에 관심을 가지면서 점차 정형시로 옮아갔다.",
+        "tokens": "감상/NNG 적/XSN 이/VCP ᆫ/ETM <sp>/WS 경향/NNG 에서/JKB <sp>/WS 출발/NNG 하/XSV 어/EC <sp>/WS 민요/NNG 에/JKB <sp>/WS 관심/NNG 을/JKO <sp>/WS 가지/VV 면서/EC <sp>/WS 점차/MAG <sp>/WS 정형시/NNG 로/JKB <sp>/WS 옮아가/VV 었/EP 다/EF ./SF",
+        "kind": "mismatch",
+        "restored": "감상적인 경향에서 출발해 민요에 관심을 가지면서 점차 정형시로 옮아갔다."
+      },
+      {
+        "file": "part_01.txt",
+        "line": 43039,
+        "original": "쿠웨이트는 세계에서 가장 부유한 나라 중 하나이다.",
+        "tokens": "쿠웨이트/NNP 는/JX <sp>/WS 세계/NNG 에서/JKB <sp>/WS 가장/MAG <sp>/WS 부유/NNG 하/XSA ᆫ/ETM <sp>/WS 나라/NNG <sp>/WS 중/NNB <sp>/WS 하나/NR 이/VCP 다/EF ./SF <sp>/WS",
+        "kind": "mismatch",
+        "restored": "쿠웨이트는 세계에서 가장 부유한 나라 중 하나다."
+      }
+    ],
+    "method": "Deterministic seeded reservoir sample within every verified shard",
+    "samples_per_shard": 32,
+    "note": "Sample only. Morphological spelling normalization and underscore escaping can change surface text."
+  },
+  "shards": [
+    {
+      "counts": {
+        "source_lines": 306537,
+        "token_lines": 306537,
+        "source_sentences": 224183,
+        "token_sentences": 224183,
+        "source_paragraphs": 82354,
+        "token_paragraphs": 82354,
+        "source_blank_lines": 82354,
+        "token_blank_lines": 82354,
+        "tokens": 9765059,
+        "space_tokens": 2941027,
+        "trailing_space_tokens": 141829,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_00.txt",
+      "input": {
+        "bytes": 32707665,
+        "sha256": "7bf903da925854e3a8c85ff1ae2ffa2821292e2fc5faf5daa7818884c7c59512",
+        "crc32": "6c31b0dc",
+        "mtime_ns": 1792227642859480802,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 86266708,
+        "sha256": "ff9550642fb47c841a3adf6a08c081b454cf4a4192e7dd7991691a9bab1afc9d",
+        "crc32": "064e13b2",
+        "mtime_ns": 1792230065132608198,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 289173,
+        "token_lines": 289173,
+        "source_sentences": 210698,
+        "token_sentences": 210698,
+        "source_paragraphs": 78475,
+        "token_paragraphs": 78475,
+        "source_blank_lines": 78475,
+        "token_blank_lines": 78475,
+        "tokens": 9062673,
+        "space_tokens": 2731875,
+        "trailing_space_tokens": 132223,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_01.txt",
+      "input": {
+        "bytes": 30382209,
+        "sha256": "2b40039ae5fcd2aad1e21759392f6cad39ce498af2c209c43d5d237202e3b13a",
+        "crc32": "2c4fcb89",
+        "mtime_ns": 1792227644568500938,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 80081550,
+        "sha256": "a225d2bc816fd7e7c5d47386a5013dda45ac0cb22fcad2b4ba39a6b7b119ad9e",
+        "crc32": "7edd61c8",
+        "mtime_ns": 1792230239212164046,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 291545,
+        "token_lines": 291545,
+        "source_sentences": 212258,
+        "token_sentences": 212258,
+        "source_paragraphs": 79287,
+        "token_paragraphs": 79287,
+        "source_blank_lines": 79287,
+        "token_blank_lines": 79287,
+        "tokens": 9267074,
+        "space_tokens": 2794137,
+        "trailing_space_tokens": 132971,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_02.txt",
+      "input": {
+        "bytes": 31086307,
+        "sha256": "63a31a5fc12e2d17d46e823fe57398612762b7dc7a79d4685fab20d98042ee24",
+        "crc32": "1fd45887",
+        "mtime_ns": 1792227646286108375,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 81911583,
+        "sha256": "16e0d4869b06737b64e497753097cdae5ecf150fe8b69f4b310df7be4d2eae56",
+        "crc32": "18227da2",
+        "mtime_ns": 1792230444989162656,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 282468,
+        "token_lines": 282468,
+        "source_sentences": 204543,
+        "token_sentences": 204543,
+        "source_paragraphs": 77925,
+        "token_paragraphs": 77925,
+        "source_blank_lines": 77925,
+        "token_blank_lines": 77925,
+        "tokens": 8833262,
+        "space_tokens": 2658287,
+        "trailing_space_tokens": 126618,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_03.txt",
+      "input": {
+        "bytes": 29635969,
+        "sha256": "fba63a842dc0cbef1d36c532f9fdbccb94b078b236cd703883ec15e7e63a8af6",
+        "crc32": "81e2a044",
+        "mtime_ns": 1792227650207534841,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 78050775,
+        "sha256": "dfa9c776024964b10d5a524082bf8b03959000624af99db4872870c67d9af48a",
+        "crc32": "f7357c6d",
+        "mtime_ns": 1792230662930859293,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 288316,
+        "token_lines": 288316,
+        "source_sentences": 209185,
+        "token_sentences": 209185,
+        "source_paragraphs": 79131,
+        "token_paragraphs": 79131,
+        "source_blank_lines": 79131,
+        "token_blank_lines": 79131,
+        "tokens": 9029654,
+        "space_tokens": 2719069,
+        "trailing_space_tokens": 130054,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_04.txt",
+      "input": {
+        "bytes": 30322122,
+        "sha256": "99ea5a2e08d045955ce0813b37847ffd16c12ac9667877783f32450775f3f2e6",
+        "crc32": "20ed69b1",
+        "mtime_ns": 1792227652526822285,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 79812460,
+        "sha256": "e1f7c10222ac614b25384a3b45e734a637425417b48bcea8a6a29793d7b1045f",
+        "crc32": "0f1d7964",
+        "mtime_ns": 1792230896073209780,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 291053,
+        "token_lines": 291053,
+        "source_sentences": 211400,
+        "token_sentences": 211400,
+        "source_paragraphs": 79653,
+        "token_paragraphs": 79653,
+        "source_blank_lines": 79653,
+        "token_blank_lines": 79653,
+        "tokens": 9269216,
+        "space_tokens": 2791762,
+        "trailing_space_tokens": 131747,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_05.txt",
+      "input": {
+        "bytes": 31065428,
+        "sha256": "141213c569de3874cbf90e67cb15f0c594bb44aff158d8027831d940bcb339a8",
+        "crc32": "92d5cbd5",
+        "mtime_ns": 1792227654314671951,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 81882120,
+        "sha256": "4d8de2c05216d0efd57d14ae00af62314df233f3d6180b267c5c2d78b43eb829",
+        "crc32": "3f75d53c",
+        "mtime_ns": 1792231090402943755,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 311861,
+        "token_lines": 311861,
+        "source_sentences": 226804,
+        "token_sentences": 226804,
+        "source_paragraphs": 85057,
+        "token_paragraphs": 85057,
+        "source_blank_lines": 85057,
+        "token_blank_lines": 85057,
+        "tokens": 9912331,
+        "space_tokens": 2979877,
+        "trailing_space_tokens": 141747,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_06.txt",
+      "input": {
+        "bytes": 33217961,
+        "sha256": "0820aada9eae7a3a53caa4268a3cb497983aec7322aa10837545c3702a495a81",
+        "crc32": "32f3d7ba",
+        "mtime_ns": 1792227657195614228,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 87530165,
+        "sha256": "f9238d709eeaf44566bb85d8977880bc0fa57791d884dc60e0f09d33db6150cf",
+        "crc32": "94baac53",
+        "mtime_ns": 1792231321526758177,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 311623,
+        "token_lines": 311623,
+        "source_sentences": 227590,
+        "token_sentences": 227590,
+        "source_paragraphs": 84033,
+        "token_paragraphs": 84033,
+        "source_blank_lines": 84033,
+        "token_blank_lines": 84033,
+        "tokens": 10043375,
+        "space_tokens": 3022711,
+        "trailing_space_tokens": 143557,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_07.txt",
+      "input": {
+        "bytes": 33663348,
+        "sha256": "dd2b7592046a2af2164fbcb820e789a8b56f5ce84706bf31bea271d246f1dfa3",
+        "crc32": "a467ff7a",
+        "mtime_ns": 1792227659471610001,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 88722312,
+        "sha256": "e0ecb3bfd81fbc2f41952d4275f3c8d704f289dc33a08f2542036bb5468c761f",
+        "crc32": "8e940f5e",
+        "mtime_ns": 1792231527574095866,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 300884,
+        "token_lines": 300884,
+        "source_sentences": 218780,
+        "token_sentences": 218780,
+        "source_paragraphs": 82104,
+        "token_paragraphs": 82104,
+        "source_blank_lines": 82104,
+        "token_blank_lines": 82104,
+        "tokens": 9538516,
+        "space_tokens": 2871778,
+        "trailing_space_tokens": 136676,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_08.txt",
+      "input": {
+        "bytes": 32013093,
+        "sha256": "7e0e4cb8ec79ca30fe3b866ee4e2bdceb69148b48c11651020ec572acb6e8901",
+        "crc32": "173df1f9",
+        "mtime_ns": 1792227661274706796,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 84287573,
+        "sha256": "56430d576e96575a4cc62111b67e442cea0663f4ebd1c9ad47906526471fa801",
+        "crc32": "91d6030b",
+        "mtime_ns": 1792231719972526844,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 287797,
+        "token_lines": 287797,
+        "source_sentences": 208968,
+        "token_sentences": 208968,
+        "source_paragraphs": 78829,
+        "token_paragraphs": 78829,
+        "source_blank_lines": 78829,
+        "token_blank_lines": 78829,
+        "tokens": 9061237,
+        "space_tokens": 2726367,
+        "trailing_space_tokens": 130139,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_09.txt",
+      "input": {
+        "bytes": 30399175,
+        "sha256": "e3731eee8f61e6949da29eb99fd3753bca90756073f60102a841c2d9f77dc333",
+        "crc32": "dd607986",
+        "mtime_ns": 1792227663123662480,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 80054656,
+        "sha256": "e2dbd6d2b81d33423c404bfc919466b3afbb15531ae9a9ac6d52fc61993e8f1a",
+        "crc32": "0cce57b1",
+        "mtime_ns": 1792231881189214685,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 298057,
+        "token_lines": 298057,
+        "source_sentences": 217319,
+        "token_sentences": 217319,
+        "source_paragraphs": 80738,
+        "token_paragraphs": 80738,
+        "source_blank_lines": 80738,
+        "token_blank_lines": 80738,
+        "tokens": 9579589,
+        "space_tokens": 2888437,
+        "trailing_space_tokens": 136581,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_10.txt",
+      "input": {
+        "bytes": 32125577,
+        "sha256": "4d8ec2418d6738125ff2397ca7897a71b3c9355f16df2f39e89975f5b570fa6e",
+        "crc32": "03a6df78",
+        "mtime_ns": 1792227665464034184,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 84637737,
+        "sha256": "149037a03653b2d40758432945a09390b2d511a6402e656b8f5e0cd1c0af474e",
+        "crc32": "6d1d4287",
+        "mtime_ns": 1792232067645219048,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 303331,
+        "token_lines": 303331,
+        "source_sentences": 221151,
+        "token_sentences": 221151,
+        "source_paragraphs": 82180,
+        "token_paragraphs": 82180,
+        "source_blank_lines": 82180,
+        "token_blank_lines": 82180,
+        "tokens": 9740243,
+        "space_tokens": 2939702,
+        "trailing_space_tokens": 138971,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_11.txt",
+      "input": {
+        "bytes": 32687757,
+        "sha256": "26529d9bf9df2a1100bce69c7f89796c432c89ddb715ef88587910a88f17fe44",
+        "crc32": "703a6524",
+        "mtime_ns": 1792227667273792558,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 86114925,
+        "sha256": "6e9c5d10de8d2f14af029ee4c9dbef8e8b3dbb250c1dc2708ff78debd795b588",
+        "crc32": "ff9e257c",
+        "mtime_ns": 1792232248740264251,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 294343,
+        "token_lines": 294343,
+        "source_sentences": 214985,
+        "token_sentences": 214985,
+        "source_paragraphs": 79358,
+        "token_paragraphs": 79358,
+        "source_blank_lines": 79358,
+        "token_blank_lines": 79358,
+        "tokens": 9513131,
+        "space_tokens": 2865272,
+        "trailing_space_tokens": 135627,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_12.txt",
+      "input": {
+        "bytes": 31884146,
+        "sha256": "c1bb231b1554cc0650a88dd42a589cce61520253e742204c0c811ec5b9fc92d2",
+        "crc32": "02a9449a",
+        "mtime_ns": 1792227669169238328,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 84046996,
+        "sha256": "ff37dfb40384cccdef8f3cd4a2581d04cc97ae06650b0c7f66851ce7d53ddd38",
+        "crc32": "6c2a318c",
+        "mtime_ns": 1792232435392104917,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 283018,
+        "token_lines": 283018,
+        "source_sentences": 206084,
+        "token_sentences": 206084,
+        "source_paragraphs": 76934,
+        "token_paragraphs": 76934,
+        "source_blank_lines": 76934,
+        "token_blank_lines": 76934,
+        "tokens": 9156723,
+        "space_tokens": 2759707,
+        "trailing_space_tokens": 129150,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_13.txt",
+      "input": {
+        "bytes": 30697571,
+        "sha256": "08ccc886d006209566fb8a566b145e0dd6a8eaac3ab4c7fd9760189340c3f153",
+        "crc32": "6eb7737d",
+        "mtime_ns": 1792227670980363434,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 80922487,
+        "sha256": "d1e118f404bd712fbea261d06d7f9254897d358db3990d2f30e236685d37e01f",
+        "crc32": "04ebbfcd",
+        "mtime_ns": 1792233009403830810,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 279181,
+        "token_lines": 279181,
+        "source_sentences": 202859,
+        "token_sentences": 202859,
+        "source_paragraphs": 76322,
+        "token_paragraphs": 76322,
+        "source_blank_lines": 76322,
+        "token_blank_lines": 76322,
+        "tokens": 8909043,
+        "space_tokens": 2684923,
+        "trailing_space_tokens": 126537,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_14.txt",
+      "input": {
+        "bytes": 29872461,
+        "sha256": "fa6b15918ddb618c26cb4bfeace8b3e82ff69772ec82cd684400531fac0fae69",
+        "crc32": "b218259b",
+        "mtime_ns": 1792227672726565698,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 78719299,
+        "sha256": "87228ec8330475ad8be327880693d557e6b9472e8ea7aae8239cec0707964443",
+        "crc32": "c42fdfca",
+        "mtime_ns": 1792233543872387951,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 302079,
+        "token_lines": 302079,
+        "source_sentences": 220377,
+        "token_sentences": 220377,
+        "source_paragraphs": 81702,
+        "token_paragraphs": 81702,
+        "source_blank_lines": 81702,
+        "token_blank_lines": 81702,
+        "tokens": 9788747,
+        "space_tokens": 2950747,
+        "trailing_space_tokens": 138675,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_15.txt",
+      "input": {
+        "bytes": 32759871,
+        "sha256": "b1f2f925a6f4d610887dfee73e03aaba2104bf2687b499a0b22a1b10dea9784e",
+        "crc32": "c40fcb63",
+        "mtime_ns": 1792227674687150266,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 86448638,
+        "sha256": "af3cdd688f19cced5a9a0bc43b8bf06b9b4be454da3ff5869191dba350b0b3c9",
+        "crc32": "5a95bc1e",
+        "mtime_ns": 1792233884581115919,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 281869,
+        "token_lines": 281869,
+        "source_sentences": 205744,
+        "token_sentences": 205744,
+        "source_paragraphs": 76125,
+        "token_paragraphs": 76125,
+        "source_blank_lines": 76125,
+        "token_blank_lines": 76125,
+        "tokens": 9100919,
+        "space_tokens": 2750066,
+        "trailing_space_tokens": 129619,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_16.txt",
+      "input": {
+        "bytes": 30509248,
+        "sha256": "791a06856774be65e7316b3b65d57702e5e6923ff1c491baeae270f3956dea5b",
+        "crc32": "e3be5823",
+        "mtime_ns": 1792227676388579628,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 80440773,
+        "sha256": "7791fa8a5eb6822d3ac354d2e019b226e944a27b791348fbf7d4ebe7377ba4df",
+        "crc32": "ed65666f",
+        "mtime_ns": 1792234074428704794,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 281027,
+        "token_lines": 281027,
+        "source_sentences": 204689,
+        "token_sentences": 204689,
+        "source_paragraphs": 76338,
+        "token_paragraphs": 76338,
+        "source_blank_lines": 76338,
+        "token_blank_lines": 76338,
+        "tokens": 8877380,
+        "space_tokens": 2678696,
+        "trailing_space_tokens": 128351,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_17.txt",
+      "input": {
+        "bytes": 29837317,
+        "sha256": "a9fb62ffa3d1ee3e3abcc8fd191f96546ad7ef1af3bb8a0767903e8d8cc80568",
+        "crc32": "6396df53",
+        "mtime_ns": 1792227678098921412,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 78524008,
+        "sha256": "9ff77de3f24b4dc9051ef490e7087dff7ac6faf5eacb51ea09faa5784d6c3057",
+        "crc32": "fdf68c76",
+        "mtime_ns": 1792234254182241916,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 293182,
+        "token_lines": 293182,
+        "source_sentences": 213845,
+        "token_sentences": 213845,
+        "source_paragraphs": 79337,
+        "token_paragraphs": 79337,
+        "source_blank_lines": 79337,
+        "token_blank_lines": 79337,
+        "tokens": 9429077,
+        "space_tokens": 2842665,
+        "trailing_space_tokens": 134508,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_18.txt",
+      "input": {
+        "bytes": 31534821,
+        "sha256": "2d923b54caa6ea2a022b7c816268667cf0e7e53d1098b9058af7fa737a9f38b6",
+        "crc32": "a69944d2",
+        "mtime_ns": 1792227679896571406,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 83239194,
+        "sha256": "1b74d489e5be04f27d66dda8ccad88dbcffb4b445da1d91019ab13e49d87c7a3",
+        "crc32": "179f51ec",
+        "mtime_ns": 1792234478374771824,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 281424,
+        "token_lines": 281424,
+        "source_sentences": 206028,
+        "token_sentences": 206028,
+        "source_paragraphs": 75396,
+        "token_paragraphs": 75396,
+        "source_blank_lines": 75396,
+        "token_blank_lines": 75396,
+        "tokens": 8994960,
+        "space_tokens": 2710661,
+        "trailing_space_tokens": 130632,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_19.txt",
+      "input": {
+        "bytes": 30187861,
+        "sha256": "1578ff3ad90b578c10973e10a3b4b498be6bdf21729e694d655e14115c49e5bb",
+        "crc32": "fb2701b8",
+        "mtime_ns": 1792227684878480084,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 79509584,
+        "sha256": "605330db2d2855703bc3e88cec13e09ef1796e75da3cc4161375418a0d0f941e",
+        "crc32": "ff3ff99c",
+        "mtime_ns": 1792234681380297128,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 276413,
+        "token_lines": 276413,
+        "source_sentences": 201487,
+        "token_sentences": 201487,
+        "source_paragraphs": 74926,
+        "token_paragraphs": 74926,
+        "source_blank_lines": 74926,
+        "token_blank_lines": 74926,
+        "tokens": 8940322,
+        "space_tokens": 2697522,
+        "trailing_space_tokens": 126561,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_20.txt",
+      "input": {
+        "bytes": 29937180,
+        "sha256": "1267171373c829a97075b1537119e70d84e27e33ed3c6298eabebe08911816b0",
+        "crc32": "fc0b4481",
+        "mtime_ns": 1792227686907796359,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 78983262,
+        "sha256": "ef4a6aef3213952cc63852fda2598dd740c4ea04c77af61798185bfe806fe412",
+        "crc32": "1498354e",
+        "mtime_ns": 1792234994052696045,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 266903,
+        "token_lines": 266903,
+        "source_sentences": 194271,
+        "token_sentences": 194271,
+        "source_paragraphs": 72632,
+        "token_paragraphs": 72632,
+        "source_blank_lines": 72632,
+        "token_blank_lines": 72632,
+        "tokens": 8555204,
+        "space_tokens": 2575840,
+        "trailing_space_tokens": 121639,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_21.txt",
+      "input": {
+        "bytes": 28668624,
+        "sha256": "06a6a97cd077426ed93531e994b6ed421eb5f9f29b9cc040551521b577e61372",
+        "crc32": "1cb870d5",
+        "mtime_ns": 1792227688755684932,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 75586150,
+        "sha256": "6417d5a8a72abe5262b0c55e44c748903f94b4fbd6b5e9ad57c4ffc2b8265d0d",
+        "crc32": "478afe05",
+        "mtime_ns": 1792235358578627597,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 246534,
+        "token_lines": 246534,
+        "source_sentences": 178152,
+        "token_sentences": 178152,
+        "source_paragraphs": 68382,
+        "token_paragraphs": 68382,
+        "source_blank_lines": 68382,
+        "token_blank_lines": 68382,
+        "tokens": 7802114,
+        "space_tokens": 2348414,
+        "trailing_space_tokens": 109770,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_22.txt",
+      "input": {
+        "bytes": 26137935,
+        "sha256": "212ed824c8d5a5fd1a0bdbfb8288cea076a9c1634de660cef6f9db23dd0e9681",
+        "crc32": "ce813750",
+        "mtime_ns": 1792227690374887933,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 68896045,
+        "sha256": "f6894d6a60a70d493b67aa1d9a06ca11f691b0fc15959dc973ec1d1e2c5c3ff8",
+        "crc32": "1774f035",
+        "mtime_ns": 1792235582481570386,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 273022,
+        "token_lines": 273022,
+        "source_sentences": 198296,
+        "token_sentences": 198296,
+        "source_paragraphs": 74726,
+        "token_paragraphs": 74726,
+        "source_blank_lines": 74726,
+        "token_blank_lines": 74726,
+        "tokens": 8735291,
+        "space_tokens": 2631784,
+        "trailing_space_tokens": 123570,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_23.txt",
+      "input": {
+        "bytes": 29251822,
+        "sha256": "6bc76f5a718e48df73e7ae10f9115f8c354d6a2a8fee5465bd6783f23b5ce385",
+        "crc32": "2cf52203",
+        "mtime_ns": 1792227692463623956,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 77149767,
+        "sha256": "a483d67b19da21f5569041152f6e903e514b1afd716ec4a5dc19f31cbebc030d",
+        "crc32": "ea989d27",
+        "mtime_ns": 1792235793436907088,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 277128,
+        "token_lines": 277128,
+        "source_sentences": 202476,
+        "token_sentences": 202476,
+        "source_paragraphs": 74652,
+        "token_paragraphs": 74652,
+        "source_blank_lines": 74652,
+        "token_blank_lines": 74652,
+        "tokens": 8922099,
+        "space_tokens": 2692651,
+        "trailing_space_tokens": 127824,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_24.txt",
+      "input": {
+        "bytes": 29882606,
+        "sha256": "910c27c9e1e4a0e338cb35a60041059f365f3d1b3effbc2fb2104efe178888e6",
+        "crc32": "4cdedfef",
+        "mtime_ns": 1792227694407194876,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 78835922,
+        "sha256": "f3508ca561881ea09b582e3deb03280f174fb537b07ef18d48227cbd73610fbf",
+        "crc32": "848a1cb8",
+        "mtime_ns": 1792236222198841136,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 285631,
+        "token_lines": 285631,
+        "source_sentences": 207759,
+        "token_sentences": 207759,
+        "source_paragraphs": 77872,
+        "token_paragraphs": 77872,
+        "source_blank_lines": 77872,
+        "token_blank_lines": 77872,
+        "tokens": 9148547,
+        "space_tokens": 2757456,
+        "trailing_space_tokens": 129887,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_25.txt",
+      "input": {
+        "bytes": 30668867,
+        "sha256": "652a9c343c6d5257c3f27ea2bf9f7b1a839207d6bd7aa123432a8f1806dd3dc3",
+        "crc32": "99b98db1",
+        "mtime_ns": 1792227697242986506,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 80839001,
+        "sha256": "6f7f5f5cbedf0ae5855f4eae6b39d9cb2c986c32382b01d7be56418859bed85d",
+        "crc32": "1882bc41",
+        "mtime_ns": 1792236678977625047,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 299678,
+        "token_lines": 299678,
+        "source_sentences": 218815,
+        "token_sentences": 218815,
+        "source_paragraphs": 80863,
+        "token_paragraphs": 80863,
+        "source_blank_lines": 80863,
+        "token_blank_lines": 80863,
+        "tokens": 9662706,
+        "space_tokens": 2914821,
+        "trailing_space_tokens": 137952,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_26.txt",
+      "input": {
+        "bytes": 32410143,
+        "sha256": "892ae889f676c836765d74626ba067291a116db765f2e675afe17d14d5da8500",
+        "crc32": "c8f48b1c",
+        "mtime_ns": 1792227699380129008,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 85409190,
+        "sha256": "b0a04afd4c10dbcf607d28d239962f57a57ab579eaa98db23573e10124fd8fb8",
+        "crc32": "c2ca6439",
+        "mtime_ns": 1792237060296458230,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 268648,
+        "token_lines": 268648,
+        "source_sentences": 194739,
+        "token_sentences": 194739,
+        "source_paragraphs": 73909,
+        "token_paragraphs": 73909,
+        "source_blank_lines": 73909,
+        "token_blank_lines": 73909,
+        "tokens": 8487373,
+        "space_tokens": 2553176,
+        "trailing_space_tokens": 120830,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_27.txt",
+      "input": {
+        "bytes": 28467909,
+        "sha256": "2a6c2c44b36109fe8abd03b9f5acfaccdd19137e92a8a0747be548a225315494",
+        "crc32": "eee2bdfc",
+        "mtime_ns": 1792227701087757370,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 74986372,
+        "sha256": "f8f5120cd5025f83fa4b7f3fb3f1f741d0a38f47063ee9dd58b62d9982fc3f9d",
+        "crc32": "050c1a15",
+        "mtime_ns": 1792237400334911584,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 275104,
+        "token_lines": 275104,
+        "source_sentences": 198724,
+        "token_sentences": 198724,
+        "source_paragraphs": 76380,
+        "token_paragraphs": 76380,
+        "source_blank_lines": 76380,
+        "token_blank_lines": 76380,
+        "tokens": 8612460,
+        "space_tokens": 2595154,
+        "trailing_space_tokens": 122344,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_28.txt",
+      "input": {
+        "bytes": 28872990,
+        "sha256": "57278b03ba41559d2552f37cde80e68cd29c266887c5a1c9dc56d78a287c0462",
+        "crc32": "dd4788e4",
+        "mtime_ns": 1792227702687049305,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 76081651,
+        "sha256": "cc7071cf697dccad34c9a486de2a9a1560fdd3b3a2107a650745971f5bfbcf3d",
+        "crc32": "edf85388",
+        "mtime_ns": 1792237743417884000,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 284682,
+        "token_lines": 284682,
+        "source_sentences": 206799,
+        "token_sentences": 206799,
+        "source_paragraphs": 77883,
+        "token_paragraphs": 77883,
+        "source_blank_lines": 77883,
+        "token_blank_lines": 77883,
+        "tokens": 8988862,
+        "space_tokens": 2708615,
+        "trailing_space_tokens": 128916,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_29.txt",
+      "input": {
+        "bytes": 30134005,
+        "sha256": "a9240953b458c654bb67bdb82f33c58876df8a4557d7137fe7f462a1a11dd7d8",
+        "crc32": "ec0c9cea",
+        "mtime_ns": 1792227704424762765,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 79425114,
+        "sha256": "94e41bd2f81e1ecc4701ff4d4f2e2cf46b039fedea0d55e4ae91617035659e99",
+        "crc32": "8f75e691",
+        "mtime_ns": 1792238099791719188,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 280215,
+        "token_lines": 280215,
+        "source_sentences": 203511,
+        "token_sentences": 203511,
+        "source_paragraphs": 76704,
+        "token_paragraphs": 76704,
+        "source_blank_lines": 76704,
+        "token_blank_lines": 76704,
+        "tokens": 8778914,
+        "space_tokens": 2645618,
+        "trailing_space_tokens": 126807,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_30.txt",
+      "input": {
+        "bytes": 29434106,
+        "sha256": "8fae64ad6d4d7e06961303370d53ef03d943040314f4d0c8acd1a040e20f454e",
+        "crc32": "716692e9",
+        "mtime_ns": 1792227706140329355,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 77571364,
+        "sha256": "44ac39e885c5be669fcada21bc8cdce119e8a4f4b0f4eff3476284381dbffe91",
+        "crc32": "3982b8dd",
+        "mtime_ns": 1792238415674518823,
+        "stable_during_read": true
+      }
+    },
+    {
+      "counts": {
+        "source_lines": 281493,
+        "token_lines": 281493,
+        "source_sentences": 205113,
+        "token_sentences": 205113,
+        "source_paragraphs": 76380,
+        "token_paragraphs": 76380,
+        "source_blank_lines": 76380,
+        "token_blank_lines": 76380,
+        "tokens": 8856910,
+        "space_tokens": 2672739,
+        "trailing_space_tokens": 128733,
+        "invalid_tokens": 0
+      },
+      "errors": {},
+      "error_count": 0,
+      "examples": [],
+      "file": "part_31.txt",
+      "input": {
+        "bytes": 29656453,
+        "sha256": "adee0f40afc1fdb17c98151d8989854443227193080b37ca98cb5fc8690efcc8",
+        "crc32": "208293cd",
+        "mtime_ns": 1792227707810857380,
+        "stable_during_read": true
+      },
+      "output": {
+        "bytes": 78233349,
+        "sha256": "9a6052907b75779d162aacf44d2bf91b2a71d6417eaf10adc03a2698e0354247",
+        "crc32": "8992efa4",
+        "mtime_ns": 1792238730489001492,
+        "stable_during_read": true
+      }
+    }
+  ],
+  "failures": 0,
+  "elapsed_seconds": 444.33
+}

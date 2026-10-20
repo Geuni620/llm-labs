@@ -1,0 +1,26 @@
+{
+  "status": "smoke-test-only",
+  "kind": "CORRECTNESS_ONLY",
+  "results": [
+    {
+      "device": "cpu",
+      "status": "passed",
+      "finite_loss": true,
+      "parameter_updated": true,
+      "parameter_count": 325,
+      "batch_ids_sha256": "8de25b6c80b01886f254384490266cbfd2111e181120471825ed56a220cae724"
+    },
+    {
+      "device": "mps",
+      "status": "passed",
+      "finite_loss": true,
+      "parameter_updated": true,
+      "parameter_count": 325,
+      "batch_ids_sha256": "8de25b6c80b01886f254384490266cbfd2111e181120471825ed56a220cae724"
+    }
+  ],
+  "timing_comparison_valid": false,
+  "throughput": null,
+  "time_budgets": null,
+  "corpus_training_performed": false
+}

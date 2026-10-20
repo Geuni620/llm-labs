@@ -1,0 +1,255 @@
+<style>
+  #kw-review { display: grid; gap: 16px; width: 100%; color: var(--foreground); }
+  #kw-review [hidden] { display: none !important; }
+  #kw-review .kw-panel, #kw-review .kw-stack { display: grid; gap: 14px; min-width: 0; }
+  #kw-review .kw-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+  #kw-review .kw-source { overflow-wrap: anywhere; }
+  #kw-review .kw-example { display: grid; gap: 6px; min-width: 0; }
+  #kw-review .kw-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  #kw-review details > summary { margin-bottom: 8px; }
+  #kw-review .kw-label { font-weight: 500; }
+  #kw-review .kw-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 520px) {
+    #kw-review .kw-pair, #kw-review .kw-stats { grid-template-columns: 1fr; }
+  }
+</style>
+<div id="kw-review">
+  <div class="text-small kw-source">FineWiki · 한국어 위키백과 2025-08 · 원본 582,035개 문서</div>
+  <div class="nav nav-pills" role="tablist" aria-label="전처리 결과 보기">
+    <button type="button" class="nav-link active" id="kw-tab-counts" role="tab" aria-selected="true" aria-controls="kw-counts">제거 통계</button>
+    <button type="button" class="nav-link" id="kw-tab-cases" role="tab" aria-selected="false" aria-controls="kw-cases">실제 사례</button>
+    <button type="button" class="nav-link" id="kw-tab-stages" role="tab" aria-selected="false" aria-controls="kw-stages">1·2·3단계 변화</button>
+  </div>
+
+  <section id="kw-counts" class="kw-panel" role="tabpanel" aria-labelledby="kw-tab-counts">
+    <div class="kw-stats" id="kw-overview"></div>
+    <table class="table table-sm">
+      <colgroup><col style="width:44%"><col style="width:33%"><col style="width:23%"></colgroup>
+      <thead><tr><th>필터</th><th class="text-end">제외 수</th><th class="text-end">제외율</th></tr></thead>
+      <tbody id="kw-filter-counts"></tbody>
+    </table>
+    <div class="text-small kw-stack" id="kw-count-notes"></div>
+    <details>
+      <summary>원문행 전체 기준</summary>
+      <div id="kw-all-lines" class="kw-text tabular-nums"></div>
+    </details>
+  </section>
+
+  <section id="kw-cases" class="kw-panel" role="tabpanel" aria-labelledby="kw-tab-cases" hidden>
+    <div class="viz-controls">
+      <label class="form-label" for="kw-case-select">제외·변경 사례
+        <select class="form-select" id="kw-case-select"></select>
+      </label>
+    </div>
+    <div id="kw-case-source" class="text-small kw-source" aria-live="polite"></div>
+    <div id="kw-case-rule" class="kw-label"></div>
+    <div class="kw-pair">
+      <div class="kw-example"><div class="text-small" id="kw-before-label">원문</div><div id="kw-before" class="kw-text"></div></div>
+      <div class="kw-example"><div class="text-small">결과</div><div id="kw-after" class="kw-text"></div></div>
+    </div>
+    <div id="kw-case-extra" class="kw-text text-small"></div>
+    <details id="kw-case-full" hidden><summary>해당 원문 전체</summary><div id="kw-case-full-text" class="kw-text"></div></details>
+  </section>
+
+  <section id="kw-stages" class="kw-panel" role="tabpanel" aria-labelledby="kw-tab-stages" hidden>
+    <div class="viz-controls">
+      <label class="form-label" for="kw-doc-select">확인할 문서
+        <select class="form-select" id="kw-doc-select"></select>
+      </label>
+      <label class="form-label" for="kw-stage-select">처리 단계
+        <select class="form-select" id="kw-stage-select">
+          <option value="1">1 · Parquet의 원문 text</option>
+          <option value="2">2 · TXT에 추출한 원문 text</option>
+          <option value="3p">3 · 8개 필터 통과 문단</option>
+          <option value="3s">3 · 문장 단위로 분리</option>
+        </select>
+      </label>
+    </div>
+    <div id="kw-stage-source" class="text-small kw-source"></div>
+    <div id="kw-stage-metrics" class="kw-label tabular-nums" aria-live="polite"></div>
+    <div id="kw-stage-text" class="kw-text"></div>
+    <details id="kw-schema"><summary>1단계 Parquet의 14개 열</summary><div id="kw-schema-list" class="kw-text text-small"></div></details>
+    <div class="text-small">샘플 5개는 형식 확인용입니다. 전체 필터링에는 원본 582,035개 문서를 모두 사용했습니다.</div>
+  </section>
+</div>
+<script type="application/json" id="kw-report-data">{"content_paragraphs_removed":608715,"content_paragraphs_removed_percent":18.86059060978285,"source_lines_removed":16489206,"source_lines_removed_percent":86.29507060810077,"filters":[{"number":1,"filter":"has_formula","removed":7259,"denominator":582035,"denominator_label":"전체 문서","removed_percent":1.2471758571219944,"label":"수식 포함 문서 전체 제외","example":{"source":{"id":"kowiki/303062","title":"신뢰 구간","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":4,"order":[0,0,4]},"line":0,"before":"# 신뢰 구간\n\n통계학에서 신뢰 구간(信賴區間, 영어: confidence interval)은 모수가 어느 범위 안에 있는지를 확률적으로 보여주는 방법이다.\n신뢰 구간은 보통 표본에서 산출된 통계와 함께 제공된다. 예를 들어, \"신뢰수준 95%에서 투표자의 35%~45%가 A후보를 지지하고 있다.\"라고 할 때 95%는 신뢰수준이고 35%~45%는 신뢰구간이며 θ는 A후보의 지지율이다.\n\n## 정의\n0과 1 사이의 실수 {\\displaystyle \\gamma \\in [0,1]}가 주어졌다고 하자. 또한, 각 모수 {\\displaystyle \\theta \\in \\Theta }에 대한 확률 변수 {\\displaystyle X_{\\theta }}가 주어졌다고 하자. 이 경우, {\\displaystyle \\theta }의, 신뢰계수(信賴係數, 영어: confidence coefficient) {\\displaystyle \\gamma }의 신뢰 구역 {\\displaystyle I_{\\theta }\\subset \\Theta }는 다음과 같은 성질을 가지는, {\\displaystyle \\Theta }의 부분집합의 값을 갖는 확률변수이다.\n{\\displaystyle \\forall \\theta \\in I\\colon \\Pr(\\theta \\in I_{\\theta })=\\gamma }\n만약 하나만의 확률 변수 {\\displaystyle \\theta \\in \\mathbb {R} }를 고려할 경우, 보통 {\\displaystyle I_{\\theta }}는 구간이 된다. 이 경우, {\\displaystyle I_{\\theta }}를 신뢰 구간이라고 한다.\n보통, 신뢰 수준(信賴水準, 영어: confidence level)은 신뢰 계수를 백분율로 나타낸 것이다.\n\n## 같이 보기\n- 68-95-99.7 규칙\n- 신용 구간\n- 허용 오차\n- 예측구간\n\n","after":null}},{"number":2,"filter":"is_structural","removed":15396959,"denominator":18624403,"denominator_label":"수식 문서 제외 후 전체 행","removed_percent":82.67088614867279,"label":"제목·목록·번호·표·빈 행 제외","example":{"source":{"id":"kowiki/282586","title":"고야마못","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":0,"order":[0,0,0]},"line":1,"before":"# 고야마못","after":null}},{"number":3,"filter":"has_math_symbol","removed":1459,"denominator":3227444,"denominator_label":"구조 행 제외 후 본문행","removed_percent":0.045206051599965796,"label":"수학 전용 기호 포함 행 제외","example":{"source":{"id":"kowiki/10170","title":"코카인","file":"parquet/data/kowiki/000_00000.parquet","row_group":1,"row_in_group":283,"order":[0,1,283]},"line":34,"before":"코카인 연기를 피워 들이마시면 모든 방법 중 가장 빠른 시간인 3~5초 후에 쾌감이 느껴진다. 그러나 효과 지속 시간도 5~15분으로 가장 짧다. 코카인을 피우는 방법은 크게 자유염기 코카인과 크랙 코카인이 있다. 코카인 가루는 코카인 염산염인데 이는 승화점이 높고 고온에서 분해되기 때문에 피울 수 없다. 하지만 염산 코카인을 수산화 나트륨이나 암모니아 따위로 처리하면 매우 순도가 높은 자유염기 코카인을 얻을 수 있고, 아니면 탄산수소 나트륨 용액으로 처리해 순도가 낮은 크랙 코카인을 얻을 수 있다. 이렇게 얻은 코카인 덩어리를 가열하면 기체로 승화하여 폐로 들이마실 수 있다. 2000년의 한 연구에 따르면 효과는 흡입 후 평균 1.4 ± 0.5분이 지난 뒤에 정점에 달한다. 코카인을 피울 때 발생하는 코카인의 열분해 산물은 그 효과에 영향을 끼치는 것으로 확인되었다. 예를 들어 무수 엑고닌 메틸 에스테르는 코카인과 함께 투여하면 뇌의 미상핵과 측좌핵 영역에서 도파민 농도를 높이고 M1 및 M3 수용체 친화성을 지닌다.","after":null}},{"number":4,"filter":"hanja_ratio","removed":33334,"denominator":3227444,"denominator_label":"구조 행 제외 후 본문행","removed_percent":1.0328296943339683,"label":"한자/(한자+한글) > 30% 행 제외","example":{"source":{"id":"kowiki/4239","title":"312년","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":590,"order":[0,0,590]},"line":21,"before":"동진(東晉)의 실권자 환온(桓溫)","after":null},"example_ratio_percent":33.33333333333333},{"number":5,"filter":"clean_paragraph","removed":1634,"denominator":3227444,"denominator_label":"구조 행 제외 후 본문행","removed_percent":0.050628299050270116,"changed_lines":1031684,"changed_input_lines":3192651,"characters_removed":26718874,"label":"외국어 괄호 제거·한글/숫자 괄호 보존·공백 정리","example":{"source":{"id":"kowiki/282586","title":"고야마못","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":0,"order":[0,0,0]},"line":2,"before":"고야마못(일본어: 湖山池 고야마이케[*])은 돗토리현 돗토리시 남서부에 위치한 기수호이다. 이름은 못이지만 커다란 석호다. 고대에는 만(湾)이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다. 일본에서 못(池)으로 표기된 수체들 중 고야마못이 가장 크다.","after":"고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다. 이름은 못이지만 커다란 석호다. 고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다. 일본에서 못으로 표기된 수체들 중 고야마못이 가장 크다."},"emptied_example":{"source":{"id":"kowiki/484","title":"비활성 기체","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":264,"order":[0,0,264]},"line":3,"before":"(예외로 Xe는 산소, 할로젠 등과 반응한다.)","after":""}},{"number":6,"filter":"letter_ratio","removed":68907,"denominator":3227444,"denominator_label":"구조 행 제외 후 본문행","removed_percent":2.1350331717606874,"label":"문자 비율 \u003c 20% 행 제외","example":{"source":{"id":"kowiki/2502009","title":"HTTP 301","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":25,"order":[0,0,25]},"line":12,"before":"```","after":"```"},"example_ratio_percent":0.0},{"number":7,"filter":"hangul_ratio","removed":123633,"denominator":3227444,"denominator_label":"구조 행 제외 후 본문행","removed_percent":3.8306783944198566,"label":"한글 비율 \u003c 30% 행 제외","example":{"source":{"id":"kowiki/308446","title":"나세르 마카렘 시라지","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":6,"order":[0,0,6]},"line":21,"before":"His works number more than 130 volumes. Some of these are:","after":"His works number more than 130 volumes. Some of these are:"},"example_ratio_percent":0.0},{"number":8,"filter":"is_sentence_shape","removed":379748,"denominator":3227444,"denominator_label":"구조 행 제외 후 본문행","removed_percent":11.766214998618102,"label":"마침표·물음표·느낌표로 끝나지 않는 행 제외","example":{"source":{"id":"kowiki/3110350","title":"산성로 (부산)","file":"parquet/data/kowiki/000_00000.parquet","row_group":0,"row_in_group":2,"order":[0,0,2]},"line":28,"before":"북구","after":"북구"}}],"step1":{"columns":[{"name":"text","type":"string"},{"name":"id","type":"string"},{"name":"wikiname","type":"string"},{"name":"page_id","type":"int64"},{"name":"title","type":"string"},{"name":"url","type":"string"},{"name":"date_modified","type":"string"},{"name":"in_language","type":"string"},{"name":"wikidata_id","type":"string"},{"name":"bytes_html","type":"int64"},{"name":"wikitext","type":"string"},{"name":"version","type":"int64"},{"name":"infoboxes","type":"string"},{"name":"has_math","type":"bool"}]},"step3":{"counts":{"source_lines":19107935,"documents_without_formula":574776,"lines_after_document_filter":18624403,"rejected_is_structural":15396959,"lines_entering_clean_paragraph":3192651,"lines_changed_by_clean_paragraph":1031684,"characters_removed_by_clean_paragraph":26718874,"rejected_is_sentence_shape":379748,"rejected_has_formula":7259,"source_lines_in_formula_documents":483532,"rejected_hangul_ratio":123633,"rejected_letter_ratio":68907,"rejected_clean_paragraph":1634,"rejected_hanja_ratio":33334,"documents":582035,"raw_paragraphs":3227444,"raw_characters":478843600,"clean_paragraphs":2618729,"clean_characters":430400511,"sentences":7099328,"rejected_has_math_symbol":1459}},"step4":{"input_sentences":7099328,"kept_sentences":6677632,"removed_sentences":421696,"removed_percent":5.939942484697143,"duplicate_groups":194939,"top_duplicates":[{"text":"참고: FIFA 자격 규정에 따라 소속된 국가대표팀 국기를 표시합니다.","occurrences_before":2259,"occurrences_after":1,"removed":2258,"first_source":{"file":"part_00.txt","line":34236}}]},"validated_examples":{"parentheses":{"kind":"synthetic validation example","before":"서울(Seoul)은 대한민국의 수도 (약 100만명)이다.","after":"서울은 대한민국의 수도 (약 100만명)이다."},"initials":{"kind":"synthetic validation example","before":"1953년 제임스 D. Watson은 DNA를 연구했다. 다음 문장이다.","after":["1953년 제임스 D. Watson은 DNA를 연구했다.","다음 문장이다."]}},"samples":[{"id":"kowiki/282586","title":"고야마못","source_file":"parquet/data/kowiki/000_00000.parquet","step2_file":"examples/kowiki-282586.text.txt","step1_row":{"text":"# 고야마못\n고야마못(일본어: 湖山池 고야마이케[*])은 돗토리현 돗토리시 남서부에 위치한 기수호이다. 이름은 못이지만 커다란 석호다. 고대에는 만(湾)이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다. 일본에서 못(池)으로 표기된 수체들 중 고야마못이 가장 크다.\n\n## 개요\n둘레 16 km, 면적 6.96 km2, 최대수심 7.5 m이다. 크고 작은 섬들이 다소 떠있다. 그중 가장 큰 섬은 아오시마섬으로 호안으로부터 다리로 연결되어 있다. 벚나무가 다수 심어져 있는 도로는 도보와 자전거로 일주가 가능하며 캠프도 가능하다. 몇 곳의 하천이 유입해 고야마강을 통해 동해로 빠져나간다. 단, 수문이 있기 때문에 수질오염문제가 부상하고 있다. 돗토리시 교외의 행락지 중 하나이며 돗토리 대학에 인접해 있다.\n돗토리시 미쓰 지구에서는 일본에서 전국적으로 보기 드문 전통 어법 이시가마료(石がま漁)가 겨울에 벌어진다. 돌 틈사이로 숨어든 물고기를 봉으로 때려 이때 도망가는 물고기를 포획하는 어법이다. 현재 현 지정 무형문화재로 지정되어 있다. 지역자치회와 NPO가 전통 어법 보존에 힘쓰고 있으며 어획기간 중 이시가마 축제가 열린다.\n전설로는《고야마 부자(湖山長者)》이야기가 알려져 있다. 내용은 넓은 논을 가지고 있던 부자가 일몰까지 모심기를 끝내지 못자, 고루(高樓)에 올라가 황금 부채로 태양을 불러내어 그날 모심기를 끝냈지만, 다음날 날이 밝자 논은 모두 못으로 변해 있었다는 이야기이다.\n아오시마섬 주변에는 예부터 사람들이 모여 살아 조몬 시대부터 야요이 시대에 걸친 유적이 있다. 또, 센고쿠 시대 동쪽 호반에 이나바 슈고 관아인 후세텐진 산성이 있었고, 서쪽 호반의 반도에는 호족 요시오카 가문의 거성인 쓰즈라오성이 있었다.\n가장 가까운 역으로는 JR 산인 본선의 고야마역과 스에쓰네역, 돗토리다이가쿠마에역이 있다. 또, 돗토리다이가쿠마에 역에서 스에쓰네 역 사이를 오가는 열차의 차창사이로 고야마이케의 풍경을 볼 수 있다.\n\n## 갤러리\n- 아오시마섬\n- 네코시마섬\n- 이시가마\n\n\n## 같이 보기\n- 후세텐진 산성\n- 쓰즈라오 성\n- 이시가마료\n\n"},"step3":{"counts":{"source_lines":22,"documents_without_formula":1,"lines_after_document_filter":22,"rejected_is_structural":16,"lines_entering_clean_paragraph":6,"lines_changed_by_clean_paragraph":4,"characters_removed_by_clean_paragraph":41,"documents":1,"raw_paragraphs":6,"raw_characters":962,"clean_paragraphs":6,"clean_characters":921,"sentences":21},"paragraphs":"고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다. 이름은 못이지만 커다란 석호다. 고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다. 일본에서 못으로 표기된 수체들 중 고야마못이 가장 크다.\n\n둘레 16 km, 면적 6.96 km2, 최대수심 7.5 m이다. 크고 작은 섬들이 다소 떠있다. 그중 가장 큰 섬은 아오시마섬으로 호안으로부터 다리로 연결되어 있다. 벚나무가 다수 심어져 있는 도로는 도보와 자전거로 일주가 가능하며 캠프도 가능하다. 몇 곳의 하천이 유입해 고야마강을 통해 동해로 빠져나간다. 단, 수문이 있기 때문에 수질오염문제가 부상하고 있다. 돗토리시 교외의 행락지 중 하나이며 돗토리 대학에 인접해 있다.\n\n돗토리시 미쓰 지구에서는 일본에서 전국적으로 보기 드문 전통 어법 이시가마료가 겨울에 벌어진다. 돌 틈사이로 숨어든 물고기를 봉으로 때려 이때 도망가는 물고기를 포획하는 어법이다. 현재 현 지정 무형문화재로 지정되어 있다. 지역자치회와 NPO가 전통 어법 보존에 힘쓰고 있으며 어획기간 중 이시가마 축제가 열린다.\n\n전설로는《고야마 부자》이야기가 알려져 있다. 내용은 넓은 논을 가지고 있던 부자가 일몰까지 모심기를 끝내지 못자, 고루에 올라가 황금 부채로 태양을 불러내어 그날 모심기를 끝냈지만, 다음날 날이 밝자 논은 모두 못으로 변해 있었다는 이야기이다.\n\n아오시마섬 주변에는 예부터 사람들이 모여 살아 조몬 시대부터 야요이 시대에 걸친 유적이 있다. 또, 센고쿠 시대 동쪽 호반에 이나바 슈고 관아인 후세텐진 산성이 있었고, 서쪽 호반의 반도에는 호족 요시오카 가문의 거성인 쓰즈라오성이 있었다.\n\n가장 가까운 역으로는 JR 산인 본선의 고야마역과 스에쓰네역, 돗토리다이가쿠마에역이 있다. 또, 돗토리다이가쿠마에 역에서 스에쓰네 역 사이를 오가는 열차의 차창사이로 고야마이케의 풍경을 볼 수 있다.\n\n","sentences":"고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.\n이름은 못이지만 커다란 석호다.\n고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.\n일본에서 못으로 표기된 수체들 중 고야마못이 가장 크다.\n\n둘레 16 km, 면적 6.96 km2, 최대수심 7.5 m이다.\n크고 작은 섬들이 다소 떠있다.\n그중 가장 큰 섬은 아오시마섬으로 호안으로부터 다리로 연결되어 있다.\n벚나무가 다수 심어져 있는 도로는 도보와 자전거로 일주가 가능하며 캠프도 가능하다.\n몇 곳의 하천이 유입해 고야마강을 통해 동해로 빠져나간다.\n단, 수문이 있기 때문에 수질오염문제가 부상하고 있다.\n돗토리시 교외의 행락지 중 하나이며 돗토리 대학에 인접해 있다.\n\n돗토리시 미쓰 지구에서는 일본에서 전국적으로 보기 드문 전통 어법 이시가마료가 겨울에 벌어진다.\n돌 틈사이로 숨어든 물고기를 봉으로 때려 이때 도망가는 물고기를 포획하는 어법이다.\n현재 현 지정 무형문화재로 지정되어 있다.\n지역자치회와 NPO가 전통 어법 보존에 힘쓰고 있으며 어획기간 중 이시가마 축제가 열린다.\n\n전설로는《고야마 부자》이야기가 알려져 있다.\n내용은 넓은 논을 가지고 있던 부자가 일몰까지 모심기를 끝내지 못자, 고루에 올라가 황금 부채로 태양을 불러내어 그날 모심기를 끝냈지만, 다음날 날이 밝자 논은 모두 못으로 변해 있었다는 이야기이다.\n\n아오시마섬 주변에는 예부터 사람들이 모여 살아 조몬 시대부터 야요이 시대에 걸친 유적이 있다.\n또, 센고쿠 시대 동쪽 호반에 이나바 슈고 관아인 후세텐진 산성이 있었고, 서쪽 호반의 반도에는 호족 요시오카 가문의 거성인 쓰즈라오성이 있었다.\n\n가장 가까운 역으로는 JR 산인 본선의 고야마역과 스에쓰네역, 돗토리다이가쿠마에역이 있다.\n또, 돗토리다이가쿠마에 역에서 스에쓰네 역 사이를 오가는 열차의 차창사이로 고야마이케의 풍경을 볼 수 있다.\n\n","document_rejected":false}},{"id":"kowiki/1792712","title":"리우데자네이루나무쥐","source_file":"parquet/data/kowiki/000_00000.parquet","step2_file":"examples/kowiki-1792712.text.txt","step1_row":{"text":"# 리우데자네이루나무쥐\n리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.\n"},"step3":{"counts":{"source_lines":3,"documents_without_formula":1,"lines_after_document_filter":3,"rejected_is_structural":2,"lines_entering_clean_paragraph":1,"lines_changed_by_clean_paragraph":1,"characters_removed_by_clean_paragraph":34,"documents":1,"raw_paragraphs":1,"raw_characters":111,"clean_paragraphs":1,"clean_characters":77,"sentences":3},"paragraphs":"리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속의 유일종이다.\n\n","sentences":"리우데자네이루나무쥐는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다.\n브라질에서 발견된다.\n리우데자네이루나무쥐속의 유일종이다.\n\n","document_rejected":false}},{"id":"kowiki/3110350","title":"산성로 (부산)","source_file":"parquet/data/kowiki/000_00000.parquet","step2_file":"examples/kowiki-3110350.text.txt","step1_row":{"text":"# 산성로 (부산)\n산성로(山城路)는 부산광역시 북구 화명동에서 금정구 장전동까지 이르는 부산광역시도로, 총 연장은 2.527 km이다. 또한 해당 도로는 사적 제215호로 지정된 금정산성의 명칭을 반영하여 제정된 것에서 유래하였다.\n\n## 노선 정보\n- 총 연장 : 2.527 km\n- 기점 : 부산광역시 북구 화명동 1528-5 (화명삼거리 = 금곡대로와 교차)\n- 종점 : 부산광역시 금정구 장전동 산38-42 (금샘로와 직결)\n\n\n## 개요\n1990년대 이전 당시의 구 영동고속도로와 비슷한 선형을 가지고 있는 부산 지역의 대표적인 S자형 굴곡 구간이 있는 도로이다. 그래서 급경사나 급커브가 워낙 심한 도로로 알려져 왔으며, 1981년 당시에 있었던 버스 추락 사고로 33명이 숨지는 대참사가 발생된 사건과 관련이 깊은 도로이기도 하다.\n\n## 지리\n\n### 통과하는 지자체\n- 부산광역시\n  - 북구 (화명2동) - 금정구 (금성동 - 장전1동 - 장전2동)\n\n\n### 접촉하는 도로\n- 금곡대로 (국도 제35호선)\n- 땅곡길\n- 북문로\n- 금샘로 (부산광역시도 제7102호선)\n\n\n### 주변에 있는 시설\n북구\n- 화신중학교\n- 북부산농협 화명지점\n- 부산광역시 북구보건소\n- 산성중앙교회\n- 파스쿠찌 부산화명산성점\n- 명한의원\n- 화명푸르지오헤리센트아파트\n- CU 화명산성로점\n- 지코바치킨 화명1호점\n- 대우마트\n- 금화횟집\n- 화명평화도서관\n- 주원교회\n- 축복교회\n- 화명장원맨션\n- 산성슈퍼\n- 웅진빌라\n- 키즈킹덤어린이집\n- 대천리중학교\n- 대천리초등학교\n- 그린숲속아파트\n- 심우촌\n- 대천천누리길\n- 화명 수목원 전시실\n\n금정구\n- 금정산성 서문\n- 산성119안전센터\n- 오리방\n- 낙원집\n- 카페지수\n- 산성상회\n- 산성마루\n- 헤이든신씨어\n- 금성어린이집\n- 인제약국\n- 산성교회\n- 북경반점\n- 청사초롱\n- 금성동행정복지센터\n- 산성막걸리\n- 과수원\n- 카페26\n- 초가농장\n- 놀이체험도서관빅뱅\n- 일월농장\n- 녹색의장원\n- 현대가든\n- 산성청송가든\n- 금정산성다목적광장\n- 공해마을회관\n- 금호장\n- 산성버스\n- 산자락가든\n- 솔밭집\n- 동래양로원\n\n"},"step3":{"counts":{"source_lines":86,"documents_without_formula":1,"lines_after_document_filter":86,"rejected_is_structural":82,"lines_entering_clean_paragraph":4,"lines_changed_by_clean_paragraph":1,"characters_removed_by_clean_paragraph":5,"rejected_is_sentence_shape":2,"documents":1,"raw_paragraphs":4,"raw_characters":290,"clean_paragraphs":2,"clean_characters":280,"sentences":4},"paragraphs":"산성로는 부산광역시 북구 화명동에서 금정구 장전동까지 이르는 부산광역시도로, 총 연장은 2.527 km이다. 또한 해당 도로는 사적 제215호로 지정된 금정산성의 명칭을 반영하여 제정된 것에서 유래하였다.\n\n1990년대 이전 당시의 구 영동고속도로와 비슷한 선형을 가지고 있는 부산 지역의 대표적인 S자형 굴곡 구간이 있는 도로이다. 그래서 급경사나 급커브가 워낙 심한 도로로 알려져 왔으며, 1981년 당시에 있었던 버스 추락 사고로 33명이 숨지는 대참사가 발생된 사건과 관련이 깊은 도로이기도 하다.\n\n","sentences":"산성로는 부산광역시 북구 화명동에서 금정구 장전동까지 이르는 부산광역시도로, 총 연장은 2.527 km이다.\n또한 해당 도로는 사적 제215호로 지정된 금정산성의 명칭을 반영하여 제정된 것에서 유래하였다.\n\n1990년대 이전 당시의 구 영동고속도로와 비슷한 선형을 가지고 있는 부산 지역의 대표적인 S자형 굴곡 구간이 있는 도로이다.\n그래서 급경사나 급커브가 워낙 심한 도로로 알려져 왔으며, 1981년 당시에 있었던 버스 추락 사고로 33명이 숨지는 대참사가 발생된 사건과 관련이 깊은 도로이기도 하다.\n\n","document_rejected":false}},{"id":"kowiki/660723","title":"광주동부소방서","source_file":"parquet/data/kowiki/000_00000.parquet","step2_file":"examples/kowiki-660723.text.txt","step1_row":{"text":"# 광주동부소방서\n광주동부소방서(光州東部消防署, 영어: Gwangju Dongbu Fire Station)는 광주광역시 동구를 관할하는 광주광역시 소방안전본부 소속의 소방서이다.\n소방서장은 소방정으로 보한다.\n\n## 연혁\n- 1946년 2월 4일: 광주소방서 개서\n- 1985년 12월 10일: 광주서부소방서 분리\n- 1990년 3월 21일: 광주동부소방서로 변경\n- 1995년 11월 23일: 광주북부소방서 분리\n- 2003년 9월 20일: 광주남부소방서 분리\n\n\n## 조직\n| - 소방행정과 - 소방행정팀 - 예산장비팀 | - 현장대응과 - 대응지원팀 - 예방홍보팀 - 구조구급팀 - 현장지휘팀 |\n\n\n## 관할센터 및 관할구역\n광주동부소방서는 3개의 119안전센터와 1개의 구조대를 산하에 두고 있다.\n| 명칭                     | 사진 | 주소          | 관할구역                                  | 지역대 |\n| ------------------------ | ---- | ------------- | ----------------------------------------- | ------ |\n| 대인119안전센터          |      | 제봉로 210    | 충장동, 계림 1·2동, 산수 1동, 서남동 일부 |        |\n| 학운119안전센터          |      | 남문로 692    | 학동, 학운동, 지원 1·2동, 서남동 일부     |        |\n| 지산119안전센터          |      | 밤실로30길 16 | 산수 2동, 지산 1·2동, 동명동, 서남동 일부 |        |\n| 광주동부소방서 119구조대 |      | 제봉로 210    | 광주광역시 동구 일원                      |        |\n\n\n## 사건사고\n- 1996년 12월 1일에 제설작업을 지원하던 소방관 1명이 순직하였다.[4]\n\n\n## 같이 보기\n- 대한민국 소방청\n- 대한민국의 소방\n- 소방관 계급\n\n"},"step3":{"counts":{"source_lines":36,"documents_without_formula":1,"lines_after_document_filter":36,"rejected_is_structural":33,"lines_entering_clean_paragraph":3,"lines_changed_by_clean_paragraph":1,"characters_removed_by_clean_paragraph":42,"documents":1,"raw_paragraphs":3,"raw_characters":146,"clean_paragraphs":3,"clean_characters":104,"sentences":3},"paragraphs":"광주동부소방서는 광주광역시 동구를 관할하는 광주광역시 소방안전본부 소속의 소방서이다.\n\n소방서장은 소방정으로 보한다.\n\n광주동부소방서는 3개의 119안전센터와 1개의 구조대를 산하에 두고 있다.\n\n","sentences":"광주동부소방서는 광주광역시 동구를 관할하는 광주광역시 소방안전본부 소속의 소방서이다.\n\n소방서장은 소방정으로 보한다.\n\n광주동부소방서는 3개의 119안전센터와 1개의 구조대를 산하에 두고 있다.\n\n","document_rejected":false}},{"id":"kowiki/303062","title":"신뢰 구간","source_file":"parquet/data/kowiki/000_00000.parquet","step2_file":"examples/kowiki-303062.text.txt","step1_row":{"text":"# 신뢰 구간\n\n통계학에서 신뢰 구간(信賴區間, 영어: confidence interval)은 모수가 어느 범위 안에 있는지를 확률적으로 보여주는 방법이다.\n신뢰 구간은 보통 표본에서 산출된 통계와 함께 제공된다. 예를 들어, \"신뢰수준 95%에서 투표자의 35%~45%가 A후보를 지지하고 있다.\"라고 할 때 95%는 신뢰수준이고 35%~45%는 신뢰구간이며 θ는 A후보의 지지율이다.\n\n## 정의\n0과 1 사이의 실수 {\\displaystyle \\gamma \\in [0,1]}가 주어졌다고 하자. 또한, 각 모수 {\\displaystyle \\theta \\in \\Theta }에 대한 확률 변수 {\\displaystyle X_{\\theta }}가 주어졌다고 하자. 이 경우, {\\displaystyle \\theta }의, 신뢰계수(信賴係數, 영어: confidence coefficient) {\\displaystyle \\gamma }의 신뢰 구역 {\\displaystyle I_{\\theta }\\subset \\Theta }는 다음과 같은 성질을 가지는, {\\displaystyle \\Theta }의 부분집합의 값을 갖는 확률변수이다.\n{\\displaystyle \\forall \\theta \\in I\\colon \\Pr(\\theta \\in I_{\\theta })=\\gamma }\n만약 하나만의 확률 변수 {\\displaystyle \\theta \\in \\mathbb {R} }를 고려할 경우, 보통 {\\displaystyle I_{\\theta }}는 구간이 된다. 이 경우, {\\displaystyle I_{\\theta }}를 신뢰 구간이라고 한다.\n보통, 신뢰 수준(信賴水準, 영어: confidence level)은 신뢰 계수를 백분율로 나타낸 것이다.\n\n## 같이 보기\n- 68-95-99.7 규칙\n- 신용 구간\n- 허용 오차\n- 예측구간\n\n"},"step3":{"counts":{"source_lines":18,"rejected_has_formula":1,"source_lines_in_formula_documents":18,"documents":1,"raw_paragraphs":0,"raw_characters":0,"clean_paragraphs":0,"clean_characters":0,"sentences":0},"paragraphs":"","sentences":"","document_rejected":true}}]}</script>
+<script>
+(() => {
+  const root = document.getElementById('kw-review');
+  const data = JSON.parse(document.getElementById('kw-report-data').textContent);
+  const $ = id => root.querySelector('#' + id);
+  const n = value => Number(value).toLocaleString('ko-KR');
+  const pct = value => Number(value).toFixed(2) + '%';
+  const set = (id, value) => { $(id).textContent = value; };
+  const add = (parent, tag, text, className = '') => {
+    const el = document.createElement(tag);
+    el.textContent = text;
+    el.className = className;
+    parent.append(el);
+    return el;
+  };
+  const counts = data.step3.counts;
+  const shortLabels = ['수식 포함 문서', '빈 행·제목·목록·표', '수학 전용 기호', '한자 비율 > 30%', '괄호·공백 정리 후 빈 행', '문자 비율 < 20%', '한글 비율 < 30%', '종결부호 없는 행'];
+  const state = { tab: 'counts', filter: '1', sample: '0', stage: '1' };
+  const saved = window.openai?.widgetState?.privateContent;
+  if (saved && typeof saved === 'object') {
+    if (['counts', 'cases', 'stages'].includes(saved.tab)) state.tab = saved.tab;
+    if (/^(?:[1-9]|10)$/.test(saved.filter)) state.filter = saved.filter;
+    if (/^[0-4]$/.test(saved.sample)) state.sample = saved.sample;
+    if (['1', '2', '3p', '3s'].includes(saved.stage)) state.stage = saved.stage;
+  }
+  const save = () => {
+    if (window.openai?.setWidgetState) {
+      window.openai.setWidgetState({ modelContent: { document: data.samples[Number(state.sample)].id, stage: state.stage, filter: state.filter }, privateContent: { ...state } }).catch(() => {});
+    }
+  };
+  function tab(value) {
+    state.tab = value;
+    for (const name of ['counts', 'cases', 'stages']) {
+      const selected = name === value;
+      $('kw-tab-' + name).classList.toggle('active', selected);
+      $('kw-tab-' + name).setAttribute('aria-selected', String(selected));
+      $('kw-' + name).hidden = !selected;
+    }
+  }
+  const overview = [
+    ['수식 포함 문서 제외', n(counts.rejected_has_formula) + '개 · ' + pct(data.filters[0].removed_percent), '전체 ' + n(counts.documents) + '개 문서 기준'],
+    ['본문행 추가 제외', n(data.content_paragraphs_removed) + '개 · ' + pct(data.content_paragraphs_removed_percent), '구조 행 제외 후 ' + n(counts.raw_paragraphs) + '개 기준'],
+    ['중복 문장 제외', n(data.step4.removed_sentences) + '개 · ' + pct(data.step4.removed_percent), '분리된 ' + n(data.step4.input_sentences) + '개 문장 기준']
+  ];
+  for (const [label, value, base] of overview) {
+    const section = add($('kw-overview'), 'div', '', 'kw-example');
+    add(section, 'div', label, 'text-small');
+    add(section, 'div', value, 'kw-label tabular-nums');
+    add(section, 'div', base, 'text-small');
+  }
+  for (const item of data.filters) {
+    const row = document.createElement('tr');
+    add(row, 'td', item.number + '. ' + shortLabels[item.number - 1]);
+    add(row, 'td', n(item.removed) + (item.number === 1 ? '개 문서' : '행'), 'text-end');
+    add(row, 'td', pct(item.removed_percent), 'text-end');
+    $('kw-filter-counts').append(row);
+  }
+  for (const text of [
+    '분모: 1번은 전체 ' + n(counts.documents) + '개 문서, 2번은 수식 문서 제외 후 ' + n(counts.lines_after_document_filter) + '행, 3~8번은 구조 행 제외 후 ' + n(counts.raw_paragraphs) + '개 본문행.',
+    '5번의 괄호·공백 변경: ' + n(counts.lines_changed_by_clean_paragraph) + '행 (' + pct(counts.lines_changed_by_clean_paragraph / counts.lines_entering_clean_paragraph * 100) + ', 정리에 진입한 행 기준). 그중 빈 행이 된 ' + n(counts.rejected_clean_paragraph) + '행만 제외 수에 포함됩니다.',
+    '정제 문단 ' + n(counts.clean_paragraphs) + '개 → 문장 분리 ' + n(counts.sentences) + '개 → 중복 제거 후 ' + n(data.step4.kept_sentences) + '개.',
+    '중복 기준: NFKC·공백 정리 후 완전 일치. 영문 대소문자는 구분합니다. 각 행은 처음 탈락한 사유에 한 번만 집계합니다.'
+  ]) add($('kw-count-notes'), 'div', text);
+  set('kw-all-lines', '원문행 ' + n(counts.source_lines) + '개 → 정제 문단 ' + n(counts.clean_paragraphs) + '개\n제외 ' + n(data.source_lines_removed) + '행 (' + pct(data.source_lines_removed_percent) + ')\n빈 행·제목·목록·표와 수식 문서 안의 행을 포함한 수치입니다.');
+
+  data.filters.forEach(item => {
+    const option = add($('kw-case-select'), 'option', item.number + ' · ' + shortLabels[item.number - 1]);
+    option.value = String(item.number);
+  });
+  for (const [value, label] of [['9', '중복 문장 · 가장 많이 반복된 실제 사례'], ['10', '예외 처리 · 괄호·이니셜 검증 예시']]) {
+    const option = add($('kw-case-select'), 'option', label);
+    option.value = value;
+  }
+  function showCase(value) {
+    state.filter = String(value);
+    $('kw-case-select').value = state.filter;
+    $('kw-case-full').hidden = true;
+    $('kw-case-full').open = false;
+    set('kw-case-extra', '');
+    set('kw-before-label', '원문');
+    if (Number(value) <= 8) {
+      const item = data.filters[Number(value) - 1], example = item.example;
+      set('kw-case-source', example.source.title + ' · ' + example.source.id + (example.line ? ' · 원문 ' + example.line + '행' : ''));
+      set('kw-case-rule', item.label);
+      let before = example.before;
+      if (Number(value) === 1) before = before.split('\n').find(line => line.includes('{\\displaystyle'));
+      if (Number(value) === 3 && before.length > 350) {
+        const hit = before.search(/[±∓≠≤≥∈∪∑√∞]/);
+        before = '…' + before.slice(Math.max(0, hit - 75), hit + 85) + '…';
+      }
+      if (before !== example.before) {
+        set('kw-before-label', '원문 발췌');
+        $('kw-case-full').hidden = false;
+        set('kw-case-full-text', example.before);
+      }
+      set('kw-before', before);
+      set('kw-after', Number(value) === 5 ? example.after : Number(value) === 1 ? '문서 전체 제외' : '해당 행 제외');
+      let extra = n(item.removed) + (Number(value) === 1 ? '개 문서' : '행') + ' 제외 · ' + pct(item.removed_percent) + ' (' + item.denominator_label + ' ' + n(item.denominator) + '개 기준)';
+      if (item.example_ratio_percent !== undefined) extra += '\n이 사례의 비율: ' + pct(item.example_ratio_percent);
+      if (item.emptied_example) extra += '\n행 전체가 빈 경우도 존재: ' + item.emptied_example.source.title + '\n' + item.emptied_example.before + ' → 빈 행으로 제외';
+      if (Number(value) === 2) {
+        const table = data.samples.find(sample => sample.id === 'kowiki/660723');
+        const line = table?.step1_row.text.split('\n').find(text => text.startsWith('|'));
+        if (line) extra += '\n표 행의 실제 사례: 광주동부소방서\n' + line + ' → 해당 행 제외';
+      }
+      set('kw-case-extra', extra);
+    } else if (Number(value) === 9) {
+      const example = data.step4.top_duplicates[0];
+      set('kw-case-source', '전체 32개 파일 통합 · ' + n(data.step4.duplicate_groups) + '종류에서 중복 발견');
+      set('kw-case-rule', '정규화 후 같은 문장은 최초 1회만 보존');
+      set('kw-before', example.text + '\n\n총 ' + n(example.occurrences_before) + '회 등장');
+      set('kw-after', example.text + '\n\n1회 보존 · ' + n(example.removed) + '회 제외');
+      set('kw-case-extra', '전체 문장 ' + n(data.step4.input_sentences) + '개 중 ' + n(data.step4.removed_sentences) + '개 제외 (' + pct(data.step4.removed_percent) + ')');
+    } else {
+      const cases = data.validated_examples;
+      set('kw-case-source', '요청한 예외 처리를 확인하기 위한 인공 검증 예시');
+      set('kw-case-rule', '한글·숫자 괄호 보존 / 이니셜 뒤에서 갈라진 문장 합치기');
+      set('kw-before', cases.parentheses.before + '\n\n' + cases.initials.before);
+      set('kw-after', cases.parentheses.after + '\n\n' + cases.initials.after.join('\n'));
+    }
+  }
+
+  data.samples.forEach((sample, index) => {
+    const option = add($('kw-doc-select'), 'option', sample.title + ' · ' + sample.id);
+    option.value = String(index);
+  });
+  set('kw-schema-list', data.step1.columns.map(column => column.name + ': ' + column.type).join('\n'));
+  function showSample(index, stage) {
+    state.sample = String(index);
+    state.stage = stage;
+    $('kw-doc-select').value = state.sample;
+    $('kw-stage-select').value = stage;
+    const sample = data.samples[Number(index)], c = sample.step3.counts;
+    let text, metrics;
+    if (stage === '1' || stage === '2') {
+      text = sample.step1_row.text;
+      metrics = stage === '1' ? 'Parquet의 14개 열 중 text · ' + n([...text].length) + '자' : 'text만 추출한 UTF-8 TXT · 원본 text와 바이트 단위 일치';
+    } else {
+      text = stage === '3p' ? sample.step3.paragraphs : sample.step3.sentences;
+      metrics = '본문행 ' + n(c.raw_paragraphs || 0) + '개 → 정제 문단 ' + n(c.clean_paragraphs || 0) + '개 → 문장 ' + n(c.sentences || 0) + '개';
+      if (sample.step3.document_rejected) text = '수식 포함 문서이므로 1번 필터에서 문서 전체 제외.';
+      else if (!text) text = '모든 행이 필터에서 제외되었습니다.';
+    }
+    const path = stage === '1' ? sample.source_file : stage === '2' ? sample.step2_file : 'reports/examples/' + sample.id.replace('/', '-') + (stage === '3p' ? '.paragraphs.txt' : '.sentences.txt');
+    set('kw-stage-source', sample.title + ' · ' + path);
+    set('kw-stage-metrics', metrics);
+    set('kw-stage-text', text);
+    $('kw-schema').hidden = stage !== '1';
+  }
+  for (const name of ['counts', 'cases', 'stages']) $('kw-tab-' + name).addEventListener('click', () => { tab(name); save(); });
+  $('kw-case-select').addEventListener('change', event => { showCase(event.target.value); save(); });
+  $('kw-doc-select').addEventListener('change', event => { showSample(event.target.value, state.stage); save(); });
+  $('kw-stage-select').addEventListener('change', event => { showSample(state.sample, event.target.value); save(); });
+  window.addEventListener('openai:set_globals', event => {
+    const saved = event.detail?.globals?.widgetState?.privateContent;
+    if (!saved) return;
+    if (['counts', 'cases', 'stages'].includes(saved.tab)) tab(saved.tab);
+    if (/^(?:[1-9]|10)$/.test(saved.filter)) showCase(saved.filter);
+    if (/^[0-4]$/.test(saved.sample) && ['1', '2', '3p', '3s'].includes(saved.stage)) showSample(saved.sample, saved.stage);
+  });
+  // 모든 선택 항목이 실제 결과로 표시되는지 확인한 뒤 사용자의 선택으로 복원한다.
+  const initial = { ...state };
+  for (let i = 1; i <= 10; i++) {
+    showCase(String(i));
+    if (!$('kw-before').textContent || !$('kw-after').textContent) throw new Error('Empty case: ' + i);
+  }
+  for (let i = 0; i < data.samples.length; i++) {
+    for (const stage of ['1', '2', '3p', '3s']) {
+      showSample(String(i), stage);
+      if (!$('kw-stage-text').textContent) throw new Error('Empty sample: ' + i + '/' + stage);
+      if (stage === '2' && $('kw-stage-text').textContent !== data.samples[i].step1_row.text) throw new Error('Step 2 changed the source');
+    }
+  }
+  tab(initial.tab);
+  showCase(initial.filter);
+  showSample(initial.sample, initial.stage);
+  window.kwReview = { tab, showCase, showSample };
+  console.info('Review checks passed: 10 cases, 5 documents × 4 stage views.');
+})();
+</script>

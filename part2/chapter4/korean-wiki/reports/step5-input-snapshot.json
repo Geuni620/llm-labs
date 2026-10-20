@@ -1,0 +1,171 @@
+{
+  "sentences_dedup/part_00.txt": {
+    "bytes": 32707665,
+    "mtime_ns": 1792227642859480802,
+    "sha256": "7bf903da925854e3a8c85ff1ae2ffa2821292e2fc5faf5daa7818884c7c59512"
+  },
+  "sentences_dedup/part_01.txt": {
+    "bytes": 30382209,
+    "mtime_ns": 1792227644568500938,
+    "sha256": "2b40039ae5fcd2aad1e21759392f6cad39ce498af2c209c43d5d237202e3b13a"
+  },
+  "sentences_dedup/part_02.txt": {
+    "bytes": 31086307,
+    "mtime_ns": 1792227646286108375,
+    "sha256": "63a31a5fc12e2d17d46e823fe57398612762b7dc7a79d4685fab20d98042ee24"
+  },
+  "sentences_dedup/part_03.txt": {
+    "bytes": 29635969,
+    "mtime_ns": 1792227650207534841,
+    "sha256": "fba63a842dc0cbef1d36c532f9fdbccb94b078b236cd703883ec15e7e63a8af6"
+  },
+  "sentences_dedup/part_04.txt": {
+    "bytes": 30322122,
+    "mtime_ns": 1792227652526822285,
+    "sha256": "99ea5a2e08d045955ce0813b37847ffd16c12ac9667877783f32450775f3f2e6"
+  },
+  "sentences_dedup/part_05.txt": {
+    "bytes": 31065428,
+    "mtime_ns": 1792227654314671951,
+    "sha256": "141213c569de3874cbf90e67cb15f0c594bb44aff158d8027831d940bcb339a8"
+  },
+  "sentences_dedup/part_06.txt": {
+    "bytes": 33217961,
+    "mtime_ns": 1792227657195614228,
+    "sha256": "0820aada9eae7a3a53caa4268a3cb497983aec7322aa10837545c3702a495a81"
+  },
+  "sentences_dedup/part_07.txt": {
+    "bytes": 33663348,
+    "mtime_ns": 1792227659471610001,
+    "sha256": "dd2b7592046a2af2164fbcb820e789a8b56f5ce84706bf31bea271d246f1dfa3"
+  },
+  "sentences_dedup/part_08.txt": {
+    "bytes": 32013093,
+    "mtime_ns": 1792227661274706796,
+    "sha256": "7e0e4cb8ec79ca30fe3b866ee4e2bdceb69148b48c11651020ec572acb6e8901"
+  },
+  "sentences_dedup/part_09.txt": {
+    "bytes": 30399175,
+    "mtime_ns": 1792227663123662480,
+    "sha256": "e3731eee8f61e6949da29eb99fd3753bca90756073f60102a841c2d9f77dc333"
+  },
+  "sentences_dedup/part_10.txt": {
+    "bytes": 32125577,
+    "mtime_ns": 1792227665464034184,
+    "sha256": "4d8ec2418d6738125ff2397ca7897a71b3c9355f16df2f39e89975f5b570fa6e"
+  },
+  "sentences_dedup/part_11.txt": {
+    "bytes": 32687757,
+    "mtime_ns": 1792227667273792558,
+    "sha256": "26529d9bf9df2a1100bce69c7f89796c432c89ddb715ef88587910a88f17fe44"
+  },
+  "sentences_dedup/part_12.txt": {
+    "bytes": 31884146,
+    "mtime_ns": 1792227669169238328,
+    "sha256": "c1bb231b1554cc0650a88dd42a589cce61520253e742204c0c811ec5b9fc92d2"
+  },
+  "sentences_dedup/part_13.txt": {
+    "bytes": 30697571,
+    "mtime_ns": 1792227670980363434,
+    "sha256": "08ccc886d006209566fb8a566b145e0dd6a8eaac3ab4c7fd9760189340c3f153"
+  },
+  "sentences_dedup/part_14.txt": {
+    "bytes": 29872461,
+    "mtime_ns": 1792227672726565698,
+    "sha256": "fa6b15918ddb618c26cb4bfeace8b3e82ff69772ec82cd684400531fac0fae69"
+  },
+  "sentences_dedup/part_15.txt": {
+    "bytes": 32759871,
+    "mtime_ns": 1792227674687150266,
+    "sha256": "b1f2f925a6f4d610887dfee73e03aaba2104bf2687b499a0b22a1b10dea9784e"
+  },
+  "sentences_dedup/part_16.txt": {
+    "bytes": 30509248,
+    "mtime_ns": 1792227676388579628,
+    "sha256": "791a06856774be65e7316b3b65d57702e5e6923ff1c491baeae270f3956dea5b"
+  },
+  "sentences_dedup/part_17.txt": {
+    "bytes": 29837317,
+    "mtime_ns": 1792227678098921412,
+    "sha256": "a9fb62ffa3d1ee3e3abcc8fd191f96546ad7ef1af3bb8a0767903e8d8cc80568"
+  },
+  "sentences_dedup/part_18.txt": {
+    "bytes": 31534821,
+    "mtime_ns": 1792227679896571406,
+    "sha256": "2d923b54caa6ea2a022b7c816268667cf0e7e53d1098b9058af7fa737a9f38b6"
+  },
+  "sentences_dedup/part_19.txt": {
+    "bytes": 30187861,
+    "mtime_ns": 1792227684878480084,
+    "sha256": "1578ff3ad90b578c10973e10a3b4b498be6bdf21729e694d655e14115c49e5bb"
+  },
+  "sentences_dedup/part_20.txt": {
+    "bytes": 29937180,
+    "mtime_ns": 1792227686907796359,
+    "sha256": "1267171373c829a97075b1537119e70d84e27e33ed3c6298eabebe08911816b0"
+  },
+  "sentences_dedup/part_21.txt": {
+    "bytes": 28668624,
+    "mtime_ns": 1792227688755684932,
+    "sha256": "06a6a97cd077426ed93531e994b6ed421eb5f9f29b9cc040551521b577e61372"
+  },
+  "sentences_dedup/part_22.txt": {
+    "bytes": 26137935,
+    "mtime_ns": 1792227690374887933,
+    "sha256": "212ed824c8d5a5fd1a0bdbfb8288cea076a9c1634de660cef6f9db23dd0e9681"
+  },
+  "sentences_dedup/part_23.txt": {
+    "bytes": 29251822,
+    "mtime_ns": 1792227692463623956,
+    "sha256": "6bc76f5a718e48df73e7ae10f9115f8c354d6a2a8fee5465bd6783f23b5ce385"
+  },
+  "sentences_dedup/part_24.txt": {
+    "bytes": 29882606,
+    "mtime_ns": 1792227694407194876,
+    "sha256": "910c27c9e1e4a0e338cb35a60041059f365f3d1b3effbc2fb2104efe178888e6"
+  },
+  "sentences_dedup/part_25.txt": {
+    "bytes": 30668867,
+    "mtime_ns": 1792227697242986506,
+    "sha256": "652a9c343c6d5257c3f27ea2bf9f7b1a839207d6bd7aa123432a8f1806dd3dc3"
+  },
+  "sentences_dedup/part_26.txt": {
+    "bytes": 32410143,
+    "mtime_ns": 1792227699380129008,
+    "sha256": "892ae889f676c836765d74626ba067291a116db765f2e675afe17d14d5da8500"
+  },
+  "sentences_dedup/part_27.txt": {
+    "bytes": 28467909,
+    "mtime_ns": 1792227701087757370,
+    "sha256": "2a6c2c44b36109fe8abd03b9f5acfaccdd19137e92a8a0747be548a225315494"
+  },
+  "sentences_dedup/part_28.txt": {
+    "bytes": 28872990,
+    "mtime_ns": 1792227702687049305,
+    "sha256": "57278b03ba41559d2552f37cde80e68cd29c266887c5a1c9dc56d78a287c0462"
+  },
+  "sentences_dedup/part_29.txt": {
+    "bytes": 30134005,
+    "mtime_ns": 1792227704424762765,
+    "sha256": "a9240953b458c654bb67bdb82f33c58876df8a4557d7137fe7f462a1a11dd7d8"
+  },
+  "sentences_dedup/part_30.txt": {
+    "bytes": 29434106,
+    "mtime_ns": 1792227706140329355,
+    "sha256": "8fae64ad6d4d7e06961303370d53ef03d943040314f4d0c8acd1a040e20f454e"
+  },
+  "sentences_dedup/part_31.txt": {
+    "bytes": 29656453,
+    "mtime_ns": 1792227707810857380,
+    "sha256": "adee0f40afc1fdb17c98151d8989854443227193080b37ca98cb5fc8690efcc8"
+  },
+  "requirements-tokenize.txt": {
+    "sha256": "2b7c792d098767c7891d8b37dde97c4dd0e49a67ac4b9e598671028f55307af9"
+  },
+  "processed-reference/step5a_tokenize.py": {
+    "sha256": "531fee9d5e35c29baa2daeef2adf84210bc6f6749f8e04e1d200de4afdbb8686"
+  },
+  "processed-reference/step5b_verify.py": {
+    "sha256": "222f48bc031e8f6897d9af49fc3d72a1023f94a3839ec4f8b09b99f0cc2dfd2b"
+  }
+}

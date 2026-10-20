@@ -1,0 +1,116 @@
+<div id="wiki-raw-preview">
+  <div id="wiki-raw-summary"></div>
+  <table class="table table-sm" aria-label="다운로드한 한국어 위키 원본 파일">
+    <thead><tr><th scope="col">파일</th><th scope="col" class="text-end">문서 수</th><th scope="col" class="text-end">크기</th></tr></thead>
+    <tbody id="wiki-raw-files"></tbody>
+  </table>
+  <label class="form-label" for="wiki-raw-select">첫 번째 파일의 앞 3개 문서 · 한 행 = 한 문서</label>
+  <select id="wiki-raw-select" class="form-select"></select>
+  <div class="wiki-raw-meta">
+    <span id="wiki-raw-id"></span>
+    <a id="wiki-raw-url" target="_blank" rel="noopener noreferrer">위키백과 문서</a>
+  </div>
+  <div class="text-small text-muted" id="wiki-raw-modified"></div>
+  <div class="card" style="padding:16px" aria-live="polite">
+    <div class="text-small text-muted">text 열 · 원문 앞부분</div>
+    <div id="wiki-raw-text"></div>
+  </div>
+  <details>
+    <summary>14개 열의 형식과 실제 값</summary>
+    <table class="table table-sm" aria-label="선택한 원본 문서의 14개 열">
+      <colgroup><col style="width:32%"><col style="width:20%"><col style="width:48%"></colgroup>
+      <thead><tr><th scope="col">열</th><th scope="col">형식</th><th scope="col">실제 값</th></tr></thead>
+      <tbody id="wiki-raw-fields"></tbody>
+    </table>
+  </details>
+  <div class="text-small text-muted">출처: <a href="https://huggingface.co/datasets/HuggingFaceFW/finewiki/blob/8bd13e72e6a002407649b3e898535f42ceb1aeb9/README.md" target="_blank" rel="noopener noreferrer">HuggingFaceFW/finewiki · 고정 버전 8bd13e7</a></div>
+</div>
+<style>
+#wiki-raw-preview {display:grid;gap:14px;min-width:0}
+.wiki-raw-meta {display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+#wiki-raw-text {white-space:pre-wrap;overflow-wrap:anywhere;margin-top:12px}
+#wiki-raw-fields {overflow-wrap:anywhere}
+#wiki-raw-preview code {overflow-wrap:anywhere}
+#wiki-raw-preview summary {padding:8px 0}
+</style>
+<script type="application/json" id="wiki-raw-payload">{"manifest":{"repo_id":"HuggingFaceFW/finewiki","revision":"8bd13e72e6a002407649b3e898535f42ceb1aeb9","wikipedia_snapshot":"2025-08","download_verified_at_utc":"2026-10-17T08:19:24.442383+00:00","total_bytes":2189740360,"total_rows":582035,"columns":[{"name":"text","type":"string"},{"name":"id","type":"string"},{"name":"wikiname","type":"string"},{"name":"page_id","type":"int64"},{"name":"title","type":"string"},{"name":"url","type":"string"},{"name":"date_modified","type":"string"},{"name":"in_language","type":"string"},{"name":"wikidata_id","type":"string"},{"name":"bytes_html","type":"int64"},{"name":"wikitext","type":"string"},{"name":"version","type":"int64"},{"name":"infoboxes","type":"string"},{"name":"has_math","type":"bool"}],"files":[{"file":"parquet/data/kowiki/000_00000.parquet","bytes":1136708888,"rows":310045,"row_groups":311,"sha256":"9d81151055ea2da4b483a1314c56d8f355f730d6a49a1144eaf0faca51d41e80","sha256_matches_hugging_face":true,"compression":"ZSTD"},{"file":"parquet/data/kowiki/000_00001.parquet","bytes":1053031472,"rows":271990,"row_groups":272,"sha256":"ac7668e599cda4dbc426b9f5fdc6c5878adde302cb66ae97006700a5000b21c9","sha256_matches_hugging_face":true,"compression":"ZSTD"}]},"preview":[{"row_index":0,"source_file":"parquet/data/kowiki/000_00000.parquet","title":"고야마못","url":"https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%95%BC%EB%A7%88%EB%AA%BB","id":"kowiki/282586","date_modified":"2024-10-09T23:30:35Z","text_excerpt":"# 고야마못\n고야마못(일본어: 湖山池 고야마이케[*])은 돗토리현 돗토리시 남서부에 위치한 기수호이다. 이름은 못이지만 커다란 석호다. 고대에는 만(湾)이었으나, 사구의 발달과 퇴적으로 바다에서…","text_characters":1052,"values":{"text":"문자열 1,052자","id":"kowiki/282586","wikiname":"kowiki","page_id":282586,"title":"고야마못","url":"https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%95%BC%EB%A7%88%EB%AA%BB","date_modified":"2024-10-09T23:30:35Z","in_language":"ko","wikidata_id":"Q3214989","bytes_html":44879,"wikitext":"문자열 2,004자","version":37976232,"infoboxes":"문자열 843자","has_math":false}},{"row_index":1,"source_file":"parquet/data/kowiki/000_00000.parquet","title":"리우데자네이루나무쥐","url":"https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%9A%B0%EB%8D%B0%EC%9E%90%EB%84%A4%EC%9D%B4%EB%A3%A8%EB%82%98%EB%AC%B4%EC%A5%90","id":"kowiki/1792712","date_modified":"2023-08-24T13:29:04Z","text_excerpt":"# 리우데자네이루나무쥐\n리우데자네이루나무쥐(Phaenomys ferrugineus)는 비단털쥐과 목화쥐아과에 속하는 남아메리카 설치류의 일종이다. 브라질에서 발견된다. 리우데자네이루나무쥐속(Phaenomys)의 유일종이다.…","text_characters":125,"values":{"text":"문자열 125자","id":"kowiki/1792712","wikiname":"kowiki","page_id":1792712,"title":"리우데자네이루나무쥐","url":"https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%9A%B0%EB%8D%B0%EC%9E%90%EB%84%A4%EC%9D%B4%EB%A3%A8%EB%82%98%EB%AC%B4%EC%A5%90","date_modified":"2023-08-24T13:29:04Z","in_language":"ko","wikidata_id":"Q1763562","bytes_html":112148,"wikitext":"문자열 943자","version":35471326,"infoboxes":"문자열 948자","has_math":false}},{"row_index":2,"source_file":"parquet/data/kowiki/000_00000.parquet","title":"산성로 (부산)","url":"https://ko.wikipedia.org/wiki/%EC%82%B0%EC%84%B1%EB%A1%9C_(%EB%B6%80%EC%82%B0)","id":"kowiki/3110350","date_modified":"2023-10-05T12:55:59Z","text_excerpt":"# 산성로 (부산)\n산성로(山城路)는 부산광역시 북구 화명동에서 금정구 장전동까지 이르는 부산광역시도로, 총 연장은 2.527 km이다. 또한 해당 도로는 사적 제215호로…","text_characters":1056,"values":{"text":"문자열 1,056자","id":"kowiki/3110350","wikiname":"kowiki","page_id":3110350,"title":"산성로 (부산)","url":"https://ko.wikipedia.org/wiki/%EC%82%B0%EC%84%B1%EB%A1%9C_(%EB%B6%80%EC%82%B0)","date_modified":"2023-10-05T12:55:59Z","in_language":"ko","wikidata_id":"Q117431591","bytes_html":94133,"wikitext":"문자열 1,672자","version":35681681,"infoboxes":"문자열 572자","has_math":false}}]}</script>
+<script>
+(() => {
+  const root = document.getElementById('wiki-raw-preview');
+  const data = JSON.parse(document.getElementById('wiki-raw-payload').textContent);
+  const select = root.querySelector('#wiki-raw-select');
+  const formatNumber = value => new Intl.NumberFormat('ko-KR').format(value);
+  root.querySelector('#wiki-raw-summary').textContent =
+    '2025년 8월 스냅샷 · 한국어 · ' + formatNumber(data.manifest.total_rows) +
+    '개 문서 · ' + data.manifest.columns.length + '개 열';
+  for (const file of data.manifest.files) {
+    const row = document.createElement('tr');
+    const name = document.createElement('th');
+    name.scope = 'row';
+    const code = document.createElement('code');
+    code.textContent = file.file.split('/').pop();
+    name.append(code);
+    const count = document.createElement('td');
+    count.className = 'text-end';
+    count.textContent = formatNumber(file.rows);
+    const size = document.createElement('td');
+    size.className = 'text-end';
+    size.textContent = (file.bytes / 1e9).toFixed(2) + ' GB';
+    row.append(name, count, size);
+    root.querySelector('#wiki-raw-files').append(row);
+  }
+  data.preview.forEach((article, index) => {
+    const option = document.createElement('option');
+    option.value = String(index);
+    option.textContent = (index + 1) + '. ' + article.title;
+    select.append(option);
+  });
+  function display() {
+    const article = data.preview[Number(select.value)];
+    root.querySelector('#wiki-raw-id').textContent = article.id;
+    root.querySelector('#wiki-raw-url').href = article.url;
+    root.querySelector('#wiki-raw-modified').textContent = '문서 마지막 수정일: ' + article.date_modified;
+    root.querySelector('#wiki-raw-text').textContent = article.text_excerpt;
+    const body = root.querySelector('#wiki-raw-fields');
+    body.replaceChildren();
+    for (const field of data.manifest.columns) {
+      const row = document.createElement('tr');
+      const name = document.createElement('th');
+      name.scope = 'row';
+      const code = document.createElement('code');
+      code.textContent = field.name;
+      name.append(code);
+      const type = document.createElement('td');
+      type.textContent = field.type;
+      const value = document.createElement('td');
+      const original = article.values[field.name];
+      value.textContent = original === null ? 'null' : String(original);
+      row.append(name, type, value);
+      body.append(row);
+    }
+  }
+  function applyState(value) {
+    const index = Number(value);
+    if (Number.isInteger(index) && index >= 0 && index < data.preview.length) {
+      select.value = String(index);
+      display();
+    }
+  }
+  select.addEventListener('change', () => {
+    display();
+    if (window.openai && typeof window.openai.setWidgetState === 'function') {
+      window.openai.setWidgetState({modelContent:{articleIndex:Number(select.value)},privateContent:null}).catch(() => {});
+    }
+  });
+  if (window.openai && window.openai.widgetState) {
+    const state = window.openai.widgetState.modelContent || window.openai.widgetState;
+    applyState(state.articleIndex);
+  }
+  window.addEventListener('openai:set_globals', event => {
+    const state = event.detail && event.detail.globals && event.detail.globals.widgetState;
+    if (state) applyState((state.modelContent || state).articleIndex);
+  });
+  display();
+  console.log('Raw Parquet preview ready:',data.preview.length,'articles,',data.manifest.columns.length,'fields.');
+})();
+</script>

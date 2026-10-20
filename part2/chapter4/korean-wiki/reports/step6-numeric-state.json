@@ -1,0 +1,4096 @@
+{
+  "config": {
+    "schema_version": 1,
+    "script_sha256": "50946dc04ec8be507542bcd4b1097924451bc1457081927319f2ee736ca56cbb",
+    "source_tokenizer_fingerprint": "58390631e1b57268b9e70630d82c76b2d9f3c7819c5c55595f91b846b685d1d0",
+    "python_version": "3.13.7",
+    "unicode_version": "15.1.0",
+    "source_directory": "tokens",
+    "output_directory": "tokens_numeric",
+    "expected_shards": [
+      "part_00.txt",
+      "part_01.txt",
+      "part_02.txt",
+      "part_03.txt",
+      "part_04.txt",
+      "part_05.txt",
+      "part_06.txt",
+      "part_07.txt",
+      "part_08.txt",
+      "part_09.txt",
+      "part_10.txt",
+      "part_11.txt",
+      "part_12.txt",
+      "part_13.txt",
+      "part_14.txt",
+      "part_15.txt",
+      "part_16.txt",
+      "part_17.txt",
+      "part_18.txt",
+      "part_19.txt",
+      "part_20.txt",
+      "part_21.txt",
+      "part_22.txt",
+      "part_23.txt",
+      "part_24.txt",
+      "part_25.txt",
+      "part_26.txt",
+      "part_27.txt",
+      "part_28.txt",
+      "part_29.txt",
+      "part_30.txt",
+      "part_31.txt"
+    ],
+    "split_pos_tags": [
+      "SN",
+      "W_SERIAL"
+    ],
+    "fullwidth_digits": "ASCII normalization of U+FF10-U+FF19 only",
+    "digits": "char.isdigit(): char/SN; every other numeric-form char: char/SW",
+    "line_endings": "preserved exactly (production source CRLF)",
+    "sentence_or_paragraph_filtering": false
+  },
+  "status": "complete",
+  "completed": {
+    "part_00.txt": {
+      "input_tokens": 9765059,
+      "tokens": 10079773,
+      "sentences": 224183,
+      "paragraphs": 82354,
+      "space_tokens": 2941027,
+      "numeric_source_occurrences": 211049,
+      "numeric_expansion_tokens": 525763,
+      "numeric_changed_occurrences": 138266,
+      "added_tokens": 314714,
+      "lines": 306537,
+      "blank_lines": 82354,
+      "input": {
+        "bytes": 86266708,
+        "mtime_ns": 1792230065132608198,
+        "sha256": "ff9550642fb47c841a3adf6a08c081b454cf4a4192e7dd7991691a9bab1afc9d",
+        "crc32": "064e13b2"
+      },
+      "output": {
+        "bytes": 87506542,
+        "mtime_ns": 1792231906992596058,
+        "sha256": "2411fea6622f58e49b7be8ddb0afb64a78b6e76cc95b33b83c2e658b05570216",
+        "crc32": "a71971a0"
+      },
+      "numeric_source_types": 7884,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "16/SN",
+          "after": [
+            "1/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "6.96/SN",
+          "after": [
+            "6/SN",
+            "./SW",
+            "9/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "7.5/SN",
+          "after": [
+            "7/SN",
+            "./SW",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 32,
+          "before": "2.527/SN",
+          "after": [
+            "2/SN",
+            "./SW",
+            "5/SN",
+            "2/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 33,
+          "before": "215/SN",
+          "after": [
+            "2/SN",
+            "1/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 35,
+          "before": "1990/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 36,
+          "before": "1981/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "8/SN",
+            "1/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 23.7542878339882
+    },
+    "part_01.txt": {
+      "input_tokens": 9062673,
+      "tokens": 9358607,
+      "sentences": 210698,
+      "paragraphs": 78475,
+      "space_tokens": 2731875,
+      "numeric_source_occurrences": 194774,
+      "numeric_expansion_tokens": 490708,
+      "numeric_changed_occurrences": 128233,
+      "added_tokens": 295934,
+      "lines": 289173,
+      "blank_lines": 78475,
+      "input": {
+        "bytes": 80081550,
+        "mtime_ns": 1792230239212164046,
+        "sha256": "a225d2bc816fd7e7c5d47386a5013dda45ac0cb22fcad2b4ba39a6b7b119ad9e",
+        "crc32": "7edd61c8"
+      },
+      "output": {
+        "bytes": 81246840,
+        "mtime_ns": 1792231928520646082,
+        "sha256": "0911de01c038ec66434d06127ee728c256ff3b05bb3aa41e264fbf2a37ecabda",
+        "crc32": "b6d0beb0"
+      },
+      "numeric_source_types": 8000,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "12/SN",
+          "after": [
+            "1/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 24,
+          "before": "11/SN",
+          "after": [
+            "1/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 27,
+          "before": "1906/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "0/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 27,
+          "before": "1912/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "1/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 27,
+          "before": "1938/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "3/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 28,
+          "before": "1955/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "5/SN",
+            "5/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 21.52036887500435
+    },
+    "part_02.txt": {
+      "input_tokens": 9267074,
+      "tokens": 9586335,
+      "sentences": 212258,
+      "paragraphs": 79287,
+      "space_tokens": 2794137,
+      "numeric_source_occurrences": 206697,
+      "numeric_expansion_tokens": 525958,
+      "numeric_changed_occurrences": 136730,
+      "added_tokens": 319261,
+      "lines": 291545,
+      "blank_lines": 79287,
+      "input": {
+        "bytes": 81911583,
+        "mtime_ns": 1792230444989162656,
+        "sha256": "16e0d4869b06737b64e497753097cdae5ecf150fe8b69f4b310df7be4d2eae56",
+        "crc32": "18227da2"
+      },
+      "output": {
+        "bytes": 83165153,
+        "mtime_ns": 1792231953232333415,
+        "sha256": "be9eb088e4ea5423cfa94cf8ed944e0e59a8d96d35c7fec2bfa709599358906b",
+        "crc32": "1195cd0f"
+      },
+      "numeric_source_types": 8043,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "12/SN",
+          "after": [
+            "1/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "87/SN",
+          "after": [
+            "8/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "88/SN",
+          "after": [
+            "8/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "89/SN",
+          "after": [
+            "8/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "56/SN",
+          "after": [
+            "5/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "73/SN",
+          "after": [
+            "7/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "74/SN",
+          "after": [
+            "7/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "86/SN",
+          "after": [
+            "8/SN",
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 24.709411624993663
+    },
+    "part_03.txt": {
+      "input_tokens": 8833262,
+      "tokens": 9136027,
+      "sentences": 204543,
+      "paragraphs": 77925,
+      "space_tokens": 2658287,
+      "numeric_source_occurrences": 200621,
+      "numeric_expansion_tokens": 503386,
+      "numeric_changed_occurrences": 131270,
+      "added_tokens": 302765,
+      "lines": 282468,
+      "blank_lines": 77925,
+      "input": {
+        "bytes": 78050775,
+        "mtime_ns": 1792230662930859293,
+        "sha256": "dfa9c776024964b10d5a524082bf8b03959000624af99db4872870c67d9af48a",
+        "crc32": "f7357c6d"
+      },
+      "output": {
+        "bytes": 79242815,
+        "mtime_ns": 1792231975288947442,
+        "sha256": "182e72c2cd7b5d8a32d5f416bef6ce7aab46fbbb730de4f28d87599d23ba9bec",
+        "crc32": "ba5448b0"
+      },
+      "numeric_source_types": 8036,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "19/SN",
+          "after": [
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "1876/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "7/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "1877/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "7/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "1896/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "9/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "1897/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "9/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 18,
+          "before": "1960/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "6/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "1969/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "6/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 33,
+          "before": "1990/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "0/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 22.047325082996394
+    },
+    "part_04.txt": {
+      "input_tokens": 9029654,
+      "tokens": 9342661,
+      "sentences": 209185,
+      "paragraphs": 79131,
+      "space_tokens": 2719069,
+      "numeric_source_occurrences": 206930,
+      "numeric_expansion_tokens": 519937,
+      "numeric_changed_occurrences": 135721,
+      "added_tokens": 313007,
+      "lines": 288316,
+      "blank_lines": 79131,
+      "input": {
+        "bytes": 79812460,
+        "mtime_ns": 1792230896073209780,
+        "sha256": "e1f7c10222ac614b25384a3b45e734a637425417b48bcea8a6a29793d7b1045f",
+        "crc32": "0f1d7964"
+      },
+      "output": {
+        "bytes": 81044584,
+        "mtime_ns": 1792231997673771603,
+        "sha256": "b65f91d609e896614d2330977b5745b4706aa6f0e3b1af9ca7faab9c5dba5769",
+        "crc32": "a668a9e3"
+      },
+      "numeric_source_types": 8118,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "100/SN",
+          "after": [
+            "1/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "827/SN",
+          "after": [
+            "8/SN",
+            "2/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "8/SN",
+          "after": [
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "31/SN",
+          "after": [
+            "3/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "10/SN",
+          "after": [
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "817/SN",
+          "after": [
+            "8/SN",
+            "1/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "824/SN",
+          "after": [
+            "8/SN",
+            "2/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 22.37799550005002
+    },
+    "part_05.txt": {
+      "input_tokens": 9269216,
+      "tokens": 9591442,
+      "sentences": 211400,
+      "paragraphs": 79653,
+      "space_tokens": 2791762,
+      "numeric_source_occurrences": 212152,
+      "numeric_expansion_tokens": 534378,
+      "numeric_changed_occurrences": 139769,
+      "added_tokens": 322226,
+      "lines": 291053,
+      "blank_lines": 79653,
+      "input": {
+        "bytes": 81882120,
+        "mtime_ns": 1792231090402943755,
+        "sha256": "4d8de2c05216d0efd57d14ae00af62314df233f3d6180b267c5c2d78b43eb829",
+        "crc32": "3f75d53c"
+      },
+      "output": {
+        "bytes": 83150644,
+        "mtime_ns": 1792232021663911822,
+        "sha256": "1231818467a2b4b68a0ab9b9e4be13dd4d5906076b3af91bbec8b29e69d53557",
+        "crc32": "d421ce6d"
+      },
+      "numeric_source_types": 8542,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "1629/SN",
+          "after": [
+            "1/SN",
+            "6/SN",
+            "2/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2009/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 14,
+          "before": "2014/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 24,
+          "before": "1581/SN",
+          "after": [
+            "1/SN",
+            "5/SN",
+            "8/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 24,
+          "before": "1610/SN",
+          "after": [
+            "1/SN",
+            "6/SN",
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 24,
+          "before": "1621/SN",
+          "after": [
+            "1/SN",
+            "6/SN",
+            "2/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 24,
+          "before": "1715/SN",
+          "after": [
+            "1/SN",
+            "7/SN",
+            "1/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 33,
+          "before": "20/SN",
+          "after": [
+            "2/SN",
+            "0/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 23.981038749974687
+    },
+    "part_06.txt": {
+      "input_tokens": 9912331,
+      "tokens": 10252023,
+      "sentences": 226804,
+      "paragraphs": 85057,
+      "space_tokens": 2979877,
+      "numeric_source_occurrences": 226850,
+      "numeric_expansion_tokens": 566542,
+      "numeric_changed_occurrences": 148739,
+      "added_tokens": 339692,
+      "lines": 311861,
+      "blank_lines": 85057,
+      "input": {
+        "bytes": 87530165,
+        "mtime_ns": 1792231321526758177,
+        "sha256": "f9238d709eeaf44566bb85d8977880bc0fa57791d884dc60e0f09d33db6150cf",
+        "crc32": "94baac53"
+      },
+      "output": {
+        "bytes": 88868405,
+        "mtime_ns": 1792232049300234277,
+        "sha256": "874d8da1b3921fbf17ab9c403594dccf92e86e798a24c827cf5d6db682408781",
+        "crc32": "4c3ff82c"
+      },
+      "numeric_source_types": 9057,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "652/SN",
+          "after": [
+            "6/SN",
+            "5/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "71,000/SN",
+          "after": [
+            "7/SN",
+            "1/SN",
+            ",/SW",
+            "0/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "6/SN",
+          "after": [
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "1468/SN",
+          "after": [
+            "1/SN",
+            "4/SN",
+            "6/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 24,
+          "before": "70/SN",
+          "after": [
+            "7/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 43,
+          "before": "1348/SN",
+          "after": [
+            "1/SN",
+            "3/SN",
+            "4/SN",
+            "8/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 27.629257374966983
+    },
+    "part_07.txt": {
+      "input_tokens": 10043375,
+      "tokens": 10389435,
+      "sentences": 227590,
+      "paragraphs": 84033,
+      "space_tokens": 3022711,
+      "numeric_source_occurrences": 228402,
+      "numeric_expansion_tokens": 574462,
+      "numeric_changed_occurrences": 149387,
+      "added_tokens": 346060,
+      "lines": 311623,
+      "blank_lines": 84033,
+      "input": {
+        "bytes": 88722312,
+        "mtime_ns": 1792231527574095866,
+        "sha256": "e0ecb3bfd81fbc2f41952d4275f3c8d704f289dc33a08f2542036bb5468c761f",
+        "crc32": "8e940f5e"
+      },
+      "output": {
+        "bytes": 90086120,
+        "mtime_ns": 1792232075236811373,
+        "sha256": "f09767bd849ea6dd3c0aafda9a3359ff14d59b131cdcccf995991b584bc3952f",
+        "crc32": "f8a3fadb"
+      },
+      "numeric_source_types": 8973,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "150/SN",
+          "after": [
+            "1/SN",
+            "5/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "1862/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "6/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "1934/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "3/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "4/SN",
+          "after": [
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 16,
+          "before": "1945/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "4/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 16,
+          "before": "8/SN",
+          "after": [
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "1972/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "7/SN",
+            "2/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 25.929384917020798
+    },
+    "part_08.txt": {
+      "input_tokens": 9538516,
+      "tokens": 9874386,
+      "sentences": 218780,
+      "paragraphs": 82104,
+      "space_tokens": 2871778,
+      "numeric_source_occurrences": 224551,
+      "numeric_expansion_tokens": 560421,
+      "numeric_changed_occurrences": 146401,
+      "added_tokens": 335870,
+      "lines": 300884,
+      "blank_lines": 82104,
+      "input": {
+        "bytes": 84287573,
+        "mtime_ns": 1792231719972526844,
+        "sha256": "56430d576e96575a4cc62111b67e442cea0663f4ebd1c9ad47906526471fa801",
+        "crc32": "91d6030b"
+      },
+      "output": {
+        "bytes": 85606225,
+        "mtime_ns": 1792232100367884350,
+        "sha256": "05c2532eeece110245db296e1d307f41b73231167c993a1c48a2d9872cf63ee3",
+        "crc32": "0772b0f5"
+      },
+      "numeric_source_types": 8490,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "60/SN",
+          "after": [
+            "6/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "100/SN",
+          "after": [
+            "1/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "810/SN",
+          "after": [
+            "8/SN",
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "9/SN",
+          "after": [
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "376.5/SN",
+          "after": [
+            "3/SN",
+            "7/SN",
+            "6/SN",
+            "./SW",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "2019/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "654,741/SN",
+          "after": [
+            "6/SN",
+            "5/SN",
+            "4/SN",
+            ",/SW",
+            "7/SN",
+            "4/SN",
+            "1/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 25.12777374999132
+    },
+    "part_09.txt": {
+      "input_tokens": 9061237,
+      "tokens": 9373186,
+      "sentences": 208968,
+      "paragraphs": 78829,
+      "space_tokens": 2726367,
+      "numeric_source_occurrences": 208675,
+      "numeric_expansion_tokens": 520624,
+      "numeric_changed_occurrences": 135909,
+      "added_tokens": 311949,
+      "lines": 287797,
+      "blank_lines": 78829,
+      "input": {
+        "bytes": 80054656,
+        "mtime_ns": 1792231881189214685,
+        "sha256": "e2dbd6d2b81d33423c404bfc919466b3afbb15531ae9a9ac6d52fc61993e8f1a",
+        "crc32": "0cce57b1"
+      },
+      "output": {
+        "bytes": 81280254,
+        "mtime_ns": 1792232121943860228,
+        "sha256": "3285e3eb5f351bc691067549734bd77e70f8774de38679e1dc9442f840d89d5f",
+        "crc32": "0d88503f"
+      },
+      "numeric_source_types": 7726,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "4/SN",
+          "after": [
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "10/SN",
+          "after": [
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 23,
+          "before": "1565/SN",
+          "after": [
+            "1/SN",
+            "5/SN",
+            "6/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 23,
+          "before": "1628/SN",
+          "after": [
+            "1/SN",
+            "6/SN",
+            "2/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 30,
+          "before": "16/SN",
+          "after": [
+            "1/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 39,
+          "before": "13-14/W_SERIAL",
+          "after": [
+            "1/SN",
+            "3/SN",
+            "-/SW",
+            "1/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 39,
+          "before": "1898/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "9/SN",
+            "8/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 21.56050762499217
+    },
+    "part_10.txt": {
+      "input_tokens": 9579589,
+      "tokens": 9915518,
+      "sentences": 217319,
+      "paragraphs": 80738,
+      "space_tokens": 2888437,
+      "numeric_source_occurrences": 225827,
+      "numeric_expansion_tokens": 561756,
+      "numeric_changed_occurrences": 147499,
+      "added_tokens": 335929,
+      "lines": 298057,
+      "blank_lines": 80738,
+      "input": {
+        "bytes": 84637737,
+        "mtime_ns": 1792232067645219048,
+        "sha256": "149037a03653b2d40758432945a09390b2d511a6402e656b8f5e0cd1c0af474e",
+        "crc32": "6d1d4287"
+      },
+      "output": {
+        "bytes": 85959131,
+        "mtime_ns": 1792232159316000193,
+        "sha256": "25acc23fc16f27f169b4b9073297d6c30df7616b5df5a4417ea8f75cb095d0e5",
+        "crc32": "bdcbd1af"
+      },
+      "numeric_source_types": 8099,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "41/SN",
+          "after": [
+            "4/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "1880/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "8/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "1938/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "3/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "1942/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "4/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "1944/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "4/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 12,
+          "before": "1930/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "3/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "10/SN",
+          "after": [
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 21,
+          "before": "1945/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "4/SN",
+            "5/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 25.344013667025138
+    },
+    "part_11.txt": {
+      "input_tokens": 9740243,
+      "tokens": 10068768,
+      "sentences": 221151,
+      "paragraphs": 82180,
+      "space_tokens": 2939702,
+      "numeric_source_occurrences": 216870,
+      "numeric_expansion_tokens": 545395,
+      "numeric_changed_occurrences": 142339,
+      "added_tokens": 328525,
+      "lines": 303331,
+      "blank_lines": 82180,
+      "input": {
+        "bytes": 86114925,
+        "mtime_ns": 1792232248740264251,
+        "sha256": "6e9c5d10de8d2f14af029ee4c9dbef8e8b3dbb250c1dc2708ff78debd795b588",
+        "crc32": "ff9e257c"
+      },
+      "output": {
+        "bytes": 87404965,
+        "mtime_ns": 1792232287712644196,
+        "sha256": "0b2bb37d4b0acdc1c03c1cd1444dc059c08675546ba1c74a725a5d70dce26b32",
+        "crc32": "e7d209ac"
+      },
+      "numeric_source_types": 8448,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "11,957/SN",
+          "after": [
+            "1/SN",
+            "1/SN",
+            ",/SW",
+            "9/SN",
+            "5/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "48/SN",
+          "after": [
+            "4/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "4/SN",
+          "after": [
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "698/SN",
+          "after": [
+            "6/SN",
+            "9/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "200/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "1882/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "8/SN",
+            "2/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 32.2911711250199
+    },
+    "part_12.txt": {
+      "input_tokens": 9513131,
+      "tokens": 9838886,
+      "sentences": 214985,
+      "paragraphs": 79358,
+      "space_tokens": 2865272,
+      "numeric_source_occurrences": 213540,
+      "numeric_expansion_tokens": 539295,
+      "numeric_changed_occurrences": 141118,
+      "added_tokens": 325755,
+      "lines": 294343,
+      "blank_lines": 79358,
+      "input": {
+        "bytes": 84046996,
+        "mtime_ns": 1792232435392104917,
+        "sha256": "ff37dfb40384cccdef8f3cd4a2581d04cc97ae06650b0c7f66851ce7d53ddd38",
+        "crc32": "6c2a318c"
+      },
+      "output": {
+        "bytes": 85331044,
+        "mtime_ns": 1792232469987494211,
+        "sha256": "2bba9c1d698e847554f96f87f6b546164ccefb3a61e9b4de129e0e7c142e2c9a",
+        "crc32": "89236833"
+      },
+      "numeric_source_types": 8044,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2007/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "7/SN",
+          "after": [
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "2018/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "2019/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 22,
+          "before": "1997/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 22,
+          "before": "6/SN",
+          "after": [
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 26.09561591700185
+    },
+    "part_13.txt": {
+      "input_tokens": 9156723,
+      "tokens": 9464526,
+      "sentences": 206084,
+      "paragraphs": 76934,
+      "space_tokens": 2759707,
+      "numeric_source_occurrences": 202992,
+      "numeric_expansion_tokens": 510795,
+      "numeric_changed_occurrences": 132946,
+      "added_tokens": 307803,
+      "lines": 283018,
+      "blank_lines": 76934,
+      "input": {
+        "bytes": 80922487,
+        "mtime_ns": 1792233009403830810,
+        "sha256": "d1e118f404bd712fbea261d06d7f9254897d358db3990d2f30e236685d37e01f",
+        "crc32": "04ebbfcd"
+      },
+      "output": {
+        "bytes": 82133507,
+        "mtime_ns": 1792233090798534579,
+        "sha256": "355cb8ecdb306e5877b9ebbcc8b1389f3461766160a83e69ec6b64d1cd587c32",
+        "crc32": "89a935eb"
+      },
+      "numeric_source_types": 7933,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "331/SN",
+          "after": [
+            "3/SN",
+            "3/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "160/SN",
+          "after": [
+            "1/SN",
+            "6/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "9,000/SN",
+          "after": [
+            "9/SN",
+            ",/SW",
+            "0/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "13/SN",
+          "after": [
+            "1/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "3,900/SN",
+          "after": [
+            "3/SN",
+            ",/SW",
+            "9/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 10,
+          "before": "176/SN",
+          "after": [
+            "1/SN",
+            "7/SN",
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 71.76483833300881
+    },
+    "part_14.txt": {
+      "input_tokens": 8909043,
+      "tokens": 9213732,
+      "sentences": 202859,
+      "paragraphs": 76322,
+      "space_tokens": 2684923,
+      "numeric_source_occurrences": 202114,
+      "numeric_expansion_tokens": 506803,
+      "numeric_changed_occurrences": 131993,
+      "added_tokens": 304689,
+      "lines": 279181,
+      "blank_lines": 76322,
+      "input": {
+        "bytes": 78719299,
+        "mtime_ns": 1792233543872387951,
+        "sha256": "87228ec8330475ad8be327880693d557e6b9472e8ea7aae8239cec0707964443",
+        "crc32": "c42fdfca"
+      },
+      "output": {
+        "bytes": 79917473,
+        "mtime_ns": 1792233633949363016,
+        "sha256": "97710362e8c3e7229959705c11987b542af09892e3c9c594e08bdadf136ea05f",
+        "crc32": "1e79139d"
+      },
+      "numeric_source_types": 8110,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "19/SN",
+          "after": [
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2002/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "1996/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 18,
+          "before": "1945/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "4/SN",
+            "5/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 80.43297766702017
+    },
+    "part_15.txt": {
+      "input_tokens": 9788747,
+      "tokens": 10111261,
+      "sentences": 220377,
+      "paragraphs": 81702,
+      "space_tokens": 2950747,
+      "numeric_source_occurrences": 218075,
+      "numeric_expansion_tokens": 540589,
+      "numeric_changed_occurrences": 141354,
+      "added_tokens": 322514,
+      "lines": 302079,
+      "blank_lines": 81702,
+      "input": {
+        "bytes": 86448638,
+        "mtime_ns": 1792233884581115919,
+        "sha256": "af3cdd688f19cced5a9a0bc43b8bf06b9b4be454da3ff5869191dba350b0b3c9",
+        "crc32": "5a95bc1e"
+      },
+      "output": {
+        "bytes": 87717734,
+        "mtime_ns": 1792233919102367682,
+        "sha256": "b662496798f06129b2449ffab6759b052e37a1fe5abc8a54bfc68df068ec3e8f",
+        "crc32": "b6d52144"
+      },
+      "numeric_source_types": 7581,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "1998/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "232/SN",
+          "after": [
+            "2/SN",
+            "3/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "243/SN",
+          "after": [
+            "2/SN",
+            "4/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "160/SN",
+          "after": [
+            "1/SN",
+            "6/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "170/SN",
+          "after": [
+            "1/SN",
+            "7/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "156/SN",
+          "after": [
+            "1/SN",
+            "5/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "210/SN",
+          "after": [
+            "2/SN",
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "36/SN",
+          "after": [
+            "3/SN",
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 32.502876583021134
+    },
+    "part_16.txt": {
+      "input_tokens": 9100919,
+      "tokens": 9411577,
+      "sentences": 205744,
+      "paragraphs": 76125,
+      "space_tokens": 2750066,
+      "numeric_source_occurrences": 204608,
+      "numeric_expansion_tokens": 515266,
+      "numeric_changed_occurrences": 135248,
+      "added_tokens": 310658,
+      "lines": 281869,
+      "blank_lines": 76125,
+      "input": {
+        "bytes": 80440773,
+        "mtime_ns": 1792234074428704794,
+        "sha256": "7791fa8a5eb6822d3ac354d2e019b226e944a27b791348fbf7d4ebe7377ba4df",
+        "crc32": "ed65666f"
+      },
+      "output": {
+        "bytes": 81661899,
+        "mtime_ns": 1792234100433114290,
+        "sha256": "8bc06b29154e19ba7e80a02722bda04e729a8572412fb443ce96f91a885a30b9",
+        "crc32": "d660653b"
+      },
+      "numeric_source_types": 8223,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "68/SN",
+          "after": [
+            "6/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "1106/SN",
+          "after": [
+            "1/SN",
+            "1/SN",
+            "0/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "7/SN",
+          "after": [
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "15/SN",
+          "after": [
+            "1/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "1039/SN",
+          "after": [
+            "1/SN",
+            "0/SN",
+            "3/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 12,
+          "before": "9/SN",
+          "after": [
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 12,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 25.014791082998272
+    },
+    "part_17.txt": {
+      "input_tokens": 8877380,
+      "tokens": 9187745,
+      "sentences": 204689,
+      "paragraphs": 76338,
+      "space_tokens": 2678696,
+      "numeric_source_occurrences": 203095,
+      "numeric_expansion_tokens": 513460,
+      "numeric_changed_occurrences": 133991,
+      "added_tokens": 310365,
+      "lines": 281027,
+      "blank_lines": 76338,
+      "input": {
+        "bytes": 78524008,
+        "mtime_ns": 1792234254182241916,
+        "sha256": "9ff77de3f24b4dc9051ef490e7087dff7ac6faf5eacb51ea09faa5784d6c3057",
+        "crc32": "fdf68c76"
+      },
+      "output": {
+        "bytes": 79744488,
+        "mtime_ns": 1792234282057668404,
+        "sha256": "82536290c7f1f68ea754a5dd0a4493a1d89c6045679b02cda5e6e61b66cfbc16",
+        "crc32": "4c10a607"
+      },
+      "numeric_source_types": 8401,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "1966/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "6/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "2006/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "2015/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "4/SN",
+          "after": [
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "17/SN",
+          "after": [
+            "1/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "58/SN",
+          "after": [
+            "5/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2003/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "12/SN",
+          "after": [
+            "1/SN",
+            "2/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 25.462890208989847
+    },
+    "part_18.txt": {
+      "input_tokens": 9429077,
+      "tokens": 9756292,
+      "sentences": 213845,
+      "paragraphs": 79337,
+      "space_tokens": 2842665,
+      "numeric_source_occurrences": 217136,
+      "numeric_expansion_tokens": 544351,
+      "numeric_changed_occurrences": 142460,
+      "added_tokens": 327215,
+      "lines": 293182,
+      "blank_lines": 79337,
+      "input": {
+        "bytes": 83239194,
+        "mtime_ns": 1792234478374771824,
+        "sha256": "1b74d489e5be04f27d66dda8ccad88dbcffb4b445da1d91019ab13e49d87c7a3",
+        "crc32": "179f51ec"
+      },
+      "output": {
+        "bytes": 84525418,
+        "mtime_ns": 1792234542038029755,
+        "sha256": "a77637e9002f3e1ce827b31f984e3e27eba7c5ea8155f5d06259a5be6b878555",
+        "crc32": "927ff70a"
+      },
+      "numeric_source_types": 8157,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2019/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "10/SN",
+          "after": [
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "31/SN",
+          "after": [
+            "3/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "1992/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "1993/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 14,
+          "before": "6/SN",
+          "after": [
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 16,
+          "before": "2,500/SN",
+          "after": [
+            "2/SN",
+            ",/SW",
+            "5/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 16,
+          "before": "68040/SN",
+          "after": [
+            "6/SN",
+            "8/SN",
+            "0/SN",
+            "4/SN",
+            "0/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 55.00361758400686
+    },
+    "part_19.txt": {
+      "input_tokens": 8994960,
+      "tokens": 9304988,
+      "sentences": 206028,
+      "paragraphs": 75396,
+      "space_tokens": 2710661,
+      "numeric_source_occurrences": 203193,
+      "numeric_expansion_tokens": 513221,
+      "numeric_changed_occurrences": 133966,
+      "added_tokens": 310028,
+      "lines": 281424,
+      "blank_lines": 75396,
+      "input": {
+        "bytes": 79509584,
+        "mtime_ns": 1792234681380297128,
+        "sha256": "605330db2d2855703bc3e88cec13e09ef1796e75da3cc4161375418a0d0f941e",
+        "crc32": "ff3ff99c"
+      },
+      "output": {
+        "bytes": 80725648,
+        "mtime_ns": 1792234717095498550,
+        "sha256": "39281c988a33ca1e2730bc738cbf5ef7f851135ca8c2c1203d893f28cf9bade5",
+        "crc32": "7f228609"
+      },
+      "numeric_source_types": 7829,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "4/SN",
+          "after": [
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "60/SN",
+          "after": [
+            "6/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 10,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "323/SN",
+          "after": [
+            "3/SN",
+            "2/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "25/SN",
+          "after": [
+            "2/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "2005/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "5/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 30.905125374963973
+    },
+    "part_20.txt": {
+      "input_tokens": 8940322,
+      "tokens": 9235703,
+      "sentences": 201487,
+      "paragraphs": 74926,
+      "space_tokens": 2697522,
+      "numeric_source_occurrences": 198166,
+      "numeric_expansion_tokens": 493547,
+      "numeric_changed_occurrences": 128559,
+      "added_tokens": 295381,
+      "lines": 276413,
+      "blank_lines": 74926,
+      "input": {
+        "bytes": 78983262,
+        "mtime_ns": 1792234994052696045,
+        "sha256": "ef4a6aef3213952cc63852fda2598dd740c4ea04c77af61798185bfe806fe412",
+        "crc32": "1498354e"
+      },
+      "output": {
+        "bytes": 80143000,
+        "mtime_ns": 1792235110568545836,
+        "sha256": "a6006eff57f7d011a1ba1ae2d16aee602480e4d5ce72d1c5f310b492813d621a",
+        "crc32": "d25cb6c4"
+      },
+      "numeric_source_types": 7567,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "1865/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "6/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "1937/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "3/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "1848/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "4/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "1931/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "3/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "1874/SN",
+          "after": [
+            "1/SN",
+            "8/SN",
+            "7/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 13,
+          "before": "1910/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "1/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 26,
+          "before": "1954/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "5/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 33,
+          "before": "1968/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "6/SN",
+            "8/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 104.61622274998808
+    },
+    "part_21.txt": {
+      "input_tokens": 8555204,
+      "tokens": 8847236,
+      "sentences": 194271,
+      "paragraphs": 72632,
+      "space_tokens": 2575840,
+      "numeric_source_occurrences": 195411,
+      "numeric_expansion_tokens": 487443,
+      "numeric_changed_occurrences": 127131,
+      "added_tokens": 292032,
+      "lines": 266903,
+      "blank_lines": 72632,
+      "input": {
+        "bytes": 75586150,
+        "mtime_ns": 1792235358578627597,
+        "sha256": "6417d5a8a72abe5262b0c55e44c748903f94b4fbd6b5e9ad57c4ffc2b8265d0d",
+        "crc32": "478afe05"
+      },
+      "output": {
+        "bytes": 76733156,
+        "mtime_ns": 1792235399248188213,
+        "sha256": "6312c6cd6d7deeefcb1a6e4b4ea90e8d65e68ae0b2482d34eb8a13ad23e8db57",
+        "crc32": "2ed6752c"
+      },
+      "numeric_source_types": 7615,
+      "numeric_expansion_types": 15,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "50,000/SN",
+          "after": [
+            "5/SN",
+            "0/SN",
+            ",/SW",
+            "0/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 12,
+          "before": "3-4/W_SERIAL",
+          "after": [
+            "3/SN",
+            "-/SW",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 12,
+          "before": "20000/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "5,000/SN",
+          "after": [
+            "5/SN",
+            ",/SW",
+            "0/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 28,
+          "before": "1997/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "7/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 36.363616916991305
+    },
+    "part_22.txt": {
+      "input_tokens": 7802114,
+      "tokens": 8077836,
+      "sentences": 178152,
+      "paragraphs": 68382,
+      "space_tokens": 2348414,
+      "numeric_source_occurrences": 183856,
+      "numeric_expansion_tokens": 459578,
+      "numeric_changed_occurrences": 120143,
+      "added_tokens": 275722,
+      "lines": 246534,
+      "blank_lines": 68382,
+      "input": {
+        "bytes": 68896045,
+        "mtime_ns": 1792235582481570386,
+        "sha256": "f6894d6a60a70d493b67aa1d9a06ca11f691b0fc15959dc973ec1d1e2c5c3ff8",
+        "crc32": "1774f035"
+      },
+      "output": {
+        "bytes": 69980593,
+        "mtime_ns": 1792235614212364386,
+        "sha256": "586483e59b621acc3ac15b013f123603e9d6034fd0848d75554c5f9d3d757173",
+        "crc32": "27e463f5"
+      },
+      "numeric_source_types": 8285,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2021/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "2/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2024/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "2/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 22,
+          "before": "23/SN",
+          "after": [
+            "2/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 22,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 24,
+          "before": "1984/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "8/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 29,
+          "before": "1992/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 30,
+          "before": "92/SN",
+          "after": [
+            "9/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 32,
+          "before": "2016/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 22.620527916995343
+    },
+    "part_23.txt": {
+      "input_tokens": 8735291,
+      "tokens": 9025099,
+      "sentences": 198296,
+      "paragraphs": 74726,
+      "space_tokens": 2631784,
+      "numeric_source_occurrences": 193885,
+      "numeric_expansion_tokens": 483693,
+      "numeric_changed_occurrences": 125878,
+      "added_tokens": 289808,
+      "lines": 273022,
+      "blank_lines": 74726,
+      "input": {
+        "bytes": 77149767,
+        "mtime_ns": 1792235793436907088,
+        "sha256": "a483d67b19da21f5569041152f6e903e514b1afd716ec4a5dc19f31cbebc030d",
+        "crc32": "ea989d27"
+      },
+      "output": {
+        "bytes": 78290303,
+        "mtime_ns": 1792235850792350664,
+        "sha256": "d34180aa969b6f3e3906a19ebcd4f84de7a65990808708112b4c62aa7daee6c8",
+        "crc32": "c6a55d83"
+      },
+      "numeric_source_types": 7571,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "2016/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "2019/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "6/SN",
+          "after": [
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "9/SN",
+          "after": [
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "19/SN",
+          "after": [
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "2003/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "0.281/SN",
+          "after": [
+            "0/SN",
+            "./SW",
+            "2/SN",
+            "8/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "16/SN",
+          "after": [
+            "1/SN",
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 56.447269042022526
+    },
+    "part_24.txt": {
+      "input_tokens": 8922099,
+      "tokens": 9203012,
+      "sentences": 202476,
+      "paragraphs": 74652,
+      "space_tokens": 2692651,
+      "numeric_source_occurrences": 190081,
+      "numeric_expansion_tokens": 470994,
+      "numeric_changed_occurrences": 122485,
+      "added_tokens": 280913,
+      "lines": 277128,
+      "blank_lines": 74652,
+      "input": {
+        "bytes": 78835922,
+        "mtime_ns": 1792236222198841136,
+        "sha256": "f3508ca561881ea09b582e3deb03280f174fb537b07ef18d48227cbd73610fbf",
+        "crc32": "848a1cb8"
+      },
+      "output": {
+        "bytes": 79942178,
+        "mtime_ns": 1792236349333871411,
+        "sha256": "64d05a7f7579b2e8584ecb22af0215a4c8436c7e71219d5c3499f7ae5c7fc0ad",
+        "crc32": "db6c9476"
+      },
+      "numeric_source_types": 7528,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "32/SN",
+          "after": [
+            "3/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 14,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 18,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 19,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 19,
+          "before": "7/SN",
+          "after": [
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 30,
+          "before": "200/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 30,
+          "before": "400/SN",
+          "after": [
+            "4/SN",
+            "0/SN",
+            "0/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 125.97985412500566
+    },
+    "part_25.txt": {
+      "input_tokens": 9148547,
+      "tokens": 9449530,
+      "sentences": 207759,
+      "paragraphs": 77872,
+      "space_tokens": 2757456,
+      "numeric_source_occurrences": 202080,
+      "numeric_expansion_tokens": 503063,
+      "numeric_changed_occurrences": 131432,
+      "added_tokens": 300983,
+      "lines": 285631,
+      "blank_lines": 77872,
+      "input": {
+        "bytes": 80839001,
+        "mtime_ns": 1792236678977625047,
+        "sha256": "6f7f5f5cbedf0ae5855f4eae6b39d9cb2c986c32382b01d7be56418859bed85d",
+        "crc32": "1882bc41"
+      },
+      "output": {
+        "bytes": 82023395,
+        "mtime_ns": 1792236729897248433,
+        "sha256": "92aaa1ef2c532e5a155fea38895d3ae1f60051a90645290b80d3f2acae3053a7",
+        "crc32": "828db1d6"
+      },
+      "numeric_source_types": 8107,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "2009/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "18/SN",
+          "after": [
+            "1/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "1983/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "8/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "9/SN",
+          "after": [
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "6/SN",
+          "after": [
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 44.12068949994864
+    },
+    "part_26.txt": {
+      "input_tokens": 9662706,
+      "tokens": 9985218,
+      "sentences": 218815,
+      "paragraphs": 80863,
+      "space_tokens": 2914821,
+      "numeric_source_occurrences": 214021,
+      "numeric_expansion_tokens": 536533,
+      "numeric_changed_occurrences": 139790,
+      "added_tokens": 322512,
+      "lines": 299678,
+      "blank_lines": 80863,
+      "input": {
+        "bytes": 85409190,
+        "mtime_ns": 1792237060296458230,
+        "sha256": "b0a04afd4c10dbcf607d28d239962f57a57ab579eaa98db23573e10124fd8fb8",
+        "crc32": "c2ca6439"
+      },
+      "output": {
+        "bytes": 86677574,
+        "mtime_ns": 1792237113656226661,
+        "sha256": "5a2c5854a78e211470026525b692ef1a963285d0500b26c42d59661284b6553f",
+        "crc32": "40d74ef1"
+      },
+      "numeric_source_types": 8270,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "11/SN",
+          "after": [
+            "1/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "20/SN",
+          "after": [
+            "2/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "4/SN",
+          "after": [
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "86/SN",
+          "after": [
+            "8/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 8,
+          "before": "7/SN",
+          "after": [
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2008/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 16,
+          "before": "6/SN",
+          "after": [
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 47.27452854200965
+    },
+    "part_27.txt": {
+      "input_tokens": 8487373,
+      "tokens": 8774318,
+      "sentences": 194739,
+      "paragraphs": 73909,
+      "space_tokens": 2553176,
+      "numeric_source_occurrences": 196772,
+      "numeric_expansion_tokens": 483717,
+      "numeric_changed_occurrences": 126455,
+      "added_tokens": 286945,
+      "lines": 268648,
+      "blank_lines": 73909,
+      "input": {
+        "bytes": 74986372,
+        "mtime_ns": 1792237400334911584,
+        "sha256": "f8f5120cd5025f83fa4b7f3fb3f1f741d0a38f47063ee9dd58b62d9982fc3f9d",
+        "crc32": "050c1a15"
+      },
+      "output": {
+        "bytes": 76116322,
+        "mtime_ns": 1792237443201652161,
+        "sha256": "39e060dd8a39a2082d475997042ef66ceaa9e2592caa44ec5fbe351e6c1af0d0",
+        "crc32": "cc0beb2b"
+      },
+      "numeric_source_types": 7352,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "2019/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "2007/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2008/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "1977/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "7/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "9/SN",
+          "after": [
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 15,
+          "before": "29/SN",
+          "after": [
+            "2/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 16,
+          "before": "1986/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "8/SN",
+            "6/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 41.26649929198902
+    },
+    "part_28.txt": {
+      "input_tokens": 8612460,
+      "tokens": 8907512,
+      "sentences": 198724,
+      "paragraphs": 76380,
+      "space_tokens": 2595154,
+      "numeric_source_occurrences": 197832,
+      "numeric_expansion_tokens": 492884,
+      "numeric_changed_occurrences": 129143,
+      "added_tokens": 295052,
+      "lines": 275104,
+      "blank_lines": 76380,
+      "input": {
+        "bytes": 76081651,
+        "mtime_ns": 1792237743417884000,
+        "sha256": "cc7071cf697dccad34c9a486de2a9a1560fdd3b3a2107a650745971f5bfbcf3d",
+        "crc32": "edf85388"
+      },
+      "output": {
+        "bytes": 77242985,
+        "mtime_ns": 1792237787724964424,
+        "sha256": "96b0d9eaf89c1d1417b9d19415df480ddd6b729ce1094cec4a9273bd47005b47",
+        "crc32": "83886868"
+      },
+      "numeric_source_types": 7631,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "1934/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "3/SN",
+            "4/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 2,
+          "before": "9/SN",
+          "after": [
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 3,
+          "before": "1959/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "5/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "1993/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 4,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "8/SN",
+          "after": [
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 7,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 11,
+          "before": "2021/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "2/SN",
+            "1/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 44.05457400000887
+    },
+    "part_29.txt": {
+      "input_tokens": 8988862,
+      "tokens": 9288684,
+      "sentences": 206799,
+      "paragraphs": 77883,
+      "space_tokens": 2708615,
+      "numeric_source_occurrences": 202607,
+      "numeric_expansion_tokens": 502429,
+      "numeric_changed_occurrences": 131690,
+      "added_tokens": 299822,
+      "lines": 284682,
+      "blank_lines": 77883,
+      "input": {
+        "bytes": 79425114,
+        "mtime_ns": 1792238099791719188,
+        "sha256": "94e41bd2f81e1ecc4701ff4d4f2e2cf46b039fedea0d55e4ae91617035659e99",
+        "crc32": "8f75e691"
+      },
+      "output": {
+        "bytes": 80604894,
+        "mtime_ns": 1792238140961711057,
+        "sha256": "59f4bcf2566326e0e906660055b1d0654b1c5a123cabadec8ee9dee67923aba3",
+        "crc32": "57ffde9b"
+      },
+      "numeric_source_types": 7552,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 5,
+          "before": "67/SN",
+          "after": [
+            "6/SN",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "1980/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "8/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 10,
+          "before": "40/SN",
+          "after": [
+            "4/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 14,
+          "before": "80/SN",
+          "after": [
+            "8/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "1989/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "8/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "5/SN",
+          "after": [
+            "5/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 40.80521912500262
+    },
+    "part_30.txt": {
+      "input_tokens": 8778914,
+      "tokens": 9079114,
+      "sentences": 203511,
+      "paragraphs": 76704,
+      "space_tokens": 2645618,
+      "numeric_source_occurrences": 199158,
+      "numeric_expansion_tokens": 499358,
+      "numeric_changed_occurrences": 130732,
+      "added_tokens": 300200,
+      "lines": 280215,
+      "blank_lines": 76704,
+      "input": {
+        "bytes": 77571364,
+        "mtime_ns": 1792238415674518823,
+        "sha256": "44ac39e885c5be669fcada21bc8cdce119e8a4f4b0f4eff3476284381dbffe91",
+        "crc32": "3982b8dd"
+      },
+      "output": {
+        "bytes": 78751212,
+        "mtime_ns": 1792238456908613580,
+        "sha256": "117cbf681f9ae76c752bdc6ea98b0ea6f58de7d46df91a1a0ccfcc2d5d789da6",
+        "crc32": "aea02186"
+      },
+      "numeric_source_types": 7969,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 6,
+          "before": "1995/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "9/SN",
+            "5/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "2019/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "9/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "1/SN",
+          "after": [
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "20/SN",
+          "after": [
+            "2/SN",
+            "0/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "32/SN",
+          "after": [
+            "3/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "52/SN",
+          "after": [
+            "5/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 9,
+          "before": "6.7/SN",
+          "after": [
+            "6/SN",
+            "./SW",
+            "7/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 10,
+          "before": "63.0/SN",
+          "after": [
+            "6/SN",
+            "3/SN",
+            "./SW",
+            "0/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 39.66165079199709
+    },
+    "part_31.txt": {
+      "input_tokens": 8856910,
+      "tokens": 9151157,
+      "sentences": 205113,
+      "paragraphs": 76380,
+      "space_tokens": 2672739,
+      "numeric_source_occurrences": 197456,
+      "numeric_expansion_tokens": 491703,
+      "numeric_changed_occurrences": 128611,
+      "added_tokens": 294247,
+      "lines": 281493,
+      "blank_lines": 76380,
+      "input": {
+        "bytes": 78233349,
+        "mtime_ns": 1792238730489001492,
+        "sha256": "9a6052907b75779d162aacf44d2bf91b2a71d6417eaf10adc03a2698e0354247",
+        "crc32": "8992efa4"
+      },
+      "output": {
+        "bytes": 79390099,
+        "mtime_ns": 1792238755623347457,
+        "sha256": "d45ad80ce9a008f74f640e7b45d74eddb9f9a8705a328940af07f828d895467c",
+        "crc32": "8db5e409"
+      },
+      "numeric_source_types": 7666,
+      "numeric_expansion_types": 16,
+      "numeric_expansion_type_keys": [
+        ",/SW",
+        "-/SW",
+        "./SW",
+        "//SW",
+        "0/SN",
+        "1/SN",
+        "2/SN",
+        "3/SN",
+        "4/SN",
+        "5/SN",
+        "6/SN",
+        "7/SN",
+        "8/SN",
+        "9/SN",
+        ":/SW",
+        "_/SW"
+      ],
+      "examples": [
+        {
+          "kind": "actual",
+          "line": 1,
+          "before": "1961/SN",
+          "after": [
+            "1/SN",
+            "9/SN",
+            "6/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 17,
+          "before": "2016/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "1/SN",
+            "6/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 19,
+          "before": "2/SN",
+          "after": [
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 19,
+          "before": "3/SN",
+          "after": [
+            "3/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "2008/SN",
+          "after": [
+            "2/SN",
+            "0/SN",
+            "0/SN",
+            "8/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "12/SN",
+          "after": [
+            "1/SN",
+            "2/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 20,
+          "before": "11/SN",
+          "after": [
+            "1/SN",
+            "1/SN"
+          ]
+        },
+        {
+          "kind": "actual",
+          "line": 23,
+          "before": "9/SN",
+          "after": [
+            "9/SN"
+          ]
+        }
+      ],
+      "elapsed_seconds": 22.27719504199922
+    }
+  },
+  "started_at": "2026-10-17T19:11:23+0900",
+  "frequency_output": {
+    "bytes": 76128867,
+    "mtime_ns": 1792238806760549313,
+    "sha256": "003cd6a8c5bbafee0479df3ad64b453e3b129ab9f34b3b75fb1b88898ece0348",
+    "crc32": "54cb3834"
+  },
+  "raw_frequency_input": {
+    "bytes": 80136977,
+    "mtime_ns": 1792238784965724335,
+    "sha256": "0d48b4cb27f8cc24aa371b03c8d96386e6e8e5c667041f8eca93dc603df6ff8e",
+    "crc32": "0f90e024"
+  }
+}

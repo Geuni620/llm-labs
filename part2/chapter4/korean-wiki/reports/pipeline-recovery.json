@@ -1,0 +1,21 @@
+{
+  "status": "resolved",
+  "failed_phase": "token-frequency-verification",
+  "cause": "Decimal nine-place rounding boundary did not allow binary64 division/multiplication rounding",
+  "failed_rows": 4,
+  "preserved_failure": "reports/recovery/20261017T211756",
+  "raw_table_identity": {
+    "bytes": 80136977,
+    "sha256": "0d48b4cb27f8cc24aa371b03c8d96386e6e8e5c667041f8eca93dc603df6ff8e",
+    "crc32": "0f90e024"
+  },
+  "source_data_modified": false,
+  "frequency_tests": 13,
+  "recovery_tests": 6,
+  "fix": "half 1e-9 decimal display unit plus four float ULPs; exact ranks/counts/hashes unchanged",
+  "at": "2026-10-17T21:21:46+09:00",
+  "verified_full_table": true,
+  "verified_occurrences": 292363011,
+  "verified_types": 1570824,
+  "resolved_at": "2026-10-17T21:22:52+09:00"
+}

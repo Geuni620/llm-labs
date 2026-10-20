@@ -1,0 +1,726 @@
+{
+  "scope": "full",
+  "passed": false,
+  "shard_count": 32,
+  "tokens": 292363011,
+  "unique_types": 1570824,
+  "space_tokens": 88101556,
+  "errors": [
+    {
+      "kind": "cumulative_percent",
+      "line": 240063,
+      "detail": "Invalid rounded percentage: 99.227049280"
+    },
+    {
+      "kind": "cumulative_percent",
+      "line": 414200,
+      "detail": "Invalid rounded percentage: 99.488394242"
+    },
+    {
+      "kind": "cumulative_percent",
+      "line": 1326950,
+      "detail": "Invalid rounded percentage: 99.916579735"
+    },
+    {
+      "kind": "cumulative_percent",
+      "line": 1485563,
+      "detail": "Invalid rounded percentage: 99.970831809"
+    }
+  ],
+  "table": {
+    "rows": 1570824,
+    "unique_types": 1570824,
+    "sum_counts": 292363011,
+    "missing_types": 0,
+    "errors": [
+      {
+        "kind": "cumulative_percent",
+        "line": 240063,
+        "detail": "Invalid rounded percentage: 99.227049280"
+      },
+      {
+        "kind": "cumulative_percent",
+        "line": 414200,
+        "detail": "Invalid rounded percentage: 99.488394242"
+      },
+      {
+        "kind": "cumulative_percent",
+        "line": 1326950,
+        "detail": "Invalid rounded percentage: 99.916579735"
+      },
+      {
+        "kind": "cumulative_percent",
+        "line": 1485563,
+        "detail": "Invalid rounded percentage: 99.970831809"
+      }
+    ],
+    "metadata": {
+      "status": "complete",
+      "model_type": "cong-global",
+      "kiwipiepy_version": "0.24.0",
+      "kiwipiepy_model_version": "0.24.0",
+      "tokenizer_fingerprint": "58390631e1b57268b9e70630d82c76b2d9f3c7819c5c55595f91b846b685d1d0",
+      "source_directory": "tokens",
+      "shard_count": 32,
+      "expected_shard_count": 32,
+      "source_shards": [
+        "part_00.txt",
+        "part_01.txt",
+        "part_02.txt",
+        "part_03.txt",
+        "part_04.txt",
+        "part_05.txt",
+        "part_06.txt",
+        "part_07.txt",
+        "part_08.txt",
+        "part_09.txt",
+        "part_10.txt",
+        "part_11.txt",
+        "part_12.txt",
+        "part_13.txt",
+        "part_14.txt",
+        "part_15.txt",
+        "part_16.txt",
+        "part_17.txt",
+        "part_18.txt",
+        "part_19.txt",
+        "part_20.txt",
+        "part_21.txt",
+        "part_22.txt",
+        "part_23.txt",
+        "part_24.txt",
+        "part_25.txt",
+        "part_26.txt",
+        "part_27.txt",
+        "part_28.txt",
+        "part_29.txt",
+        "part_30.txt",
+        "part_31.txt"
+      ],
+      "total_tokens": 292363011,
+      "unique_types": 1570824,
+      "row_limit": null,
+      "percent_denominator": "all tokens in the covered source shards",
+      "includes": "all form/POS keys, including <sp>/WS, numbers, punctuation and function morphemes"
+    },
+    "top30": [
+      {
+        "rank": 1,
+        "token": "<sp>/WS",
+        "count": 88101556,
+        "percent": "30.134303139",
+        "cumulative_percent": "30.134303139"
+      },
+      {
+        "rank": 2,
+        "token": "./SF",
+        "count": 6713064,
+        "percent": "2.296139986",
+        "cumulative_percent": "32.430443125"
+      },
+      {
+        "rank": 3,
+        "token": "하/XSV",
+        "count": 5884326,
+        "percent": "2.012677999",
+        "cumulative_percent": "34.443121124"
+      },
+      {
+        "rank": 4,
+        "token": "의/JKG",
+        "count": 5637548,
+        "percent": "1.928269921",
+        "cumulative_percent": "36.371391044"
+      },
+      {
+        "rank": 5,
+        "token": "다/EF",
+        "count": 5360452,
+        "percent": "1.833491857",
+        "cumulative_percent": "38.204882902"
+      },
+      {
+        "rank": 6,
+        "token": "었/EP",
+        "count": 5193508,
+        "percent": "1.776390242",
+        "cumulative_percent": "39.981273144"
+      },
+      {
+        "rank": 7,
+        "token": ",/SP",
+        "count": 4495846,
+        "percent": "1.537761560",
+        "cumulative_percent": "41.519034704"
+      },
+      {
+        "rank": 8,
+        "token": "에/JKB",
+        "count": 4412311,
+        "percent": "1.509189205",
+        "cumulative_percent": "43.028223909"
+      },
+      {
+        "rank": 9,
+        "token": "ᆫ/ETM",
+        "count": 4113263,
+        "percent": "1.406902667",
+        "cumulative_percent": "44.435126576"
+      },
+      {
+        "rank": 10,
+        "token": "을/JKO",
+        "count": 4061861,
+        "percent": "1.389321100",
+        "cumulative_percent": "45.824447676"
+      },
+      {
+        "rank": 11,
+        "token": "는/JX",
+        "count": 3471088,
+        "percent": "1.187252788",
+        "cumulative_percent": "47.011700464"
+      },
+      {
+        "rank": 12,
+        "token": "이/VCP",
+        "count": 3184375,
+        "percent": "1.089185321",
+        "cumulative_percent": "48.100885785"
+      },
+      {
+        "rank": 13,
+        "token": "어/EC",
+        "count": 3060510,
+        "percent": "1.046818470",
+        "cumulative_percent": "49.147704256"
+      },
+      {
+        "rank": 14,
+        "token": "를/JKO",
+        "count": 2585099,
+        "percent": "0.884208639",
+        "cumulative_percent": "50.031912895"
+      },
+      {
+        "rank": 15,
+        "token": "은/JX",
+        "count": 2427927,
+        "percent": "0.830449444",
+        "cumulative_percent": "50.862362339"
+      },
+      {
+        "rank": 16,
+        "token": "이/JKS",
+        "count": 2204956,
+        "percent": "0.754184325",
+        "cumulative_percent": "51.616546664"
+      },
+      {
+        "rank": 17,
+        "token": "되/XSV",
+        "count": 2109750,
+        "percent": "0.721620014",
+        "cumulative_percent": "52.338166677"
+      },
+      {
+        "rank": 18,
+        "token": "년/NNB",
+        "count": 2084231,
+        "percent": "0.712891481",
+        "cumulative_percent": "53.051058159"
+      },
+      {
+        "rank": 19,
+        "token": "고/EC",
+        "count": 2000518,
+        "percent": "0.684258242",
+        "cumulative_percent": "53.735316401"
+      },
+      {
+        "rank": 20,
+        "token": "에서/JKB",
+        "count": 1979449,
+        "percent": "0.677051790",
+        "cumulative_percent": "54.412368191"
+      },
+      {
+        "rank": 21,
+        "token": "는/ETM",
+        "count": 1921090,
+        "percent": "0.657090647",
+        "cumulative_percent": "55.069458838"
+      },
+      {
+        "rank": 22,
+        "token": "으로/JKB",
+        "count": 1820963,
+        "percent": "0.622843154",
+        "cumulative_percent": "55.692301992"
+      },
+      {
+        "rank": 23,
+        "token": "로/JKB",
+        "count": 1565735,
+        "percent": "0.535544833",
+        "cumulative_percent": "56.227846826"
+      },
+      {
+        "rank": 24,
+        "token": "가/JKS",
+        "count": 1528084,
+        "percent": "0.522666665",
+        "cumulative_percent": "56.750513491"
+      },
+      {
+        "rank": 25,
+        "token": "ᆫ다/EF",
+        "count": 1180572,
+        "percent": "0.403803476",
+        "cumulative_percent": "57.154316967"
+      },
+      {
+        "rank": 26,
+        "token": "하/XSA",
+        "count": 1104515,
+        "percent": "0.377788899",
+        "cumulative_percent": "57.532105865"
+      },
+      {
+        "rank": 27,
+        "token": "들/XSN",
+        "count": 1085830,
+        "percent": "0.371397872",
+        "cumulative_percent": "57.903503737"
+      },
+      {
+        "rank": 28,
+        "token": "적/XSN",
+        "count": 952047,
+        "percent": "0.325638663",
+        "cumulative_percent": "58.229142400"
+      },
+      {
+        "rank": 29,
+        "token": "있/VX",
+        "count": 845139,
+        "percent": "0.289071794",
+        "cumulative_percent": "58.518214194"
+      },
+      {
+        "rank": 30,
+        "token": "월/NNB",
+        "count": 833140,
+        "percent": "0.284967649",
+        "cumulative_percent": "58.803181843"
+      }
+    ],
+    "output": {
+      "bytes": 80136977,
+      "sha256": "0d48b4cb27f8cc24aa371b03c8d96386e6e8e5c667041f8eca93dc603df6ff8e",
+      "crc32": "0f90e024"
+    }
+  },
+  "shards": [
+    {
+      "file": "part_00.txt",
+      "types": 166505,
+      "tokens": 9765059,
+      "source_sha256": "ff9550642fb47c841a3adf6a08c081b454cf4a4192e7dd7991691a9bab1afc9d",
+      "cache_sha256": "d15d6191e55d222bfb09da8deff39e25508b4ed4173509882a2c07396d98ff32"
+    },
+    {
+      "file": "part_01.txt",
+      "types": 159406,
+      "tokens": 9062673,
+      "source_sha256": "a225d2bc816fd7e7c5d47386a5013dda45ac0cb22fcad2b4ba39a6b7b119ad9e",
+      "cache_sha256": "76b0f79f2c9d368d32861bcbf841b4ce97fec43b121a868bd6c464d56d2c792b"
+    },
+    {
+      "file": "part_02.txt",
+      "types": 162994,
+      "tokens": 9267074,
+      "source_sha256": "16e0d4869b06737b64e497753097cdae5ecf150fe8b69f4b310df7be4d2eae56",
+      "cache_sha256": "fbf790fd90d16317494f6b151e435689b6e841ba7c2aa2586550c2554a98e268"
+    },
+    {
+      "file": "part_03.txt",
+      "types": 160173,
+      "tokens": 8833262,
+      "source_sha256": "dfa9c776024964b10d5a524082bf8b03959000624af99db4872870c67d9af48a",
+      "cache_sha256": "d69e6a4be9be78d40954fb463fd32a3636fc0b11f87a772d5075ce59dc0b83c4"
+    },
+    {
+      "file": "part_04.txt",
+      "types": 162776,
+      "tokens": 9029654,
+      "source_sha256": "e1f7c10222ac614b25384a3b45e734a637425417b48bcea8a6a29793d7b1045f",
+      "cache_sha256": "c84126ad91116cfaed8f1daa9c4b22761a560dd507aa7810f06e895720a8c6fe"
+    },
+    {
+      "file": "part_05.txt",
+      "types": 162177,
+      "tokens": 9269216,
+      "source_sha256": "4d8de2c05216d0efd57d14ae00af62314df233f3d6180b267c5c2d78b43eb829",
+      "cache_sha256": "1a894a69f21215dd6f61113d2b9d8bc074cb7d8599919a597f2d47a270e82d1c"
+    },
+    {
+      "file": "part_06.txt",
+      "types": 171432,
+      "tokens": 9912331,
+      "source_sha256": "f9238d709eeaf44566bb85d8977880bc0fa57791d884dc60e0f09d33db6150cf",
+      "cache_sha256": "5a002cfeb8745fc12b28d6879bbaed7d316be1c8cf25309f93dbd0aa904bf091"
+    },
+    {
+      "file": "part_07.txt",
+      "types": 171125,
+      "tokens": 10043375,
+      "source_sha256": "e0ecb3bfd81fbc2f41952d4275f3c8d704f289dc33a08f2542036bb5468c761f",
+      "cache_sha256": "77f73978d5a71305a68b4fb6f62f970708282cb1cf130e13a95002f4b91180a7"
+    },
+    {
+      "file": "part_08.txt",
+      "types": 166651,
+      "tokens": 9538516,
+      "source_sha256": "56430d576e96575a4cc62111b67e442cea0663f4ebd1c9ad47906526471fa801",
+      "cache_sha256": "9d1e24de3448f81822056b8415ab13b99d462129acc6049a187df7cd50504697"
+    },
+    {
+      "file": "part_09.txt",
+      "types": 161459,
+      "tokens": 9061237,
+      "source_sha256": "e2dbd6d2b81d33423c404bfc919466b3afbb15531ae9a9ac6d52fc61993e8f1a",
+      "cache_sha256": "2e1916134182d5031a305c69902893935db8a617157f26504c8f4e3f73ae4d1c"
+    },
+    {
+      "file": "part_10.txt",
+      "types": 164952,
+      "tokens": 9579589,
+      "source_sha256": "149037a03653b2d40758432945a09390b2d511a6402e656b8f5e0cd1c0af474e",
+      "cache_sha256": "591eb31013b3e4ba3f0d8e75e62f22d4f29e118563f58850bdc5c41017888436"
+    },
+    {
+      "file": "part_11.txt",
+      "types": 166394,
+      "tokens": 9740243,
+      "source_sha256": "6e9c5d10de8d2f14af029ee4c9dbef8e8b3dbb250c1dc2708ff78debd795b588",
+      "cache_sha256": "8d193a1d79744eeb48048e92844176cd7f76d08222af9cadeca6031f3c11346b"
+    },
+    {
+      "file": "part_12.txt",
+      "types": 164874,
+      "tokens": 9513131,
+      "source_sha256": "ff37dfb40384cccdef8f3cd4a2581d04cc97ae06650b0c7f66851ce7d53ddd38",
+      "cache_sha256": "fc55a0ee683e0c7f3e044f16f05d14f19a7d40e3733cb45eadd63bf3b278d6bb"
+    },
+    {
+      "file": "part_13.txt",
+      "types": 160372,
+      "tokens": 9156723,
+      "source_sha256": "d1e118f404bd712fbea261d06d7f9254897d358db3990d2f30e236685d37e01f",
+      "cache_sha256": "bf3a1ea1828e3ad32126bc290443b57ab7ec235b3b15e63fcec493215df534f6"
+    },
+    {
+      "file": "part_14.txt",
+      "types": 159033,
+      "tokens": 8909043,
+      "source_sha256": "87228ec8330475ad8be327880693d557e6b9472e8ea7aae8239cec0707964443",
+      "cache_sha256": "4f5fcb798ff21556f182e4cc2ad5f4a631802044b08c5ca8c3e51591a6c847f2"
+    },
+    {
+      "file": "part_15.txt",
+      "types": 164334,
+      "tokens": 9788747,
+      "source_sha256": "af3cdd688f19cced5a9a0bc43b8bf06b9b4be454da3ff5869191dba350b0b3c9",
+      "cache_sha256": "2365154d20995754b3d6ae9fc19119d822eb57eb64b723da43afb5c03d87d7c6"
+    },
+    {
+      "file": "part_16.txt",
+      "types": 160566,
+      "tokens": 9100919,
+      "source_sha256": "7791fa8a5eb6822d3ac354d2e019b226e944a27b791348fbf7d4ebe7377ba4df",
+      "cache_sha256": "b05b7c177d2b0e0e2a0eeca5372c032c0b3e0f74d9aef257f6c2f81fe553e690"
+    },
+    {
+      "file": "part_17.txt",
+      "types": 161537,
+      "tokens": 8877380,
+      "source_sha256": "9ff77de3f24b4dc9051ef490e7087dff7ac6faf5eacb51ea09faa5784d6c3057",
+      "cache_sha256": "c608ebd897297002278990971cfecfde50aa356aa33b6a7b99219099c033904d"
+    },
+    {
+      "file": "part_18.txt",
+      "types": 166877,
+      "tokens": 9429077,
+      "source_sha256": "1b74d489e5be04f27d66dda8ccad88dbcffb4b445da1d91019ab13e49d87c7a3",
+      "cache_sha256": "9997d8ba00797ee5e8c06f1914ae69eccc3977c0d8ea539b35988b4314e61997"
+    },
+    {
+      "file": "part_19.txt",
+      "types": 162428,
+      "tokens": 8994960,
+      "source_sha256": "605330db2d2855703bc3e88cec13e09ef1796e75da3cc4161375418a0d0f941e",
+      "cache_sha256": "270599afd911fe44b597af6d4f5fdda2dd2d528f2b99bd7fd74efda8f0188356"
+    },
+    {
+      "file": "part_20.txt",
+      "types": 160991,
+      "tokens": 8940322,
+      "source_sha256": "ef4a6aef3213952cc63852fda2598dd740c4ea04c77af61798185bfe806fe412",
+      "cache_sha256": "d7e92caaf1f85e9b0f55586a812ec965e89807593ac13ec1fced704ddd68964c"
+    },
+    {
+      "file": "part_21.txt",
+      "types": 155474,
+      "tokens": 8555204,
+      "source_sha256": "6417d5a8a72abe5262b0c55e44c748903f94b4fbd6b5e9ad57c4ffc2b8265d0d",
+      "cache_sha256": "3d048c6291512465362c03070a856411bf4a479172c7e889185a5197bdeb085a"
+    },
+    {
+      "file": "part_22.txt",
+      "types": 150571,
+      "tokens": 7802114,
+      "source_sha256": "f6894d6a60a70d493b67aa1d9a06ca11f691b0fc15959dc973ec1d1e2c5c3ff8",
+      "cache_sha256": "5ab730f82308c04ac7f1761e8ea58cc3510ac2df5856cc6faef873cb05ac1d18"
+    },
+    {
+      "file": "part_23.txt",
+      "types": 157923,
+      "tokens": 8735291,
+      "source_sha256": "a483d67b19da21f5569041152f6e903e514b1afd716ec4a5dc19f31cbebc030d",
+      "cache_sha256": "14accd87107ca2920328d6d8696f8e944c6eb79a4ed8f590ae57d5e038678c78"
+    },
+    {
+      "file": "part_24.txt",
+      "types": 158148,
+      "tokens": 8922099,
+      "source_sha256": "f3508ca561881ea09b582e3deb03280f174fb537b07ef18d48227cbd73610fbf",
+      "cache_sha256": "7c3d8a1941ff8a258a7d9330c49f302a1ecb683f5d20e5639534bd6d74695147"
+    },
+    {
+      "file": "part_25.txt",
+      "types": 163354,
+      "tokens": 9148547,
+      "source_sha256": "6f7f5f5cbedf0ae5855f4eae6b39d9cb2c986c32382b01d7be56418859bed85d",
+      "cache_sha256": "a0c4245799127ffd563e709dada3fc379626dc008d0e819d77a766c2af38771b"
+    },
+    {
+      "file": "part_26.txt",
+      "types": 169108,
+      "tokens": 9662706,
+      "source_sha256": "b0a04afd4c10dbcf607d28d239962f57a57ab579eaa98db23573e10124fd8fb8",
+      "cache_sha256": "48b6ae1b12ab3a625a7c0fe8e8f02904f3425b0e0cc30e3d9650a5429a194387"
+    },
+    {
+      "file": "part_27.txt",
+      "types": 156925,
+      "tokens": 8487373,
+      "source_sha256": "f8f5120cd5025f83fa4b7f3fb3f1f741d0a38f47063ee9dd58b62d9982fc3f9d",
+      "cache_sha256": "54753d3a081c581ce5849fbb679c0bd4dadb738d13a7ebfe0ba833f50fcec936"
+    },
+    {
+      "file": "part_28.txt",
+      "types": 158554,
+      "tokens": 8612460,
+      "source_sha256": "cc7071cf697dccad34c9a486de2a9a1560fdd3b3a2107a650745971f5bfbcf3d",
+      "cache_sha256": "7444e42e7a7b99cf167a74d024f0c3dc41f3df51e9edec0003c251a342c082ea"
+    },
+    {
+      "file": "part_29.txt",
+      "types": 159683,
+      "tokens": 8988862,
+      "source_sha256": "94e41bd2f81e1ecc4701ff4d4f2e2cf46b039fedea0d55e4ae91617035659e99",
+      "cache_sha256": "9cce81db99394af6bd3d4deb6ef9e2dead1c3e27a072d6fecd0cd6ff7bb9cc45"
+    },
+    {
+      "file": "part_30.txt",
+      "types": 161160,
+      "tokens": 8778914,
+      "source_sha256": "44ac39e885c5be669fcada21bc8cdce119e8a4f4b0f4eff3476284381dbffe91",
+      "cache_sha256": "4992a4b795ceab2537c42358524765e06829cfed685bda9026bb07db0e7c6971"
+    },
+    {
+      "file": "part_31.txt",
+      "types": 159804,
+      "tokens": 8856910,
+      "source_sha256": "9a6052907b75779d162aacf44d2bf91b2a71d6417eaf10adc03a2698e0354247",
+      "cache_sha256": "f652873191e946f90fb4e11d08507e55e3a6e73beab2522814c6b99c4dc13743"
+    }
+  ],
+  "pos_token_totals": {
+    "WS": 88101556,
+    "NNG": 53404624,
+    "NNP": 12843148,
+    "JKB": 11282236,
+    "EC": 9854260,
+    "ETM": 8581244,
+    "VV": 8347791,
+    "XSV": 8174912,
+    "NNB": 8119684,
+    "JX": 7535754,
+    "SF": 6760772,
+    "EF": 6705786,
+    "JKO": 6666644,
+    "SN": 6489446,
+    "JKG": 5639318,
+    "EP": 5259685,
+    "SP": 4809524,
+    "JKS": 3738059,
+    "XSN": 3244476,
+    "VCP": 3184378,
+    "MAG": 3002787,
+    "VX": 2286877,
+    "MM": 2219416,
+    "SL": 2007691,
+    "VA": 1769420,
+    "SSO": 1699825,
+    "SSC": 1692447,
+    "JC": 1549291,
+    "NP": 1167251,
+    "XSA": 1107311,
+    "ETN": 833095,
+    "XPN": 638655,
+    "XR": 541562,
+    "VV-R": 450268,
+    "NR": 413203,
+    "MAJ": 357091,
+    "JKC": 338092,
+    "SO": 334409,
+    "VA-I": 274700,
+    "SW": 247362,
+    "VV-I": 204502,
+    "VCN": 112731,
+    "W_SERIAL": 110030,
+    "JKQ": 105262,
+    "XSA-I": 42386,
+    "SH": 38514,
+    "IC": 32355,
+    "VA-R": 11465,
+    "SS": 9312,
+    "SB": 6704,
+    "XSM": 5070,
+    "JKV": 3032,
+    "Z_CODA": 2638,
+    "SE": 2350,
+    "W_HASHTAG": 1815,
+    "W_MENTION": 549,
+    "W_URL": 123,
+    "W_EMOJI": 64,
+    "VX-R": 36,
+    "W_EMAIL": 23
+  },
+  "source_contexts": {
+    "maximum_physical_lines_per_shard": 256,
+    "inspected_line_pairs": 15,
+    "examples": [
+      {
+        "token": "./SF",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "<sp>/WS",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "ᆫ/ETM",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "다/EF",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "에/JKB",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "은/JX",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "이/VCP",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "하/XSV",
+        "file": "part_00.txt",
+        "line": 1,
+        "original": "고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.",
+        "tokens": "고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": ",/SP",
+        "file": "part_00.txt",
+        "line": 3,
+        "original": "고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.",
+        "tokens": "고대/NNG 에/JKB 는/JX <sp>/WS 만/NNP 이/VCP 었/EP 으나/EC ,/SP <sp>/WS 사구/NNG 의/JKG <sp>/WS 발달/NNG 과/JC <sp>/WS 퇴적/NNG 으로/JKB <sp>/WS 바다/NNG 에서/JKB <sp>/WS 분리/NNG 되/XSV 어/EC <sp>/WS 석호/NNG 가/JKC <sp>/WS 되/VV 었/EP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "는/JX",
+        "file": "part_00.txt",
+        "line": 3,
+        "original": "고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.",
+        "tokens": "고대/NNG 에/JKB 는/JX <sp>/WS 만/NNP 이/VCP 었/EP 으나/EC ,/SP <sp>/WS 사구/NNG 의/JKG <sp>/WS 발달/NNG 과/JC <sp>/WS 퇴적/NNG 으로/JKB <sp>/WS 바다/NNG 에서/JKB <sp>/WS 분리/NNG 되/XSV 어/EC <sp>/WS 석호/NNG 가/JKC <sp>/WS 되/VV 었/EP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "어/EC",
+        "file": "part_00.txt",
+        "line": 3,
+        "original": "고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.",
+        "tokens": "고대/NNG 에/JKB 는/JX <sp>/WS 만/NNP 이/VCP 었/EP 으나/EC ,/SP <sp>/WS 사구/NNG 의/JKG <sp>/WS 발달/NNG 과/JC <sp>/WS 퇴적/NNG 으로/JKB <sp>/WS 바다/NNG 에서/JKB <sp>/WS 분리/NNG 되/XSV 어/EC <sp>/WS 석호/NNG 가/JKC <sp>/WS 되/VV 었/EP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "었/EP",
+        "file": "part_00.txt",
+        "line": 3,
+        "original": "고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.",
+        "tokens": "고대/NNG 에/JKB 는/JX <sp>/WS 만/NNP 이/VCP 었/EP 으나/EC ,/SP <sp>/WS 사구/NNG 의/JKG <sp>/WS 발달/NNG 과/JC <sp>/WS 퇴적/NNG 으로/JKB <sp>/WS 바다/NNG 에서/JKB <sp>/WS 분리/NNG 되/XSV 어/EC <sp>/WS 석호/NNG 가/JKC <sp>/WS 되/VV 었/EP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "의/JKG",
+        "file": "part_00.txt",
+        "line": 3,
+        "original": "고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.",
+        "tokens": "고대/NNG 에/JKB 는/JX <sp>/WS 만/NNP 이/VCP 었/EP 으나/EC ,/SP <sp>/WS 사구/NNG 의/JKG <sp>/WS 발달/NNG 과/JC <sp>/WS 퇴적/NNG 으로/JKB <sp>/WS 바다/NNG 에서/JKB <sp>/WS 분리/NNG 되/XSV 어/EC <sp>/WS 석호/NNG 가/JKC <sp>/WS 되/VV 었/EP 다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "을/JKO",
+        "file": "part_00.txt",
+        "line": 10,
+        "original": "몇 곳의 하천이 유입해 고야마강을 통해 동해로 빠져나간다.",
+        "tokens": "몇/MM <sp>/WS 곳/NNG 의/JKG <sp>/WS 하천/NNG 이/JKS <sp>/WS 유입/NNG 하/XSV 어/EC <sp>/WS 고/XPN 야마/NNG 강/NNG 을/JKO <sp>/WS 통하/VV 어/EC <sp>/WS 동해/NNP 로/JKB <sp>/WS 빠져나가/VV ᆫ다/EF ./SF <sp>/WS"
+      },
+      {
+        "token": "를/JKO",
+        "file": "part_00.txt",
+        "line": 15,
+        "original": "돌 틈사이로 숨어든 물고기를 봉으로 때려 이때 도망가는 물고기를 포획하는 어법이다.",
+        "tokens": "돌/NNG <sp>/WS 틈/NNG 사이/NNG 로/JKB <sp>/WS 숨어들/VV ᆫ/ETM <sp>/WS 물고기/NNG 를/JKO <sp>/WS 봉/NNG 으로/JKB <sp>/WS 때리/VV 어/EC <sp>/WS 이때/NNG <sp>/WS 도망가/VV 는/ETM <sp>/WS 물고기/NNG 를/JKO <sp>/WS 포획/NNG 하/XSV 는/ETM <sp>/WS 어법/NNG 이/VCP 다/EF ./SF <sp>/WS"
+      }
+    ],
+    "not_found_in_bounded_sample": []
+  },
+  "validation_scope": "Every final TSV row and every cached type/count verified. Cache digests bind counts to the completed token sources; Step 5 full independent line/SHA verification is reused. Token occurrences were not fully recounted a second time.",
+  "elapsed_seconds": 78.59
+}

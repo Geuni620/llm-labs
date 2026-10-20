@@ -1,0 +1,88 @@
+{
+  "status": "training_deferred_by_user",
+  "updated_at": "2026-10-18T11:09:11.458933+09:00",
+  "user_instruction": "아하 학습에 대한건 일단 지금 진행하기보단 다음 챕터로 넘기는게 나아보이네",
+  "current_chapter": "preprocessing, full token counts, numeric splitting and coverage analysis complete",
+  "training_status": "stopped after graceful checkpoint save; no active experiment processes",
+  "training_complete": false,
+  "three_hour_or_eight_hour_comparison_complete": false,
+  "checkpoint": {
+    "path": "training-runs/wiki-k35328/data-10pct/latest.pt",
+    "bytes": 84150617,
+    "sha256": "14725157ce3b6e038a8d85048ca6ec76097e6d4d319543f50cba87c06adad43d"
+  },
+  "progress_at_stop": {
+    "status": "stopped",
+    "steps": 63510,
+    "elapsed_seconds": 4138.119650834007,
+    "update_seconds": 4101.38957396656,
+    "evaluation_seconds": 27.541772251133807,
+    "checkpoint_seconds": 0.7346354579203762,
+    "completed_checkpoints": [
+      3600.0
+    ],
+    "last_periodic_evaluation_seconds": 3602.327793249977,
+    "target_prediction_events": 8129280,
+    "epochs_equivalent": 0.6590954512305218,
+    "unique_training_paragraphs_visited": 153358,
+    "last_validation": {
+      "targets": 16384,
+      "negative_log_likelihood_sum": 53159.89041115309,
+      "correct": 7668,
+      "content_targets": 11519,
+      "content_negative_log_likelihood_sum": 51354.24438847066,
+      "content_correct": 3220,
+      "loss": 3.2446222174776054,
+      "perplexity": 25.65201734565711,
+      "accuracy": 0.468017578125,
+      "content_loss": 4.458220712602714,
+      "content_perplexity": 86.3337597840409,
+      "content_accuracy": 0.2795381543536765
+    }
+  },
+  "preserved": [
+    "original Parquet",
+    "reference archive",
+    "tokens/",
+    "tokens_numeric/",
+    "token_frequencies.txt",
+    "token_frequencies.numeric.txt",
+    "training-corpora/wiki-k35328/",
+    "training-runs/wiki-k35328/"
+  ],
+  "deferred_to_next_chapter": [
+    "10% documents actual 3h training",
+    "25% documents actual 3h training",
+    "100% documents actual 3h/8h training and controlled comparisons"
+  ],
+  "monitor_deleted": {
+    "scheduledTaskId": "scheduled-task:command:mcp:70f09626-1d99-4e12-acde-40492dc86204:schedule-task:kowiki-training-comparison-monitor-20261017-v1",
+    "deleted": true
+  },
+  "resume_policy": "No automatic restart. Preserve STOP until the user requests training in the next chapter. Existing full-state latest.pt can be resumed without rerunning preprocessing.",
+  "numpy_integer_exports": {
+    "report": "reports/integer-encoding-npy.json",
+    "vocabulary": "training-corpora/wiki-k35328/vocabulary.json",
+    "files": [
+      "training-corpora/wiki-k35328/train.ids.npy",
+      "training-corpora/wiki-k35328/validation.ids.npy",
+      "training-corpora/wiki-k35328/test.ids.npy"
+    ],
+    "all_integer_values_equal": true,
+    "existing_corpus_manifest_unchanged": true,
+    "training_restarted": false
+  },
+  "current_chapter_final_review": {
+    "status": "passed",
+    "report": "reports/final-preprocessing-review.json"
+  },
+  "npy_loader": {
+    "path": "npy_corpus.py",
+    "class": "NpyArrayCorpus",
+    "ready": true,
+    "training_restarted": false
+  },
+  "applied_order": "reports/applied-steps.txt",
+  "actual_integer_example": "reports/integer-encoding-example.txt",
+  "final_dataset_and_timing_summary": "reports/final-summary-published.json"
+}

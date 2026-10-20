@@ -1,0 +1,260 @@
+<div id="kiwi-rank-frequency-plot">
+  <h3 data-plot-title>토큰 순위별 등장 횟수</h3>
+  <div class="viz-controls">
+    <label class="form-label">축 눈금
+      <select class="form-select" data-scale-mode aria-label="X축과 Y축 눈금">
+        <option value="log">X·Y 로그 눈금</option>
+        <option value="linear">X·Y 일반 눈금</option>
+      </select>
+    </label>
+  </div>
+  <div class="text-small text-muted" data-scope></div>
+  <div class="text-small text-muted">형태소/품사 토큰 전체 · 공백·숫자·문장부호 포함</div>
+  <div class="rank-plot-container">
+    <svg class="rank-frequency-chart" role="img" aria-label="토큰 순위와 등장 횟수의 분포"></svg>
+  </div>
+  <div class="text-small tabular-nums" data-endpoints></div>
+  <div class="text-small tabular-nums" data-singleton-annotation>
+    <div><span class="singleton-swatch" aria-hidden="true"></span><span data-singleton-types></span></div>
+    <div data-singleton-occurrences></div>
+    <div class="text-muted" data-singleton-range></div>
+  </div>
+  <div class="tooltip" role="tooltip" hidden></div>
+  <script type="application/json" data-frequency-payload>__TOKEN_FREQUENCY_PLOT_DATA__</script>
+</div>
+<style>
+  #kiwi-rank-frequency-plot { position: relative; min-width: 0; display: grid; gap: 12px; }
+  #kiwi-rank-frequency-plot .rank-plot-container { width: 100%; min-width: 0; }
+  #kiwi-rank-frequency-plot .rank-frequency-chart { display: block; width: 100%; height: 360px; overflow: visible; }
+  #kiwi-rank-frequency-plot .rank-frequency-chart text { fill: var(--foreground); font-size: 12px; font-weight: 400; }
+  #kiwi-rank-frequency-plot .axis-title { font-weight: 500; }
+  #kiwi-rank-frequency-plot .axis path,
+  #kiwi-rank-frequency-plot .axis line { stroke: var(--border); }
+  #kiwi-rank-frequency-plot [data-chart-frame],
+  #kiwi-rank-frequency-plot .grid line { fill: none; stroke: var(--border); stroke-width: 1; }
+  #kiwi-rank-frequency-plot .grid path { display: none; }
+  #kiwi-rank-frequency-plot .frequency-path { fill: none; stroke: var(--viz-series-1); stroke-width: 2; }
+  #kiwi-rank-frequency-plot [data-singleton-band] { fill: var(--viz-series-2); opacity: 0.1; }
+  #kiwi-rank-frequency-plot [data-singleton-line] { stroke: var(--viz-series-2); stroke-width: 3; }
+  #kiwi-rank-frequency-plot [data-singleton-point] { fill: var(--viz-series-2); }
+  #kiwi-rank-frequency-plot .singleton-swatch { display: inline-block; width: 16px; height: 3px; margin-right: 6px; vertical-align: middle; background: var(--viz-series-2); }
+  #kiwi-rank-frequency-plot .singleton-swatch[hidden] { display: none; }
+  #kiwi-rank-frequency-plot [data-chart-hover-marker] { fill: var(--viz-series-1); }
+  #kiwi-rank-frequency-plot [data-chart-hover-guide] { stroke: var(--muted-foreground); stroke-width: 1; }
+  #kiwi-rank-frequency-plot .tooltip { position: absolute; pointer-events: none; padding: 16px; border-radius: var(--radius); background: var(--popover); color: var(--popover-foreground); max-width: calc(100% - 8px); white-space: normal; overflow-wrap: anywhere; }
+  #kiwi-rank-frequency-plot [data-chart-hover-overlay] { fill: transparent; touch-action: pan-y; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root = document.getElementById("kiwi-rank-frequency-plot");
+  const data = JSON.parse(root.querySelector("[data-frequency-payload]").textContent);
+  const select = root.querySelector("[data-scale-mode]");
+  const container = root.querySelector(".rank-plot-container");
+  const svg = d3.select(root.querySelector("svg.rank-frequency-chart"));
+  const tooltip = root.querySelector(".tooltip");
+  const number = new Intl.NumberFormat("ko-KR");
+  const percent = new Intl.NumberFormat("ko-KR", {maximumFractionDigits: 2});
+  const smallPercent = new Intl.NumberFormat("ko-KR", {maximumSignificantDigits: 3});
+  const isPartial = data.status === "partial";
+  const hasSingletons = data.singleton_types > 0;
+  const topTokens = new Map(data.top_tokens.map(item => [item[0], item[1]]));
+  const runEnds = data.runs.map(item => item[0]);
+  const observations = [];
+  let previousEnd = 0;
+  for (const [end, count] of data.runs) {
+    observations.push({rank: previousEnd + 1, count});
+    if (end !== previousEnd + 1) observations.push({rank: end, count});
+    previousEnd = end;
+  }
+  let scaleMode = "log";
+  let pinnedRank = null;
+  let previousMode = null;
+  let x, y, bounds;
+  const formatRank = rank => `${number.format(rank)}위`;
+  const formatCount = count => `${number.format(count)}회`;
+  const formatPercent = value => `${(value > 0 && value < 0.01 ? smallPercent : percent).format(value)}%`;
+  const frequencyAt = rank => data.runs[d3.bisectLeft(runEnds, rank)][1];
+  const saved = window.openai?.widgetState?.privateContent;
+  if (saved?.axisScale === "linear") scaleMode = "linear";
+  if (Number.isInteger(saved?.pinnedRank) && saved.pinnedRank >= 1 && saved.pinnedRank <= data.vocabulary_size) pinnedRank = saved.pinnedRank;
+  select.value = scaleMode;
+  root.querySelector("[data-plot-title]").textContent = isPartial ? "토큰 순위별 등장 횟수 · 중간 집계" : "토큰 순위별 등장 횟수";
+  root.querySelector("[data-scope]").textContent = `${isPartial ? "완료된 샤드만 집계" : "전체 데이터"} · ${data.shard_count}/${data.expected_shard_count}개 샤드 · ${number.format(data.vocabulary_size)}개 토큰 종류 · ${number.format(data.total_tokens)}회`;
+  root.querySelector("[data-endpoints]").textContent = `1위 ${formatCount(data.maximum_count)} · 마지막 ${formatRank(data.vocabulary_size)} ${formatCount(data.minimum_count)}`;
+  root.querySelector("[data-singleton-types]").textContent = `빈도 1 토큰 종류: ${number.format(data.singleton_types)}개 / ${number.format(data.vocabulary_size)}개 (${formatPercent(data.singleton_type_percent)})`;
+  root.querySelector("[data-singleton-occurrences]").textContent = `이 토큰들의 등장 횟수: ${formatCount(data.singleton_types)} / ${formatCount(data.total_tokens)} (${formatPercent(data.singleton_occurrence_percent)})`;
+  const singletonRange = hasSingletons ? data.singleton_rank_interval[0] === data.singleton_rank_interval[1] ? formatRank(data.singleton_rank_interval[0]) : `${number.format(data.singleton_rank_interval[0])}–${formatRank(data.singleton_rank_interval[1])}` : "없음";
+  root.querySelector("[data-singleton-range]").textContent = hasSingletons ? `빈도 1 순위: ${singletonRange} · 음영 폭은 비율이 아님` : "빈도 1 순위: 없음";
+  root.querySelector(".singleton-swatch").hidden = !hasSingletons;
+  const description = `${isPartial ? "중간 집계. 완료된 샤드에 포함된" : "전체 데이터의"} ${number.format(data.vocabulary_size)}개 토큰 종류를 빠짐없이 빈도 내림차순으로 표시합니다. X축은 토큰 순위, Y축은 등장 횟수입니다. 공백, 숫자, 문장부호가 포함됩니다. 첫 순위는 ${formatCount(data.maximum_count)}, 마지막 순위는 ${formatCount(data.minimum_count)}입니다. 빈도 1 토큰은 ${number.format(data.singleton_types)}개로, 토큰 종류의 ${formatPercent(data.singleton_type_percent)}, 전체 등장 횟수의 ${formatPercent(data.singleton_occurrence_percent)}입니다. 해당 순위는 ${singletonRange}입니다. 음영은 순위 구간을 표시하며 폭이 비율을 나타내지는 않습니다.`;
+  svg.append("title").text("토큰 순위와 등장 횟수");
+  svg.append("desc").text(description);
+  const frame = svg.append("rect").attr("data-chart-frame", "");
+  const singletonBand = svg.append("rect").attr("data-singleton-band", "").attr("aria-hidden", "true");
+  const grid = svg.append("g").attr("class", "grid").attr("aria-hidden", "true");
+  const path = svg.append("path").attr("class", "frequency-path");
+  const singletonLine = svg.append("line").attr("data-singleton-line", "").attr("aria-hidden", "true");
+  const singletonPoint = svg.append("circle").attr("data-singleton-point", "").attr("r", 4).attr("aria-hidden", "true");
+  const xAxis = svg.append("g").attr("class", "axis x-axis");
+  const yAxis = svg.append("g").attr("class", "axis y-axis");
+  const xTitle = svg.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("text-anchor", "middle");
+  const yTitle = svg.append("text").attr("class", "axis-title").attr("data-axis", "y");
+  const guide = svg.append("line").attr("data-chart-hover-guide", "").attr("visibility", "hidden");
+  const marker = svg.append("circle").attr("data-chart-hover-marker", "").attr("r", 4).attr("visibility", "hidden");
+  const overlay = svg.append("rect").attr("data-chart-hit", "").attr("data-chart-hover-overlay", "cross-series").attr("class", "cursor-interaction");
+
+  function saveState() {
+    const rank = pinnedRank;
+    window.openai?.setWidgetState?.({
+      modelContent: rank ? {tokenRank: rank, occurrences: frequencyAt(rank), token: topTokens.get(rank) ?? null} : null,
+      privateContent: {axisScale: scaleMode, pinnedRank: rank}
+    })?.catch(() => {});
+  }
+  function paddedDomain(values, log) {
+    const [minimum, maximum] = d3.extent(values);
+    if (log) return minimum === maximum ? [minimum / 1.12, maximum * 1.12] : [minimum / 1.04, maximum * 1.04];
+    const padding = Math.max(maximum - minimum, maximum * 0.1) * 0.025;
+    return [Math.max(0, minimum - padding), maximum + padding];
+  }
+  function ticksFor(scale, maximum, budget, log) {
+    if (maximum === 1) return [1];
+    let ticks;
+    if (log) {
+      const exponent = Math.floor(Math.log10(maximum));
+      const step = Math.max(1, Math.ceil((exponent + 1) / Math.max(1, budget - 1)));
+      ticks = d3.range(0, exponent + 1, step).map(value => 10 ** value);
+    } else {
+      ticks = scale.ticks(budget).filter(value => Number.isInteger(value) && value >= 1 && value <= maximum);
+      if (!ticks.includes(1)) ticks.unshift(1);
+    }
+    if (!ticks.includes(maximum)) ticks.push(maximum);
+    while (ticks.length > budget && ticks.length > 2) ticks.splice(ticks.length - 2, 1);
+    return ticks;
+  }
+  function boundsOf(element) {
+    const box = element.getBoundingClientRect();
+    return {left: box.left, right: box.right, top: box.top, bottom: box.bottom};
+  }
+  function overlaps(a, b) {
+    return a.left < b.right + 4 && a.right + 4 > b.left && a.top < b.bottom + 4 && a.bottom + 4 > b.top;
+  }
+  function removeOverlappingTicks(axis) {
+    let kept = [];
+    const texts = axis.selectAll(".tick text").nodes();
+    for (let index = 0; index < texts.length; index += 1) {
+      const text = texts[index];
+      const box = boundsOf(text);
+      const collision = kept.find(item => overlaps(box, item.box));
+      if (!collision) {
+        kept.push({text, box});
+      } else if (index === texts.length - 1) {
+        d3.select(collision.text.parentNode).remove();
+        kept = kept.filter(item => item !== collision);
+        if (!kept.some(item => overlaps(box, item.box))) kept.push({text, box});
+        else d3.select(text.parentNode).remove();
+      } else {
+        d3.select(text.parentNode).remove();
+      }
+    }
+  }
+  function placeTooltip(rank, cursorX = x(rank)) {
+    const count = frequencyAt(rank);
+    guide.attr("x1", cursorX).attr("x2", cursorX).attr("y1", bounds.top).attr("y2", bounds.bottom).attr("visibility", "visible");
+    marker.attr("cx", x(rank)).attr("cy", y(count)).attr("visibility", "visible").style("fill", count === 1 ? "var(--viz-series-2)" : "var(--viz-series-1)");
+    tooltip.textContent = `${formatRank(rank)} · ${formatCount(count)}${topTokens.has(rank) ? ` · ${topTokens.get(rank)}` : ""}`;
+    tooltip.hidden = false;
+    const rootBox = root.getBoundingClientRect();
+    const chartBox = container.getBoundingClientRect();
+    const left = Math.min(Math.max(4, chartBox.left - rootBox.left + cursorX + 10), rootBox.width - tooltip.offsetWidth - 4);
+    const top = Math.max(4, chartBox.top - rootBox.top + y(count) - tooltip.offsetHeight - 10);
+    tooltip.style.left = `${Math.max(4, left)}px`;
+    tooltip.style.top = `${top}px`;
+  }
+  function clearTooltip() {
+    tooltip.hidden = true;
+    guide.attr("visibility", "hidden");
+    marker.attr("visibility", "hidden");
+  }
+  function draw(animate = false) {
+    const width = Math.max(1, container.getBoundingClientRect().width);
+    const height = 360;
+    bounds = {left: 82, right: Math.max(86, width - 12), top: 38, bottom: height - 58};
+    svg.attr("viewBox", `0 0 ${width} ${height}`);
+    const log = scaleMode === "log";
+    const factory = log ? d3.scaleLog : d3.scaleLinear;
+    x = factory().domain(paddedDomain(observations.map(item => item.rank), log)).range([bounds.left + 4, bounds.right - 4]);
+    y = factory().domain(paddedDomain(observations.map(item => item.count), log)).range([bounds.bottom - 4, bounds.top + 4]);
+    frame.attr("x", bounds.left).attr("y", bounds.top).attr("width", bounds.right - bounds.left).attr("height", bounds.bottom - bounds.top);
+    const xTicks = ticksFor(x, data.vocabulary_size, width <= 400 ? 4 : 6, log);
+    const yTicks = ticksFor(y, data.maximum_count, 5, log);
+    xAxis.attr("transform", `translate(0,${bounds.bottom})`).call(d3.axisBottom(x).tickValues(xTicks).tickFormat(number.format).tickSizeOuter(0));
+    yAxis.attr("transform", `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickFormat(number.format).tickSizeOuter(0));
+    xAxis.selectAll(".tick text").attr("text-anchor", (value, index) => index === 0 ? "start" : index === xTicks.length - 1 ? "end" : "middle");
+    grid.attr("transform", `translate(${bounds.left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickFormat("").tickSize(-(bounds.right - bounds.left)).tickSizeOuter(0));
+    xTitle.attr("x", (bounds.left + bounds.right) / 2).attr("y", height - 8).text(`토큰 순위 (위)${log ? " · 로그" : ""}`);
+    yTitle.attr("x", bounds.left).attr("y", 16).text(`등장 횟수 (회)${log ? " · 로그" : ""}`);
+    removeOverlappingTicks(xAxis);
+    removeOverlappingTicks(yAxis);
+    const titleBounds = [boundsOf(xTitle.node()), boundsOf(yTitle.node())];
+    svg.selectAll(".axis .tick text").each(function() {
+      if (titleBounds.some(title => overlaps(boundsOf(this), title))) d3.select(this.parentNode).remove();
+    });
+    const line = d3.line().x(item => x(item.rank)).y(item => y(item.count));
+    const motion = animate && previousMode !== scaleMode && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    path.interrupt();
+    if (motion) path.transition().duration(220).attr("d", line(observations));
+    else path.attr("d", line(observations));
+    singletonBand.attr("visibility", hasSingletons ? "visible" : "hidden");
+    singletonLine.attr("visibility", hasSingletons ? "visible" : "hidden");
+    singletonPoint.attr("visibility", data.singleton_types === 1 ? "visible" : "hidden");
+    if (hasSingletons) {
+      const [startRank, endRank] = data.singleton_rank_interval;
+      const startX = x(startRank), endX = x(endRank), tailY = y(1);
+      const bandAttributes = {x: startX, y: bounds.top, width: Math.max(0, endX - startX), height: bounds.bottom - bounds.top};
+      const lineAttributes = {x1: startX, x2: endX, y1: tailY, y2: tailY};
+      const pointAttributes = {cx: startX, cy: tailY};
+      for (const [selection, attributes] of [[singletonBand, bandAttributes], [singletonLine, lineAttributes], [singletonPoint, pointAttributes]]) {
+        selection.interrupt();
+        const target = motion ? selection.transition().duration(220) : selection;
+        for (const [attribute, value] of Object.entries(attributes)) target.attr(attribute, value);
+      }
+    }
+    overlay.attr("x", bounds.left).attr("y", bounds.top).attr("width", bounds.right - bounds.left).attr("height", bounds.bottom - bounds.top);
+    previousMode = scaleMode;
+    if (pinnedRank !== null) placeTooltip(pinnedRank);
+    else clearTooltip();
+  }
+  overlay.on("pointermove", function(event) {
+    if (pinnedRank !== null && event.pointerType === "touch") return;
+    const [cursor] = d3.pointer(event, svg.node());
+    const cursorX = Math.min(bounds.right, Math.max(bounds.left, cursor));
+    const rank = Math.min(data.vocabulary_size, Math.max(1, Math.round(x.invert(cursorX))));
+    placeTooltip(rank, cursorX);
+  }).on("pointerleave", () => {
+    if (pinnedRank === null) clearTooltip();
+  }).on("pointerdown", function(event) {
+    if (event.pointerType !== "touch") return;
+    const [cursor] = d3.pointer(event, svg.node());
+    const cursorX = Math.min(bounds.right, Math.max(bounds.left, cursor));
+    pinnedRank = Math.min(data.vocabulary_size, Math.max(1, Math.round(x.invert(cursorX))));
+    placeTooltip(pinnedRank, cursorX);
+    saveState();
+  });
+  select.addEventListener("change", () => {
+    scaleMode = select.value;
+    draw(true);
+    saveState();
+  });
+  window.addEventListener("openai:set_globals", event => {
+    const state = event.detail?.globals?.widgetState?.privateContent;
+    if (!state) return;
+    scaleMode = state.axisScale === "linear" ? "linear" : "log";
+    pinnedRank = Number.isInteger(state.pinnedRank) && state.pinnedRank >= 1 && state.pinnedRank <= data.vocabulary_size ? state.pinnedRank : null;
+    select.value = scaleMode;
+    draw();
+  });
+  if (typeof ResizeObserver === "function") new ResizeObserver(() => draw()).observe(container);
+  draw();
+})();
+</script>

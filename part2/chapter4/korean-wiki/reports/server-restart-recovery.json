@@ -1,0 +1,9 @@
+{
+  "mode": "adopt_existing_queue",
+  "observer_pid": 83932,
+  "queue_pid": 37631,
+  "previous_parent_cancelled_by_server_restart": true,
+  "training_restarted": false,
+  "queue_restarted": false,
+  "adopted_at": "2026-10-18T00:12:47+0900"
+}

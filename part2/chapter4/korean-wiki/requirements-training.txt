@@ -1,0 +1,4 @@
+torch==2.14.1
+numpy==2.5.4
+pyarrow==26.0.0
+kiwipiepy==0.24.0

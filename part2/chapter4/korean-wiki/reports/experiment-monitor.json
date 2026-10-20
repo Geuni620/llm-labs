@@ -1,0 +1,13 @@
+{
+  "scheduledTaskId": "scheduled-task:command:mcp:70f09626-1d99-4e12-acde-40492dc86204:schedule-task:kowiki-training-comparison-monitor-20261017-v1",
+  "title": "한국어 위키 14시간 학습 비교 확인",
+  "everyMs": 3600000,
+  "lastRunStatus": "succeeded",
+  "lastCheckedAt": "2026-10-18T00:26:39.250887+09:00",
+  "boundThreadId": "d1ad10a2-f954-43f5-937c-cc69adfa632e",
+  "previous_nextRunAt": "2026-10-17T16:08:57.234Z",
+  "status": "deleted_by_user_scope_change",
+  "deleted": true,
+  "deletedAt": "2026-10-18T00:26:39.250887+09:00",
+  "reason": "아하 학습에 대한건 일단 지금 진행하기보단 다음 챕터로 넘기는게 나아보이네"
+}

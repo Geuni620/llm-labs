@@ -1,0 +1,6351 @@
+{
+  "verified_at_utc": "2026-10-17T08:35:35.414043+00:00",
+  "status": "verified",
+  "source_directory": "part2/chapter4/datasets/korean_wiki",
+  "canonical_directory": "part2/chapter4/korean-wiki",
+  "repo_id": "HuggingFaceFW/finewiki",
+  "revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "archive": {
+    "path": "part2/chapter4/korean-wiki/ko_wiki_cleaning.7z",
+    "bytes": 1108895710,
+    "sha256": "3473c6c64771b91fec0acbff242fdc5522050554490837116aa5ee6689e639d9",
+    "matches_original_supplied_archive": true,
+    "member_prefix": "Part2_neural_lm/src/ko_wiki_cleaning/"
+  },
+  "raw_source_files": [
+    {
+      "path": "parquet/data/kowiki/000_00000.parquet",
+      "bytes": 1136708888,
+      "sha256": "9d81151055ea2da4b483a1314c56d8f355f730d6a49a1144eaf0faca51d41e80"
+    },
+    {
+      "path": "parquet/data/kowiki/000_00001.parquet",
+      "bytes": 1053031472,
+      "sha256": "ac7668e599cda4dbc426b9f5fdc6c5878adde302cb66ae97006700a5000b21c9"
+    }
+  ],
+  "archive_files": 337,
+  "archive_uncompressed_bytes": 9073363432,
+  "verified_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 460,
+      "crc32": 3479129027,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111294,
+        "bytes": 460,
+        "mtime_ns": 1775864116554437637
+      }
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 20138,
+      "crc32": 2928925740,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110835,
+        "bytes": 20138,
+        "mtime_ns": 1778712713737993240
+      }
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 3572,
+      "crc32": 2996633402,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110843,
+        "bytes": 3572,
+        "mtime_ns": 1778712735594114303
+      }
+    },
+    {
+      "path": "README.md",
+      "bytes": 14041,
+      "crc32": 1035439416,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110844,
+        "bytes": 14041,
+        "mtime_ns": 1778736752586709976
+      }
+    },
+    {
+      "path": "ngram_16384_c4_s5.pkl",
+      "bytes": 126306088,
+      "crc32": 621562862,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111468,
+        "bytes": 126306088,
+        "mtime_ns": 1775854375849899291
+      }
+    },
+    {
+      "path": "ngram_65536_c4_s30.pkl",
+      "bytes": 1081540204,
+      "crc32": 1927266722,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111472,
+        "bytes": 1081540204,
+        "mtime_ns": 1776455608411050796
+      }
+    },
+    {
+      "path": "paragraphs/part_00.txt",
+      "bytes": 32711586,
+      "crc32": 891544976,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110866,
+        "bytes": 32711586,
+        "mtime_ns": 1775800639146772384
+      }
+    },
+    {
+      "path": "paragraphs/part_01.txt",
+      "bytes": 30418965,
+      "crc32": 4268574295,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110871,
+        "bytes": 30418965,
+        "mtime_ns": 1775800638209209442
+      }
+    },
+    {
+      "path": "paragraphs/part_02.txt",
+      "bytes": 31314463,
+      "crc32": 164820718,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110876,
+        "bytes": 31314463,
+        "mtime_ns": 1775800638643875122
+      }
+    },
+    {
+      "path": "paragraphs/part_03.txt",
+      "bytes": 29824911,
+      "crc32": 975242171,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110883,
+        "bytes": 29824911,
+        "mtime_ns": 1775800637889656066
+      }
+    },
+    {
+      "path": "paragraphs/part_04.txt",
+      "bytes": 30665263,
+      "crc32": 3192833295,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110888,
+        "bytes": 30665263,
+        "mtime_ns": 1775800638390247344
+      }
+    },
+    {
+      "path": "paragraphs/part_05.txt",
+      "bytes": 33403887,
+      "crc32": 315022407,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110893,
+        "bytes": 33403887,
+        "mtime_ns": 1775800639393411636
+      }
+    },
+    {
+      "path": "paragraphs/part_06.txt",
+      "bytes": 35615600,
+      "crc32": 2131800364,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110901,
+        "bytes": 35615600,
+        "mtime_ns": 1775800639990512847
+      }
+    },
+    {
+      "path": "paragraphs/part_07.txt",
+      "bytes": 35964682,
+      "crc32": 482905604,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110924,
+        "bytes": 35964682,
+        "mtime_ns": 1775800639880994796
+      }
+    },
+    {
+      "path": "paragraphs/part_08.txt",
+      "bytes": 33409314,
+      "crc32": 4110856472,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110948,
+        "bytes": 33409314,
+        "mtime_ns": 1775800639494930267
+      }
+    },
+    {
+      "path": "paragraphs/part_09.txt",
+      "bytes": 32252771,
+      "crc32": 3471254816,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110954,
+        "bytes": 32252771,
+        "mtime_ns": 1775800639032754898
+      }
+    },
+    {
+      "path": "paragraphs/part_10.txt",
+      "bytes": 34177775,
+      "crc32": 1642702810,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110979,
+        "bytes": 34177775,
+        "mtime_ns": 1775800639527929306
+      }
+    },
+    {
+      "path": "paragraphs/part_11.txt",
+      "bytes": 33859144,
+      "crc32": 3801840688,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110989,
+        "bytes": 33859144,
+        "mtime_ns": 1775800639352411270
+      }
+    },
+    {
+      "path": "paragraphs/part_12.txt",
+      "bytes": 34170602,
+      "crc32": 2930857544,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110995,
+        "bytes": 34170602,
+        "mtime_ns": 1775800639625446319
+      }
+    },
+    {
+      "path": "paragraphs/part_13.txt",
+      "bytes": 33990490,
+      "crc32": 1754758854,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111003,
+        "bytes": 33990490,
+        "mtime_ns": 1775800639445417404
+      }
+    },
+    {
+      "path": "paragraphs/part_14.txt",
+      "bytes": 32233008,
+      "crc32": 3358597729,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111008,
+        "bytes": 32233008,
+        "mtime_ns": 1775800639203781127
+      }
+    },
+    {
+      "path": "paragraphs/part_15.txt",
+      "bytes": 33659949,
+      "crc32": 2048245546,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111013,
+        "bytes": 33659949,
+        "mtime_ns": 1775800639370410919
+      }
+    },
+    {
+      "path": "paragraphs/part_16.txt",
+      "bytes": 31387317,
+      "crc32": 2900552480,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111022,
+        "bytes": 31387317,
+        "mtime_ns": 1775800638613868713
+      }
+    },
+    {
+      "path": "paragraphs/part_17.txt",
+      "bytes": 30423338,
+      "crc32": 4128072240,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111028,
+        "bytes": 30423338,
+        "mtime_ns": 1775800638276725769
+      }
+    },
+    {
+      "path": "paragraphs/part_18.txt",
+      "bytes": 32244580,
+      "crc32": 2990679880,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111050,
+        "bytes": 32244580,
+        "mtime_ns": 1775800638931238174
+      }
+    },
+    {
+      "path": "paragraphs/part_19.txt",
+      "bytes": 30986568,
+      "crc32": 3568588578,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111055,
+        "bytes": 30986568,
+        "mtime_ns": 1775800638311725616
+      }
+    },
+    {
+      "path": "paragraphs/part_20.txt",
+      "bytes": 33112423,
+      "crc32": 1287549522,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111077,
+        "bytes": 33112423,
+        "mtime_ns": 1775800639067264556
+      }
+    },
+    {
+      "path": "paragraphs/part_21.txt",
+      "bytes": 33043950,
+      "crc32": 2346504074,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111092,
+        "bytes": 33043950,
+        "mtime_ns": 1775800639082265853
+      }
+    },
+    {
+      "path": "paragraphs/part_22.txt",
+      "bytes": 30105401,
+      "crc32": 2419111416,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111111,
+        "bytes": 30105401,
+        "mtime_ns": 1775800638639873504
+      }
+    },
+    {
+      "path": "paragraphs/part_23.txt",
+      "bytes": 34345172,
+      "crc32": 712157755,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111131,
+        "bytes": 34345172,
+        "mtime_ns": 1775800639546442031
+      }
+    },
+    {
+      "path": "paragraphs/part_24.txt",
+      "bytes": 33364250,
+      "crc32": 895513728,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111161,
+        "bytes": 33364250,
+        "mtime_ns": 1775800639211782455
+      }
+    },
+    {
+      "path": "paragraphs/part_25.txt",
+      "bytes": 31452549,
+      "crc32": 4078297699,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111166,
+        "bytes": 31452549,
+        "mtime_ns": 1775800638733526229
+      }
+    },
+    {
+      "path": "paragraphs/part_26.txt",
+      "bytes": 33553591,
+      "crc32": 595541596,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111174,
+        "bytes": 33553591,
+        "mtime_ns": 1775800639393411636
+      }
+    },
+    {
+      "path": "paragraphs/part_27.txt",
+      "bytes": 29682886,
+      "crc32": 3115622512,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111232,
+        "bytes": 29682886,
+        "mtime_ns": 1775800638048696517
+      }
+    },
+    {
+      "path": "paragraphs/part_28.txt",
+      "bytes": 29751988,
+      "crc32": 3550573358,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111256,
+        "bytes": 29751988,
+        "mtime_ns": 1775800638417245864
+      }
+    },
+    {
+      "path": "paragraphs/part_29.txt",
+      "bytes": 31125399,
+      "crc32": 484530062,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111262,
+        "bytes": 31125399,
+        "mtime_ns": 1775800638758037567
+      }
+    },
+    {
+      "path": "paragraphs/part_30.txt",
+      "bytes": 30413222,
+      "crc32": 3658892758,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111272,
+        "bytes": 30413222,
+        "mtime_ns": 1775800638605869293
+      }
+    },
+    {
+      "path": "paragraphs/part_31.txt",
+      "bytes": 30663054,
+      "crc32": 1867388586,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111277,
+        "bytes": 30663054,
+        "mtime_ns": 1775800638500589370
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_00.txt",
+      "bytes": 35434003,
+      "crc32": 1454042796,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110867,
+        "bytes": 35434003,
+        "mtime_ns": 1775800639146772384
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_01.txt",
+      "bytes": 33222014,
+      "crc32": 411494024,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110873,
+        "bytes": 33222014,
+        "mtime_ns": 1775800638209209442
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_02.txt",
+      "bytes": 34020237,
+      "crc32": 2762944015,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110878,
+        "bytes": 34020237,
+        "mtime_ns": 1775800638643875122
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_03.txt",
+      "bytes": 32304838,
+      "crc32": 1664779445,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110885,
+        "bytes": 32304838,
+        "mtime_ns": 1775800637889656066
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_04.txt",
+      "bytes": 33398752,
+      "crc32": 3807446899,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110890,
+        "bytes": 33398752,
+        "mtime_ns": 1775800638390247344
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_05.txt",
+      "bytes": 36216325,
+      "crc32": 3445695103,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110897,
+        "bytes": 36216325,
+        "mtime_ns": 1775800639393411636
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_06.txt",
+      "bytes": 38681977,
+      "crc32": 2189636826,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110902,
+        "bytes": 38681977,
+        "mtime_ns": 1775800639990512847
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_07.txt",
+      "bytes": 38928486,
+      "crc32": 3214205100,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110925,
+        "bytes": 38928486,
+        "mtime_ns": 1775800639880994796
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_08.txt",
+      "bytes": 36320682,
+      "crc32": 2097367140,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110950,
+        "bytes": 36320682,
+        "mtime_ns": 1775800639494930267
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_09.txt",
+      "bytes": 35227624,
+      "crc32": 3404974289,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110970,
+        "bytes": 35227624,
+        "mtime_ns": 1775800639032754898
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_10.txt",
+      "bytes": 37197824,
+      "crc32": 621943648,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110983,
+        "bytes": 37197824,
+        "mtime_ns": 1775800639527929306
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_11.txt",
+      "bytes": 36499592,
+      "crc32": 3685338898,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110991,
+        "bytes": 36499592,
+        "mtime_ns": 1775800639352411270
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_12.txt",
+      "bytes": 37056419,
+      "crc32": 1310850786,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110998,
+        "bytes": 37056419,
+        "mtime_ns": 1775800639626445770
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_13.txt",
+      "bytes": 36855272,
+      "crc32": 1102082083,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111005,
+        "bytes": 36855272,
+        "mtime_ns": 1775800639445417404
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_14.txt",
+      "bytes": 34992009,
+      "crc32": 882516715,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111010,
+        "bytes": 34992009,
+        "mtime_ns": 1775800639204780578
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_15.txt",
+      "bytes": 36501167,
+      "crc32": 906132020,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111015,
+        "bytes": 36501167,
+        "mtime_ns": 1775800639370410919
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_16.txt",
+      "bytes": 34037038,
+      "crc32": 273641431,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111024,
+        "bytes": 34037038,
+        "mtime_ns": 1775800638613868713
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_17.txt",
+      "bytes": 32939000,
+      "crc32": 1180573967,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111029,
+        "bytes": 32939000,
+        "mtime_ns": 1775800638276725769
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_18.txt",
+      "bytes": 35076528,
+      "crc32": 1305873768,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111051,
+        "bytes": 35076528,
+        "mtime_ns": 1775800638931238174
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_19.txt",
+      "bytes": 33511511,
+      "crc32": 23256974,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111068,
+        "bytes": 33511511,
+        "mtime_ns": 1775800638312728881
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_20.txt",
+      "bytes": 35889514,
+      "crc32": 2499844119,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111079,
+        "bytes": 35889514,
+        "mtime_ns": 1775800639067264556
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_21.txt",
+      "bytes": 35849737,
+      "crc32": 2430676065,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111108,
+        "bytes": 35849737,
+        "mtime_ns": 1775800639082265853
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_22.txt",
+      "bytes": 33054356,
+      "crc32": 282343694,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111122,
+        "bytes": 33054356,
+        "mtime_ns": 1775800638639873504
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_23.txt",
+      "bytes": 37263865,
+      "crc32": 3063272115,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111140,
+        "bytes": 37263865,
+        "mtime_ns": 1775800639546442031
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_24.txt",
+      "bytes": 36171950,
+      "crc32": 4281325635,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111163,
+        "bytes": 36171950,
+        "mtime_ns": 1775800639211782455
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_25.txt",
+      "bytes": 34291505,
+      "crc32": 3995145727,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111170,
+        "bytes": 34291505,
+        "mtime_ns": 1775800638733526229
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_26.txt",
+      "bytes": 36351856,
+      "crc32": 3235776032,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111176,
+        "bytes": 36351856,
+        "mtime_ns": 1775800639393411636
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_27.txt",
+      "bytes": 32235060,
+      "crc32": 3603628363,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111251,
+        "bytes": 32235060,
+        "mtime_ns": 1775800638048696517
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_28.txt",
+      "bytes": 32486344,
+      "crc32": 3370110337,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111258,
+        "bytes": 32486344,
+        "mtime_ns": 1775800638417245864
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_29.txt",
+      "bytes": 33780607,
+      "crc32": 1357082240,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111266,
+        "bytes": 33780607,
+        "mtime_ns": 1775800638758037567
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_30.txt",
+      "bytes": 33173057,
+      "crc32": 423591282,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111274,
+        "bytes": 33173057,
+        "mtime_ns": 1775800638605869293
+      }
+    },
+    {
+      "path": "paragraphs_raw/part_31.txt",
+      "bytes": 33257489,
+      "crc32": 567189164,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111279,
+        "bytes": 33257489,
+        "mtime_ns": 1775800638500589370
+      }
+    },
+    {
+      "path": "parquet/.cache/huggingface/.gitignore",
+      "bytes": 1,
+      "crc32": 163128923,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111293,
+        "bytes": 1,
+        "mtime_ns": 1775623137888013839
+      }
+    },
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.lock",
+      "bytes": 0,
+      "crc32": 0,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110833,
+        "bytes": 0,
+        "mtime_ns": 1775623137889007568
+      }
+    },
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.metadata",
+      "bytes": 128,
+      "crc32": 3418577234,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111295,
+        "bytes": 128,
+        "mtime_ns": 1775623538110967636
+      }
+    },
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.lock",
+      "bytes": 0,
+      "crc32": 0,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110834,
+        "bytes": 0,
+        "mtime_ns": 1775623156555652618
+      }
+    },
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.metadata",
+      "bytes": 128,
+      "crc32": 3432094047,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111296,
+        "bytes": 128,
+        "mtime_ns": 1775623538217031478
+      }
+    },
+    {
+      "path": "parquet/README.txt",
+      "bytes": 735,
+      "crc32": 187548116,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111282,
+        "bytes": 735,
+        "mtime_ns": 1778736733272397994
+      }
+    },
+    {
+      "path": "sentences/part_00.txt",
+      "bytes": 32854849,
+      "crc32": 2868373479,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110865,
+        "bytes": 32854849,
+        "mtime_ns": 1775800639146268844
+      }
+    },
+    {
+      "path": "sentences/part_01.txt",
+      "bytes": 30552872,
+      "crc32": 1448667168,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110872,
+        "bytes": 30552872,
+        "mtime_ns": 1775800638209209442
+      }
+    },
+    {
+      "path": "sentences/part_02.txt",
+      "bytes": 31449900,
+      "crc32": 3916994951,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110877,
+        "bytes": 31449900,
+        "mtime_ns": 1775800638643875122
+      }
+    },
+    {
+      "path": "sentences/part_03.txt",
+      "bytes": 29953998,
+      "crc32": 104250353,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110884,
+        "bytes": 29953998,
+        "mtime_ns": 1775800637889656066
+      }
+    },
+    {
+      "path": "sentences/part_04.txt",
+      "bytes": 30798367,
+      "crc32": 2432354048,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110889,
+        "bytes": 30798367,
+        "mtime_ns": 1775800638390247344
+      }
+    },
+    {
+      "path": "sentences/part_05.txt",
+      "bytes": 33546597,
+      "crc32": 1592248263,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110894,
+        "bytes": 33546597,
+        "mtime_ns": 1775800639393411636
+      }
+    },
+    {
+      "path": "sentences/part_06.txt",
+      "bytes": 35769221,
+      "crc32": 1313905591,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110900,
+        "bytes": 35769221,
+        "mtime_ns": 1775800639989509582
+      }
+    },
+    {
+      "path": "sentences/part_07.txt",
+      "bytes": 36119368,
+      "crc32": 3732080570,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110912,
+        "bytes": 36119368,
+        "mtime_ns": 1775800639879995346
+      }
+    },
+    {
+      "path": "sentences/part_08.txt",
+      "bytes": 33553606,
+      "crc32": 2418614143,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110949,
+        "bytes": 33553606,
+        "mtime_ns": 1775800639494930267
+      }
+    },
+    {
+      "path": "sentences/part_09.txt",
+      "bytes": 32393601,
+      "crc32": 3139228099,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110968,
+        "bytes": 32393601,
+        "mtime_ns": 1775800639032754898
+      }
+    },
+    {
+      "path": "sentences/part_10.txt",
+      "bytes": 34324823,
+      "crc32": 204946516,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110982,
+        "bytes": 34324823,
+        "mtime_ns": 1775800639527929306
+      }
+    },
+    {
+      "path": "sentences/part_11.txt",
+      "bytes": 34005483,
+      "crc32": 3649713039,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110990,
+        "bytes": 34005483,
+        "mtime_ns": 1775800639352411270
+      }
+    },
+    {
+      "path": "sentences/part_12.txt",
+      "bytes": 34318336,
+      "crc32": 2070377286,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110997,
+        "bytes": 34318336,
+        "mtime_ns": 1775800639625446319
+      }
+    },
+    {
+      "path": "sentences/part_13.txt",
+      "bytes": 34134910,
+      "crc32": 2451586207,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111004,
+        "bytes": 34134910,
+        "mtime_ns": 1775800639445417404
+      }
+    },
+    {
+      "path": "sentences/part_14.txt",
+      "bytes": 32371316,
+      "crc32": 201500423,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111009,
+        "bytes": 32371316,
+        "mtime_ns": 1775800639203781127
+      }
+    },
+    {
+      "path": "sentences/part_15.txt",
+      "bytes": 33804395,
+      "crc32": 676553004,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111014,
+        "bytes": 33804395,
+        "mtime_ns": 1775800639370410919
+      }
+    },
+    {
+      "path": "sentences/part_16.txt",
+      "bytes": 31522930,
+      "crc32": 2958682643,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111023,
+        "bytes": 31522930,
+        "mtime_ns": 1775800638613868713
+      }
+    },
+    {
+      "path": "sentences/part_17.txt",
+      "bytes": 30556604,
+      "crc32": 507542939,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111027,
+        "bytes": 30556604,
+        "mtime_ns": 1775800638275726318
+      }
+    },
+    {
+      "path": "sentences/part_18.txt",
+      "bytes": 32384241,
+      "crc32": 3104468646,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111049,
+        "bytes": 32384241,
+        "mtime_ns": 1775800638922239303
+      }
+    },
+    {
+      "path": "sentences/part_19.txt",
+      "bytes": 31122700,
+      "crc32": 3561162956,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111067,
+        "bytes": 31122700,
+        "mtime_ns": 1775800638311725616
+      }
+    },
+    {
+      "path": "sentences/part_20.txt",
+      "bytes": 33255579,
+      "crc32": 2167886002,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111078,
+        "bytes": 33255579,
+        "mtime_ns": 1775800639067264556
+      }
+    },
+    {
+      "path": "sentences/part_21.txt",
+      "bytes": 33187376,
+      "crc32": 3461124029,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111107,
+        "bytes": 33187376,
+        "mtime_ns": 1775800639082265853
+      }
+    },
+    {
+      "path": "sentences/part_22.txt",
+      "bytes": 30235484,
+      "crc32": 2093132427,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111120,
+        "bytes": 30235484,
+        "mtime_ns": 1775800638639873504
+      }
+    },
+    {
+      "path": "sentences/part_23.txt",
+      "bytes": 34492753,
+      "crc32": 3103081203,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111136,
+        "bytes": 34492753,
+        "mtime_ns": 1775800639546442031
+      }
+    },
+    {
+      "path": "sentences/part_24.txt",
+      "bytes": 33509388,
+      "crc32": 808314497,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111162,
+        "bytes": 33509388,
+        "mtime_ns": 1775800639211782455
+      }
+    },
+    {
+      "path": "sentences/part_25.txt",
+      "bytes": 31588050,
+      "crc32": 2611950274,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111167,
+        "bytes": 31588050,
+        "mtime_ns": 1775800638733526229
+      }
+    },
+    {
+      "path": "sentences/part_26.txt",
+      "bytes": 33699089,
+      "crc32": 2654907454,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111175,
+        "bytes": 33699089,
+        "mtime_ns": 1775800639393411636
+      }
+    },
+    {
+      "path": "sentences/part_27.txt",
+      "bytes": 29811391,
+      "crc32": 659847870,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111250,
+        "bytes": 29811391,
+        "mtime_ns": 1775800638048696517
+      }
+    },
+    {
+      "path": "sentences/part_28.txt",
+      "bytes": 29880532,
+      "crc32": 3155227918,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111257,
+        "bytes": 29880532,
+        "mtime_ns": 1775800638417245864
+      }
+    },
+    {
+      "path": "sentences/part_29.txt",
+      "bytes": 31261169,
+      "crc32": 1137619244,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111263,
+        "bytes": 31261169,
+        "mtime_ns": 1775800638758037567
+      }
+    },
+    {
+      "path": "sentences/part_30.txt",
+      "bytes": 30546636,
+      "crc32": 3808008975,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111273,
+        "bytes": 30546636,
+        "mtime_ns": 1775800638605869293
+      }
+    },
+    {
+      "path": "sentences/part_31.txt",
+      "bytes": 30798803,
+      "crc32": 3572752278,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111278,
+        "bytes": 30798803,
+        "mtime_ns": 1775800638500589370
+      }
+    },
+    {
+      "path": "sentences_dedup/part_00.txt",
+      "bytes": 32707665,
+      "crc32": 1815195868,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110868,
+        "bytes": 32707665,
+        "mtime_ns": 1775800756545347213
+      }
+    },
+    {
+      "path": "sentences_dedup/part_01.txt",
+      "bytes": 30382209,
+      "crc32": 743426953,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110874,
+        "bytes": 30382209,
+        "mtime_ns": 1775800757657581329
+      }
+    },
+    {
+      "path": "sentences_dedup/part_02.txt",
+      "bytes": 31086307,
+      "crc32": 534009991,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110879,
+        "bytes": 31086307,
+        "mtime_ns": 1775800758767303466
+      }
+    },
+    {
+      "path": "sentences_dedup/part_03.txt",
+      "bytes": 29635969,
+      "crc32": 2179113028,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110886,
+        "bytes": 29635969,
+        "mtime_ns": 1775800759843446731
+      }
+    },
+    {
+      "path": "sentences_dedup/part_04.txt",
+      "bytes": 30322122,
+      "crc32": 552430001,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110891,
+        "bytes": 30322122,
+        "mtime_ns": 1775800760948348999
+      }
+    },
+    {
+      "path": "sentences_dedup/part_05.txt",
+      "bytes": 31065428,
+      "crc32": 2463484885,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110898,
+        "bytes": 31065428,
+        "mtime_ns": 1775800762161176681
+      }
+    },
+    {
+      "path": "sentences_dedup/part_06.txt",
+      "bytes": 33217961,
+      "crc32": 854841274,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110905,
+        "bytes": 33217961,
+        "mtime_ns": 1775800763483783721
+      }
+    },
+    {
+      "path": "sentences_dedup/part_07.txt",
+      "bytes": 33663348,
+      "crc32": 2758279034,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110926,
+        "bytes": 33663348,
+        "mtime_ns": 1775800764863586425
+      }
+    },
+    {
+      "path": "sentences_dedup/part_08.txt",
+      "bytes": 32013093,
+      "crc32": 389935609,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110951,
+        "bytes": 32013093,
+        "mtime_ns": 1775800766370862960
+      }
+    },
+    {
+      "path": "sentences_dedup/part_09.txt",
+      "bytes": 30399175,
+      "crc32": 3714087302,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110972,
+        "bytes": 30399175,
+        "mtime_ns": 1775800767595794677
+      }
+    },
+    {
+      "path": "sentences_dedup/part_10.txt",
+      "bytes": 32125577,
+      "crc32": 61267832,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110984,
+        "bytes": 32125577,
+        "mtime_ns": 1775800768846982955
+      }
+    },
+    {
+      "path": "sentences_dedup/part_11.txt",
+      "bytes": 32687757,
+      "crc32": 1882875172,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110992,
+        "bytes": 32687757,
+        "mtime_ns": 1775800770418544769
+      }
+    },
+    {
+      "path": "sentences_dedup/part_12.txt",
+      "bytes": 31884146,
+      "crc32": 44647578,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110999,
+        "bytes": 31884146,
+        "mtime_ns": 1775800772100053787
+      }
+    },
+    {
+      "path": "sentences_dedup/part_13.txt",
+      "bytes": 30697571,
+      "crc32": 1857516413,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111006,
+        "bytes": 30697571,
+        "mtime_ns": 1775800773292871475
+      }
+    },
+    {
+      "path": "sentences_dedup/part_14.txt",
+      "bytes": 29872461,
+      "crc32": 2987926939,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111011,
+        "bytes": 29872461,
+        "mtime_ns": 1775800774425235748
+      }
+    },
+    {
+      "path": "sentences_dedup/part_15.txt",
+      "bytes": 32759871,
+      "crc32": 3289369443,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111017,
+        "bytes": 32759871,
+        "mtime_ns": 1775800775618598937
+      }
+    },
+    {
+      "path": "sentences_dedup/part_16.txt",
+      "bytes": 30509248,
+      "crc32": 3820902435,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111025,
+        "bytes": 30509248,
+        "mtime_ns": 1775800776761747360
+      }
+    },
+    {
+      "path": "sentences_dedup/part_17.txt",
+      "bytes": 29837317,
+      "crc32": 1670831955,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111030,
+        "bytes": 29837317,
+        "mtime_ns": 1775800777895174026
+      }
+    },
+    {
+      "path": "sentences_dedup/part_18.txt",
+      "bytes": 31534821,
+      "crc32": 2795062482,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111052,
+        "bytes": 31534821,
+        "mtime_ns": 1775800779077447891
+      }
+    },
+    {
+      "path": "sentences_dedup/part_19.txt",
+      "bytes": 30187861,
+      "crc32": 4213637560,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111069,
+        "bytes": 30187861,
+        "mtime_ns": 1775800780203397750
+      }
+    },
+    {
+      "path": "sentences_dedup/part_20.txt",
+      "bytes": 29937180,
+      "crc32": 4228596865,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111080,
+        "bytes": 29937180,
+        "mtime_ns": 1775800781380620956
+      }
+    },
+    {
+      "path": "sentences_dedup/part_21.txt",
+      "bytes": 28668624,
+      "crc32": 481849557,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111109,
+        "bytes": 28668624,
+        "mtime_ns": 1775800782557737350
+      }
+    },
+    {
+      "path": "sentences_dedup/part_22.txt",
+      "bytes": 26137935,
+      "crc32": 3464574800,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111125,
+        "bytes": 26137935,
+        "mtime_ns": 1775800783664813995
+      }
+    },
+    {
+      "path": "sentences_dedup/part_23.txt",
+      "bytes": 29251822,
+      "crc32": 754262531,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111154,
+        "bytes": 29251822,
+        "mtime_ns": 1775800784895149230
+      }
+    },
+    {
+      "path": "sentences_dedup/part_24.txt",
+      "bytes": 29882606,
+      "crc32": 1289674735,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111164,
+        "bytes": 29882606,
+        "mtime_ns": 1775800786095191955
+      }
+    },
+    {
+      "path": "sentences_dedup/part_25.txt",
+      "bytes": 30668867,
+      "crc32": 2579074481,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111171,
+        "bytes": 30668867,
+        "mtime_ns": 1775800787264467239
+      }
+    },
+    {
+      "path": "sentences_dedup/part_26.txt",
+      "bytes": 32410143,
+      "crc32": 3371469596,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111179,
+        "bytes": 32410143,
+        "mtime_ns": 1775800788745235443
+      }
+    },
+    {
+      "path": "sentences_dedup/part_27.txt",
+      "bytes": 28467909,
+      "crc32": 4007837180,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111254,
+        "bytes": 28467909,
+        "mtime_ns": 1775800789803337097
+      }
+    },
+    {
+      "path": "sentences_dedup/part_28.txt",
+      "bytes": 28872990,
+      "crc32": 3712452836,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111259,
+        "bytes": 28872990,
+        "mtime_ns": 1775800790912952423
+      }
+    },
+    {
+      "path": "sentences_dedup/part_29.txt",
+      "bytes": 30134005,
+      "crc32": 3960249578,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111267,
+        "bytes": 30134005,
+        "mtime_ns": 1775800792047456741
+      }
+    },
+    {
+      "path": "sentences_dedup/part_30.txt",
+      "bytes": 29434106,
+      "crc32": 1902547689,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111275,
+        "bytes": 29434106,
+        "mtime_ns": 1775800793153726577
+      }
+    },
+    {
+      "path": "sentences_dedup/part_31.txt",
+      "bytes": 29656453,
+      "crc32": 545428429,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111280,
+        "bytes": 29656453,
+        "mtime_ns": 1775800794265626907
+      }
+    },
+    {
+      "path": "sentences_dedup_removed.txt",
+      "bytes": 28636573,
+      "crc32": 523410421,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111287,
+        "bytes": 28636573,
+        "mtime_ns": 1775800794489772796
+      }
+    },
+    {
+      "path": "step1_download.md",
+      "bytes": 1751,
+      "crc32": 3830506875,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110845,
+        "bytes": 1751,
+        "mtime_ns": 1775790541314924240
+      }
+    },
+    {
+      "path": "step1_download.py",
+      "bytes": 1482,
+      "crc32": 1442616010,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110855,
+        "bytes": 1482,
+        "mtime_ns": 1775788915833072662
+      }
+    },
+    {
+      "path": "step2_extract_sample_rows.md",
+      "bytes": 1889,
+      "crc32": 585550482,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110846,
+        "bytes": 1889,
+        "mtime_ns": 1775790556226966857
+      }
+    },
+    {
+      "path": "step2_extract_sample_rows.py",
+      "bytes": 2309,
+      "crc32": 2577174490,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110856,
+        "bytes": 2309,
+        "mtime_ns": 1775788915840579986
+      }
+    },
+    {
+      "path": "step3_extract_paragraphs.md",
+      "bytes": 3402,
+      "crc32": 1208279059,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110847,
+        "bytes": 3402,
+        "mtime_ns": 1775788915979213714
+      }
+    },
+    {
+      "path": "step3_extract_paragraphs.py",
+      "bytes": 17603,
+      "crc32": 388967784,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110857,
+        "bytes": 17603,
+        "mtime_ns": 1775788915848087310
+      }
+    },
+    {
+      "path": "step4_dedup_sentences.md",
+      "bytes": 4072,
+      "crc32": 244582616,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110848,
+        "bytes": 4072,
+        "mtime_ns": 1775790594606445312
+      }
+    },
+    {
+      "path": "step4_dedup_sentences.py",
+      "bytes": 11109,
+      "crc32": 2458609770,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110858,
+        "bytes": 11109,
+        "mtime_ns": 1775788915853088378
+      }
+    },
+    {
+      "path": "step5a_tokenize.md",
+      "bytes": 3011,
+      "crc32": 3937592841,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110849,
+        "bytes": 3011,
+        "mtime_ns": 1775788915985719680
+      }
+    },
+    {
+      "path": "step5a_tokenize.py",
+      "bytes": 10043,
+      "crc32": 272002353,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110859,
+        "bytes": 10043,
+        "mtime_ns": 1775811067296188354
+      }
+    },
+    {
+      "path": "step5b_verify.md",
+      "bytes": 2368,
+      "crc32": 4025598952,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110850,
+        "bytes": 2368,
+        "mtime_ns": 1775788915986721038
+      }
+    },
+    {
+      "path": "step5b_verify.py",
+      "bytes": 11496,
+      "crc32": 578779424,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110860,
+        "bytes": 11496,
+        "mtime_ns": 1775811106036127090
+      }
+    },
+    {
+      "path": "step6a_build_vocab.md",
+      "bytes": 4562,
+      "crc32": 4044617264,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110851,
+        "bytes": 4562,
+        "mtime_ns": 1775817233062572479
+      }
+    },
+    {
+      "path": "step6a_build_vocab.py",
+      "bytes": 18429,
+      "crc32": 1698893356,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110861,
+        "bytes": 18429,
+        "mtime_ns": 1775811082526586532
+      }
+    },
+    {
+      "path": "step6b_vocab_report.md",
+      "bytes": 2671,
+      "crc32": 339213038,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110852,
+        "bytes": 2671,
+        "mtime_ns": 1775790605292995452
+      }
+    },
+    {
+      "path": "step6b_vocab_report.py",
+      "bytes": 24004,
+      "crc32": 3062442283,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110862,
+        "bytes": 24004,
+        "mtime_ns": 1775788915965702056
+      }
+    },
+    {
+      "path": "step7_encode.md",
+      "bytes": 6088,
+      "crc32": 433882233,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110854,
+        "bytes": 6088,
+        "mtime_ns": 1775790357091196060
+      }
+    },
+    {
+      "path": "step7_encode.py",
+      "bytes": 6576,
+      "crc32": 3682140570,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110864,
+        "bytes": 6576,
+        "mtime_ns": 1775789660191957473
+      }
+    },
+    {
+      "path": "step7b_verify.md",
+      "bytes": 4087,
+      "crc32": 27720095,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110853,
+        "bytes": 4087,
+        "mtime_ns": 1775790390730049133
+      }
+    },
+    {
+      "path": "step7b_verify.py",
+      "bytes": 5387,
+      "crc32": 897845480,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110863,
+        "bytes": 5387,
+        "mtime_ns": 1775789973120506286
+      }
+    },
+    {
+      "path": "token_ids_16384/part_00.npy",
+      "bytes": 4990924,
+      "crc32": 2361479338,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111300,
+        "bytes": 4990924,
+        "mtime_ns": 1775810542132364273
+      }
+    },
+    {
+      "path": "token_ids_16384/part_01.npy",
+      "bytes": 4735658,
+      "crc32": 3452827572,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111304,
+        "bytes": 4735658,
+        "mtime_ns": 1775810542158126831
+      }
+    },
+    {
+      "path": "token_ids_16384/part_02.npy",
+      "bytes": 4837542,
+      "crc32": 3325289160,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111308,
+        "bytes": 4837542,
+        "mtime_ns": 1775810542206903457
+      }
+    },
+    {
+      "path": "token_ids_16384/part_03.npy",
+      "bytes": 4434306,
+      "crc32": 787007840,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111312,
+        "bytes": 4434306,
+        "mtime_ns": 1775810542096210479
+      }
+    },
+    {
+      "path": "token_ids_16384/part_04.npy",
+      "bytes": 4521400,
+      "crc32": 2996384613,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111316,
+        "bytes": 4521400,
+        "mtime_ns": 1775810542067417144
+      }
+    },
+    {
+      "path": "token_ids_16384/part_05.npy",
+      "bytes": 4673590,
+      "crc32": 2183147801,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111320,
+        "bytes": 4673590,
+        "mtime_ns": 1775810542055276870
+      }
+    },
+    {
+      "path": "token_ids_16384/part_06.npy",
+      "bytes": 4993464,
+      "crc32": 4042612262,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111324,
+        "bytes": 4993464,
+        "mtime_ns": 1775810542145814895
+      }
+    },
+    {
+      "path": "token_ids_16384/part_07.npy",
+      "bytes": 4942406,
+      "crc32": 780961333,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111328,
+        "bytes": 4942406,
+        "mtime_ns": 1775810542133365631
+      }
+    },
+    {
+      "path": "token_ids_16384/part_08.npy",
+      "bytes": 4745936,
+      "crc32": 816175177,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111332,
+        "bytes": 4745936,
+        "mtime_ns": 1775810542099208831
+      }
+    },
+    {
+      "path": "token_ids_16384/part_09.npy",
+      "bytes": 4479512,
+      "crc32": 1497214065,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111336,
+        "bytes": 4479512,
+        "mtime_ns": 1775810542059782028
+      }
+    },
+    {
+      "path": "token_ids_16384/part_10.npy",
+      "bytes": 4731070,
+      "crc32": 196930118,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111340,
+        "bytes": 4731070,
+        "mtime_ns": 1775810542155775070
+      }
+    },
+    {
+      "path": "token_ids_16384/part_11.npy",
+      "bytes": 5003264,
+      "crc32": 1849619638,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111344,
+        "bytes": 5003264,
+        "mtime_ns": 1775810542147535324
+      }
+    },
+    {
+      "path": "token_ids_16384/part_12.npy",
+      "bytes": 4660832,
+      "crc32": 4050740047,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111348,
+        "bytes": 4660832,
+        "mtime_ns": 1775810542176820755
+      }
+    },
+    {
+      "path": "token_ids_16384/part_13.npy",
+      "bytes": 4482854,
+      "crc32": 2940814557,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111352,
+        "bytes": 4482854,
+        "mtime_ns": 1775810542043762207
+      }
+    },
+    {
+      "path": "token_ids_16384/part_14.npy",
+      "bytes": 4428130,
+      "crc32": 3538430372,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111359,
+        "bytes": 4428130,
+        "mtime_ns": 1775810542046760559
+      }
+    },
+    {
+      "path": "token_ids_16384/part_15.npy",
+      "bytes": 4885600,
+      "crc32": 2571112039,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111367,
+        "bytes": 4885600,
+        "mtime_ns": 1775810542200372695
+      }
+    },
+    {
+      "path": "token_ids_16384/part_16.npy",
+      "bytes": 4711640,
+      "crc32": 3648518258,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111372,
+        "bytes": 4711640,
+        "mtime_ns": 1775810542117782592
+      }
+    },
+    {
+      "path": "token_ids_16384/part_17.npy",
+      "bytes": 4521804,
+      "crc32": 3451766792,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111382,
+        "bytes": 4521804,
+        "mtime_ns": 1775810542121311187
+      }
+    },
+    {
+      "path": "token_ids_16384/part_18.npy",
+      "bytes": 4687272,
+      "crc32": 871624555,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111392,
+        "bytes": 4687272,
+        "mtime_ns": 1775810542101722717
+      }
+    },
+    {
+      "path": "token_ids_16384/part_19.npy",
+      "bytes": 4434090,
+      "crc32": 2234480397,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111400,
+        "bytes": 4434090,
+        "mtime_ns": 1775810542087472915
+      }
+    },
+    {
+      "path": "token_ids_16384/part_20.npy",
+      "bytes": 4366136,
+      "crc32": 2483961860,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111409,
+        "bytes": 4366136,
+        "mtime_ns": 1775810542058277130
+      }
+    },
+    {
+      "path": "token_ids_16384/part_21.npy",
+      "bytes": 4312850,
+      "crc32": 4257847272,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111417,
+        "bytes": 4312850,
+        "mtime_ns": 1775810542067417144
+      }
+    },
+    {
+      "path": "token_ids_16384/part_22.npy",
+      "bytes": 3927264,
+      "crc32": 3520017131,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111430,
+        "bytes": 3927264,
+        "mtime_ns": 1775810542041748046
+      }
+    },
+    {
+      "path": "token_ids_16384/part_23.npy",
+      "bytes": 4355462,
+      "crc32": 2666316735,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111435,
+        "bytes": 4355462,
+        "mtime_ns": 1775810542098207473
+      }
+    },
+    {
+      "path": "token_ids_16384/part_24.npy",
+      "bytes": 4522226,
+      "crc32": 1306328711,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111439,
+        "bytes": 4522226,
+        "mtime_ns": 1775810542102739334
+      }
+    },
+    {
+      "path": "token_ids_16384/part_25.npy",
+      "bytes": 4672448,
+      "crc32": 1607780274,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111443,
+        "bytes": 4672448,
+        "mtime_ns": 1775810542100210189
+      }
+    },
+    {
+      "path": "token_ids_16384/part_26.npy",
+      "bytes": 4790352,
+      "crc32": 579716402,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111447,
+        "bytes": 4790352,
+        "mtime_ns": 1775810542106744766
+      }
+    },
+    {
+      "path": "token_ids_16384/part_27.npy",
+      "bytes": 4240572,
+      "crc32": 2355967705,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111451,
+        "bytes": 4240572,
+        "mtime_ns": 1775810542057275772
+      }
+    },
+    {
+      "path": "token_ids_16384/part_28.npy",
+      "bytes": 4322284,
+      "crc32": 2200099834,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111455,
+        "bytes": 4322284,
+        "mtime_ns": 1775810542041748046
+      }
+    },
+    {
+      "path": "token_ids_16384/part_29.npy",
+      "bytes": 4580334,
+      "crc32": 956756379,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111459,
+        "bytes": 4580334,
+        "mtime_ns": 1775810542082471847
+      }
+    },
+    {
+      "path": "token_ids_16384/part_30.npy",
+      "bytes": 4354970,
+      "crc32": 1651194022,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111463,
+        "bytes": 4354970,
+        "mtime_ns": 1775810542045759201
+      }
+    },
+    {
+      "path": "token_ids_16384/part_31.npy",
+      "bytes": 4532862,
+      "crc32": 171570198,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111467,
+        "bytes": 4532862,
+        "mtime_ns": 1775810542067417144
+      }
+    },
+    {
+      "path": "token_ids_32768/part_00.npy",
+      "bytes": 8421576,
+      "crc32": 2679729041,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111297,
+        "bytes": 8421576,
+        "mtime_ns": 1775809880812145233
+      }
+    },
+    {
+      "path": "token_ids_32768/part_01.npy",
+      "bytes": 7933962,
+      "crc32": 771199148,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111301,
+        "bytes": 7933962,
+        "mtime_ns": 1775809880732749938
+      }
+    },
+    {
+      "path": "token_ids_32768/part_02.npy",
+      "bytes": 8019726,
+      "crc32": 312843538,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111305,
+        "bytes": 8019726,
+        "mtime_ns": 1775809880742273330
+      }
+    },
+    {
+      "path": "token_ids_32768/part_03.npy",
+      "bytes": 7526922,
+      "crc32": 1654004849,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111309,
+        "bytes": 7526922,
+        "mtime_ns": 1775809880691612243
+      }
+    },
+    {
+      "path": "token_ids_32768/part_04.npy",
+      "bytes": 7600398,
+      "crc32": 3600088959,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111313,
+        "bytes": 7600398,
+        "mtime_ns": 1775809880637769699
+      }
+    },
+    {
+      "path": "token_ids_32768/part_05.npy",
+      "bytes": 7946348,
+      "crc32": 1815189642,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111317,
+        "bytes": 7946348,
+        "mtime_ns": 1775809880659847259
+      }
+    },
+    {
+      "path": "token_ids_32768/part_06.npy",
+      "bytes": 8510678,
+      "crc32": 2374643504,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111321,
+        "bytes": 8510678,
+        "mtime_ns": 1775809880771827697
+      }
+    },
+    {
+      "path": "token_ids_32768/part_07.npy",
+      "bytes": 8496898,
+      "crc32": 2948496702,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111325,
+        "bytes": 8496898,
+        "mtime_ns": 1775809880780065536
+      }
+    },
+    {
+      "path": "token_ids_32768/part_08.npy",
+      "bytes": 8068388,
+      "crc32": 3660448620,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111329,
+        "bytes": 8068388,
+        "mtime_ns": 1775809880677078247
+      }
+    },
+    {
+      "path": "token_ids_32768/part_09.npy",
+      "bytes": 7642484,
+      "crc32": 1928785540,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111333,
+        "bytes": 7642484,
+        "mtime_ns": 1775809880649324417
+      }
+    },
+    {
+      "path": "token_ids_32768/part_10.npy",
+      "bytes": 8124738,
+      "crc32": 1583751364,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111337,
+        "bytes": 8124738,
+        "mtime_ns": 1775809880744272232
+      }
+    },
+    {
+      "path": "token_ids_32768/part_11.npy",
+      "bytes": 8467168,
+      "crc32": 1068631250,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111341,
+        "bytes": 8467168,
+        "mtime_ns": 1775809880756309509
+      }
+    },
+    {
+      "path": "token_ids_32768/part_12.npy",
+      "bytes": 8018744,
+      "crc32": 3868924278,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111345,
+        "bytes": 8018744,
+        "mtime_ns": 1775809880739273071
+      }
+    },
+    {
+      "path": "token_ids_32768/part_13.npy",
+      "bytes": 7709558,
+      "crc32": 2659446117,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111349,
+        "bytes": 7709558,
+        "mtime_ns": 1775809880622737884
+      }
+    },
+    {
+      "path": "token_ids_32768/part_14.npy",
+      "bytes": 7564258,
+      "crc32": 4090867868,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111353,
+        "bytes": 7564258,
+        "mtime_ns": 1775809880666540145
+      }
+    },
+    {
+      "path": "token_ids_32768/part_15.npy",
+      "bytes": 8358984,
+      "crc32": 3106489007,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111360,
+        "bytes": 8358984,
+        "mtime_ns": 1775809880753797531
+      }
+    },
+    {
+      "path": "token_ids_32768/part_16.npy",
+      "bytes": 7838764,
+      "crc32": 792540789,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111368,
+        "bytes": 7838764,
+        "mtime_ns": 1775809880731752395
+      }
+    },
+    {
+      "path": "token_ids_32768/part_17.npy",
+      "bytes": 7622296,
+      "crc32": 1653417474,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111374,
+        "bytes": 7622296,
+        "mtime_ns": 1775809880727752685
+      }
+    },
+    {
+      "path": "token_ids_32768/part_18.npy",
+      "bytes": 7980808,
+      "crc32": 1261953769,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111383,
+        "bytes": 7980808,
+        "mtime_ns": 1775809880684093475
+      }
+    },
+    {
+      "path": "token_ids_32768/part_19.npy",
+      "bytes": 7535468,
+      "crc32": 1572379284,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111393,
+        "bytes": 7535468,
+        "mtime_ns": 1775809880601202011
+      }
+    },
+    {
+      "path": "token_ids_32768/part_20.npy",
+      "bytes": 7491566,
+      "crc32": 509060449,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111401,
+        "bytes": 7491566,
+        "mtime_ns": 1775809880617221832
+      }
+    },
+    {
+      "path": "token_ids_32768/part_21.npy",
+      "bytes": 7307472,
+      "crc32": 864744558,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111412,
+        "bytes": 7307472,
+        "mtime_ns": 1775809880617221832
+      }
+    },
+    {
+      "path": "token_ids_32768/part_22.npy",
+      "bytes": 6527296,
+      "crc32": 665980487,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111418,
+        "bytes": 6527296,
+        "mtime_ns": 1775809880444452285
+      }
+    },
+    {
+      "path": "token_ids_32768/part_23.npy",
+      "bytes": 7430724,
+      "crc32": 2871476764,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111431,
+        "bytes": 7430724,
+        "mtime_ns": 1775809880644775390
+      }
+    },
+    {
+      "path": "token_ids_32768/part_24.npy",
+      "bytes": 7698682,
+      "crc32": 1207253042,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111436,
+        "bytes": 7698682,
+        "mtime_ns": 1775809880636764526
+      }
+    },
+    {
+      "path": "token_ids_32768/part_25.npy",
+      "bytes": 7807642,
+      "crc32": 4202997038,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111440,
+        "bytes": 7807642,
+        "mtime_ns": 1775809880674564361
+      }
+    },
+    {
+      "path": "token_ids_32768/part_26.npy",
+      "bytes": 8160358,
+      "crc32": 739315089,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111444,
+        "bytes": 8160358,
+        "mtime_ns": 1775809880763847351
+      }
+    },
+    {
+      "path": "token_ids_32768/part_27.npy",
+      "bytes": 7185390,
+      "crc32": 2200707612,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111448,
+        "bytes": 7185390,
+        "mtime_ns": 1775809880600202560
+      }
+    },
+    {
+      "path": "token_ids_32768/part_28.npy",
+      "bytes": 7304094,
+      "crc32": 3850029371,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111452,
+        "bytes": 7304094,
+        "mtime_ns": 1775809880729751586
+      }
+    },
+    {
+      "path": "token_ids_32768/part_29.npy",
+      "bytes": 7716554,
+      "crc32": 1966346184,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111456,
+        "bytes": 7716554,
+        "mtime_ns": 1775809880617221832
+      }
+    },
+    {
+      "path": "token_ids_32768/part_30.npy",
+      "bytes": 7374240,
+      "crc32": 1828706088,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111460,
+        "bytes": 7374240,
+        "mtime_ns": 1775809880725231170
+      }
+    },
+    {
+      "path": "token_ids_32768/part_31.npy",
+      "bytes": 7502086,
+      "crc32": 2931448008,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111464,
+        "bytes": 7502086,
+        "mtime_ns": 1775809880607711791
+      }
+    },
+    {
+      "path": "token_ids_49152/part_00.npy",
+      "bytes": 10344622,
+      "crc32": 4204322054,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111298,
+        "bytes": 10344622,
+        "mtime_ns": 1775810375483291625
+      }
+    },
+    {
+      "path": "token_ids_49152/part_01.npy",
+      "bytes": 9724642,
+      "crc32": 1566368600,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111302,
+        "bytes": 9724642,
+        "mtime_ns": 1775810375359842300
+      }
+    },
+    {
+      "path": "token_ids_49152/part_02.npy",
+      "bytes": 9827544,
+      "crc32": 1429915145,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111306,
+        "bytes": 9827544,
+        "mtime_ns": 1775810375399471282
+      }
+    },
+    {
+      "path": "token_ids_49152/part_03.npy",
+      "bytes": 9266258,
+      "crc32": 847112166,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111310,
+        "bytes": 9266258,
+        "mtime_ns": 1775810375249589920
+      }
+    },
+    {
+      "path": "token_ids_49152/part_04.npy",
+      "bytes": 9379130,
+      "crc32": 2030987795,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111314,
+        "bytes": 9379130,
+        "mtime_ns": 1775810375320205688
+      }
+    },
+    {
+      "path": "token_ids_49152/part_05.npy",
+      "bytes": 9787982,
+      "crc32": 208759310,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111318,
+        "bytes": 9787982,
+        "mtime_ns": 1775810375339765548
+      }
+    },
+    {
+      "path": "token_ids_49152/part_06.npy",
+      "bytes": 10466726,
+      "crc32": 1064682328,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111322,
+        "bytes": 10466726,
+        "mtime_ns": 1775810375440164566
+      }
+    },
+    {
+      "path": "token_ids_49152/part_07.npy",
+      "bytes": 10531704,
+      "crc32": 188932088,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111326,
+        "bytes": 10531704,
+        "mtime_ns": 1775810375593219757
+      }
+    },
+    {
+      "path": "token_ids_49152/part_08.npy",
+      "bytes": 9968070,
+      "crc32": 1045292162,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111330,
+        "bytes": 9968070,
+        "mtime_ns": 1775810375398469924
+      }
+    },
+    {
+      "path": "token_ids_49152/part_09.npy",
+      "bytes": 9410810,
+      "crc32": 3095357894,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111334,
+        "bytes": 9410810,
+        "mtime_ns": 1775810375256111145
+      }
+    },
+    {
+      "path": "token_ids_49152/part_10.npy",
+      "bytes": 10060800,
+      "crc32": 2492828313,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111338,
+        "bytes": 10060800,
+        "mtime_ns": 1775810375443675994
+      }
+    },
+    {
+      "path": "token_ids_49152/part_11.npy",
+      "bytes": 10409376,
+      "crc32": 1040559878,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111342,
+        "bytes": 10409376,
+        "mtime_ns": 1775810375463241577
+      }
+    },
+    {
+      "path": "token_ids_49152/part_12.npy",
+      "bytes": 9926722,
+      "crc32": 337671823,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111346,
+        "bytes": 9926722,
+        "mtime_ns": 1775810375394470214
+      }
+    },
+    {
+      "path": "token_ids_49152/part_13.npy",
+      "bytes": 9532368,
+      "crc32": 2748056637,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111350,
+        "bytes": 9532368,
+        "mtime_ns": 1775810375431089401
+      }
+    },
+    {
+      "path": "token_ids_49152/part_14.npy",
+      "bytes": 9349058,
+      "crc32": 905361306,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111356,
+        "bytes": 9349058,
+        "mtime_ns": 1775810375309690475
+      }
+    },
+    {
+      "path": "token_ids_49152/part_15.npy",
+      "bytes": 10355900,
+      "crc32": 3900889095,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111365,
+        "bytes": 10355900,
+        "mtime_ns": 1775810375450685501
+      }
+    },
+    {
+      "path": "token_ids_49152/part_16.npy",
+      "bytes": 9614172,
+      "crc32": 3118673545,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111369,
+        "bytes": 9614172,
+        "mtime_ns": 1775810375317205429
+      }
+    },
+    {
+      "path": "token_ids_49152/part_17.npy",
+      "bytes": 9327738,
+      "crc32": 1228408090,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111378,
+        "bytes": 9327738,
+        "mtime_ns": 1775810375325723648
+      }
+    },
+    {
+      "path": "token_ids_49152/part_18.npy",
+      "bytes": 9812048,
+      "crc32": 3375886628,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111388,
+        "bytes": 9812048,
+        "mtime_ns": 1775810375355846405
+      }
+    },
+    {
+      "path": "token_ids_49152/part_19.npy",
+      "bytes": 9278930,
+      "crc32": 2899328759,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111395,
+        "bytes": 9278930,
+        "mtime_ns": 1775810375418041229
+      }
+    },
+    {
+      "path": "token_ids_49152/part_20.npy",
+      "bytes": 9243030,
+      "crc32": 31404221,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111407,
+        "bytes": 9243030,
+        "mtime_ns": 1775810375301170349
+      }
+    },
+    {
+      "path": "token_ids_49152/part_21.npy",
+      "bytes": 8952370,
+      "crc32": 1993573521,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111415,
+        "bytes": 8952370,
+        "mtime_ns": 1775810375298170089
+      }
+    },
+    {
+      "path": "token_ids_49152/part_22.npy",
+      "bytes": 8043108,
+      "crc32": 4111256002,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111426,
+        "bytes": 8043108,
+        "mtime_ns": 1775810375134864807
+      }
+    },
+    {
+      "path": "token_ids_49152/part_23.npy",
+      "bytes": 9118142,
+      "crc32": 297298302,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111433,
+        "bytes": 9118142,
+        "mtime_ns": 1775810375353820800
+      }
+    },
+    {
+      "path": "token_ids_49152/part_24.npy",
+      "bytes": 9452898,
+      "crc32": 1732356635,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111437,
+        "bytes": 9452898,
+        "mtime_ns": 1775810375432088851
+      }
+    },
+    {
+      "path": "token_ids_49152/part_25.npy",
+      "bytes": 9590032,
+      "crc32": 2587956588,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111441,
+        "bytes": 9590032,
+        "mtime_ns": 1775810375498846054
+      }
+    },
+    {
+      "path": "token_ids_49152/part_26.npy",
+      "bytes": 10043714,
+      "crc32": 3169486691,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111445,
+        "bytes": 10043714,
+        "mtime_ns": 1775810375464258193
+      }
+    },
+    {
+      "path": "token_ids_49152/part_27.npy",
+      "bytes": 8836544,
+      "crc32": 3769213958,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111449,
+        "bytes": 8836544,
+        "mtime_ns": 1775810375264621734
+      }
+    },
+    {
+      "path": "token_ids_49152/part_28.npy",
+      "bytes": 8970778,
+      "crc32": 3791700281,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111453,
+        "bytes": 8970778,
+        "mtime_ns": 1775810375436632156
+      }
+    },
+    {
+      "path": "token_ids_49152/part_29.npy",
+      "bytes": 9507984,
+      "crc32": 2380382166,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111457,
+        "bytes": 9507984,
+        "mtime_ns": 1775810375388961791
+      }
+    },
+    {
+      "path": "token_ids_49152/part_30.npy",
+      "bytes": 9121490,
+      "crc32": 1545644838,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111461,
+        "bytes": 9121490,
+        "mtime_ns": 1775810375468259811
+      }
+    },
+    {
+      "path": "token_ids_49152/part_31.npy",
+      "bytes": 9194914,
+      "crc32": 715984958,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111465,
+        "bytes": 9194914,
+        "mtime_ns": 1775810375302167892
+      }
+    },
+    {
+      "path": "token_ids_65536/part_00.npy",
+      "bytes": 11584858,
+      "crc32": 290831185,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111299,
+        "bytes": 11584858,
+        "mtime_ns": 1775810384860597610
+      }
+    },
+    {
+      "path": "token_ids_65536/part_01.npy",
+      "bytes": 10866294,
+      "crc32": 1522424557,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111303,
+        "bytes": 10866294,
+        "mtime_ns": 1775810384566404342
+      }
+    },
+    {
+      "path": "token_ids_65536/part_02.npy",
+      "bytes": 10981126,
+      "crc32": 2042939219,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111307,
+        "bytes": 10981126,
+        "mtime_ns": 1775810384691482543
+      }
+    },
+    {
+      "path": "token_ids_65536/part_03.npy",
+      "bytes": 10364228,
+      "crc32": 3518523498,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111311,
+        "bytes": 10364228,
+        "mtime_ns": 1775810384716623306
+      }
+    },
+    {
+      "path": "token_ids_65536/part_04.npy",
+      "bytes": 10517548,
+      "crc32": 456681560,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111315,
+        "bytes": 10517548,
+        "mtime_ns": 1775810384800884246
+      }
+    },
+    {
+      "path": "token_ids_65536/part_05.npy",
+      "bytes": 10996260,
+      "crc32": 4015143309,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111319,
+        "bytes": 10996260,
+        "mtime_ns": 1775810384713603973
+      }
+    },
+    {
+      "path": "token_ids_65536/part_06.npy",
+      "bytes": 11724510,
+      "crc32": 1059299288,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111323,
+        "bytes": 11724510,
+        "mtime_ns": 1775810384792358398
+      }
+    },
+    {
+      "path": "token_ids_65536/part_07.npy",
+      "bytes": 11839892,
+      "crc32": 2143957170,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111327,
+        "bytes": 11839892,
+        "mtime_ns": 1775810384850057601
+      }
+    },
+    {
+      "path": "token_ids_65536/part_08.npy",
+      "bytes": 11195642,
+      "crc32": 1045657681,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111331,
+        "bytes": 11195642,
+        "mtime_ns": 1775810384734178543
+      }
+    },
+    {
+      "path": "token_ids_65536/part_09.npy",
+      "bytes": 10612040,
+      "crc32": 1320207150,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111335,
+        "bytes": 10612040,
+        "mtime_ns": 1775810384581918716
+      }
+    },
+    {
+      "path": "token_ids_65536/part_10.npy",
+      "bytes": 11294138,
+      "crc32": 3180503380,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111339,
+        "bytes": 11294138,
+        "mtime_ns": 1775810384755247116
+      }
+    },
+    {
+      "path": "token_ids_65536/part_11.npy",
+      "bytes": 11619582,
+      "crc32": 3881044188,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111343,
+        "bytes": 11619582,
+        "mtime_ns": 1775810384828998565
+      }
+    },
+    {
+      "path": "token_ids_65536/part_12.npy",
+      "bytes": 11201358,
+      "crc32": 1243587974,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111347,
+        "bytes": 11201358,
+        "mtime_ns": 1775810384613975524
+      }
+    },
+    {
+      "path": "token_ids_65536/part_13.npy",
+      "bytes": 10724976,
+      "crc32": 2643830475,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111351,
+        "bytes": 10724976,
+        "mtime_ns": 1775810384872140884
+      }
+    },
+    {
+      "path": "token_ids_65536/part_14.npy",
+      "bytes": 10489006,
+      "crc32": 3633897118,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111358,
+        "bytes": 10489006,
+        "mtime_ns": 1775810384573404312
+      }
+    },
+    {
+      "path": "token_ids_65536/part_15.npy",
+      "bytes": 11619158,
+      "crc32": 4252220602,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111366,
+        "bytes": 11619158,
+        "mtime_ns": 1775810384887216567
+      }
+    },
+    {
+      "path": "token_ids_65536/part_16.npy",
+      "bytes": 10748816,
+      "crc32": 1315084463,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111371,
+        "bytes": 10748816,
+        "mtime_ns": 1775810384587436676
+      }
+    },
+    {
+      "path": "token_ids_65536/part_17.npy",
+      "bytes": 10431682,
+      "crc32": 2729802333,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111381,
+        "bytes": 10431682,
+        "mtime_ns": 1775810384747720718
+      }
+    },
+    {
+      "path": "token_ids_65536/part_18.npy",
+      "bytes": 11020032,
+      "crc32": 1002490324,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111391,
+        "bytes": 11020032,
+        "mtime_ns": 1775810384645061492
+      }
+    },
+    {
+      "path": "token_ids_65536/part_19.npy",
+      "bytes": 10442938,
+      "crc32": 1440408098,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111399,
+        "bytes": 10442938,
+        "mtime_ns": 1775810384496284484
+      }
+    },
+    {
+      "path": "token_ids_65536/part_20.npy",
+      "bytes": 10371620,
+      "crc32": 2444731799,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111408,
+        "bytes": 10371620,
+        "mtime_ns": 1775810384613975524
+      }
+    },
+    {
+      "path": "token_ids_65536/part_21.npy",
+      "bytes": 10063036,
+      "crc32": 1070975105,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111416,
+        "bytes": 10063036,
+        "mtime_ns": 1775810384718627929
+      }
+    },
+    {
+      "path": "token_ids_65536/part_22.npy",
+      "bytes": 9021210,
+      "crc32": 1848991961,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111427,
+        "bytes": 9021210,
+        "mtime_ns": 1775810384436153411
+      }
+    },
+    {
+      "path": "token_ids_65536/part_23.npy",
+      "bytes": 10256254,
+      "crc32": 3906302949,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111434,
+        "bytes": 10256254,
+        "mtime_ns": 1775810384818944931
+      }
+    },
+    {
+      "path": "token_ids_65536/part_24.npy",
+      "bytes": 10582072,
+      "crc32": 3976119956,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111438,
+        "bytes": 10582072,
+        "mtime_ns": 1775810384627016067
+      }
+    },
+    {
+      "path": "token_ids_65536/part_25.npy",
+      "bytes": 10740946,
+      "crc32": 1387722655,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111442,
+        "bytes": 10740946,
+        "mtime_ns": 1775810384845048904
+      }
+    },
+    {
+      "path": "token_ids_65536/part_26.npy",
+      "bytes": 11243760,
+      "crc32": 3704215594,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111446,
+        "bytes": 11243760,
+        "mtime_ns": 1775810384712095260
+      }
+    },
+    {
+      "path": "token_ids_65536/part_27.npy",
+      "bytes": 9893894,
+      "crc32": 2756517820,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111450,
+        "bytes": 9893894,
+        "mtime_ns": 1775810384709093093
+      }
+    },
+    {
+      "path": "token_ids_65536/part_28.npy",
+      "bytes": 10038068,
+      "crc32": 2373603878,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111454,
+        "bytes": 10038068,
+        "mtime_ns": 1775810384618991851
+      }
+    },
+    {
+      "path": "token_ids_65536/part_29.npy",
+      "bytes": 10621470,
+      "crc32": 489304762,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111458,
+        "bytes": 10621470,
+        "mtime_ns": 1775810384655099868
+      }
+    },
+    {
+      "path": "token_ids_65536/part_30.npy",
+      "bytes": 10200410,
+      "crc32": 1011281592,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111462,
+        "bytes": 10200410,
+        "mtime_ns": 1775810384625505447
+      }
+    },
+    {
+      "path": "token_ids_65536/part_31.npy",
+      "bytes": 10311250,
+      "crc32": 411364614,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111466,
+        "bytes": 10311250,
+        "mtime_ns": 1775810384697555541
+      }
+    },
+    {
+      "path": "tokens/part_00.txt",
+      "bytes": 86318173,
+      "crc32": 1994483964,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110869,
+        "bytes": 86318173,
+        "mtime_ns": 1775803470467267990
+      }
+    },
+    {
+      "path": "tokens/part_01.txt",
+      "bytes": 80130494,
+      "crc32": 1593268520,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110875,
+        "bytes": 80130494,
+        "mtime_ns": 1775803434161560058
+      }
+    },
+    {
+      "path": "tokens/part_02.txt",
+      "bytes": 81956136,
+      "crc32": 3490240090,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110881,
+        "bytes": 81956136,
+        "mtime_ns": 1775803442615646362
+      }
+    },
+    {
+      "path": "tokens/part_03.txt",
+      "bytes": 78092715,
+      "crc32": 3540120036,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110887,
+        "bytes": 78092715,
+        "mtime_ns": 1775803414203798294
+      }
+    },
+    {
+      "path": "tokens/part_04.txt",
+      "bytes": 79859687,
+      "crc32": 1935525237,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110892,
+        "bytes": 79859687,
+        "mtime_ns": 1775803429897132873
+      }
+    },
+    {
+      "path": "tokens/part_05.txt",
+      "bytes": 81932218,
+      "crc32": 2743858936,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110899,
+        "bytes": 81932218,
+        "mtime_ns": 1775803439004074096
+      }
+    },
+    {
+      "path": "tokens/part_06.txt",
+      "bytes": 87581183,
+      "crc32": 3139777966,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110906,
+        "bytes": 87581183,
+        "mtime_ns": 1775803477105564117
+      }
+    },
+    {
+      "path": "tokens/part_07.txt",
+      "bytes": 88770717,
+      "crc32": 3510913850,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110930,
+        "bytes": 88770717,
+        "mtime_ns": 1775803481469402313
+      }
+    },
+    {
+      "path": "tokens/part_08.txt",
+      "bytes": 84332004,
+      "crc32": 568843707,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110952,
+        "bytes": 84332004,
+        "mtime_ns": 1775803464737655639
+      }
+    },
+    {
+      "path": "tokens/part_09.txt",
+      "bytes": 80100262,
+      "crc32": 1677713086,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110974,
+        "bytes": 80100262,
+        "mtime_ns": 1775803430595375061
+      }
+    },
+    {
+      "path": "tokens/part_10.txt",
+      "bytes": 84683377,
+      "crc32": 1534202272,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110985,
+        "bytes": 84683377,
+        "mtime_ns": 1775803462961494445
+      }
+    },
+    {
+      "path": "tokens/part_11.txt",
+      "bytes": 86159415,
+      "crc32": 526586779,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110993,
+        "bytes": 86159415,
+        "mtime_ns": 1775803462063199996
+      }
+    },
+    {
+      "path": "tokens/part_12.txt",
+      "bytes": 84089571,
+      "crc32": 4154836720,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111000,
+        "bytes": 84089571,
+        "mtime_ns": 1775803461013370513
+      }
+    },
+    {
+      "path": "tokens/part_13.txt",
+      "bytes": 80964219,
+      "crc32": 238589256,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111007,
+        "bytes": 80964219,
+        "mtime_ns": 1775803436755487442
+      }
+    },
+    {
+      "path": "tokens/part_14.txt",
+      "bytes": 78763804,
+      "crc32": 2441473129,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111012,
+        "bytes": 78763804,
+        "mtime_ns": 1775803432552629470
+      }
+    },
+    {
+      "path": "tokens/part_15.txt",
+      "bytes": 86497005,
+      "crc32": 3864093622,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111021,
+        "bytes": 86497005,
+        "mtime_ns": 1775803475621004104
+      }
+    },
+    {
+      "path": "tokens/part_16.txt",
+      "bytes": 80481186,
+      "crc32": 3505560341,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111026,
+        "bytes": 80481186,
+        "mtime_ns": 1775803441650625228
+      }
+    },
+    {
+      "path": "tokens/part_17.txt",
+      "bytes": 78568363,
+      "crc32": 3881416974,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111031,
+        "bytes": 78568363,
+        "mtime_ns": 1775803424341184616
+      }
+    },
+    {
+      "path": "tokens/part_18.txt",
+      "bytes": 83287761,
+      "crc32": 2616181288,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111053,
+        "bytes": 83287761,
+        "mtime_ns": 1775803461606685638
+      }
+    },
+    {
+      "path": "tokens/part_19.txt",
+      "bytes": 79552681,
+      "crc32": 3802887901,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111070,
+        "bytes": 79552681,
+        "mtime_ns": 1775803429848749160
+      }
+    },
+    {
+      "path": "tokens/part_20.txt",
+      "bytes": 79029879,
+      "crc32": 1756397403,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111081,
+        "bytes": 79029879,
+        "mtime_ns": 1775803435530925750
+      }
+    },
+    {
+      "path": "tokens/part_21.txt",
+      "bytes": 75627272,
+      "crc32": 1171491282,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111110,
+        "bytes": 75627272,
+        "mtime_ns": 1775803391338857650
+      }
+    },
+    {
+      "path": "tokens/part_22.txt",
+      "bytes": 68936564,
+      "crc32": 1980824898,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111128,
+        "bytes": 68936564,
+        "mtime_ns": 1775803298222110748
+      }
+    },
+    {
+      "path": "tokens/part_23.txt",
+      "bytes": 77195376,
+      "crc32": 327002348,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111155,
+        "bytes": 77195376,
+        "mtime_ns": 1775803397292613983
+      }
+    },
+    {
+      "path": "tokens/part_24.txt",
+      "bytes": 78880152,
+      "crc32": 766297167,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111165,
+        "bytes": 78880152,
+        "mtime_ns": 1775803430690309524
+      }
+    },
+    {
+      "path": "tokens/part_25.txt",
+      "bytes": 80889378,
+      "crc32": 3899625963,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111172,
+        "bytes": 80889378,
+        "mtime_ns": 1775803441053100585
+      }
+    },
+    {
+      "path": "tokens/part_26.txt",
+      "bytes": 85460187,
+      "crc32": 4098648975,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111212,
+        "bytes": 85460187,
+        "mtime_ns": 1775803471936115264
+      }
+    },
+    {
+      "path": "tokens/part_27.txt",
+      "bytes": 75029538,
+      "crc32": 4058764386,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111255,
+        "bytes": 75029538,
+        "mtime_ns": 1775803400511016845
+      }
+    },
+    {
+      "path": "tokens/part_28.txt",
+      "bytes": 76128819,
+      "crc32": 2595029355,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111260,
+        "bytes": 76128819,
+        "mtime_ns": 1775803396921911239
+      }
+    },
+    {
+      "path": "tokens/part_29.txt",
+      "bytes": 79472704,
+      "crc32": 1392298640,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111268,
+        "bytes": 79472704,
+        "mtime_ns": 1775803422067453384
+      }
+    },
+    {
+      "path": "tokens/part_30.txt",
+      "bytes": 77617428,
+      "crc32": 568559036,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111276,
+        "bytes": 77617428,
+        "mtime_ns": 1775803417497842788
+      }
+    },
+    {
+      "path": "tokens/part_31.txt",
+      "bytes": 78279198,
+      "crc32": 2029654749,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111281,
+        "bytes": 78279198,
+        "mtime_ns": 1775803411010194778
+      }
+    },
+    {
+      "path": "tokens_filtered_16384/README.txt",
+      "bytes": 522,
+      "crc32": 98178554,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111283,
+        "bytes": 522,
+        "mtime_ns": 1778736735758853912
+      }
+    },
+    {
+      "path": "tokens_filtered_32768/README.txt",
+      "bytes": 522,
+      "crc32": 1675435989,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111284,
+        "bytes": 522,
+        "mtime_ns": 1778736738427652359
+      }
+    },
+    {
+      "path": "tokens_filtered_49152/README.txt",
+      "bytes": 522,
+      "crc32": 2641514960,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111285,
+        "bytes": 522,
+        "mtime_ns": 1778736741094581604
+      }
+    },
+    {
+      "path": "tokens_filtered_65536/README.txt",
+      "bytes": 522,
+      "crc32": 3906102195,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111286,
+        "bytes": 522,
+        "mtime_ns": 1778736743764163970
+      }
+    },
+    {
+      "path": "vocab_16384.txt",
+      "bytes": 287364,
+      "crc32": 3777918883,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111288,
+        "bytes": 287364,
+        "mtime_ns": 1775810518806575775
+      }
+    },
+    {
+      "path": "vocab_32768.txt",
+      "bytes": 582736,
+      "crc32": 3019745772,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111289,
+        "bytes": 582736,
+        "mtime_ns": 1775808585952772140
+      }
+    },
+    {
+      "path": "vocab_49152.txt",
+      "bytes": 882657,
+      "crc32": 2551684054,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111290,
+        "bytes": 882657,
+        "mtime_ns": 1775810348568090438
+      }
+    },
+    {
+      "path": "vocab_65536.txt",
+      "bytes": 1183356,
+      "crc32": 3724475954,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111291,
+        "bytes": 1183356,
+        "mtime_ns": 1775810350650613784
+      }
+    },
+    {
+      "path": "vocab_comparison.png",
+      "bytes": 191103,
+      "crc32": 2925322144,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110836,
+        "bytes": 191103,
+        "mtime_ns": 1775810663643201828
+      }
+    },
+    {
+      "path": "vocab_full.txt",
+      "bytes": 28638942,
+      "crc32": 4244987196,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186111292,
+        "bytes": 28638942,
+        "mtime_ns": 1778725389546873092
+      }
+    },
+    {
+      "path": "vocab_full_zipf.png",
+      "bytes": 157205,
+      "crc32": 3740696189,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110837,
+        "bytes": 157205,
+        "mtime_ns": 1778725532136631011
+      }
+    },
+    {
+      "path": "vocab_report_16384.png",
+      "bytes": 153269,
+      "crc32": 784449301,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110838,
+        "bytes": 153269,
+        "mtime_ns": 1775810668202304840
+      }
+    },
+    {
+      "path": "vocab_report_32768.png",
+      "bytes": 161990,
+      "crc32": 501777329,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110839,
+        "bytes": 161990,
+        "mtime_ns": 1775810669981866836
+      }
+    },
+    {
+      "path": "vocab_report_49152.png",
+      "bytes": 160430,
+      "crc32": 4278229266,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110840,
+        "bytes": 160430,
+        "mtime_ns": 1775810672100061416
+      }
+    },
+    {
+      "path": "vocab_report_65536.png",
+      "bytes": 163335,
+      "crc32": 3322776646,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110841,
+        "bytes": 163335,
+        "mtime_ns": 1775810673891313552
+      }
+    },
+    {
+      "path": "vocab_report_full.png",
+      "bytes": 154432,
+      "crc32": 183190590,
+      "fingerprint": {
+        "device": 16777231,
+        "inode": 186110842,
+        "bytes": 154432,
+        "mtime_ns": 1775810665798341751
+      }
+    }
+  ],
+  "source_snapshot": {
+    "vocab_full_zipf.png": {
+      "device": 16777231,
+      "inode": 186110837,
+      "bytes": 157205,
+      "mtime_ns": 1778725532136631011
+    },
+    "step7b_verify.py": {
+      "device": 16777231,
+      "inode": 186110863,
+      "bytes": 5387,
+      "mtime_ns": 1775789973120506286
+    },
+    "step1_download.py": {
+      "device": 16777231,
+      "inode": 186110855,
+      "bytes": 1482,
+      "mtime_ns": 1775788915833072662
+    },
+    "PROVENANCE.json": {
+      "device": 16777231,
+      "inode": 186687481,
+      "bytes": 1984,
+      "mtime_ns": 1792223045728924550
+    },
+    "LICENSE": {
+      "device": 16777231,
+      "inode": 186110835,
+      "bytes": 20138,
+      "mtime_ns": 1778712713737993240
+    },
+    "step5a_tokenize.md": {
+      "device": 16777231,
+      "inode": 186110849,
+      "bytes": 3011,
+      "mtime_ns": 1775788915985719680
+    },
+    "sentences_dedup_removed.txt": {
+      "device": 16777231,
+      "inode": 186111287,
+      "bytes": 28636573,
+      "mtime_ns": 1775800794489772796
+    },
+    "step6b_vocab_report.py": {
+      "device": 16777231,
+      "inode": 186110862,
+      "bytes": 24004,
+      "mtime_ns": 1775788915965702056
+    },
+    "vocab_comparison.png": {
+      "device": 16777231,
+      "inode": 186110836,
+      "bytes": 191103,
+      "mtime_ns": 1775810663643201828
+    },
+    "step4_dedup_sentences.py": {
+      "device": 16777231,
+      "inode": 186110858,
+      "bytes": 11109,
+      "mtime_ns": 1775788915853088378
+    },
+    "step5b_verify.py": {
+      "device": 16777231,
+      "inode": 186110860,
+      "bytes": 11496,
+      "mtime_ns": 1775811106036127090
+    },
+    "step6a_build_vocab.md": {
+      "device": 16777231,
+      "inode": 186110851,
+      "bytes": 4562,
+      "mtime_ns": 1775817233062572479
+    },
+    "step3_extract_paragraphs.py": {
+      "device": 16777231,
+      "inode": 186110857,
+      "bytes": 17603,
+      "mtime_ns": 1775788915848087310
+    },
+    "step2_extract_sample_rows.md": {
+      "device": 16777231,
+      "inode": 186110846,
+      "bytes": 1889,
+      "mtime_ns": 1775790556226966857
+    },
+    "step7_encode.py": {
+      "device": 16777231,
+      "inode": 186110864,
+      "bytes": 6576,
+      "mtime_ns": 1775789660191957473
+    },
+    "ngram_65536_c4_s30.pkl": {
+      "device": 16777231,
+      "inode": 186111472,
+      "bytes": 1081540204,
+      "mtime_ns": 1776455608411050796
+    },
+    "README.md": {
+      "device": 16777231,
+      "inode": 186110844,
+      "bytes": 14041,
+      "mtime_ns": 1778736752586709976
+    },
+    "DATASET_INFO.md": {
+      "device": 16777231,
+      "inode": 186111635,
+      "bytes": 7273,
+      "mtime_ns": 1792223307165851359
+    },
+    "step1_download.md": {
+      "device": 16777231,
+      "inode": 186110845,
+      "bytes": 1751,
+      "mtime_ns": 1775790541314924240
+    },
+    "vocab_report_49152.png": {
+      "device": 16777231,
+      "inode": 186110840,
+      "bytes": 160430,
+      "mtime_ns": 1775810672100061416
+    },
+    "step5a_tokenize.py": {
+      "device": 16777231,
+      "inode": 186110859,
+      "bytes": 10043,
+      "mtime_ns": 1775811067296188354
+    },
+    ".gitignore": {
+      "device": 16777231,
+      "inode": 186111294,
+      "bytes": 460,
+      "mtime_ns": 1775864116554437637
+    },
+    "vocab_report_65536.png": {
+      "device": 16777231,
+      "inode": 186110841,
+      "bytes": 163335,
+      "mtime_ns": 1775810673891313552
+    },
+    "vocab_16384.txt": {
+      "device": 16777231,
+      "inode": 186111288,
+      "bytes": 287364,
+      "mtime_ns": 1775810518806575775
+    },
+    "vocab_32768.txt": {
+      "device": 16777231,
+      "inode": 186111289,
+      "bytes": 582736,
+      "mtime_ns": 1775808585952772140
+    },
+    "step7b_verify.md": {
+      "device": 16777231,
+      "inode": 186110853,
+      "bytes": 4087,
+      "mtime_ns": 1775790390730049133
+    },
+    "ngram_16384_c4_s5.pkl": {
+      "device": 16777231,
+      "inode": 186111468,
+      "bytes": 126306088,
+      "mtime_ns": 1775854375849899291
+    },
+    "vocab_report_full.png": {
+      "device": 16777231,
+      "inode": 186110842,
+      "bytes": 154432,
+      "mtime_ns": 1775810665798341751
+    },
+    "step6a_build_vocab.py": {
+      "device": 16777231,
+      "inode": 186110861,
+      "bytes": 18429,
+      "mtime_ns": 1775811082526586532
+    },
+    "vocab_report_32768.png": {
+      "device": 16777231,
+      "inode": 186110839,
+      "bytes": 161990,
+      "mtime_ns": 1775810669981866836
+    },
+    "step7_encode.md": {
+      "device": 16777231,
+      "inode": 186110854,
+      "bytes": 6088,
+      "mtime_ns": 1775790357091196060
+    },
+    "step2_extract_sample_rows.py": {
+      "device": 16777231,
+      "inode": 186110856,
+      "bytes": 2309,
+      "mtime_ns": 1775788915840579986
+    },
+    "vocab_report_16384.png": {
+      "device": 16777231,
+      "inode": 186110838,
+      "bytes": 153269,
+      "mtime_ns": 1775810668202304840
+    },
+    "vocab_65536.txt": {
+      "device": 16777231,
+      "inode": 186111291,
+      "bytes": 1183356,
+      "mtime_ns": 1775810350650613784
+    },
+    "step3_extract_paragraphs.md": {
+      "device": 16777231,
+      "inode": 186110847,
+      "bytes": 3402,
+      "mtime_ns": 1775788915979213714
+    },
+    "audit_duplicates.py": {
+      "device": 16777231,
+      "inode": 186686125,
+      "bytes": 16495,
+      "mtime_ns": 1792223040631504228
+    },
+    "vocab_full.txt": {
+      "device": 16777231,
+      "inode": 186111292,
+      "bytes": 28638942,
+      "mtime_ns": 1778725389546873092
+    },
+    "step6b_vocab_report.md": {
+      "device": 16777231,
+      "inode": 186110852,
+      "bytes": 2671,
+      "mtime_ns": 1775790605292995452
+    },
+    "NOTICE.md": {
+      "device": 16777231,
+      "inode": 186110843,
+      "bytes": 3572,
+      "mtime_ns": 1778712735594114303
+    },
+    "vocab_49152.txt": {
+      "device": 16777231,
+      "inode": 186111290,
+      "bytes": 882657,
+      "mtime_ns": 1775810348568090438
+    },
+    "step5b_verify.md": {
+      "device": 16777231,
+      "inode": 186110850,
+      "bytes": 2368,
+      "mtime_ns": 1775788915986721038
+    },
+    "step4_dedup_sentences.md": {
+      "device": 16777231,
+      "inode": 186110848,
+      "bytes": 4072,
+      "mtime_ns": 1775790594606445312
+    },
+    "archive_manifest.json": {
+      "device": 16777231,
+      "inode": 186111634,
+      "bytes": 35952,
+      "mtime_ns": 1791988002149889351
+    },
+    "tokens_filtered_49152/README.txt": {
+      "device": 16777231,
+      "inode": 186111285,
+      "bytes": 522,
+      "mtime_ns": 1778736741094581604
+    },
+    "token_ids_65536/part_08.npy": {
+      "device": 16777231,
+      "inode": 186111331,
+      "bytes": 11195642,
+      "mtime_ns": 1775810384734178543
+    },
+    "token_ids_65536/part_20.npy": {
+      "device": 16777231,
+      "inode": 186111408,
+      "bytes": 10371620,
+      "mtime_ns": 1775810384613975524
+    },
+    "token_ids_65536/part_21.npy": {
+      "device": 16777231,
+      "inode": 186111416,
+      "bytes": 10063036,
+      "mtime_ns": 1775810384718627929
+    },
+    "token_ids_65536/part_09.npy": {
+      "device": 16777231,
+      "inode": 186111335,
+      "bytes": 10612040,
+      "mtime_ns": 1775810384581918716
+    },
+    "token_ids_65536/part_23.npy": {
+      "device": 16777231,
+      "inode": 186111434,
+      "bytes": 10256254,
+      "mtime_ns": 1775810384818944931
+    },
+    "token_ids_65536/part_22.npy": {
+      "device": 16777231,
+      "inode": 186111427,
+      "bytes": 9021210,
+      "mtime_ns": 1775810384436153411
+    },
+    "token_ids_65536/part_26.npy": {
+      "device": 16777231,
+      "inode": 186111446,
+      "bytes": 11243760,
+      "mtime_ns": 1775810384712095260
+    },
+    "token_ids_65536/part_27.npy": {
+      "device": 16777231,
+      "inode": 186111450,
+      "bytes": 9893894,
+      "mtime_ns": 1775810384709093093
+    },
+    "token_ids_65536/part_31.npy": {
+      "device": 16777231,
+      "inode": 186111466,
+      "bytes": 10311250,
+      "mtime_ns": 1775810384697555541
+    },
+    "token_ids_65536/part_25.npy": {
+      "device": 16777231,
+      "inode": 186111442,
+      "bytes": 10740946,
+      "mtime_ns": 1775810384845048904
+    },
+    "token_ids_65536/part_19.npy": {
+      "device": 16777231,
+      "inode": 186111399,
+      "bytes": 10442938,
+      "mtime_ns": 1775810384496284484
+    },
+    "token_ids_65536/part_18.npy": {
+      "device": 16777231,
+      "inode": 186111391,
+      "bytes": 11020032,
+      "mtime_ns": 1775810384645061492
+    },
+    "token_ids_65536/part_24.npy": {
+      "device": 16777231,
+      "inode": 186111438,
+      "bytes": 10582072,
+      "mtime_ns": 1775810384627016067
+    },
+    "token_ids_65536/part_30.npy": {
+      "device": 16777231,
+      "inode": 186111462,
+      "bytes": 10200410,
+      "mtime_ns": 1775810384625505447
+    },
+    "token_ids_65536/part_29.npy": {
+      "device": 16777231,
+      "inode": 186111458,
+      "bytes": 10621470,
+      "mtime_ns": 1775810384655099868
+    },
+    "token_ids_65536/part_15.npy": {
+      "device": 16777231,
+      "inode": 186111366,
+      "bytes": 11619158,
+      "mtime_ns": 1775810384887216567
+    },
+    "token_ids_65536/part_01.npy": {
+      "device": 16777231,
+      "inode": 186111303,
+      "bytes": 10866294,
+      "mtime_ns": 1775810384566404342
+    },
+    "token_ids_65536/part_00.npy": {
+      "device": 16777231,
+      "inode": 186111299,
+      "bytes": 11584858,
+      "mtime_ns": 1775810384860597610
+    },
+    "token_ids_65536/part_14.npy": {
+      "device": 16777231,
+      "inode": 186111358,
+      "bytes": 10489006,
+      "mtime_ns": 1775810384573404312
+    },
+    "token_ids_65536/part_28.npy": {
+      "device": 16777231,
+      "inode": 186111454,
+      "bytes": 10038068,
+      "mtime_ns": 1775810384618991851
+    },
+    "token_ids_65536/part_02.npy": {
+      "device": 16777231,
+      "inode": 186111307,
+      "bytes": 10981126,
+      "mtime_ns": 1775810384691482543
+    },
+    "token_ids_65536/part_16.npy": {
+      "device": 16777231,
+      "inode": 186111371,
+      "bytes": 10748816,
+      "mtime_ns": 1775810384587436676
+    },
+    "token_ids_65536/part_17.npy": {
+      "device": 16777231,
+      "inode": 186111381,
+      "bytes": 10431682,
+      "mtime_ns": 1775810384747720718
+    },
+    "token_ids_65536/part_03.npy": {
+      "device": 16777231,
+      "inode": 186111311,
+      "bytes": 10364228,
+      "mtime_ns": 1775810384716623306
+    },
+    "token_ids_65536/part_07.npy": {
+      "device": 16777231,
+      "inode": 186111327,
+      "bytes": 11839892,
+      "mtime_ns": 1775810384850057601
+    },
+    "token_ids_65536/part_13.npy": {
+      "device": 16777231,
+      "inode": 186111351,
+      "bytes": 10724976,
+      "mtime_ns": 1775810384872140884
+    },
+    "token_ids_65536/part_12.npy": {
+      "device": 16777231,
+      "inode": 186111347,
+      "bytes": 11201358,
+      "mtime_ns": 1775810384613975524
+    },
+    "token_ids_65536/part_06.npy": {
+      "device": 16777231,
+      "inode": 186111323,
+      "bytes": 11724510,
+      "mtime_ns": 1775810384792358398
+    },
+    "token_ids_65536/part_10.npy": {
+      "device": 16777231,
+      "inode": 186111339,
+      "bytes": 11294138,
+      "mtime_ns": 1775810384755247116
+    },
+    "token_ids_65536/part_04.npy": {
+      "device": 16777231,
+      "inode": 186111315,
+      "bytes": 10517548,
+      "mtime_ns": 1775810384800884246
+    },
+    "token_ids_65536/part_05.npy": {
+      "device": 16777231,
+      "inode": 186111319,
+      "bytes": 10996260,
+      "mtime_ns": 1775810384713603973
+    },
+    "token_ids_65536/part_11.npy": {
+      "device": 16777231,
+      "inode": 186111343,
+      "bytes": 11619582,
+      "mtime_ns": 1775810384828998565
+    },
+    "token_ids_16384/part_08.npy": {
+      "device": 16777231,
+      "inode": 186111332,
+      "bytes": 4745936,
+      "mtime_ns": 1775810542099208831
+    },
+    "token_ids_16384/part_20.npy": {
+      "device": 16777231,
+      "inode": 186111409,
+      "bytes": 4366136,
+      "mtime_ns": 1775810542058277130
+    },
+    "token_ids_16384/part_21.npy": {
+      "device": 16777231,
+      "inode": 186111417,
+      "bytes": 4312850,
+      "mtime_ns": 1775810542067417144
+    },
+    "token_ids_16384/part_09.npy": {
+      "device": 16777231,
+      "inode": 186111336,
+      "bytes": 4479512,
+      "mtime_ns": 1775810542059782028
+    },
+    "token_ids_16384/part_23.npy": {
+      "device": 16777231,
+      "inode": 186111435,
+      "bytes": 4355462,
+      "mtime_ns": 1775810542098207473
+    },
+    "token_ids_16384/part_22.npy": {
+      "device": 16777231,
+      "inode": 186111430,
+      "bytes": 3927264,
+      "mtime_ns": 1775810542041748046
+    },
+    "token_ids_16384/part_26.npy": {
+      "device": 16777231,
+      "inode": 186111447,
+      "bytes": 4790352,
+      "mtime_ns": 1775810542106744766
+    },
+    "token_ids_16384/part_27.npy": {
+      "device": 16777231,
+      "inode": 186111451,
+      "bytes": 4240572,
+      "mtime_ns": 1775810542057275772
+    },
+    "token_ids_16384/part_31.npy": {
+      "device": 16777231,
+      "inode": 186111467,
+      "bytes": 4532862,
+      "mtime_ns": 1775810542067417144
+    },
+    "token_ids_16384/part_25.npy": {
+      "device": 16777231,
+      "inode": 186111443,
+      "bytes": 4672448,
+      "mtime_ns": 1775810542100210189
+    },
+    "token_ids_16384/part_19.npy": {
+      "device": 16777231,
+      "inode": 186111400,
+      "bytes": 4434090,
+      "mtime_ns": 1775810542087472915
+    },
+    "token_ids_16384/part_18.npy": {
+      "device": 16777231,
+      "inode": 186111392,
+      "bytes": 4687272,
+      "mtime_ns": 1775810542101722717
+    },
+    "token_ids_16384/part_24.npy": {
+      "device": 16777231,
+      "inode": 186111439,
+      "bytes": 4522226,
+      "mtime_ns": 1775810542102739334
+    },
+    "token_ids_16384/part_30.npy": {
+      "device": 16777231,
+      "inode": 186111463,
+      "bytes": 4354970,
+      "mtime_ns": 1775810542045759201
+    },
+    "token_ids_16384/part_29.npy": {
+      "device": 16777231,
+      "inode": 186111459,
+      "bytes": 4580334,
+      "mtime_ns": 1775810542082471847
+    },
+    "token_ids_16384/part_15.npy": {
+      "device": 16777231,
+      "inode": 186111367,
+      "bytes": 4885600,
+      "mtime_ns": 1775810542200372695
+    },
+    "token_ids_16384/part_01.npy": {
+      "device": 16777231,
+      "inode": 186111304,
+      "bytes": 4735658,
+      "mtime_ns": 1775810542158126831
+    },
+    "token_ids_16384/part_00.npy": {
+      "device": 16777231,
+      "inode": 186111300,
+      "bytes": 4990924,
+      "mtime_ns": 1775810542132364273
+    },
+    "token_ids_16384/part_14.npy": {
+      "device": 16777231,
+      "inode": 186111359,
+      "bytes": 4428130,
+      "mtime_ns": 1775810542046760559
+    },
+    "token_ids_16384/part_28.npy": {
+      "device": 16777231,
+      "inode": 186111455,
+      "bytes": 4322284,
+      "mtime_ns": 1775810542041748046
+    },
+    "token_ids_16384/part_02.npy": {
+      "device": 16777231,
+      "inode": 186111308,
+      "bytes": 4837542,
+      "mtime_ns": 1775810542206903457
+    },
+    "token_ids_16384/part_16.npy": {
+      "device": 16777231,
+      "inode": 186111372,
+      "bytes": 4711640,
+      "mtime_ns": 1775810542117782592
+    },
+    "token_ids_16384/part_17.npy": {
+      "device": 16777231,
+      "inode": 186111382,
+      "bytes": 4521804,
+      "mtime_ns": 1775810542121311187
+    },
+    "token_ids_16384/part_03.npy": {
+      "device": 16777231,
+      "inode": 186111312,
+      "bytes": 4434306,
+      "mtime_ns": 1775810542096210479
+    },
+    "token_ids_16384/part_07.npy": {
+      "device": 16777231,
+      "inode": 186111328,
+      "bytes": 4942406,
+      "mtime_ns": 1775810542133365631
+    },
+    "token_ids_16384/part_13.npy": {
+      "device": 16777231,
+      "inode": 186111352,
+      "bytes": 4482854,
+      "mtime_ns": 1775810542043762207
+    },
+    "token_ids_16384/part_12.npy": {
+      "device": 16777231,
+      "inode": 186111348,
+      "bytes": 4660832,
+      "mtime_ns": 1775810542176820755
+    },
+    "token_ids_16384/part_06.npy": {
+      "device": 16777231,
+      "inode": 186111324,
+      "bytes": 4993464,
+      "mtime_ns": 1775810542145814895
+    },
+    "token_ids_16384/part_10.npy": {
+      "device": 16777231,
+      "inode": 186111340,
+      "bytes": 4731070,
+      "mtime_ns": 1775810542155775070
+    },
+    "token_ids_16384/part_04.npy": {
+      "device": 16777231,
+      "inode": 186111316,
+      "bytes": 4521400,
+      "mtime_ns": 1775810542067417144
+    },
+    "token_ids_16384/part_05.npy": {
+      "device": 16777231,
+      "inode": 186111320,
+      "bytes": 4673590,
+      "mtime_ns": 1775810542055276870
+    },
+    "token_ids_16384/part_11.npy": {
+      "device": 16777231,
+      "inode": 186111344,
+      "bytes": 5003264,
+      "mtime_ns": 1775810542147535324
+    },
+    "sentences_dedup/part_29.txt": {
+      "device": 16777231,
+      "inode": 186111267,
+      "bytes": 30134005,
+      "mtime_ns": 1775800792047456741
+    },
+    "sentences_dedup/part_01.txt": {
+      "device": 16777231,
+      "inode": 186110874,
+      "bytes": 30382209,
+      "mtime_ns": 1775800757657581329
+    },
+    "sentences_dedup/part_15.txt": {
+      "device": 16777231,
+      "inode": 186111017,
+      "bytes": 32759871,
+      "mtime_ns": 1775800775618598937
+    },
+    "sentences_dedup/part_14.txt": {
+      "device": 16777231,
+      "inode": 186111011,
+      "bytes": 29872461,
+      "mtime_ns": 1775800774425235748
+    },
+    "sentences_dedup/part_00.txt": {
+      "device": 16777231,
+      "inode": 186110868,
+      "bytes": 32707665,
+      "mtime_ns": 1775800756545347213
+    },
+    "sentences_dedup/part_28.txt": {
+      "device": 16777231,
+      "inode": 186111259,
+      "bytes": 28872990,
+      "mtime_ns": 1775800790912952423
+    },
+    "sentences_dedup/part_16.txt": {
+      "device": 16777231,
+      "inode": 186111025,
+      "bytes": 30509248,
+      "mtime_ns": 1775800776761747360
+    },
+    "sentences_dedup/part_02.txt": {
+      "device": 16777231,
+      "inode": 186110879,
+      "bytes": 31086307,
+      "mtime_ns": 1775800758767303466
+    },
+    "sentences_dedup/part_03.txt": {
+      "device": 16777231,
+      "inode": 186110886,
+      "bytes": 29635969,
+      "mtime_ns": 1775800759843446731
+    },
+    "sentences_dedup/part_17.txt": {
+      "device": 16777231,
+      "inode": 186111030,
+      "bytes": 29837317,
+      "mtime_ns": 1775800777895174026
+    },
+    "sentences_dedup/part_13.txt": {
+      "device": 16777231,
+      "inode": 186111006,
+      "bytes": 30697571,
+      "mtime_ns": 1775800773292871475
+    },
+    "sentences_dedup/part_07.txt": {
+      "device": 16777231,
+      "inode": 186110926,
+      "bytes": 33663348,
+      "mtime_ns": 1775800764863586425
+    },
+    "sentences_dedup/part_06.txt": {
+      "device": 16777231,
+      "inode": 186110905,
+      "bytes": 33217961,
+      "mtime_ns": 1775800763483783721
+    },
+    "sentences_dedup/part_12.txt": {
+      "device": 16777231,
+      "inode": 186110999,
+      "bytes": 31884146,
+      "mtime_ns": 1775800772100053787
+    },
+    "sentences_dedup/part_04.txt": {
+      "device": 16777231,
+      "inode": 186110891,
+      "bytes": 30322122,
+      "mtime_ns": 1775800760948348999
+    },
+    "sentences_dedup/part_10.txt": {
+      "device": 16777231,
+      "inode": 186110984,
+      "bytes": 32125577,
+      "mtime_ns": 1775800768846982955
+    },
+    "sentences_dedup/part_11.txt": {
+      "device": 16777231,
+      "inode": 186110992,
+      "bytes": 32687757,
+      "mtime_ns": 1775800770418544769
+    },
+    "sentences_dedup/part_05.txt": {
+      "device": 16777231,
+      "inode": 186110898,
+      "bytes": 31065428,
+      "mtime_ns": 1775800762161176681
+    },
+    "sentences_dedup/part_08.txt": {
+      "device": 16777231,
+      "inode": 186110951,
+      "bytes": 32013093,
+      "mtime_ns": 1775800766370862960
+    },
+    "sentences_dedup/part_20.txt": {
+      "device": 16777231,
+      "inode": 186111080,
+      "bytes": 29937180,
+      "mtime_ns": 1775800781380620956
+    },
+    "sentences_dedup/part_21.txt": {
+      "device": 16777231,
+      "inode": 186111109,
+      "bytes": 28668624,
+      "mtime_ns": 1775800782557737350
+    },
+    "sentences_dedup/part_09.txt": {
+      "device": 16777231,
+      "inode": 186110972,
+      "bytes": 30399175,
+      "mtime_ns": 1775800767595794677
+    },
+    "sentences_dedup/part_23.txt": {
+      "device": 16777231,
+      "inode": 186111154,
+      "bytes": 29251822,
+      "mtime_ns": 1775800784895149230
+    },
+    "sentences_dedup/part_22.txt": {
+      "device": 16777231,
+      "inode": 186111125,
+      "bytes": 26137935,
+      "mtime_ns": 1775800783664813995
+    },
+    "sentences_dedup/part_26.txt": {
+      "device": 16777231,
+      "inode": 186111179,
+      "bytes": 32410143,
+      "mtime_ns": 1775800788745235443
+    },
+    "sentences_dedup/part_27.txt": {
+      "device": 16777231,
+      "inode": 186111254,
+      "bytes": 28467909,
+      "mtime_ns": 1775800789803337097
+    },
+    "sentences_dedup/part_25.txt": {
+      "device": 16777231,
+      "inode": 186111171,
+      "bytes": 30668867,
+      "mtime_ns": 1775800787264467239
+    },
+    "sentences_dedup/part_31.txt": {
+      "device": 16777231,
+      "inode": 186111280,
+      "bytes": 29656453,
+      "mtime_ns": 1775800794265626907
+    },
+    "sentences_dedup/part_19.txt": {
+      "device": 16777231,
+      "inode": 186111069,
+      "bytes": 30187861,
+      "mtime_ns": 1775800780203397750
+    },
+    "sentences_dedup/part_18.txt": {
+      "device": 16777231,
+      "inode": 186111052,
+      "bytes": 31534821,
+      "mtime_ns": 1775800779077447891
+    },
+    "sentences_dedup/part_30.txt": {
+      "device": 16777231,
+      "inode": 186111275,
+      "bytes": 29434106,
+      "mtime_ns": 1775800793153726577
+    },
+    "sentences_dedup/part_24.txt": {
+      "device": 16777231,
+      "inode": 186111164,
+      "bytes": 29882606,
+      "mtime_ns": 1775800786095191955
+    },
+    "tokens_filtered_32768/README.txt": {
+      "device": 16777231,
+      "inode": 186111284,
+      "bytes": 522,
+      "mtime_ns": 1778736738427652359
+    },
+    "paragraphs_raw/part_29.txt": {
+      "device": 16777231,
+      "inode": 186111266,
+      "bytes": 33780607,
+      "mtime_ns": 1775800638758037567
+    },
+    "paragraphs_raw/part_01.txt": {
+      "device": 16777231,
+      "inode": 186110873,
+      "bytes": 33222014,
+      "mtime_ns": 1775800638209209442
+    },
+    "paragraphs_raw/part_15.txt": {
+      "device": 16777231,
+      "inode": 186111015,
+      "bytes": 36501167,
+      "mtime_ns": 1775800639370410919
+    },
+    "paragraphs_raw/part_14.txt": {
+      "device": 16777231,
+      "inode": 186111010,
+      "bytes": 34992009,
+      "mtime_ns": 1775800639204780578
+    },
+    "paragraphs_raw/part_00.txt": {
+      "device": 16777231,
+      "inode": 186110867,
+      "bytes": 35434003,
+      "mtime_ns": 1775800639146772384
+    },
+    "paragraphs_raw/part_28.txt": {
+      "device": 16777231,
+      "inode": 186111258,
+      "bytes": 32486344,
+      "mtime_ns": 1775800638417245864
+    },
+    "paragraphs_raw/part_16.txt": {
+      "device": 16777231,
+      "inode": 186111024,
+      "bytes": 34037038,
+      "mtime_ns": 1775800638613868713
+    },
+    "paragraphs_raw/part_02.txt": {
+      "device": 16777231,
+      "inode": 186110878,
+      "bytes": 34020237,
+      "mtime_ns": 1775800638643875122
+    },
+    "paragraphs_raw/part_03.txt": {
+      "device": 16777231,
+      "inode": 186110885,
+      "bytes": 32304838,
+      "mtime_ns": 1775800637889656066
+    },
+    "paragraphs_raw/part_17.txt": {
+      "device": 16777231,
+      "inode": 186111029,
+      "bytes": 32939000,
+      "mtime_ns": 1775800638276725769
+    },
+    "paragraphs_raw/part_13.txt": {
+      "device": 16777231,
+      "inode": 186111005,
+      "bytes": 36855272,
+      "mtime_ns": 1775800639445417404
+    },
+    "paragraphs_raw/part_07.txt": {
+      "device": 16777231,
+      "inode": 186110925,
+      "bytes": 38928486,
+      "mtime_ns": 1775800639880994796
+    },
+    "paragraphs_raw/part_06.txt": {
+      "device": 16777231,
+      "inode": 186110902,
+      "bytes": 38681977,
+      "mtime_ns": 1775800639990512847
+    },
+    "paragraphs_raw/part_12.txt": {
+      "device": 16777231,
+      "inode": 186110998,
+      "bytes": 37056419,
+      "mtime_ns": 1775800639626445770
+    },
+    "paragraphs_raw/part_04.txt": {
+      "device": 16777231,
+      "inode": 186110890,
+      "bytes": 33398752,
+      "mtime_ns": 1775800638390247344
+    },
+    "paragraphs_raw/part_10.txt": {
+      "device": 16777231,
+      "inode": 186110983,
+      "bytes": 37197824,
+      "mtime_ns": 1775800639527929306
+    },
+    "paragraphs_raw/part_11.txt": {
+      "device": 16777231,
+      "inode": 186110991,
+      "bytes": 36499592,
+      "mtime_ns": 1775800639352411270
+    },
+    "paragraphs_raw/part_05.txt": {
+      "device": 16777231,
+      "inode": 186110897,
+      "bytes": 36216325,
+      "mtime_ns": 1775800639393411636
+    },
+    "paragraphs_raw/part_08.txt": {
+      "device": 16777231,
+      "inode": 186110950,
+      "bytes": 36320682,
+      "mtime_ns": 1775800639494930267
+    },
+    "paragraphs_raw/part_20.txt": {
+      "device": 16777231,
+      "inode": 186111079,
+      "bytes": 35889514,
+      "mtime_ns": 1775800639067264556
+    },
+    "paragraphs_raw/part_21.txt": {
+      "device": 16777231,
+      "inode": 186111108,
+      "bytes": 35849737,
+      "mtime_ns": 1775800639082265853
+    },
+    "paragraphs_raw/part_09.txt": {
+      "device": 16777231,
+      "inode": 186110970,
+      "bytes": 35227624,
+      "mtime_ns": 1775800639032754898
+    },
+    "paragraphs_raw/part_23.txt": {
+      "device": 16777231,
+      "inode": 186111140,
+      "bytes": 37263865,
+      "mtime_ns": 1775800639546442031
+    },
+    "paragraphs_raw/part_22.txt": {
+      "device": 16777231,
+      "inode": 186111122,
+      "bytes": 33054356,
+      "mtime_ns": 1775800638639873504
+    },
+    "paragraphs_raw/part_26.txt": {
+      "device": 16777231,
+      "inode": 186111176,
+      "bytes": 36351856,
+      "mtime_ns": 1775800639393411636
+    },
+    "paragraphs_raw/part_27.txt": {
+      "device": 16777231,
+      "inode": 186111251,
+      "bytes": 32235060,
+      "mtime_ns": 1775800638048696517
+    },
+    "paragraphs_raw/part_25.txt": {
+      "device": 16777231,
+      "inode": 186111170,
+      "bytes": 34291505,
+      "mtime_ns": 1775800638733526229
+    },
+    "paragraphs_raw/part_31.txt": {
+      "device": 16777231,
+      "inode": 186111279,
+      "bytes": 33257489,
+      "mtime_ns": 1775800638500589370
+    },
+    "paragraphs_raw/part_19.txt": {
+      "device": 16777231,
+      "inode": 186111068,
+      "bytes": 33511511,
+      "mtime_ns": 1775800638312728881
+    },
+    "paragraphs_raw/part_18.txt": {
+      "device": 16777231,
+      "inode": 186111051,
+      "bytes": 35076528,
+      "mtime_ns": 1775800638931238174
+    },
+    "paragraphs_raw/part_30.txt": {
+      "device": 16777231,
+      "inode": 186111274,
+      "bytes": 33173057,
+      "mtime_ns": 1775800638605869293
+    },
+    "paragraphs_raw/part_24.txt": {
+      "device": 16777231,
+      "inode": 186111163,
+      "bytes": 36171950,
+      "mtime_ns": 1775800639211782455
+    },
+    "token_ids_49152/part_08.npy": {
+      "device": 16777231,
+      "inode": 186111330,
+      "bytes": 9968070,
+      "mtime_ns": 1775810375398469924
+    },
+    "token_ids_49152/part_20.npy": {
+      "device": 16777231,
+      "inode": 186111407,
+      "bytes": 9243030,
+      "mtime_ns": 1775810375301170349
+    },
+    "token_ids_49152/part_21.npy": {
+      "device": 16777231,
+      "inode": 186111415,
+      "bytes": 8952370,
+      "mtime_ns": 1775810375298170089
+    },
+    "token_ids_49152/part_09.npy": {
+      "device": 16777231,
+      "inode": 186111334,
+      "bytes": 9410810,
+      "mtime_ns": 1775810375256111145
+    },
+    "token_ids_49152/part_23.npy": {
+      "device": 16777231,
+      "inode": 186111433,
+      "bytes": 9118142,
+      "mtime_ns": 1775810375353820800
+    },
+    "token_ids_49152/part_22.npy": {
+      "device": 16777231,
+      "inode": 186111426,
+      "bytes": 8043108,
+      "mtime_ns": 1775810375134864807
+    },
+    "token_ids_49152/part_26.npy": {
+      "device": 16777231,
+      "inode": 186111445,
+      "bytes": 10043714,
+      "mtime_ns": 1775810375464258193
+    },
+    "token_ids_49152/part_27.npy": {
+      "device": 16777231,
+      "inode": 186111449,
+      "bytes": 8836544,
+      "mtime_ns": 1775810375264621734
+    },
+    "token_ids_49152/part_31.npy": {
+      "device": 16777231,
+      "inode": 186111465,
+      "bytes": 9194914,
+      "mtime_ns": 1775810375302167892
+    },
+    "token_ids_49152/part_25.npy": {
+      "device": 16777231,
+      "inode": 186111441,
+      "bytes": 9590032,
+      "mtime_ns": 1775810375498846054
+    },
+    "token_ids_49152/part_19.npy": {
+      "device": 16777231,
+      "inode": 186111395,
+      "bytes": 9278930,
+      "mtime_ns": 1775810375418041229
+    },
+    "token_ids_49152/part_18.npy": {
+      "device": 16777231,
+      "inode": 186111388,
+      "bytes": 9812048,
+      "mtime_ns": 1775810375355846405
+    },
+    "token_ids_49152/part_24.npy": {
+      "device": 16777231,
+      "inode": 186111437,
+      "bytes": 9452898,
+      "mtime_ns": 1775810375432088851
+    },
+    "token_ids_49152/part_30.npy": {
+      "device": 16777231,
+      "inode": 186111461,
+      "bytes": 9121490,
+      "mtime_ns": 1775810375468259811
+    },
+    "token_ids_49152/part_29.npy": {
+      "device": 16777231,
+      "inode": 186111457,
+      "bytes": 9507984,
+      "mtime_ns": 1775810375388961791
+    },
+    "token_ids_49152/part_15.npy": {
+      "device": 16777231,
+      "inode": 186111365,
+      "bytes": 10355900,
+      "mtime_ns": 1775810375450685501
+    },
+    "token_ids_49152/part_01.npy": {
+      "device": 16777231,
+      "inode": 186111302,
+      "bytes": 9724642,
+      "mtime_ns": 1775810375359842300
+    },
+    "token_ids_49152/part_00.npy": {
+      "device": 16777231,
+      "inode": 186111298,
+      "bytes": 10344622,
+      "mtime_ns": 1775810375483291625
+    },
+    "token_ids_49152/part_14.npy": {
+      "device": 16777231,
+      "inode": 186111356,
+      "bytes": 9349058,
+      "mtime_ns": 1775810375309690475
+    },
+    "token_ids_49152/part_28.npy": {
+      "device": 16777231,
+      "inode": 186111453,
+      "bytes": 8970778,
+      "mtime_ns": 1775810375436632156
+    },
+    "token_ids_49152/part_02.npy": {
+      "device": 16777231,
+      "inode": 186111306,
+      "bytes": 9827544,
+      "mtime_ns": 1775810375399471282
+    },
+    "token_ids_49152/part_16.npy": {
+      "device": 16777231,
+      "inode": 186111369,
+      "bytes": 9614172,
+      "mtime_ns": 1775810375317205429
+    },
+    "token_ids_49152/part_17.npy": {
+      "device": 16777231,
+      "inode": 186111378,
+      "bytes": 9327738,
+      "mtime_ns": 1775810375325723648
+    },
+    "token_ids_49152/part_03.npy": {
+      "device": 16777231,
+      "inode": 186111310,
+      "bytes": 9266258,
+      "mtime_ns": 1775810375249589920
+    },
+    "token_ids_49152/part_07.npy": {
+      "device": 16777231,
+      "inode": 186111326,
+      "bytes": 10531704,
+      "mtime_ns": 1775810375593219757
+    },
+    "token_ids_49152/part_13.npy": {
+      "device": 16777231,
+      "inode": 186111350,
+      "bytes": 9532368,
+      "mtime_ns": 1775810375431089401
+    },
+    "token_ids_49152/part_12.npy": {
+      "device": 16777231,
+      "inode": 186111346,
+      "bytes": 9926722,
+      "mtime_ns": 1775810375394470214
+    },
+    "token_ids_49152/part_06.npy": {
+      "device": 16777231,
+      "inode": 186111322,
+      "bytes": 10466726,
+      "mtime_ns": 1775810375440164566
+    },
+    "token_ids_49152/part_10.npy": {
+      "device": 16777231,
+      "inode": 186111338,
+      "bytes": 10060800,
+      "mtime_ns": 1775810375443675994
+    },
+    "token_ids_49152/part_04.npy": {
+      "device": 16777231,
+      "inode": 186111314,
+      "bytes": 9379130,
+      "mtime_ns": 1775810375320205688
+    },
+    "token_ids_49152/part_05.npy": {
+      "device": 16777231,
+      "inode": 186111318,
+      "bytes": 9787982,
+      "mtime_ns": 1775810375339765548
+    },
+    "token_ids_49152/part_11.npy": {
+      "device": 16777231,
+      "inode": 186111342,
+      "bytes": 10409376,
+      "mtime_ns": 1775810375463241577
+    },
+    "tokens_filtered_65536/README.txt": {
+      "device": 16777231,
+      "inode": 186111286,
+      "bytes": 522,
+      "mtime_ns": 1778736743764163970
+    },
+    "audit/duplicates.json": {
+      "device": 16777231,
+      "inode": 186687942,
+      "bytes": 58362,
+      "mtime_ns": 1792223222346636349
+    },
+    "audit/dataset-review.html": {
+      "device": 16777231,
+      "inode": 186688103,
+      "bytes": 6765,
+      "mtime_ns": 1792223307166708411
+    },
+    "sentences/part_29.txt": {
+      "device": 16777231,
+      "inode": 186111263,
+      "bytes": 31261169,
+      "mtime_ns": 1775800638758037567
+    },
+    "sentences/part_01.txt": {
+      "device": 16777231,
+      "inode": 186110872,
+      "bytes": 30552872,
+      "mtime_ns": 1775800638209209442
+    },
+    "sentences/part_15.txt": {
+      "device": 16777231,
+      "inode": 186111014,
+      "bytes": 33804395,
+      "mtime_ns": 1775800639370410919
+    },
+    "sentences/part_14.txt": {
+      "device": 16777231,
+      "inode": 186111009,
+      "bytes": 32371316,
+      "mtime_ns": 1775800639203781127
+    },
+    "sentences/part_00.txt": {
+      "device": 16777231,
+      "inode": 186110865,
+      "bytes": 32854849,
+      "mtime_ns": 1775800639146268844
+    },
+    "sentences/part_28.txt": {
+      "device": 16777231,
+      "inode": 186111257,
+      "bytes": 29880532,
+      "mtime_ns": 1775800638417245864
+    },
+    "sentences/part_16.txt": {
+      "device": 16777231,
+      "inode": 186111023,
+      "bytes": 31522930,
+      "mtime_ns": 1775800638613868713
+    },
+    "sentences/part_02.txt": {
+      "device": 16777231,
+      "inode": 186110877,
+      "bytes": 31449900,
+      "mtime_ns": 1775800638643875122
+    },
+    "sentences/part_03.txt": {
+      "device": 16777231,
+      "inode": 186110884,
+      "bytes": 29953998,
+      "mtime_ns": 1775800637889656066
+    },
+    "sentences/part_17.txt": {
+      "device": 16777231,
+      "inode": 186111027,
+      "bytes": 30556604,
+      "mtime_ns": 1775800638275726318
+    },
+    "sentences/part_13.txt": {
+      "device": 16777231,
+      "inode": 186111004,
+      "bytes": 34134910,
+      "mtime_ns": 1775800639445417404
+    },
+    "sentences/part_07.txt": {
+      "device": 16777231,
+      "inode": 186110912,
+      "bytes": 36119368,
+      "mtime_ns": 1775800639879995346
+    },
+    "sentences/part_06.txt": {
+      "device": 16777231,
+      "inode": 186110900,
+      "bytes": 35769221,
+      "mtime_ns": 1775800639989509582
+    },
+    "sentences/part_12.txt": {
+      "device": 16777231,
+      "inode": 186110997,
+      "bytes": 34318336,
+      "mtime_ns": 1775800639625446319
+    },
+    "sentences/part_04.txt": {
+      "device": 16777231,
+      "inode": 186110889,
+      "bytes": 30798367,
+      "mtime_ns": 1775800638390247344
+    },
+    "sentences/part_10.txt": {
+      "device": 16777231,
+      "inode": 186110982,
+      "bytes": 34324823,
+      "mtime_ns": 1775800639527929306
+    },
+    "sentences/part_11.txt": {
+      "device": 16777231,
+      "inode": 186110990,
+      "bytes": 34005483,
+      "mtime_ns": 1775800639352411270
+    },
+    "sentences/part_05.txt": {
+      "device": 16777231,
+      "inode": 186110894,
+      "bytes": 33546597,
+      "mtime_ns": 1775800639393411636
+    },
+    "sentences/part_08.txt": {
+      "device": 16777231,
+      "inode": 186110949,
+      "bytes": 33553606,
+      "mtime_ns": 1775800639494930267
+    },
+    "sentences/part_20.txt": {
+      "device": 16777231,
+      "inode": 186111078,
+      "bytes": 33255579,
+      "mtime_ns": 1775800639067264556
+    },
+    "sentences/part_21.txt": {
+      "device": 16777231,
+      "inode": 186111107,
+      "bytes": 33187376,
+      "mtime_ns": 1775800639082265853
+    },
+    "sentences/part_09.txt": {
+      "device": 16777231,
+      "inode": 186110968,
+      "bytes": 32393601,
+      "mtime_ns": 1775800639032754898
+    },
+    "sentences/part_23.txt": {
+      "device": 16777231,
+      "inode": 186111136,
+      "bytes": 34492753,
+      "mtime_ns": 1775800639546442031
+    },
+    "sentences/part_22.txt": {
+      "device": 16777231,
+      "inode": 186111120,
+      "bytes": 30235484,
+      "mtime_ns": 1775800638639873504
+    },
+    "sentences/part_26.txt": {
+      "device": 16777231,
+      "inode": 186111175,
+      "bytes": 33699089,
+      "mtime_ns": 1775800639393411636
+    },
+    "sentences/part_27.txt": {
+      "device": 16777231,
+      "inode": 186111250,
+      "bytes": 29811391,
+      "mtime_ns": 1775800638048696517
+    },
+    "sentences/part_25.txt": {
+      "device": 16777231,
+      "inode": 186111167,
+      "bytes": 31588050,
+      "mtime_ns": 1775800638733526229
+    },
+    "sentences/part_31.txt": {
+      "device": 16777231,
+      "inode": 186111278,
+      "bytes": 30798803,
+      "mtime_ns": 1775800638500589370
+    },
+    "sentences/part_19.txt": {
+      "device": 16777231,
+      "inode": 186111067,
+      "bytes": 31122700,
+      "mtime_ns": 1775800638311725616
+    },
+    "sentences/part_18.txt": {
+      "device": 16777231,
+      "inode": 186111049,
+      "bytes": 32384241,
+      "mtime_ns": 1775800638922239303
+    },
+    "sentences/part_30.txt": {
+      "device": 16777231,
+      "inode": 186111273,
+      "bytes": 30546636,
+      "mtime_ns": 1775800638605869293
+    },
+    "sentences/part_24.txt": {
+      "device": 16777231,
+      "inode": 186111162,
+      "bytes": 33509388,
+      "mtime_ns": 1775800639211782455
+    },
+    "tokens_filtered_16384/README.txt": {
+      "device": 16777231,
+      "inode": 186111283,
+      "bytes": 522,
+      "mtime_ns": 1778736735758853912
+    },
+    "parquet/README.txt": {
+      "device": 16777231,
+      "inode": 186111282,
+      "bytes": 735,
+      "mtime_ns": 1778736733272397994
+    },
+    "token_ids_32768/part_08.npy": {
+      "device": 16777231,
+      "inode": 186111329,
+      "bytes": 8068388,
+      "mtime_ns": 1775809880677078247
+    },
+    "token_ids_32768/part_20.npy": {
+      "device": 16777231,
+      "inode": 186111401,
+      "bytes": 7491566,
+      "mtime_ns": 1775809880617221832
+    },
+    "token_ids_32768/part_21.npy": {
+      "device": 16777231,
+      "inode": 186111412,
+      "bytes": 7307472,
+      "mtime_ns": 1775809880617221832
+    },
+    "token_ids_32768/part_09.npy": {
+      "device": 16777231,
+      "inode": 186111333,
+      "bytes": 7642484,
+      "mtime_ns": 1775809880649324417
+    },
+    "token_ids_32768/part_23.npy": {
+      "device": 16777231,
+      "inode": 186111431,
+      "bytes": 7430724,
+      "mtime_ns": 1775809880644775390
+    },
+    "token_ids_32768/part_22.npy": {
+      "device": 16777231,
+      "inode": 186111418,
+      "bytes": 6527296,
+      "mtime_ns": 1775809880444452285
+    },
+    "token_ids_32768/part_26.npy": {
+      "device": 16777231,
+      "inode": 186111444,
+      "bytes": 8160358,
+      "mtime_ns": 1775809880763847351
+    },
+    "token_ids_32768/part_27.npy": {
+      "device": 16777231,
+      "inode": 186111448,
+      "bytes": 7185390,
+      "mtime_ns": 1775809880600202560
+    },
+    "token_ids_32768/part_31.npy": {
+      "device": 16777231,
+      "inode": 186111464,
+      "bytes": 7502086,
+      "mtime_ns": 1775809880607711791
+    },
+    "token_ids_32768/part_25.npy": {
+      "device": 16777231,
+      "inode": 186111440,
+      "bytes": 7807642,
+      "mtime_ns": 1775809880674564361
+    },
+    "token_ids_32768/part_19.npy": {
+      "device": 16777231,
+      "inode": 186111393,
+      "bytes": 7535468,
+      "mtime_ns": 1775809880601202011
+    },
+    "token_ids_32768/part_18.npy": {
+      "device": 16777231,
+      "inode": 186111383,
+      "bytes": 7980808,
+      "mtime_ns": 1775809880684093475
+    },
+    "token_ids_32768/part_24.npy": {
+      "device": 16777231,
+      "inode": 186111436,
+      "bytes": 7698682,
+      "mtime_ns": 1775809880636764526
+    },
+    "token_ids_32768/part_30.npy": {
+      "device": 16777231,
+      "inode": 186111460,
+      "bytes": 7374240,
+      "mtime_ns": 1775809880725231170
+    },
+    "token_ids_32768/part_29.npy": {
+      "device": 16777231,
+      "inode": 186111456,
+      "bytes": 7716554,
+      "mtime_ns": 1775809880617221832
+    },
+    "token_ids_32768/part_15.npy": {
+      "device": 16777231,
+      "inode": 186111360,
+      "bytes": 8358984,
+      "mtime_ns": 1775809880753797531
+    },
+    "token_ids_32768/part_01.npy": {
+      "device": 16777231,
+      "inode": 186111301,
+      "bytes": 7933962,
+      "mtime_ns": 1775809880732749938
+    },
+    "token_ids_32768/part_00.npy": {
+      "device": 16777231,
+      "inode": 186111297,
+      "bytes": 8421576,
+      "mtime_ns": 1775809880812145233
+    },
+    "token_ids_32768/part_14.npy": {
+      "device": 16777231,
+      "inode": 186111353,
+      "bytes": 7564258,
+      "mtime_ns": 1775809880666540145
+    },
+    "token_ids_32768/part_28.npy": {
+      "device": 16777231,
+      "inode": 186111452,
+      "bytes": 7304094,
+      "mtime_ns": 1775809880729751586
+    },
+    "token_ids_32768/part_02.npy": {
+      "device": 16777231,
+      "inode": 186111305,
+      "bytes": 8019726,
+      "mtime_ns": 1775809880742273330
+    },
+    "token_ids_32768/part_16.npy": {
+      "device": 16777231,
+      "inode": 186111368,
+      "bytes": 7838764,
+      "mtime_ns": 1775809880731752395
+    },
+    "token_ids_32768/part_17.npy": {
+      "device": 16777231,
+      "inode": 186111374,
+      "bytes": 7622296,
+      "mtime_ns": 1775809880727752685
+    },
+    "token_ids_32768/part_03.npy": {
+      "device": 16777231,
+      "inode": 186111309,
+      "bytes": 7526922,
+      "mtime_ns": 1775809880691612243
+    },
+    "token_ids_32768/part_07.npy": {
+      "device": 16777231,
+      "inode": 186111325,
+      "bytes": 8496898,
+      "mtime_ns": 1775809880780065536
+    },
+    "token_ids_32768/part_13.npy": {
+      "device": 16777231,
+      "inode": 186111349,
+      "bytes": 7709558,
+      "mtime_ns": 1775809880622737884
+    },
+    "token_ids_32768/part_12.npy": {
+      "device": 16777231,
+      "inode": 186111345,
+      "bytes": 8018744,
+      "mtime_ns": 1775809880739273071
+    },
+    "token_ids_32768/part_06.npy": {
+      "device": 16777231,
+      "inode": 186111321,
+      "bytes": 8510678,
+      "mtime_ns": 1775809880771827697
+    },
+    "token_ids_32768/part_10.npy": {
+      "device": 16777231,
+      "inode": 186111337,
+      "bytes": 8124738,
+      "mtime_ns": 1775809880744272232
+    },
+    "token_ids_32768/part_04.npy": {
+      "device": 16777231,
+      "inode": 186111313,
+      "bytes": 7600398,
+      "mtime_ns": 1775809880637769699
+    },
+    "token_ids_32768/part_05.npy": {
+      "device": 16777231,
+      "inode": 186111317,
+      "bytes": 7946348,
+      "mtime_ns": 1775809880659847259
+    },
+    "token_ids_32768/part_11.npy": {
+      "device": 16777231,
+      "inode": 186111341,
+      "bytes": 8467168,
+      "mtime_ns": 1775809880756309509
+    },
+    "paragraphs/part_29.txt": {
+      "device": 16777231,
+      "inode": 186111262,
+      "bytes": 31125399,
+      "mtime_ns": 1775800638758037567
+    },
+    "paragraphs/part_01.txt": {
+      "device": 16777231,
+      "inode": 186110871,
+      "bytes": 30418965,
+      "mtime_ns": 1775800638209209442
+    },
+    "paragraphs/part_15.txt": {
+      "device": 16777231,
+      "inode": 186111013,
+      "bytes": 33659949,
+      "mtime_ns": 1775800639370410919
+    },
+    "paragraphs/part_14.txt": {
+      "device": 16777231,
+      "inode": 186111008,
+      "bytes": 32233008,
+      "mtime_ns": 1775800639203781127
+    },
+    "paragraphs/part_00.txt": {
+      "device": 16777231,
+      "inode": 186110866,
+      "bytes": 32711586,
+      "mtime_ns": 1775800639146772384
+    },
+    "paragraphs/part_28.txt": {
+      "device": 16777231,
+      "inode": 186111256,
+      "bytes": 29751988,
+      "mtime_ns": 1775800638417245864
+    },
+    "paragraphs/part_16.txt": {
+      "device": 16777231,
+      "inode": 186111022,
+      "bytes": 31387317,
+      "mtime_ns": 1775800638613868713
+    },
+    "paragraphs/part_02.txt": {
+      "device": 16777231,
+      "inode": 186110876,
+      "bytes": 31314463,
+      "mtime_ns": 1775800638643875122
+    },
+    "paragraphs/part_03.txt": {
+      "device": 16777231,
+      "inode": 186110883,
+      "bytes": 29824911,
+      "mtime_ns": 1775800637889656066
+    },
+    "paragraphs/part_17.txt": {
+      "device": 16777231,
+      "inode": 186111028,
+      "bytes": 30423338,
+      "mtime_ns": 1775800638276725769
+    },
+    "paragraphs/part_13.txt": {
+      "device": 16777231,
+      "inode": 186111003,
+      "bytes": 33990490,
+      "mtime_ns": 1775800639445417404
+    },
+    "paragraphs/part_07.txt": {
+      "device": 16777231,
+      "inode": 186110924,
+      "bytes": 35964682,
+      "mtime_ns": 1775800639880994796
+    },
+    "paragraphs/part_06.txt": {
+      "device": 16777231,
+      "inode": 186110901,
+      "bytes": 35615600,
+      "mtime_ns": 1775800639990512847
+    },
+    "paragraphs/part_12.txt": {
+      "device": 16777231,
+      "inode": 186110995,
+      "bytes": 34170602,
+      "mtime_ns": 1775800639625446319
+    },
+    "paragraphs/part_04.txt": {
+      "device": 16777231,
+      "inode": 186110888,
+      "bytes": 30665263,
+      "mtime_ns": 1775800638390247344
+    },
+    "paragraphs/part_10.txt": {
+      "device": 16777231,
+      "inode": 186110979,
+      "bytes": 34177775,
+      "mtime_ns": 1775800639527929306
+    },
+    "paragraphs/part_11.txt": {
+      "device": 16777231,
+      "inode": 186110989,
+      "bytes": 33859144,
+      "mtime_ns": 1775800639352411270
+    },
+    "paragraphs/part_05.txt": {
+      "device": 16777231,
+      "inode": 186110893,
+      "bytes": 33403887,
+      "mtime_ns": 1775800639393411636
+    },
+    "paragraphs/part_08.txt": {
+      "device": 16777231,
+      "inode": 186110948,
+      "bytes": 33409314,
+      "mtime_ns": 1775800639494930267
+    },
+    "paragraphs/part_20.txt": {
+      "device": 16777231,
+      "inode": 186111077,
+      "bytes": 33112423,
+      "mtime_ns": 1775800639067264556
+    },
+    "paragraphs/part_21.txt": {
+      "device": 16777231,
+      "inode": 186111092,
+      "bytes": 33043950,
+      "mtime_ns": 1775800639082265853
+    },
+    "paragraphs/part_09.txt": {
+      "device": 16777231,
+      "inode": 186110954,
+      "bytes": 32252771,
+      "mtime_ns": 1775800639032754898
+    },
+    "paragraphs/part_23.txt": {
+      "device": 16777231,
+      "inode": 186111131,
+      "bytes": 34345172,
+      "mtime_ns": 1775800639546442031
+    },
+    "paragraphs/part_22.txt": {
+      "device": 16777231,
+      "inode": 186111111,
+      "bytes": 30105401,
+      "mtime_ns": 1775800638639873504
+    },
+    "paragraphs/part_26.txt": {
+      "device": 16777231,
+      "inode": 186111174,
+      "bytes": 33553591,
+      "mtime_ns": 1775800639393411636
+    },
+    "paragraphs/part_27.txt": {
+      "device": 16777231,
+      "inode": 186111232,
+      "bytes": 29682886,
+      "mtime_ns": 1775800638048696517
+    },
+    "paragraphs/part_25.txt": {
+      "device": 16777231,
+      "inode": 186111166,
+      "bytes": 31452549,
+      "mtime_ns": 1775800638733526229
+    },
+    "paragraphs/part_31.txt": {
+      "device": 16777231,
+      "inode": 186111277,
+      "bytes": 30663054,
+      "mtime_ns": 1775800638500589370
+    },
+    "paragraphs/part_19.txt": {
+      "device": 16777231,
+      "inode": 186111055,
+      "bytes": 30986568,
+      "mtime_ns": 1775800638311725616
+    },
+    "paragraphs/part_18.txt": {
+      "device": 16777231,
+      "inode": 186111050,
+      "bytes": 32244580,
+      "mtime_ns": 1775800638931238174
+    },
+    "paragraphs/part_30.txt": {
+      "device": 16777231,
+      "inode": 186111272,
+      "bytes": 30413222,
+      "mtime_ns": 1775800638605869293
+    },
+    "paragraphs/part_24.txt": {
+      "device": 16777231,
+      "inode": 186111161,
+      "bytes": 33364250,
+      "mtime_ns": 1775800639211782455
+    },
+    "tokens/part_29.txt": {
+      "device": 16777231,
+      "inode": 186111268,
+      "bytes": 79472704,
+      "mtime_ns": 1775803422067453384
+    },
+    "tokens/part_01.txt": {
+      "device": 16777231,
+      "inode": 186110875,
+      "bytes": 80130494,
+      "mtime_ns": 1775803434161560058
+    },
+    "tokens/part_15.txt": {
+      "device": 16777231,
+      "inode": 186111021,
+      "bytes": 86497005,
+      "mtime_ns": 1775803475621004104
+    },
+    "tokens/part_14.txt": {
+      "device": 16777231,
+      "inode": 186111012,
+      "bytes": 78763804,
+      "mtime_ns": 1775803432552629470
+    },
+    "tokens/part_00.txt": {
+      "device": 16777231,
+      "inode": 186110869,
+      "bytes": 86318173,
+      "mtime_ns": 1775803470467267990
+    },
+    "tokens/part_28.txt": {
+      "device": 16777231,
+      "inode": 186111260,
+      "bytes": 76128819,
+      "mtime_ns": 1775803396921911239
+    },
+    "tokens/part_16.txt": {
+      "device": 16777231,
+      "inode": 186111026,
+      "bytes": 80481186,
+      "mtime_ns": 1775803441650625228
+    },
+    "tokens/part_02.txt": {
+      "device": 16777231,
+      "inode": 186110881,
+      "bytes": 81956136,
+      "mtime_ns": 1775803442615646362
+    },
+    "tokens/part_03.txt": {
+      "device": 16777231,
+      "inode": 186110887,
+      "bytes": 78092715,
+      "mtime_ns": 1775803414203798294
+    },
+    "tokens/part_17.txt": {
+      "device": 16777231,
+      "inode": 186111031,
+      "bytes": 78568363,
+      "mtime_ns": 1775803424341184616
+    },
+    "tokens/part_13.txt": {
+      "device": 16777231,
+      "inode": 186111007,
+      "bytes": 80964219,
+      "mtime_ns": 1775803436755487442
+    },
+    "tokens/part_07.txt": {
+      "device": 16777231,
+      "inode": 186110930,
+      "bytes": 88770717,
+      "mtime_ns": 1775803481469402313
+    },
+    "tokens/part_06.txt": {
+      "device": 16777231,
+      "inode": 186110906,
+      "bytes": 87581183,
+      "mtime_ns": 1775803477105564117
+    },
+    "tokens/part_12.txt": {
+      "device": 16777231,
+      "inode": 186111000,
+      "bytes": 84089571,
+      "mtime_ns": 1775803461013370513
+    },
+    "tokens/part_04.txt": {
+      "device": 16777231,
+      "inode": 186110892,
+      "bytes": 79859687,
+      "mtime_ns": 1775803429897132873
+    },
+    "tokens/part_10.txt": {
+      "device": 16777231,
+      "inode": 186110985,
+      "bytes": 84683377,
+      "mtime_ns": 1775803462961494445
+    },
+    "tokens/part_11.txt": {
+      "device": 16777231,
+      "inode": 186110993,
+      "bytes": 86159415,
+      "mtime_ns": 1775803462063199996
+    },
+    "tokens/part_05.txt": {
+      "device": 16777231,
+      "inode": 186110899,
+      "bytes": 81932218,
+      "mtime_ns": 1775803439004074096
+    },
+    "tokens/part_08.txt": {
+      "device": 16777231,
+      "inode": 186110952,
+      "bytes": 84332004,
+      "mtime_ns": 1775803464737655639
+    },
+    "tokens/part_20.txt": {
+      "device": 16777231,
+      "inode": 186111081,
+      "bytes": 79029879,
+      "mtime_ns": 1775803435530925750
+    },
+    "tokens/part_21.txt": {
+      "device": 16777231,
+      "inode": 186111110,
+      "bytes": 75627272,
+      "mtime_ns": 1775803391338857650
+    },
+    "tokens/part_09.txt": {
+      "device": 16777231,
+      "inode": 186110974,
+      "bytes": 80100262,
+      "mtime_ns": 1775803430595375061
+    },
+    "tokens/part_23.txt": {
+      "device": 16777231,
+      "inode": 186111155,
+      "bytes": 77195376,
+      "mtime_ns": 1775803397292613983
+    },
+    "tokens/part_22.txt": {
+      "device": 16777231,
+      "inode": 186111128,
+      "bytes": 68936564,
+      "mtime_ns": 1775803298222110748
+    },
+    "tokens/part_26.txt": {
+      "device": 16777231,
+      "inode": 186111212,
+      "bytes": 85460187,
+      "mtime_ns": 1775803471936115264
+    },
+    "tokens/part_27.txt": {
+      "device": 16777231,
+      "inode": 186111255,
+      "bytes": 75029538,
+      "mtime_ns": 1775803400511016845
+    },
+    "tokens/part_25.txt": {
+      "device": 16777231,
+      "inode": 186111172,
+      "bytes": 80889378,
+      "mtime_ns": 1775803441053100585
+    },
+    "tokens/part_31.txt": {
+      "device": 16777231,
+      "inode": 186111281,
+      "bytes": 78279198,
+      "mtime_ns": 1775803411010194778
+    },
+    "tokens/part_19.txt": {
+      "device": 16777231,
+      "inode": 186111070,
+      "bytes": 79552681,
+      "mtime_ns": 1775803429848749160
+    },
+    "tokens/part_18.txt": {
+      "device": 16777231,
+      "inode": 186111053,
+      "bytes": 83287761,
+      "mtime_ns": 1775803461606685638
+    },
+    "tokens/part_30.txt": {
+      "device": 16777231,
+      "inode": 186111276,
+      "bytes": 77617428,
+      "mtime_ns": 1775803417497842788
+    },
+    "tokens/part_24.txt": {
+      "device": 16777231,
+      "inode": 186111165,
+      "bytes": 78880152,
+      "mtime_ns": 1775803430690309524
+    },
+    "parquet/.cache/huggingface/.gitignore": {
+      "device": 16777231,
+      "inode": 186111293,
+      "bytes": 1,
+      "mtime_ns": 1775623137888013839
+    },
+    "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.metadata": {
+      "device": 16777231,
+      "inode": 186111295,
+      "bytes": 128,
+      "mtime_ns": 1775623538110967636
+    },
+    "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.metadata": {
+      "device": 16777231,
+      "inode": 186111296,
+      "bytes": 128,
+      "mtime_ns": 1775623538217031478
+    },
+    "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.lock": {
+      "device": 16777231,
+      "inode": 186110833,
+      "bytes": 0,
+      "mtime_ns": 1775623137889007568
+    },
+    "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.lock": {
+      "device": 16777231,
+      "inode": 186110834,
+      "bytes": 0,
+      "mtime_ns": 1775623156555652618
+    }
+  },
+  "preserve_files": [
+    ".gitignore",
+    "DATASET_INFO.md",
+    "LICENSE",
+    "NOTICE.md",
+    "PROVENANCE.json",
+    "README.md",
+    "archive_manifest.json",
+    "audit/dataset-review.html",
+    "audit/duplicates.json",
+    "audit_duplicates.py",
+    "step1_download.md",
+    "step1_download.py",
+    "step2_extract_sample_rows.md",
+    "step2_extract_sample_rows.py",
+    "step3_extract_paragraphs.md",
+    "step3_extract_paragraphs.py",
+    "step4_dedup_sentences.md",
+    "step4_dedup_sentences.py",
+    "step5a_tokenize.md",
+    "step5a_tokenize.py",
+    "step5b_verify.md",
+    "step5b_verify.py",
+    "step6a_build_vocab.md",
+    "step6a_build_vocab.py",
+    "step6b_vocab_report.md",
+    "step6b_vocab_report.py",
+    "step7_encode.md",
+    "step7_encode.py",
+    "step7b_verify.md",
+    "step7b_verify.py",
+    "vocab_comparison.png",
+    "vocab_full_zipf.png",
+    "vocab_report_16384.png",
+    "vocab_report_32768.png",
+    "vocab_report_49152.png",
+    "vocab_report_65536.png",
+    "vocab_report_full.png"
+  ],
+  "additional_review_files": [
+    "DATASET_INFO.md",
+    "PROVENANCE.json",
+    "archive_manifest.json",
+    "audit/dataset-review.html",
+    "audit/duplicates.json",
+    "audit_duplicates.py"
+  ],
+  "redundant_files_to_remove": [
+    "ngram_16384_c4_s5.pkl",
+    "ngram_65536_c4_s30.pkl",
+    "paragraphs/part_00.txt",
+    "paragraphs/part_01.txt",
+    "paragraphs/part_02.txt",
+    "paragraphs/part_03.txt",
+    "paragraphs/part_04.txt",
+    "paragraphs/part_05.txt",
+    "paragraphs/part_06.txt",
+    "paragraphs/part_07.txt",
+    "paragraphs/part_08.txt",
+    "paragraphs/part_09.txt",
+    "paragraphs/part_10.txt",
+    "paragraphs/part_11.txt",
+    "paragraphs/part_12.txt",
+    "paragraphs/part_13.txt",
+    "paragraphs/part_14.txt",
+    "paragraphs/part_15.txt",
+    "paragraphs/part_16.txt",
+    "paragraphs/part_17.txt",
+    "paragraphs/part_18.txt",
+    "paragraphs/part_19.txt",
+    "paragraphs/part_20.txt",
+    "paragraphs/part_21.txt",
+    "paragraphs/part_22.txt",
+    "paragraphs/part_23.txt",
+    "paragraphs/part_24.txt",
+    "paragraphs/part_25.txt",
+    "paragraphs/part_26.txt",
+    "paragraphs/part_27.txt",
+    "paragraphs/part_28.txt",
+    "paragraphs/part_29.txt",
+    "paragraphs/part_30.txt",
+    "paragraphs/part_31.txt",
+    "paragraphs_raw/part_00.txt",
+    "paragraphs_raw/part_01.txt",
+    "paragraphs_raw/part_02.txt",
+    "paragraphs_raw/part_03.txt",
+    "paragraphs_raw/part_04.txt",
+    "paragraphs_raw/part_05.txt",
+    "paragraphs_raw/part_06.txt",
+    "paragraphs_raw/part_07.txt",
+    "paragraphs_raw/part_08.txt",
+    "paragraphs_raw/part_09.txt",
+    "paragraphs_raw/part_10.txt",
+    "paragraphs_raw/part_11.txt",
+    "paragraphs_raw/part_12.txt",
+    "paragraphs_raw/part_13.txt",
+    "paragraphs_raw/part_14.txt",
+    "paragraphs_raw/part_15.txt",
+    "paragraphs_raw/part_16.txt",
+    "paragraphs_raw/part_17.txt",
+    "paragraphs_raw/part_18.txt",
+    "paragraphs_raw/part_19.txt",
+    "paragraphs_raw/part_20.txt",
+    "paragraphs_raw/part_21.txt",
+    "paragraphs_raw/part_22.txt",
+    "paragraphs_raw/part_23.txt",
+    "paragraphs_raw/part_24.txt",
+    "paragraphs_raw/part_25.txt",
+    "paragraphs_raw/part_26.txt",
+    "paragraphs_raw/part_27.txt",
+    "paragraphs_raw/part_28.txt",
+    "paragraphs_raw/part_29.txt",
+    "paragraphs_raw/part_30.txt",
+    "paragraphs_raw/part_31.txt",
+    "parquet/.cache/huggingface/.gitignore",
+    "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.lock",
+    "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.metadata",
+    "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.lock",
+    "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.metadata",
+    "parquet/README.txt",
+    "sentences/part_00.txt",
+    "sentences/part_01.txt",
+    "sentences/part_02.txt",
+    "sentences/part_03.txt",
+    "sentences/part_04.txt",
+    "sentences/part_05.txt",
+    "sentences/part_06.txt",
+    "sentences/part_07.txt",
+    "sentences/part_08.txt",
+    "sentences/part_09.txt",
+    "sentences/part_10.txt",
+    "sentences/part_11.txt",
+    "sentences/part_12.txt",
+    "sentences/part_13.txt",
+    "sentences/part_14.txt",
+    "sentences/part_15.txt",
+    "sentences/part_16.txt",
+    "sentences/part_17.txt",
+    "sentences/part_18.txt",
+    "sentences/part_19.txt",
+    "sentences/part_20.txt",
+    "sentences/part_21.txt",
+    "sentences/part_22.txt",
+    "sentences/part_23.txt",
+    "sentences/part_24.txt",
+    "sentences/part_25.txt",
+    "sentences/part_26.txt",
+    "sentences/part_27.txt",
+    "sentences/part_28.txt",
+    "sentences/part_29.txt",
+    "sentences/part_30.txt",
+    "sentences/part_31.txt",
+    "sentences_dedup/part_00.txt",
+    "sentences_dedup/part_01.txt",
+    "sentences_dedup/part_02.txt",
+    "sentences_dedup/part_03.txt",
+    "sentences_dedup/part_04.txt",
+    "sentences_dedup/part_05.txt",
+    "sentences_dedup/part_06.txt",
+    "sentences_dedup/part_07.txt",
+    "sentences_dedup/part_08.txt",
+    "sentences_dedup/part_09.txt",
+    "sentences_dedup/part_10.txt",
+    "sentences_dedup/part_11.txt",
+    "sentences_dedup/part_12.txt",
+    "sentences_dedup/part_13.txt",
+    "sentences_dedup/part_14.txt",
+    "sentences_dedup/part_15.txt",
+    "sentences_dedup/part_16.txt",
+    "sentences_dedup/part_17.txt",
+    "sentences_dedup/part_18.txt",
+    "sentences_dedup/part_19.txt",
+    "sentences_dedup/part_20.txt",
+    "sentences_dedup/part_21.txt",
+    "sentences_dedup/part_22.txt",
+    "sentences_dedup/part_23.txt",
+    "sentences_dedup/part_24.txt",
+    "sentences_dedup/part_25.txt",
+    "sentences_dedup/part_26.txt",
+    "sentences_dedup/part_27.txt",
+    "sentences_dedup/part_28.txt",
+    "sentences_dedup/part_29.txt",
+    "sentences_dedup/part_30.txt",
+    "sentences_dedup/part_31.txt",
+    "sentences_dedup_removed.txt",
+    "token_ids_16384/part_00.npy",
+    "token_ids_16384/part_01.npy",
+    "token_ids_16384/part_02.npy",
+    "token_ids_16384/part_03.npy",
+    "token_ids_16384/part_04.npy",
+    "token_ids_16384/part_05.npy",
+    "token_ids_16384/part_06.npy",
+    "token_ids_16384/part_07.npy",
+    "token_ids_16384/part_08.npy",
+    "token_ids_16384/part_09.npy",
+    "token_ids_16384/part_10.npy",
+    "token_ids_16384/part_11.npy",
+    "token_ids_16384/part_12.npy",
+    "token_ids_16384/part_13.npy",
+    "token_ids_16384/part_14.npy",
+    "token_ids_16384/part_15.npy",
+    "token_ids_16384/part_16.npy",
+    "token_ids_16384/part_17.npy",
+    "token_ids_16384/part_18.npy",
+    "token_ids_16384/part_19.npy",
+    "token_ids_16384/part_20.npy",
+    "token_ids_16384/part_21.npy",
+    "token_ids_16384/part_22.npy",
+    "token_ids_16384/part_23.npy",
+    "token_ids_16384/part_24.npy",
+    "token_ids_16384/part_25.npy",
+    "token_ids_16384/part_26.npy",
+    "token_ids_16384/part_27.npy",
+    "token_ids_16384/part_28.npy",
+    "token_ids_16384/part_29.npy",
+    "token_ids_16384/part_30.npy",
+    "token_ids_16384/part_31.npy",
+    "token_ids_32768/part_00.npy",
+    "token_ids_32768/part_01.npy",
+    "token_ids_32768/part_02.npy",
+    "token_ids_32768/part_03.npy",
+    "token_ids_32768/part_04.npy",
+    "token_ids_32768/part_05.npy",
+    "token_ids_32768/part_06.npy",
+    "token_ids_32768/part_07.npy",
+    "token_ids_32768/part_08.npy",
+    "token_ids_32768/part_09.npy",
+    "token_ids_32768/part_10.npy",
+    "token_ids_32768/part_11.npy",
+    "token_ids_32768/part_12.npy",
+    "token_ids_32768/part_13.npy",
+    "token_ids_32768/part_14.npy",
+    "token_ids_32768/part_15.npy",
+    "token_ids_32768/part_16.npy",
+    "token_ids_32768/part_17.npy",
+    "token_ids_32768/part_18.npy",
+    "token_ids_32768/part_19.npy",
+    "token_ids_32768/part_20.npy",
+    "token_ids_32768/part_21.npy",
+    "token_ids_32768/part_22.npy",
+    "token_ids_32768/part_23.npy",
+    "token_ids_32768/part_24.npy",
+    "token_ids_32768/part_25.npy",
+    "token_ids_32768/part_26.npy",
+    "token_ids_32768/part_27.npy",
+    "token_ids_32768/part_28.npy",
+    "token_ids_32768/part_29.npy",
+    "token_ids_32768/part_30.npy",
+    "token_ids_32768/part_31.npy",
+    "token_ids_49152/part_00.npy",
+    "token_ids_49152/part_01.npy",
+    "token_ids_49152/part_02.npy",
+    "token_ids_49152/part_03.npy",
+    "token_ids_49152/part_04.npy",
+    "token_ids_49152/part_05.npy",
+    "token_ids_49152/part_06.npy",
+    "token_ids_49152/part_07.npy",
+    "token_ids_49152/part_08.npy",
+    "token_ids_49152/part_09.npy",
+    "token_ids_49152/part_10.npy",
+    "token_ids_49152/part_11.npy",
+    "token_ids_49152/part_12.npy",
+    "token_ids_49152/part_13.npy",
+    "token_ids_49152/part_14.npy",
+    "token_ids_49152/part_15.npy",
+    "token_ids_49152/part_16.npy",
+    "token_ids_49152/part_17.npy",
+    "token_ids_49152/part_18.npy",
+    "token_ids_49152/part_19.npy",
+    "token_ids_49152/part_20.npy",
+    "token_ids_49152/part_21.npy",
+    "token_ids_49152/part_22.npy",
+    "token_ids_49152/part_23.npy",
+    "token_ids_49152/part_24.npy",
+    "token_ids_49152/part_25.npy",
+    "token_ids_49152/part_26.npy",
+    "token_ids_49152/part_27.npy",
+    "token_ids_49152/part_28.npy",
+    "token_ids_49152/part_29.npy",
+    "token_ids_49152/part_30.npy",
+    "token_ids_49152/part_31.npy",
+    "token_ids_65536/part_00.npy",
+    "token_ids_65536/part_01.npy",
+    "token_ids_65536/part_02.npy",
+    "token_ids_65536/part_03.npy",
+    "token_ids_65536/part_04.npy",
+    "token_ids_65536/part_05.npy",
+    "token_ids_65536/part_06.npy",
+    "token_ids_65536/part_07.npy",
+    "token_ids_65536/part_08.npy",
+    "token_ids_65536/part_09.npy",
+    "token_ids_65536/part_10.npy",
+    "token_ids_65536/part_11.npy",
+    "token_ids_65536/part_12.npy",
+    "token_ids_65536/part_13.npy",
+    "token_ids_65536/part_14.npy",
+    "token_ids_65536/part_15.npy",
+    "token_ids_65536/part_16.npy",
+    "token_ids_65536/part_17.npy",
+    "token_ids_65536/part_18.npy",
+    "token_ids_65536/part_19.npy",
+    "token_ids_65536/part_20.npy",
+    "token_ids_65536/part_21.npy",
+    "token_ids_65536/part_22.npy",
+    "token_ids_65536/part_23.npy",
+    "token_ids_65536/part_24.npy",
+    "token_ids_65536/part_25.npy",
+    "token_ids_65536/part_26.npy",
+    "token_ids_65536/part_27.npy",
+    "token_ids_65536/part_28.npy",
+    "token_ids_65536/part_29.npy",
+    "token_ids_65536/part_30.npy",
+    "token_ids_65536/part_31.npy",
+    "tokens/part_00.txt",
+    "tokens/part_01.txt",
+    "tokens/part_02.txt",
+    "tokens/part_03.txt",
+    "tokens/part_04.txt",
+    "tokens/part_05.txt",
+    "tokens/part_06.txt",
+    "tokens/part_07.txt",
+    "tokens/part_08.txt",
+    "tokens/part_09.txt",
+    "tokens/part_10.txt",
+    "tokens/part_11.txt",
+    "tokens/part_12.txt",
+    "tokens/part_13.txt",
+    "tokens/part_14.txt",
+    "tokens/part_15.txt",
+    "tokens/part_16.txt",
+    "tokens/part_17.txt",
+    "tokens/part_18.txt",
+    "tokens/part_19.txt",
+    "tokens/part_20.txt",
+    "tokens/part_21.txt",
+    "tokens/part_22.txt",
+    "tokens/part_23.txt",
+    "tokens/part_24.txt",
+    "tokens/part_25.txt",
+    "tokens/part_26.txt",
+    "tokens/part_27.txt",
+    "tokens/part_28.txt",
+    "tokens/part_29.txt",
+    "tokens/part_30.txt",
+    "tokens/part_31.txt",
+    "tokens_filtered_16384/README.txt",
+    "tokens_filtered_32768/README.txt",
+    "tokens_filtered_49152/README.txt",
+    "tokens_filtered_65536/README.txt",
+    "vocab_16384.txt",
+    "vocab_32768.txt",
+    "vocab_49152.txt",
+    "vocab_65536.txt",
+    "vocab_full.txt"
+  ],
+  "redundant_bytes_to_remove": 9072041118,
+  "note": "Archive members were listed without extracting. Sizes and CRC32 were recomputed for all extracted members; SHA-256 matches the original retained archive and both raw Parquet source manifests.",
+  "cleanup": {
+    "completed_at_utc": "2026-10-17T08:40:12.172515+00:00",
+    "old_directory_removed": true,
+    "deleted_verified_files": 306,
+    "deleted_bytes": 9072041118,
+    "preserved_reference_files": [
+      {
+        "path": ".gitignore",
+        "bytes": 460,
+        "sha256": "892d328021fbbc3a771a7c2b6e9aa5d211edfcb864273b7e1e78c0c388f6e109"
+      },
+      {
+        "path": "DATASET_INFO.md",
+        "bytes": 7273,
+        "sha256": "dacc9d519c7bdcd74f88a7487381ad68e2a1ef9d35b6fd89e6d361aa7e4ed618"
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 20138,
+        "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+      },
+      {
+        "path": "NOTICE.md",
+        "bytes": 3572,
+        "sha256": "8a45b836fd786e9f95ad1fb2636a7b6b5ac8a98f185543bd0a96b2a7201a1332"
+      },
+      {
+        "path": "PROVENANCE.json",
+        "bytes": 1984,
+        "sha256": "077653e9420adf76d1a036dfae4970ed62d9c68cdadee6817db2e52da727486e"
+      },
+      {
+        "path": "README.md",
+        "bytes": 14041,
+        "sha256": "19bf452c50abd807615f0f41e061b96bba1658e4e5d583e7c56e9ab579146d6f"
+      },
+      {
+        "path": "archive_manifest.json",
+        "bytes": 35952,
+        "sha256": "de6036770ef45fa7e450d95f797547e717e75a1f845a5e61962cdadbc5be55ef"
+      },
+      {
+        "path": "audit/dataset-review.html",
+        "bytes": 6765,
+        "sha256": "e9c96f567ab8a1cda31a4967d15f5c70d9a5488a8d21f50c69dffbcd7b5ba2b2"
+      },
+      {
+        "path": "audit/duplicates.json",
+        "bytes": 58362,
+        "sha256": "6b083827cfbe4ff65f7bdd14857177c9efc62fdc09e71d70e5e5e2d21c40fee4"
+      },
+      {
+        "path": "audit_duplicates.py",
+        "bytes": 16495,
+        "sha256": "84387d5f3fcdb49de03f14395461a81f060fb5ba293371e1b032a65567b226e6"
+      },
+      {
+        "path": "step1_download.md",
+        "bytes": 1751,
+        "sha256": "9ba1a859ac1e923c587efade49b773c480a772e1ceb1f80c4fc3fb00762d9176"
+      },
+      {
+        "path": "step1_download.py",
+        "bytes": 1482,
+        "sha256": "d562c4e37ea8dabf5c509ec634eb6967f10182ba20542e811c50df200a98586d"
+      },
+      {
+        "path": "step2_extract_sample_rows.md",
+        "bytes": 1889,
+        "sha256": "48d051f118d825e9f4cda84f630619b7c8d719caf3fe4f54ed873cd45168bf51"
+      },
+      {
+        "path": "step2_extract_sample_rows.py",
+        "bytes": 2309,
+        "sha256": "9be44136265d9de05a2a20b518813b34577a377594ae847288d4648df916b51c"
+      },
+      {
+        "path": "step3_extract_paragraphs.md",
+        "bytes": 3402,
+        "sha256": "0bd3ebf5a881b7b8f9c443a8714915c3a355b0731779fe1fb12a66faadd62ade"
+      },
+      {
+        "path": "step3_extract_paragraphs.py",
+        "bytes": 17603,
+        "sha256": "fd193fc2f80d6085a6dcaf758baf094c55a03b741778d04a9a96ca3717f6b216"
+      },
+      {
+        "path": "step4_dedup_sentences.md",
+        "bytes": 4072,
+        "sha256": "e55daa26f7d5e0e71db823cb11959f4abe58a6170c23611703213949aa2c0979"
+      },
+      {
+        "path": "step4_dedup_sentences.py",
+        "bytes": 11109,
+        "sha256": "43e25a53b94ef9126a3086672fce4ef5b2f36176adecbb21d320f389f62df188"
+      },
+      {
+        "path": "step5a_tokenize.md",
+        "bytes": 3011,
+        "sha256": "2db6aef3d8f962dc81703fba57f50306dbb32b074f0195c8123699e24a0c671d"
+      },
+      {
+        "path": "step5a_tokenize.py",
+        "bytes": 10043,
+        "sha256": "531fee9d5e35c29baa2daeef2adf84210bc6f6749f8e04e1d200de4afdbb8686"
+      },
+      {
+        "path": "step5b_verify.md",
+        "bytes": 2368,
+        "sha256": "6e78a52fa0b608f55ebe952dc4a770673a3adad7e1bf3f1ce5cafb6f86532721"
+      },
+      {
+        "path": "step5b_verify.py",
+        "bytes": 11496,
+        "sha256": "222f48bc031e8f6897d9af49fc3d72a1023f94a3839ec4f8b09b99f0cc2dfd2b"
+      },
+      {
+        "path": "step6a_build_vocab.md",
+        "bytes": 4562,
+        "sha256": "c7edf34740f93c576d557481447238bb3fdade8423ba00ec7ad706f5db3a04db"
+      },
+      {
+        "path": "step6a_build_vocab.py",
+        "bytes": 18429,
+        "sha256": "a38801c233b9c741caba38fdad56cfc550c5ed43a84ee30e0cb0f104b3e6846d"
+      },
+      {
+        "path": "step6b_vocab_report.md",
+        "bytes": 2671,
+        "sha256": "006b8232ad481f14fdc5aa15d8c0902e23929ce39d0c6b8f68d63b4d50eab16c"
+      },
+      {
+        "path": "step6b_vocab_report.py",
+        "bytes": 24004,
+        "sha256": "971da16faa0702b5398f2a3cc8f8e5062cae464b29d280ea15a3eb3fbb4a5545"
+      },
+      {
+        "path": "step7_encode.md",
+        "bytes": 6088,
+        "sha256": "5ee8fe684cad819b766fed1f67a2f0058772f11e885047de815e3300bb1cdd8b"
+      },
+      {
+        "path": "step7_encode.py",
+        "bytes": 6576,
+        "sha256": "0d0f7e6c59d020fe581b2193bcc809732c491530ad36fb6afd823342dd9f2771"
+      },
+      {
+        "path": "step7b_verify.md",
+        "bytes": 4087,
+        "sha256": "84df0e875d4553ea2185a8106f4fe048f6fc9c2d2ec3003f49e2652da4a0f598"
+      },
+      {
+        "path": "step7b_verify.py",
+        "bytes": 5387,
+        "sha256": "188827399f618ffb4c41ffab8532a9f0fcf9bb1adb2f3e53cc9442e6de46b01b"
+      },
+      {
+        "path": "vocab_comparison.png",
+        "bytes": 191103,
+        "sha256": "51788ad174f723b1fd148969a3e7238761e3bcf8e5116dbec737f0b4188cbe9d"
+      },
+      {
+        "path": "vocab_full_zipf.png",
+        "bytes": 157205,
+        "sha256": "0f4a8a3822f28b9e4df321b7d437ed690efe9559cc7ae2bb275433909bb44586"
+      },
+      {
+        "path": "vocab_report_16384.png",
+        "bytes": 153269,
+        "sha256": "f87f1dd1994a433b66f82af34b06da2f72c93585bd4fa0a76c6a21e38a471fac"
+      },
+      {
+        "path": "vocab_report_32768.png",
+        "bytes": 161990,
+        "sha256": "e9f6d8cf156bde56f7f715d946e6eabc45614889bde16212ef2a0eca15eead5e"
+      },
+      {
+        "path": "vocab_report_49152.png",
+        "bytes": 160430,
+        "sha256": "1df674b3ab52501c45a479a4bd2029869335249eb54b1eef9353c32f5947b26d"
+      },
+      {
+        "path": "vocab_report_65536.png",
+        "bytes": 163335,
+        "sha256": "6f04b81432d70e7a0a41ecc3fdb0ab656aa31de1c3b66e8fd330549562df6c01"
+      },
+      {
+        "path": "vocab_report_full.png",
+        "bytes": 154432,
+        "sha256": "03c8063bbeb008c2fe638a85aea0c8eddc4f6296d078c1ea20fb9d0754ff9dd8"
+      }
+    ],
+    "original_archive_retained": true,
+    "raw_parquet_retained": true,
+    "git_index_unchanged": true
+  }
+}

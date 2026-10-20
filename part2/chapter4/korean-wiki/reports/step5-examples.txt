@@ -1,0 +1,136 @@
+Kiwi cong-global 형태소/품사 토큰화
+아래 6개는 설명을 위한 합성 예시입니다.
+
+서울과 어절 공백
+입력: 서울은 대한민국의 수도이다.
+토큰: 서울/NNP 은/JX <sp>/WS 대한민국/NNP 의/JKG <sp>/WS 수도/NNG 이/VCP 다/EF ./SF
+복원: 서울은 대한민국의 수도다.
+상태: mismatch
+
+숫자 원문 보존
+입력: 1987년에 태어났다.
+토큰: 1987/SN 년/NNB 에/JKB <sp>/WS 태어나/VV 었/EP 다/EF ./SF
+복원: 1987년에 태어났다.
+상태: exact
+
+영문 이니셜
+입력: 제임스 D. Watson은 DNA를 연구했다.
+토큰: 제임스/NNP <sp>/WS D./SL <sp>/WS Watson/SL 은/JX <sp>/WS DNA/SL 를/JKO <sp>/WS 연구/NNG 하/XSV 었/EP 다/EF ./SF
+복원: 제임스 D. Watson는 DNA를 연구했다.
+상태: mismatch
+
+명사 차: 자동차
+입력: 차를 타고 서울에 갔다.
+토큰: 차/NNG 를/JKO <sp>/WS 타/VV 고/EC <sp>/WS 서울/NNP 에/JKB <sp>/WS 가/VV 었/EP 다/EF ./SF
+복원: 차를 타고 서울에 갔다.
+상태: exact
+
+명사 차: 마시는 차
+입력: 따뜻한 차를 마셨다.
+토큰: 따뜻/XR 하/XSA ᆫ/ETM <sp>/WS 차/NNG 를/JKO <sp>/WS 마시/VV 었/EP 다/EF ./SF
+복원: 따뜻한 차를 마셨다.
+상태: exact
+
+동사 차다
+입력: 공을 차면 멀리 날아간다.
+토큰: 공/NNG 을/JKO <sp>/WS 차/VV 면/EC <sp>/WS 멀리/MAG <sp>/WS 날아가/VV ᆫ다/EF ./SF
+복원: 공을 차면 멀리 날아간다.
+상태: exact
+
+아래는 실제 말뭉치입니다. 전체 1,024개 표본은 step5-samples.json에 있습니다.
+
+part_00.txt:1
+입력: 고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.
+토큰: 고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS
+복원: 고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호다.
+상태: mismatch
+
+part_00.txt:2
+입력: 이름은 못이지만 커다란 석호다.
+토큰: 이름/NNG 은/JX <sp>/WS 못/MAG 이/VCP 지만/EC <sp>/WS 커다랗/VA-I ᆫ/ETM <sp>/WS 석호/NNG 이/VCP 다/EF ./SF <sp>/WS
+복원: 이름은 못이지만 커다란 석호다.
+상태: exact
+
+part_00.txt:3
+입력: 고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.
+토큰: 고대/NNG 에/JKB 는/JX <sp>/WS 만/NNP 이/VCP 었/EP 으나/EC ,/SP <sp>/WS 사구/NNG 의/JKG <sp>/WS 발달/NNG 과/JC <sp>/WS 퇴적/NNG 으로/JKB <sp>/WS 바다/NNG 에서/JKB <sp>/WS 분리/NNG 되/XSV 어/EC <sp>/WS 석호/NNG 가/JKC <sp>/WS 되/VV 었/EP 다/EF ./SF <sp>/WS
+복원: 고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리돼 석호가 됐다.
+상태: mismatch
+
+part_00.txt:4
+입력: 일본에서 못으로 표기된 수체들 중 고야마못이 가장 크다.
+토큰: 일본/NNP 에서/JKB <sp>/WS 못/MAG 으로/JKB <sp>/WS 표기/NNG 되/XSV ᆫ/ETM <sp>/WS 수/NNB 체/NNG 들/XSN <sp>/WS 중/NNB <sp>/WS 고/MM 야마/NNG 못/NNG 이/JKS <sp>/WS 가장/MAG <sp>/WS 크/VA 다/EF ./SF
+복원: 일본에서 못으로 표기된 수체들 중 고야마못이 가장 크다.
+상태: exact
+
+part_00.txt:6
+입력: 둘레 16 km, 면적 6.96 km2, 최대수심 7.5 m이다.
+토큰: 둘레/NNG <sp>/WS 16/SN <sp>/WS km/SL ,/SP <sp>/WS 면적/NNG <sp>/WS 6.96/SN <sp>/WS km/SL 2/SN ,/SP <sp>/WS 최대/NNG 수심/NNG <sp>/WS 7.5/SN <sp>/WS m/SL 이/VCP 다/EF ./SF <sp>/WS
+복원: 둘레 16 km, 면적 6.96 km2, 최대수심 7.5 m이다.
+상태: exact
+
+part_00.txt:7
+입력: 크고 작은 섬들이 다소 떠있다.
+토큰: 크/VA 고/EC <sp>/WS 작/VA 은/ETM <sp>/WS 섬/NNG 들/XSN 이/JKS <sp>/WS 다소/MAG <sp>/WS 뜨/VV 어/EC 있/VX 다/EF ./SF <sp>/WS
+복원: 크고 작은 섬들이 다소 떠있다.
+상태: exact
+
+part_00.txt:8
+입력: 그중 가장 큰 섬은 아오시마섬으로 호안으로부터 다리로 연결되어 있다.
+토큰: 그/MM 중/NNB <sp>/WS 가장/MAG <sp>/WS 크/VA ᆫ/ETM <sp>/WS 섬/NNG 은/JX <sp>/WS 아오시마섬/NNG 으로/JKB <sp>/WS 호안/NNG 으로부터/JKB <sp>/WS 다리/NNG 로/JKB <sp>/WS 연결/NNG 되/XSV 어/EC <sp>/WS 있/VX 다/EF ./SF <sp>/WS
+복원: 그중 가장 큰 섬은 아오시마섬으로 호안으로부터 다리로 연결돼 있다.
+상태: mismatch
+
+part_00.txt:9
+입력: 벚나무가 다수 심어져 있는 도로는 도보와 자전거로 일주가 가능하며 캠프도 가능하다.
+토큰: 벚나무/NNG 가/JKS <sp>/WS 다수/NNG <sp>/WS 심/VV 어/EC 지/VX 어/EC <sp>/WS 있/VX 는/ETM <sp>/WS 도로/NNG 는/JX <sp>/WS 도보/NNG 와/JC <sp>/WS 자전거/NNG 로/JKB <sp>/WS 일주/NNG 가/JKS <sp>/WS 가능/NNG 하/XSA 며/EC <sp>/WS 캠프/NNG 도/JX <sp>/WS 가능/NNG 하/XSA 다/EF ./SF <sp>/WS
+복원: 벚나무가 다수 심어져 있는 도로는 도보와 자전거로 일주가 가능하며 캠프도 가능하다.
+상태: exact
+
+part_00.txt:1
+입력: 고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호이다.
+토큰: 고/MM 야마/NNG 못/NNG 은/JX <sp>/WS 돗토리현/NNP <sp>/WS 돗토리시/NNP <sp>/WS 남서부/NNG 에/JKB <sp>/WS 위치/NNG 하/XSV ᆫ/ETM <sp>/WS 기수호/NNP 이/VCP 다/EF ./SF <sp>/WS
+복원: 고야마못은 돗토리현 돗토리시 남서부에 위치한 기수호다.
+상태: mismatch
+
+part_00.txt:3
+입력: 고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리되어 석호가 되었다.
+토큰: 고대/NNG 에/JKB 는/JX <sp>/WS 만/NNP 이/VCP 었/EP 으나/EC ,/SP <sp>/WS 사구/NNG 의/JKG <sp>/WS 발달/NNG 과/JC <sp>/WS 퇴적/NNG 으로/JKB <sp>/WS 바다/NNG 에서/JKB <sp>/WS 분리/NNG 되/XSV 어/EC <sp>/WS 석호/NNG 가/JKC <sp>/WS 되/VV 었/EP 다/EF ./SF <sp>/WS
+복원: 고대에는 만이었으나, 사구의 발달과 퇴적으로 바다에서 분리돼 석호가 됐다.
+상태: mismatch
+
+part_00.txt:8
+입력: 그중 가장 큰 섬은 아오시마섬으로 호안으로부터 다리로 연결되어 있다.
+토큰: 그/MM 중/NNB <sp>/WS 가장/MAG <sp>/WS 크/VA ᆫ/ETM <sp>/WS 섬/NNG 은/JX <sp>/WS 아오시마섬/NNG 으로/JKB <sp>/WS 호안/NNG 으로부터/JKB <sp>/WS 다리/NNG 로/JKB <sp>/WS 연결/NNG 되/XSV 어/EC <sp>/WS 있/VX 다/EF ./SF <sp>/WS
+복원: 그중 가장 큰 섬은 아오시마섬으로 호안으로부터 다리로 연결돼 있다.
+상태: mismatch
+
+part_00.txt:12
+입력: 돗토리시 교외의 행락지 중 하나이며 돗토리 대학에 인접해 있다.
+토큰: 돗토리시/NNP <sp>/WS 교외/NNG 의/JKG <sp>/WS 행락/NNG 지/NNG <sp>/WS 중/NNB <sp>/WS 하나/NR 이/VCP 며/EC <sp>/WS 돗토리_대학/NNP 에/JKB <sp>/WS 인접/NNG 하/XSV 어/EC <sp>/WS 있/VX 다/EF ./SF
+복원: 돗토리시 교외의 행락지 중 하나며 돗토리 대학에 인접해 있다.
+상태: mismatch
+
+part_00.txt:16
+입력: 현재 현 지정 무형문화재로 지정되어 있다.
+토큰: 현재/MAG <sp>/WS 현/MM <sp>/WS 지정/NNG <sp>/WS 무형/NNG 문화재/NNG 로/JKB <sp>/WS 지정/NNG 되/XSV 어/EC <sp>/WS 있/VX 다/EF ./SF <sp>/WS
+복원: 현재 현 지정 무형문화재로 지정돼 있다.
+상태: mismatch
+
+part_00.txt:20
+입력: 내용은 넓은 논을 가지고 있던 부자가 일몰까지 모심기를 끝내지 못자, 고루에 올라가 황금 부채로 태양을 불러내어 그날 모심기를 끝냈지만, 다음날 날이 밝자 논은 모두 못으로 변해 있었다는 이야기이다.
+토큰: 내용/NNG 은/JX <sp>/WS 넓/VA 은/ETM <sp>/WS 논/NNG 을/JKO <sp>/WS 가지/VV 고/EC <sp>/WS 있/VX 던/ETM <sp>/WS 부자/NNG 가/JKS <sp>/WS 일몰/NNG 까지/JX <sp>/WS 모심기/NNG 를/JKO <sp>/WS 끝내/VV 지/EC <sp>/WS 못/MAG 자/NNG ,/SP <sp>/WS 고루/NNG 에/JKB <sp>/WS 올라가/VV 어/EC <sp>/WS 황금/NNG <sp>/WS 부채/NNG 로/JKB <sp>/WS 태양/NNG 을/JKO <sp>/WS 불러내/VV 어/EC <sp>/WS 그날/NNG <sp>/WS 모심기/NNG 를/JKO <sp>/WS 끝내/VV 었/EP 지만/EC ,/SP <sp>/WS 다음날/NNG <sp>/WS 날/NNG 이/JKS <sp>/WS 밝/VV 자/EC <sp>/WS 논/NNG 은/JX <sp>/WS 모두/MAG <sp>/WS 못/NNG 으로/JKB <sp>/WS 변하/VV 어/EC <sp>/WS 있/VX 었/EP 다는/ETM <sp>/WS 이야기/NNG 이/VCP 다/EF ./SF
+복원: 내용은 넓은 논을 가지고 있던 부자가 일몰까지 모심기를 끝내지 못자, 고루에 올라가 황금 부채로 태양을 불러내 그날 모심기를 끝냈지만, 다음날 날이 밝자 논은 모두 못으로 변해 있었다는 이야기다.
+상태: mismatch
+
+part_00.txt:33
+입력: 또한 해당 도로는 사적 제215호로 지정된 금정산성의 명칭을 반영하여 제정된 것에서 유래하였다.
+토큰: 또한/MAG <sp>/WS 해당/NNG <sp>/WS 도로/NNG 는/JX <sp>/WS 사적/NNG <sp>/WS 제/XPN 215/SN 호/NNB 로/JKB <sp>/WS 지정/NNG 되/XSV ᆫ/ETM <sp>/WS 금정산성/NNP 의/JKG <sp>/WS 명칭/NNG 을/JKO <sp>/WS 반영/NNG 하/XSV 어/EC <sp>/WS 제정/NNG 되/XSV ᆫ/ETM <sp>/WS 것/NNB 에서/JKB <sp>/WS 유래/NNG 하/XSV 었/EP 다/EF ./SF
+복원: 또한 해당 도로는 사적 제215호로 지정된 금정산성의 명칭을 반영해 제정된 것에서 유래했다.
+상태: mismatch
+
+part_00.txt:35
+입력: 1990년대 이전 당시의 구 영동고속도로와 비슷한 선형을 가지고 있는 부산 지역의 대표적인 S자형 굴곡 구간이 있는 도로이다.
+토큰: 1990/SN 년대/NNB <sp>/WS 이전/NNG <sp>/WS 당시/NNG 의/JKG <sp>/WS 구/XPN <sp>/WS 영동고속도로/NNP 와/JKB <sp>/WS 비슷/XR 하/XSA ᆫ/ETM <sp>/WS 선/NNG 형/XSN 을/JKO <sp>/WS 가지/VV 고/EC <sp>/WS 있/VX 는/ETM <sp>/WS 부산/NNP <sp>/WS 지역/NNG 의/JKG <sp>/WS 대표/NNG 적/XSN 이/VCP ᆫ/ETM <sp>/WS S/SL 자형/NNG <sp>/WS 굴곡/NNG <sp>/WS 구간/NNG 이/JKS <sp>/WS 있/VV 는/ETM <sp>/WS 도로/NNG 이/VCP 다/EF ./SF <sp>/WS
+복원: 1990년대 이전 당시의 구 영동고속도로와 비슷한 선형을 가지고 있는 부산 지역의 대표적인 S자형 굴곡 구간이 있는 도로다.
+상태: mismatch

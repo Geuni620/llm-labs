@@ -1,0 +1,40 @@
+<style>
+  #kw-table { display: grid; gap: 16px; width: 100%; }
+  #kw-table .kw-notes { display: grid; gap: 8px; }
+  #kw-table .kw-case { min-width: 150px; }
+  #kw-table .kw-rule { min-width: 100px; }
+</style>
+<div id="kw-table">
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>필터</th><th>실제 원문 발췌 → 처리 결과</th><th class="text-end text-nowrap">제외 수</th><th class="text-end text-nowrap">제외율</th></tr></thead>
+      <tbody>
+        <tr><td class="kw-rule">1. 수식 포함</td><td class="kw-case">「신뢰 구간」의 <code>{\displaystyle</code><br>→ 문서 전체 제외</td><td class="text-end text-nowrap">7,259개 문서</td><td class="text-end text-nowrap">1.25%</td></tr>
+        <tr><td>2. 제목·표·목록·빈 행</td><td><code># 고야마못</code><br>→ 해당 행 제외</td><td class="text-end text-nowrap">15,396,959행</td><td class="text-end text-nowrap">82.67%</td></tr>
+        <tr><td>3. 수학 전용 기호</td><td>「코카인」의 “평균 1.4 ± 0.5분”<br>→ 해당 행 전체 제외</td><td class="text-end text-nowrap">1,459행</td><td class="text-end text-nowrap">0.05%</td></tr>
+        <tr><td>4. 한자 비율 &gt; 30%</td><td>동진(東晉)의 실권자 환온(桓溫)<br>→ 한자 비율 33.33%, 행 제외</td><td class="text-end text-nowrap">33,334행</td><td class="text-end text-nowrap">1.03%</td></tr>
+        <tr><td>5. 외국어 괄호 정리</td><td>고야마못(일본어: 湖山池 고야마이케[*])은…<br>→ 고야마못은…<br><span class="text-small">괄호·공백을 정리한 뒤 빈 행만 제외</span></td><td class="text-end text-nowrap">1,634행</td><td class="text-end text-nowrap">0.05%</td></tr>
+        <tr><td>6. 문자 비율 &lt; 20%</td><td>「HTTP 301」의 <code>```</code><br>→ 문자 비율 0%, 행 제외</td><td class="text-end text-nowrap">68,907행</td><td class="text-end text-nowrap">2.14%</td></tr>
+        <tr><td>7. 한글 비율 &lt; 30%</td><td>His works number more than 130 volumes. Some of these are:<br>→ 한글 비율 0%, 행 제외</td><td class="text-end text-nowrap">123,633행</td><td class="text-end text-nowrap">3.83%</td></tr>
+        <tr><td>8. 종결부호 없음</td><td>「산성로 (부산)」의 “북구”<br>→ .?!로 끝나지 않아 행 제외</td><td class="text-end text-nowrap">379,748행</td><td class="text-end text-nowrap">11.77%</td></tr>
+        <tr><td>추가. 전역 중복 제거</td><td>“참고: FIFA 자격 규정에 따라 소속된 국가대표팀 국기를 표시합니다.”<br>→ 2,259회 등장 중 1회 보존, 2,258회 제외</td><td class="text-end text-nowrap">421,696개 문장</td><td class="text-end text-nowrap">5.94%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="kw-notes text-small">
+    <div>비율의 분모: 1번은 전체 582,035개 문서, 2번은 수식 문서 제외 후 18,624,403행, 3~8번은 구조 행 제외 후 본문행 3,227,444개, 중복 제거는 분리된 문장 7,099,328개입니다.</div>
+    <div>5번은 1,031,684행의 내용을 변경했습니다. 그중 정리 후 빈 행이 된 1,634행을 제외 수로 집계했습니다. 한 행은 처음 탈락한 사유에 한 번만 집계합니다.</div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>단계</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td class="kw-rule">1. 다운로드</td><td>원본 582,035개 문서 · Parquet 2개 · 문서당 14개 열</td></tr>
+        <tr><td>2. text 추출</td><td>확인용 TXT 5개 · 원본 text와 동일 · 정제 전</td></tr>
+        <tr><td>3. 정제·문장 분리</td><td>본문행 3,227,444개 → 정제 문단 2,618,729개 → 문장 7,099,328개</td></tr>
+        <tr><td>4. 중복 제거</td><td>문장 7,099,328개 → 최종 6,677,632개</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-small">TXT 5개는 확인용 샘플이며, 전체 정제에는 원본 582,035개 문서를 모두 사용했습니다.</div>
+</div>

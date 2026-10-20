@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "phase": "token-frequency-verification",
+  "child_pid": null,
+  "started_at": "2026-10-17T20:07:29+0900",
+  "driver": {
+    "bytes": 7927,
+    "sha256": "f31c11fea64db7a44f422837282144698846469f339c183417644661a48a65ee"
+  },
+  "completed_phases": [
+    "step5-full-verification"
+  ],
+  "updated_at": "2026-10-17T21:15:48+0900",
+  "log": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/token-frequency-verification.log",
+  "error": "RuntimeError: Phase token-frequency-verification exited 1; see /Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/token-frequency-verification.log"
+}

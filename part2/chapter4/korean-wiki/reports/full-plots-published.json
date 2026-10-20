@@ -1,0 +1,120 @@
+{
+  "published_at": "2026-10-17T14:11:13.898Z",
+  "scope": "full",
+  "shard_count": 32,
+  "frequency_representation": "raw Kiwi form/POS before digit splitting",
+  "frequency": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-398262db-434a-426f-99f1-860f1de10104-html",
+    "title": "전체 토큰 빈도와 빈도 1 비율 — 숫자 분리 전 · 32/32개 파일",
+    "height": 630,
+    "heights": [
+      [
+        320,
+        630
+      ],
+      [
+        375,
+        614
+      ],
+      [
+        430,
+        614
+      ],
+      [
+        520,
+        614
+      ],
+      [
+        640,
+        614
+      ],
+      [
+        728,
+        614
+      ],
+      [
+        860,
+        614
+      ],
+      [
+        1000,
+        614
+      ],
+      [
+        1144,
+        614
+      ]
+    ]
+  },
+  "coverage": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-15445c1b-b3df-4906-bcce-fc98fc59d883-html",
+    "title": "전체 데이터의 사전 크기별 문장·문단 보존율",
+    "height": 2000,
+    "heights": [
+      [
+        320,
+        2248
+      ],
+      [
+        375,
+        2177
+      ],
+      [
+        430,
+        2138
+      ],
+      [
+        520,
+        2098
+      ],
+      [
+        640,
+        1395
+      ],
+      [
+        728,
+        1395
+      ],
+      [
+        860,
+        1303
+      ],
+      [
+        1000,
+        1303
+      ],
+      [
+        1144,
+        1303
+      ]
+    ]
+  },
+  "previews": {
+    "desktop": {
+      "width": 728,
+      "appearance": "dark",
+      "console_errors": 0
+    },
+    "mobile": {
+      "width": 320,
+      "appearance": "light",
+      "console_errors": 0
+    },
+    "controls": [
+      "frequency log/linear",
+      "coverage K=65536, log axis, full vocabulary"
+    ],
+    "horizontal_overflow": false
+  },
+  "singleton": {
+    "types": 878514,
+    "total_types": 1570824,
+    "type_percent": 55.92695298773128,
+    "total_occurrences": 292363011,
+    "occurrence_percent": 0.3004873964716419
+  },
+  "coverage_policies": [
+    "lecture paragraph: at least one sentence survives",
+    "strict paragraph: all original sentences survive"
+  ]
+}

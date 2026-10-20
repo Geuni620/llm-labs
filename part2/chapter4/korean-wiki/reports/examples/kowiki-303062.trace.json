@@ -1,0 +1,86 @@
+{
+  "id": "kowiki/303062",
+  "title": "신뢰 구간",
+  "source_file": "parquet/data/kowiki/000_00000.parquet",
+  "source_row_index": 4,
+  "step1_row": {
+    "text": "# 신뢰 구간\n\n통계학에서 신뢰 구간(信賴區間, 영어: confidence interval)은 모수가 어느 범위 안에 있는지를 확률적으로 보여주는 방법이다.\n신뢰 구간은 보통 표본에서 산출된 통계와 함께 제공된다. 예를 들어, \"신뢰수준 95%에서 투표자의 35%~45%가 A후보를 지지하고 있다.\"라고 할 때 95%는 신뢰수준이고 35%~45%는 신뢰구간이며 θ는 A후보의 지지율이다.\n\n## 정의\n0과 1 사이의 실수 {\\displaystyle \\gamma \\in [0,1]}가 주어졌다고 하자. 또한, 각 모수 {\\displaystyle \\theta \\in \\Theta }에 대한 확률 변수 {\\displaystyle X_{\\theta }}가 주어졌다고 하자. 이 경우, {\\displaystyle \\theta }의, 신뢰계수(信賴係數, 영어: confidence coefficient) {\\displaystyle \\gamma }의 신뢰 구역 {\\displaystyle I_{\\theta }\\subset \\Theta }는 다음과 같은 성질을 가지는, {\\displaystyle \\Theta }의 부분집합의 값을 갖는 확률변수이다.\n{\\displaystyle \\forall \\theta \\in I\\colon \\Pr(\\theta \\in I_{\\theta })=\\gamma }\n만약 하나만의 확률 변수 {\\displaystyle \\theta \\in \\mathbb {R} }를 고려할 경우, 보통 {\\displaystyle I_{\\theta }}는 구간이 된다. 이 경우, {\\displaystyle I_{\\theta }}를 신뢰 구간이라고 한다.\n보통, 신뢰 수준(信賴水準, 영어: confidence level)은 신뢰 계수를 백분율로 나타낸 것이다.\n\n## 같이 보기\n- 68-95-99.7 규칙\n- 신용 구간\n- 허용 오차\n- 예측구간\n\n",
+    "id": "kowiki/303062",
+    "wikiname": "kowiki",
+    "page_id": 303062,
+    "title": "신뢰 구간",
+    "url": "https://ko.wikipedia.org/wiki/%EC%8B%A0%EB%A2%B0_%EA%B5%AC%EA%B0%84",
+    "date_modified": "2025-03-03T07:45:39Z",
+    "in_language": "ko",
+    "wikidata_id": "Q208498",
+    "bytes_html": 28907,
+    "wikitext": "{{위키데이터 속성 추적}}\n[[통계학]]에서 '''신뢰 구간'''(信賴區間, {{llang|en|confidence interval}})은 [[모수]]가 어느 [[범위]] 안에 있는지를 [[확률]]적으로 보여주는 방법이다.\n\n신뢰 구간은 보통 표본에서 산출된 통계와 함께 제공된다. 예를 들어, \"신뢰수준 95%에서 투표자의 35%~45%가 A후보를 지지하고 있다.\"라고 할 때 95%는 신뢰수준이고 35%~45%는 신뢰구간이며 θ는 A후보의 지지율이다.\n\n== 정의 ==\n0과 1 사이의 실수 <math>\\gamma\\in[0,1]</math>가 주어졌다고 하자. 또한, 각 [[모수]] <math>\\theta\\in\\Theta</math>에 대한 [[확률 변수]] <math>X_\\theta</math>가 주어졌다고 하자. 이 경우, <math>\\theta</math>의, '''신뢰계수'''(信賴係數, {{llang|en|confidence coefficient}}) <math>\\gamma</math>의 '''신뢰 구역''' <math>I_\\theta\\subset\\Theta</math>는 다음과 같은 성질을 가지는, <math>\\Theta</math>의 부분집합의 값을 갖는 [[확률변수]]이다.\n:<math>\\forall\\theta\\in I\\colon\\Pr(\\theta\\in I_\\theta)=\\gamma</math>\n만약 하나만의 확률 변수 <math>\\theta\\in\\mathbb R</math>를 고려할 경우, 보통 <math>I_\\theta</math>는 [[구간]]이 된다. 이 경우, <math>I_\\theta</math>를 '''신뢰 구간'''이라고 한다.\n\n보통, '''신뢰 수준'''(信賴水準, {{llang|en|confidence level}})은 [[신뢰 계수]]를 [[백분율]]로 나타낸 것이다.\n\n== 같이 보기 ==\n* [[68-95-99.7 규칙]]\n* [[신용 구간]]\n* [[허용 오차]]\n* [[예측구간]]\n\n== 외부 링크 ==\n* {{eom|title=Confidence estimation}}\n* {{매스월드|id=ConfidenceInterval|title=Confidence interval}}\n\n{{전거 통제}}\n\n[[분류:통계학]]\n[[분류:통계학 용어]]",
+    "version": 38816207,
+    "infoboxes": "[]",
+    "has_math": true
+  },
+  "step2_file": "examples/kowiki-303062.text.txt",
+  "step2_equals_source_text": true,
+  "step3": {
+    "before": "# 신뢰 구간\n\n통계학에서 신뢰 구간(信賴區間, 영어: confidence interval)은 모수가 어느 범위 안에 있는지를 확률적으로 보여주는 방법이다.\n신뢰 구간은 보통 표본에서 산출된 통계와 함께 제공된다. 예를 들어, \"신뢰수준 95%에서 투표자의 35%~45%가 A후보를 지지하고 있다.\"라고 할 때 95%는 신뢰수준이고 35%~45%는 신뢰구간이며 θ는 A후보의 지지율이다.\n\n## 정의\n0과 1 사이의 실수 {\\displaystyle \\gamma \\in [0,1]}가 주어졌다고 하자. 또한, 각 모수 {\\displaystyle \\theta \\in \\Theta }에 대한 확률 변수 {\\displaystyle X_{\\theta }}가 주어졌다고 하자. 이 경우, {\\displaystyle \\theta }의, 신뢰계수(信賴係數, 영어: confidence coefficient) {\\displaystyle \\gamma }의 신뢰 구역 {\\displaystyle I_{\\theta }\\subset \\Theta }는 다음과 같은 성질을 가지는, {\\displaystyle \\Theta }의 부분집합의 값을 갖는 확률변수이다.\n{\\displaystyle \\forall \\theta \\in I\\colon \\Pr(\\theta \\in I_{\\theta })=\\gamma }\n만약 하나만의 확률 변수 {\\displaystyle \\theta \\in \\mathbb {R} }를 고려할 경우, 보통 {\\displaystyle I_{\\theta }}는 구간이 된다. 이 경우, {\\displaystyle I_{\\theta }}를 신뢰 구간이라고 한다.\n보통, 신뢰 수준(信賴水準, 영어: confidence level)은 신뢰 계수를 백분율로 나타낸 것이다.\n\n## 같이 보기\n- 68-95-99.7 규칙\n- 신용 구간\n- 허용 오차\n- 예측구간\n\n",
+    "document_rejected": true,
+    "document_rejected_by": "has_formula",
+    "raw_paragraphs": "",
+    "paragraphs": "",
+    "sentences": "",
+    "counts": {
+      "source_lines": 18,
+      "rejected_has_formula": 1,
+      "source_lines_in_formula_documents": 18,
+      "documents": 1,
+      "raw_paragraphs": 0,
+      "raw_characters": 0,
+      "clean_paragraphs": 0,
+      "clean_characters": 0,
+      "sentences": 0
+    },
+    "filter_snapshots": [
+      {
+        "number": 1,
+        "filter": "has_formula",
+        "text": ""
+      },
+      {
+        "number": 2,
+        "filter": "is_structural",
+        "text": ""
+      },
+      {
+        "number": 3,
+        "filter": "has_math_symbol",
+        "text": ""
+      },
+      {
+        "number": 4,
+        "filter": "hanja_ratio",
+        "text": ""
+      },
+      {
+        "number": 5,
+        "filter": "clean_paragraph",
+        "text": ""
+      },
+      {
+        "number": 6,
+        "filter": "letter_ratio",
+        "text": ""
+      },
+      {
+        "number": 7,
+        "filter": "hangul_ratio",
+        "text": ""
+      },
+      {
+        "number": 8,
+        "filter": "is_sentence_shape",
+        "text": ""
+      }
+    ],
+    "line_decisions": []
+  }
+}

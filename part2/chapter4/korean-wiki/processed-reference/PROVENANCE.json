@@ -1,0 +1,40 @@
+{
+  "verified_at_utc": "2026-10-17T07:44:05.728681+00:00",
+  "repo_id": "HuggingFaceFW/finewiki",
+  "revision_from_packaged_cache": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "snapshot_declared_by_pinned_dataset_card": "2025-08",
+  "repository_created_at": "2025-10-13T12:22:30.000Z",
+  "revision_date": "2025-10-22T11:02:22.000Z",
+  "pinned_readme_url": "https://huggingface.co/datasets/HuggingFaceFW/finewiki/blob/8bd13e72e6a002407649b3e898535f42ceb1aeb9/README.md",
+  "source_files": [
+    {
+      "path": "data/kowiki/000_00000.parquet",
+      "bytes": 1136708888,
+      "sha256_from_cache": "9d81151055ea2da4b483a1314c56d8f355f730d6a49a1144eaf0faca51d41e80",
+      "sha256_from_hugging_face": "9d81151055ea2da4b483a1314c56d8f355f730d6a49a1144eaf0faca51d41e80",
+      "cache_matches_remote": true,
+      "cache_recorded_at_utc": "2026-04-08T04:45:38.111321+00:00",
+      "raw_parquet_present_locally": false
+    },
+    {
+      "path": "data/kowiki/000_00001.parquet",
+      "bytes": 1053031472,
+      "sha256_from_cache": "ac7668e599cda4dbc426b9f5fdc6c5878adde302cb66ae97006700a5000b21c9",
+      "sha256_from_hugging_face": "ac7668e599cda4dbc426b9f5fdc6c5878adde302cb66ae97006700a5000b21c9",
+      "cache_matches_remote": true,
+      "cache_recorded_at_utc": "2026-04-08T04:45:38.217514+00:00",
+      "raw_parquet_present_locally": false
+    }
+  ],
+  "supplied_archive": {
+    "path": "/Users/geuni/Downloads/ko_wiki_cleaning.7z",
+    "format": "7z AES-encrypted archive",
+    "files": 337,
+    "uncompressed_bytes": 9073363432,
+    "verified_nonempty_file_crc32": 335,
+    "verified_empty_files": 2
+  },
+  "installed_path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/datasets/korean_wiki",
+  "original_parquet_included": false,
+  "verification_limit": "원본 Parquet은 제공 압축본에 없어 가공 결과를 원본부터 재생성해 대조하지는 않았음. 패키지의 다운로드 메타데이터는 고정 revision의 원격 파일 식별자와 일치함."
+}

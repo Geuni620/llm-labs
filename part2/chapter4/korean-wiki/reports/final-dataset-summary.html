@@ -1,0 +1,154 @@
+<div id="kowiki-final-summary">
+  <style>
+    #kowiki-final-summary { width:100%; color:var(--foreground); }
+    #kowiki-final-summary .summary-heading { padding-right:96px; margin-bottom:8px; }
+    #kowiki-final-summary .summary-meta { margin-bottom:22px; }
+    #kowiki-final-summary .summary-columns { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; }
+    #kowiki-final-summary section { min-width:0; }
+    #kowiki-final-summary .section-heading { margin-bottom:12px; }
+    #kowiki-final-summary .scope-control { max-width:220px; margin-bottom:12px; }
+    #kowiki-final-summary .source-table { margin-bottom:18px; }
+    #kowiki-final-summary .summary-caption { margin-top:10px; }
+    #kowiki-final-summary .value-detail { display:block; color:var(--muted-foreground); }
+    #kowiki-final-summary .summary-annotation { margin-top:18px; }
+    #kowiki-final-summary .timing-list { list-style:none; margin:0; padding:0; }
+    #kowiki-final-summary .timing-item { margin-bottom:14px; }
+    #kowiki-final-summary .timing-label { display:flex; gap:12px; align-items:baseline; justify-content:space-between; margin-bottom:5px; }
+    #kowiki-final-summary .timing-label span:first-child { min-width:0; }
+    #kowiki-final-summary .timing-value { white-space:nowrap; font-variant-numeric:tabular-nums; }
+    #kowiki-final-summary .timing-track { height:7px; background:color-mix(in srgb,var(--foreground) 7%,transparent); }
+    #kowiki-final-summary .timing-fill { height:100%; background:var(--viz-series-1); }
+    #kowiki-final-summary .timing-item[data-partial="true"] .timing-fill { background:var(--viz-series-2); }
+    #kowiki-final-summary .timing-scale { display:flex; justify-content:space-between; margin-top:2px; margin-bottom:12px; }
+    #kowiki-final-summary .timing-note { margin-top:8px; }
+    #kowiki-final-summary .footer-notes { margin-top:24px; padding-top:14px; border-top:1px solid var(--border); }
+    #kowiki-final-summary .footer-notes p + p { margin-top:8px; }
+    @media(max-width:639px) {
+      #kowiki-final-summary .summary-columns { grid-template-columns:minmax(0,1fr); gap:28px; }
+    }
+  </style>
+  <div class="summary-heading"><h2>한국어 위키 · 최종 결과와 처리 시간</h2></div>
+  <p class="summary-meta text-small text-muted">2025년 8월 원본 · 사전 <span data-vocabulary></span>종 · 숫자 자릿수 분리 반영</p>
+  <div class="summary-columns">
+    <section aria-labelledby="kw-final-data-heading">
+      <h3 id="kw-final-data-heading" class="section-heading">입력 → 최종 데이터</h3>
+      <table class="table table-sm source-table" aria-label="전체 데이터 정제 결과">
+        <tbody>
+          <tr><th scope="row">원본 문서</th><td class="text-end text-nowrap" data-source="documents"></td></tr>
+          <tr><th scope="row">클린 문단</th><td class="text-end text-nowrap" data-source="clean_paragraphs"></td></tr>
+          <tr><th scope="row">중복 제거 후 문장</th><td class="text-end text-nowrap" data-source="deduplicated_sentences"></td></tr>
+          <tr><th scope="row">중복 제거 후 문단</th><td class="text-end text-nowrap" data-source="deduplicated_paragraphs"></td></tr>
+        </tbody>
+      </table>
+      <div class="scope-control">
+        <label class="form-label" for="kw-summary-scope">최종 자료 범위</label>
+        <select class="form-select" id="kw-summary-scope">
+          <option value="train">학습</option><option value="validation">검증</option>
+          <option value="test">테스트</option><option value="all">3분할 합계</option>
+        </select>
+      </div>
+      <table class="table table-sm" aria-label="선택한 범위의 최종 정수 데이터">
+        <tbody id="kw-final-values" aria-live="polite"></tbody>
+      </table>
+      <p id="kw-retention" class="summary-caption text-small"></p>
+      <p class="summary-caption text-small text-muted">문단은 한 문장 이상 남으면 보존. 보존율의 분모는 선택한 분할의 OOV 검사 전 자료.</p>
+      <p class="summary-annotation text-small">본문 토큰 + 문단 끝 EOS → 예측 대상<br>예측 대상 + 문단 앞 BOS 8개 → 저장 ID</p>
+      <p class="summary-caption text-small text-muted">본문 토큰은 공백 포함. 용량은 사전·출처 기록·체크포인트·보존된 원본 정수 파일 제외.</p>
+    </section>
+    <section aria-labelledby="kw-final-time-heading">
+      <h3 id="kw-final-time-heading" class="section-heading">단계별 기록 시간</h3>
+      <div class="timing-scale text-small text-muted"><span>0</span><span id="kw-time-maximum"></span></div>
+      <ol class="timing-list" id="kw-timing-list" aria-label="단계별 프로그램 경과 시간"></ol>
+      <p class="timing-note text-small">* 숫자 변환은 32개 파일 처리 시간 합계. 대기·최종 빈도표 생성 제외.</p>
+      <p class="timing-note text-small">† 출처 복원·사전·OOV·정수 저장을 묶은 내부 측정. 최초 원본 해시 확인 제외.</p>
+      <p class="timing-note text-small text-muted">다운로드·TXT 확인·NumPy 추가 내보내기·숫자 빈도표 단독 생성: 개별 소요 시간 미기록.</p>
+    </section>
+  </div>
+  <div class="footer-notes text-small">
+    <p id="kw-wait-note"></p>
+    <p><strong>시간 합산 제외:</strong> 일부 단계가 병행됐고 대기 시간이 겹칩니다. 막대는 단계별 기록이며 전체 소요 시간의 비중이 아닙니다.</p>
+    <p><strong>사전 크기 변경 시:</strong> 정제·중복 제거·Kiwi·숫자 분리 결과 재사용 → 사전 선택·OOV 필터·정수 인코딩 재수행.</p>
+    <p class="text-muted">35,328종은 보존율과 속도로 고른 출발 후보. 실제 모델 학습·성능 비교는 다음 챕터로 보류.</p>
+  </div>
+  <script>
+  (() => {
+    const data = {"status": "complete", "created_at": "2026-10-18T11:08:07.119588+09:00", "vocabulary_size": 35328, "reserved_ids": 4, "context_size": 8, "source": {"snapshot": "2025-08", "documents": 582035, "clean_paragraphs": 2618729, "extracted_sentences": 7099328, "deduplicated_sentences": 6677632, "deduplicated_paragraphs": 2496587, "raw_tokens": 292363011, "numeric_tokens": 302281587, "numeric_unique_types": 1484881}, "splits": {"train": {"label": "학습", "eligible_sentences": 6539471, "source_paragraphs": 2445492, "sentences": 2977860, "paragraphs": 1529599, "body_tokens": 122702936, "target_windows": 124232535, "stored_ids": 136469327, "bos_ids": 12236792, "eos_ids": 1529599, "id_npy_bytes": 272938782, "paragraph_npy_bytes": 42828964, "sentence_keep_percent": 45.536710844042275, "paragraph_any_keep_percent": 62.54770001292174, "id_and_paragraph_bytes": 315767746}, "validation": {"label": "검증", "eligible_sentences": 70935, "source_paragraphs": 26391, "sentences": 31398, "paragraphs": 16365, "body_tokens": 1270336, "target_windows": 1286701, "stored_ids": 1417621, "bos_ids": 130920, "eos_ids": 16365, "id_npy_bytes": 2835370, "paragraph_npy_bytes": 458412, "sentence_keep_percent": 44.263057728906745, "paragraph_any_keep_percent": 62.009776060020464, "id_and_paragraph_bytes": 3293782}, "test": {"label": "테스트", "eligible_sentences": 66543, "source_paragraphs": 24704, "sentences": 30041, "paragraphs": 15477, "body_tokens": 1232460, "target_windows": 1247937, "stored_ids": 1371753, "bos_ids": 123816, "eos_ids": 15477, "id_npy_bytes": 2743634, "paragraph_npy_bytes": 433548, "sentence_keep_percent": 45.145244428414706, "paragraph_any_keep_percent": 62.64977331606217, "id_and_paragraph_bytes": 3177182}, "all": {"label": "3분할 합계", "eligible_sentences": 6676949, "source_paragraphs": 2496587, "sentences": 3039299, "paragraphs": 1561441, "body_tokens": 125205732, "target_windows": 126767173, "stored_ids": 139258701, "bos_ids": 12491528, "eos_ids": 1561441, "id_npy_bytes": 278517786, "paragraph_npy_bytes": 43720924, "sentence_keep_percent": 45.51927834105068, "paragraph_any_keep_percent": 62.54302373600439, "id_and_paragraph_bytes": 322238710}}, "timings": [{"label": "문단·문장 추출", "seconds": 248.59, "source": "reports/step3-summary.json:elapsed_seconds", "kind": "elapsed", "note": ""}, {"label": "전역 중복 제거", "seconds": 75.19, "source": "reports/step4-summary.json:elapsed_seconds", "kind": "elapsed", "note": ""}, {"label": "전처리 독립 검증", "seconds": 39.79, "source": "reports/verification.json:elapsed_seconds", "kind": "elapsed", "note": ""}, {"label": "Kiwi 토큰화", "seconds": 9063.262793458998, "source": "reports/step5-summary.json:elapsed_seconds", "kind": "elapsed", "note": "cong-global · 워커 8개 · 전체 32파일"}, {"label": "Kiwi 독립 검증", "seconds": 444.33, "source": "reports/step5-verification.json:elapsed_seconds", "kind": "elapsed", "note": ""}, {"label": "빈도표 독립 검증", "seconds": 51.48, "source": "reports/token-frequency-verification.json:elapsed_seconds", "kind": "elapsed", "note": "복구 후 최종 통과한 재검증 1회"}, {"label": "숫자 파일 변환*", "seconds": 1268.9431159209926, "source": "reports/step6-numeric-state.json:completed[*].elapsed_seconds sum", "kind": "partial_sum", "note": "32개 파일 변환 함수의 경과시간 합계. 소스 대기와 최종 숫자 빈도표 생성 제외."}, {"label": "숫자 독립 검증", "seconds": 198.61231175001012, "source": "reports/step6-numeric-verification.json:elapsed_seconds", "kind": "elapsed", "note": ""}, {"label": "사전별 보존율 분석", "seconds": 241.7256710419897, "source": "reports/vocabulary-coverage.json:elapsed_seconds", "kind": "elapsed", "note": ""}, {"label": "사전·OOV·정수 준비†", "seconds": 1394.0311385839595, "source": "training-corpora/wiki-k35328/manifest.json:elapsed_seconds", "kind": "bundled_elapsed", "note": "출처 복원·train 빈도·사전·OOV·정수 코퍼스 저장을 묶은 내부 측정. 최초 원본 해시 확인 제외."}], "watcher_timing": {"label": "원본 빈도 집계", "seconds": 8433.535593833949, "source": "reports/token-frequency-summary.json:elapsed_seconds", "includes_waiting": true}, "unrecorded_timings": ["Hugging Face 다운로드", "TXT 샘플 확인", "NumPy 추가 내보내기", "숫자 빈도표 생성 단독 시간"], "timing_policy": "Reported program elapsed times and explicitly marked partial sums; concurrent watch processes overlap. Do not sum into an overall total or infer CPU time/percentage allocation.", "storage_policy": "MB=1,000,000 bytes; MiB=1,048,576 bytes. ID arrays and optional paragraph metadata exclude vocabulary/provenance/retained .u16/checkpoints.", "vocabulary_policy": "Final train-only vocabulary and OOV-filtered corpus. Exploratory full-frequency K curves are separate.", "reuse_policy": "When K changes, reuse cleaning, deduplication, Kiwi and numeric token files; rebuild train vocabulary selection, OOV filtering and integer encoding.", "training_status": "deferred_by_user", "model_training_started_by_summary": false};
+    const root = document.getElementById('kowiki-final-summary');
+    const format = value => new Intl.NumberFormat('ko-KR').format(value);
+    const duration = seconds => {
+      const total = Math.round(seconds), h = Math.floor(total / 3600), m = Math.floor(total % 3600 / 60), s = total % 60;
+      return (h ? h+'시간 ' : '') + (m ? m+'분 ' : '') + (s || !h && !m ? s+'초' : '');
+    };
+    const size = bytes => (bytes/1048576).toLocaleString('ko-KR',{maximumFractionDigits:2,minimumFractionDigits:2})+' MiB';
+    const mb = bytes => (bytes/1000000).toLocaleString('ko-KR',{maximumFractionDigits:2,minimumFractionDigits:2})+' MB';
+    const select = root.querySelector('#kw-summary-scope');
+    const values = root.querySelector('#kw-final-values');
+    const saved = window.openai?.widgetState?.modelContent?.summaryScope;
+    if (data.splits[saved]) select.value = saved;
+    root.querySelector('[data-vocabulary]').textContent = format(data.vocabulary_size);
+    root.querySelectorAll('[data-source]').forEach(cell => cell.textContent = format(data.source[cell.dataset.source]));
+    function renderScope(scope) {
+      const item = data.splits[scope];
+      const rows = [
+        ['OOV 검사 전 문장', format(item.eligible_sentences)],
+        ['OOV 통과 문장', format(item.sentences)],
+        ['OOV 통과 문단', format(item.paragraphs)],
+        ['본문 토큰', format(item.body_tokens)],
+        ['한 번 순회할 예측 대상', format(item.target_windows)],
+        ['저장 정수 ID', format(item.stored_ids)],
+        ['ID 배열 크기 · .npy', size(item.id_npy_bytes), mb(item.id_npy_bytes)],
+        ['문단 정보까지 포함', size(item.id_and_paragraph_bytes), mb(item.id_and_paragraph_bytes)]
+      ];
+      values.replaceChildren(...rows.map(([label,value,detail]) => {
+        const tr=document.createElement('tr'),th=document.createElement('th'),td=document.createElement('td');
+        th.scope='row';th.textContent=label;td.className='text-end text-nowrap';td.textContent=value;
+        if(detail){const small=document.createElement('span');small.className='value-detail text-small';small.textContent=detail;td.append(small);}
+        tr.append(th,td);return tr;
+      }));
+      root.querySelector('#kw-retention').textContent = item.label+' 자료 보존율: 문장 '+item.sentence_keep_percent.toFixed(2)+'% · 문단 '+item.paragraph_any_keep_percent.toFixed(2)+'%';
+      root.dataset.scope=scope;
+    }
+    renderScope(select.value);
+    select.addEventListener('change', () => {
+      renderScope(select.value);
+      if(window.openai?.setWidgetState) Promise.resolve(window.openai.setWidgetState({modelContent:{summaryScope:select.value},privateContent:null})).catch(()=>{});
+      inspectLayout();
+    });
+    window.addEventListener('openai:set_globals',event=>{
+      const scope=event.detail?.globals?.widgetState?.modelContent?.summaryScope;
+      if(data.splits[scope]){select.value=scope;renderScope(scope);}
+    });
+    const maximum=Math.max(...data.timings.map(row=>row.seconds));
+    root.querySelector('#kw-time-maximum').textContent=duration(maximum)+' · 동일 축';
+    const list=root.querySelector('#kw-timing-list');
+    data.timings.forEach(row=>{
+      const li=document.createElement('li');li.className='timing-item';li.dataset.partial=String(row.kind==='partial_sum');
+      const label=document.createElement('div');label.className='timing-label';
+      const name=document.createElement('span');name.textContent=row.label;
+      const value=document.createElement('span');value.className='timing-value';value.textContent=duration(row.seconds);
+      label.append(name,value);
+      const track=document.createElement('div');track.className='timing-track';track.setAttribute('role','img');track.setAttribute('aria-label',row.label+' '+row.seconds.toFixed(2)+'초. '+row.note);
+      const fill=document.createElement('div');fill.className='timing-fill';fill.style.width=100*row.seconds/maximum+'%';track.append(fill);
+      li.append(label,track);list.append(li);
+    });
+    root.querySelector('#kw-wait-note').textContent='원본 빈도 집계 '+duration(data.watcher_timing.seconds)+': Kiwi 완료 파일 대기를 포함한 병행 실행의 경과 시간.';
+    function inspectLayout() {
+      requestAnimationFrame(()=>{
+        const overflow=document.documentElement.scrollWidth>window.innerWidth;
+        if(overflow) console.error('summary horizontal overflow',document.documentElement.scrollWidth,window.innerWidth);
+        else console.log('summary layout OK',window.innerWidth,root.dataset.scope);
+      });
+    }
+    const previous=select.value;
+    const checks=Object.keys(data.splits).map(scope=>{
+      renderScope(scope);
+      const item=data.splits[scope];
+      return {scope,rows:values.children.length,ids:item.stored_ids,bodyPlusEOS:item.body_tokens+item.eos_ids===item.target_windows,targetPlusBOS:item.target_windows+item.bos_ids===item.stored_ids};
+    });
+    renderScope(previous);
+    console.log('summary scope checks',JSON.stringify(checks));
+    inspectLayout();
+    new ResizeObserver(inspectLayout).observe(root);
+  })();
+  </script>
+</div>

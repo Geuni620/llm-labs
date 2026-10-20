@@ -1,0 +1,870 @@
+{
+  "config": {
+    "schema_version": 1,
+    "model_type": "cong-global",
+    "kiwipiepy_version": "0.24.0",
+    "kiwipiepy_model_version": "0.24.0",
+    "python_version": "3.13.7",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "workers": 8,
+    "batch_size": 1024,
+    "newline": "CRLF",
+    "space_token": "<sp>/WS",
+    "model_files": {
+      "combiningRule.txt": {
+        "bytes": 3611,
+        "sha256": "4f78771daa3dd8a52aa0b5c8824396578ece8e8bbaa11cf3add82721b046bc15",
+        "crc32": "daa2e48a"
+      },
+      "cong.mdl": {
+        "bytes": 75854705,
+        "sha256": "5f64105e45f04e5313f41c0ff1db5fe629780c8076c4a6fd3b1b2cf78c2cc934",
+        "crc32": "4fab305d"
+      },
+      "default.dict": {
+        "bytes": 3090954,
+        "sha256": "d4293e44b2588d0c3aabbce607a0f41ad3534abd31b34139847b127254e01549",
+        "crc32": "18c62ac2"
+      },
+      "dialect.dict": {
+        "bytes": 644,
+        "sha256": "bb6f0ab37dbfcc0fd33dc679121218d24725ae438f31bb362f9b24703e93cda2",
+        "crc32": "dd0cd4f4"
+      },
+      "extract.mdl": {
+        "bytes": 17370,
+        "sha256": "a0c92ffc051e43ae497845cdb8d4c8b9e2f359893cb55c67279c76d1d531ee17",
+        "crc32": "30a844b2"
+      },
+      "multi.dict": {
+        "bytes": 12064440,
+        "sha256": "e9eff7712d163b214c750333a5d388ab77b50ec386ae55b360babcd24c0c3195",
+        "crc32": "33093a84"
+      },
+      "nounchr.mdl": {
+        "bytes": 9734234,
+        "sha256": "4b687e36836dd60dcb7addcfcf369ac082b339bab76549574ac1ce2b7ccd6836",
+        "crc32": "9bda57d7"
+      },
+      "sj.morph": {
+        "bytes": 8462892,
+        "sha256": "d0af27b3863799cc2058f66c8058cb2bc0d16e8ae0daaf42c7739b4e375523d7",
+        "crc32": "85bc56ac"
+      },
+      "typo.dict": {
+        "bytes": 395,
+        "sha256": "aa15e48fcd32886441fc1ff9719a3109d3192e91d4b67efbd64260610d68322d",
+        "crc32": "875eec02"
+      }
+    },
+    "tokenizer_sha256": "af2200e1b788a5251b1b278f16a056ee0878cf46870ad8168ab7c7c30f70b4dd"
+  },
+  "inputs": {
+    "part_00.txt": {
+      "bytes": 32707665,
+      "mtime_ns": 1792227642859480802,
+      "sha256": "7bf903da925854e3a8c85ff1ae2ffa2821292e2fc5faf5daa7818884c7c59512",
+      "crc32": "6c31b0dc"
+    },
+    "part_01.txt": {
+      "bytes": 30382209,
+      "mtime_ns": 1792227644568500938,
+      "sha256": "2b40039ae5fcd2aad1e21759392f6cad39ce498af2c209c43d5d237202e3b13a",
+      "crc32": "2c4fcb89"
+    },
+    "part_02.txt": {
+      "bytes": 31086307,
+      "mtime_ns": 1792227646286108375,
+      "sha256": "63a31a5fc12e2d17d46e823fe57398612762b7dc7a79d4685fab20d98042ee24",
+      "crc32": "1fd45887"
+    },
+    "part_03.txt": {
+      "bytes": 29635969,
+      "mtime_ns": 1792227650207534841,
+      "sha256": "fba63a842dc0cbef1d36c532f9fdbccb94b078b236cd703883ec15e7e63a8af6",
+      "crc32": "81e2a044"
+    },
+    "part_04.txt": {
+      "bytes": 30322122,
+      "mtime_ns": 1792227652526822285,
+      "sha256": "99ea5a2e08d045955ce0813b37847ffd16c12ac9667877783f32450775f3f2e6",
+      "crc32": "20ed69b1"
+    },
+    "part_05.txt": {
+      "bytes": 31065428,
+      "mtime_ns": 1792227654314671951,
+      "sha256": "141213c569de3874cbf90e67cb15f0c594bb44aff158d8027831d940bcb339a8",
+      "crc32": "92d5cbd5"
+    },
+    "part_06.txt": {
+      "bytes": 33217961,
+      "mtime_ns": 1792227657195614228,
+      "sha256": "0820aada9eae7a3a53caa4268a3cb497983aec7322aa10837545c3702a495a81",
+      "crc32": "32f3d7ba"
+    },
+    "part_07.txt": {
+      "bytes": 33663348,
+      "mtime_ns": 1792227659471610001,
+      "sha256": "dd2b7592046a2af2164fbcb820e789a8b56f5ce84706bf31bea271d246f1dfa3",
+      "crc32": "a467ff7a"
+    },
+    "part_08.txt": {
+      "bytes": 32013093,
+      "mtime_ns": 1792227661274706796,
+      "sha256": "7e0e4cb8ec79ca30fe3b866ee4e2bdceb69148b48c11651020ec572acb6e8901",
+      "crc32": "173df1f9"
+    },
+    "part_09.txt": {
+      "bytes": 30399175,
+      "mtime_ns": 1792227663123662480,
+      "sha256": "e3731eee8f61e6949da29eb99fd3753bca90756073f60102a841c2d9f77dc333",
+      "crc32": "dd607986"
+    },
+    "part_10.txt": {
+      "bytes": 32125577,
+      "mtime_ns": 1792227665464034184,
+      "sha256": "4d8ec2418d6738125ff2397ca7897a71b3c9355f16df2f39e89975f5b570fa6e",
+      "crc32": "03a6df78"
+    },
+    "part_11.txt": {
+      "bytes": 32687757,
+      "mtime_ns": 1792227667273792558,
+      "sha256": "26529d9bf9df2a1100bce69c7f89796c432c89ddb715ef88587910a88f17fe44",
+      "crc32": "703a6524"
+    },
+    "part_12.txt": {
+      "bytes": 31884146,
+      "mtime_ns": 1792227669169238328,
+      "sha256": "c1bb231b1554cc0650a88dd42a589cce61520253e742204c0c811ec5b9fc92d2",
+      "crc32": "02a9449a"
+    },
+    "part_13.txt": {
+      "bytes": 30697571,
+      "mtime_ns": 1792227670980363434,
+      "sha256": "08ccc886d006209566fb8a566b145e0dd6a8eaac3ab4c7fd9760189340c3f153",
+      "crc32": "6eb7737d"
+    },
+    "part_14.txt": {
+      "bytes": 29872461,
+      "mtime_ns": 1792227672726565698,
+      "sha256": "fa6b15918ddb618c26cb4bfeace8b3e82ff69772ec82cd684400531fac0fae69",
+      "crc32": "b218259b"
+    },
+    "part_15.txt": {
+      "bytes": 32759871,
+      "mtime_ns": 1792227674687150266,
+      "sha256": "b1f2f925a6f4d610887dfee73e03aaba2104bf2687b499a0b22a1b10dea9784e",
+      "crc32": "c40fcb63"
+    },
+    "part_16.txt": {
+      "bytes": 30509248,
+      "mtime_ns": 1792227676388579628,
+      "sha256": "791a06856774be65e7316b3b65d57702e5e6923ff1c491baeae270f3956dea5b",
+      "crc32": "e3be5823"
+    },
+    "part_17.txt": {
+      "bytes": 29837317,
+      "mtime_ns": 1792227678098921412,
+      "sha256": "a9fb62ffa3d1ee3e3abcc8fd191f96546ad7ef1af3bb8a0767903e8d8cc80568",
+      "crc32": "6396df53"
+    },
+    "part_18.txt": {
+      "bytes": 31534821,
+      "mtime_ns": 1792227679896571406,
+      "sha256": "2d923b54caa6ea2a022b7c816268667cf0e7e53d1098b9058af7fa737a9f38b6",
+      "crc32": "a69944d2"
+    },
+    "part_19.txt": {
+      "bytes": 30187861,
+      "mtime_ns": 1792227684878480084,
+      "sha256": "1578ff3ad90b578c10973e10a3b4b498be6bdf21729e694d655e14115c49e5bb",
+      "crc32": "fb2701b8"
+    },
+    "part_20.txt": {
+      "bytes": 29937180,
+      "mtime_ns": 1792227686907796359,
+      "sha256": "1267171373c829a97075b1537119e70d84e27e33ed3c6298eabebe08911816b0",
+      "crc32": "fc0b4481"
+    },
+    "part_21.txt": {
+      "bytes": 28668624,
+      "mtime_ns": 1792227688755684932,
+      "sha256": "06a6a97cd077426ed93531e994b6ed421eb5f9f29b9cc040551521b577e61372",
+      "crc32": "1cb870d5"
+    },
+    "part_22.txt": {
+      "bytes": 26137935,
+      "mtime_ns": 1792227690374887933,
+      "sha256": "212ed824c8d5a5fd1a0bdbfb8288cea076a9c1634de660cef6f9db23dd0e9681",
+      "crc32": "ce813750"
+    },
+    "part_23.txt": {
+      "bytes": 29251822,
+      "mtime_ns": 1792227692463623956,
+      "sha256": "6bc76f5a718e48df73e7ae10f9115f8c354d6a2a8fee5465bd6783f23b5ce385",
+      "crc32": "2cf52203"
+    },
+    "part_24.txt": {
+      "bytes": 29882606,
+      "mtime_ns": 1792227694407194876,
+      "sha256": "910c27c9e1e4a0e338cb35a60041059f365f3d1b3effbc2fb2104efe178888e6",
+      "crc32": "4cdedfef"
+    },
+    "part_25.txt": {
+      "bytes": 30668867,
+      "mtime_ns": 1792227697242986506,
+      "sha256": "652a9c343c6d5257c3f27ea2bf9f7b1a839207d6bd7aa123432a8f1806dd3dc3",
+      "crc32": "99b98db1"
+    },
+    "part_26.txt": {
+      "bytes": 32410143,
+      "mtime_ns": 1792227699380129008,
+      "sha256": "892ae889f676c836765d74626ba067291a116db765f2e675afe17d14d5da8500",
+      "crc32": "c8f48b1c"
+    },
+    "part_27.txt": {
+      "bytes": 28467909,
+      "mtime_ns": 1792227701087757370,
+      "sha256": "2a6c2c44b36109fe8abd03b9f5acfaccdd19137e92a8a0747be548a225315494",
+      "crc32": "eee2bdfc"
+    },
+    "part_28.txt": {
+      "bytes": 28872990,
+      "mtime_ns": 1792227702687049305,
+      "sha256": "57278b03ba41559d2552f37cde80e68cd29c266887c5a1c9dc56d78a287c0462",
+      "crc32": "dd4788e4"
+    },
+    "part_29.txt": {
+      "bytes": 30134005,
+      "mtime_ns": 1792227704424762765,
+      "sha256": "a9240953b458c654bb67bdb82f33c58876df8a4557d7137fe7f462a1a11dd7d8",
+      "crc32": "ec0c9cea"
+    },
+    "part_30.txt": {
+      "bytes": 29434106,
+      "mtime_ns": 1792227706140329355,
+      "sha256": "8fae64ad6d4d7e06961303370d53ef03d943040314f4d0c8acd1a040e20f454e",
+      "crc32": "716692e9"
+    },
+    "part_31.txt": {
+      "bytes": 29656453,
+      "mtime_ns": 1792227707810857380,
+      "sha256": "adee0f40afc1fdb17c98151d8989854443227193080b37ca98cb5fc8690efcc8",
+      "crc32": "208293cd"
+    }
+  },
+  "completed": {
+    "part_00.txt": {
+      "sentences": 224183,
+      "paragraphs": 82354,
+      "tokens": 9765059,
+      "space_tokens": 2941027,
+      "input": {
+        "bytes": 32707665,
+        "mtime_ns": 1792227642859480802,
+        "sha256": "7bf903da925854e3a8c85ff1ae2ffa2821292e2fc5faf5daa7818884c7c59512",
+        "crc32": "6c31b0dc"
+      },
+      "output": {
+        "bytes": 86266708,
+        "mtime_ns": 1792230065132608198,
+        "sha256": "ff9550642fb47c841a3adf6a08c081b454cf4a4192e7dd7991691a9bab1afc9d",
+        "crc32": "064e13b2"
+      },
+      "elapsed_seconds": 397.854535957973
+    },
+    "part_01.txt": {
+      "sentences": 210698,
+      "paragraphs": 78475,
+      "tokens": 9062673,
+      "space_tokens": 2731875,
+      "input": {
+        "bytes": 30382209,
+        "mtime_ns": 1792227644568500938,
+        "sha256": "2b40039ae5fcd2aad1e21759392f6cad39ce498af2c209c43d5d237202e3b13a",
+        "crc32": "2c4fcb89"
+      },
+      "output": {
+        "bytes": 80081550,
+        "mtime_ns": 1792230239212164046,
+        "sha256": "a225d2bc816fd7e7c5d47386a5013dda45ac0cb22fcad2b4ba39a6b7b119ad9e",
+        "crc32": "7edd61c8"
+      },
+      "elapsed_seconds": 174.06432020803913
+    },
+    "part_02.txt": {
+      "sentences": 212258,
+      "paragraphs": 79287,
+      "tokens": 9267074,
+      "space_tokens": 2794137,
+      "input": {
+        "bytes": 31086307,
+        "mtime_ns": 1792227646286108375,
+        "sha256": "63a31a5fc12e2d17d46e823fe57398612762b7dc7a79d4685fab20d98042ee24",
+        "crc32": "1fd45887"
+      },
+      "output": {
+        "bytes": 81911583,
+        "mtime_ns": 1792230444989162656,
+        "sha256": "16e0d4869b06737b64e497753097cdae5ecf150fe8b69f4b310df7be4d2eae56",
+        "crc32": "18227da2"
+      },
+      "elapsed_seconds": 205.8085485419724
+    },
+    "part_03.txt": {
+      "sentences": 204543,
+      "paragraphs": 77925,
+      "tokens": 8833262,
+      "space_tokens": 2658287,
+      "input": {
+        "bytes": 29635969,
+        "mtime_ns": 1792227650207534841,
+        "sha256": "fba63a842dc0cbef1d36c532f9fdbccb94b078b236cd703883ec15e7e63a8af6",
+        "crc32": "81e2a044"
+      },
+      "output": {
+        "bytes": 78050775,
+        "mtime_ns": 1792230662930859293,
+        "sha256": "dfa9c776024964b10d5a524082bf8b03959000624af99db4872870c67d9af48a",
+        "crc32": "f7357c6d"
+      },
+      "elapsed_seconds": 217.88087950000772
+    },
+    "part_04.txt": {
+      "sentences": 209185,
+      "paragraphs": 79131,
+      "tokens": 9029654,
+      "space_tokens": 2719069,
+      "input": {
+        "bytes": 30322122,
+        "mtime_ns": 1792227652526822285,
+        "sha256": "99ea5a2e08d045955ce0813b37847ffd16c12ac9667877783f32450775f3f2e6",
+        "crc32": "20ed69b1"
+      },
+      "output": {
+        "bytes": 79812460,
+        "mtime_ns": 1792230896073209780,
+        "sha256": "e1f7c10222ac614b25384a3b45e734a637425417b48bcea8a6a29793d7b1045f",
+        "crc32": "0f1d7964"
+      },
+      "elapsed_seconds": 233.12474095798098
+    },
+    "part_05.txt": {
+      "sentences": 211400,
+      "paragraphs": 79653,
+      "tokens": 9269216,
+      "space_tokens": 2791762,
+      "input": {
+        "bytes": 31065428,
+        "mtime_ns": 1792227654314671951,
+        "sha256": "141213c569de3874cbf90e67cb15f0c594bb44aff158d8027831d940bcb339a8",
+        "crc32": "92d5cbd5"
+      },
+      "output": {
+        "bytes": 81882120,
+        "mtime_ns": 1792231090402943755,
+        "sha256": "4d8de2c05216d0efd57d14ae00af62314df233f3d6180b267c5c2d78b43eb829",
+        "crc32": "3f75d53c"
+      },
+      "elapsed_seconds": 194.32703420799226
+    },
+    "part_06.txt": {
+      "sentences": 226804,
+      "paragraphs": 85057,
+      "tokens": 9912331,
+      "space_tokens": 2979877,
+      "input": {
+        "bytes": 33217961,
+        "mtime_ns": 1792227657195614228,
+        "sha256": "0820aada9eae7a3a53caa4268a3cb497983aec7322aa10837545c3702a495a81",
+        "crc32": "32f3d7ba"
+      },
+      "output": {
+        "bytes": 87530165,
+        "mtime_ns": 1792231321526758177,
+        "sha256": "f9238d709eeaf44566bb85d8977880bc0fa57791d884dc60e0f09d33db6150cf",
+        "crc32": "94baac53"
+      },
+      "elapsed_seconds": 231.11587891698582
+    },
+    "part_07.txt": {
+      "sentences": 227590,
+      "paragraphs": 84033,
+      "tokens": 10043375,
+      "space_tokens": 3022711,
+      "input": {
+        "bytes": 33663348,
+        "mtime_ns": 1792227659471610001,
+        "sha256": "dd2b7592046a2af2164fbcb820e789a8b56f5ce84706bf31bea271d246f1dfa3",
+        "crc32": "a467ff7a"
+      },
+      "output": {
+        "bytes": 88722312,
+        "mtime_ns": 1792231527574095866,
+        "sha256": "e0ecb3bfd81fbc2f41952d4275f3c8d704f289dc33a08f2542036bb5468c761f",
+        "crc32": "8e940f5e"
+      },
+      "elapsed_seconds": 206.02231179201044
+    },
+    "part_08.txt": {
+      "sentences": 218780,
+      "paragraphs": 82104,
+      "tokens": 9538516,
+      "space_tokens": 2871778,
+      "input": {
+        "bytes": 32013093,
+        "mtime_ns": 1792227661274706796,
+        "sha256": "7e0e4cb8ec79ca30fe3b866ee4e2bdceb69148b48c11651020ec572acb6e8901",
+        "crc32": "173df1f9"
+      },
+      "output": {
+        "bytes": 84287573,
+        "mtime_ns": 1792231719972526844,
+        "sha256": "56430d576e96575a4cc62111b67e442cea0663f4ebd1c9ad47906526471fa801",
+        "crc32": "91d6030b"
+      },
+      "elapsed_seconds": 192.38962287496543
+    },
+    "part_09.txt": {
+      "sentences": 208968,
+      "paragraphs": 78829,
+      "tokens": 9061237,
+      "space_tokens": 2726367,
+      "input": {
+        "bytes": 30399175,
+        "mtime_ns": 1792227663123662480,
+        "sha256": "e3731eee8f61e6949da29eb99fd3753bca90756073f60102a841c2d9f77dc333",
+        "crc32": "dd607986"
+      },
+      "output": {
+        "bytes": 80054656,
+        "mtime_ns": 1792231881189214685,
+        "sha256": "e2dbd6d2b81d33423c404bfc919466b3afbb15531ae9a9ac6d52fc61993e8f1a",
+        "crc32": "0cce57b1"
+      },
+      "elapsed_seconds": 161.20268316700822
+    },
+    "part_10.txt": {
+      "sentences": 217319,
+      "paragraphs": 80738,
+      "tokens": 9579589,
+      "space_tokens": 2888437,
+      "input": {
+        "bytes": 32125577,
+        "mtime_ns": 1792227665464034184,
+        "sha256": "4d8ec2418d6738125ff2397ca7897a71b3c9355f16df2f39e89975f5b570fa6e",
+        "crc32": "03a6df78"
+      },
+      "output": {
+        "bytes": 84637737,
+        "mtime_ns": 1792232067645219048,
+        "sha256": "149037a03653b2d40758432945a09390b2d511a6402e656b8f5e0cd1c0af474e",
+        "crc32": "6d1d4287"
+      },
+      "elapsed_seconds": 186.4601802090183
+    },
+    "part_11.txt": {
+      "sentences": 221151,
+      "paragraphs": 82180,
+      "tokens": 9740243,
+      "space_tokens": 2939702,
+      "input": {
+        "bytes": 32687757,
+        "mtime_ns": 1792227667273792558,
+        "sha256": "26529d9bf9df2a1100bce69c7f89796c432c89ddb715ef88587910a88f17fe44",
+        "crc32": "703a6524"
+      },
+      "output": {
+        "bytes": 86114925,
+        "mtime_ns": 1792232248740264251,
+        "sha256": "6e9c5d10de8d2f14af029ee4c9dbef8e8b3dbb250c1dc2708ff78debd795b588",
+        "crc32": "ff9e257c"
+      },
+      "elapsed_seconds": 181.06910583301215
+    },
+    "part_12.txt": {
+      "sentences": 214985,
+      "paragraphs": 79358,
+      "tokens": 9513131,
+      "space_tokens": 2865272,
+      "input": {
+        "bytes": 31884146,
+        "mtime_ns": 1792227669169238328,
+        "sha256": "c1bb231b1554cc0650a88dd42a589cce61520253e742204c0c811ec5b9fc92d2",
+        "crc32": "02a9449a"
+      },
+      "output": {
+        "bytes": 84046996,
+        "mtime_ns": 1792232435392104917,
+        "sha256": "ff37dfb40384cccdef8f3cd4a2581d04cc97ae06650b0c7f66851ce7d53ddd38",
+        "crc32": "6c2a318c"
+      },
+      "elapsed_seconds": 186.64138237503357
+    },
+    "part_13.txt": {
+      "sentences": 206084,
+      "paragraphs": 76934,
+      "tokens": 9156723,
+      "space_tokens": 2759707,
+      "input": {
+        "bytes": 30697571,
+        "mtime_ns": 1792227670980363434,
+        "sha256": "08ccc886d006209566fb8a566b145e0dd6a8eaac3ab4c7fd9760189340c3f153",
+        "crc32": "6eb7737d"
+      },
+      "output": {
+        "bytes": 80922487,
+        "mtime_ns": 1792233009403830810,
+        "sha256": "d1e118f404bd712fbea261d06d7f9254897d358db3990d2f30e236685d37e01f",
+        "crc32": "04ebbfcd"
+      },
+      "elapsed_seconds": 574.0683255409822
+    },
+    "part_14.txt": {
+      "sentences": 202859,
+      "paragraphs": 76322,
+      "tokens": 8909043,
+      "space_tokens": 2684923,
+      "input": {
+        "bytes": 29872461,
+        "mtime_ns": 1792227672726565698,
+        "sha256": "fa6b15918ddb618c26cb4bfeace8b3e82ff69772ec82cd684400531fac0fae69",
+        "crc32": "b218259b"
+      },
+      "output": {
+        "bytes": 78719299,
+        "mtime_ns": 1792233543872387951,
+        "sha256": "87228ec8330475ad8be327880693d557e6b9472e8ea7aae8239cec0707964443",
+        "crc32": "c42fdfca"
+      },
+      "elapsed_seconds": 534.4620423329761
+    },
+    "part_15.txt": {
+      "sentences": 220377,
+      "paragraphs": 81702,
+      "tokens": 9788747,
+      "space_tokens": 2950747,
+      "input": {
+        "bytes": 32759871,
+        "mtime_ns": 1792227674687150266,
+        "sha256": "b1f2f925a6f4d610887dfee73e03aaba2104bf2687b499a0b22a1b10dea9784e",
+        "crc32": "c40fcb63"
+      },
+      "output": {
+        "bytes": 86448638,
+        "mtime_ns": 1792233884581115919,
+        "sha256": "af3cdd688f19cced5a9a0bc43b8bf06b9b4be454da3ff5869191dba350b0b3c9",
+        "crc32": "5a95bc1e"
+      },
+      "elapsed_seconds": 340.68940591602586
+    },
+    "part_16.txt": {
+      "sentences": 205744,
+      "paragraphs": 76125,
+      "tokens": 9100919,
+      "space_tokens": 2750066,
+      "input": {
+        "bytes": 30509248,
+        "mtime_ns": 1792227676388579628,
+        "sha256": "791a06856774be65e7316b3b65d57702e5e6923ff1c491baeae270f3956dea5b",
+        "crc32": "e3be5823"
+      },
+      "output": {
+        "bytes": 80440773,
+        "mtime_ns": 1792234074428704794,
+        "sha256": "7791fa8a5eb6822d3ac354d2e019b226e944a27b791348fbf7d4ebe7377ba4df",
+        "crc32": "ed65666f"
+      },
+      "elapsed_seconds": 189.84256695903605
+    },
+    "part_17.txt": {
+      "sentences": 204689,
+      "paragraphs": 76338,
+      "tokens": 8877380,
+      "space_tokens": 2678696,
+      "input": {
+        "bytes": 29837317,
+        "mtime_ns": 1792227678098921412,
+        "sha256": "a9fb62ffa3d1ee3e3abcc8fd191f96546ad7ef1af3bb8a0767903e8d8cc80568",
+        "crc32": "6396df53"
+      },
+      "output": {
+        "bytes": 78524008,
+        "mtime_ns": 1792234254182241916,
+        "sha256": "9ff77de3f24b4dc9051ef490e7087dff7ac6faf5eacb51ea09faa5784d6c3057",
+        "crc32": "fdf68c76"
+      },
+      "elapsed_seconds": 179.7681094169966
+    },
+    "part_18.txt": {
+      "sentences": 213845,
+      "paragraphs": 79337,
+      "tokens": 9429077,
+      "space_tokens": 2842665,
+      "input": {
+        "bytes": 31534821,
+        "mtime_ns": 1792227679896571406,
+        "sha256": "2d923b54caa6ea2a022b7c816268667cf0e7e53d1098b9058af7fa737a9f38b6",
+        "crc32": "a69944d2"
+      },
+      "output": {
+        "bytes": 83239194,
+        "mtime_ns": 1792234478374771824,
+        "sha256": "1b74d489e5be04f27d66dda8ccad88dbcffb4b445da1d91019ab13e49d87c7a3",
+        "crc32": "179f51ec"
+      },
+      "elapsed_seconds": 224.18379550002282
+    },
+    "part_19.txt": {
+      "sentences": 206028,
+      "paragraphs": 75396,
+      "tokens": 8994960,
+      "space_tokens": 2710661,
+      "input": {
+        "bytes": 30187861,
+        "mtime_ns": 1792227684878480084,
+        "sha256": "1578ff3ad90b578c10973e10a3b4b498be6bdf21729e694d655e14115c49e5bb",
+        "crc32": "fb2701b8"
+      },
+      "output": {
+        "bytes": 79509584,
+        "mtime_ns": 1792234681380297128,
+        "sha256": "605330db2d2855703bc3e88cec13e09ef1796e75da3cc4161375418a0d0f941e",
+        "crc32": "ff3ff99c"
+      },
+      "elapsed_seconds": 202.95390500000212
+    },
+    "part_20.txt": {
+      "sentences": 201487,
+      "paragraphs": 74926,
+      "tokens": 8940322,
+      "space_tokens": 2697522,
+      "input": {
+        "bytes": 29937180,
+        "mtime_ns": 1792227686907796359,
+        "sha256": "1267171373c829a97075b1537119e70d84e27e33ed3c6298eabebe08911816b0",
+        "crc32": "fc0b4481"
+      },
+      "output": {
+        "bytes": 78983262,
+        "mtime_ns": 1792234994052696045,
+        "sha256": "ef4a6aef3213952cc63852fda2598dd740c4ea04c77af61798185bfe806fe412",
+        "crc32": "1498354e"
+      },
+      "elapsed_seconds": 312.7035027500242
+    },
+    "part_21.txt": {
+      "sentences": 194271,
+      "paragraphs": 72632,
+      "tokens": 8555204,
+      "space_tokens": 2575840,
+      "input": {
+        "bytes": 28668624,
+        "mtime_ns": 1792227688755684932,
+        "sha256": "06a6a97cd077426ed93531e994b6ed421eb5f9f29b9cc040551521b577e61372",
+        "crc32": "1cb870d5"
+      },
+      "output": {
+        "bytes": 75586150,
+        "mtime_ns": 1792235358578627597,
+        "sha256": "6417d5a8a72abe5262b0c55e44c748903f94b4fbd6b5e9ad57c4ffc2b8265d0d",
+        "crc32": "478afe05"
+      },
+      "elapsed_seconds": 364.51443258399377
+    },
+    "part_22.txt": {
+      "sentences": 178152,
+      "paragraphs": 68382,
+      "tokens": 7802114,
+      "space_tokens": 2348414,
+      "input": {
+        "bytes": 26137935,
+        "mtime_ns": 1792227690374887933,
+        "sha256": "212ed824c8d5a5fd1a0bdbfb8288cea076a9c1634de660cef6f9db23dd0e9681",
+        "crc32": "ce813750"
+      },
+      "output": {
+        "bytes": 68896045,
+        "mtime_ns": 1792235582481570386,
+        "sha256": "f6894d6a60a70d493b67aa1d9a06ca11f691b0fc15959dc973ec1d1e2c5c3ff8",
+        "crc32": "1774f035"
+      },
+      "elapsed_seconds": 223.87239108298672
+    },
+    "part_23.txt": {
+      "sentences": 198296,
+      "paragraphs": 74726,
+      "tokens": 8735291,
+      "space_tokens": 2631784,
+      "input": {
+        "bytes": 29251822,
+        "mtime_ns": 1792227692463623956,
+        "sha256": "6bc76f5a718e48df73e7ae10f9115f8c354d6a2a8fee5465bd6783f23b5ce385",
+        "crc32": "2cf52203"
+      },
+      "output": {
+        "bytes": 77149767,
+        "mtime_ns": 1792235793436907088,
+        "sha256": "a483d67b19da21f5569041152f6e903e514b1afd716ec4a5dc19f31cbebc030d",
+        "crc32": "ea989d27"
+      },
+      "elapsed_seconds": 211.00893858302152
+    },
+    "part_24.txt": {
+      "sentences": 202476,
+      "paragraphs": 74652,
+      "tokens": 8922099,
+      "space_tokens": 2692651,
+      "input": {
+        "bytes": 29882606,
+        "mtime_ns": 1792227694407194876,
+        "sha256": "910c27c9e1e4a0e338cb35a60041059f365f3d1b3effbc2fb2104efe178888e6",
+        "crc32": "4cdedfef"
+      },
+      "output": {
+        "bytes": 78835922,
+        "mtime_ns": 1792236222198841136,
+        "sha256": "f3508ca561881ea09b582e3deb03280f174fb537b07ef18d48227cbd73610fbf",
+        "crc32": "848a1cb8"
+      },
+      "elapsed_seconds": 428.7719823330408
+    },
+    "part_25.txt": {
+      "sentences": 207759,
+      "paragraphs": 77872,
+      "tokens": 9148547,
+      "space_tokens": 2757456,
+      "input": {
+        "bytes": 30668867,
+        "mtime_ns": 1792227697242986506,
+        "sha256": "652a9c343c6d5257c3f27ea2bf9f7b1a839207d6bd7aa123432a8f1806dd3dc3",
+        "crc32": "99b98db1"
+      },
+      "output": {
+        "bytes": 80839001,
+        "mtime_ns": 1792236678977625047,
+        "sha256": "6f7f5f5cbedf0ae5855f4eae6b39d9cb2c986c32382b01d7be56418859bed85d",
+        "crc32": "1882bc41"
+      },
+      "elapsed_seconds": 456.7612537500099
+    },
+    "part_26.txt": {
+      "sentences": 218815,
+      "paragraphs": 80863,
+      "tokens": 9662706,
+      "space_tokens": 2914821,
+      "input": {
+        "bytes": 32410143,
+        "mtime_ns": 1792227699380129008,
+        "sha256": "892ae889f676c836765d74626ba067291a116db765f2e675afe17d14d5da8500",
+        "crc32": "c8f48b1c"
+      },
+      "output": {
+        "bytes": 85409190,
+        "mtime_ns": 1792237060296458230,
+        "sha256": "b0a04afd4c10dbcf607d28d239962f57a57ab579eaa98db23573e10124fd8fb8",
+        "crc32": "c2ca6439"
+      },
+      "elapsed_seconds": 381.3244739170186
+    },
+    "part_27.txt": {
+      "sentences": 194739,
+      "paragraphs": 73909,
+      "tokens": 8487373,
+      "space_tokens": 2553176,
+      "input": {
+        "bytes": 28467909,
+        "mtime_ns": 1792227701087757370,
+        "sha256": "2a6c2c44b36109fe8abd03b9f5acfaccdd19137e92a8a0747be548a225315494",
+        "crc32": "eee2bdfc"
+      },
+      "output": {
+        "bytes": 74986372,
+        "mtime_ns": 1792237400334911584,
+        "sha256": "f8f5120cd5025f83fa4b7f3fb3f1f741d0a38f47063ee9dd58b62d9982fc3f9d",
+        "crc32": "050c1a15"
+      },
+      "elapsed_seconds": 340.024069416977
+    },
+    "part_28.txt": {
+      "sentences": 198724,
+      "paragraphs": 76380,
+      "tokens": 8612460,
+      "space_tokens": 2595154,
+      "input": {
+        "bytes": 28872990,
+        "mtime_ns": 1792227702687049305,
+        "sha256": "57278b03ba41559d2552f37cde80e68cd29c266887c5a1c9dc56d78a287c0462",
+        "crc32": "dd4788e4"
+      },
+      "output": {
+        "bytes": 76081651,
+        "mtime_ns": 1792237743417884000,
+        "sha256": "cc7071cf697dccad34c9a486de2a9a1560fdd3b3a2107a650745971f5bfbcf3d",
+        "crc32": "edf85388"
+      },
+      "elapsed_seconds": 343.19415954098804
+    },
+    "part_29.txt": {
+      "sentences": 206799,
+      "paragraphs": 77883,
+      "tokens": 8988862,
+      "space_tokens": 2708615,
+      "input": {
+        "bytes": 30134005,
+        "mtime_ns": 1792227704424762765,
+        "sha256": "a9240953b458c654bb67bdb82f33c58876df8a4557d7137fe7f462a1a11dd7d8",
+        "crc32": "ec0c9cea"
+      },
+      "output": {
+        "bytes": 79425114,
+        "mtime_ns": 1792238099791719188,
+        "sha256": "94e41bd2f81e1ecc4701ff4d4f2e2cf46b039fedea0d55e4ae91617035659e99",
+        "crc32": "8f75e691"
+      },
+      "elapsed_seconds": 356.28547125001205
+    },
+    "part_30.txt": {
+      "sentences": 203511,
+      "paragraphs": 76704,
+      "tokens": 8778914,
+      "space_tokens": 2645618,
+      "input": {
+        "bytes": 29434106,
+        "mtime_ns": 1792227706140329355,
+        "sha256": "8fae64ad6d4d7e06961303370d53ef03d943040314f4d0c8acd1a040e20f454e",
+        "crc32": "716692e9"
+      },
+      "output": {
+        "bytes": 77571364,
+        "mtime_ns": 1792238415674518823,
+        "sha256": "44ac39e885c5be669fcada21bc8cdce119e8a4f4b0f4eff3476284381dbffe91",
+        "crc32": "3982b8dd"
+      },
+      "elapsed_seconds": 315.85382770898286
+    },
+    "part_31.txt": {
+      "sentences": 205113,
+      "paragraphs": 76380,
+      "tokens": 8856910,
+      "space_tokens": 2672739,
+      "input": {
+        "bytes": 29656453,
+        "mtime_ns": 1792227707810857380,
+        "sha256": "adee0f40afc1fdb17c98151d8989854443227193080b37ca98cb5fc8690efcc8",
+        "crc32": "208293cd"
+      },
+      "output": {
+        "bytes": 78233349,
+        "mtime_ns": 1792238730489001492,
+        "sha256": "9a6052907b75779d162aacf44d2bf91b2a71d6417eaf10adc03a2698e0354247",
+        "crc32": "8992efa4"
+      },
+      "elapsed_seconds": 314.81700300000375
+    }
+  },
+  "status": "complete",
+  "started_at": "2026-10-17T18:34:26+0900",
+  "elapsed_seconds": 9063.262793458998
+}

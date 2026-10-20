@@ -1,0 +1,52 @@
+{
+  "status": "stopped",
+  "phase": "data-10pct",
+  "plan": {
+    "vocab_size": 35328,
+    "device": "cpu",
+    "root": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/wiki-k35328",
+    "corpus": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328",
+    "nominal_total_training_hours": 14,
+    "benchmark_identity": {
+      "bytes": 72706,
+      "sha256": "c5379738470251d91a428a792ec140009622cc81dc5ce88dd44d3d0ac8e9b788"
+    },
+    "scripts": {
+      "run_training_comparison.py": {
+        "bytes": 7277,
+        "sha256": "9a595c3c7bcd2e91888e513d431dccdba5e1f2cd7c703c1b7b1662ead70a4f06"
+      },
+      "train_nplm.py": {
+        "bytes": 20648,
+        "sha256": "0fc8f8cd8fa8b39e4efcbcefd6f5bb63970867b973e6f5d897340aa86f1f0241"
+      },
+      "prepare_training_experiment.py": {
+        "bytes": 15430,
+        "sha256": "3f1ca97eb3f0f5086259d0f9614ce7a436e2d77613de76589f0f895264550c98"
+      },
+      "training_corpus.py": {
+        "bytes": 7362,
+        "sha256": "7cf6806a5641960d3d359741f66ef4a9a8d0af7fc75bcc205860a30818e21b0b"
+      }
+    },
+    "runs": [
+      {
+        "name": "data-10pct",
+        "fraction": 0.1,
+        "hours": 3
+      },
+      {
+        "name": "data-25pct",
+        "fraction": 0.25,
+        "hours": 3
+      },
+      {
+        "name": "data-100pct",
+        "fraction": 1.0,
+        "hours": 8
+      }
+    ]
+  },
+  "completed_runs": [],
+  "started_at": "2026-10-17T21:34:47+0900"
+}

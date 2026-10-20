@@ -1,0 +1,1695 @@
+{
+  "source_archive": "/Users/geuni/Downloads/ko_wiki_cleaning.7z",
+  "verified_at": "2026-10-14T14:26:42.147549+00:00",
+  "verification": "All file sizes match; CRC32 matches every nonempty source file; empty files are verified as zero bytes",
+  "source_file_count": 337,
+  "empty_files_without_crc": 2,
+  "source_uncompressed_bytes": 9073363432,
+  "files": [
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.lock",
+      "bytes": 0,
+      "crc32": null
+    },
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.lock",
+      "bytes": 0,
+      "crc32": null
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 20138,
+      "crc32": 2928925740
+    },
+    {
+      "path": "vocab_comparison.png",
+      "bytes": 191103,
+      "crc32": 2925322144
+    },
+    {
+      "path": "vocab_full_zipf.png",
+      "bytes": 157205,
+      "crc32": 3740696189
+    },
+    {
+      "path": "vocab_report_16384.png",
+      "bytes": 153269,
+      "crc32": 784449301
+    },
+    {
+      "path": "vocab_report_32768.png",
+      "bytes": 161990,
+      "crc32": 501777329
+    },
+    {
+      "path": "vocab_report_49152.png",
+      "bytes": 160430,
+      "crc32": 4278229266
+    },
+    {
+      "path": "vocab_report_65536.png",
+      "bytes": 163335,
+      "crc32": 3322776646
+    },
+    {
+      "path": "vocab_report_full.png",
+      "bytes": 154432,
+      "crc32": 183190590
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 3572,
+      "crc32": 2996633402
+    },
+    {
+      "path": "README.md",
+      "bytes": 14041,
+      "crc32": 1035439416
+    },
+    {
+      "path": "step1_download.md",
+      "bytes": 1751,
+      "crc32": 3830506875
+    },
+    {
+      "path": "step2_extract_sample_rows.md",
+      "bytes": 1889,
+      "crc32": 585550482
+    },
+    {
+      "path": "step3_extract_paragraphs.md",
+      "bytes": 3402,
+      "crc32": 1208279059
+    },
+    {
+      "path": "step4_dedup_sentences.md",
+      "bytes": 4072,
+      "crc32": 244582616
+    },
+    {
+      "path": "step5a_tokenize.md",
+      "bytes": 3011,
+      "crc32": 3937592841
+    },
+    {
+      "path": "step5b_verify.md",
+      "bytes": 2368,
+      "crc32": 4025598952
+    },
+    {
+      "path": "step6a_build_vocab.md",
+      "bytes": 4562,
+      "crc32": 4044617264
+    },
+    {
+      "path": "step6b_vocab_report.md",
+      "bytes": 2671,
+      "crc32": 339213038
+    },
+    {
+      "path": "step7b_verify.md",
+      "bytes": 4087,
+      "crc32": 27720095
+    },
+    {
+      "path": "step7_encode.md",
+      "bytes": 6088,
+      "crc32": 433882233
+    },
+    {
+      "path": "step1_download.py",
+      "bytes": 1482,
+      "crc32": 1442616010
+    },
+    {
+      "path": "step2_extract_sample_rows.py",
+      "bytes": 2309,
+      "crc32": 2577174490
+    },
+    {
+      "path": "step3_extract_paragraphs.py",
+      "bytes": 17603,
+      "crc32": 388967784
+    },
+    {
+      "path": "step4_dedup_sentences.py",
+      "bytes": 11109,
+      "crc32": 2458609770
+    },
+    {
+      "path": "step5a_tokenize.py",
+      "bytes": 10043,
+      "crc32": 272002353
+    },
+    {
+      "path": "step5b_verify.py",
+      "bytes": 11496,
+      "crc32": 578779424
+    },
+    {
+      "path": "step6a_build_vocab.py",
+      "bytes": 18429,
+      "crc32": 1698893356
+    },
+    {
+      "path": "step6b_vocab_report.py",
+      "bytes": 24004,
+      "crc32": 3062442283
+    },
+    {
+      "path": "step7b_verify.py",
+      "bytes": 5387,
+      "crc32": 897845480
+    },
+    {
+      "path": "step7_encode.py",
+      "bytes": 6576,
+      "crc32": 3682140570
+    },
+    {
+      "path": "sentences/part_00.txt",
+      "bytes": 32854849,
+      "crc32": 2868373479
+    },
+    {
+      "path": "paragraphs/part_00.txt",
+      "bytes": 32711586,
+      "crc32": 891544976
+    },
+    {
+      "path": "paragraphs_raw/part_00.txt",
+      "bytes": 35434003,
+      "crc32": 1454042796
+    },
+    {
+      "path": "sentences_dedup/part_00.txt",
+      "bytes": 32707665,
+      "crc32": 1815195868
+    },
+    {
+      "path": "tokens/part_00.txt",
+      "bytes": 86318173,
+      "crc32": 1994483964
+    },
+    {
+      "path": "paragraphs/part_01.txt",
+      "bytes": 30418965,
+      "crc32": 4268574295
+    },
+    {
+      "path": "sentences/part_01.txt",
+      "bytes": 30552872,
+      "crc32": 1448667168
+    },
+    {
+      "path": "paragraphs_raw/part_01.txt",
+      "bytes": 33222014,
+      "crc32": 411494024
+    },
+    {
+      "path": "sentences_dedup/part_01.txt",
+      "bytes": 30382209,
+      "crc32": 743426953
+    },
+    {
+      "path": "tokens/part_01.txt",
+      "bytes": 80130494,
+      "crc32": 1593268520
+    },
+    {
+      "path": "paragraphs/part_02.txt",
+      "bytes": 31314463,
+      "crc32": 164820718
+    },
+    {
+      "path": "sentences/part_02.txt",
+      "bytes": 31449900,
+      "crc32": 3916994951
+    },
+    {
+      "path": "paragraphs_raw/part_02.txt",
+      "bytes": 34020237,
+      "crc32": 2762944015
+    },
+    {
+      "path": "sentences_dedup/part_02.txt",
+      "bytes": 31086307,
+      "crc32": 534009991
+    },
+    {
+      "path": "tokens/part_02.txt",
+      "bytes": 81956136,
+      "crc32": 3490240090
+    },
+    {
+      "path": "paragraphs/part_03.txt",
+      "bytes": 29824911,
+      "crc32": 975242171
+    },
+    {
+      "path": "sentences/part_03.txt",
+      "bytes": 29953998,
+      "crc32": 104250353
+    },
+    {
+      "path": "paragraphs_raw/part_03.txt",
+      "bytes": 32304838,
+      "crc32": 1664779445
+    },
+    {
+      "path": "sentences_dedup/part_03.txt",
+      "bytes": 29635969,
+      "crc32": 2179113028
+    },
+    {
+      "path": "tokens/part_03.txt",
+      "bytes": 78092715,
+      "crc32": 3540120036
+    },
+    {
+      "path": "paragraphs/part_04.txt",
+      "bytes": 30665263,
+      "crc32": 3192833295
+    },
+    {
+      "path": "sentences/part_04.txt",
+      "bytes": 30798367,
+      "crc32": 2432354048
+    },
+    {
+      "path": "paragraphs_raw/part_04.txt",
+      "bytes": 33398752,
+      "crc32": 3807446899
+    },
+    {
+      "path": "sentences_dedup/part_04.txt",
+      "bytes": 30322122,
+      "crc32": 552430001
+    },
+    {
+      "path": "tokens/part_04.txt",
+      "bytes": 79859687,
+      "crc32": 1935525237
+    },
+    {
+      "path": "paragraphs/part_05.txt",
+      "bytes": 33403887,
+      "crc32": 315022407
+    },
+    {
+      "path": "sentences/part_05.txt",
+      "bytes": 33546597,
+      "crc32": 1592248263
+    },
+    {
+      "path": "paragraphs_raw/part_05.txt",
+      "bytes": 36216325,
+      "crc32": 3445695103
+    },
+    {
+      "path": "sentences_dedup/part_05.txt",
+      "bytes": 31065428,
+      "crc32": 2463484885
+    },
+    {
+      "path": "tokens/part_05.txt",
+      "bytes": 81932218,
+      "crc32": 2743858936
+    },
+    {
+      "path": "sentences/part_06.txt",
+      "bytes": 35769221,
+      "crc32": 1313905591
+    },
+    {
+      "path": "paragraphs/part_06.txt",
+      "bytes": 35615600,
+      "crc32": 2131800364
+    },
+    {
+      "path": "paragraphs_raw/part_06.txt",
+      "bytes": 38681977,
+      "crc32": 2189636826
+    },
+    {
+      "path": "sentences_dedup/part_06.txt",
+      "bytes": 33217961,
+      "crc32": 854841274
+    },
+    {
+      "path": "tokens/part_06.txt",
+      "bytes": 87581183,
+      "crc32": 3139777966
+    },
+    {
+      "path": "sentences/part_07.txt",
+      "bytes": 36119368,
+      "crc32": 3732080570
+    },
+    {
+      "path": "paragraphs/part_07.txt",
+      "bytes": 35964682,
+      "crc32": 482905604
+    },
+    {
+      "path": "paragraphs_raw/part_07.txt",
+      "bytes": 38928486,
+      "crc32": 3214205100
+    },
+    {
+      "path": "sentences_dedup/part_07.txt",
+      "bytes": 33663348,
+      "crc32": 2758279034
+    },
+    {
+      "path": "tokens/part_07.txt",
+      "bytes": 88770717,
+      "crc32": 3510913850
+    },
+    {
+      "path": "paragraphs/part_08.txt",
+      "bytes": 33409314,
+      "crc32": 4110856472
+    },
+    {
+      "path": "sentences/part_08.txt",
+      "bytes": 33553606,
+      "crc32": 2418614143
+    },
+    {
+      "path": "paragraphs_raw/part_08.txt",
+      "bytes": 36320682,
+      "crc32": 2097367140
+    },
+    {
+      "path": "sentences_dedup/part_08.txt",
+      "bytes": 32013093,
+      "crc32": 389935609
+    },
+    {
+      "path": "tokens/part_08.txt",
+      "bytes": 84332004,
+      "crc32": 568843707
+    },
+    {
+      "path": "paragraphs/part_09.txt",
+      "bytes": 32252771,
+      "crc32": 3471254816
+    },
+    {
+      "path": "sentences/part_09.txt",
+      "bytes": 32393601,
+      "crc32": 3139228099
+    },
+    {
+      "path": "paragraphs_raw/part_09.txt",
+      "bytes": 35227624,
+      "crc32": 3404974289
+    },
+    {
+      "path": "sentences_dedup/part_09.txt",
+      "bytes": 30399175,
+      "crc32": 3714087302
+    },
+    {
+      "path": "tokens/part_09.txt",
+      "bytes": 80100262,
+      "crc32": 1677713086
+    },
+    {
+      "path": "paragraphs/part_10.txt",
+      "bytes": 34177775,
+      "crc32": 1642702810
+    },
+    {
+      "path": "sentences/part_10.txt",
+      "bytes": 34324823,
+      "crc32": 204946516
+    },
+    {
+      "path": "paragraphs_raw/part_10.txt",
+      "bytes": 37197824,
+      "crc32": 621943648
+    },
+    {
+      "path": "sentences_dedup/part_10.txt",
+      "bytes": 32125577,
+      "crc32": 61267832
+    },
+    {
+      "path": "tokens/part_10.txt",
+      "bytes": 84683377,
+      "crc32": 1534202272
+    },
+    {
+      "path": "paragraphs/part_11.txt",
+      "bytes": 33859144,
+      "crc32": 3801840688
+    },
+    {
+      "path": "sentences/part_11.txt",
+      "bytes": 34005483,
+      "crc32": 3649713039
+    },
+    {
+      "path": "paragraphs_raw/part_11.txt",
+      "bytes": 36499592,
+      "crc32": 3685338898
+    },
+    {
+      "path": "sentences_dedup/part_11.txt",
+      "bytes": 32687757,
+      "crc32": 1882875172
+    },
+    {
+      "path": "tokens/part_11.txt",
+      "bytes": 86159415,
+      "crc32": 526586779
+    },
+    {
+      "path": "paragraphs/part_12.txt",
+      "bytes": 34170602,
+      "crc32": 2930857544
+    },
+    {
+      "path": "sentences/part_12.txt",
+      "bytes": 34318336,
+      "crc32": 2070377286
+    },
+    {
+      "path": "paragraphs_raw/part_12.txt",
+      "bytes": 37056419,
+      "crc32": 1310850786
+    },
+    {
+      "path": "sentences_dedup/part_12.txt",
+      "bytes": 31884146,
+      "crc32": 44647578
+    },
+    {
+      "path": "tokens/part_12.txt",
+      "bytes": 84089571,
+      "crc32": 4154836720
+    },
+    {
+      "path": "paragraphs/part_13.txt",
+      "bytes": 33990490,
+      "crc32": 1754758854
+    },
+    {
+      "path": "sentences/part_13.txt",
+      "bytes": 34134910,
+      "crc32": 2451586207
+    },
+    {
+      "path": "paragraphs_raw/part_13.txt",
+      "bytes": 36855272,
+      "crc32": 1102082083
+    },
+    {
+      "path": "sentences_dedup/part_13.txt",
+      "bytes": 30697571,
+      "crc32": 1857516413
+    },
+    {
+      "path": "tokens/part_13.txt",
+      "bytes": 80964219,
+      "crc32": 238589256
+    },
+    {
+      "path": "paragraphs/part_14.txt",
+      "bytes": 32233008,
+      "crc32": 3358597729
+    },
+    {
+      "path": "sentences/part_14.txt",
+      "bytes": 32371316,
+      "crc32": 201500423
+    },
+    {
+      "path": "paragraphs_raw/part_14.txt",
+      "bytes": 34992009,
+      "crc32": 882516715
+    },
+    {
+      "path": "sentences_dedup/part_14.txt",
+      "bytes": 29872461,
+      "crc32": 2987926939
+    },
+    {
+      "path": "tokens/part_14.txt",
+      "bytes": 78763804,
+      "crc32": 2441473129
+    },
+    {
+      "path": "paragraphs/part_15.txt",
+      "bytes": 33659949,
+      "crc32": 2048245546
+    },
+    {
+      "path": "sentences/part_15.txt",
+      "bytes": 33804395,
+      "crc32": 676553004
+    },
+    {
+      "path": "paragraphs_raw/part_15.txt",
+      "bytes": 36501167,
+      "crc32": 906132020
+    },
+    {
+      "path": "sentences_dedup/part_15.txt",
+      "bytes": 32759871,
+      "crc32": 3289369443
+    },
+    {
+      "path": "tokens/part_15.txt",
+      "bytes": 86497005,
+      "crc32": 3864093622
+    },
+    {
+      "path": "paragraphs/part_16.txt",
+      "bytes": 31387317,
+      "crc32": 2900552480
+    },
+    {
+      "path": "sentences/part_16.txt",
+      "bytes": 31522930,
+      "crc32": 2958682643
+    },
+    {
+      "path": "paragraphs_raw/part_16.txt",
+      "bytes": 34037038,
+      "crc32": 273641431
+    },
+    {
+      "path": "sentences_dedup/part_16.txt",
+      "bytes": 30509248,
+      "crc32": 3820902435
+    },
+    {
+      "path": "tokens/part_16.txt",
+      "bytes": 80481186,
+      "crc32": 3505560341
+    },
+    {
+      "path": "sentences/part_17.txt",
+      "bytes": 30556604,
+      "crc32": 507542939
+    },
+    {
+      "path": "paragraphs/part_17.txt",
+      "bytes": 30423338,
+      "crc32": 4128072240
+    },
+    {
+      "path": "paragraphs_raw/part_17.txt",
+      "bytes": 32939000,
+      "crc32": 1180573967
+    },
+    {
+      "path": "sentences_dedup/part_17.txt",
+      "bytes": 29837317,
+      "crc32": 1670831955
+    },
+    {
+      "path": "tokens/part_17.txt",
+      "bytes": 78568363,
+      "crc32": 3881416974
+    },
+    {
+      "path": "sentences/part_18.txt",
+      "bytes": 32384241,
+      "crc32": 3104468646
+    },
+    {
+      "path": "paragraphs/part_18.txt",
+      "bytes": 32244580,
+      "crc32": 2990679880
+    },
+    {
+      "path": "paragraphs_raw/part_18.txt",
+      "bytes": 35076528,
+      "crc32": 1305873768
+    },
+    {
+      "path": "sentences_dedup/part_18.txt",
+      "bytes": 31534821,
+      "crc32": 2795062482
+    },
+    {
+      "path": "tokens/part_18.txt",
+      "bytes": 83287761,
+      "crc32": 2616181288
+    },
+    {
+      "path": "paragraphs/part_19.txt",
+      "bytes": 30986568,
+      "crc32": 3568588578
+    },
+    {
+      "path": "sentences/part_19.txt",
+      "bytes": 31122700,
+      "crc32": 3561162956
+    },
+    {
+      "path": "paragraphs_raw/part_19.txt",
+      "bytes": 33511511,
+      "crc32": 23256974
+    },
+    {
+      "path": "sentences_dedup/part_19.txt",
+      "bytes": 30187861,
+      "crc32": 4213637560
+    },
+    {
+      "path": "tokens/part_19.txt",
+      "bytes": 79552681,
+      "crc32": 3802887901
+    },
+    {
+      "path": "paragraphs/part_20.txt",
+      "bytes": 33112423,
+      "crc32": 1287549522
+    },
+    {
+      "path": "sentences/part_20.txt",
+      "bytes": 33255579,
+      "crc32": 2167886002
+    },
+    {
+      "path": "paragraphs_raw/part_20.txt",
+      "bytes": 35889514,
+      "crc32": 2499844119
+    },
+    {
+      "path": "sentences_dedup/part_20.txt",
+      "bytes": 29937180,
+      "crc32": 4228596865
+    },
+    {
+      "path": "tokens/part_20.txt",
+      "bytes": 79029879,
+      "crc32": 1756397403
+    },
+    {
+      "path": "paragraphs/part_21.txt",
+      "bytes": 33043950,
+      "crc32": 2346504074
+    },
+    {
+      "path": "sentences/part_21.txt",
+      "bytes": 33187376,
+      "crc32": 3461124029
+    },
+    {
+      "path": "paragraphs_raw/part_21.txt",
+      "bytes": 35849737,
+      "crc32": 2430676065
+    },
+    {
+      "path": "sentences_dedup/part_21.txt",
+      "bytes": 28668624,
+      "crc32": 481849557
+    },
+    {
+      "path": "tokens/part_21.txt",
+      "bytes": 75627272,
+      "crc32": 1171491282
+    },
+    {
+      "path": "paragraphs/part_22.txt",
+      "bytes": 30105401,
+      "crc32": 2419111416
+    },
+    {
+      "path": "sentences/part_22.txt",
+      "bytes": 30235484,
+      "crc32": 2093132427
+    },
+    {
+      "path": "paragraphs_raw/part_22.txt",
+      "bytes": 33054356,
+      "crc32": 282343694
+    },
+    {
+      "path": "sentences_dedup/part_22.txt",
+      "bytes": 26137935,
+      "crc32": 3464574800
+    },
+    {
+      "path": "tokens/part_22.txt",
+      "bytes": 68936564,
+      "crc32": 1980824898
+    },
+    {
+      "path": "paragraphs/part_23.txt",
+      "bytes": 34345172,
+      "crc32": 712157755
+    },
+    {
+      "path": "sentences/part_23.txt",
+      "bytes": 34492753,
+      "crc32": 3103081203
+    },
+    {
+      "path": "paragraphs_raw/part_23.txt",
+      "bytes": 37263865,
+      "crc32": 3063272115
+    },
+    {
+      "path": "sentences_dedup/part_23.txt",
+      "bytes": 29251822,
+      "crc32": 754262531
+    },
+    {
+      "path": "tokens/part_23.txt",
+      "bytes": 77195376,
+      "crc32": 327002348
+    },
+    {
+      "path": "paragraphs/part_24.txt",
+      "bytes": 33364250,
+      "crc32": 895513728
+    },
+    {
+      "path": "sentences/part_24.txt",
+      "bytes": 33509388,
+      "crc32": 808314497
+    },
+    {
+      "path": "paragraphs_raw/part_24.txt",
+      "bytes": 36171950,
+      "crc32": 4281325635
+    },
+    {
+      "path": "sentences_dedup/part_24.txt",
+      "bytes": 29882606,
+      "crc32": 1289674735
+    },
+    {
+      "path": "tokens/part_24.txt",
+      "bytes": 78880152,
+      "crc32": 766297167
+    },
+    {
+      "path": "paragraphs/part_25.txt",
+      "bytes": 31452549,
+      "crc32": 4078297699
+    },
+    {
+      "path": "sentences/part_25.txt",
+      "bytes": 31588050,
+      "crc32": 2611950274
+    },
+    {
+      "path": "paragraphs_raw/part_25.txt",
+      "bytes": 34291505,
+      "crc32": 3995145727
+    },
+    {
+      "path": "sentences_dedup/part_25.txt",
+      "bytes": 30668867,
+      "crc32": 2579074481
+    },
+    {
+      "path": "tokens/part_25.txt",
+      "bytes": 80889378,
+      "crc32": 3899625963
+    },
+    {
+      "path": "paragraphs/part_26.txt",
+      "bytes": 33553591,
+      "crc32": 595541596
+    },
+    {
+      "path": "sentences/part_26.txt",
+      "bytes": 33699089,
+      "crc32": 2654907454
+    },
+    {
+      "path": "paragraphs_raw/part_26.txt",
+      "bytes": 36351856,
+      "crc32": 3235776032
+    },
+    {
+      "path": "sentences_dedup/part_26.txt",
+      "bytes": 32410143,
+      "crc32": 3371469596
+    },
+    {
+      "path": "tokens/part_26.txt",
+      "bytes": 85460187,
+      "crc32": 4098648975
+    },
+    {
+      "path": "paragraphs/part_27.txt",
+      "bytes": 29682886,
+      "crc32": 3115622512
+    },
+    {
+      "path": "sentences/part_27.txt",
+      "bytes": 29811391,
+      "crc32": 659847870
+    },
+    {
+      "path": "paragraphs_raw/part_27.txt",
+      "bytes": 32235060,
+      "crc32": 3603628363
+    },
+    {
+      "path": "sentences_dedup/part_27.txt",
+      "bytes": 28467909,
+      "crc32": 4007837180
+    },
+    {
+      "path": "tokens/part_27.txt",
+      "bytes": 75029538,
+      "crc32": 4058764386
+    },
+    {
+      "path": "paragraphs/part_28.txt",
+      "bytes": 29751988,
+      "crc32": 3550573358
+    },
+    {
+      "path": "sentences/part_28.txt",
+      "bytes": 29880532,
+      "crc32": 3155227918
+    },
+    {
+      "path": "paragraphs_raw/part_28.txt",
+      "bytes": 32486344,
+      "crc32": 3370110337
+    },
+    {
+      "path": "sentences_dedup/part_28.txt",
+      "bytes": 28872990,
+      "crc32": 3712452836
+    },
+    {
+      "path": "tokens/part_28.txt",
+      "bytes": 76128819,
+      "crc32": 2595029355
+    },
+    {
+      "path": "paragraphs/part_29.txt",
+      "bytes": 31125399,
+      "crc32": 484530062
+    },
+    {
+      "path": "sentences/part_29.txt",
+      "bytes": 31261169,
+      "crc32": 1137619244
+    },
+    {
+      "path": "paragraphs_raw/part_29.txt",
+      "bytes": 33780607,
+      "crc32": 1357082240
+    },
+    {
+      "path": "sentences_dedup/part_29.txt",
+      "bytes": 30134005,
+      "crc32": 3960249578
+    },
+    {
+      "path": "tokens/part_29.txt",
+      "bytes": 79472704,
+      "crc32": 1392298640
+    },
+    {
+      "path": "paragraphs/part_30.txt",
+      "bytes": 30413222,
+      "crc32": 3658892758
+    },
+    {
+      "path": "sentences/part_30.txt",
+      "bytes": 30546636,
+      "crc32": 3808008975
+    },
+    {
+      "path": "paragraphs_raw/part_30.txt",
+      "bytes": 33173057,
+      "crc32": 423591282
+    },
+    {
+      "path": "sentences_dedup/part_30.txt",
+      "bytes": 29434106,
+      "crc32": 1902547689
+    },
+    {
+      "path": "tokens/part_30.txt",
+      "bytes": 77617428,
+      "crc32": 568559036
+    },
+    {
+      "path": "paragraphs/part_31.txt",
+      "bytes": 30663054,
+      "crc32": 1867388586
+    },
+    {
+      "path": "sentences/part_31.txt",
+      "bytes": 30798803,
+      "crc32": 3572752278
+    },
+    {
+      "path": "paragraphs_raw/part_31.txt",
+      "bytes": 33257489,
+      "crc32": 567189164
+    },
+    {
+      "path": "sentences_dedup/part_31.txt",
+      "bytes": 29656453,
+      "crc32": 545428429
+    },
+    {
+      "path": "tokens/part_31.txt",
+      "bytes": 78279198,
+      "crc32": 2029654749
+    },
+    {
+      "path": "parquet/README.txt",
+      "bytes": 735,
+      "crc32": 187548116
+    },
+    {
+      "path": "tokens_filtered_16384/README.txt",
+      "bytes": 522,
+      "crc32": 98178554
+    },
+    {
+      "path": "tokens_filtered_32768/README.txt",
+      "bytes": 522,
+      "crc32": 1675435989
+    },
+    {
+      "path": "tokens_filtered_49152/README.txt",
+      "bytes": 522,
+      "crc32": 2641514960
+    },
+    {
+      "path": "tokens_filtered_65536/README.txt",
+      "bytes": 522,
+      "crc32": 3906102195
+    },
+    {
+      "path": "sentences_dedup_removed.txt",
+      "bytes": 28636573,
+      "crc32": 523410421
+    },
+    {
+      "path": "vocab_16384.txt",
+      "bytes": 287364,
+      "crc32": 3777918883
+    },
+    {
+      "path": "vocab_32768.txt",
+      "bytes": 582736,
+      "crc32": 3019745772
+    },
+    {
+      "path": "vocab_49152.txt",
+      "bytes": 882657,
+      "crc32": 2551684054
+    },
+    {
+      "path": "vocab_65536.txt",
+      "bytes": 1183356,
+      "crc32": 3724475954
+    },
+    {
+      "path": "vocab_full.txt",
+      "bytes": 28638942,
+      "crc32": 4244987196
+    },
+    {
+      "path": "parquet/.cache/huggingface/.gitignore",
+      "bytes": 1,
+      "crc32": 163128923
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 460,
+      "crc32": 3479129027
+    },
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00000.parquet.metadata",
+      "bytes": 128,
+      "crc32": 3418577234
+    },
+    {
+      "path": "parquet/.cache/huggingface/download/data/kowiki/000_00001.parquet.metadata",
+      "bytes": 128,
+      "crc32": 3432094047
+    },
+    {
+      "path": "token_ids_32768/part_00.npy",
+      "bytes": 8421576,
+      "crc32": 2679729041
+    },
+    {
+      "path": "token_ids_49152/part_00.npy",
+      "bytes": 10344622,
+      "crc32": 4204322054
+    },
+    {
+      "path": "token_ids_65536/part_00.npy",
+      "bytes": 11584858,
+      "crc32": 290831185
+    },
+    {
+      "path": "token_ids_16384/part_00.npy",
+      "bytes": 4990924,
+      "crc32": 2361479338
+    },
+    {
+      "path": "token_ids_32768/part_01.npy",
+      "bytes": 7933962,
+      "crc32": 771199148
+    },
+    {
+      "path": "token_ids_49152/part_01.npy",
+      "bytes": 9724642,
+      "crc32": 1566368600
+    },
+    {
+      "path": "token_ids_65536/part_01.npy",
+      "bytes": 10866294,
+      "crc32": 1522424557
+    },
+    {
+      "path": "token_ids_16384/part_01.npy",
+      "bytes": 4735658,
+      "crc32": 3452827572
+    },
+    {
+      "path": "token_ids_32768/part_02.npy",
+      "bytes": 8019726,
+      "crc32": 312843538
+    },
+    {
+      "path": "token_ids_49152/part_02.npy",
+      "bytes": 9827544,
+      "crc32": 1429915145
+    },
+    {
+      "path": "token_ids_65536/part_02.npy",
+      "bytes": 10981126,
+      "crc32": 2042939219
+    },
+    {
+      "path": "token_ids_16384/part_02.npy",
+      "bytes": 4837542,
+      "crc32": 3325289160
+    },
+    {
+      "path": "token_ids_32768/part_03.npy",
+      "bytes": 7526922,
+      "crc32": 1654004849
+    },
+    {
+      "path": "token_ids_49152/part_03.npy",
+      "bytes": 9266258,
+      "crc32": 847112166
+    },
+    {
+      "path": "token_ids_65536/part_03.npy",
+      "bytes": 10364228,
+      "crc32": 3518523498
+    },
+    {
+      "path": "token_ids_16384/part_03.npy",
+      "bytes": 4434306,
+      "crc32": 787007840
+    },
+    {
+      "path": "token_ids_32768/part_04.npy",
+      "bytes": 7600398,
+      "crc32": 3600088959
+    },
+    {
+      "path": "token_ids_49152/part_04.npy",
+      "bytes": 9379130,
+      "crc32": 2030987795
+    },
+    {
+      "path": "token_ids_65536/part_04.npy",
+      "bytes": 10517548,
+      "crc32": 456681560
+    },
+    {
+      "path": "token_ids_16384/part_04.npy",
+      "bytes": 4521400,
+      "crc32": 2996384613
+    },
+    {
+      "path": "token_ids_32768/part_05.npy",
+      "bytes": 7946348,
+      "crc32": 1815189642
+    },
+    {
+      "path": "token_ids_49152/part_05.npy",
+      "bytes": 9787982,
+      "crc32": 208759310
+    },
+    {
+      "path": "token_ids_65536/part_05.npy",
+      "bytes": 10996260,
+      "crc32": 4015143309
+    },
+    {
+      "path": "token_ids_16384/part_05.npy",
+      "bytes": 4673590,
+      "crc32": 2183147801
+    },
+    {
+      "path": "token_ids_32768/part_06.npy",
+      "bytes": 8510678,
+      "crc32": 2374643504
+    },
+    {
+      "path": "token_ids_49152/part_06.npy",
+      "bytes": 10466726,
+      "crc32": 1064682328
+    },
+    {
+      "path": "token_ids_65536/part_06.npy",
+      "bytes": 11724510,
+      "crc32": 1059299288
+    },
+    {
+      "path": "token_ids_16384/part_06.npy",
+      "bytes": 4993464,
+      "crc32": 4042612262
+    },
+    {
+      "path": "token_ids_32768/part_07.npy",
+      "bytes": 8496898,
+      "crc32": 2948496702
+    },
+    {
+      "path": "token_ids_49152/part_07.npy",
+      "bytes": 10531704,
+      "crc32": 188932088
+    },
+    {
+      "path": "token_ids_65536/part_07.npy",
+      "bytes": 11839892,
+      "crc32": 2143957170
+    },
+    {
+      "path": "token_ids_16384/part_07.npy",
+      "bytes": 4942406,
+      "crc32": 780961333
+    },
+    {
+      "path": "token_ids_32768/part_08.npy",
+      "bytes": 8068388,
+      "crc32": 3660448620
+    },
+    {
+      "path": "token_ids_49152/part_08.npy",
+      "bytes": 9968070,
+      "crc32": 1045292162
+    },
+    {
+      "path": "token_ids_65536/part_08.npy",
+      "bytes": 11195642,
+      "crc32": 1045657681
+    },
+    {
+      "path": "token_ids_16384/part_08.npy",
+      "bytes": 4745936,
+      "crc32": 816175177
+    },
+    {
+      "path": "token_ids_32768/part_09.npy",
+      "bytes": 7642484,
+      "crc32": 1928785540
+    },
+    {
+      "path": "token_ids_49152/part_09.npy",
+      "bytes": 9410810,
+      "crc32": 3095357894
+    },
+    {
+      "path": "token_ids_65536/part_09.npy",
+      "bytes": 10612040,
+      "crc32": 1320207150
+    },
+    {
+      "path": "token_ids_16384/part_09.npy",
+      "bytes": 4479512,
+      "crc32": 1497214065
+    },
+    {
+      "path": "token_ids_32768/part_10.npy",
+      "bytes": 8124738,
+      "crc32": 1583751364
+    },
+    {
+      "path": "token_ids_49152/part_10.npy",
+      "bytes": 10060800,
+      "crc32": 2492828313
+    },
+    {
+      "path": "token_ids_65536/part_10.npy",
+      "bytes": 11294138,
+      "crc32": 3180503380
+    },
+    {
+      "path": "token_ids_16384/part_10.npy",
+      "bytes": 4731070,
+      "crc32": 196930118
+    },
+    {
+      "path": "token_ids_32768/part_11.npy",
+      "bytes": 8467168,
+      "crc32": 1068631250
+    },
+    {
+      "path": "token_ids_49152/part_11.npy",
+      "bytes": 10409376,
+      "crc32": 1040559878
+    },
+    {
+      "path": "token_ids_65536/part_11.npy",
+      "bytes": 11619582,
+      "crc32": 3881044188
+    },
+    {
+      "path": "token_ids_16384/part_11.npy",
+      "bytes": 5003264,
+      "crc32": 1849619638
+    },
+    {
+      "path": "token_ids_32768/part_12.npy",
+      "bytes": 8018744,
+      "crc32": 3868924278
+    },
+    {
+      "path": "token_ids_49152/part_12.npy",
+      "bytes": 9926722,
+      "crc32": 337671823
+    },
+    {
+      "path": "token_ids_65536/part_12.npy",
+      "bytes": 11201358,
+      "crc32": 1243587974
+    },
+    {
+      "path": "token_ids_16384/part_12.npy",
+      "bytes": 4660832,
+      "crc32": 4050740047
+    },
+    {
+      "path": "token_ids_32768/part_13.npy",
+      "bytes": 7709558,
+      "crc32": 2659446117
+    },
+    {
+      "path": "token_ids_49152/part_13.npy",
+      "bytes": 9532368,
+      "crc32": 2748056637
+    },
+    {
+      "path": "token_ids_65536/part_13.npy",
+      "bytes": 10724976,
+      "crc32": 2643830475
+    },
+    {
+      "path": "token_ids_16384/part_13.npy",
+      "bytes": 4482854,
+      "crc32": 2940814557
+    },
+    {
+      "path": "token_ids_32768/part_14.npy",
+      "bytes": 7564258,
+      "crc32": 4090867868
+    },
+    {
+      "path": "token_ids_49152/part_14.npy",
+      "bytes": 9349058,
+      "crc32": 905361306
+    },
+    {
+      "path": "token_ids_65536/part_14.npy",
+      "bytes": 10489006,
+      "crc32": 3633897118
+    },
+    {
+      "path": "token_ids_16384/part_14.npy",
+      "bytes": 4428130,
+      "crc32": 3538430372
+    },
+    {
+      "path": "token_ids_32768/part_15.npy",
+      "bytes": 8358984,
+      "crc32": 3106489007
+    },
+    {
+      "path": "token_ids_49152/part_15.npy",
+      "bytes": 10355900,
+      "crc32": 3900889095
+    },
+    {
+      "path": "token_ids_65536/part_15.npy",
+      "bytes": 11619158,
+      "crc32": 4252220602
+    },
+    {
+      "path": "token_ids_16384/part_15.npy",
+      "bytes": 4885600,
+      "crc32": 2571112039
+    },
+    {
+      "path": "token_ids_32768/part_16.npy",
+      "bytes": 7838764,
+      "crc32": 792540789
+    },
+    {
+      "path": "token_ids_49152/part_16.npy",
+      "bytes": 9614172,
+      "crc32": 3118673545
+    },
+    {
+      "path": "token_ids_65536/part_16.npy",
+      "bytes": 10748816,
+      "crc32": 1315084463
+    },
+    {
+      "path": "token_ids_16384/part_16.npy",
+      "bytes": 4711640,
+      "crc32": 3648518258
+    },
+    {
+      "path": "token_ids_32768/part_17.npy",
+      "bytes": 7622296,
+      "crc32": 1653417474
+    },
+    {
+      "path": "token_ids_49152/part_17.npy",
+      "bytes": 9327738,
+      "crc32": 1228408090
+    },
+    {
+      "path": "token_ids_65536/part_17.npy",
+      "bytes": 10431682,
+      "crc32": 2729802333
+    },
+    {
+      "path": "token_ids_16384/part_17.npy",
+      "bytes": 4521804,
+      "crc32": 3451766792
+    },
+    {
+      "path": "token_ids_32768/part_18.npy",
+      "bytes": 7980808,
+      "crc32": 1261953769
+    },
+    {
+      "path": "token_ids_49152/part_18.npy",
+      "bytes": 9812048,
+      "crc32": 3375886628
+    },
+    {
+      "path": "token_ids_65536/part_18.npy",
+      "bytes": 11020032,
+      "crc32": 1002490324
+    },
+    {
+      "path": "token_ids_16384/part_18.npy",
+      "bytes": 4687272,
+      "crc32": 871624555
+    },
+    {
+      "path": "token_ids_32768/part_19.npy",
+      "bytes": 7535468,
+      "crc32": 1572379284
+    },
+    {
+      "path": "token_ids_49152/part_19.npy",
+      "bytes": 9278930,
+      "crc32": 2899328759
+    },
+    {
+      "path": "token_ids_65536/part_19.npy",
+      "bytes": 10442938,
+      "crc32": 1440408098
+    },
+    {
+      "path": "token_ids_16384/part_19.npy",
+      "bytes": 4434090,
+      "crc32": 2234480397
+    },
+    {
+      "path": "token_ids_32768/part_20.npy",
+      "bytes": 7491566,
+      "crc32": 509060449
+    },
+    {
+      "path": "token_ids_49152/part_20.npy",
+      "bytes": 9243030,
+      "crc32": 31404221
+    },
+    {
+      "path": "token_ids_65536/part_20.npy",
+      "bytes": 10371620,
+      "crc32": 2444731799
+    },
+    {
+      "path": "token_ids_16384/part_20.npy",
+      "bytes": 4366136,
+      "crc32": 2483961860
+    },
+    {
+      "path": "token_ids_32768/part_21.npy",
+      "bytes": 7307472,
+      "crc32": 864744558
+    },
+    {
+      "path": "token_ids_49152/part_21.npy",
+      "bytes": 8952370,
+      "crc32": 1993573521
+    },
+    {
+      "path": "token_ids_65536/part_21.npy",
+      "bytes": 10063036,
+      "crc32": 1070975105
+    },
+    {
+      "path": "token_ids_16384/part_21.npy",
+      "bytes": 4312850,
+      "crc32": 4257847272
+    },
+    {
+      "path": "token_ids_32768/part_22.npy",
+      "bytes": 6527296,
+      "crc32": 665980487
+    },
+    {
+      "path": "token_ids_49152/part_22.npy",
+      "bytes": 8043108,
+      "crc32": 4111256002
+    },
+    {
+      "path": "token_ids_65536/part_22.npy",
+      "bytes": 9021210,
+      "crc32": 1848991961
+    },
+    {
+      "path": "token_ids_16384/part_22.npy",
+      "bytes": 3927264,
+      "crc32": 3520017131
+    },
+    {
+      "path": "token_ids_32768/part_23.npy",
+      "bytes": 7430724,
+      "crc32": 2871476764
+    },
+    {
+      "path": "token_ids_49152/part_23.npy",
+      "bytes": 9118142,
+      "crc32": 297298302
+    },
+    {
+      "path": "token_ids_65536/part_23.npy",
+      "bytes": 10256254,
+      "crc32": 3906302949
+    },
+    {
+      "path": "token_ids_16384/part_23.npy",
+      "bytes": 4355462,
+      "crc32": 2666316735
+    },
+    {
+      "path": "token_ids_32768/part_24.npy",
+      "bytes": 7698682,
+      "crc32": 1207253042
+    },
+    {
+      "path": "token_ids_49152/part_24.npy",
+      "bytes": 9452898,
+      "crc32": 1732356635
+    },
+    {
+      "path": "token_ids_65536/part_24.npy",
+      "bytes": 10582072,
+      "crc32": 3976119956
+    },
+    {
+      "path": "token_ids_16384/part_24.npy",
+      "bytes": 4522226,
+      "crc32": 1306328711
+    },
+    {
+      "path": "token_ids_32768/part_25.npy",
+      "bytes": 7807642,
+      "crc32": 4202997038
+    },
+    {
+      "path": "token_ids_49152/part_25.npy",
+      "bytes": 9590032,
+      "crc32": 2587956588
+    },
+    {
+      "path": "token_ids_65536/part_25.npy",
+      "bytes": 10740946,
+      "crc32": 1387722655
+    },
+    {
+      "path": "token_ids_16384/part_25.npy",
+      "bytes": 4672448,
+      "crc32": 1607780274
+    },
+    {
+      "path": "token_ids_32768/part_26.npy",
+      "bytes": 8160358,
+      "crc32": 739315089
+    },
+    {
+      "path": "token_ids_49152/part_26.npy",
+      "bytes": 10043714,
+      "crc32": 3169486691
+    },
+    {
+      "path": "token_ids_65536/part_26.npy",
+      "bytes": 11243760,
+      "crc32": 3704215594
+    },
+    {
+      "path": "token_ids_16384/part_26.npy",
+      "bytes": 4790352,
+      "crc32": 579716402
+    },
+    {
+      "path": "token_ids_32768/part_27.npy",
+      "bytes": 7185390,
+      "crc32": 2200707612
+    },
+    {
+      "path": "token_ids_49152/part_27.npy",
+      "bytes": 8836544,
+      "crc32": 3769213958
+    },
+    {
+      "path": "token_ids_65536/part_27.npy",
+      "bytes": 9893894,
+      "crc32": 2756517820
+    },
+    {
+      "path": "token_ids_16384/part_27.npy",
+      "bytes": 4240572,
+      "crc32": 2355967705
+    },
+    {
+      "path": "token_ids_32768/part_28.npy",
+      "bytes": 7304094,
+      "crc32": 3850029371
+    },
+    {
+      "path": "token_ids_49152/part_28.npy",
+      "bytes": 8970778,
+      "crc32": 3791700281
+    },
+    {
+      "path": "token_ids_65536/part_28.npy",
+      "bytes": 10038068,
+      "crc32": 2373603878
+    },
+    {
+      "path": "token_ids_16384/part_28.npy",
+      "bytes": 4322284,
+      "crc32": 2200099834
+    },
+    {
+      "path": "token_ids_32768/part_29.npy",
+      "bytes": 7716554,
+      "crc32": 1966346184
+    },
+    {
+      "path": "token_ids_49152/part_29.npy",
+      "bytes": 9507984,
+      "crc32": 2380382166
+    },
+    {
+      "path": "token_ids_65536/part_29.npy",
+      "bytes": 10621470,
+      "crc32": 489304762
+    },
+    {
+      "path": "token_ids_16384/part_29.npy",
+      "bytes": 4580334,
+      "crc32": 956756379
+    },
+    {
+      "path": "token_ids_32768/part_30.npy",
+      "bytes": 7374240,
+      "crc32": 1828706088
+    },
+    {
+      "path": "token_ids_49152/part_30.npy",
+      "bytes": 9121490,
+      "crc32": 1545644838
+    },
+    {
+      "path": "token_ids_65536/part_30.npy",
+      "bytes": 10200410,
+      "crc32": 1011281592
+    },
+    {
+      "path": "token_ids_16384/part_30.npy",
+      "bytes": 4354970,
+      "crc32": 1651194022
+    },
+    {
+      "path": "token_ids_32768/part_31.npy",
+      "bytes": 7502086,
+      "crc32": 2931448008
+    },
+    {
+      "path": "token_ids_49152/part_31.npy",
+      "bytes": 9194914,
+      "crc32": 715984958
+    },
+    {
+      "path": "token_ids_65536/part_31.npy",
+      "bytes": 10311250,
+      "crc32": 411364614
+    },
+    {
+      "path": "token_ids_16384/part_31.npy",
+      "bytes": 4532862,
+      "crc32": 171570198
+    },
+    {
+      "path": "ngram_16384_c4_s5.pkl",
+      "bytes": 126306088,
+      "crc32": 621562862
+    },
+    {
+      "path": "ngram_65536_c4_s30.pkl",
+      "bytes": 1081540204,
+      "crc32": 1927266722
+    }
+  ]
+}

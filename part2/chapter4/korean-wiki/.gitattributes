@@ -1,0 +1,9 @@
+# Keep reference/sample bytes and their original line endings unchanged.
+examples/*.text.txt -text whitespace=-blank-at-eof
+reports/examples/*.txt -text whitespace=cr-at-eol,-blank-at-eof
+processed-reference/LICENSE -text whitespace=-blank-at-eof
+
+# These generated records intentionally retain their final separator line.
+reports/step1-3-examples.txt whitespace=-blank-at-eof
+reports/vocabulary-coverage.txt whitespace=-blank-at-eof
+reports/final-summary-published.json whitespace=-blank-at-eof
