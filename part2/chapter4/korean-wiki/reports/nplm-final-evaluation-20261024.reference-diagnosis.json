@@ -1,0 +1,47 @@
+{
+  "kind": "FINAL_CHECKPOINT_REFERENCE_DIAGNOSIS",
+  "at": "2026-10-24T18:14:40.283266+09:00",
+  "targets": 256,
+  "cases": [
+    {
+      "name": "initial_fused_bias_reference",
+      "max_logit_error": 1.2874603271484375e-05,
+      "logits_outside_original_tolerance": 34,
+      "fp64_nll_sum": 809.9329849363512,
+      "mean_nll_error": 8.590093081295436e-10
+    },
+    {
+      "name": "aligned_separate_bias_reference",
+      "max_logit_error": 1.9073486328125e-06,
+      "logits_outside_original_tolerance": 0,
+      "fp64_nll_sum": 809.9329837475672,
+      "mean_nll_error": 5.50269696475425e-09
+    }
+  ],
+  "same_c_logits_loss_diagnosis": [
+    {
+      "name": "same_c_logits_torch_fp32_cross_entropy",
+      "nll_sum": 809.9254278406734,
+      "mean_error_against_c_double_accumulation": 2.9520764000867672e-05
+    },
+    {
+      "name": "same_c_logits_torch_fp64_cross_entropy",
+      "nll_sum": 809.9329848109819,
+      "mean_error_against_c_double_accumulation": 1.3487331251837986e-09
+    }
+  ],
+  "original_tolerances": {
+    "logits_atol": 2e-06,
+    "logits_rtol": 0.0002,
+    "mean_nll_absolute_error": 2e-06,
+    "declared_before_execution": true
+  },
+  "tolerances_relaxed": false,
+  "checkpoint_modified": false,
+  "trainer_modified": false,
+  "initial_failure_preserved": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/nplm-final-evaluation-20261024.oracle.json",
+  "aligned_comparison": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/nplm-final-evaluation-20261024.oracle-aligned.json",
+  "conclusion": "The initial reference used fused bias additions and FP32 cross_entropy. Match C's separate FP32 GEMM/bias order and independently evaluate NLL in FP64. The original tolerances then pass; no model or training arithmetic was changed.",
+  "documentation": "https://docs.pytorch.org/docs/main/notes/numerical_accuracy.html",
+  "scope": "The FP32 cross_entropy discrepancy is an observation of this installed CPU runtime and fixture, not a claim about every PyTorch environment."
+}

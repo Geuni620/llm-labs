@@ -1,0 +1,68 @@
+<section id="nplm-final-evaluation-20261024" aria-label="최종 4.074에폭 NPLM 성능 검증">
+  <h2>최종 4.074에폭 검증</h2>
+  <table class="table table-sm">
+    <caption>기존 가중치 고정 · 다음 토큰 예측 성능</caption>
+    <thead><tr><th scope="col">평가 범위</th><th scope="col">전체</th><th scope="col">공백·EOS 제외</th></tr></thead>
+    <tbody data-results></tbody>
+  </table>
+  <table class="table table-sm">
+    <caption>동일한 validation 16,384타깃 · Loss 비교</caption>
+    <thead><tr><th scope="col">학습 에폭</th><th scope="col">전체 Loss</th><th scope="col">제외 Loss</th></tr></thead>
+    <tbody data-comparison></tbody>
+  </table>
+  <div class="viz-row text-small" data-checks></div>
+  <div class="text-small">정확도는 다음 토큰 기준 · 사실 정확도는 미측정</div>
+</section>
+<style>
+  #nplm-final-evaluation-20261024 { color:var(--foreground); }
+  #nplm-final-evaluation-20261024 h2 { padding-right:90px; }
+  #nplm-final-evaluation-20261024 .measurement { overflow-wrap:anywhere; }
+</style>
+<script type="application/json" id="nplm-final-evaluation-data">__EVALUATION_DATA__</script>
+<script>
+(() => {
+  const root = document.getElementById('nplm-final-evaluation-20261024');
+  const data = JSON.parse(document.getElementById('nplm-final-evaluation-data').textContent);
+  const make = (tag, text, className) => {
+    const element = document.createElement(tag);
+    if (text !== undefined) element.textContent = text;
+    if (className) element.className = className;
+    return element;
+  };
+  const names = {fixed_validation:'고정 validation',full_validation:'전체 validation',full_test:'전체 test'};
+  const format = new Intl.NumberFormat('ko-KR');
+  for (const row of data.rows) {
+    const tr = make('tr');
+    const scope = make('th'); scope.scope = 'row';
+    scope.append(make('div', names[row.name]), make('div', `${format.format(row.metrics.targets)}타깃`, 'text-small'));
+    tr.append(scope);
+    for (const prefix of ['', 'content_']) {
+      const m = row.metrics;
+      const cell = make('td', undefined, 'measurement tabular-nums');
+      cell.append(make('div', `Loss ${m[prefix+'loss'].toFixed(4)}`));
+      cell.append(make('div', `PPL ${m[prefix+'perplexity'].toFixed(2)}`));
+      cell.append(make('div', `정확도 ${(m[prefix+'accuracy']*100).toFixed(2)}%`));
+      tr.append(cell);
+    }
+    root.querySelector('[data-results]').append(tr);
+  }
+  for (const row of data.fixed_validation_comparison) {
+    const tr = make('tr');
+    tr.append(make('td', row.epochs === 4.074373045675998 ? '4.074 최종' : `${row.epochs}.000`));
+    tr.append(make('td', row.validation.loss.toFixed(6), 'tabular-nums'));
+    tr.append(make('td', row.validation.content_loss.toFixed(6), 'tabular-nums'));
+    root.querySelector('[data-comparison]').append(tr);
+  }
+  root.querySelector('[data-checks]').textContent = `추가 업데이트 ${data.training_updates_added}회 · 최종 파일 불변 · 독립 수치검증 ${data.oracleTargets}타깃 통과`;
+  requestAnimationFrame(() => {
+    window.__finalEvaluationQA = {
+      rows:root.querySelector('[data-results]').rows.length,
+      comparedEpochs:root.querySelector('[data-comparison]').rows.length,
+      overflow:document.documentElement.scrollWidth > innerWidth + 1,
+      oraclePassed:data.oraclePassed,
+      stateUnchanged:data.stateUnchanged
+    };
+    console.info('final-evaluation-qa '+JSON.stringify(window.__finalEvaluationQA));
+  });
+})();
+</script>

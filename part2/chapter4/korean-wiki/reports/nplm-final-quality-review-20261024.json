@@ -1,0 +1,138 @@
+{
+  "kind": "QUALITATIVE_REVIEW_OF_EXISTING_ACTUAL_GENERATIONS",
+  "at": "2026-10-24T18:06:58.590872+09:00",
+  "source": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/nplm-final-test20-20261024.results.json",
+    "sha256": "c7ce38fb0b6d5b56c52b29dfda116efe11872704c3574c44653b9b5aded3b5b1"
+  },
+  "new_inference_or_training": false,
+  "sampling": {
+    "top_k": 40,
+    "temperature": 0.8,
+    "max_new_tokens": 160,
+    "stop": "first generated SF ending, EOS, or token cap",
+    "selection": "One sample per predeclared prompt; no rejection or retries."
+  },
+  "observations": [
+    {
+      "sample_id": 2,
+      "prompt": "대한민국의 수도는",
+      "actual_surface": "대한민국의 수도는 경기도 평택시 소재다.",
+      "observed_issue": "대한민국 수도를 경기도 평택시로 생성했다. 사실 정확도를 통과한 사례로 볼 수 없다.",
+      "first_next_token_candidates": [
+        {
+          "token": "1/SN",
+          "probability": 0.12094352844819842
+        },
+        {
+          "token": "2/SN",
+          "probability": 0.06662274367290343
+        },
+        {
+          "token": "대한민국/NNP",
+          "probability": 0.059892517998387365
+        },
+        {
+          "token": "일본/NNP",
+          "probability": 0.03208488671648928
+        },
+        {
+          "token": "제/XPN",
+          "probability": 0.0222218704794993
+        }
+      ]
+    },
+    {
+      "sample_id": 3,
+      "prompt": "부산은",
+      "actual_surface": "부산은 대한민국 대한민국의 축구 선수다.",
+      "observed_issue": "도시 입력에서 축구 선수 서술로 주제가 바뀌고 대한민국을 연속 반복했다.",
+      "first_next_token_candidates": [
+        {
+          "token": "대한민국/NNP",
+          "probability": 0.07174252464381389
+        },
+        {
+          "token": "1/SN",
+          "probability": 0.02945719996625146
+        },
+        {
+          "token": "경기도/NNP",
+          "probability": 0.024421458758093893
+        },
+        {
+          "token": "부산/NNP",
+          "probability": 0.021746575689577538
+        },
+        {
+          "token": "일본/NNP",
+          "probability": 0.019284339501078423
+        }
+      ]
+    },
+    {
+      "sample_id": 5,
+      "prompt": "한강은",
+      "actual_surface": "한강은 주로 유럽 강대국 출신으로 미국 정치인들의 지원을 요청했으며, 2017년 5월 22일 새벽 3일 오전 8시 23분(1411~1446)를 역임했다.",
+      "observed_issue": "강 이름에서 출신·정치인·재임과 여러 날짜의 서술로 주제가 이동했다.",
+      "first_next_token_candidates": [
+        {
+          "token": "1/SN",
+          "probability": 0.031894180492519596
+        },
+        {
+          "token": "대한민국/NNP",
+          "probability": 0.023754524290720967
+        },
+        {
+          "token": "2/SN",
+          "probability": 0.012886647312800058
+        },
+        {
+          "token": "그/MM",
+          "probability": 0.00967413808950105
+        },
+        {
+          "token": "일본/NNP",
+          "probability": 0.009042339066030539
+        }
+      ]
+    },
+    {
+      "sample_id": 16,
+      "prompt": "컴퓨터는",
+      "actual_surface": "컴퓨터는 2008년 12월 17일 은퇴했다.",
+      "observed_issue": "컴퓨터라는 일반 입력에서 특정 날짜의 은퇴를 생성했다. 해당 날짜를 뒷받침할 문맥이 없다.",
+      "first_next_token_candidates": [
+        {
+          "token": "1/SN",
+          "probability": 0.0373722601338176
+        },
+        {
+          "token": "2/SN",
+          "probability": 0.030712850310394703
+        },
+        {
+          "token": "아니/VCN",
+          "probability": 0.016150960443338306
+        },
+        {
+          "token": "일반/NNG",
+          "probability": 0.015820313818930263
+        },
+        {
+          "token": "초기/NNG",
+          "probability": 0.011019282759450256
+        }
+      ]
+    }
+  ],
+  "sentence_ending_reached": 20,
+  "formal_factual_accuracy": null,
+  "scope": "종결부호 도달은 문법·사실 정확도가 아니다. 사례는 관찰된 문제를 설명하기 위한 것이며, 근거 정답이 없는 20개 프롬프트로 사실 정확도의 백분율을 만들지 않는다.",
+  "remaining_quality_work": [
+    "출처·정답이 있는 별도 검증 질문과 문맥을 준비하고 고정된 기준으로 평가",
+    "숫자 자릿수 분리 구현과 산술 능력·숫자 사실 정확도를 구분",
+    "한 번의 K/seed/모델 결과를 품질 최적값으로 단정하지 않기"
+  ]
+}

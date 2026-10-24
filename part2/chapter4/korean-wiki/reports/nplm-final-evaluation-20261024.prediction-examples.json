@@ -1,0 +1,1032 @@
+{
+  "kind": "ACTUAL_FIXED_VALIDATION_NEXT_TOKEN_EXAMPLES",
+  "model_checkpoint_identity": {
+    "bytes": 84145699,
+    "sha256": "87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6"
+  },
+  "evaluation_target_hash": "98812c723f2be1239a9667b64774ac228437fb3ed8b67f79dad1e6953eb5abd4",
+  "selection_rule": "First 20 targets excluding WS/EOS in the already saved 256-target numerical fixture. No generation, training, retries or new inference.",
+  "scope": "Each reference is an actual next token in validation. Teacher-forced token prediction examples, not a factual QA accuracy test or an independent 20-item benchmark.",
+  "examples": [
+    {
+      "fixture_row": 0,
+      "context_ids": [
+        4,
+        58,
+        4,
+        944,
+        22,
+        4,
+        385,
+        6
+      ],
+      "context_tokens": [
+        "<sp>/WS",
+        "이/MM",
+        "<sp>/WS",
+        "물질/NNG",
+        "이/JKS",
+        "<sp>/WS",
+        "등장/NNG",
+        "하/XSV"
+      ],
+      "reference_token": "ᆫ/ETM",
+      "predicted_token": "ᆫ/ETM",
+      "top1_correct": true,
+      "reference_rank": 1,
+      "reference_probability": 0.15155783072738016,
+      "loss": 1.8867880058968225,
+      "top5": [
+        {
+          "token": "ᆫ/ETM",
+          "probability": 0.15155783072738016
+        },
+        {
+          "token": "는/ETM",
+          "probability": 0.1487330645487838
+        },
+        {
+          "token": "었/EP",
+          "probability": 0.11224391371328643
+        },
+        {
+          "token": "ᆫ다/EF",
+          "probability": 0.09693791480701679
+        },
+        {
+          "token": "기/ETN",
+          "probability": 0.0802924965231117
+        }
+      ]
+    },
+    {
+      "fixture_row": 1,
+      "context_ids": [
+        4,
+        3218,
+        16,
+        78,
+        4,
+        726,
+        183,
+        4
+      ],
+      "context_tokens": [
+        "<sp>/WS",
+        "원형/NNG",
+        "이/VCP",
+        "지만/EC",
+        "<sp>/WS",
+        "모양/NNG",
+        "이나/JC",
+        "<sp>/WS"
+      ],
+      "reference_token": "방수/NNG",
+      "predicted_token": "모양/NNG",
+      "top1_correct": false,
+      "reference_rank": 2176,
+      "reference_probability": 5.7418662742329255e-05,
+      "loss": 9.765141172599861,
+      "top5": [
+        {
+          "token": "모양/NNG",
+          "probability": 0.03018617079896282
+        },
+        {
+          "token": "조각/NNG",
+          "probability": 0.022251805941918366
+        },
+        {
+          "token": "무늬/NNG",
+          "probability": 0.021611147421928104
+        },
+        {
+          "token": "꽃/NNG",
+          "probability": 0.017108089622788498
+        },
+        {
+          "token": "장식/NNG",
+          "probability": 0.016098261731058487
+        }
+      ]
+    },
+    {
+      "fixture_row": 2,
+      "context_ids": [
+        17,
+        4,
+        548,
+        23,
+        27,
+        4,
+        1227,
+        4
+      ],
+      "context_tokens": [
+        "어/EC",
+        "<sp>/WS",
+        "수행/NNG",
+        "되/XSV",
+        "는/ETM",
+        "<sp>/WS",
+        "권력/NNG",
+        "<sp>/WS"
+      ],
+      "reference_token": "행사/NNG",
+      "predicted_token": "남용/NNG",
+      "top1_correct": false,
+      "reference_rank": 29,
+      "reference_probability": 0.005411063136761109,
+      "loss": 5.219309692165419,
+      "top5": [
+        {
+          "token": "남용/NNG",
+          "probability": 0.06974767123704792
+        },
+        {
+          "token": "강화/NNG",
+          "probability": 0.03557999569935205
+        },
+        {
+          "token": "투쟁/NNG",
+          "probability": 0.0288626224253132
+        },
+        {
+          "token": "관계/NNG",
+          "probability": 0.028850348644152406
+        },
+        {
+          "token": "구조/NNG",
+          "probability": 0.02877549821911094
+        }
+      ]
+    },
+    {
+      "fixture_row": 3,
+      "context_ids": [
+        230,
+        43,
+        4,
+        10430,
+        21,
+        4,
+        142,
+        4
+      ],
+      "context_tokens": [
+        "새롭/VA-I",
+        "은/ETM",
+        "<sp>/WS",
+        "패러다임/NNG",
+        "은/JX",
+        "<sp>/WS",
+        "세계/NNG",
+        "<sp>/WS"
+      ],
+      "reference_token": "경제/NNG",
+      "predicted_token": "최초/NNG",
+      "top1_correct": false,
+      "reference_rank": 3,
+      "reference_probability": 0.03629971208039693,
+      "loss": 3.315945469412294,
+      "top5": [
+        {
+          "token": "최초/NNG",
+          "probability": 0.06920891945870998
+        },
+        {
+          "token": "사회/NNG",
+          "probability": 0.038850926509037834
+        },
+        {
+          "token": "경제/NNG",
+          "probability": 0.03629971208039693
+        },
+        {
+          "token": "시장/NNG",
+          "probability": 0.022031401983321295
+        },
+        {
+          "token": "무역/NNG",
+          "probability": 0.021316251432051386
+        }
+      ]
+    },
+    {
+      "fixture_row": 4,
+      "context_ids": [
+        20,
+        4,
+        51,
+        216,
+        4,
+        39,
+        36,
+        164
+      ],
+      "context_tokens": [
+        "2/SN",
+        "<sp>/WS",
+        "(/SSO",
+        "약/MM",
+        "<sp>/WS",
+        "4/SN",
+        "5/SN",
+        "%/SW"
+      ],
+      "reference_token": ")/SSC",
+      "predicted_token": ")/SSC",
+      "top1_correct": true,
+      "reference_rank": 1,
+      "reference_probability": 0.9188357798807264,
+      "loss": 0.08464786695683797,
+      "top5": [
+        {
+          "token": ")/SSC",
+          "probability": 0.9188357798807264
+        },
+        {
+          "token": "<sp>/WS",
+          "probability": 0.013045608634202866
+        },
+        {
+          "token": ",/SP",
+          "probability": 0.009376651988790678
+        },
+        {
+          "token": "가/VV",
+          "probability": 0.007353630432872572
+        },
+        {
+          "token": "이/VCP",
+          "probability": 0.00576280584536915
+        }
+      ]
+    },
+    {
+      "fixture_row": 5,
+      "context_ids": [
+        4,
+        1288,
+        17,
+        4,
+        36,
+        18,
+        3254,
+        4
+      ],
+      "context_tokens": [
+        "<sp>/WS",
+        "뛰어나/VA",
+        "어/EC",
+        "<sp>/WS",
+        "5/SN",
+        "0/SN",
+        "발/NNB",
+        "<sp>/WS"
+      ],
+      "reference_token": "중/NNB",
+      "predicted_token": "이상/NNG",
+      "top1_correct": false,
+      "reference_rank": 12,
+      "reference_probability": 0.007004036786313324,
+      "loss": 4.961268612385956,
+      "top5": [
+        {
+          "token": "이상/NNG",
+          "probability": 0.34930061276174973
+        },
+        {
+          "token": "정도/NNG",
+          "probability": 0.12353578831439112
+        },
+        {
+          "token": "발사/NNG",
+          "probability": 0.04209399416237867
+        },
+        {
+          "token": "가까이/MAG",
+          "probability": 0.024893125889352878
+        },
+        {
+          "token": "미사일/NNG",
+          "probability": 0.017518360378435356
+        }
+      ]
+    },
+    {
+      "fixture_row": 6,
+      "context_ids": [
+        6,
+        46,
+        4,
+        62,
+        4,
+        65,
+        27,
+        4
+      ],
+      "context_tokens": [
+        "하/XSV",
+        "ᆯ/ETM",
+        "<sp>/WS",
+        "수/NNB",
+        "<sp>/WS",
+        "있/VA",
+        "는/ETM",
+        "<sp>/WS"
+      ],
+      "reference_token": "우호/NNG",
+      "predicted_token": "것/NNB",
+      "top1_correct": false,
+      "reference_rank": 5697,
+      "reference_probability": 1.478946459913416e-05,
+      "loss": 11.121595482090576,
+      "top5": [
+        {
+          "token": "것/NNB",
+          "probability": 0.08328361770761604
+        },
+        {
+          "token": "경우/NNG",
+          "probability": 0.014850789746982566
+        },
+        {
+          "token": "사람/NNG",
+          "probability": 0.00982791675269029
+        },
+        {
+          "token": "상황/NNG",
+          "probability": 0.009782555124440172
+        },
+        {
+          "token": "유일/NNG",
+          "probability": 0.009448927755953015
+        }
+      ]
+    },
+    {
+      "fixture_row": 8,
+      "context_ids": [
+        172,
+        4,
+        20225,
+        7,
+        4,
+        6461,
+        922,
+        4
+      ],
+      "context_tokens": [
+        "라/EC",
+        "<sp>/WS",
+        "리퍼/NNP",
+        "의/JKG",
+        "<sp>/WS",
+        "Y/SL",
+        "자/NNG",
+        "<sp>/WS"
+      ],
+      "reference_token": "형태/NNG",
+      "predicted_token": "모양/NNG",
+      "top1_correct": false,
+      "reference_rank": 4,
+      "reference_probability": 0.01922866056943817,
+      "loss": 3.951353374982686,
+      "top5": [
+        {
+          "token": "모양/NNG",
+          "probability": 0.3232300376386457
+        },
+        {
+          "token": "또는/MAG",
+          "probability": 0.029277162308846985
+        },
+        {
+          "token": "이름/NNG",
+          "probability": 0.025418870510563997
+        },
+        {
+          "token": "형태/NNG",
+          "probability": 0.01922866056943817
+        },
+        {
+          "token": "역할/NNG",
+          "probability": 0.01159538737391743
+        }
+      ]
+    },
+    {
+      "fixture_row": 9,
+      "context_ids": [
+        2555,
+        4,
+        29,
+        29,
+        97,
+        10,
+        4,
+        747
+      ],
+      "context_tokens": [
+        "매체/NNG",
+        "<sp>/WS",
+        "9/SN",
+        "9/SN",
+        "개/NNB",
+        ",/SP",
+        "<sp>/WS",
+        "분류/NNG"
+      ],
+      "reference_token": "되/XSV",
+      "predicted_token": "<sp>/WS",
+      "top1_correct": false,
+      "reference_rank": 3,
+      "reference_probability": 0.09640004240258469,
+      "loss": 2.339248637504897,
+      "top5": [
+        {
+          "token": "<sp>/WS",
+          "probability": 0.3459462304358894
+        },
+        {
+          "token": ",/SP",
+          "probability": 0.22736312404656295
+        },
+        {
+          "token": "되/XSV",
+          "probability": 0.09640004240258469
+        },
+        {
+          "token": "하/XSV",
+          "probability": 0.06058609080368409
+        },
+        {
+          "token": "가/JKS",
+          "probability": 0.024677055628916686
+        }
+      ]
+    },
+    {
+      "fixture_row": 10,
+      "context_ids": [
+        2,
+        2,
+        2,
+        16171,
+        331,
+        66,
+        4,
+        1280
+      ],
+      "context_tokens": [
+        "<bos>",
+        "<bos>",
+        "<bos>",
+        "유프라테스/NNP",
+        "강/NNG",
+        "과/JKB",
+        "<sp>/WS",
+        "접하/VV"
+      ],
+      "reference_token": "며/EC",
+      "predicted_token": "ᆫ다/EF",
+      "top1_correct": false,
+      "reference_rank": 5,
+      "reference_probability": 0.08739812721998144,
+      "loss": 2.437281424239223,
+      "top5": [
+        {
+          "token": "ᆫ다/EF",
+          "probability": 0.22899106995509286
+        },
+        {
+          "token": "ᆫ/ETM",
+          "probability": 0.140262594796453
+        },
+        {
+          "token": "어/EC",
+          "probability": 0.10245793426852355
+        },
+        {
+          "token": "고/EC",
+          "probability": 0.09375082291504762
+        },
+        {
+          "token": "며/EC",
+          "probability": 0.08739812721998144
+        }
+      ]
+    },
+    {
+      "fixture_row": 12,
+      "context_ids": [
+        16,
+        9,
+        8,
+        5,
+        4,
+        4835,
+        26,
+        4
+      ],
+      "context_tokens": [
+        "이/VCP",
+        "었/EP",
+        "다/EF",
+        "./SF",
+        "<sp>/WS",
+        "키프로스/NNP",
+        "에서/JKB",
+        "<sp>/WS"
+      ],
+      "reference_token": "영국/NNP",
+      "predicted_token": "1/SN",
+      "top1_correct": false,
+      "reference_rank": 40,
+      "reference_probability": 0.002331255880559875,
+      "loss": 6.061348152083158,
+      "top5": [
+        {
+          "token": "1/SN",
+          "probability": 0.0493060094189616
+        },
+        {
+          "token": "가장/MAG",
+          "probability": 0.04863273412804687
+        },
+        {
+          "token": "열리/VV",
+          "probability": 0.02589660084663917
+        },
+        {
+          "token": "2/SN",
+          "probability": 0.019124342852817815
+        },
+        {
+          "token": "태어나/VV",
+          "probability": 0.017166664098625068
+        }
+      ]
+    },
+    {
+      "fixture_row": 14,
+      "context_ids": [
+        29,
+        42,
+        4,
+        35,
+        18,
+        54,
+        10,
+        4
+      ],
+      "context_tokens": [
+        "9/SN",
+        "월/NNB",
+        "<sp>/WS",
+        "3/SN",
+        "0/SN",
+        "일/NNB",
+        ",/SP",
+        "<sp>/WS"
+      ],
+      "reference_token": "보츠와나/NNP",
+      "predicted_token": "1/SN",
+      "top1_correct": false,
+      "reference_rank": 8911,
+      "reference_probability": 9.724270779069413e-06,
+      "loss": 11.540885655428603,
+      "top5": [
+        {
+          "token": "1/SN",
+          "probability": 0.04429265514357877
+        },
+        {
+          "token": "2/SN",
+          "probability": 0.034708474978026246
+        },
+        {
+          "token": "그/NP",
+          "probability": 0.021646144774970684
+        },
+        {
+          "token": "대한민국/NNP",
+          "probability": 0.010894358007793916
+        },
+        {
+          "token": "일본/NNP",
+          "probability": 0.01079014219757545
+        }
+      ]
+    },
+    {
+      "fixture_row": 15,
+      "context_ids": [
+        1250,
+        4,
+        139,
+        12,
+        4,
+        1065,
+        7,
+        4
+      ],
+      "context_tokens": [
+        "키/NNG",
+        "<sp>/WS",
+        "크/VA",
+        "ᆫ/ETM",
+        "<sp>/WS",
+        "나무/NNG",
+        "의/JKG",
+        "<sp>/WS"
+      ],
+      "reference_token": "높이/NNG",
+      "predicted_token": "크기/NNG",
+      "top1_correct": false,
+      "reference_rank": 5,
+      "reference_probability": 0.013862222633755207,
+      "loss": 4.278587934891379,
+      "top5": [
+        {
+          "token": "크기/NNG",
+          "probability": 0.03315859733978202
+        },
+        {
+          "token": "작/VA",
+          "probability": 0.025214750921231793
+        },
+        {
+          "token": "몸/NNG",
+          "probability": 0.020164414425838773
+        },
+        {
+          "token": "길이/NNG",
+          "probability": 0.01881564740208046
+        },
+        {
+          "token": "높이/NNG",
+          "probability": 0.013862222633755207
+        }
+      ]
+    },
+    {
+      "fixture_row": 16,
+      "context_ids": [
+        238,
+        7,
+        4,
+        1445,
+        3626,
+        21,
+        4,
+        2317
+      ],
+      "context_tokens": [
+        "작품/NNG",
+        "의/JKG",
+        "<sp>/WS",
+        "장비/NNG",
+        "품/NNG",
+        "은/JX",
+        "<sp>/WS",
+        "개조/NNG"
+      ],
+      "reference_token": "로/JKB",
+      "predicted_token": "되/XSV",
+      "top1_correct": false,
+      "reference_rank": 14,
+      "reference_probability": 0.00647804476568266,
+      "loss": 5.03933654783967,
+      "top5": [
+        {
+          "token": "되/XSV",
+          "probability": 0.2822722114819545
+        },
+        {
+          "token": "<sp>/WS",
+          "probability": 0.20006764763806423
+        },
+        {
+          "token": "하/XSV",
+          "probability": 0.08076135757321463
+        },
+        {
+          "token": "를/JKO",
+          "probability": 0.031583259564619326
+        },
+        {
+          "token": "적/XSN",
+          "probability": 0.027603054708979495
+        }
+      ]
+    },
+    {
+      "fixture_row": 17,
+      "context_ids": [
+        39,
+        44,
+        115,
+        36,
+        289,
+        20,
+        16,
+        25
+      ],
+      "context_tokens": [
+        "4/SN",
+        "7/SN",
+        "./SW",
+        "5/SN",
+        "km/SL",
+        "2/SN",
+        "이/VCP",
+        "고/EC"
+      ],
+      "reference_token": ",/SP",
+      "predicted_token": ",/SP",
+      "top1_correct": true,
+      "reference_rank": 1,
+      "reference_probability": 0.6400157625286006,
+      "loss": 0.44626247398076874,
+      "top5": [
+        {
+          "token": ",/SP",
+          "probability": 0.6400157625286006
+        },
+        {
+          "token": "<sp>/WS",
+          "probability": 0.3449025748110418
+        },
+        {
+          "token": "는/JX",
+          "probability": 0.0054569298287091535
+        },
+        {
+          "token": "(/SSO",
+          "probability": 0.0023632393925860674
+        },
+        {
+          "token": "./SF",
+          "probability": 0.0007436255589290544
+        }
+      ]
+    },
+    {
+      "fixture_row": 19,
+      "context_ids": [
+        7,
+        4,
+        399,
+        37,
+        16,
+        12,
+        4,
+        474
+      ],
+      "context_tokens": [
+        "의/JKG",
+        "<sp>/WS",
+        "독립/NNG",
+        "적/XSN",
+        "이/VCP",
+        "ᆫ/ETM",
+        "<sp>/WS",
+        "기관/NNG"
+      ],
+      "reference_token": "으로/JKB",
+      "predicted_token": "이/VCP",
+      "top1_correct": false,
+      "reference_rank": 4,
+      "reference_probability": 0.10300590168972251,
+      "loss": 2.272968994435496,
+      "top5": [
+        {
+          "token": "이/VCP",
+          "probability": 0.1811575694319018
+        },
+        {
+          "token": "은/JX",
+          "probability": 0.12974657159169248
+        },
+        {
+          "token": "들/XSN",
+          "probability": 0.1103341819239249
+        },
+        {
+          "token": "으로/JKB",
+          "probability": 0.10300590168972251
+        },
+        {
+          "token": "<sp>/WS",
+          "probability": 0.07153481080449087
+        }
+      ]
+    },
+    {
+      "fixture_row": 21,
+      "context_ids": [
+        4,
+        847,
+        7,
+        4,
+        753,
+        69,
+        4,
+        434
+      ],
+      "context_tokens": [
+        "<sp>/WS",
+        "파괴/NNG",
+        "의/JKG",
+        "<sp>/WS",
+        "요소/NNG",
+        "와/JKB",
+        "<sp>/WS",
+        "연결/NNG"
+      ],
+      "reference_token": "되/XSV",
+      "predicted_token": "되/XSV",
+      "top1_correct": true,
+      "reference_rank": 1,
+      "reference_probability": 0.7407700926195032,
+      "loss": 0.30006496819905976,
+      "top5": [
+        {
+          "token": "되/XSV",
+          "probability": 0.7407700926195032
+        },
+        {
+          "token": "하/XSV",
+          "probability": 0.1339821370006367
+        },
+        {
+          "token": "시키/XSV",
+          "probability": 0.05771712305719162
+        },
+        {
+          "token": "을/JKO",
+          "probability": 0.026339883808514482
+        },
+        {
+          "token": "이/JKS",
+          "probability": 0.015281778665204868
+        }
+      ]
+    },
+    {
+      "fixture_row": 23,
+      "context_ids": [
+        2,
+        4241,
+        27,
+        4,
+        1215,
+        16,
+        61,
+        4
+      ],
+      "context_tokens": [
+        "<bos>",
+        "자/VV",
+        "는/ETM",
+        "<sp>/WS",
+        "신경/NNG",
+        "이/VCP",
+        "며/EC",
+        "<sp>/WS"
+      ],
+      "reference_token": "본관/NNG",
+      "predicted_token": "눈/NNG",
+      "top1_correct": false,
+      "reference_rank": 66,
+      "reference_probability": 0.0016476875207705089,
+      "loss": 6.408382476656274,
+      "top5": [
+        {
+          "token": "눈/NNG",
+          "probability": 0.01727790052307684
+        },
+        {
+          "token": "몸/NNG",
+          "probability": 0.016651393102138236
+        },
+        {
+          "token": "신경/NNG",
+          "probability": 0.008933356908236902
+        },
+        {
+          "token": "목/NNG",
+          "probability": 0.008082461675366432
+        },
+        {
+          "token": "2/SN",
+          "probability": 0.007415714978794274
+        }
+      ]
+    },
+    {
+      "fixture_row": 24,
+      "context_ids": [
+        29596,
+        201,
+        31,
+        4,
+        646,
+        46,
+        4,
+        90
+      ],
+      "context_tokens": [
+        "은/NNP",
+        "시대/NNG",
+        "가/JKS",
+        "<sp>/WS",
+        "끝나/VV",
+        "ᆯ/ETM",
+        "<sp>/WS",
+        "때/NNG"
+      ],
+      "reference_token": "까지/JX",
+      "predicted_token": "까지/JX",
+      "top1_correct": true,
+      "reference_rank": 1,
+      "reference_probability": 0.776780368424472,
+      "loss": 0.25259763469245805,
+      "top5": [
+        {
+          "token": "까지/JX",
+          "probability": 0.776780368424472
+        },
+        {
+          "token": "<sp>/WS",
+          "probability": 0.07016799115132738
+        },
+        {
+          "token": "는/JX",
+          "probability": 0.04240633841748145
+        },
+        {
+          "token": "에/JKB",
+          "probability": 0.04117107083746663
+        },
+        {
+          "token": ",/SP",
+          "probability": 0.02052865216883963
+        }
+      ]
+    },
+    {
+      "fixture_row": 25,
+      "context_ids": [
+        6,
+        25,
+        4,
+        764,
+        4,
+        2049,
+        13,
+        4
+      ],
+      "context_tokens": [
+        "하/XSV",
+        "고/EC",
+        "<sp>/WS",
+        "문/NNG",
+        "<sp>/WS",
+        "고정/NNG",
+        "을/JKO",
+        "<sp>/WS"
+      ],
+      "reference_token": "해제/NNG",
+      "predicted_token": "통하/VV",
+      "top1_correct": false,
+      "reference_rank": 125,
+      "reference_probability": 0.0010327181325738557,
+      "loss": 6.875560989027336,
+      "top5": [
+        {
+          "token": "통하/VV",
+          "probability": 0.060955308789091237
+        },
+        {
+          "token": "사용/NNG",
+          "probability": 0.05113305865430878
+        },
+        {
+          "token": "위하/VV",
+          "probability": 0.03523004739174764
+        },
+        {
+          "token": "받/VV-R",
+          "probability": 0.02982727036193171
+        },
+        {
+          "token": "하/VV",
+          "probability": 0.02398250119230293
+        }
+      ]
+    }
+  ]
+}

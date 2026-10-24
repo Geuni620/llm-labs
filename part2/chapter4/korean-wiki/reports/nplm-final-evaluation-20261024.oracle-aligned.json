@@ -1,0 +1,56 @@
+{
+  "kind": "ISOLATED_TORCH_CPU_FINAL_WEIGHTS_ORACLE",
+  "at": "2026-10-24T18:13:26.702523+09:00",
+  "passed": true,
+  "targets": 256,
+  "compared_logits": 9043968,
+  "max_absolute_logit_error": 1.9073486328125e-06,
+  "logits_outside_tolerance": 0,
+  "mean_nll_errors": [
+    5.50269652066504e-09,
+    7.26285520613601e-09
+  ],
+  "c_totals": [
+    256.0,
+    809.9329851562576,
+    125.0,
+    188.0,
+    788.785958377238,
+    61.0
+  ],
+  "torch_totals": [
+    256.0,
+    809.9329837475673,
+    125.0,
+    188.0,
+    788.7859570118212,
+    61.0
+  ],
+  "tolerances": {
+    "logits_atol": 2e-06,
+    "logits_rtol": 0.0002,
+    "mean_nll_absolute_error": 2e-06,
+    "declared_before_execution": true
+  },
+  "checkpoint_identity_after": {
+    "bytes": 84145699,
+    "sha256": "87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6"
+  },
+  "raw_report_identity": {
+    "bytes": 25002,
+    "sha256": "96dc12529966eefef3efc6495d00886acbf4ab77e52a297bfc222dabdac0c061"
+  },
+  "torch_version": "2.14.1",
+  "reference_policy": "FP32 separate GEMM/bias operations matching C; independent FP64 NLL. Original tolerances unchanged.",
+  "source_identity": {
+    "bytes": 19612,
+    "sha256": "9942135b61fb5e9720efecb10439d23db7abee4d9786dcbef95c46ab8c45c2e7"
+  },
+  "initial_reference_attempt": {
+    "identity": {
+      "bytes": 1013,
+      "sha256": "fb3983f9c396eb18aa601558fa5a20639052f0a6cc27fdf91674ada0ad6d1107"
+    },
+    "passed": false
+  }
+}

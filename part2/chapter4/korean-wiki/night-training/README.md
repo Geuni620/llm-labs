@@ -1,5 +1,29 @@
 # CPU/C 실제 야간 학습
 
+현재 학습은 사용자 요청에 따라 **4.074373에폭에서 종료**됐으며 기존 `latest.npz`가 최종 선택본이다.
+종료·파일 보존 확인과 별도로 이 저장본의 고정 validation·전체 validation/test 평가와
+독립 수치 검증을 마쳤다. [결과 TXT](../reports/nplm-final-evaluation-20261024.txt),
+[전체 JSON](../reports/nplm-final-evaluation-20261024.json)을 참고한다. 생성 20개 검사에서는
+입력 포함 전체 일치가 0개, 생성 부분만 일치가 1개였지만 사실 오류와 문맥 혼선도 관찰됐다.
+이 결과를 낮은 Loss나 사실 정확도의 증거로 쓰지 않는다.
+
+`evaluate_checkpoint.py`는 기존 고정 검증 타깃 16,384개와 validation/test 전체를 평가한다.
+C 계산과 별도 Torch CPU 계산을 대조하고 가중치·Adam·샘플러·최종 파일의 불변성을 검사한다.
+`evaluate`, `oracle`, `report`를 각각 별도 프로세스로 실행하며 이전 산출물을 덮어쓰지 않는다.
+최초 비교는 참조 도구의 fused bias 합산과 FP32 NLL 때문에 실패했다. C와 같은 별도 bias 합산 및
+FP64 참조 NLL로 맞춘 뒤 **기존 허용치를 그대로 유지해 통과**했다. 최초 실패와 실행 당시 소스,
+[재현 가능한 원인 진단](../reports/nplm-final-evaluation-20261024.reference-diagnosis.json)도 보존했다.
+모델·동결된 학습기나 학습 계산을 수정한 것은 아니다.
+
+```sh
+.venv-training/bin/python night-training/evaluate_checkpoint.py evaluate
+.venv-training/bin/python night-training/evaluate_checkpoint.py oracle
+.venv-training/bin/python night-training/evaluate_checkpoint.py report
+```
+
+위 명령의 날짜가 고정된 기존 결과가 있으면 재생성을 거부한다. 선택 당시의 모델 메타데이터와
+과거 평가 기록도 수정하지 않는다. 아래 내용은 2026-10-22~24 실제 실행의 설정과 관리 이력이다.
+
 최적화한 C 커널을 사용하는 NPLM 학습기다. 원본 배열을 바꾸거나 이전 14시간 비교 큐를 재개하지 않는다. Python 프로세스 하나가 C ABI를 호출하며, 그 프로세스에는 Torch와 Kiwi를 불러오지 않는다.
 
 2026-10-23 실행은 V35,328 / C8 / D64 / H128 / B512 / FP32 / AdamW / CPU 4스레드다. 문서 분리와 train-only 사전은 기존 `.npy` 코퍼스를 그대로 사용한다. 목표는 2에폭이지만 **06:30 업데이트 중단, 07:00 최종 종료가 우선**이다. 모든 에폭·Loss 수치는 실제 처리한 양으로 보고한다.

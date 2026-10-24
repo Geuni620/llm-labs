@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-24T09:20:24.255Z",
+  "previews": [
+    {
+      "width": 728,
+      "contentHeight": 577,
+      "capturedHeight": 577,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "final-evaluation-qa {\"rows\":3,\"comparedEpochs\":4,\"overflow\":false,\"oraclePassed\":true,\"stateUnchanged\":true}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 728,
+        "height": 577
+      }
+    },
+    {
+      "width": 320,
+      "contentHeight": 577,
+      "capturedHeight": 577,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "final-evaluation-qa {\"rows\":3,\"comparedEpochs\":4,\"overflow\":false,\"oraclePassed\":true,\"stateUnchanged\":true}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 320,
+        "height": 577
+      }
+    }
+  ]
+}

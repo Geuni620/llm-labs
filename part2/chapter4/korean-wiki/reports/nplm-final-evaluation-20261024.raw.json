@@ -1,0 +1,910 @@
+{
+  "kind": "READ_ONLY_FINAL_CHECKPOINT_EVALUATION_RAW",
+  "status": "awaiting_independent_oracle",
+  "started_at": "2026-10-24T18:00:09.687801+09:00",
+  "finished_at": "2026-10-24T18:08:12.345660+09:00",
+  "wall_seconds": 482.65681650000624,
+  "selection": {
+    "kind": "USER_SELECTED_EXISTING_FINAL_STOP_CHECKPOINT",
+    "selected_at": "2026-10-24T11:40:32.197666+09:00",
+    "user_instruction": "4.074 기준으로 최종본으로 처리해서 저장. 가중치 별도 복제 없음.",
+    "epochs": 4.074373045675998,
+    "checkpoint": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/latest.npz",
+      "identity": {
+        "bytes": 84145699,
+        "sha256": "87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6"
+      }
+    },
+    "config": {
+      "vocab_size": 35328,
+      "context_size": 8,
+      "embedding_dim": 64,
+      "hidden_dim": 128,
+      "batch_size": 512,
+      "seed": 42,
+      "cpu_threads": 4
+    },
+    "corpus": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328",
+    "vocabulary": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/vocabulary.json",
+    "parameters_optimizer_sampler_preserved": true,
+    "finite_full_checkpoint_audit_passed": true,
+    "target_predictions": 506169692,
+    "updates": 988614,
+    "validation": null,
+    "evaluated_at": null,
+    "final_selected_weights_have_recorded_evaluation": false,
+    "last_available_evaluation": {
+      "epochs": 4.0,
+      "at": "2026-10-24T11:12:06.501088+09:00",
+      "validation": {
+        "targets": 16384,
+        "negative_log_likelihood_sum": 46370.2146499994,
+        "loss": 2.8302132965087523,
+        "perplexity": 16.949075617671763,
+        "accuracy": 0.49578857421875,
+        "content_targets": 11519,
+        "content_negative_log_likelihood_sum": 44734.62890877064,
+        "content_loss": 3.88355142883676,
+        "content_perplexity": 48.59649596573874,
+        "content_accuracy": 0.31773591457591804,
+        "evaluation_seconds": 1.1452902919845656
+      },
+      "scope": "Measured on the earlier exact 4.000-epoch weights, not the selected 4.074 checkpoint."
+    },
+    "additional_weight_copy_created": false,
+    "source_file_unchanged": true
+  },
+  "selection_descriptor_identity": {
+    "bytes": 1979,
+    "sha256": "472c216df7ef0720b3f54a05bdba8b220ff9840c10499bd98ed04c4073050d70"
+  },
+  "input_bindings": {
+    "manifest.json": {
+      "bytes": 20999,
+      "sha256": "126c795f0872cd545d3f468ffb83faa4dc38edef3c7d8282ee5d3b75c0ea771e"
+    },
+    "vocabulary.json": {
+      "bytes": 688610,
+      "sha256": "641a9ffe566d1252afa76dac5186489e0e744624716826c77fa0d63a8d075a66"
+    },
+    "train.ids.npy": {
+      "bytes": 272938782,
+      "sha256": "0353bfedbd50f8cb5dea6e1a17c6bbea281fb3947969ca280b704209cf8b6ed6"
+    },
+    "train.paragraphs.npy": {
+      "bytes": 42828964,
+      "sha256": "c11b005a48b8b24e3ac8849bb4ff1a3820060cb40ef3bdbf76697b633181d347"
+    },
+    "validation.ids.npy": {
+      "bytes": 2835370,
+      "sha256": "05c702ad67214ffe441a8d7cb99ee72bdde59daea051c5acf6b994e3abdad500"
+    },
+    "validation.paragraphs.npy": {
+      "bytes": 458412,
+      "sha256": "6a49f353c65a0994c8d45388fcc9d5ad4894dda85e1ff2b41c05907408ed11e8"
+    },
+    "test.ids.npy": {
+      "bytes": 2743634,
+      "sha256": "869df2eca9d177553f9e2b3295757c4bd4f9d76aa03e3abcbb1effa87a166fba"
+    },
+    "test.paragraphs.npy": {
+      "bytes": 433548,
+      "sha256": "5cc1d08f7caee9a5fc42e7544712e5a85780c9d6eff4a1fee29211062a37b42a"
+    }
+  },
+  "corpus_statistics": {
+    "train_source_paragraphs": 2445492,
+    "train_source_sentences": 6540153,
+    "train_eligible_sentences": 6539471,
+    "train_eligible_tokens": 296063134,
+    "train_oov_removed_sentences": 3561611,
+    "train_partially_trimmed_paragraphs": 977666,
+    "train_kept_sentences": 2977860,
+    "train_kept_paragraphs": 1529599,
+    "train_target_windows": 124232535,
+    "train_10pct_paragraphs": 153358,
+    "train_10pct_sentences": 297474,
+    "train_10pct_target_windows": 12333995,
+    "train_25pct_paragraphs": 380848,
+    "train_25pct_sentences": 740631,
+    "train_25pct_target_windows": 30892699,
+    "train_100pct_paragraphs": 1529599,
+    "train_100pct_sentences": 2977860,
+    "train_100pct_target_windows": 124232535,
+    "train_oov_removed_paragraphs": 915751,
+    "test_source_paragraphs": 24704,
+    "test_source_sentences": 66543,
+    "test_eligible_sentences": 66543,
+    "test_eligible_tokens": 3011762,
+    "test_oov_removed_sentences": 36502,
+    "test_kept_sentences": 30041,
+    "test_kept_paragraphs": 15477,
+    "test_target_windows": 1247937,
+    "test_partially_trimmed_paragraphs": 9942,
+    "validation_source_paragraphs": 26391,
+    "validation_source_sentences": 70936,
+    "validation_eligible_sentences": 70935,
+    "validation_eligible_tokens": 3190347,
+    "validation_oov_removed_sentences": 39537,
+    "validation_kept_sentences": 31398,
+    "validation_kept_paragraphs": 16365,
+    "validation_target_windows": 1286701,
+    "validation_partially_trimmed_paragraphs": 10525,
+    "validation_oov_removed_paragraphs": 10026,
+    "test_oov_removed_paragraphs": 9227,
+    "train_heldout_overlap_removed_sentences": 32,
+    "train_tokenized_duplicates_removed_sentences": 650,
+    "validation_tokenized_duplicates_removed_sentences": 1,
+    "train_documents": 390716,
+    "validation_documents": 3999,
+    "test_documents": 3929
+  },
+  "config": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 512,
+    "seed": 42,
+    "cpu_threads": 4
+  },
+  "fixed_validation_window_sha256": "98812c723f2be1239a9667b64774ac228437fb3ed8b67f79dad1e6953eb5abd4",
+  "document_key_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "state_before": {
+    "arrays": {
+      "parameters": "574bee7fa4152fa6a9836be18dda288ceeae8b892a86eaa2558dda2ef2d044ea",
+      "moment1": "0357580b6ed74f038d55dfec39ec124278c545bd01ff17873cd92bcd558843d3",
+      "moment2": "98226fd0258a3ac5fc618ed035400c8111241beadb5e088367bd286eda9a2868"
+    },
+    "visited": "a21e280784f0c2b2492ee0a1628f6f460753df0c8d45690b5e3bc95f4e3d83dc",
+    "sampler": [
+      2085346654,
+      9239552,
+      21319309,
+      97626094,
+      506169692
+    ],
+    "info": {
+      "parameters": 6883968,
+      "windows": 124232535,
+      "paragraphs": 1529599,
+      "updates": 988614,
+      "consumed": 506169692,
+      "visited_paragraphs": 1529599,
+      "corpus_ram_bytes": 328004218,
+      "workspace_bytes": 212739720
+    }
+  },
+  "state_after": {
+    "arrays": {
+      "parameters": "574bee7fa4152fa6a9836be18dda288ceeae8b892a86eaa2558dda2ef2d044ea",
+      "moment1": "0357580b6ed74f038d55dfec39ec124278c545bd01ff17873cd92bcd558843d3",
+      "moment2": "98226fd0258a3ac5fc618ed035400c8111241beadb5e088367bd286eda9a2868"
+    },
+    "visited": "a21e280784f0c2b2492ee0a1628f6f460753df0c8d45690b5e3bc95f4e3d83dc",
+    "sampler": [
+      2085346654,
+      9239552,
+      21319309,
+      97626094,
+      506169692
+    ],
+    "info": {
+      "parameters": 6883968,
+      "windows": 124232535,
+      "paragraphs": 1529599,
+      "updates": 988614,
+      "consumed": 506169692,
+      "visited_paragraphs": 1529599,
+      "corpus_ram_bytes": 328004218,
+      "workspace_bytes": 212739720
+    }
+  },
+  "state_unchanged": true,
+  "training_updates_added": 0,
+  "peak_process_rss_bytes": 743948288,
+  "guard": {
+    "source": "NSProcessInfo.thermalState via Foundation/Objective-C ctypes",
+    "limitation": "OS thermal pressure only; not degrees/fire detection. Unknown or unsupported hardware may always report nominal.",
+    "sample_interval_seconds": 5.0,
+    "critical_grace_seconds": 5.0,
+    "power_monitor_enabled": true,
+    "heartbeat_stale_after_seconds": 20.0,
+    "heartbeat_success_definition": "Thermal reader, due power reader and sample emit returned; initial freshness anchor is guard start.",
+    "last_complete_sample_at": "2026-10-24T09:08:11.737225+00:00",
+    "last_complete_sample_monotonic": 765980.989888083,
+    "protective_stop_grace_seconds": 30.0,
+    "protective_stop_reasons": [
+      "thermal_serious",
+      "low_battery",
+      "monitor_error"
+    ],
+    "protective_stop_deadline_never_extended": true,
+    "protective_stop_origin_reason": null,
+    "protective_stop_deadline_monotonic": null,
+    "protective_stop_exit_code": 88,
+    "power_interval_seconds": 30.0,
+    "battery_stop_below_percent": 20,
+    "training_stop_at": "2026-10-24T18:15:09.687868+09:00",
+    "hard_stop_at": "2026-10-24T18:16:09.687868+09:00",
+    "should_stop": false,
+    "reason": null,
+    "stop_reasons": [],
+    "initial_ready": true,
+    "all_compute_stopped_acknowledged": true,
+    "hard_exit_requested": false,
+    "last_state": "nominal",
+    "last_thermal_at": "2026-10-24T09:08:11.706454+00:00",
+    "last_power": {
+      "on_battery": false,
+      "percent": 100,
+      "sampled_at": "2026-10-24T09:08:11.706532+00:00"
+    },
+    "last_error": null,
+    "checkpoint_policy": "No watchdog checkpoint I/O; retain only caller's already-complete atomic checkpoint."
+  },
+  "guard_events": [
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:09.691853+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:14.735927+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:19.738984+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:24.747763+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:29.752245+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:34.759407+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:39.764466+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:44.859540+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:49.869750+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:54.870845+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:00:59.872805+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:04.877598+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:09.882798+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:14.946171+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:19.963287+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:24.987544+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:29.998097+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:35.001119+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:40.006713+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:45.067064+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:50.068809+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:01:55.074250+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:00.079201+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:05.082557+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:10.085853+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:15.208463+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:20.209202+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:25.216997+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:30.224440+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:35.236545+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:40.254740+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:45.370579+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:50.398704+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:02:55.430871+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:00.433377+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:05.436833+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:10.442095+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:15.525274+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:20.531392+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:25.533290+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:30.545710+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:35.550936+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:40.551577+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:45.596769+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:50.598684+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:03:55.601222+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:00.606594+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:05.609393+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:10.613270+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:15.643500+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:20.652677+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:25.656862+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:30.661843+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:35.662412+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:40.673119+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:45.924848+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:50.977850+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:04:55.984174+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:00.986167+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:06.040277+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:11.049843+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:16.153783+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:21.159980+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:26.169091+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:31.169734+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:36.175466+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:41.180301+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:46.269956+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:51.273822+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:05:56.289806+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:01.295314+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:06.300670+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:11.301537+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:16.428901+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:21.433898+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:26.446030+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:31.479378+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:36.484358+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:41.489683+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:46.548775+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:51.559043+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:06:56.562614+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:01.571902+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:06.575574+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:11.579478+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:16.649946+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:21.650634+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:26.650983+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:31.651908+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:36.656687+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:41.658873+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:46.691374+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:51.696569+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:07:56.698691+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:08:01.702416+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:08:06.702606+00:00"
+    },
+    {
+      "kind": "sample",
+      "state": 0,
+      "state_name": "nominal",
+      "at": "2026-10-24T09:08:11.706421+00:00"
+    }
+  ],
+  "rows": [
+    {
+      "name": "fixed_validation",
+      "evaluated_at": "2026-10-24T18:00:17.597192+09:00",
+      "evaluation_seconds": 6.692022667033598,
+      "split": "validation",
+      "metrics": {
+        "targets": 16384,
+        "negative_log_likelihood_sum": 46375.528154188185,
+        "loss": 2.83053760706715,
+        "perplexity": 16.954573273275347,
+        "accuracy": 0.49652099609375,
+        "content_targets": 11519,
+        "content_negative_log_likelihood_sum": 44757.03927648215,
+        "content_loss": 3.885496942137525,
+        "content_perplexity": 48.69113312408551,
+        "content_accuracy": 0.3178227276673322
+      },
+      "coverage": "original fixed validation targets"
+    },
+    {
+      "name": "full_validation",
+      "evaluated_at": "2026-10-24T18:04:31.759325+09:00",
+      "evaluation_seconds": 254.1613531660987,
+      "split": "validation",
+      "metrics": {
+        "targets": 1286701,
+        "negative_log_likelihood_sum": 3604249.3261133037,
+        "loss": 2.80115530034818,
+        "perplexity": 16.463656255955275,
+        "accuracy": 0.4958191530122383,
+        "content_targets": 903057,
+        "content_negative_log_likelihood_sum": 3472646.006191964,
+        "content_loss": 3.845433905270613,
+        "content_perplexity": 46.778977592852904,
+        "content_accuracy": 0.3184461224485276
+      },
+      "coverage": "entire split"
+    },
+    {
+      "name": "full_test",
+      "evaluated_at": "2026-10-24T18:08:12.150988+09:00",
+      "evaluation_seconds": 220.39101679099258,
+      "split": "test",
+      "metrics": {
+        "targets": 1247937,
+        "negative_log_likelihood_sum": 3475364.219164312,
+        "loss": 2.784887553750159,
+        "perplexity": 16.197996370407004,
+        "accuracy": 0.49649541603462355,
+        "content_targets": 876324,
+        "content_negative_log_likelihood_sum": 3350206.1902916813,
+        "content_loss": 3.8230222957395683,
+        "content_perplexity": 45.74224621596142,
+        "content_accuracy": 0.3192848763699271
+      },
+      "coverage": "entire split"
+    }
+  ],
+  "numerical_fixture": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/.artifacts/final-evaluation-20261024.npz",
+    "bytes": 36195328,
+    "sha256": "14bf20cb4192d84550b7ecfcda5b2fcfbfa456d7e4052528fac9b87c7f503d9f"
+  },
+  "predeclared_oracle_tolerances": {
+    "logits_atol": 2e-06,
+    "logits_rtol": 0.0002,
+    "mean_nll_absolute_error": 2e-06,
+    "declared_before_execution": true
+  },
+  "source_identity": {
+    "bytes": 17952,
+    "sha256": "45e58d609245ec0097b6e5a02bc4131a4e8eeba233b5a0ce8d2f8dae1b148af9"
+  },
+  "scope": "Selected final weights, same model/vocabulary/data split. Full validation and full test contain only retained in-vocabulary sentences. Accuracy is next-token top-1, not factual or sentence accuracy."
+}

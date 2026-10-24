@@ -1,0 +1,27 @@
+{
+  "kind": "FINAL_CHECKPOINT_VALIDATION_ACCEPTANCE",
+  "at": "2026-10-24T18:22:07.429269+09:00",
+  "status": "technical_validation_complete_quality_followups_open",
+  "checks": {
+    "final_model_unchanged": true,
+    "full_state_unchanged": true,
+    "no_training_updates": true,
+    "fixed_target_hash_matches": true,
+    "full_split_counts": true,
+    "document_splits_disjoint": true,
+    "numerical_gate_passed": true,
+    "original_tolerances_unchanged": true,
+    "initial_failed_attempt_retained": true,
+    "execution_source_preserved": true,
+    "verification_source_preserved": true,
+    "loss_ppl_consistent": true,
+    "prediction_examples_have_references": true,
+    "quality_followups_open": true,
+    "preview_and_publication_recorded": true
+  },
+  "evaluation_report": "nplm-final-evaluation-20261024.json",
+  "generative_quality_status": "Formal factual QA accuracy and topic consistency evaluation remain open. Observed erroneous generations are preserved.",
+  "trained_sources_unchanged": true,
+  "checkpoint_copied": false,
+  "existing_selection_descriptor_preserved": true
+}

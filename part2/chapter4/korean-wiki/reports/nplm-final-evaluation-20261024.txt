@@ -1,0 +1,20 @@
+최종 NPLM 4.074373에폭 — 실제 읽기 전용 성능 검증
+
+학습 추가 0회 / 기존 latest.npz 사용 / 전체 가중치·Adam·샘플러·방문 벡터·파일 해시 불변
+
+평가 범위	타깃 수	Loss	PPL	정확도	공백·EOS 제외 타깃	제외 Loss	제외 PPL	제외 정확도
+fixed_validation	16384	2.830537607	16.954573	49.652100%	11519	3.885496942	48.691133	31.782273%
+full_validation	1286701	2.801155300	16.463656	49.581915%	903057	3.845433905	46.778978	31.844612%
+full_test	1247937	2.784887554	16.197996	49.649542%	876324	3.823022296	45.742246	31.928488%
+
+기존 고정 검증 16,384 타깃과 같은 조건의 에폭별 비교
+epoch	Loss	PPL	공백·EOS 제외 Loss	제외 PPL
+2.000000	2.837757363	17.077424	3.894817750	49.147096
+3.000000	2.826053540	16.878718	3.876994387	48.278889
+4.000000	2.830213297	16.949076	3.883551429	48.596496
+4.074373	2.830537607	16.954573	3.885496942	48.691133
+
+Selected final weights, same model/vocabulary/data split. Full validation and full test contain only retained in-vocabulary sentences. Accuracy is next-token top-1, not factual or sentence accuracy.
+Loss/PPL evaluate next-token prediction. Top-1 accuracy counts predicted tokens, not correct facts. Generation and memorization results remain separate evidence.
+수치 검증: 실제 최종 가중치의 256 타깃을 별도 Torch CPU로 계산해 전체 logits/NLL/정답 수 대조.
+생성 20개의 사실 오류와 문맥 혼선을 수치 검증 통과로 해결했다고 해석하지 않는다.

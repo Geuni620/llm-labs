@@ -1,0 +1,44 @@
+{
+  "kind": "ISOLATED_TORCH_CPU_FINAL_WEIGHTS_ORACLE",
+  "at": "2026-10-24T18:08:57.580682+09:00",
+  "passed": false,
+  "targets": 256,
+  "compared_logits": 9043968,
+  "max_absolute_logit_error": 1.2874603271484375e-05,
+  "logits_outside_tolerance": 34,
+  "mean_nll_errors": [
+    2.953177616271674e-05,
+    2.273036374392777e-05
+  ],
+  "c_totals": [
+    256.0,
+    809.9329851562576,
+    125.0,
+    188.0,
+    788.785958377238,
+    61.0
+  ],
+  "torch_totals": [
+    256.0,
+    809.9254250215599,
+    125.0,
+    188.0,
+    788.7816850688541,
+    61.0
+  ],
+  "tolerances": {
+    "logits_atol": 2e-06,
+    "logits_rtol": 0.0002,
+    "mean_nll_absolute_error": 2e-06,
+    "declared_before_execution": true
+  },
+  "checkpoint_identity_after": {
+    "bytes": 84145699,
+    "sha256": "87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6"
+  },
+  "raw_report_identity": {
+    "bytes": 25002,
+    "sha256": "96dc12529966eefef3efc6495d00886acbf4ab77e52a297bfc222dabdac0c061"
+  },
+  "torch_version": "2.14.1"
+}
