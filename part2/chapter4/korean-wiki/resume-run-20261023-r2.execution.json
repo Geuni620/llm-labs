@@ -1,0 +1,80 @@
+{
+  "status": "authorized_continuation_plan",
+  "timezone": "Asia/Seoul",
+  "requested_start": "2026-10-23T23:57:07.892866+09:00",
+  "stop_training_by": "2026-10-24T16:12:19.881334+09:00",
+  "exit_by": "2026-10-24T16:42:19.881334+09:00",
+  "deadline_policy": "User-approved full-state restart after protective stop; retain the exact original training/hard deadlines and guard. Stop at cumulative 5 epochs or the inherited limit. No further automatic restart.",
+  "automatic_start_scheduled": false,
+  "execution_started": false,
+  "training": {
+    "device": "cpu",
+    "backend": "Actual C ABI with unchanged validated FP32 full-softmax kernels",
+    "corpus": "training-corpora/wiki-k35328",
+    "training_document_fraction": 1.0,
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 512,
+    "dtype": "float32",
+    "pilot_cpu_threads": 4,
+    "night_cpu_threads": 4,
+    "optional_threads_after_observed_pilot": null,
+    "target_epochs": 5,
+    "learning_rate": 0.001,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "seed": 42,
+    "checkpoint_interval_seconds": 900,
+    "validation_interval_seconds": 1800,
+    "validation_windows": 16384,
+    "output_policy": "Separate exact-state continuation; preserve the completed night run and stopped old 14-hour queue."
+  },
+  "readiness_requirements": [
+    "32 pure mock thermal/deadline/heartbeat tests passed.",
+    "Independent full-size C/Torch numerical gate passed: 28 comparisons.",
+    "30-minute four-thread actual-training pilot continues only while monitors stay valid; no thread escalation.",
+    "Fresh CPU/C run; preserve previous stopped queue."
+  ],
+  "observed_hardware_snapshot": {
+    "model": "MacBookAir10,1",
+    "physical_memory_bytes": 17179869184,
+    "logical_cpu_count": 8,
+    "os_thermal_state": "nominal",
+    "pmset_report": "No thermal or performance warning level recorded at inspection.",
+    "battery_health": "Check Battery",
+    "battery_maximum_capacity_percent": 79,
+    "battery_cycle_count": 409,
+    "scope": "Read-only current-state inspection, not a load test, hardware diagnosis or overnight safety certification."
+  },
+  "timing_evidence_limits": "Previous 7.42h two-epoch estimate used SIX requested threads and short low-load C observations. It does not predict this four-thread configuration or ensure completion by morning.",
+  "physical_check_confirmed": true,
+  "physical_confirmation": "Existing user confirmation in this thread: ventilated solid desk, no observed physical abnormalities. Reused for the explicitly authorized continuation; current exterior not remotely observed.",
+  "thermal_policy": {
+    "sample_interval_seconds": 5,
+    "source": "macOS ProcessInfo.thermalState; system thermal pressure, not a temperature or fire sensor",
+    "on_serious": "Stop new training updates, best-effort atomic checkpoint, exit with thermal-stop reason.",
+    "on_critical": "Stop compute immediately; preserve latest complete checkpoint. Do not continue evaluation/generation.",
+    "on_monitor_error": "Stop training rather than treating missing monitoring as normal.",
+    "automatic_restart": false,
+    "limitations": "Software thermal monitoring does not certify battery/charger safety or prevent every possible fire."
+  },
+  "source_run": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5",
+  "cumulative_milestones": [
+    2,
+    3,
+    5
+  ],
+  "restart_approval": {
+    "approved": true,
+    "user_response": "같은 설정으로 재개",
+    "scope": "Resume the saved 1.817666644 epoch state to cumulative 2/3/5 with identical CPU4/model/optimizer/guard and unchanged inherited deadlines. This is not permission for automatic future restarts."
+  }
+}
