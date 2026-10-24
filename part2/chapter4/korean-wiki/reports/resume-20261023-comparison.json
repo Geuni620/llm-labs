@@ -1,0 +1,38 @@
+{
+  "kind": "ACTUAL_SAME_RUN_CUMULATIVE_2_3_5_COMPARISON",
+  "at": "2026-10-23T23:42:45.724572+09:00",
+  "rows": [
+    {
+      "total_epochs": 2,
+      "status": "not_reached",
+      "actual_result": null
+    },
+    {
+      "total_epochs": 3,
+      "status": "not_reached",
+      "actual_result": null
+    },
+    {
+      "total_epochs": 5,
+      "status": "not_reached",
+      "actual_result": null
+    }
+  ],
+  "milestone_audits": [],
+  "original_night_files_preserved": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.previous.npz": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/run.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/summary.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/metrics.jsonl": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-control.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-result.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-acceptance.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/experiment-continuation.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/training-queue.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/wiki-k35328/STOP": true
+  },
+  "all_requested_epochs_reached": false,
+  "scope": "Exact full-state continuation of the same CPU4 H128/V35328/B512 run. Elapsed seconds are cumulative active trainer time and exclude the offline pause. Same evaluation targets and prompts; no vocabulary/model-quality optimum claim.",
+  "evaluation_window_sha256": "98812c723f2be1239a9667b64774ac228437fb3ed8b67f79dad1e6953eb5abd4"
+}

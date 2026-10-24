@@ -1,0 +1,55 @@
+{
+  "status": "passed_before_actual_launch",
+  "numerical_gate": "reports/night-full-verification-20261022.json",
+  "numerical_scope": "Full corpus and actual H128/B512/V35328 dimensions, four updates, 28 independent comparisons; not full-epoch training.",
+  "engine_regressions": "reports/night-engine-tests-20261022-v4.log",
+  "thermal_mock_tests": "reports/night-thermal-guard-tests-20261022-frozen.log",
+  "smoke_actual_resume": "training-runs/night-smoke-v2-20261022-H128-B512/summary.json",
+  "source_identity_refusal_observed": "reports/night-smoke-20261022.log; source changed during preparation, refused resume as designed. Frozen-source smoke-v2 passed.",
+  "final_read_only_review": "integer_array_review confirmed four findings fixed and no further launch blocker found; runtime checks owned by root.",
+  "files": {
+    "night-training/checkpoint.py": {
+      "sha256": "aed3527aa5ff5b8f6404ba59cf102a810f29abb02346c3b9a14cd7b569bb7235",
+      "bytes": 3989
+    },
+    "night-training/engine.py": {
+      "sha256": "733a9457f6b9f6c89f70a7765ea695371ac4ba5bf38a41d44b6f366776a8bd92",
+      "bytes": 8172
+    },
+    "night-training/launch.py": {
+      "sha256": "6addb38ef5b95c4978f74ba28e947396e6c950d606d2bd2e3e4ce5257d503958",
+      "bytes": 3505
+    },
+    "night-training/oracle_worker.py": {
+      "sha256": "ec88d0875938ee42d773f320d1f7f07c99e1a5e6e22f55a4769baaf180f8a0bc",
+      "bytes": 1360
+    },
+    "night-training/run.py": {
+      "sha256": "160049c5ac491bda64092b51a5cdab7af7ac7203af3975510eb34e8aee55d05d",
+      "bytes": 17734
+    },
+    "night-training/status.py": {
+      "sha256": "d6230db6a58a1b6206c5e8f1426d7894875dba12d5d585e08a347065bc7a677a",
+      "bytes": 1844
+    },
+    "night-training/test_engine.py": {
+      "sha256": "a3445d1184202e4d4ba3fc66ee1b6c041f36de0ff5104398e44db256cf45dc13",
+      "bytes": 7999
+    },
+    "night-training/test_thermal_guard.py": {
+      "sha256": "0996c9240bf44d03b5e7ec47070abddd8357a12f1ff8a0d3ec7f6ad1fcd54db9",
+      "bytes": 20456
+    },
+    "night-training/thermal_guard.py": {
+      "sha256": "bbd4b7f3a6ee63390d3928fc47a3cb3a87d83ff41bc66b7e4da66407d935117b",
+      "bytes": 24311
+    },
+    "night-training/verify_full.py": {
+      "sha256": "ecb498f0dd9c08fc09c30403e4870aeb22f3dd2c300c2c5214c0c81dff61080b",
+      "bytes": 4863
+    }
+  },
+  "physical_check_confirmed": true,
+  "pilot_completed": false,
+  "full_epochs_completed": false
+}

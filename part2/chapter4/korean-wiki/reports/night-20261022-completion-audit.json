@@ -1,0 +1,137 @@
+{
+  "at": "2026-10-23T06:43:54.112164+09:00",
+  "status": "complete_actual_deadline_run_reviewed",
+  "requirements": [
+    {
+      "requirement": "Actual CPU/C NPLM trainer and full epoch boundaries",
+      "evidence": [
+        "night-training/engine.c",
+        "night-training/run.py",
+        "reports/night-20261022-final-audit.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Atomic checkpoint, exact resume, corrupt-checkpoint fallback and unchanged evaluation state",
+      "evidence": [
+        "night-training/test_engine.py",
+        "reports/night-engine-tests-20261022-v4.log",
+        "training-runs/night-smoke-v2-20261022-H128-B512/summary.json"
+      ],
+      "verified": true,
+      "scope": "Five focused tests and actual four-update save/resume smoke; not a full resumed epoch claim."
+    },
+    {
+      "requirement": "Independent full-model numerical verification",
+      "evidence": [
+        "reports/night-full-verification-20261022.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Thermal/deadline/heartbeat/power protection",
+      "evidence": [
+        "reports/night-thermal-guard-tests-20261022-frozen.log",
+        "night-training/thermal_guard.py",
+        "reports/night-20261022-final-audit.json"
+      ],
+      "verified": true,
+      "scope": "33 pure mock tests; 4623 actual OS-pressure samples nominal. Not physical fire or degrees measurement."
+    },
+    {
+      "requirement": "Absolute 06:30 training cutoff and termination before 07:00",
+      "evidence": [
+        "reports/night-20261022-control.json",
+        "training-runs/night-cpu-20261022-H128-B512/events.jsonl",
+        "reports/night-20261022-final-audit.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Actual process/RAM/CPU/hourly progress observations",
+      "evidence": [
+        "reports/night-20261022-hourly.jsonl",
+        "training-runs/night-cpu-20261022-H128-B512/resource-observations.jsonl"
+      ],
+      "verified": true,
+      "scope": "Measurement rows are not delivery receipts; stopped-process RSS is null."
+    },
+    {
+      "requirement": "Fresh run and original inputs plus stopped old queue preserved",
+      "evidence": [
+        "reports/night-20261022-final-audit.json",
+        "reports/night-20261022-result.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Final full checkpoint, counters, sampler, optimizer and weights audited",
+      "evidence": [
+        "reports/night-20261022-final-audit.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Reached exact 3h and epoch-1 evaluated states preserved",
+      "evidence": [
+        "reports/night-20261022-3h-checkpoint-audit.json",
+        "reports/night-20261022-epoch1-checkpoint-audit.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Same held-out evaluation and same-prompt generations, all/content Loss and PPL",
+      "evidence": [
+        "reports/night-20261022-result.json",
+        "reports/night-20261022-result.txt",
+        "reports/night-20261022-generation-examples.json",
+        "reports/night-20261022-review.txt"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Actual time-Loss graph previewed desktop728/dark and mobile320/light, then published",
+      "evidence": [
+        "reports/night-20261022-plot-preview.json",
+        "reports/night-20261022-plot-published.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Final user report with metrics, actual learning amount, RAM, stop, generation limits and remaining TODO",
+      "evidence": [
+        "Current thread final response before this cleanup turn",
+        "reports/night-20261022-review.txt",
+        "TODO.md"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Only this hourly monitor removed after the final report",
+      "evidence": [
+        "reports/night-20261022-monitor-cleanup.json"
+      ],
+      "verified": true
+    },
+    {
+      "requirement": "Unreached 2/3/5-epoch results and desktop responsiveness not invented",
+      "evidence": [
+        "reports/night-20261022-review.txt",
+        "TODO.md",
+        "reports/night-20261022-final-audit.json"
+      ],
+      "verified": true
+    }
+  ],
+  "all_required_night_work_verified": true,
+  "training_target_epochs": 2,
+  "actual_epochs": 1.5121585259449144,
+  "two_epoch_target_reached": false,
+  "preexisting_deadline_priority": "Absolute deadline including setup and evaluation; stop at two completed epochs or the training deadline, whichever comes first. Reserve final time for evaluation and atomic checkpoint. Do not start late with a fresh full 7.5-hour budget.",
+  "future_work_remains_in_TODO": [
+    "Actual 2/3/5-epoch quality comparisons under a separately authorized time budget",
+    "Desktop responsiveness while other work is performed",
+    "Conditional model/device/amount comparisons"
+  ],
+  "scope": "Completion of the authorized protected overnight execution and actual final reporting; not a claim that the two-epoch target or all future chapter experiments were completed."
+}

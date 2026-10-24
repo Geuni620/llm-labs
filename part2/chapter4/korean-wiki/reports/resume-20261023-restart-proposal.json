@@ -1,0 +1,35 @@
+{
+  "status": "authorized_and_started_in_r2",
+  "source_run": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5",
+  "source_checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/latest.npz",
+  "source_checkpoint_identity": {
+    "bytes": 84145774,
+    "sha256": "f3b7ab9684dd6c015ebb496e20bffaf139e0e71e4f9373f1cf9ff38587286226"
+  },
+  "start_epochs": 1.8176666442490286,
+  "target_epochs": 5,
+  "requested_milestones": [
+    2,
+    3,
+    5
+  ],
+  "same_cpu_threads": 4,
+  "same_model_and_optimizer": {
+    "batch_size": 512,
+    "context_size": 8,
+    "cpu_threads": 4,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "seed": 42,
+    "vocab_size": 35328
+  },
+  "same_guard_and_model_source_fingerprints": true,
+  "changes_to_guard": null,
+  "training_stop_upper_bound": "2026-10-24T16:12:19.881334+09:00",
+  "hard_stop_upper_bound": "2026-10-24T16:42:19.881334+09:00",
+  "preserve_original_and_interrupted_run": true,
+  "required_confirmation_reason": "The current execution policy explicitly forbids automatic restart after thermal/monitor protective stops. A positive user confirmation is required before starting another training process.",
+  "user_response": "같은 설정으로 재개",
+  "actual_started_at": "2026-10-23T23:59:34.600599+09:00",
+  "new_control": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-control.json"
+}

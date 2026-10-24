@@ -1,0 +1,1497 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--font-size-base:14px;--font-size-normal:14px;--font-size-small:12px;--font-size-tooltip:13px;--font-size-h2:20px;--font-weight-normal:400;--font-weight-medium:500;--line-height-normal:21px;--line-height-small:16px;--radius-sm:calc(var(--radius)*.5);--radius-md:calc(var(--radius)*.75);--radius-lg:var(--radius);--radius-2xl:var(--radius);--corner-shape:round;--viz-text:var(--foreground);--viz-accent:var(--accent-foreground);--viz-series-1:var(--chart-1)}html,body{background:transparent!important}body{margin:0;color:var(--foreground);font-family:var(--font-sans);font-size:var(--font-size-base);line-height:var(--line-height-normal)}* {
+  box-sizing: border-box;
+}
+
+html > body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-weight: var(--font-weight-normal);
+}
+
+.cursor-interaction {
+  cursor: var(--cursor-interaction, pointer);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  font-weight: inherit;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+.table {
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-size: calc(var(--font-size-base) * 1.5);
+  line-height: 1.3333333333;
+}
+
+h2 {
+  font-size: calc(var(--font-size-base) * 1.25);
+  line-height: 1.4;
+}
+h3 {
+  font-size: calc(var(--font-size-base) * 1.125);
+  line-height: 1.5555555556;
+}
+h4 {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 500;
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+pre,
+pre code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(var(--font-size-base) * 0.875);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-family: var(--font-sans);
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+.table :is(th, td):not(:last-child) {
+  padding-inline-end: calc(var(--font-size-base) * 1.5);
+}
+
+.table-responsive > .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 500;
+}
+
+.table thead :is(th, td) {
+  border-bottom-color: var(--border-strong, var(--input));
+  padding-block: calc(var(--font-size-base) / 2);
+  line-height: var(--font-size-base);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+.table tbody :is(th, td) {
+  padding-block: calc(var(--font-size-base) * 0.625);
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 8px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align="right"]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align="center"]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+.widget {
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  box-shadow: 0 0 0 0.5px var(--border-strong, var(--border));
+  color: var(--foreground);
+  background: var(--background);
+}
+
+#widget > :not(.card, .widget, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  border: 1px solid var(--border);
+  corner-shape: var(--corner-shape);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-sans);
+  padding: 5px 12px;
+  border-color: color-mix(
+    in oklab,
+    light-dark(var(--primary-foreground), var(--foreground)) 5%,
+    transparent
+  );
+  border-radius: var(--radius-2xl);
+  color: light-dark(var(--primary-foreground), var(--foreground));
+  background: light-dark(var(--foreground), var(--popover));
+  box-shadow: 0 8px 18px rgb(15 23 42 / 20%);
+  letter-spacing: -0.15px;
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: color-mix(in srgb, var(--foreground) 40%, var(--muted-foreground));
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+}
+
+small,
+.text-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls > .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls > .form-label > :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+/* Match inline alignment without overriding a containing flex or grid layout. */
+.btn,
+.nav-link,
+.form-control,
+.form-select,
+.form-range,
+.form-check {
+  vertical-align: middle;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: inherit;
+  font-family: var(--font-sans);
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  border-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.btn {
+  border-color: var(--border);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-link:not(:disabled):not([aria-disabled="true"]):hover {
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.btn-primary {
+  border-color: var(--border);
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: border-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: border-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--muted-foreground);
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+/* Shared preview chrome; product styles stay inside each variant. */
+.viz-dotted-background {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--foreground) 14%, transparent) 0.8px,
+    transparent 0.8px
+  );
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.viz-carousel {
+  position: relative;
+  min-width: 0;
+}
+
+.viz-carousel:has(> .viz-carousel-controls) {
+  min-height: calc(60px + var(--viz-carousel-picker-height, 0px));
+  padding-bottom: 60px;
+}
+
+.viz-carousel > [data-variant][hidden] {
+  display: none !important;
+}
+
+.viz-carousel > [data-variant] {
+  isolation: isolate;
+}
+
+.viz-carousel-controls {
+  --viz-carousel-hover: light-dark(
+    color-mix(in srgb, var(--foreground) 5.4%, transparent),
+    color-mix(in srgb, var(--foreground) 7.8%, transparent)
+  );
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  /* Leave room for the host's design-controls launcher at the trailing edge. */
+  max-width: calc(100% - 96px);
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  /* Match the settings dropdown chrome independently of the content font size. */
+  font-size: 13px;
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Keep authored mockup button styles out of the shared carousel chrome. */
+.viz-carousel-controls button,
+.viz-carousel-picker > summary {
+  display: flex !important;
+  height: auto !important;
+  min-height: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 0 6px !important;
+  -webkit-app-region: no-drag;
+  border: 0 !important;
+  border-radius: 14px !important;
+  color: inherit !important;
+  background: transparent !important;
+  font: inherit !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viz-carousel-controls > button,
+.viz-carousel-picker > summary {
+  position: relative;
+  isolation: isolate;
+}
+
+.viz-carousel-controls > button {
+  --icon-size: 16px;
+  width: 30px !important;
+  padding: 0 !important;
+}
+
+.viz-carousel-picker > summary {
+  padding-inline: 12px !important;
+}
+
+.viz-carousel-controls .viz-carousel-caret {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin: 0;
+  color: inherit;
+  transform: rotate(180deg);
+}
+
+.viz-carousel-controls > button > svg,
+.viz-carousel-controls .viz-carousel-caret,
+.viz-carousel-count {
+  opacity: 0.5;
+}
+
+.viz-carousel-controls > button::before,
+.viz-carousel-picker > summary::before {
+  position: absolute;
+  z-index: -1;
+  inset: 3px;
+  border-radius: 12px;
+  content: "";
+  pointer-events: none;
+}
+
+.viz-carousel-controls > button:hover::before,
+.viz-carousel-picker > summary:hover::before {
+  background: var(--viz-carousel-hover);
+}
+
+.viz-carousel-controls > button,
+.viz-carousel-controls [data-lucide],
+.viz-carousel-controls .lucide {
+  flex-shrink: 0;
+}
+
+.viz-carousel-picker {
+  min-width: 0;
+}
+
+.viz-carousel-picker > summary {
+  min-width: 0;
+  list-style: none;
+}
+
+.viz-carousel-picker > summary::-webkit-details-marker {
+  display: none;
+}
+
+.viz-carousel-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.viz-carousel-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viz-carousel-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  max-height: 240px;
+  flex-direction: column;
+  gap: 2px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: 0 4px 12px light-dark(rgb(0 0 0 / 6%), rgb(0 0 0 / 25%));
+}
+
+.viz-carousel-options > button {
+  border-radius: max(0px, calc(var(--radius-lg) - 5px)) !important;
+  width: 100% !important;
+  min-height: 28px;
+  justify-content: flex-start !important;
+  padding: 4px 8px !important;
+  font-size: var(--font-size-small) !important;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.viz-carousel-options > [aria-current="true"],
+.viz-carousel-options > button:hover {
+  background: var(--viz-carousel-hover) !important;
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: calc(4px + var(--control-spacing, 12px) / 2);
+  border-color: var(--input);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--popover) 96%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4285714286;
+}
+.form-control:is(
+  [type="file"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="week"],
+  [type="color"]
+) {
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  line-height: 18px;
+}
+.form-control:is(
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="week"]
+) {
+  padding-inline: var(--control-spacing, 12px);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type="file"] {
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+  padding: 0;
+}
+
+.form-control[type="file"]::file-selector-button {
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+  min-height: calc(10px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  margin-inline-end: var(--control-spacing, 12px);
+}
+
+.form-control[type="file"]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type="color"] {
+  width: 40px;
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+  min-height: 96px;
+  padding: 8px 10px;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: none;
+}
+.form-control:disabled {
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  opacity: 1;
+}
+.form-control[aria-invalid="true"] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 20%, transparent);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  margin: 0;
+  /* The secondary icon role is 14px at compact density and 16px at web density. */
+  --icon-size: calc(10px + var(--control-spacing, 12px) / 2);
+  /* Settings dropdowns retain a 12px inset and a 4px text-to-chevron gap. */
+  padding: 0 calc(16px + var(--icon-size)) 0 12px;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    ),
+    linear-gradient(
+      135deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    );
+  background-position:
+    calc(100% - 12px - var(--icon-size) / 2) 50%,
+    calc(100% - 12px - var(--icon-size) * 0.18) 50%;
+  background-repeat: no-repeat;
+  background-size: calc(var(--icon-size) * 0.32) calc(var(--icon-size) * 0.32);
+  cursor: var(--cursor-interaction, default);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.form-select option {
+  color: var(--popover-foreground);
+  background-color: var(--popover);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.form-select:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.form-select:disabled {
+  opacity: 0.4;
+}
+
+.form-check {
+  display: flex;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+  corner-shape: round;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  width: calc(10px + var(--control-spacing, 12px) / 2);
+  height: calc(10px + var(--control-spacing, 12px) / 2);
+  border-color: var(--border-strong, var(--input));
+  border-radius: calc(var(--radius-sm) / 2);
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:is(:checked, :indeterminate) {
+  border-color: var(--border-strong, var(--input));
+  background-color: color-mix(in srgb, var(--popover) 96%, transparent);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: "";
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+  background-color: var(--foreground);
+}
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:indeterminate::before {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 65%;
+  height: 6.65%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--foreground);
+  mask: none;
+  content: "";
+}
+
+.form-check-input[type="radio"] {
+  border-radius: var(--radius-full);
+  width: 16px;
+  height: 16px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--input);
+}
+
+.form-check-input[type="radio"]:checked {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    var(--primary-foreground) 0 3px,
+    var(--foreground) 3px
+  );
+  box-shadow: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:focus-visible {
+  border-color: var(--ring);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+.form-check:not(.form-switch) .form-check-input[type="radio"]:disabled,
+.form-check:not(.form-switch)
+  .form-check-input[type="radio"]:disabled
+  + .form-check-label {
+  opacity: 0.5;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  content: "";
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+  border-color: #fff;
+  background: #fff;
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--blue);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+  outline: none;
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  accent-color: var(--primary);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  outline: none;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: transparent;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  margin-top: -9px;
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Outline the native track and thumb, preserving the larger input hit area. */
+.form-range:focus-visible::-webkit-slider-runnable-track {
+  outline: 2px auto Highlight;
+  outline-color: -webkit-focus-ring-color;
+}
+
+.form-range::-moz-range-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+.form-range:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed="true"],
+  [aria-selected="true"],
+  .is-selected
+) {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--blue);
+}
+
+.btn.viz-tile:is([aria-pressed="true"], [aria-selected="true"], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.viz-carousel-controls :is(button, summary):focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Web recipes are the default, including on renderers without inline style queries. */
+@supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
+  /* Match the host's proportional text-sm scale at every text preference. */
+  .tooltip,
+  .viz-badge,
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    font-size: if(
+      style(--corner-shape: round): round(
+          nearest,
+          calc(var(--font-size-base) * 14 / 16),
+          1px
+        );
+        else: round(nearest, calc(var(--font-size-base) * 13 / 14), 1px)
+    );
+  }
+
+  .btn,
+  .nav-link,
+  .form-select {
+    border-radius: if(
+      style(--corner-shape: round): var(--radius-full); else: var(--radius-lg)
+    );
+  }
+
+  .form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+    border-radius: if(
+      style(--corner-shape: round): calc(var(--radius-sm) / 2);
+        else: calc(var(--radius-lg) * 0.4)
+    );
+  }
+
+  .tooltip {
+    font-weight: if(
+      style(--corner-shape: round): 600; else: var(--font-weight-normal)
+    );
+  }
+}
+
+@media (pointer: coarse) {
+  .viz-carousel:has(> .viz-carousel-controls) {
+    min-height: calc(76px + var(--viz-carousel-picker-height, 0px));
+    padding-bottom: 76px;
+  }
+
+  .btn,
+  .nav-link,
+  .viz-carousel-controls button,
+  .viz-carousel-picker > summary,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+  .form-control:is(
+    [type="file"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="week"],
+    [type="time"],
+    [type="color"]
+  ) {
+    height: 44px;
+    min-height: 44px;
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+
+  .form-control[type="file"]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type="color"] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: "";
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget > svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+</style><style>:root{--viz-series-2:var(--chart-2);--viz-series-3:var(--chart-3);--viz-series-4:var(--chart-4);--viz-series-5:var(--chart-5);--viz-series-6:var(--chart-6)}</style></head><body><section id="nplm-loss-current-20261024">
+  <h3>현시점 검증 Loss</h3>
+  <div class="night-legend" aria-label="검증 Loss 계열">
+    <button type="button" class="night-key cursor-interaction" data-series="all" aria-pressed="true"><span class="night-swatch night-all" aria-hidden="true">●</span>공백·EOS 포함</button>
+    <button type="button" class="night-key cursor-interaction" data-series="content" aria-pressed="true"><span class="night-swatch night-content" aria-hidden="true">◆</span>공백·EOS 제외</button>
+  </div>
+  <div class="text-small text-muted">10-24 11:12 KST 검증 · 4.000에폭 · 실제 평가 43회</div>
+  <figure class="night-figure">
+    <h4>초기 평가 포함</h4>
+    <svg class="night-chart" data-panel="full" role="img" aria-label="초기 평가부터 현재 저장된 마지막 검증까지의 실제 Loss"></svg>
+  </figure>
+  <div class="zoom-note text-small text-muted">아래 확대 패널은 각각의 y축 범위를 사용합니다.</div>
+  <figure class="night-figure">
+    <h4>공백·EOS 포함 · 1에폭 이후 확대 <span class="tabular-nums" data-last="all"></span></h4>
+    <svg class="night-chart" data-panel="all" role="img" aria-label="공백과 EOS 포함 검증 Loss, 1에폭 이후 확대"></svg>
+  </figure>
+  <figure class="night-figure">
+    <h4>공백·EOS 제외 · 1에폭 이후 확대 <span class="tabular-nums" data-last="content"></span></h4>
+    <svg class="night-chart" data-panel="content" role="img" aria-label="공백과 EOS 제외 검증 Loss, 1에폭 이후 확대"></svg>
+  </figure>
+  <div class="tooltip night-tooltip" role="tooltip" hidden></div>
+  <span class="sr-only">같은 검증 타깃에서 기록한 43회 실제 평가입니다. 원은 공백과 EOS 포함, 마름모는 해당 타깃 제외 값입니다. 선 사이의 툴팁은 선형 보간이며 실제 평가값과 구분됩니다.</span>
+</section>
+<style>
+#nplm-loss-current-20261024{position:relative;min-width:0;--viz-series-1:var(--chart-1);--viz-series-2:var(--chart-2)}
+#nplm-loss-current-20261024 h3{max-width:calc(100% - 90px);margin-bottom:6px}
+#nplm-loss-current-20261024 .night-legend{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center}
+#nplm-loss-current-20261024 .night-key{display:inline-flex;align-items:center;gap:7px;padding:5px 0;border:0;background:transparent;color:var(--foreground);font:inherit;font-weight:400}
+#nplm-loss-current-20261024 .night-key[aria-pressed="false"]{opacity:.4}
+#nplm-loss-current-20261024 .night-all{color:var(--viz-series-1)}
+#nplm-loss-current-20261024 .night-content{color:var(--viz-series-2)}
+#nplm-loss-current-20261024 .night-figure{margin:16px 0 0;min-width:0}
+#nplm-loss-current-20261024 .zoom-note{margin-top:8px}
+#nplm-loss-current-20261024 .night-chart{display:block;width:100%;height:250px;overflow:visible}
+#nplm-loss-current-20261024 .night-chart text{fill:var(--foreground);font-size:12px;font-weight:400;font-family:var(--font-sans)}
+#nplm-loss-current-20261024 .night-chart .domain{display:none}
+#nplm-loss-current-20261024 .night-chart .tick line{stroke:var(--border)}
+#nplm-loss-current-20261024 .night-tooltip{position:absolute;z-index:3;pointer-events:none;max-width:calc(100% - 16px);padding:10px 12px;border-radius:var(--radius);background:var(--popover);color:var(--popover-foreground);box-shadow:0 2px 12px color-mix(in srgb,var(--foreground) 12%,transparent)}
+#nplm-loss-current-20261024 .night-tooltip[hidden]{display:none}
+#nplm-loss-current-20261024 .night-tooltip-row{display:flex;gap:20px;justify-content:space-between;font-variant-numeric:tabular-nums}
+#nplm-loss-current-20261024 .night-tooltip-note{color:var(--muted-foreground)}
+@media(pointer:coarse){#nplm-loss-current-20261024 .night-key{min-height:44px;min-width:44px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script type="application/json" id="nplm-current-data">[{"x":0.0,"epoch":0.0,"activeHours":0.01018290011584112,"loss":10.47067506059342,"content_loss":10.472481667844722,"label":"initial","time":"10-23 00:04","at":"2026-10-23T00:04:22.416209+09:00","targets":0},{"x":0.05978775205705977,"epoch":0.05978775205705977,"activeHours":0.5111088785647492,"loss":3.141594670243472,"content_loss":4.323722079585238,"label":"periodic","time":"10-23 00:34","at":"2026-10-23T00:34:25.715766+09:00","targets":7427584},{"x":0.18194319225636021,"epoch":0.18194319225636021,"activeHours":1.0117054298263974,"loss":2.9553382556045826,"content_loss":4.054836873506972,"label":"periodic","time":"10-23 01:04","at":"2026-10-23T01:04:27.889672+09:00","targets":22603264},{"x":0.3082611491426139,"epoch":0.3082611491426139,"activeHours":1.5123571606944703,"loss":2.9060767784797665,"content_loss":3.989898360132159,"label":"periodic","time":"10-23 01:34","at":"2026-10-23T01:34:30.233965+09:00","targets":38296064},{"x":0.43190850126337677,"epoch":0.43190850126337677,"activeHours":2.0129506658449987,"loss":2.882396355927373,"content_loss":3.962988951791736,"label":"periodic","time":"10-23 02:04","at":"2026-10-23T02:04:32.407335+09:00","targets":53657088},{"x":0.5548593530672138,"epoch":0.5548593530672138,"activeHours":2.513574166342506,"loss":2.8740274723716395,"content_loss":3.9445731496562937,"label":"periodic","time":"10-23 02:34","at":"2026-10-23T02:34:34.651084+09:00","targets":68931584},{"x":0.6770889767322223,"epoch":0.6770889767322223,"activeHours":3.0142728448611322,"loss":2.863504074944118,"content_loss":3.9293220741528248,"label":"periodic","time":"10-23 03:04","at":"2026-10-23T03:04:37.132661+09:00","targets":84116480},{"x":0.7995329081870542,"epoch":0.7995329081870542,"activeHours":3.5148240193055567,"loss":2.8575262719658037,"content_loss":3.9206225558516064,"label":"periodic","time":"10-23 03:34","at":"2026-10-23T03:34:39.132294+09:00","targets":99328000},{"x":0.921416342345425,"epoch":0.921416342345425,"activeHours":4.015493215902793,"loss":2.852391674899804,"content_loss":3.9094196239483776,"label":"periodic","time":"10-23 04:04","at":"2026-10-23T04:04:41.542978+09:00","targets":114469888},{"x":1.0,"epoch":1.0,"activeHours":4.338038083981406,"loss":2.8554278932062833,"content_loss":3.9201402274474444,"label":"epoch_1","time":"10-23 04:24","at":"2026-10-23T04:24:02.713472+09:00","targets":124232535},{"x":1.1220936206445438,"epoch":1.1220936206445438,"activeHours":4.838687344664455,"loss":2.85045061318162,"content_loss":3.902137115553407,"label":"periodic","time":"10-23 04:54","at":"2026-10-23T04:54:05.034107+09:00","targets":139400535},{"x":1.2442696673620963,"epoch":1.2442696673620963,"activeHours":5.3393154623147305,"loss":2.8438738137933535,"content_loss":3.9009366222217734,"label":"periodic","time":"10-23 05:24","at":"2026-10-23T05:24:07.224525+09:00","targets":154578775},{"x":1.366462199294251,"epoch":1.366462199294251,"activeHours":5.839971800034723,"loss":2.8408546115783104,"content_loss":3.8917723137939606,"label":"periodic","time":"10-23 05:54","at":"2026-10-23T05:54:09.666852+09:00","targets":169759063},{"x":1.4886712164410072,"epoch":1.4886712164410072,"activeHours":6.340660287858919,"loss":2.843413123065616,"content_loss":3.900278022355797,"label":"periodic","time":"10-23 06:24","at":"2026-10-23T06:24:12.152758+09:00","targets":184941399},{"x":1.5121585259449144,"epoch":1.5121585259449144,"activeHours":6.437802282187525,"loss":2.8393474434129287,"content_loss":3.9042967051277775,"label":"final","time":"10-23 06:30","at":"2026-10-23T06:30:01.865331+09:00","targets":187859287},{"x":1.5121585259449144,"epoch":1.5121585259449144,"activeHours":6.438302238078904,"loss":2.8393474434129287,"content_loss":3.9042967051277775,"label":"resumed","time":"10-23 22:14","at":"2026-10-23T22:14:03.315406+09:00","targets":187859287},{"x":1.6386701841027393,"epoch":1.6386701841027393,"activeHours":6.938815853437538,"loss":2.8366534662749787,"content_loss":3.893664170144543,"label":"periodic","time":"10-23 22:44","at":"2026-10-23T22:44:05.112144+09:00","targets":203576151},{"x":1.754206810639419,"epoch":1.754206810639419,"activeHours":7.439464326308096,"loss":2.8408921796975646,"content_loss":3.8977305998016223,"label":"periodic","time":"10-23 23:14","at":"2026-10-23T23:14:07.402099+09:00","targets":217929559},{"x":1.8176666442490286,"epoch":1.8176666442490286,"activeHours":7.787785770301125,"loss":2.835849446232949,"content_loss":3.8945501808204313,"label":"resumed","time":"10-23 23:59","at":"2026-10-23T23:59:40.267743+09:00","targets":225813335},{"x":1.9320863974964368,"epoch":1.9320863974964368,"activeHours":8.288444435821956,"loss":2.839622197027283,"content_loss":3.892338991667465,"label":"periodic","time":"10-24 00:29","at":"2026-10-24T00:29:42.772891+09:00","targets":240027991},{"x":2.0,"epoch":2.0,"activeHours":8.631850835115863,"loss":2.8377573626332206,"content_loss":3.8948177504578148,"label":"epoch_2","time":"10-24 00:50","at":"2026-10-24T00:50:19.035604+09:00","targets":248465070},{"x":2.09689184882205,"epoch":2.09689184882205,"activeHours":9.132709589051148,"loss":2.839141432103102,"content_loss":3.8984017309239873,"label":"periodic","time":"10-24 01:20","at":"2026-10-24T01:20:22.140512+09:00","targets":260502190},{"x":2.193532298121422,"epoch":2.193532298121422,"activeHours":9.6333462720603,"loss":2.8296180770967747,"content_loss":3.8844990790520946,"label":"periodic","time":"10-24 01:50","at":"2026-10-24T01:50:24.432918+09:00","targets":272508078},{"x":2.289505096229422,"epoch":2.289505096229422,"activeHours":10.134110655926149,"loss":2.834245688083114,"content_loss":3.891334970070442,"label":"periodic","time":"10-24 02:20","at":"2026-10-24T02:20:27.171856+09:00","targets":284431022},{"x":2.3858570542732624,"epoch":2.3858570542732624,"activeHours":10.634911352801137,"loss":2.83440787971258,"content_loss":3.8897770382066663,"label":"periodic","time":"10-24 02:50","at":"2026-10-24T02:50:30.036311+09:00","targets":296401070},{"x":2.4823038023010637,"epoch":2.4823038023010637,"activeHours":11.135652925706138,"loss":2.830686667087665,"content_loss":3.887474435866001,"label":"periodic","time":"10-24 03:20","at":"2026-10-24T03:20:32.628535+09:00","targets":308382894},{"x":2.5789277663858345,"epoch":2.5789277663858345,"activeHours":11.636389993113633,"loss":2.8359784846472897,"content_loss":3.894664920006144,"label":"periodic","time":"10-24 03:50","at":"2026-10-24T03:50:35.236991+09:00","targets":320386734},{"x":2.675296209644277,"epoch":2.675296209644277,"activeHours":12.13714657386587,"loss":2.83378685667142,"content_loss":3.887826822223978,"label":"periodic","time":"10-24 04:20","at":"2026-10-24T04:20:38.069266+09:00","targets":332358830},{"x":2.7721509667334727,"epoch":2.7721509667334727,"activeHours":12.637838310636678,"loss":2.830206442362092,"content_loss":3.8816508512307464,"label":"periodic","time":"10-24 04:50","at":"2026-10-24T04:50:40.568617+09:00","targets":344391342},{"x":2.8688285077656994,"epoch":2.8688285077656994,"activeHours":13.1385863687153,"loss":2.8282557717690056,"content_loss":3.8815946810224053,"label":"periodic","time":"10-24 05:20","at":"2026-10-24T05:20:43.266153+09:00","targets":356401838},{"x":2.9655390192271294,"epoch":2.9655390192271294,"activeHours":13.639304697164464,"loss":2.8313013018913002,"content_loss":3.8803190231083775,"label":"periodic","time":"10-24 05:50","at":"2026-10-24T05:50:45.849823+09:00","targets":368416430},{"x":3.0,"epoch":3.0,"activeHours":13.818578035752516,"loss":2.8260535398165922,"content_loss":3.876994387269875,"label":"epoch_3","time":"10-24 06:01","at":"2026-10-24T06:01:31.234793+09:00","targets":372697605},{"x":3.096351958043841,"epoch":3.096351958043841,"activeHours":14.31930437572918,"loss":2.831907070519647,"content_loss":3.88901039090673,"label":"periodic","time":"10-24 06:31","at":"2026-10-24T06:31:33.844232+09:00","targets":384667653},{"x":3.1929388303957573,"epoch":3.1929388303957573,"activeHours":14.820086657430576,"loss":2.8316551779533508,"content_loss":3.8859567236883366,"label":"periodic","time":"10-24 07:01","at":"2026-10-24T07:01:36.656220+09:00","targets":396666885},{"x":3.289377335816258,"epoch":3.289377335816258,"activeHours":15.320910658588076,"loss":2.8356241172224235,"content_loss":3.892869812579064,"label":"periodic","time":"10-24 07:31","at":"2026-10-24T07:31:39.615731+09:00","targets":408647685},{"x":3.3858982673097673,"epoch":3.3858982673097673,"activeHours":15.821583800277796,"loss":2.8336550167624632,"content_loss":3.8874216367743046,"label":"periodic","time":"10-24 08:01","at":"2026-10-24T08:01:41.983098+09:00","targets":420638725},{"x":3.4822296188353556,"epoch":3.4822296188353556,"activeHours":16.32231306325253,"loss":2.833872949012064,"content_loss":3.8786597204497655,"label":"periodic","time":"10-24 08:31","at":"2026-10-24T08:31:44.648784+09:00","targets":432606213},{"x":3.578721701203312,"epoch":3.578721701203312,"activeHours":16.823163518912235,"loss":2.8290708045001436,"content_loss":3.878287665323534,"label":"periodic","time":"10-24 09:01","at":"2026-10-24T09:01:47.671551+09:00","targets":444593669},{"x":3.6751643279274626,"epoch":3.6751643279274626,"activeHours":17.32393028123864,"loss":2.8422343859674957,"content_loss":3.890480090968727,"label":"periodic","time":"10-24 09:31","at":"2026-10-24T09:31:50.465209+09:00","targets":456574981},{"x":3.771582226829711,"epoch":3.771582226829711,"activeHours":17.824614302523358,"loss":2.8325262920270107,"content_loss":3.8828218384403765,"label":"periodic","time":"10-24 10:01","at":"2026-10-24T10:01:52.942164+09:00","targets":468553221},{"x":3.8681361287524236,"epoch":3.8681361287524236,"activeHours":18.325368794456136,"loss":2.8326876390039266,"content_loss":3.8827334287991038,"label":"periodic","time":"10-24 10:31","at":"2026-10-24T10:31:55.670543+09:00","targets":480548357},{"x":3.9641295333786757,"epoch":3.9641295333786757,"activeHours":18.826056132361117,"loss":2.8326876653632693,"content_loss":3.885223737576123,"label":"periodic","time":"10-24 11:01","at":"2026-10-24T11:01:58.123467+09:00","targets":492473861},{"x":4.0,"epoch":4.0,"activeHours":18.995049974062518,"loss":2.8302132965087523,"content_loss":3.88355142883676,"label":"epoch_4","time":"10-24 11:12","at":"2026-10-24T11:12:06.501088+09:00","targets":496930140}]</script>
+<script>
+(() => {
+  const root=document.getElementById('nplm-loss-current-20261024');
+  const data=JSON.parse(document.getElementById('nplm-current-data').textContent);
+  const tooltip=root.querySelector('.night-tooltip');
+  const series=[{id:'all',label:'공백·EOS 포함',key:'loss',color:'var(--viz-series-1)',symbol:d3.symbolCircle},
+    {id:'content',label:'공백·EOS 제외',key:'content_loss',color:'var(--viz-series-2)',symbol:d3.symbolDiamond}];
+  const initial=window.openai?.widgetState?.modelContent?.currentLoss;
+  const visible=new Set(series.filter(s=>!initial||initial[s.id]!==false).map(s=>s.id));
+  const panels=[...root.querySelectorAll('.night-chart')];
+  const bisector=d3.bisector(d=>d.x).center;
+  let active=null,pinned=false,layoutChecks=[];
+  const format=d3.format('.4f');
+  function clearHover(){tooltip.hidden=true;root.querySelectorAll('[data-hover-layer]').forEach(e=>e.style.display='none');active=null;}
+  function persist(){window.openai?.setWidgetState?.({modelContent:{currentLoss:Object.fromEntries(series.map(s=>[s.id,visible.has(s.id)]))},privateContent:null})?.catch(()=>{});}
+  function setButtons(){
+    root.querySelectorAll('.night-key').forEach(b=>b.setAttribute('aria-pressed',String(visible.has(b.dataset.series))));
+    series.forEach(s=>{const label=root.querySelector(`[data-last="${s.id}"]`);label.textContent=` · 최근 ${format(data.at(-1)[s.key])}`;label.hidden=!visible.has(s.id)});
+  }
+  root.querySelectorAll('.night-key').forEach(button=>button.addEventListener('click',()=>{
+    visible.has(button.dataset.series)?visible.delete(button.dataset.series):visible.add(button.dataset.series);
+    clearHover();pinned=false;setButtons();drawAll();persist();
+  }));
+  window.addEventListener('openai:set_globals',event=>{
+    const state=event.detail?.globals?.widgetState?.modelContent?.currentLoss;if(!state)return;
+    visible.clear();series.forEach(s=>{if(state[s.id]!==false)visible.add(s.id)});clearHover();setButtons();drawAll();
+  });
+  function draw(svgNode){
+    const full=svgNode.dataset.panel==='full';
+    const values=full?data:data.filter(d=>d.epoch>=1);
+    const panelSeries=full?series:series.filter(s=>s.id===svgNode.dataset.panel);
+    const activeSeries=panelSeries.filter(s=>visible.has(s.id));
+    const width=Math.round(svgNode.getBoundingClientRect().width),height=250;
+    if(width<120)return;
+    const margin={left:76,right:24,top:16,bottom:54},left=margin.left,right=width-margin.right,top=margin.top,bottom=height-margin.bottom;
+    const xs=d3.extent(values,d=>d.x),ys=d3.extent(values.flatMap(d=>panelSeries.map(s=>d[s.key])));
+    const xp=(xs[1]-xs[0])*.02,yp=(ys[1]-ys[0])*.075;
+    const x=d3.scaleLinear().domain([Math.max(0,xs[0]-xp),xs[1]+xp]).range([left+6,right-6]);
+    const y=d3.scaleLinear().domain([ys[0]-yp,ys[1]+yp]).range([bottom-6,top+6]);
+    const svg=d3.select(svgNode).attr('viewBox',`0 0 ${width} ${height}`);svg.selectAll('*').remove();
+    svg.append('title').text(svgNode.getAttribute('aria-label'));
+    svg.append('desc').text('가로축은 실제 누적 학습 에폭, 세로축은 타깃당 평균 음의 로그 확률입니다. 각 확대 패널은 자기 계열의 실제 범위를 사용합니다. 실제 검증점만 표시하고 선 사이는 보간합니다.');
+    const grid=svg.append('g').attr('aria-hidden','true');
+    const yTicks=d3.ticks(...y.domain(),5);
+    grid.selectAll('line').data(yTicks).join('line').attr('x1',left).attr('x2',right).attr('y1',d=>y(d)).attr('y2',d=>y(d)).attr('stroke','var(--border)').attr('stroke-width',1);
+    svg.append('rect').attr('data-chart-frame','').attr('x',left).attr('y',top).attr('width',right-left).attr('height',bottom-top).attr('fill','none').attr('stroke','var(--border)').attr('stroke-width',1);
+    let xTicks=d3.ticks(...x.domain(),width<420?3:6);
+    if(width<420&&xTicks.length>4){const step=Math.ceil((xTicks.length-1)/3);xTicks=xTicks.filter((_,i)=>i%step===0||i===xTicks.length-1)}
+    svg.append('g').attr('class','night-x-axis').attr('transform',`translate(0,${bottom})`).call(d3.axisBottom(x).tickValues(xTicks).tickFormat(d3.format('~g')).tickSize(4).tickPadding(8));
+    svg.append('g').attr('class','night-y-axis').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickFormat(full?d3.format('~g'):d3.format('.3f')).tickSize(0).tickPadding(10));
+    svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(left+right)/2).attr('y',height-8).attr('text-anchor','middle').text('누적 학습량 (에폭)');
+    svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform','rotate(-90)').attr('x',-(top+bottom)/2).attr('y',16).attr('text-anchor','middle').text('검증 Loss (nats/타깃)');
+    for(const number of [1,2,3]){
+      if(!full&&number===1)continue;
+      const epoch=data.find(d=>d.label===`epoch_${number}`);
+      if(!epoch||epoch.x<xs[0]||epoch.x>xs[1])continue;
+      svg.append('line').attr('x1',x(epoch.x)).attr('x2',x(epoch.x)).attr('y1',top).attr('y2',bottom).attr('stroke','var(--border)').attr('stroke-width',1);
+      svg.append('text').attr('data-optional-label','').attr('x',x(epoch.x)+5).attr('y',top+15).text(`${number}에폭`);
+    }
+    const line=d3.line().x(d=>x(d.x));
+    activeSeries.forEach(s=>{
+      const group=svg.append('g').attr('data-line-series',s.id);
+      group.append('path').datum(values).attr('d',line.y(d=>y(d[s.key]))).attr('fill','none').attr('stroke',s.color).attr('stroke-width',2);
+      group.selectAll('path.night-point').data(values).join('path').attr('class','night-point').attr('d',d3.symbol(s.symbol,22)).attr('transform',d=>`translate(${x(d.x)},${y(d[s.key])})`).attr('fill',s.color);
+      const last=values.at(-1);
+      if(full)group.append('text').attr('data-optional-label','').attr('data-end-label',s.id).attr('x',x(last.x)-7).attr('y',y(last[s.key])-9).attr('text-anchor','end').text(format(last[s.key]));
+    });
+    const hover=svg.append('g').attr('data-hover-layer','').style('display','none').attr('pointer-events','none');
+    const guide=hover.append('line').attr('data-chart-hover-guide','').attr('y1',top).attr('y2',bottom).attr('stroke','var(--muted-foreground)').attr('stroke-width',1);
+    const hoverMarks=new Map(activeSeries.map(s=>[s.id,hover.append('path').attr('data-chart-hover-marker',s.id).attr('d',d3.symbol(s.symbol,46)).attr('fill',s.color)]));
+    function show(event){
+      if(!activeSeries.length){clearHover();return;}
+      const px=d3.pointer(event,svgNode)[0];
+      if(px<x(xs[0])||px>x(xs[1])){clearHover();pinned=false;return;}
+      const epochValue=x.invert(px);
+      const nearest=bisector(values,epochValue),i=d3.bisector(d=>d.x).left(values,epochValue);const a=values[Math.max(0,i-1)],b=values[Math.min(values.length-1,i)];
+      const fraction=a.x===b.x?0:(epochValue-a.x)/(b.x-a.x);hover.style('display',null);guide.attr('x1',px).attr('x2',px);
+      root.querySelectorAll('[data-hover-layer]').forEach(e=>{if(e!==hover.node())e.style.display='none'});
+      tooltip.replaceChildren();const exact=Math.abs(x(values[nearest].x)-px)<1e-6;
+      const head=document.createElement('div');head.textContent=`누적 ${d3.format('.3f')(epochValue)}에폭 · ${exact?'실측점':'점 사이 선형 보간'}`;tooltip.append(head);
+      activeSeries.forEach(s=>{
+        const value=a[s.key]+fraction*(b[s.key]-a[s.key]);hoverMarks.get(s.id).attr('transform',`translate(${px},${y(value)})`);
+        const row=document.createElement('div');row.className='night-tooltip-row';row.dataset.tooltipSeries=s.id;
+        const label=document.createElement('span');label.textContent=s.label;const number=document.createElement('span');number.textContent=format(value);row.append(label,number);tooltip.append(row);
+      });
+      const note=document.createElement('div');note.className='night-tooltip-note text-small';note.textContent=`가까운 실측 ${values[nearest].time} KST · ${d3.format('.3f')(values[nearest].epoch)}에폭 · 활성 ${d3.format('.2f')(values[nearest].activeHours)}시간`;tooltip.append(note);
+      tooltip.hidden=false;const rb=root.getBoundingClientRect(),sb=svgNode.getBoundingClientRect(),box=tooltip.getBoundingClientRect();
+      const tooltipLeft=Math.max(8,Math.min(sb.left-rb.left+px+12,rb.width-box.width-8));
+      const tooltipTop=Math.max(0,Math.min(sb.top-rb.top+top+8,root.offsetHeight-box.height));
+      tooltip.style.left=`${tooltipLeft}px`;tooltip.style.top=`${tooltipTop}px`;active={svgNode,px,epochValue};
+    }
+    svg.append('rect').attr('data-chart-hit','').attr('data-chart-hover-overlay','cross-series').attr('x',left).attr('y',top).attr('width',right-left).attr('height',bottom-top).attr('fill','transparent').style('touch-action','pan-y')
+      .on('pointermove',event=>{if(!pinned)show(event)})
+      .on('pointerleave',()=>{if(!pinned)clearHover()})
+      .on('pointerdown',event=>{pinned=!pinned;pinned?show(event):clearHover()});
+    requestAnimationFrame(()=>{
+      const bounds=svgNode.getBoundingClientRect();const labels=[...svgNode.querySelectorAll('text')];
+      labels.filter(e=>e.hasAttribute('data-optional-label')).forEach(e=>{const b=e.getBoundingClientRect();if(b.left<bounds.left+4||b.right>bounds.right-4)e.remove()});
+      const check={panel:svgNode.dataset.panel,width,labelsInside:[...svgNode.querySelectorAll('text')].every(e=>{const b=e.getBoundingClientRect();return b.left>=bounds.left-1&&b.right<=bounds.right+1&&b.top>=bounds.top-1&&b.bottom<=bounds.bottom+1}),xTicks:svgNode.querySelectorAll('.night-x-axis .tick').length};
+      layoutChecks=layoutChecks.filter(c=>c.panel!==check.panel);layoutChecks.push(check);root.dataset.layoutPassed=String(layoutChecks.every(c=>c.labelsInside&&(c.width>=420||c.xTicks<=4)));
+    });
+  }
+  function drawAll(){panels.forEach(draw)}
+  setButtons();new ResizeObserver(()=>{clearHover();pinned=false;drawAll()}).observe(root);drawAll();
+  window.__currentLossQA=()=>{
+    const before=root.querySelectorAll('[data-line-series="content"]').length;
+    const key=root.querySelector('[data-series="content"]');key.click();const hidden=root.querySelectorAll('[data-line-series="content"]').length===0;key.click();
+    const overlay=panels[0].querySelector('[data-chart-hit]'),box=overlay.getBoundingClientRect();
+    overlay.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,clientX:box.left+box.width*.53,clientY:box.top+box.height*.5,pointerType:'mouse'}));
+    const hovered=!tooltip.hidden&&root.querySelectorAll('[data-tooltip-series]').length===visible.size;
+    const guides=[...root.querySelectorAll('[data-chart-hover-guide]')].filter(g=>g.closest('[data-hover-layer]').style.display!=='none');
+    const exactGuide=guides.length===1&&Math.abs(Number(guides[0].getAttribute('x1'))-active.px)<.01;
+    const result={sourcePoints:data.length,before,legendTogglePassed:hidden,hoverPassed:hovered,exactCursorGuidePassed:exactGuide,layout:layoutChecks,overflow:root.scrollWidth>root.clientWidth};clearHover();return result;
+  };
+})();
+</script>
+</body></html>

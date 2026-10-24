@@ -1,0 +1,16 @@
+{
+  "kind": "INDEPENDENT_SAVED_CHECKPOINT_ARRAY_AUDIT",
+  "at": "2026-10-23T01:52:04.320768+09:00",
+  "passed": true,
+  "scope": "Only an already-saved immutable checkpoint file. No model created, trained, evaluated, resumed or stopped. Not a final-run audit.",
+  "checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz",
+  "identity": {
+    "bytes": 84145810,
+    "sha256": "793943d1699941e87805a909d50b51a0fed484226bcf6eeead3e9a7381c1eb94"
+  },
+  "updates": 89828,
+  "consumed": 45991936,
+  "visited_paragraphs": 1529499,
+  "finite_fp32_parameter_and_moment_arrays": true,
+  "sampler_count_matches": true
+}

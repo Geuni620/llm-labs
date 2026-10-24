@@ -1,0 +1,104 @@
+{
+  "status": "continued_in_r2_not_completed",
+  "scope": "One exact-state CPU4 continuation from 1.5121585 to cumulative 2/3/5 epochs; final real comparison, graph and report required.",
+  "requirements": [
+    {
+      "id": "R01",
+      "request": "Preserve prior night/raw inputs and exactly restore full state",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-resume-verification.json",
+        "reports/resume-20261023-start-confirmation.json"
+      ]
+    },
+    {
+      "id": "R02",
+      "request": "Start one actual CPU4 continuation with unchanged model/data/evaluation",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-control.json",
+        "reports/resume-20261023-start-confirmation.json"
+      ]
+    },
+    {
+      "id": "R03",
+      "request": "Reach, save and independently audit cumulative epoch 2",
+      "status": "pending",
+      "evidence": [],
+      "note": "Not reached before monitor_error protective stop."
+    },
+    {
+      "id": "R04",
+      "request": "Reach, save and independently audit cumulative epoch 3",
+      "status": "pending",
+      "evidence": [],
+      "note": "Not reached before monitor_error protective stop."
+    },
+    {
+      "id": "R05",
+      "request": "Reach, save and independently audit cumulative epoch 5",
+      "status": "pending",
+      "evidence": [],
+      "note": "Not reached before monitor_error protective stop."
+    },
+    {
+      "id": "R06",
+      "request": "Hourly actual progress/memory/Loss reporting until terminal review",
+      "status": "in_progress",
+      "evidence": [
+        "reports/resume-20261023-hourly-schedule.json",
+        "reports/resume-20261023-hourly.jsonl",
+        "reports/resume-20261023-supervision-checks.jsonl"
+      ],
+      "last_measurement_at": "2026-10-23T23:17:33.422146+09:00"
+    },
+    {
+      "id": "R07",
+      "request": "Maintain thermal/power/fixed upper deadline protection",
+      "status": "protective_stop_observed",
+      "evidence": [
+        "resume-run-20261023.execution.json",
+        "training-runs/resume-cpu-20261023-H128-B512-to5/progress.json",
+        "reports/resume-20261023-protective-stop-review.json"
+      ],
+      "last_verified_at": "2026-10-23T23:17:33.422146+09:00",
+      "last_observed_thermal": "nominal",
+      "guard_reason": "monitor_error"
+    },
+    {
+      "id": "R08",
+      "request": "Compare actual 2/3/5 Loss/PPL/timing/targets/updates/same-prompt generations",
+      "status": "pending",
+      "evidence": [],
+      "partial_result": "reports/resume-20261023-comparison.json",
+      "note": "All requested epoch rows are not_reached; actual 2/3/5 comparison remains pending."
+    },
+    {
+      "id": "R09",
+      "request": "Publish actual curves after desktop728/dark and mobile320/light preview",
+      "status": "pending",
+      "evidence": [],
+      "partial_stop_plot": "reports/resume-20261023-protective-stop-published.json",
+      "note": "Partial actual curve published; requested completed 2/3/5 comparison remains pending."
+    },
+    {
+      "id": "R10",
+      "request": "Final result review/report, preserve source, delete only this hourly monitor",
+      "status": "pending",
+      "evidence": [],
+      "partial_stop_review": "reports/resume-20261023-protective-stop-review.txt",
+      "note": "Awaiting explicit user decision after protective stop; monitor not deleted."
+    }
+  ],
+  "limits": [
+    "No 2/3/5 result is complete before the actual corresponding checkpoint and audit.",
+    "Desktop responsiveness is unmeasured; user left Mac unused in the previous night.",
+    "One K/model/seed and same training trajectory; not a vocabulary or model-quality optimum proof."
+  ],
+  "last_check_at": "2026-10-23T23:48:26.347690+09:00",
+  "latest_observed_epochs": 1.8176666442490286,
+  "stop_review": "reports/resume-20261023-protective-stop-review.json",
+  "partial_report": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-protective-stop-review.txt",
+  "superseded_by_checklist": "reports/resume-20261023-r2-task-checklist.json",
+  "user_restart_response": "같은 설정으로 재개"
+}

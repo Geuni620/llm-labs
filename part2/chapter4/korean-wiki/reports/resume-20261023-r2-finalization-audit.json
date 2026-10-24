@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-24T11:45:06.278116+09:00",
+  "status": "complete_user_selected_existing_stop_checkpoint",
+  "checks": {
+    "all_owned_processes_terminated": true,
+    "user_stop_and_real_exit_zero": true,
+    "selected_existing_latest_hash_matches": true,
+    "full_final_weights_optimizer_sampler_finite_audited": true,
+    "no_new_weight_file_after_final_selection": true,
+    "previous_models_and_bound_sources_preserved": true,
+    "actual_evaluated_reference_2_3_4_audits_passed": true,
+    "no_unmeasured_final_quality_claim": true,
+    "final_actual_time_loss_plot_previewed_and_published": true,
+    "only_hourly_monitor_deleted_and_verified_absent": true
+  },
+  "process_checks": {
+    "pid": true,
+    "supervisor_pid": true,
+    "caffeinate_pid": true,
+    "completion_observer_pid": true
+  },
+  "user_selected_final_epochs": 4.074373045675998,
+  "selected_checkpoint": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/latest.npz",
+    "identity": {
+      "bytes": 84145699,
+      "sha256": "87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6"
+    }
+  },
+  "weight_file_copied_for_selection": false,
+  "final_selected_weights_evaluated": false,
+  "last_available_evaluation_epochs": 4.0,
+  "last_available_evaluation_at": "2026-10-24T11:12:06.501088+09:00",
+  "five_epoch_plan_canceled_by_user": true,
+  "scope": "User selected actual 4.074373 latest.npz as final without another weights copy. Evaluated 2/3/4 results remain historical reference. No new training, model evaluation or inference. One K/model/seed; no optimum claim."
+}

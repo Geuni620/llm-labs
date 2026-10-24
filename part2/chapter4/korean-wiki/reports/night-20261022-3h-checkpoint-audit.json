@@ -1,0 +1,30 @@
+{
+  "kind": "INDEPENDENT_ARCHIVED_3H_STATE_AUDIT",
+  "at": "2026-10-23T03:05:53.573082+09:00",
+  "passed": true,
+  "checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/checkpoint-elapsed-3h.npz",
+  "checkpoint_identity": {
+    "bytes": 84145995,
+    "sha256": "541055a362a0e01e103ae1ffb6e086d01910b0004e824b72824c1d257c9582c9"
+  },
+  "actual_elapsed_seconds_at_evaluation": 10851.382241500076,
+  "updates": 164290,
+  "consumed": 84116480,
+  "epochs_equivalent": 0.6770889767322223,
+  "finite_fp32_parameters_and_moments": true,
+  "same_recorded_evaluation_and_generation": true,
+  "validation": {
+    "targets": 16384,
+    "negative_log_likelihood_sum": 46915.65076388443,
+    "loss": 2.863504074944118,
+    "perplexity": 17.522820761966834,
+    "accuracy": 0.49090576171875,
+    "content_targets": 11519,
+    "content_negative_log_likelihood_sum": 45261.86097216639,
+    "content_loss": 3.9293220741528248,
+    "content_perplexity": 50.872478208597215,
+    "content_accuracy": 0.3092282316173279,
+    "evaluation_seconds": 1.135615999926813
+  },
+  "scope": "Saved-state inspection only. No new model, training, replay, evaluation or generation."
+}

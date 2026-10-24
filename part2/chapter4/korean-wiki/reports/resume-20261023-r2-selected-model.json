@@ -1,0 +1,51 @@
+{
+  "kind": "USER_SELECTED_EXISTING_FINAL_STOP_CHECKPOINT",
+  "selected_at": "2026-10-24T11:40:32.197666+09:00",
+  "user_instruction": "4.074 기준으로 최종본으로 처리해서 저장. 가중치 별도 복제 없음.",
+  "epochs": 4.074373045675998,
+  "checkpoint": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/latest.npz",
+    "identity": {
+      "bytes": 84145699,
+      "sha256": "87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6"
+    }
+  },
+  "config": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 512,
+    "seed": 42,
+    "cpu_threads": 4
+  },
+  "corpus": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328",
+  "vocabulary": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/vocabulary.json",
+  "parameters_optimizer_sampler_preserved": true,
+  "finite_full_checkpoint_audit_passed": true,
+  "target_predictions": 506169692,
+  "updates": 988614,
+  "validation": null,
+  "evaluated_at": null,
+  "final_selected_weights_have_recorded_evaluation": false,
+  "last_available_evaluation": {
+    "epochs": 4.0,
+    "at": "2026-10-24T11:12:06.501088+09:00",
+    "validation": {
+      "targets": 16384,
+      "negative_log_likelihood_sum": 46370.2146499994,
+      "loss": 2.8302132965087523,
+      "perplexity": 16.949075617671763,
+      "accuracy": 0.49578857421875,
+      "content_targets": 11519,
+      "content_negative_log_likelihood_sum": 44734.62890877064,
+      "content_loss": 3.88355142883676,
+      "content_perplexity": 48.59649596573874,
+      "content_accuracy": 0.31773591457591804,
+      "evaluation_seconds": 1.1452902919845656
+    },
+    "scope": "Measured on the earlier exact 4.000-epoch weights, not the selected 4.074 checkpoint."
+  },
+  "additional_weight_copy_created": false,
+  "source_file_unchanged": true
+}

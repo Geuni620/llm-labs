@@ -1,0 +1,52 @@
+{
+  "kind": "PARTIAL_PROTECTIVE_STOP_REPORT_NOT_COMPLETED_2_3_5",
+  "at": "2026-10-23T14:46:48.000Z",
+  "scope": "18 actual evaluation points only; last evaluated 1.754 epoch, stopped saved state 1.818 has no new evaluation.",
+  "preview": "reports/resume-20261023-protective-stop-plot-preview.json",
+  "source": "reports/resume-protective-stop-loss.html",
+  "native_receipt": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-922a66d5-84a4-4bd2-93ea-518bd4b14534-html",
+    "title": "보호 중단 전 실제 NPLM 검증 기록",
+    "height": 730,
+    "heights": [
+      [
+        320,
+        730
+      ],
+      [
+        375,
+        730
+      ],
+      [
+        430,
+        730
+      ],
+      [
+        520,
+        730
+      ],
+      [
+        640,
+        730
+      ],
+      [
+        728,
+        730
+      ],
+      [
+        860,
+        730
+      ],
+      [
+        1000,
+        730
+      ],
+      [
+        1144,
+        730
+      ]
+    ],
+    "outline": "t0,1,44,4,1;m0,8,26,8,1;m31,8,26,8,1;t0,16,70,4,1;t0,24,20,4,1;m0,29,182,72,1;t0,106,31,4,1;m0,110,182,72,1"
+  },
+  "all_requested_epochs_reached": false
+}

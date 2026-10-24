@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-24T02:42:56.628Z",
+  "scope": "Post-stop actual recorded validation vs cumulative active time, through evaluated epoch 4; selected final 4.074 weights not separately evaluated.",
+  "selected_final_epochs": 4.074373045675998,
+  "selected_final_checkpoint": "training-runs/resume-cpu-20261023-r2-H128-B512-to5/latest.npz",
+  "five_epoch_plan_canceled_by_user": true,
+  "source": "reports/nplm-loss-final-20261024.html",
+  "page": "reports/nplm-loss-final-20261024-page.html",
+  "preview_evidence": "reports/resume-20261023-r2-final-loss-preview.json",
+  "native_receipt": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-d1ab8a29-7153-4f59-ba5a-5a4170e27df2-html",
+    "title": "학습 종료 후 실제 시간–검증 Loss",
+    "height": 678,
+    "heights": [
+      [
+        320,
+        678
+      ],
+      [
+        375,
+        678
+      ],
+      [
+        430,
+        678
+      ],
+      [
+        520,
+        678
+      ],
+      [
+        640,
+        678
+      ],
+      [
+        728,
+        678
+      ],
+      [
+        860,
+        678
+      ],
+      [
+        1000,
+        678
+      ],
+      [
+        1144,
+        678
+      ]
+    ],
+    "outline": "t0,1,35,4,1;m0,8,26,8,1;m31,8,26,8,1;t0,16,65,4,1;t0,22,57,4,1;t0,30,68,4,1;m0,35,182,63,1;t0,102,68,4,1;m0,107,182,63,1"
+  }
+}

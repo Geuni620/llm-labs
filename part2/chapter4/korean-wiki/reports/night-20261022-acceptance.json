@@ -1,0 +1,115 @@
+{
+  "status": "complete",
+  "completed": {
+    "actual_epoch_trainer": "night-training/engine.c and run.py; full-size numerical gate 28 comparisons; five boundary/checkpoint tests passed",
+    "real_save_and_resume_smoke": "training-runs/night-smoke-v2-20261022-H128-B512/summary.json: four actual updates/2048 targets; not an epoch result",
+    "thermal_deadline_mocks": "reports/night-thermal-guard-tests-20261022-frozen.log: 33 tests passed",
+    "actual_fresh_cpu_run": {
+      "run_dir": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512",
+      "pid": 32209,
+      "started_at": "2026-10-23T00:03:42.502142+09:00",
+      "frozen_script_bindings": {
+        "engine.c": true,
+        "engine.py": true,
+        "checkpoint.py": true,
+        "thermal_guard.py": true,
+        "run.py": true
+      }
+    },
+    "baseline_evaluation": {
+      "targets": 16384,
+      "loss": 10.47067506059342,
+      "content_loss": 10.472481667844722
+    },
+    "previous_queue_preserved": {
+      "experiment_continuation": "stopped",
+      "training_queue": "stopped",
+      "old_STOP_present": true
+    },
+    "reporting_guards": "Live result refused as final; mixed evaluation hash rejected; only actual metric points accepted",
+    "runtime_profile": "reports/night-cpu-20261022-sample.txt: actual C/CBLAS/vForce and four OpenMP compute threads; no Torch model in process",
+    "first_trained_durable_checkpoint": {
+      "at": "2026-10-23T00:20:16.736760+09:00",
+      "checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz",
+      "bytes": 84149180,
+      "zip_crc_passed": true,
+      "updates": 5159,
+      "predictions": 2641408,
+      "identity_matches_run": true,
+      "sampler_count_matches": true,
+      "actual_process_live": true
+    },
+    "first_30_minute_pilot_and_trained_validation": "reports/night-20261022-pilot-review.json",
+    "independent_intermediate_checkpoint_array_audit": "reports/night-20261022-checkpoint-finite-audit.json; saved parameters/moments all finite FP32, sampler/identity consistent; not a final checkpoint audit",
+    "hourly_measurement_history": "reports/night-20261022-hourly.jsonl; observed values with timestamps and validation checkpoint times, not delivery receipts",
+    "preserved_3h_evaluated_state": "reports/night-20261022-3h-checkpoint-audit.json; actual elapsed 10851.382 seconds, 0.677089 epoch; same full candidate pool, not the old 10%/25% comparison",
+    "preserved_epoch_one_evaluated_state": "reports/night-20261022-epoch1-checkpoint-audit.json; actual 15616.937 seconds, 124232535 targets, one full epoch; full finite FP32 arrays, exact saved validation/generation and input/source identity match",
+    "intermediate_archive_watcher_finished": "reports/night-20261022-archive-progress.json: both required archives complete; watcher PID 26664 absent, trainer PID 32209 continues",
+    "observed_morning_cutoff_and_terminal_result": {
+      "control_status": "stopped",
+      "exit_code": 0,
+      "reason": "training_deadline",
+      "ended_at": "2026-10-23T06:30:01.982052+09:00",
+      "model_pid": 32209,
+      "supervisor_pid": 32169,
+      "main_supervisor_caffeinate_absent_at": "2026-10-23T06:30:11.646426+09:00",
+      "actual_epochs": 1.5121585259449144,
+      "two_epoch_goal_reached": false
+    },
+    "final_durable_checkpoint_and_preservation_audit": "reports/night-20261022-final-audit.json: 19 checks passed, full finite FP32 checkpoint, sampler/count/evaluation/generation consistency and unchanged bound input/source/build hashes",
+    "restored_same_prompt_samples": "reports/night-20261022-generation-examples.json: all 90 saved samples across 15 actual evaluations, no restoration errors; no new inference",
+    "actual_loss_curve_publication": {
+      "receipt": "d1ad10a2-f954-43f5-937c-cc69adfa632e-b1de6d83-8dc5-4d42-9c31-b4ae4c2b5990-html",
+      "file": "reports/night-20261022-plot-published.json",
+      "previews": [
+        "desktop728/dark",
+        "mobile320/light"
+      ],
+      "scope": "15 actual evaluation points; interpolation labeled; no projected epochs"
+    },
+    "final_review_document": "reports/night-20261022-review.txt: actual duration, one completed plus partial epoch, all/content Loss and PPL, resources, thermal stop, same-prompt generations, limits and remaining TODO",
+    "final_user_report": "Current thread final response: actual runtime/1.512 epochs/PPL/RAM, uncorrected same-prompt examples, 19-check audit and review/examples/TODO links. Delivered before monitor deletion.",
+    "only_hourly_night_monitor_removed": "reports/night-20261022-monitor-cleanup.json; native deleted=true and subsequent list confirms absence, other schedules preserved",
+    "requirement_by_requirement_completion_audit": "reports/night-20261022-completion-audit.json"
+  },
+  "pending": [],
+  "deadlines": {
+    "stop_updates": "2026-10-23T06:30:00+09:00",
+    "exit": "2026-10-23T07:00:00+09:00"
+  },
+  "not_claimed": [
+    "Two full corpus epochs complete",
+    "3/5-epoch or CPU/GPU quality comparisons",
+    "Hardware fire/smoke detection or safety certification"
+  ],
+  "limitations": [
+    "Desktop responsiveness not measured: user explicitly reported leaving the Mac unused.",
+    "Two epochs were not reached before the absolute 06:30 cutoff.",
+    "One K/model/seed; no model-quality optimum, 2/3/5-epoch or CPU/GPU comparison claim."
+  ],
+  "review_artifact_identities": {
+    "reports/night-20261022-result.json": {
+      "bytes": 192357,
+      "sha256": "a115ee1f1ca2eece3f749700aef29d5432bba6b7f071d2a9dbad502c3dab13ff"
+    },
+    "reports/night-20261022-result.txt": {
+      "bytes": 1562,
+      "sha256": "e88376ac6726a3091298e56582fa4726daa9113b45c9a8e1a1bbad7b3c93d161"
+    },
+    "reports/night-20261022-generation-examples.json": {
+      "bytes": 170559,
+      "sha256": "93af34e817ad9066c8fadea564e47a8d0987f8a1a9b2070e0b6473cad433be70"
+    },
+    "reports/night-20261022-review.txt": {
+      "bytes": 7676,
+      "sha256": "6345527a9ca46f00a2067a8da8155e296b664f803243f076b9cf114d71159af6"
+    },
+    "reports/night-20261022-final-audit.json": {
+      "bytes": 7836,
+      "sha256": "3d696481f00c98a90a5362e14f0ddf6b4ab29366eea106f6aa9c550227a9e579"
+    }
+  },
+  "last_review_at": "2026-10-23T06:40:55.533750+09:00",
+  "two_epoch_target_reached": false,
+  "completed_at": "2026-10-23T06:43:54.112164+09:00"
+}

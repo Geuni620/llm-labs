@@ -1,0 +1,73 @@
+{
+  "kind": "USER_REQUESTED_INTERIM_PLOT_NOT_FINAL_2_3_5_REPORT",
+  "published_at": "2026-10-24T02:17:46.814Z",
+  "data": "reports/nplm-loss-current-20261024-data.json",
+  "fragment": "reports/nplm-loss-current-20261024.html",
+  "page": "reports/nplm-loss-current-20261024-page.html",
+  "preview_evidence": "reports/nplm-loss-current-20261024-preview.json",
+  "scope": "43 saved actual validation evaluations through epoch 4 at 2026-10-24 11:12 KST; no model/training/evaluation rerun.",
+  "user_requested_while_training": true,
+  "training_settings_changed": false,
+  "all_requested_epochs_complete": false,
+  "native_receipt": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-bf707016-1ee9-41c3-a749-2b574a070890-html",
+    "title": "현재 NPLM 검증 Loss · 4에폭까지",
+    "height": 965,
+    "heights": [
+      [
+        320,
+        965
+      ],
+      [
+        375,
+        965
+      ],
+      [
+        430,
+        965
+      ],
+      [
+        520,
+        965
+      ],
+      [
+        640,
+        965
+      ],
+      [
+        728,
+        965
+      ],
+      [
+        860,
+        965
+      ],
+      [
+        1000,
+        965
+      ],
+      [
+        1144,
+        965
+      ]
+    ],
+    "outline": "t0,1,28,4,1;m0,8,26,8,1;m31,8,26,8,1;t0,16,64,4,1;t0,24,20,4,1;m0,29,182,63,1;t0,94,57,4,1;t0,102,68,4,1;m0,107,182,63,1;t0,174,68,4,1;m0,179,182,63,1"
+  },
+  "source_identities": {
+    "reports/nplm-loss-current-20261024-data.json": {
+      "bytes": 14488,
+      "sha256": "208a0583ea04d7aa93db71acada5b029ae65d5f0a1bdf5e379670a34e5bc6f50"
+    },
+    "reports/nplm-loss-current-20261024.html": {
+      "bytes": 25239,
+      "sha256": "644991162350fd6548c6e7d94354a69f7490ef60db7ac4980244098babec04bb"
+    },
+    "reports/nplm-loss-current-20261024-page.html": {
+      "bytes": 56032,
+      "sha256": "52e730fac179078daf7b0063661feb010d70ce99beea4be90a44490be146c9a2"
+    }
+  },
+  "snapshot_captured_at": "2026-10-24T11:13:06.226164+09:00",
+  "latest_actual_evaluation_at": "2026-10-24T11:12:06.501088+09:00",
+  "point_count": 43
+}

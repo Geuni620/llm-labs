@@ -1,0 +1,361 @@
+{
+  "status": "stopped",
+  "run_dir": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5",
+  "control_path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-control.json",
+  "plan": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/resume-run-20261023-r2.execution.json",
+  "execution_started": true,
+  "pid": 75297,
+  "supervisor_pid": 75235,
+  "memory_schedule_id": "scheduled-task:command:mcp:763ebcce-456f-4a7e-bdf3-1b810d57f6e8:schedule-task:kowiki-cpu-cumulative-235-hourly-20261023-v1",
+  "stop_training_by": "2026-10-24T16:12:19.881334+09:00",
+  "exit_by": "2026-10-24T16:42:19.881334+09:00",
+  "target_epochs": 5,
+  "milestones": [
+    {
+      "epoch": 2,
+      "status": "archived",
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/checkpoint-epoch-2.npz",
+      "identity": {
+        "bytes": 84145240,
+        "sha256": "2f74868d2e2929789506cfe72f88a046b519379f77ef8b3d38799e1dc537c40f"
+      },
+      "consumed": 248465070,
+      "updates": 485284,
+      "at": "2026-10-24T00:50:19.035604+09:00",
+      "cumulative_active_seconds": 31074.663006417104,
+      "validation": {
+        "targets": 16384,
+        "negative_log_likelihood_sum": 46493.81662938269,
+        "loss": 2.8377573626332206,
+        "perplexity": 17.07742409084094,
+        "accuracy": 0.494873046875,
+        "content_targets": 11519,
+        "content_negative_log_likelihood_sum": 44864.40566752357,
+        "content_loss": 3.8948177504578148,
+        "content_perplexity": 49.14709551076991,
+        "content_accuracy": 0.31530514801632087,
+        "evaluation_seconds": 1.5640490830410272
+      }
+    },
+    {
+      "epoch": 3,
+      "status": "archived",
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/checkpoint-epoch-3.npz",
+      "identity": {
+        "bytes": 84146514,
+        "sha256": "65c8809ad0ba926fb1623362f7bd7763c57ba01c7cb88a77857087c19eb5a071"
+      },
+      "consumed": 372697605,
+      "updates": 727926,
+      "at": "2026-10-24T06:01:31.234793+09:00",
+      "cumulative_active_seconds": 49746.880928709055,
+      "validation": {
+        "targets": 16384,
+        "negative_log_likelihood_sum": 46302.06119635505,
+        "loss": 2.8260535398165922,
+        "perplexity": 16.87871802363468,
+        "accuracy": 0.49505615234375,
+        "content_targets": 11519,
+        "content_negative_log_likelihood_sum": 44659.09834696169,
+        "content_loss": 3.876994387269875,
+        "content_perplexity": 48.278889140217395,
+        "content_accuracy": 0.3164337182047053,
+        "evaluation_seconds": 1.3913397500291467
+      }
+    },
+    {
+      "epoch": 5,
+      "status": "pending"
+    }
+  ],
+  "resume_verification": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-resume-verification.json",
+  "lineage": {
+    "source_run": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5",
+    "source_checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/latest.npz",
+    "source_checkpoint_identity": {
+      "bytes": 84145774,
+      "sha256": "f3b7ab9684dd6c015ebb496e20bffaf139e0e71e4f9373f1cf9ff38587286226"
+    },
+    "start_consumed": 225813335,
+    "start_updates": 441042,
+    "start_elapsed_seconds": 28031.830008625053,
+    "baseline_preserved_files": {
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/latest.npz": {
+        "bytes": 84145774,
+        "sha256": "f3b7ab9684dd6c015ebb496e20bffaf139e0e71e4f9373f1cf9ff38587286226"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/latest.previous.npz": {
+        "bytes": 84145752,
+        "sha256": "4ae6e916116707e8afb5350c1f9aa0363ae9dcd3ca8b404f1da5d60f0decb67a"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/run.json": {
+        "bytes": 12579,
+        "sha256": "acfacc01eae4e3157f819b1da23f57ac21d21cf38402b2797f6890af94d1b489"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/summary.json": {
+        "bytes": 18608,
+        "sha256": "456ec69b23900b5d83d34dbcaaf3ecc09d45c63bbc2026818ddd673a6b638b1c"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/metrics.jsonl": {
+        "bytes": 128682,
+        "sha256": "0812c6c4a341cedcbffd778217ce723f9b2e47a99624f48cd9bf79453c5adad4"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-control.json": {
+        "bytes": 1875,
+        "sha256": "06284a093bf515504f211a100c5c8f11b18618668566aa0acfcb1fcce7cb5cc1"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-result.json": {
+        "bytes": 192357,
+        "sha256": "a115ee1f1ca2eece3f749700aef29d5432bba6b7f071d2a9dbad502c3dab13ff"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-acceptance.json": {
+        "bytes": 6448,
+        "sha256": "e9e96194445cc42826348f5a60d0a0b877d71642f8056cd02a1c92b16d0b930a"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/experiment-continuation.json": {
+        "bytes": 1905,
+        "sha256": "958a0dd6b3405414aa50a8ba4c72ee6d79deb330a372e1afab8fa24d964074f7"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/training-queue.json": {
+        "bytes": 1487,
+        "sha256": "35f0e1e4f3f6ba0083892124aa7a72ec5c70b88e5871b27e93a15ff3b807c256"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/wiki-k35328/STOP": {
+        "bytes": 83,
+        "sha256": "bf78ff303e55f10d1662b7ee078d90af78bb8b853833051e20e3665922b80216"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-result.json": {
+        "bytes": 239284,
+        "sha256": "f96f1b6915a1d0ff565e85340adfbbfe82200b68f16ef7bbecd7416a52e72130"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz": {
+        "bytes": 84144433,
+        "sha256": "dbbbafeeba0393a278ad744612d0a6e592f5ed1349d652878ccd601c7702fe99"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.previous.npz": {
+        "bytes": 84146010,
+        "sha256": "9a9ca909b3d3a70de62716daf08245e3d326d5d57da36f65efcf82fb44a25fa7"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/run.json": {
+        "bytes": 6060,
+        "sha256": "e77afbb09bcba47d4f535fa99d443e726f2cdc1af9d648f00b2215f442d3c4a2"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/summary.json": {
+        "bytes": 15557,
+        "sha256": "3448a352911b8d6b9f30ef6d680328910a1e52a6f7cba658e96a9ebcc7fe4c92"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/metrics.jsonl": {
+        "bytes": 109480,
+        "sha256": "174643ff366aedefc022328469677662e653609239eda729c5110a26749d24ff"
+      }
+    },
+    "bound_training_files": {
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.c": {
+        "bytes": 8789,
+        "sha256": "855f0ad4c044ec212220b35ed367aa03cd382b66b7af7389e56daa8d7a2c84f9"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.py": {
+        "bytes": 8172,
+        "sha256": "733a9457f6b9f6c89f70a7765ea695371ac4ba5bf38a41d44b6f366776a8bd92"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/checkpoint.py": {
+        "bytes": 3989,
+        "sha256": "aed3527aa5ff5b8f6404ba59cf102a810f29abb02346c3b9a14cd7b569bb7235"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/thermal_guard.py": {
+        "bytes": 24311,
+        "sha256": "bbd4b7f3a6ee63390d3928fc47a3cb3a87d83ff41bc66b7e4da66407d935117b"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/run.py": {
+        "bytes": 17734,
+        "sha256": "160049c5ac491bda64092b51a5cdab7af7ac7203af3975510eb34e8aee55d05d"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/.artifacts/libnight_engine.dylib": {
+        "bytes": 105464,
+        "sha256": "936085f3d90b038ce915a7c5560837eeecef3d77982fc53a42beb68491581365"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/manifest.json": {
+        "bytes": 20999,
+        "sha256": "126c795f0872cd545d3f468ffb83faa4dc38edef3c7d8282ee5d3b75c0ea771e"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/vocabulary.json": {
+        "bytes": 688610,
+        "sha256": "641a9ffe566d1252afa76dac5186489e0e744624716826c77fa0d63a8d075a66"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.ids.npy": {
+        "bytes": 272938782,
+        "sha256": "0353bfedbd50f8cb5dea6e1a17c6bbea281fb3947969ca280b704209cf8b6ed6"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.paragraphs.npy": {
+        "bytes": 42828964,
+        "sha256": "c11b005a48b8b24e3ac8849bb4ff1a3820060cb40ef3bdbf76697b633181d347"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/validation.ids.npy": {
+        "bytes": 2835370,
+        "sha256": "05c702ad67214ffe441a8d7cb99ee72bdde59daea051c5acf6b994e3abdad500"
+      },
+      "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/validation.paragraphs.npy": {
+        "bytes": 458412,
+        "sha256": "6a49f353c65a0994c8d45388fcc9d5ad4894dda85e1ff2b41c05907408ed11e8"
+      }
+    },
+    "prepared_at": "2026-10-23T23:57:07.895742+09:00",
+    "source_result": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-result.json",
+    "parent_continuation": {
+      "source_run": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512",
+      "source_checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz",
+      "source_checkpoint_identity": {
+        "bytes": 84144433,
+        "sha256": "dbbbafeeba0393a278ad744612d0a6e592f5ed1349d652878ccd601c7702fe99"
+      },
+      "start_consumed": 187859287,
+      "start_updates": 366913,
+      "start_elapsed_seconds": 23176.09050429205,
+      "baseline_preserved_files": {
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz": {
+          "bytes": 84144433,
+          "sha256": "dbbbafeeba0393a278ad744612d0a6e592f5ed1349d652878ccd601c7702fe99"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.previous.npz": {
+          "bytes": 84146010,
+          "sha256": "9a9ca909b3d3a70de62716daf08245e3d326d5d57da36f65efcf82fb44a25fa7"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/run.json": {
+          "bytes": 6060,
+          "sha256": "e77afbb09bcba47d4f535fa99d443e726f2cdc1af9d648f00b2215f442d3c4a2"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/summary.json": {
+          "bytes": 15557,
+          "sha256": "3448a352911b8d6b9f30ef6d680328910a1e52a6f7cba658e96a9ebcc7fe4c92"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/metrics.jsonl": {
+          "bytes": 109480,
+          "sha256": "174643ff366aedefc022328469677662e653609239eda729c5110a26749d24ff"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-control.json": {
+          "bytes": 1875,
+          "sha256": "06284a093bf515504f211a100c5c8f11b18618668566aa0acfcb1fcce7cb5cc1"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-result.json": {
+          "bytes": 192357,
+          "sha256": "a115ee1f1ca2eece3f749700aef29d5432bba6b7f071d2a9dbad502c3dab13ff"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-acceptance.json": {
+          "bytes": 6448,
+          "sha256": "e9e96194445cc42826348f5a60d0a0b877d71642f8056cd02a1c92b16d0b930a"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/experiment-continuation.json": {
+          "bytes": 1905,
+          "sha256": "958a0dd6b3405414aa50a8ba4c72ee6d79deb330a372e1afab8fa24d964074f7"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/training-queue.json": {
+          "bytes": 1487,
+          "sha256": "35f0e1e4f3f6ba0083892124aa7a72ec5c70b88e5871b27e93a15ff3b807c256"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/wiki-k35328/STOP": {
+          "bytes": 83,
+          "sha256": "bf78ff303e55f10d1662b7ee078d90af78bb8b853833051e20e3665922b80216"
+        }
+      },
+      "bound_training_files": {
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.c": {
+          "bytes": 8789,
+          "sha256": "855f0ad4c044ec212220b35ed367aa03cd382b66b7af7389e56daa8d7a2c84f9"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.py": {
+          "bytes": 8172,
+          "sha256": "733a9457f6b9f6c89f70a7765ea695371ac4ba5bf38a41d44b6f366776a8bd92"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/checkpoint.py": {
+          "bytes": 3989,
+          "sha256": "aed3527aa5ff5b8f6404ba59cf102a810f29abb02346c3b9a14cd7b569bb7235"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/thermal_guard.py": {
+          "bytes": 24311,
+          "sha256": "bbd4b7f3a6ee63390d3928fc47a3cb3a87d83ff41bc66b7e4da66407d935117b"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/run.py": {
+          "bytes": 17734,
+          "sha256": "160049c5ac491bda64092b51a5cdab7af7ac7203af3975510eb34e8aee55d05d"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/.artifacts/libnight_engine.dylib": {
+          "bytes": 105464,
+          "sha256": "936085f3d90b038ce915a7c5560837eeecef3d77982fc53a42beb68491581365"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/manifest.json": {
+          "bytes": 20999,
+          "sha256": "126c795f0872cd545d3f468ffb83faa4dc38edef3c7d8282ee5d3b75c0ea771e"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/vocabulary.json": {
+          "bytes": 688610,
+          "sha256": "641a9ffe566d1252afa76dac5186489e0e744624716826c77fa0d63a8d075a66"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.ids.npy": {
+          "bytes": 272938782,
+          "sha256": "0353bfedbd50f8cb5dea6e1a17c6bbea281fb3947969ca280b704209cf8b6ed6"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.paragraphs.npy": {
+          "bytes": 42828964,
+          "sha256": "c11b005a48b8b24e3ac8849bb4ff1a3820060cb40ef3bdbf76697b633181d347"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/validation.ids.npy": {
+          "bytes": 2835370,
+          "sha256": "05c702ad67214ffe441a8d7cb99ee72bdde59daea051c5acf6b994e3abdad500"
+        },
+        "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/validation.paragraphs.npy": {
+          "bytes": 458412,
+          "sha256": "6a49f353c65a0994c8d45388fcc9d5ad4894dda85e1ff2b41c05907408ed11e8"
+        }
+      },
+      "prepared_at": "2026-10-23T22:12:19.882516+09:00"
+    },
+    "restart_approval": {
+      "approved": true,
+      "user_response": "같은 설정으로 재개",
+      "scope": "Resume the saved 1.817666644 epoch state to cumulative 2/3/5 with identical CPU4/model/optimizer/guard and unchanged inherited deadlines. This is not permission for automatic future restarts."
+    }
+  },
+  "hourly_log": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-hourly.jsonl",
+  "log": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-training.log",
+  "restart_confirmation_required": false,
+  "user_restart_response": "같은 설정으로 재개",
+  "command": [
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/.venv-training/bin/python",
+    "-u",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/run.py",
+    "--plan",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/resume-run-20261023-r2.execution.json",
+    "--output",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5",
+    "--resume"
+  ],
+  "started_at": "2026-10-23T23:59:34.600599+09:00",
+  "caffeinate_pid": 75298,
+  "last_supervisor_observation_at": "2026-10-24T11:30:01.868087+09:00",
+  "completion_observer_pid": 76531,
+  "actual_training_confirmed": true,
+  "first_hourly_report_after_restart_at": "2026-10-23T15:15:36.453Z",
+  "user_requested_stop": true,
+  "user_requested_total_epochs": 4.074373045675998,
+  "user_stop_requested_at": "2026-10-24T11:30:13.403654+09:00",
+  "user_stop_reason": "User selected four epochs as sufficient; do not proceed to five.",
+  "exit_code": 0,
+  "ended_at": "2026-10-24T11:30:21.877600+09:00",
+  "reason": "STOP_file",
+  "finalized_files": [
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-result.json",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-generation-examples.json",
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/resume-20261023-r2-comparison.json"
+  ],
+  "finalization_completed_at": "2026-10-24T11:30:25.836064+09:00",
+  "note": "User selected existing latest.npz at actual 4.074373 epochs as final with no weight copy. Training and reporting ended. Final selected weights were not separately evaluated; epoch-4 scores are historical reference.",
+  "user_selected_final_checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/latest.npz",
+  "user_selected_final_epochs": 4.074373045675998,
+  "user_selection_note": "Use existing latest.npz at actual 4.074373 stop state as final; no new weight copy. Exact epoch-4 evaluation is historical and not a final-stop score.",
+  "review_status": "complete_user_selected_4_074",
+  "selected_model_report": "reports/resume-20261023-r2-selected-model.json",
+  "final_review": "reports/resume-20261023-r2-final-review.txt",
+  "finalization_audit": "reports/resume-20261023-r2-finalization-audit.json",
+  "hourly_monitor_deleted": true,
+  "review_completed_at": "2026-10-24T11:45:06.278116+09:00"
+}

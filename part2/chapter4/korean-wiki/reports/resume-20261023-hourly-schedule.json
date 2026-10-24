@@ -1,0 +1,11 @@
+{
+  "scheduledTaskId": "scheduled-task:command:mcp:763ebcce-456f-4a7e-bdf3-1b810d57f6e8:schedule-task:kowiki-cpu-cumulative-235-hourly-20261023-v1",
+  "title": "CPU NPLM 누적 2·3·5에폭 시간별 보고",
+  "schedule": {
+    "type": "interval",
+    "everyMs": 3600000
+  },
+  "nextRunAt": "2026-10-23T14:15:33.944Z",
+  "boundThreadId": "d1ad10a2-f954-43f5-937c-cc69adfa632e",
+  "registered_at": "2026-10-23T13:17:10.932Z"
+}

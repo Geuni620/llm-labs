@@ -1,0 +1,31 @@
+최종 모델 확정 — 기존 중단 저장본 그대로 사용
+확정: 2026-10-24T11:45:06.278116+09:00
+최종 모델 파일: /Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/latest.npz
+실제 누적 학습량: 4.074373046에폭
+학습 타깃 예측: 506,169,692회 / 업데이트: 988,614회
+파일 SHA256: 87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6
+가중치 파일을 별도 복제하지 않았다. 기존 latest.npz를 그대로 최종본으로 지정했다.
+이 상태의 가중치·Adam·샘플러·방문 벡터와 카운터를 검증했고 파일 내용은 변경하지 않았다.
+사용자 중단 요청에 따라 학습/감독자/caffeinate/완료 관찰자 프로세스는 종료됐다. 종료 코드 0, 사유 STOP_file.
+시간별 모니터는 해당 ID만 삭제했고 목록에서 부재를 확인했다.
+
+검증 기록의 범위
+최종 선택한 4.074373에폭 상태 자체의 별도 검증 Loss/PPL·생성 평가는 실행하지 않았다.
+가장 최근 평가 기록은 정확한 4.000에폭의 2026-10-24 11:12:06 KST 기록이다. 이를 최종 4.074 모델의 평가값으로 표기하지 않는다.
+실제로 평가된 2·3·4에폭 비교와 저장 생성 예시는 final-234-comparison.json/.txt에 참고 자료로 남겼다.
+사용자가 5에폭 진행을 취소했으므로 5에폭 결과를 만들어 넣지 않았다.
+누적 학습량은 계속 증가하지만 이번 검증 곡선의 추가 개선 폭은 작았다. 3→4에폭에서는 검증 Loss/PPL이 소폭 높아졌다. 한 K/seed/고정 표본으로 최적 에폭이나 의미 정확도를 단정하지 않는다.
+
+이번 마지막 재개 실행의 누적 활성 시간 기여: 41437.529초
+전체 학습기 누적 활성 경과: 69469.359초 (오프라인 중단 제외)
+이번 프로세스 최고 RSS: 655.172MiB
+OS 열/전원 보호 기능은 해제하지 않았다. software 열 상태는 온도/화재 안전 진단이 아니다. Mac 병행 작업 반응성은 미측정이다.
+
+근거:
+reports/resume-20261023-r2-selected-model.json
+reports/resume-20261023-r2-finalization-audit.json
+reports/resume-20261023-r2-final-234-comparison.json/.txt
+reports/resume-20261023-r2-result.json/.txt
+reports/resume-20261023-r2-generation-examples.json
+reports/resume-20261023-r2-report-published.json
+reports/resume-20261023-r2-monitor-cleanup.json

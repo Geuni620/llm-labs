@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T00:20:16.736760+09:00",
+  "checkpoint": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz",
+  "bytes": 84149180,
+  "zip_crc_passed": true,
+  "updates": 5159,
+  "predictions": 2641408,
+  "identity_matches_run": true,
+  "sampler_count_matches": true,
+  "actual_process_live": true
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "NIGHT_MONITOR_CLEANUP_AFTER_FINAL_REPORT",
+  "at": "2026-10-22T21:42:35.678Z",
+  "passed": true,
+  "deleted": {
+    "scheduledTaskId": "scheduled-task:command:mcp:ba65bb6f-a853-4e4b-a9d7-ab21a325cdfb:schedule-task:kowiki-night-memory-progress-hourly-20261022-v1",
+    "deleted": true
+  },
+  "remainingTaskIds": [],
+  "otherSchedulesPreserved": true,
+  "finalReport": "Current thread final response with actual runtime, partial epochs, PPL, RAM, same-prompt examples, review links and remaining TODO was delivered before cleanup.",
+  "observerCompletion": "Native background completion exit 0 and final observed identity=false/RSS=null were read. No observer or model was restarted."
+}

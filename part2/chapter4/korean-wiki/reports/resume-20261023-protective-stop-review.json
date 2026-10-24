@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-23T23:38:41.572850+09:00",
+  "status": "protective_stop_checkpoint_verified_not_complete",
+  "reason": "monitor_error",
+  "guard_error": {
+    "source": "power",
+    "kind": "TimeoutExpired",
+    "message": "Command '['/usr/bin/pmset', '-g', 'batt']' timed out after 2 seconds",
+    "unsupported": false
+  },
+  "child_exit_code": 0,
+  "new_training_targets": 37954048,
+  "new_updates": 74129,
+  "actual_epochs": 1.8176666442490286,
+  "checkpoint": {
+    "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-H128-B512-to5/latest.npz",
+    "identity": {
+      "bytes": 84145774,
+      "sha256": "f3b7ab9684dd6c015ebb496e20bffaf139e0e71e4f9373f1cf9ff38587286226"
+    },
+    "finite_arrays": true,
+    "consumed": 225813335,
+    "updates": 441042,
+    "sampler": [
+      2933192299,
+      101580800,
+      111753592,
+      75843994,
+      225813335
+    ]
+  },
+  "last_actual_evaluation": {
+    "at": "2026-10-23T23:14:07.402099+09:00",
+    "epochs": 1.754206810639419,
+    "consumed": 217929559,
+    "validation": {
+      "targets": 16384,
+      "negative_log_likelihood_sum": 46545.1774721649,
+      "loss": 2.8408921796975646,
+      "perplexity": 17.131042689635674,
+      "accuracy": 0.49432373046875,
+      "content_targets": 11519,
+      "content_negative_log_likelihood_sum": 44897.95877911489,
+      "content_loss": 3.8977305998016223,
+      "content_perplexity": 49.290462297234875,
+      "content_accuracy": 0.31582602656480596,
+      "evaluation_seconds": 1.095971000031568
+    }
+  },
+  "stop_checkpoint_has_new_evaluation": false,
+  "current_thermal": {
+    "at": "2026-10-23T14:38:40.877980+00:00",
+    "ok": true,
+    "name": "nominal",
+    "error": null
+  },
+  "current_power": {
+    "at": "2026-10-23T14:38:40.879439+00:00",
+    "ok": true,
+    "on_battery": false,
+    "percent": 100,
+    "error": null
+  },
+  "old_files_preserved": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.npz": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/latest.previous.npz": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/run.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/summary.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/metrics.jsonl": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-control.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-result.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/night-20261022-acceptance.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/experiment-continuation.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/reports/training-queue.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/wiki-k35328/STOP": true
+  },
+  "bound_files_preserved": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/checkpoint.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/thermal_guard.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/run.py": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/.artifacts/libnight_engine.dylib": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/manifest.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/vocabulary.json": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.ids.npy": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/train.paragraphs.npy": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/validation.ids.npy": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/validation.paragraphs.npy": true
+  },
+  "requested_milestones_reached": [],
+  "automatic_restart_performed": false
+}

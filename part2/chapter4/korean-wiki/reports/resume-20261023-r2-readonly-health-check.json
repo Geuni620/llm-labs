@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-24T01:00:02.320614+09:00",
+  "process_alive": true,
+  "pid": 75297,
+  "epochs": 2.030934505200268,
+  "cpu_percent": 161.3,
+  "rss_mib": 522.859375,
+  "guard_error": null,
+  "guard_reason": null,
+  "current_thermal": {
+    "ok": true,
+    "name": "nominal",
+    "error": null
+  },
+  "current_power": {
+    "ok": true,
+    "on_battery": false,
+    "percent": 100,
+    "error": null
+  },
+  "thermal_limit_report": {
+    "exit_code": 0,
+    "output": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+  },
+  "memory_pressure": {
+    "exit_code": 0,
+    "output": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 64%"
+  },
+  "swap": {
+    "exit_code": 0,
+    "output": "vm.swapusage: total = 5120.00M  used = 3913.25M  free = 1206.75M  (encrypted)"
+  },
+  "actual_rate_windows": [
+    {
+      "seconds": 270.296724124928,
+      "targets_per_second": 6589.972578345892
+    },
+    {
+      "seconds": 570.6881608749973,
+      "targets_per_second": 6733.204337213628
+    }
+  ]
+}

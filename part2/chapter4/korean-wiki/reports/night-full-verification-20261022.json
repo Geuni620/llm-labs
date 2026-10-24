@@ -1,0 +1,311 @@
+{
+  "kind": "NIGHT_ACTUAL_C_ABI_FULL_WIKI_CPU_ORACLE",
+  "status": "complete",
+  "passed": true,
+  "config": {
+    "vocab_size": 35328,
+    "context_size": 8,
+    "embedding_dim": 64,
+    "hidden_dim": 128,
+    "batch_size": 512,
+    "cpu_threads": 4,
+    "seed": 42
+  },
+  "tolerances_predeclared": {
+    "declared_before_execution": true,
+    "rule": "abs(actual-reference) <= atol + rtol*abs(reference)",
+    "ordinary": {
+      "atol": 2e-06,
+      "rtol": 0.0002
+    },
+    "moment1": {
+      "atol": 2e-09,
+      "rtol": 0.0002
+    },
+    "moment2": {
+      "atol": 2e-11,
+      "rtol": 0.0005
+    },
+    "policy": "Same predeclared limits as the fixed-work CPU gate. Failures are retained, never relaxed after observing a device result."
+  },
+  "comparisons": [
+    {
+      "step": 1,
+      "field": "loss",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 6.67572021484375e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 1,
+      "field": "gradient_norm",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 1.1414289474487305e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 1,
+      "field": "clipping_scale",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 0.0,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 1,
+      "field": "clipped_gradients",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 8.046627044677734e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 1,
+      "field": "updated_params",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 2.3713801056146622e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 1,
+      "field": "moment1",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 8.009374141693115e-08,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 1,
+      "field": "moment2",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 4.3655745685100555e-10,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "field": "loss",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 9.5367431640625e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "field": "gradient_norm",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 9.5367431640625e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "field": "clipping_scale",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 0.0,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "field": "clipped_gradients",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 9.5367431640625e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "field": "updated_params",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 2.5890767574310303e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "field": "moment1",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 1.6763806343078613e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 2,
+      "field": "moment2",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 1.0477378964424133e-09,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "field": "loss",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 8.58306884765625e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "field": "gradient_norm",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 9.804964065551758e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "field": "clipping_scale",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 0.0,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "field": "clipped_gradients",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 1.2814998626708984e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "field": "updated_params",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 2.5890767574310303e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "field": "moment1",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 2.7567148208618164e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 3,
+      "field": "moment2",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 1.8044374883174896e-09,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "field": "loss",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 3.814697265625e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "field": "gradient_norm",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 1.284480094909668e-05,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "field": "clipping_scale",
+      "elements": 1,
+      "nonfinite": 0,
+      "max_absolute_error": 0.0,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "field": "clipped_gradients",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 1.2516975402832031e-06,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "field": "updated_params",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 2.5890767574310303e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "field": "moment1",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 3.725290298461914e-07,
+      "outside_tolerance": 0,
+      "passed": true
+    },
+    {
+      "step": 4,
+      "field": "moment2",
+      "elements": 6883968,
+      "nonfinite": 0,
+      "max_absolute_error": 2.444721758365631e-09,
+      "outside_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "evaluation": {
+    "all_nll_error": 7.116702363418881e-06,
+    "content_nll_error": 6.481102900579572e-06,
+    "targets": 512,
+    "content_targets": 367
+  },
+  "comparison_count": 28,
+  "actual_inputs_match_independent_sampler": true,
+  "sources": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.c": {
+      "bytes": 8789,
+      "sha256": "855f0ad4c044ec212220b35ed367aa03cd382b66b7af7389e56daa8d7a2c84f9"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.py": {
+      "bytes": 6686,
+      "sha256": "7ecae76436111e63b51b5859ebe9f42ceb44c9a7542c31f43b80505693f521d5"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/oracle_worker.py": {
+      "bytes": 1360,
+      "sha256": "ec88d0875938ee42d773f320d1f7f07c99e1a5e6e22f55a4769baaf180f8a0bc"
+    },
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/verify_full.py": {
+      "bytes": 4863,
+      "sha256": "ecb498f0dd9c08fc09c30403e4870aeb22f3dd2c300c2c5214c0c81dff61080b"
+    }
+  }
+}

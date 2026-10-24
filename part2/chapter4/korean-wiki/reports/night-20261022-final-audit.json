@@ -1,0 +1,217 @@
+{
+  "at": "2026-10-23T06:36:20.812401+09:00",
+  "kind": "ACTUAL_NIGHT_TERMINAL_AND_PRESERVATION_AUDIT",
+  "passed": true,
+  "checks": {
+    "supervisor_exit_zero": true,
+    "stopped_for_absolute_training_deadline": true,
+    "exited_before_hard_deadline": true,
+    "final_checkpoint_hash_unchanged": true,
+    "checkpoint_finite_fp32_arrays": true,
+    "same_final_counts": true,
+    "same_final_evaluation": true,
+    "same_final_saved_generation": true,
+    "sampler_position_and_count_match": true,
+    "sampler_bijective": true,
+    "every_training_paragraph_visited": true,
+    "all_bound_inputs_and_sources_preserved": true,
+    "checkpoint_dimensions_match_nplm": true,
+    "all_compiled_c_sources_preserved": true,
+    "both_reached_comparison_states_preserved": true,
+    "deadline_stop_event_recorded": true,
+    "no_thermal_or_monitor_stop_recorded": true,
+    "all_saved_samples_restored_without_new_generation": true,
+    "old_comparison_queue_remains_stopped": true
+  },
+  "processes": {
+    "trainer": {
+      "pid": 32209,
+      "ps_exit_code": 1,
+      "actual_ps_output": "",
+      "original_pid_absent": true
+    },
+    "supervisor": {
+      "pid": 32169,
+      "ps_exit_code": 1,
+      "actual_ps_output": "",
+      "original_pid_absent": true
+    },
+    "caffeinate": {
+      "pid": 32210,
+      "ps_exit_code": 1,
+      "actual_ps_output": "",
+      "original_pid_absent": true
+    },
+    "archive_watcher": {
+      "pid": 26664,
+      "ps_exit_code": 1,
+      "actual_ps_output": "",
+      "original_pid_absent": true
+    }
+  },
+  "actual_epochs": 1.5121585259449144,
+  "completed_full_epochs": 1,
+  "partial_next_epoch": 0.5121585259449145,
+  "two_epoch_goal_reached": false,
+  "predictions": 187859287,
+  "updates": 366913,
+  "expected_updates": 366913,
+  "sampler": [
+    2933192299,
+    63626752,
+    111753592,
+    75843994,
+    187859287
+  ],
+  "checkpoint_array_headers": {
+    "parameters": {
+      "descr": "<f4",
+      "fortran_order": false,
+      "shape": [
+        6883968
+      ]
+    },
+    "moment1": {
+      "descr": "<f4",
+      "fortran_order": false,
+      "shape": [
+        6883968
+      ]
+    },
+    "moment2": {
+      "descr": "<f4",
+      "fortran_order": false,
+      "shape": [
+        6883968
+      ]
+    },
+    "visited": {
+      "descr": "|u1",
+      "fortran_order": false,
+      "shape": [
+        1529599
+      ]
+    }
+  },
+  "compiled_sources": {
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/engine.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_benchmark.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/gemm_kernels.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/vector_vforce.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_norm.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_softmax.c": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fixedwork_api.h": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/experiment_kernels.h": true,
+    "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/cpu-benchmark/experiments/fast_exp.h": true
+  },
+  "archive_states": {
+    "elapsed-3h": {
+      "identity_matches": true,
+      "independent_finite_audit_passed": true,
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/checkpoint-elapsed-3h.npz",
+      "actual_elapsed_seconds": 10851.382241500076,
+      "epochs": 0.6770889767322223
+    },
+    "epoch-1": {
+      "identity_matches": true,
+      "independent_finite_audit_passed": true,
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/checkpoint-epoch-1.npz",
+      "actual_elapsed_seconds": 15616.93710233306,
+      "epochs": 1.0
+    }
+  },
+  "thermal_sample_counts": {
+    "nominal": 4623
+  },
+  "stop_events": [
+    {
+      "at": "2026-10-23T06:30:00.024310+09:00",
+      "kind": "stop_requested",
+      "reason": "training_deadline"
+    }
+  ],
+  "stop_request_delay_seconds": 0.02431,
+  "supervisor_wall_seconds": 23179.47991,
+  "trainer_elapsed_seconds": 23176.16541633301,
+  "peak_rss_bytes": 587644928,
+  "observed_process_rss_range_bytes": [
+    578273280,
+    587612160
+  ],
+  "resource_observations": 350,
+  "latest_observer_record": {
+    "at": "2026-10-23T06:30:53.956175+09:00",
+    "run_dir": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512",
+    "pid": 32209,
+    "process_identity_confirmed": false,
+    "rss_bytes": null,
+    "cpu_percent": null,
+    "process_elapsed": null,
+    "source_progress_at": "2026-10-23T06:30:01.942549+09:00",
+    "recorded_status": "stopped",
+    "target_predictions": 187859287,
+    "target_epoch_goal": 2,
+    "epoch_windows": 124232535,
+    "epochs_equivalent": 1.5121585259449144,
+    "target_progress_percent": 75.60792629724573,
+    "peak_rss_bytes": 587644928,
+    "guard_at_progress": {
+      "source": "NSProcessInfo.thermalState via Foundation/Objective-C ctypes",
+      "limitation": "OS thermal pressure only; not degrees/fire detection. Unknown or unsupported hardware may always report nominal.",
+      "sample_interval_seconds": 5.0,
+      "critical_grace_seconds": 5.0,
+      "power_monitor_enabled": true,
+      "heartbeat_stale_after_seconds": 20.0,
+      "heartbeat_success_definition": "Thermal reader, due power reader and sample emit returned; initial freshness anchor is guard start.",
+      "last_complete_sample_at": "2026-10-22T21:30:00.521442+00:00",
+      "last_complete_sample_monotonic": 648944.27646375,
+      "protective_stop_grace_seconds": 30.0,
+      "protective_stop_reasons": [
+        "thermal_serious",
+        "low_battery",
+        "monitor_error"
+      ],
+      "protective_stop_deadline_never_extended": true,
+      "protective_stop_origin_reason": null,
+      "protective_stop_deadline_monotonic": null,
+      "protective_stop_exit_code": 88,
+      "power_interval_seconds": 30.0,
+      "battery_stop_below_percent": 20,
+      "training_stop_at": "2026-10-23T06:30:00+09:00",
+      "hard_stop_at": "2026-10-23T07:00:00+09:00",
+      "should_stop": true,
+      "reason": "training_deadline",
+      "stop_reasons": [
+        "training_deadline"
+      ],
+      "initial_ready": false,
+      "all_compute_stopped_acknowledged": false,
+      "hard_exit_requested": false,
+      "last_state": "nominal",
+      "last_thermal_at": "2026-10-22T21:30:00.520855+00:00",
+      "last_power": {
+        "on_battery": false,
+        "percent": 100,
+        "sampled_at": "2026-10-22T21:29:50.481661+00:00"
+      },
+      "last_error": null,
+      "checkpoint_policy": "No watchdog checkpoint I/O; retain only caller's already-complete atomic checkpoint."
+    }
+  },
+  "decoded_saved_examples": 90,
+  "old_queue_preservation": {
+    "experiment-continuation.json": "stopped",
+    "training-queue.json": "stopped",
+    "STOP_present": true
+  },
+  "limits": [
+    "One K, model and seed; no CPU/GPU or 2/3/5-epoch quality comparison.",
+    "The target was two epochs or the absolute stop time, whichever came first; two epochs were not reached.",
+    "OS thermal pressure samples do not measure CPU degrees, fire or smoke.",
+    "Desktop responsiveness was not measured; user explicitly reported leaving the Mac unused."
+  ],
+  "user_responsiveness_response": {
+    "quoted_response": "안만지고 그대로 뒀었어 그래서 몰라",
+    "conclusion": "Not measured; user left the Mac unused. CPU/RAM data does not prove desktop responsiveness."
+  }
+}

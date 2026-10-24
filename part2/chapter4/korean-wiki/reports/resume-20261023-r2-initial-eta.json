@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-24T00:03:16.323562+09:00",
+  "basis": "Actual complete first continuation interval until its protective stop. Future load varies; use later r2 observations to refresh.",
+  "rate_targets_per_second": 7812.390511265042,
+  "rows": [
+    {
+      "total_epochs": 2,
+      "additional_seconds_estimate": 2899.4627146886005,
+      "estimated_at": "2026-10-24T00:47:54.063314+09:00",
+      "kind": "ESTIMATE_NOT_COMPLETED_RESULT"
+    },
+    {
+      "total_epochs": 3,
+      "additional_seconds_estimate": 18801.45005401367,
+      "estimated_at": "2026-10-24T05:12:56.050653+09:00",
+      "kind": "ESTIMATE_NOT_COMPLETED_RESULT"
+    },
+    {
+      "total_epochs": 5,
+      "additional_seconds_estimate": 50605.42473266381,
+      "estimated_at": "2026-10-24T14:03:00.025332+09:00",
+      "kind": "ESTIMATE_NOT_COMPLETED_RESULT"
+    }
+  ],
+  "valid_for_current_status": false,
+  "superseded_reason": "User ended training and selected existing final 4.074373 latest.npz."
+}

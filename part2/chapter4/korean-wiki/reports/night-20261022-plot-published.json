@@ -1,0 +1,67 @@
+{
+  "kind": "ACTUAL_NIGHT_LOSS_PLOT_PUBLICATION",
+  "published_at": "2026-10-22T21:37:15.665Z",
+  "source": "reports/night-training-loss.html",
+  "page": "reports/night-training-loss-page.html",
+  "metric_source": "reports/night-20261022-result.json",
+  "scope": "All 15 actual held-out evaluation points from the single CPU/C night run, including initial, reached one epoch and final partial second epoch. No time extrapolation.",
+  "preview_evidence": "reports/night-20261022-plot-preview.json",
+  "native_receipt": {
+    "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-b1de6d83-8dc5-4d42-9c31-b4ae4c2b5990-html",
+    "title": "CPU NPLM 실제 야간 학습 Loss",
+    "height": 730,
+    "heights": [
+      [
+        320,
+        730
+      ],
+      [
+        375,
+        730
+      ],
+      [
+        430,
+        730
+      ],
+      [
+        520,
+        730
+      ],
+      [
+        640,
+        730
+      ],
+      [
+        728,
+        730
+      ],
+      [
+        860,
+        730
+      ],
+      [
+        1000,
+        730
+      ],
+      [
+        1144,
+        730
+      ]
+    ],
+    "outline": "t0,1,35,4,1;m0,8,26,8,1;m31,8,26,8,1;t0,16,52,4,1;t0,24,20,4,1;m0,29,182,72,1;t0,106,31,4,1;m0,110,182,72,1"
+  },
+  "source_identities": {
+    "reports/night-training-loss.html": {
+      "bytes": 15987,
+      "sha256": "96702c0b06f4096c4f22b4796849d129d725b2b85b4d9968f166d322e9c0286a"
+    },
+    "reports/night-training-loss-page.html": {
+      "bytes": 46780,
+      "sha256": "e51b408f8092d99413752b5d7326b7d1bb737da7f11d0623bd97093093bbcb46"
+    },
+    "reports/night-20261022-result.json": {
+      "bytes": 192357,
+      "sha256": "a115ee1f1ca2eece3f749700aef29d5432bba6b7f071d2a9dbad502c3dab13ff"
+    }
+  }
+}

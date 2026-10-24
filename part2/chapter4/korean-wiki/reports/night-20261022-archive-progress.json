@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-23T04:24:52.027368+09:00",
+  "status": "complete",
+  "pid": 26664,
+  "training_pid": 32209,
+  "run_dir": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512",
+  "jobs": [
+    {
+      "name": "elapsed-3h",
+      "args": [
+        "--min-elapsed",
+        "10800"
+      ],
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/checkpoint-elapsed-3h.npz",
+      "status": "archived",
+      "attempts": 1,
+      "consumed": 84116480,
+      "updates": 164290,
+      "actual_elapsed_seconds": 10851.382241500076,
+      "sha256": "541055a362a0e01e103ae1ffb6e086d01910b0004e824b72824c1d257c9582c9"
+    },
+    {
+      "name": "epoch-1",
+      "args": [
+        "--metric-label",
+        "epoch_1"
+      ],
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/checkpoint-epoch-1.npz",
+      "status": "archived",
+      "attempts": 1,
+      "consumed": 124232535,
+      "updates": 242642,
+      "actual_elapsed_seconds": 15616.93710233306,
+      "sha256": "e4796b5788ad643565ef45748f1b15c5f668112eb0e84dfe628193a65b0f6668"
+    }
+  ]
+}

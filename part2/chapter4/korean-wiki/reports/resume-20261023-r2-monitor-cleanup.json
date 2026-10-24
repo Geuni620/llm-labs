@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-24T02:36:23.855Z",
+  "reason": "User explicitly selected four epochs and stopped further training; actual trainer/supervisor/caffeinate/observer termination confirmed.",
+  "deleted": {
+    "scheduledTaskId": "scheduled-task:command:mcp:763ebcce-456f-4a7e-bdf3-1b810d57f6e8:schedule-task:kowiki-cpu-cumulative-235-hourly-20261023-v1",
+    "deleted": true
+  },
+  "verified_absent": true,
+  "remainingTaskIds": [],
+  "only_requested_monitor_touched": true
+}

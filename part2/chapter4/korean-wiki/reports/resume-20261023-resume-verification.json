@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-23T22:12:25.467340+09:00",
+  "passed": true,
+  "checks": {
+    "zero_optimizer_updates": true,
+    "zero_new_training_targets": true,
+    "sampler_bit_exact": true,
+    "all_arrays_bit_exact": true,
+    "same_heldout_metrics": true,
+    "same_seeded_generations": true,
+    "finite_checkpoint": true,
+    "healthy_step_limited_preflight": true,
+    "real_resumed_evaluation_recorded": true
+  },
+  "array_checks": {
+    "parameters": true,
+    "moment1": true,
+    "moment2": true,
+    "visited": true
+  },
+  "validation_checks": {
+    "accuracy": true,
+    "content_accuracy": true,
+    "content_loss": true,
+    "content_negative_log_likelihood_sum": true,
+    "content_perplexity": true,
+    "content_targets": true,
+    "loss": true,
+    "negative_log_likelihood_sum": true,
+    "perplexity": true,
+    "targets": true
+  },
+  "preflight_exit_code": 0,
+  "source_checkpoint": {
+    "bytes": 84144433,
+    "sha256": "dbbbafeeba0393a278ad744612d0a6e592f5ed1349d652878ccd601c7702fe99"
+  },
+  "consumed": 187859287,
+  "updates": 366913,
+  "evaluation": {
+    "accuracy": 0.494873046875,
+    "content_accuracy": 0.31356888618803713,
+    "content_loss": 3.9042967051277775,
+    "content_negative_log_likelihood_sum": 44973.59374636687,
+    "content_perplexity": 49.61517354174393,
+    "content_targets": 11519,
+    "evaluation_seconds": 1.0701520410366356,
+    "loss": 2.8393474434129287,
+    "negative_log_likelihood_sum": 46519.86851287742,
+    "perplexity": 17.10460017501336,
+    "targets": 16384
+  },
+  "scope": "Full actual model restored and evaluated; no training update or additional target consumed.",
+  "preflight_actual_evaluation_labels": [
+    "resumed",
+    "final"
+  ]
+}

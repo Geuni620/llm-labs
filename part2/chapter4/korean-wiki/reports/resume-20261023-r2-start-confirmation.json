@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-24T00:03:16.312578+09:00",
+  "passed": true,
+  "user_response": "같은 설정으로 재개",
+  "actual_process": {
+    "kind": "MEASUREMENT_NOT_DELIVERY_RECEIPT",
+    "at": "2026-10-24T00:03:15.156494+09:00",
+    "run_dir": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5",
+    "pid": 75297,
+    "process_identity_confirmed": true,
+    "actual_command": "/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -u /Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/run.py --plan /Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/resume-run-20261023-r2.execution.json --output /Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5 --resume",
+    "process_rss_bytes": 435716096,
+    "cpu_percent": 67.5,
+    "process_elapsed": "03:41",
+    "control_status": "launched",
+    "source_progress_at": "2026-10-24T00:03:12.974238+09:00",
+    "recorded_status": "pilot-running",
+    "consumed": 226928471,
+    "windows": 124232535,
+    "target_epochs": 5,
+    "epochs_equivalent": 1.826642843599706,
+    "updates": 443220,
+    "new_updates": 2178,
+    "target_progress_percent": 36.53285687199412,
+    "continuation_progress_percent": 0.2820634530463615,
+    "peak_rss_bytes": 686997504,
+    "cumulative_active_seconds": 28248.741102750064,
+    "resume_wall_elapsed_seconds": 220.55658,
+    "continuation_active_seconds": 216.911094125011,
+    "validation": {
+      "targets": 16384,
+      "negative_log_likelihood_sum": 46462.557327080634,
+      "loss": 2.835849446232949,
+      "perplexity": 17.044872855735548,
+      "accuracy": 0.4925537109375,
+      "content_targets": 11519,
+      "content_negative_log_likelihood_sum": 44861.32353287055,
+      "content_loss": 3.8945501808204313,
+      "content_perplexity": 49.13394699939529,
+      "content_accuracy": 0.3115721850855109,
+      "evaluation_seconds": 2.3887452500639483
+    },
+    "guard": {
+      "source": "NSProcessInfo.thermalState via Foundation/Objective-C ctypes",
+      "limitation": "OS thermal pressure only; not degrees/fire detection. Unknown or unsupported hardware may always report nominal.",
+      "sample_interval_seconds": 5.0,
+      "critical_grace_seconds": 5.0,
+      "power_monitor_enabled": true,
+      "heartbeat_stale_after_seconds": 20.0,
+      "heartbeat_success_definition": "Thermal reader, due power reader and sample emit returned; initial freshness anchor is guard start.",
+      "last_complete_sample_at": "2026-10-23T15:03:10.381500+00:00",
+      "last_complete_sample_monotonic": 700879.289810083,
+      "protective_stop_grace_seconds": 30.0,
+      "protective_stop_reasons": [
+        "thermal_serious",
+        "low_battery",
+        "monitor_error"
+      ],
+      "protective_stop_deadline_never_extended": true,
+      "protective_stop_origin_reason": null,
+      "protective_stop_deadline_monotonic": null,
+      "protective_stop_exit_code": 88,
+      "power_interval_seconds": 30.0,
+      "battery_stop_below_percent": 20,
+      "training_stop_at": "2026-10-24T16:12:19.881334+09:00",
+      "hard_stop_at": "2026-10-24T16:42:19.881334+09:00",
+      "should_stop": false,
+      "reason": null,
+      "stop_reasons": [],
+      "initial_ready": true,
+      "all_compute_stopped_acknowledged": false,
+      "hard_exit_requested": false,
+      "last_state": "nominal",
+      "last_thermal_at": "2026-10-23T15:03:10.380766+00:00",
+      "last_power": {
+        "on_battery": false,
+        "percent": 100,
+        "sampled_at": "2026-10-23T15:03:05.342802+00:00"
+      },
+      "last_error": null,
+      "checkpoint_policy": "No watchdog checkpoint I/O; retain only caller's already-complete atomic checkpoint."
+    },
+    "milestones": [
+      {
+        "epoch": 2,
+        "status": "pending"
+      },
+      {
+        "epoch": 3,
+        "status": "pending"
+      },
+      {
+        "epoch": 5,
+        "status": "pending"
+      }
+    ],
+    "validation_at": "2026-10-23T23:59:40.267743+09:00"
+  },
+  "first_actual_evaluation_matches_fresh_checkpoint_preflight": {
+    "accuracy": true,
+    "content_accuracy": true,
+    "content_loss": true,
+    "content_negative_log_likelihood_sum": true,
+    "content_perplexity": true,
+    "content_targets": true,
+    "loss": true,
+    "negative_log_likelihood_sum": true,
+    "perplexity": true,
+    "targets": true
+  },
+  "source_checkpoint_had_stale_pre_stop_score": true,
+  "guard_source_and_deadlines_unchanged": true,
+  "original_and_interrupted_run_files_preserved": true,
+  "same_existing_hourly_schedule": {
+    "scheduledTaskId": "scheduled-task:command:mcp:763ebcce-456f-4a7e-bdf3-1b810d57f6e8:schedule-task:kowiki-cpu-cumulative-235-hourly-20261023-v1",
+    "title": "CPU NPLM 누적 2·3·5에폭 시간별 보고",
+    "schedule": {
+      "type": "interval",
+      "everyMs": 3600000
+    },
+    "nextRunAt": "2026-10-23T15:15:36.453Z",
+    "boundThreadId": "d1ad10a2-f954-43f5-937c-cc69adfa632e",
+    "handoff_at": "2026-10-23T15:01:37.619Z",
+    "same_existing_timer": true,
+    "active_control": "reports/resume-20261023-r2-control.json"
+  }
+}

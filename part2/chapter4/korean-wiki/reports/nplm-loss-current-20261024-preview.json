@@ -1,0 +1,86 @@
+{
+  "kind": "USER_REQUESTED_INTERIM_LOSS_PLOT_PREVIEW",
+  "at": "2026-10-24T02:17:45.075Z",
+  "passed": true,
+  "previews": [
+    {
+      "appearance": "dark",
+      "width": 728,
+      "contentHeight": 965,
+      "base": {
+        "points": 43,
+        "legend": true,
+        "hover": true,
+        "exactGuide": true,
+        "overflow": false
+      },
+      "layout": [
+        {
+          "panel": "full",
+          "width": 728,
+          "labelsInside": true,
+          "xTicks": 9
+        },
+        {
+          "panel": "all",
+          "width": 728,
+          "labelsInside": true,
+          "xTicks": 7
+        },
+        {
+          "panel": "content",
+          "width": 728,
+          "labelsInside": true,
+          "xTicks": 7
+        }
+      ],
+      "interaction": {
+        "panelTooltipsPassed": true,
+        "touchPinned": true,
+        "touchUnpinned": true,
+        "overlaps": [],
+        "pageOverflow": false
+      }
+    },
+    {
+      "appearance": "light",
+      "width": 320,
+      "contentHeight": 965,
+      "base": {
+        "points": 43,
+        "legend": true,
+        "hover": true,
+        "exactGuide": true,
+        "overflow": false
+      },
+      "layout": [
+        {
+          "panel": "full",
+          "width": 320,
+          "labelsInside": true,
+          "xTicks": 3
+        },
+        {
+          "panel": "all",
+          "width": 320,
+          "labelsInside": true,
+          "xTicks": 4
+        },
+        {
+          "panel": "content",
+          "width": 320,
+          "labelsInside": true,
+          "xTicks": 4
+        }
+      ],
+      "interaction": {
+        "panelTooltipsPassed": true,
+        "touchPinned": true,
+        "touchUnpinned": true,
+        "overlaps": [],
+        "pageOverflow": false
+      }
+    }
+  ],
+  "scope": "43 saved actual validation evaluations through epoch 4 at 2026-10-24 11:12 KST; no model/training/evaluation rerun."
+}

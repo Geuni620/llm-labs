@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-23T04:26:15.595699+09:00",
+  "kind": "INDEPENDENT_ACTUAL_EPOCH_ONE_CHECKPOINT_AUDIT",
+  "passed": true,
+  "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/night-cpu-20261022-H128-B512/checkpoint-epoch-1.npz",
+  "identity": {
+    "bytes": 84145537,
+    "sha256": "e4796b5788ad643565ef45748f1b15c5f668112eb0e84dfe628193a65b0f6668"
+  },
+  "checks": {
+    "finite_arrays": true,
+    "hash_and_size_match": true,
+    "identity_matches_run": true,
+    "config_matches_run": true,
+    "exact_actual_metric_matches_sidecar": true,
+    "consumed_matches_one_full_epoch": true,
+    "updates_match_one_full_epoch": true,
+    "saved_validation_matches": true,
+    "saved_generation_matches": true,
+    "all_paragraphs_visited": true,
+    "epoch_boundary_position_matches_full_pass": true,
+    "affine_sampler_is_bijective_over_all_epoch_windows": true
+  },
+  "actual_metric": {
+    "label": "epoch_1",
+    "at": "2026-10-23T04:24:02.713472+09:00",
+    "actual_elapsed_seconds": 15616.93710233306,
+    "consumed": 124232535,
+    "updates": 242642,
+    "epochs_equivalent": 1.0,
+    "visited_paragraphs": 1529599,
+    "validation": {
+      "targets": 16384,
+      "negative_log_likelihood_sum": 46783.330602291746,
+      "loss": 2.8554278932062833,
+      "perplexity": 17.381873202092706,
+      "accuracy": 0.49334716796875,
+      "content_targets": 11519,
+      "content_negative_log_likelihood_sum": 45156.095279967114,
+      "content_loss": 3.9201402274474444,
+      "content_perplexity": 50.40751279934049,
+      "content_accuracy": 0.31443701710217903,
+      "evaluation_seconds": 1.238253541989252
+    },
+    "evaluation_window_sha256": "98812c723f2be1239a9667b64774ac228437fb3ed8b67f79dad1e6953eb5abd4"
+  },
+  "durable_sampler": [
+    141905977,
+    124232535,
+    19277647,
+    17673442,
+    124232535
+  ],
+  "scope": "Same continuous full-pool CPU/C run; no new model, evaluation, replay or inference. One epoch actually reached, two-epoch goal not yet complete.",
+  "sampler_evidence": "engine.c kw_get_sampler: [random,position,multiplier,shift,consumed]; gather uses (multiplier*position+shift) modulo windows, with gcd(multiplier,windows)=1 and all window positions reached exactly once."
+}

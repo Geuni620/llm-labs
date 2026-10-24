@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-24T06:17:21.143633+09:00",
+  "kind": "LIGHTWEIGHT_EPOCH_3_METADATA_BINDING_CHECK",
+  "passed": true,
+  "checks": {
+    "identity_and_config_match": true,
+    "exact_epoch_count": true,
+    "updates_match": true,
+    "saved_evaluation_matches": true,
+    "saved_generation_matches": true,
+    "same_evaluation_targets": true
+  },
+  "archive": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/checkpoint-epoch-3.npz",
+  "actual_at": "2026-10-24T06:01:31.234793+09:00",
+  "full_array_audit_performed": false,
+  "scope": "Existing metadata/evaluation binding only; independent full-array audit remains deferred until trainer exit."
+}

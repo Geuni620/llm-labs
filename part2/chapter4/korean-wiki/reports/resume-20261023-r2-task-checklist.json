@@ -1,0 +1,132 @@
+{
+  "status": "complete_user_selected_4_074_no_weight_copy",
+  "scope": "Latest user instruction: stop and finalize existing 4.074373 latest.npz without an extra weights copy; original five-epoch goal canceled.",
+  "requirements": [
+    {
+      "id": "R01",
+      "request": "Preserve prior night/raw inputs and exactly restore full state",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-r2-resume-verification.json",
+        "reports/resume-20261023-r2-start-confirmation.json"
+      ]
+    },
+    {
+      "id": "R02",
+      "request": "Start one actual CPU4 continuation with unchanged model/data/evaluation",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-r2-control.json",
+        "reports/resume-20261023-r2-start-confirmation.json"
+      ]
+    },
+    {
+      "id": "R03",
+      "request": "Reach, save and independently audit cumulative epoch 2",
+      "status": "done",
+      "evidence": [
+        "training-runs/resume-cpu-20261023-r2-H128-B512-to5/checkpoint-epoch-2.npz",
+        "training-runs/resume-cpu-20261023-r2-H128-B512-to5/checkpoint-epoch-2.json",
+        "reports/resume-20261023-r2-final-234-comparison.json"
+      ],
+      "note": "Actual evaluated checkpoint and post-exit full-array/hash/binding audits passed."
+    },
+    {
+      "id": "R04",
+      "request": "Reach, save and independently audit cumulative epoch 3",
+      "status": "done",
+      "evidence": [
+        "training-runs/resume-cpu-20261023-r2-H128-B512-to5/checkpoint-epoch-3.npz",
+        "training-runs/resume-cpu-20261023-r2-H128-B512-to5/checkpoint-epoch-3.json",
+        "reports/resume-20261023-r2-epoch3-binding-check.json",
+        "reports/resume-20261023-r2-final-234-comparison.json"
+      ],
+      "note": "Actual evaluated checkpoint and post-exit full-array/hash/binding audits passed."
+    },
+    {
+      "id": "R05",
+      "request": "Reach, save and independently audit cumulative epoch 5",
+      "status": "canceled_by_user",
+      "evidence": [],
+      "note": "User stopped further training and selected the actual 4.074373 checkpoint; no five-epoch result claimed."
+    },
+    {
+      "id": "R06",
+      "request": "Hourly actual progress/memory/Loss reporting until terminal review",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-r2-hourly-schedule.json",
+        "reports/resume-20261023-r2-hourly.jsonl",
+        "reports/resume-20261023-r2-supervision-checks.jsonl",
+        "reports/resume-20261023-r2-monitor-cleanup.json"
+      ],
+      "last_measurement_at": "2026-10-24T11:19:47.481984+09:00",
+      "note": "Actual hourly measurements/reporting until user stop; timer cleanup verified."
+    },
+    {
+      "id": "R07",
+      "request": "Maintain thermal/power/fixed upper deadline protection",
+      "status": "done",
+      "evidence": [
+        "resume-run-20261023-r2.execution.json",
+        "training-runs/resume-cpu-20261023-r2-H128-B512-to5/progress.json",
+        "reports/resume-20261023-r2-readonly-health-check.json"
+      ],
+      "last_verified_at": "2026-10-24T11:20:34.603952+09:00",
+      "last_observed_thermal": "nominal",
+      "guard_reason": null,
+      "note": "Protected execution ended by explicit user STOP; no safety limits disabled."
+    },
+    {
+      "id": "R08",
+      "request": "Compare actual 2/3/5 Loss/PPL/timing/targets/updates/same-prompt generations",
+      "status": "done_with_recorded_limit",
+      "evidence": [
+        "reports/resume-20261023-r2-final-234-comparison.json",
+        "reports/resume-20261023-r2-final-review.txt"
+      ],
+      "note": "Actual 2/3/4 reference comparison completed. User-selected 4.074 final checkpoint has no separate evaluation; not mislabeled."
+    },
+    {
+      "id": "R09",
+      "request": "Publish actual curves after desktop728/dark and mobile320/light preview",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-r2-report-published.json",
+        "reports/resume-20261023-r2-final-loss-preview.json"
+      ],
+      "interim_user_requested_plot": "reports/resume-20261023-r2-interim-loss-published.json",
+      "note": "Post-stop actual time-Loss curve published after required desktop/mobile checks; selected 4.074 explicitly marked unevaluated."
+    },
+    {
+      "id": "R10",
+      "request": "Final result review/report, preserve source, delete only this hourly monitor",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-r2-finalization-audit.json",
+        "reports/resume-20261023-r2-monitor-cleanup.json",
+        "reports/resume-20261023-r2-final-review.txt"
+      ],
+      "note": "User stop respected, final existing latest selected/audited, sources preserved and only requested timer removed."
+    },
+    {
+      "id": "R11",
+      "request": "Use existing 4.074373 latest.npz as final without an additional weights copy",
+      "status": "done",
+      "evidence": [
+        "reports/resume-20261023-r2-selected-model.json",
+        "reports/resume-20261023-r2-finalization-audit.json"
+      ]
+    }
+  ],
+  "limits": [
+    "No 2/3/5 result is complete before the actual corresponding checkpoint and audit.",
+    "Desktop responsiveness is unmeasured; user left Mac unused in the previous night.",
+    "One K/model/seed and same training trajectory; not a vocabulary or model-quality optimum proof."
+  ],
+  "last_check_at": "2026-10-24T11:20:34.603952+09:00",
+  "latest_observed_epochs": 4.074373045675998,
+  "parent_checklist": "reports/resume-20261023-task-checklist.json",
+  "completed_at": "2026-10-24T11:45:06.278116+09:00",
+  "user_final_selection": "reports/resume-20261023-r2-selected-model.json"
+}

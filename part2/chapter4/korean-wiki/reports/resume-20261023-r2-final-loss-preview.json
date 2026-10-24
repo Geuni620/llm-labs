@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-24T02:42:55.605Z",
+  "passed": true,
+  "scope": "Post-stop actual recorded validation vs cumulative active time, through evaluated epoch 4; selected final 4.074 weights not separately evaluated.",
+  "previews": [
+    {
+      "width": 728,
+      "appearance": "dark",
+      "contentHeight": 678,
+      "checks": {
+        "points": 43,
+        "legend": true,
+        "hover": true,
+        "exactGuide": true,
+        "overflow": false,
+        "overlaps": [],
+        "pageOverflow": false
+      },
+      "layout": [
+        {
+          "panel": "all",
+          "width": 728,
+          "labelsInside": true,
+          "xTicks": 7
+        },
+        {
+          "panel": "content",
+          "width": 728,
+          "labelsInside": true,
+          "xTicks": 7
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "appearance": "light",
+      "contentHeight": 678,
+      "checks": {
+        "points": 43,
+        "legend": true,
+        "hover": true,
+        "exactGuide": true,
+        "overflow": false,
+        "overlaps": [],
+        "pageOverflow": false
+      },
+      "layout": [
+        {
+          "panel": "all",
+          "width": 320,
+          "labelsInside": true,
+          "xTicks": 3
+        },
+        {
+          "panel": "content",
+          "width": 320,
+          "labelsInside": true,
+          "xTicks": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+<section id="resume-stop-loss-20261023">
+  <h3>보호 중단 전 실제 검증 Loss</h3>
+  <div class="night-legend" aria-label="검증 Loss 계열">
+    <button type="button" class="night-key cursor-interaction" data-series="all" aria-pressed="true"><span class="night-swatch night-all" aria-hidden="true">●</span>공백·EOS 포함</button>
+    <button type="button" class="night-key cursor-interaction" data-series="content" aria-pressed="true"><span class="night-swatch night-content" aria-hidden="true">◆</span>공백·EOS 제외</button>
+  </div>
+  <div class="text-small text-muted">마지막 평가 23:14 · 1.754에폭 / 저장점 1.818에폭 미평가</div>
+  <figure class="night-figure">
+    <h4>초기 평가 포함</h4>
+    <svg class="night-chart" data-panel="full" role="img" aria-label="초기 평가부터 중단 전 마지막 평가까지 실제 검증 Loss"></svg>
+  </figure>
+  <figure class="night-figure">
+    <h4>첫 학습 평가 이후 확대</h4>
+    <svg class="night-chart" data-panel="trained" role="img" aria-label="첫 30분 평가 이후 실제 검증 Loss 확대"></svg>
+  </figure>
+  <div class="tooltip night-tooltip" role="tooltip" hidden></div>
+  <span class="sr-only">같은 검증 타깃에서 기록한 18회 실제 평가입니다. 원은 공백과 EOS 포함, 마름모는 해당 타깃 제외 값입니다. 선 사이의 툴팁은 선형 보간이며 실제 평가값과 구분됩니다.</span>
+</section>
+<style>
+#resume-stop-loss-20261023{position:relative;min-width:0;--viz-series-1:var(--chart-1);--viz-series-2:var(--chart-2)}
+#resume-stop-loss-20261023 h3{max-width:calc(100% - 90px);margin-bottom:6px}
+#resume-stop-loss-20261023 .night-legend{display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center}
+#resume-stop-loss-20261023 .night-key{display:inline-flex;align-items:center;gap:7px;padding:5px 0;border:0;background:transparent;color:var(--foreground);font:inherit;font-weight:400}
+#resume-stop-loss-20261023 .night-key[aria-pressed="false"]{opacity:.4}
+#resume-stop-loss-20261023 .night-all{color:var(--viz-series-1)}
+#resume-stop-loss-20261023 .night-content{color:var(--viz-series-2)}
+#resume-stop-loss-20261023 .night-figure{margin:16px 0 0;min-width:0}
+#resume-stop-loss-20261023 .night-chart{display:block;width:100%;height:288px;overflow:visible}
+#resume-stop-loss-20261023 .night-chart text{fill:var(--foreground);font-size:12px;font-weight:400;font-family:var(--font-sans)}
+#resume-stop-loss-20261023 .night-chart .domain{display:none}
+#resume-stop-loss-20261023 .night-chart .tick line{stroke:var(--border)}
+#resume-stop-loss-20261023 .night-tooltip{position:absolute;z-index:3;pointer-events:none;max-width:calc(100% - 16px);padding:10px 12px;border-radius:var(--radius);background:var(--popover);color:var(--popover-foreground);box-shadow:0 2px 12px color-mix(in srgb,var(--foreground) 12%,transparent)}
+#resume-stop-loss-20261023 .night-tooltip[hidden]{display:none}
+#resume-stop-loss-20261023 .night-tooltip-row{display:flex;gap:20px;justify-content:space-between;font-variant-numeric:tabular-nums}
+#resume-stop-loss-20261023 .night-tooltip-note{color:var(--muted-foreground)}
+@media(pointer:coarse){#resume-stop-loss-20261023 .night-key{min-height:44px;min-width:44px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script type="application/json" id="resume-stop-data">[{"x":0.01018290011584112,"loss":10.47067506059342,"content_loss":10.472481667844722,"epoch":0.0,"targets":0,"label":"initial","time":"00:04:22"},{"x":0.5111088785647492,"loss":3.141594670243472,"content_loss":4.323722079585238,"epoch":0.05978775205705977,"targets":7427584,"label":"periodic","time":"00:34:25"},{"x":1.0117054298263974,"loss":2.9553382556045826,"content_loss":4.054836873506972,"epoch":0.18194319225636021,"targets":22603264,"label":"periodic","time":"01:04:27"},{"x":1.5123571606944703,"loss":2.9060767784797665,"content_loss":3.989898360132159,"epoch":0.3082611491426139,"targets":38296064,"label":"periodic","time":"01:34:30"},{"x":2.0129506658449987,"loss":2.882396355927373,"content_loss":3.962988951791736,"epoch":0.43190850126337677,"targets":53657088,"label":"periodic","time":"02:04:32"},{"x":2.513574166342506,"loss":2.8740274723716395,"content_loss":3.9445731496562937,"epoch":0.5548593530672138,"targets":68931584,"label":"periodic","time":"02:34:34"},{"x":3.0142728448611322,"loss":2.863504074944118,"content_loss":3.9293220741528248,"epoch":0.6770889767322223,"targets":84116480,"label":"periodic","time":"03:04:37"},{"x":3.5148240193055567,"loss":2.8575262719658037,"content_loss":3.9206225558516064,"epoch":0.7995329081870542,"targets":99328000,"label":"periodic","time":"03:34:39"},{"x":4.015493215902793,"loss":2.852391674899804,"content_loss":3.9094196239483776,"epoch":0.921416342345425,"targets":114469888,"label":"periodic","time":"04:04:41"},{"x":4.338038083981406,"loss":2.8554278932062833,"content_loss":3.9201402274474444,"epoch":1.0,"targets":124232535,"label":"epoch_1","time":"04:24:02"},{"x":4.838687344664455,"loss":2.85045061318162,"content_loss":3.902137115553407,"epoch":1.1220936206445438,"targets":139400535,"label":"periodic","time":"04:54:05"},{"x":5.3393154623147305,"loss":2.8438738137933535,"content_loss":3.9009366222217734,"epoch":1.2442696673620963,"targets":154578775,"label":"periodic","time":"05:24:07"},{"x":5.839971800034723,"loss":2.8408546115783104,"content_loss":3.8917723137939606,"epoch":1.366462199294251,"targets":169759063,"label":"periodic","time":"05:54:09"},{"x":6.340660287858919,"loss":2.843413123065616,"content_loss":3.900278022355797,"epoch":1.4886712164410072,"targets":184941399,"label":"periodic","time":"06:24:12"},{"x":6.437802282187525,"loss":2.8393474434129287,"content_loss":3.9042967051277775,"epoch":1.5121585259449144,"targets":187859287,"label":"final","time":"06:30:01"},{"x":6.438302238078904,"loss":2.8393474434129287,"content_loss":3.9042967051277775,"epoch":1.5121585259449144,"targets":187859287,"label":"resumed","time":"22:14:03"},{"x":6.938815853437538,"loss":2.8366534662749787,"content_loss":3.893664170144543,"epoch":1.6386701841027393,"targets":203576151,"label":"periodic","time":"22:44:05"},{"x":7.439464326308096,"loss":2.8408921796975646,"content_loss":3.8977305998016223,"epoch":1.754206810639419,"targets":217929559,"label":"periodic","time":"23:14:07"}]</script>
+<script>
+(() => {
+  const root=document.getElementById('resume-stop-loss-20261023');
+  const data=JSON.parse(document.getElementById('resume-stop-data').textContent);
+  const tooltip=root.querySelector('.night-tooltip');
+  const series=[{id:'all',label:'공백·EOS 포함',key:'loss',color:'var(--viz-series-1)',symbol:d3.symbolCircle},
+    {id:'content',label:'공백·EOS 제외',key:'content_loss',color:'var(--viz-series-2)',symbol:d3.symbolDiamond}];
+  const initial=window.openai?.widgetState?.modelContent?.resumeStopLoss;
+  const visible=new Set(series.filter(s=>!initial||initial[s.id]!==false).map(s=>s.id));
+  const panels=[...root.querySelectorAll('.night-chart')];
+  const bisector=d3.bisector(d=>d.x).center;
+  let active=null,pinned=false,layoutChecks=[];
+  const format=d3.format('.4f');
+  function clearHover(){tooltip.hidden=true;root.querySelectorAll('[data-hover-layer]').forEach(e=>e.style.display='none');active=null;}
+  function persist(){window.openai?.setWidgetState?.({modelContent:{resumeStopLoss:Object.fromEntries(series.map(s=>[s.id,visible.has(s.id)]))},privateContent:null})?.catch(()=>{});}
+  function setButtons(){root.querySelectorAll('.night-key').forEach(b=>b.setAttribute('aria-pressed',String(visible.has(b.dataset.series))));}
+  root.querySelectorAll('.night-key').forEach(button=>button.addEventListener('click',()=>{
+    visible.has(button.dataset.series)?visible.delete(button.dataset.series):visible.add(button.dataset.series);
+    clearHover();pinned=false;setButtons();drawAll();persist();
+  }));
+  window.addEventListener('openai:set_globals',event=>{
+    const state=event.detail?.globals?.widgetState?.modelContent?.resumeStopLoss;if(!state)return;
+    visible.clear();series.forEach(s=>{if(state[s.id]!==false)visible.add(s.id)});clearHover();setButtons();drawAll();
+  });
+  function draw(svgNode){
+    const values=svgNode.dataset.panel==='trained'?data.filter(d=>d.targets>0):data;
+    const width=Math.round(svgNode.getBoundingClientRect().width),height=288;
+    if(width<120)return;
+    const margin={left:76,right:24,top:16,bottom:54},left=margin.left,right=width-margin.right,top=margin.top,bottom=height-margin.bottom;
+    const xs=d3.extent(values,d=>d.x),ys=d3.extent(values.flatMap(d=>series.map(s=>d[s.key])));
+    const xp=(xs[1]-xs[0])*.02,yp=(ys[1]-ys[0])*.075;
+    const x=d3.scaleLinear().domain([Math.max(0,xs[0]-xp),xs[1]+xp]).range([left+6,right-6]);
+    const y=d3.scaleLinear().domain([ys[0]-yp,ys[1]+yp]).range([bottom-6,top+6]);
+    const svg=d3.select(svgNode).attr('viewBox',`0 0 ${width} ${height}`);svg.selectAll('*').remove();
+    svg.append('title').text(svgNode.getAttribute('aria-label'));
+    svg.append('desc').text('가로축은 오프라인 중단 시간을 제외한 누적 활성 학습기 시간입니다. 세로축은 타깃당 평균 음의 로그 확률입니다. 마지막 평가 이후의 저장점에는 평가값을 표시하지 않습니다.');
+    const grid=svg.append('g').attr('aria-hidden','true');
+    const yTicks=d3.ticks(...y.domain(),5);
+    grid.selectAll('line').data(yTicks).join('line').attr('x1',left).attr('x2',right).attr('y1',d=>y(d)).attr('y2',d=>y(d)).attr('stroke','var(--border)').attr('stroke-width',1);
+    svg.append('rect').attr('data-chart-frame','').attr('x',left).attr('y',top).attr('width',right-left).attr('height',bottom-top).attr('fill','none').attr('stroke','var(--border)').attr('stroke-width',1);
+    svg.append('g').attr('class','night-x-axis').attr('transform',`translate(0,${bottom})`).call(d3.axisBottom(x).tickValues(d3.ticks(...x.domain(),width<420?3:6)).tickFormat(d3.format('~g')).tickSize(4).tickPadding(8));
+    svg.append('g').attr('class','night-y-axis').attr('transform',`translate(${left},0)`).call(d3.axisLeft(y).tickValues(yTicks).tickFormat(svgNode.dataset.panel==='trained'?d3.format('.1f'):d3.format('~g')).tickSize(0).tickPadding(10));
+    svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',(left+right)/2).attr('y',height-8).attr('text-anchor','middle').text('누적 활성 시간 (시간)');
+    svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform','rotate(-90)').attr('x',-(top+bottom)/2).attr('y',16).attr('text-anchor','middle').text('검증 Loss (nats/타깃)');
+    const epoch=data.find(d=>d.label==='epoch_1');
+    if(epoch&&epoch.x>=xs[0]&&epoch.x<=xs[1]){
+      svg.append('line').attr('x1',x(epoch.x)).attr('x2',x(epoch.x)).attr('y1',top).attr('y2',bottom).attr('stroke','var(--border)').attr('stroke-width',1);
+      svg.append('text').attr('data-optional-label','').attr('x',x(epoch.x)+5).attr('y',top+15).text('1에폭');
+    }
+    const line=d3.line().x(d=>x(d.x));
+    series.filter(s=>visible.has(s.id)).forEach(s=>{
+      const group=svg.append('g').attr('data-line-series',s.id);
+      group.append('path').datum(values).attr('d',line.y(d=>y(d[s.key]))).attr('fill','none').attr('stroke',s.color).attr('stroke-width',2);
+      group.selectAll('path.night-point').data(values).join('path').attr('class','night-point').attr('d',d3.symbol(s.symbol,22)).attr('transform',d=>`translate(${x(d.x)},${y(d[s.key])})`).attr('fill',s.color);
+      const last=values.at(-1);
+      group.append('text').attr('data-optional-label','').attr('data-end-label',s.id).attr('x',x(last.x)-7).attr('y',y(last[s.key])-9).attr('text-anchor','end').text(format(last[s.key]));
+    });
+    const hover=svg.append('g').attr('data-hover-layer','').style('display','none').attr('pointer-events','none');
+    const guide=hover.append('line').attr('data-chart-hover-guide','').attr('y1',top).attr('y2',bottom).attr('stroke','var(--muted-foreground)').attr('stroke-width',1);
+    const hoverMarks=new Map(series.filter(s=>visible.has(s.id)).map(s=>[s.id,hover.append('path').attr('data-chart-hover-marker',s.id).attr('d',d3.symbol(s.symbol,46)).attr('fill',s.color)]));
+    function show(event){
+      if(!visible.size)return;
+      const px=Math.max(x(xs[0]),Math.min(x(xs[1]),d3.pointer(event,svgNode)[0]));const hour=x.invert(px);
+      const nearest=bisector(values,hour),i=d3.bisector(d=>d.x).left(values,hour);const a=values[Math.max(0,i-1)],b=values[Math.min(values.length-1,i)];
+      const fraction=a.x===b.x?0:(hour-a.x)/(b.x-a.x);hover.style('display',null);guide.attr('x1',px).attr('x2',px);
+      root.querySelectorAll('[data-hover-layer]').forEach(e=>{if(e!==hover.node())e.style.display='none'});
+      tooltip.replaceChildren();const exact=Math.abs(x(values[nearest].x)-px)<.5;
+      const head=document.createElement('div');head.textContent=`경과 ${d3.format('.2f')(hour)}시간 · ${exact?'실측점':'점 사이 선형 보간'}`;tooltip.append(head);
+      series.filter(s=>visible.has(s.id)).forEach(s=>{
+        const value=a[s.key]+fraction*(b[s.key]-a[s.key]);hoverMarks.get(s.id).attr('transform',`translate(${px},${y(value)})`);
+        const row=document.createElement('div');row.className='night-tooltip-row';row.dataset.tooltipSeries=s.id;
+        const label=document.createElement('span');label.textContent=s.label;const number=document.createElement('span');number.textContent=format(value);row.append(label,number);tooltip.append(row);
+      });
+      const note=document.createElement('div');note.className='night-tooltip-note text-small';note.textContent=`가까운 실제 평가 ${values[nearest].time} · ${d3.format('.3f')(values[nearest].epoch)}에폭`;tooltip.append(note);
+      tooltip.hidden=false;const rb=root.getBoundingClientRect(),sb=svgNode.getBoundingClientRect(),box=tooltip.getBoundingClientRect();
+      const tooltipLeft=Math.max(8,Math.min(sb.left-rb.left+px+12,rb.width-box.width-8));
+      const tooltipTop=Math.max(0,Math.min(sb.top-rb.top+top+8,root.offsetHeight-box.height));
+      tooltip.style.left=`${tooltipLeft}px`;tooltip.style.top=`${tooltipTop}px`;active={svgNode,px,hour};
+    }
+    svg.append('rect').attr('data-chart-hit','').attr('data-chart-hover-overlay','cross-series').attr('x',left).attr('y',top).attr('width',right-left).attr('height',bottom-top).attr('fill','transparent').style('touch-action','pan-y')
+      .on('pointermove',event=>{if(!pinned)show(event)})
+      .on('pointerleave',()=>{if(!pinned)clearHover()})
+      .on('pointerdown',event=>{pinned=!pinned;pinned?show(event):clearHover()});
+    requestAnimationFrame(()=>{
+      const bounds=svgNode.getBoundingClientRect();const labels=[...svgNode.querySelectorAll('text')];
+      labels.filter(e=>e.hasAttribute('data-optional-label')).forEach(e=>{const b=e.getBoundingClientRect();if(b.left<bounds.left+4||b.right>bounds.right-4)e.remove()});
+      const check={panel:svgNode.dataset.panel,width,labelsInside:[...svgNode.querySelectorAll('text')].every(e=>{const b=e.getBoundingClientRect();return b.left>=bounds.left-1&&b.right<=bounds.right+1&&b.top>=bounds.top-1&&b.bottom<=bounds.bottom+1}),xTicks:svgNode.querySelectorAll('.night-x-axis .tick').length};
+      layoutChecks=layoutChecks.filter(c=>c.panel!==check.panel);layoutChecks.push(check);root.dataset.layoutPassed=String(layoutChecks.every(c=>c.labelsInside&&(c.width>=420||c.xTicks<=4)));
+    });
+  }
+  function drawAll(){panels.forEach(draw)}
+  setButtons();new ResizeObserver(()=>{clearHover();pinned=false;drawAll()}).observe(root);drawAll();
+  window.__resumeStopLossQA=()=>{
+    const before=root.querySelectorAll('[data-line-series="content"]').length;
+    const key=root.querySelector('[data-series="content"]');key.click();const hidden=root.querySelectorAll('[data-line-series="content"]').length===0;key.click();
+    const overlay=panels[0].querySelector('[data-chart-hit]'),box=overlay.getBoundingClientRect();
+    overlay.dispatchEvent(new PointerEvent('pointermove',{bubbles:true,clientX:box.left+box.width*.53,clientY:box.top+box.height*.5,pointerType:'mouse'}));
+    const hovered=!tooltip.hidden&&root.querySelectorAll('[data-tooltip-series]').length===visible.size;
+    const guides=[...root.querySelectorAll('[data-chart-hover-guide]')].filter(g=>g.closest('[data-hover-layer]').style.display!=='none');
+    const exactGuide=guides.length===1&&Math.abs(Number(guides[0].getAttribute('x1'))-active.px)<.01;
+    const result={sourcePoints:data.length,before,legendTogglePassed:hidden,hoverPassed:hovered,exactCursorGuidePassed:exactGuide,layout:layoutChecks,overflow:root.scrollWidth>root.clientWidth};clearHover();return result;
+  };
+})();
+</script>

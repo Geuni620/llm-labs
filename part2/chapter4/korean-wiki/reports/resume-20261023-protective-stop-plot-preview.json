@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "at": "2026-10-23T14:46:44.393Z",
+  "scope": "18 actual evaluation points only; last evaluated 1.754 epoch, stopped saved state 1.818 has no new evaluation.",
+  "previews": [
+    {
+      "appearance": "dark",
+      "width": 728,
+      "contentHeight": 730,
+      "capturedHeight": 730,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "RESUME_STOP_QA {\"sourcePoints\":18,\"before\":2,\"legendTogglePassed\":true,\"hoverPassed\":true,\"exactCursorGuidePassed\":true,\"layout\":[{\"panel\":\"full\",\"width\":728,\"labelsInside\":true,\"xTicks\":8},{\"panel\":\"trained\",\"width\":728,\"labelsInside\":true,\"xTicks\":7}],\"overflow\":false,\"overlaps\":[],\"pageOverflow\":false}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 728,
+        "height": 730
+      },
+      "qa": {
+        "sourcePoints": 18,
+        "before": 2,
+        "legendTogglePassed": true,
+        "hoverPassed": true,
+        "exactCursorGuidePassed": true,
+        "layout": [
+          {
+            "panel": "full",
+            "width": 728,
+            "labelsInside": true,
+            "xTicks": 8
+          },
+          {
+            "panel": "trained",
+            "width": 728,
+            "labelsInside": true,
+            "xTicks": 7
+          }
+        ],
+        "overflow": false,
+        "overlaps": [],
+        "pageOverflow": false
+      }
+    },
+    {
+      "appearance": "light",
+      "width": 320,
+      "contentHeight": 730,
+      "capturedHeight": 730,
+      "consoleMessages": [
+        {
+          "level": "log",
+          "text": "RESUME_STOP_QA {\"sourcePoints\":18,\"before\":2,\"legendTogglePassed\":true,\"hoverPassed\":true,\"exactCursorGuidePassed\":true,\"layout\":[{\"panel\":\"full\",\"width\":320,\"labelsInside\":true,\"xTicks\":4},{\"panel\":\"trained\",\"width\":320,\"labelsInside\":true,\"xTicks\":3}],\"overflow\":false,\"overlaps\":[],\"pageOverflow\":false}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 320,
+        "height": 730
+      },
+      "qa": {
+        "sourcePoints": 18,
+        "before": 2,
+        "legendTogglePassed": true,
+        "hoverPassed": true,
+        "exactCursorGuidePassed": true,
+        "layout": [
+          {
+            "panel": "full",
+            "width": 320,
+            "labelsInside": true,
+            "xTicks": 4
+          },
+          {
+            "panel": "trained",
+            "width": 320,
+            "labelsInside": true,
+            "xTicks": 3
+          }
+        ],
+        "overflow": false,
+        "overlaps": [],
+        "pageOverflow": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-23T22:21:42.444544+09:00",
+  "basis": "Actual previous epoch-1 to final interval, same CPU4/model/config; future load may change.",
+  "rate_targets_per_second": 8417.182173539866,
+  "rows": [
+    {
+      "total_epochs": 2,
+      "additional_seconds_estimate": 7200.246085978687,
+      "estimated_at": "2026-10-24T00:14:00.625278+09:00",
+      "kind": "ESTIMATE_NOT_ACTUAL_RESULT"
+    },
+    {
+      "total_epochs": 3,
+      "additional_seconds_estimate": 21959.643285499405,
+      "estimated_at": "2026-10-24T04:20:00.022477+09:00",
+      "kind": "ESTIMATE_NOT_ACTUAL_RESULT"
+    },
+    {
+      "total_epochs": 5,
+      "additional_seconds_estimate": 51478.43768454084,
+      "estimated_at": "2026-10-24T12:31:58.816877+09:00",
+      "kind": "ESTIMATE_NOT_ACTUAL_RESULT"
+    }
+  ],
+  "valid_for_current_status": false,
+  "superseded_reason": "Protective monitor_error stop on 2026-10-23 23:34; explicit restart confirmation and actual new start time required for a new ETA."
+}
