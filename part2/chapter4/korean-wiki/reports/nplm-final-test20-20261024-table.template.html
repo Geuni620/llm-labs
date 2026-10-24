@@ -1,0 +1,74 @@
+<section id="nplm-final-test20-20261024" aria-label="최종 NPLM 실제 생성 20개와 학습 데이터 일치 검사">
+  <table class="table table-sm">
+    <caption>4.074373에폭 · 실제 생성 20개 · train 2,977,860문장 대조</caption>
+    <thead><tr><th scope="col">굵게: 입력 · 일반: 생성 · train 일치 여부</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+<style>
+  #nplm-final-test20-20261024 { color:var(--foreground); }
+  #nplm-final-test20-20261024 .sample-prompt { font-weight:500; }
+  #nplm-final-test20-20261024 .sample-surface { margin-bottom:6px; overflow-wrap:anywhere; }
+  #nplm-final-test20-20261024 .sample-lookup { display:flex; flex-wrap:wrap; gap:4px 18px; }
+  #nplm-final-test20-20261024 details { margin-top:6px; }
+  #nplm-final-test20-20261024 .sample-tokens { overflow-wrap:anywhere; margin-block:6px; }
+  #nplm-final-test20-20261024 .sample-evidence { margin-block:6px; }
+</style>
+<script type="application/json" id="nplm-final-test20-data">__SAMPLE_DATA__</script>
+<script>
+(() => {
+  const root = document.getElementById('nplm-final-test20-20261024');
+  const data = JSON.parse(document.getElementById('nplm-final-test20-data').textContent);
+  const tbody = root.querySelector('tbody');
+  const el = (tag, text, name) => {
+    const node = document.createElement(tag);
+    if (text !== undefined) node.textContent = text;
+    if (name) node.className = name;
+    return node;
+  };
+  for (const item of data.examples) {
+    const row = el('tr');
+    const cell = el('td');
+    const surface = el('div', undefined, 'sample-surface');
+    surface.append(document.createTextNode(`${String(item.id).padStart(2, '0')}. `));
+    if (item.full_surface.startsWith(item.prompt)) {
+      surface.append(el('b', item.prompt, 'sample-prompt'));
+      surface.append(document.createTextNode(item.full_surface.slice(item.prompt.length)));
+    } else {
+      surface.append(document.createTextNode(item.full_surface));
+    }
+    cell.append(surface);
+    const matches = el('div', undefined, 'sample-lookup');
+    matches.append(el('span', `입력 포함 전체: ${item.full_found_in_train ? '일치 있음' : '일치 없음'}`));
+    matches.append(el('span', `생성 부분만: ${item.generated_found_in_train ? '일치 있음' : '일치 없음'}`));
+    cell.append(matches);
+    if (item.generated_found_in_train || item.full_found_in_train) {
+    const details = el('details');
+    details.append(el('summary', '생성 토큰·조회 근거', 'cursor-interaction'));
+    details.append(el('div', `새로 생성한 부분: ${item.generated_surface}`, 'sample-evidence'));
+    details.append(el('div', `형태소/품사: ${item.generated_tokens.join(' ')}`, 'sample-tokens text-small'));
+    details.append(el('div', `전체 토큰열 ${item.full_token_match.count}회 · 생성 토큰열 ${item.generated_token_match.count}회`, 'sample-evidence'));
+    for (const witness of item.generated_surface_match.examples) {
+      details.append(el('div', `실제 train 원문 · ${witness.title} (${witness.doc_id})`, 'sample-evidence'));
+      details.append(el('div', witness.source_sentence, 'sample-evidence'));
+      details.append(el('div', `${witness.shard}.txt:${witness.source_line} · train 문단 ${witness.train_array_witness.train_paragraph_index}`, 'sample-evidence text-small'));
+    }
+    cell.append(details);
+    }
+    row.append(cell);
+    tbody.append(row);
+  }
+  const qa = () => {
+    window.__test20QA = {
+      rows: tbody.rows.length,
+      fullMatches: data.totals.full_found_in_train,
+      continuationMatches: data.totals.generated_only_found_in_train,
+      independentChecksPassed: data.verified,
+      overflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+      details: root.querySelectorAll('details').length
+    };
+    console.info('test20-qa ' + JSON.stringify(window.__test20QA));
+  };
+  requestAnimationFrame(qa);
+})();
+</script>

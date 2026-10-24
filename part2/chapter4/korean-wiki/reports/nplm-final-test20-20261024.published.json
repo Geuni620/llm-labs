@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-24T05:28:19.478Z",
+  "kind": "ACTUAL_FINAL_4_074_20_SAMPLES_AND_EXHAUSTIVE_TRAIN_MATCH",
+  "attachmentId": "d1ad10a2-f954-43f5-937c-cc69adfa632e-17712d99-1b42-441f-81c5-41d826e9fe2c-html",
+  "scope": {
+    "samples": 20,
+    "train_paragraphs": 1529599,
+    "train_sentences": 2977860,
+    "dedup_shards": 32,
+    "full_matches": 0,
+    "continuation_matches": 1
+  },
+  "preview": "nplm-final-test20-20261024.preview.json",
+  "independent_verification": "nplm-final-test20-20261024.verification.json",
+  "final_checkpoint_evaluated_for_loss": false,
+  "training_steps": 0
+}

@@ -1,0 +1,280 @@
+{
+  "kind": "INDEPENDENT_TRAIN_MEMBERSHIP_INDEX_VERIFICATION",
+  "at": "2026-10-24T14:24:47.710901+09:00",
+  "passed": true,
+  "checks": [
+    {
+      "sample": 1,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 1,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 2,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 2,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 3,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 3,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 4,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 4,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 5,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 5,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 6,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 6,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 7,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 7,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 8,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 8,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 9,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 9,
+      "query": "generated",
+      "independent_count": 1,
+      "passed": true
+    },
+    {
+      "sample": 10,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 10,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 11,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 11,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 12,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 12,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 13,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 13,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 14,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 14,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 15,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 15,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 16,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 16,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 17,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 17,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 18,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 18,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 19,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 19,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 20,
+      "query": "full",
+      "independent_count": 0,
+      "passed": true
+    },
+    {
+      "sample": 20,
+      "query": "generated",
+      "independent_count": 0,
+      "passed": true
+    }
+  ],
+  "comparisons": 40,
+  "algorithm": "NumPy first-token positions then vectorized exact token comparisons; independent from mmap byte search.",
+  "boundary_regression_tests": {
+    "passed": 6,
+    "file": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/night-training/test_sample_final_model.py"
+  },
+  "checkpoint_unchanged": true,
+  "read_only_state_verified": true,
+  "results_identity": {
+    "bytes": 74137,
+    "sha256": "c7ce38fb0b6d5b56c52b29dfda116efe11872704c3574c44653b9b5aded3b5b1"
+  },
+  "report_identity": {
+    "bytes": 15104,
+    "sha256": "ba9b1d675006f0504421621888e618dc07f8230268a0310dcd73b00126e625fb"
+  },
+  "source_scripts": {
+    "sample_final_model.py": {
+      "bytes": 22206,
+      "sha256": "9aa25cb12bda11786400cb50f6720d1ff62953638d01fbdd35f2d5e36dbb3ef9"
+    },
+    "verify_final_samples.py": {
+      "bytes": 6376,
+      "sha256": "d7b4c11933cebf38ecc34b70f4299bd808700bd765aeafae11abcf55d849760a"
+    }
+  },
+  "totals": {
+    "samples": 20,
+    "sentence_ending_reached": 20,
+    "full_found_in_train": 0,
+    "generated_only_found_in_train": 1,
+    "prompt_oov_tokens": 0
+  }
+}

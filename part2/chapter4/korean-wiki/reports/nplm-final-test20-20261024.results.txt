@@ -1,0 +1,173 @@
+NPLM 최종 4.074373에폭 — 실제 생성 20개와 학습 데이터 대조
+
+검사 범위: train 1,529,599문단 / 2,977,860문장 전체
+일치: 실제 train 토큰열 일치 또는 원문 표면형 일치(공백 정규화, 실제 train 포함 확인).
+입력+생성 전체와 생성 부분만을 따로 검색. 유사한 의미/암기 여부를 판정하는 검사는 아님.
+학습 추가 0회. 가중치/Adam/샘플러 및 체크포인트 해시 불변 확인.
+문장 종결 도달: 20/20; 전체 일치: 0/20; 생성 부분 일치: 1/20
+
+[01] 입력: 서울은
+전체 결과: 서울은 대한민국에서의 1999년부터 1945년까지 1975년부터 2017년까지 31만 명 정도 증가해 7% 정도였다.
+새로 생성: 대한민국에서의 1999년부터 1945년까지 1975년부터 2017년까지 31만 명 정도 증가해 7% 정도였다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 52개
+생성 토큰열: 대한민국/NNP 에서/JKB 의/JKG <sp>/WS 1/SN 9/SN 9/SN 9/SN 년/NNB 부터/JX <sp>/WS 1/SN 9/SN 4/SN 5/SN 년/NNB 까지/JX <sp>/WS 1/SN 9/SN 7/SN 5/SN 년/NNB 부터/JX <sp>/WS 2/SN 0/SN 1/SN 7/SN 년/NNB 까지/JX <sp>/WS 3/SN 1/SN 만/NR <sp>/WS 명/NNB <sp>/WS 정도/NNG <sp>/WS 증가/NNG 하/XSV 어/EC <sp>/WS 7/SN %/SW <sp>/WS 정도/NNG 이/VCP 었/EP 다/EF ./SF
+
+[02] 입력: 대한민국의 수도는
+전체 결과: 대한민국의 수도는 경기도 평택시 소재다.
+새로 생성: 경기도 평택시 소재다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 8개
+생성 토큰열: 경기도/NNP <sp>/WS 평택시/NNP <sp>/WS 소재/NNG 이/VCP 다/EF ./SF
+
+[03] 입력: 부산은
+전체 결과: 부산은 대한민국 대한민국의 축구 선수다.
+새로 생성: 대한민국 대한민국의 축구 선수다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 11개
+생성 토큰열: 대한민국/NNP <sp>/WS 대한민국/NNP 의/JKG <sp>/WS 축구/NNG <sp>/WS 선수/NNG 이/VCP 다/EF ./SF
+
+[04] 입력: 제주도는
+전체 결과: 제주도는 1864년, 1996년 3월 20일 ~ )은 대한민국의 배우로 구성돼 있다.
+새로 생성: 1864년, 1996년 3월 20일 ~ )은 대한민국의 배우로 구성돼 있다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 38개
+생성 토큰열: 1/SN 8/SN 6/SN 4/SN 년/NNB ,/SP <sp>/WS 1/SN 9/SN 9/SN 6/SN 년/NNB <sp>/WS 3/SN 월/NNB <sp>/WS 2/SN 0/SN 일/NNB <sp>/WS ~/SO <sp>/WS )/SSC 은/JX <sp>/WS 대한민국/NNP 의/JKG <sp>/WS 배우/NNG 로/JKB <sp>/WS 구성/NNG 되/XSV 어/EC <sp>/WS 있/VX 다/EF ./SF
+
+[05] 입력: 한강은
+전체 결과: 한강은 주로 유럽 강대국 출신으로 미국 정치인들의 지원을 요청했으며, 2017년 5월 22일 새벽 3일 오전 8시 23분(1411~1446)를 역임했다.
+새로 생성: 주로 유럽 강대국 출신으로 미국 정치인들의 지원을 요청했으며, 2017년 5월 22일 새벽 3일 오전 8시 23분(1411~1446)를 역임했다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 68개
+생성 토큰열: 주로/MAG <sp>/WS 유럽/NNP <sp>/WS 강대국/NNG <sp>/WS 출신/NNG 으로/JKB <sp>/WS 미국/NNP <sp>/WS 정치인/NNG 들/XSN 의/JKG <sp>/WS 지원/NNG 을/JKO <sp>/WS 요청/NNG 하/XSV 었/EP 으며/EC ,/SP <sp>/WS 2/SN 0/SN 1/SN 7/SN 년/NNB <sp>/WS 5/SN 월/NNB <sp>/WS 2/SN 2/SN 일/NNB <sp>/WS 새벽/NNG <sp>/WS 3/SN 일/NNB <sp>/WS 오전/NNG <sp>/WS 8/SN 시/NNB <sp>/WS 2/SN 3/SN 분/NNB (/SSO 1/SN 4/SN 1/SN 1/SN ~/SO 1/SN 4/SN 4/SN 6/SN )/SSC 을/JKO <sp>/WS 역임/NNG 하/XSV 었/EP 다/EF ./SF
+
+[06] 입력: 한국의 역사는
+전체 결과: 한국의 역사는 아직 보이지 않다.
+새로 생성: 아직 보이지 않다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 8개
+생성 토큰열: 아직/MAG <sp>/WS 보이/VV 지/EC <sp>/WS 않/VX 다/EF ./SF
+
+[07] 입력: 조선 시대에는
+전체 결과: 조선 시대에는 다음과 같은 이름이 붙었다.
+새로 생성: 다음과 같은 이름이 붙었다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 13개
+생성 토큰열: 다음/NNG 과/JKB <sp>/WS 같/VA 은/ETM <sp>/WS 이름/NNG 이/JKS <sp>/WS 붙/VV 었/EP 다/EF ./SF
+
+[08] 입력: 이 도시는
+전체 결과: 이 도시는 1960년대 중반까지 소련 간 무역을 통해 세계 정세에 대한 문제를 해결하기 위해 미국이 지원되는 것은 아니었음에도 불구하고 결국 10월 26일이다.
+새로 생성: 1960년대 중반까지 소련 간 무역을 통해 세계 정세에 대한 문제를 해결하기 위해 미국이 지원되는 것은 아니었음에도 불구하고 결국 10월 26일이다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 69개
+생성 토큰열: 1/SN 9/SN 6/SN 0/SN 년대/NNB <sp>/WS 중반/NNG 까지/JX <sp>/WS 소련/NNP <sp>/WS 간/NNB <sp>/WS 무역/NNG 을/JKO <sp>/WS 통하/VV 어/EC <sp>/WS 세계/NNG <sp>/WS 정세/NNG 에/JKB <sp>/WS 대하/VV ᆫ/ETM <sp>/WS 문제/NNG 를/JKO <sp>/WS 해결/NNG 하/XSV 기/ETN <sp>/WS 위하/VV 어/EC <sp>/WS 미국/NNP 이/JKS <sp>/WS 지원/NNG 되/XSV 는/ETM <sp>/WS 것/NNB 은/JX <sp>/WS 아니/VCN 었/EP 음/ETN 에/JKB 도/JX <sp>/WS 불구/XR 하/XSV 고/EC <sp>/WS 결국/MAG <sp>/WS 1/SN 0/SN 월/NNB <sp>/WS 2/SN 6/SN 일/NNB 이/VCP 다/EF ./SF
+
+[09] 입력: 이 지역의 인구는
+전체 결과: 이 지역의 인구는 160만 명이다.
+새로 생성: 160만 명이다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 있음
+종료: sentence_ending / 생성 토큰 9개
+생성 토큰열: 1/SN 6/SN 0/SN 만/NR <sp>/WS 명/NNB 이/VCP 다/EF ./SF
+
+[10] 입력: 이 학교는
+전체 결과: 이 학교는 대한민국 정부 내 정치 분야에서 다양한 현상을 보인다.
+새로 생성: 대한민국 정부 내 정치 분야에서 다양한 현상을 보인다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 21개
+생성 토큰열: 대한민국/NNP <sp>/WS 정부/NNG <sp>/WS 내/NNB <sp>/WS 정치/NNG <sp>/WS 분야/NNG 에서/JKB <sp>/WS 다양/NNG 하/XSA ᆫ/ETM <sp>/WS 현상/NNG 을/JKO <sp>/WS 보이/VV ᆫ다/EF ./SF
+
+[11] 입력: 이 회사는
+전체 결과: 이 회사는 1900년대 후반을 발표한 적을 통해 그의 연구도 하는 것이다.
+새로 생성: 1900년대 후반을 발표한 적을 통해 그의 연구도 하는 것이다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 32개
+생성 토큰열: 1/SN 9/SN 0/SN 0/SN 년대/NNB <sp>/WS 후반/NNG 을/JKO <sp>/WS 발표/NNG 하/XSV ᆫ/ETM <sp>/WS 적/NNB 을/JKO <sp>/WS 통하/VV 어/EC <sp>/WS 그/NP 의/JKG <sp>/WS 연구/NNG 도/JX <sp>/WS 하/VV 는/ETM <sp>/WS 것/NNB 이/VCP 다/EF ./SF
+
+[12] 입력: 이 작품은
+전체 결과: 이 작품은 또한 1407년에 이 음반은 2020년 4월 22일 대한민국 정부의 대통령 재임 중 그는 30,000명이며 미국에서 개봉한 일본의 애니메이션 시리즈의 1954년 6월부터 1986년에 완공 당시 이 곳에서 그는 또한 1870년대에 들어진 미국 내 여러 학교에서 12개의 경기에서 2골을 터뜨리며 2007 시즌 7 시즌 3회 참가했다.
+새로 생성: 또한 1407년에 이 음반은 2020년 4월 22일 대한민국 정부의 대통령 재임 중 그는 30,000명이며 미국에서 개봉한 일본의 애니메이션 시리즈의 1954년 6월부터 1986년에 완공 당시 이 곳에서 그는 또한 1870년대에 들어진 미국 내 여러 학교에서 12개의 경기에서 2골을 터뜨리며 2007 시즌 7 시즌 3회 참가했다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 152개
+생성 토큰열: 또한/MAG <sp>/WS 1/SN 4/SN 0/SN 7/SN 년/NNB 에/JKB <sp>/WS 이/MM <sp>/WS 음반/NNG 은/JX <sp>/WS 2/SN 0/SN 2/SN 0/SN 년/NNB <sp>/WS 4/SN 월/NNB <sp>/WS 2/SN 2/SN 일/NNB <sp>/WS 대한민국/NNP <sp>/WS 정부/NNG 의/JKG <sp>/WS 대통령/NNG <sp>/WS 재임/NNG <sp>/WS 중/NNB <sp>/WS 그/NP 는/JX <sp>/WS 3/SN 0/SN ,/SW 0/SN 0/SN 0/SN 명/NNB 이/VCP 며/EC <sp>/WS 미국/NNP 에서/JKB <sp>/WS 개봉/NNG 하/XSV ᆫ/ETM <sp>/WS 일본/NNP 의/JKG <sp>/WS 애니메이션/NNG <sp>/WS 시리즈/NNG 의/JKG <sp>/WS 1/SN 9/SN 5/SN 4/SN 년/NNB <sp>/WS 6/SN 월/NNB 부터/JX <sp>/WS 1/SN 9/SN 8/SN 6/SN 년/NNB 에/JKB <sp>/WS 완공/NNG <sp>/WS 당시/NNG <sp>/WS 이/MM <sp>/WS 곳/NNG 에서/JKB <sp>/WS 그/NP 는/JX <sp>/WS 또한/MAG <sp>/WS 1/SN 8/SN 7/SN 0/SN 년대/NNB 에/JKB <sp>/WS 들/VV 어/EC 지/VX ᆫ/ETM <sp>/WS 미국/NNP <sp>/WS 내/NNB <sp>/WS 여러/MM <sp>/WS 학교/NNG 에서/JKB <sp>/WS 1/SN 2/SN 개/NNB 의/JKG <sp>/WS 경기/NNG 에서/JKB <sp>/WS 2/SN 골/NNG 을/JKO <sp>/WS 터뜨리/VV 며/EC <sp>/WS 2/SN 0/SN 0/SN 7/SN <sp>/WS 시즌/NNG <sp>/WS 7/SN <sp>/WS 시즌/NNG <sp>/WS 3/SN 회/NNB <sp>/WS 참가/NNG 하/XSV 었/EP 다/EF ./SF
+
+[13] 입력: 이 영화는
+전체 결과: 이 영화는 "모든 작품 중인 500명 이상의 총 약 20,000명 이상의 세계 판매량 평가, 만년을 넘어 4,368명이다.
+새로 생성: "모든 작품 중인 500명 이상의 총 약 20,000명 이상의 세계 판매량 평가, 만년을 넘어 4,368명이다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 55개
+생성 토큰열: "/SSO 모든/MM <sp>/WS 작품/NNG <sp>/WS 중/NNB 이/VCP ᆫ/ETM <sp>/WS 5/SN 0/SN 0/SN 명/NNB <sp>/WS 이상/NNG 의/JKG <sp>/WS 총/MM <sp>/WS 약/MM <sp>/WS 2/SN 0/SN ,/SW 0/SN 0/SN 0/SN 명/NNB <sp>/WS 이상/NNG 의/JKG <sp>/WS 세계/NNG <sp>/WS 판매량/NNG <sp>/WS 평가/NNG ,/SP <sp>/WS 만/NR 년/NNB 을/JKO <sp>/WS 넘/VV 어/EC <sp>/WS 4/SN ,/SW 3/SN 6/SN 8/SN 명/NNB 이/VCP 다/EF ./SF
+
+[14] 입력: 이 음악은
+전체 결과: 이 음악은 1960년대 초반에 이미 많은 문제를 해결하기 위해 새로운 것을 의미한다.
+새로 생성: 1960년대 초반에 이미 많은 문제를 해결하기 위해 새로운 것을 의미한다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 34개
+생성 토큰열: 1/SN 9/SN 6/SN 0/SN 년대/NNB <sp>/WS 초반/NNG 에/JKB <sp>/WS 이미/MAG <sp>/WS 많/VA 은/ETM <sp>/WS 문제/NNG 를/JKO <sp>/WS 해결/NNG 하/XSV 기/ETN <sp>/WS 위하/VV 어/EC <sp>/WS 새롭/VA-I 은/ETM <sp>/WS 것/NNB 을/JKO <sp>/WS 의미/NNG 하/XSV ᆫ다/EF ./SF
+
+[15] 입력: 과학 기술은
+전체 결과: 과학 기술은 1980년대 후반 중국 혁명으로 인해 프랑스 본국에서 171 km 떨어져 있다.
+새로 생성: 1980년대 후반 중국 혁명으로 인해 프랑스 본국에서 171 km 떨어져 있다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 33개
+생성 토큰열: 1/SN 9/SN 8/SN 0/SN 년대/NNB <sp>/WS 후반/NNG <sp>/WS 중국/NNP <sp>/WS 혁명/NNG 으로/JKB <sp>/WS 인하/VV 어/EC <sp>/WS 프랑스/NNP <sp>/WS 본국/NNG 에서/JKB <sp>/WS 1/SN 7/SN 1/SN <sp>/WS km/SL <sp>/WS 떨어지/VV 어/EC <sp>/WS 있/VX 다/EF ./SF
+
+[16] 입력: 컴퓨터는
+전체 결과: 컴퓨터는 2008년 12월 17일 은퇴했다.
+새로 생성: 2008년 12월 17일 은퇴했다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 19개
+생성 토큰열: 2/SN 0/SN 0/SN 8/SN 년/NNB <sp>/WS 1/SN 2/SN 월/NNB <sp>/WS 1/SN 7/SN 일/NNB <sp>/WS 은퇴/NNG 하/XSV 었/EP 다/EF ./SF
+
+[17] 입력: 그는
+전체 결과: 그는 중국과 일본 언론들은 이 영화 회사다.
+새로 생성: 중국과 일본 언론들은 이 영화 회사다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 17개
+생성 토큰열: 중국/NNP 과/JC <sp>/WS 일본/NNP <sp>/WS 언론/NNG 들/XSN 은/JX <sp>/WS 이/MM <sp>/WS 영화/NNG <sp>/WS 회사/NNG 이/VCP 다/EF ./SF
+
+[18] 입력: 1987년에는
+전체 결과: 1987년에는 일본 제국의 영토에 편입돼 1958년에는 2015년 1월 20일에 열린 시상식이다.
+새로 생성: 일본 제국의 영토에 편입돼 1958년에는 2015년 1월 20일에 열린 시상식이다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 41개
+생성 토큰열: 일본/NNP <sp>/WS 제국/NNG 의/JKG <sp>/WS 영토/NNG 에/JKB <sp>/WS 편입/NNG 되/XSV 어/EC <sp>/WS 1/SN 9/SN 5/SN 8/SN 년/NNB 에/JKB 는/JX <sp>/WS 2/SN 0/SN 1/SN 5/SN 년/NNB <sp>/WS 1/SN 월/NNB <sp>/WS 2/SN 0/SN 일/NNB 에/JKB <sp>/WS 열리/VV ᆫ/ETM <sp>/WS 시상식/NNG 이/VCP 다/EF ./SF
+
+[19] 입력: 2025년에는
+전체 결과: 2025년에는 1874, 1887년 동계 올림픽은 대한민국 대표팀을 대표적인 스포츠 종목이다.
+새로 생성: 1874, 1887년 동계 올림픽은 대한민국 대표팀을 대표적인 스포츠 종목이다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 34개
+생성 토큰열: 1/SN 8/SN 7/SN 4/SN ,/SP <sp>/WS 1/SN 8/SN 8/SN 7/SN 년/NNB <sp>/WS 동계/NNG <sp>/WS 올림픽/NNG 은/JX <sp>/WS 대한민국/NNP <sp>/WS 대표/NNG 팀/NNG 을/JKO <sp>/WS 대표/NNG 적/XSN 이/VCP ᆫ/ETM <sp>/WS 스포츠/NNG <sp>/WS 종목/NNG 이/VCP 다/EF ./SF
+
+[20] 입력: 2037년에는
+전체 결과: 2037년에는 제28보병연대 복무를 지휘했다.
+새로 생성: 제28보병연대 복무를 지휘했다.
+학습 데이터(입력+생성): 일치 없음
+학습 데이터(생성 부분만): 일치 없음
+종료: sentence_ending / 생성 토큰 14개
+생성 토큰열: 제/XPN 2/SN 8/SN 보병/NNG 연대/NNG <sp>/WS 복무/NNG 를/JKO <sp>/WS 지휘/NNG 하/XSV 었/EP 다/EF ./SF
+
+
+실제 일치 근거(공백 정규화; 원문 전체가 아닌 포함 관계도 표시)
+[09] generated: 버지니아 반도 (kowiki/995215)
+실제 학습 원문: 버지니아 반도의 나머지 지역은 모두 버지니아 비치 - 노퍽 - 뉴 포트 뉴스 도시권역에 들어가 총 인구는 약 160만 명이다.
+위치: sentences_dedup/part_01.txt:141650 / train 문단 75189

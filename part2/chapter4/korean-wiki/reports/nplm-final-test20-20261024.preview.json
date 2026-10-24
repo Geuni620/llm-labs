@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-24T05:27:35.724Z",
+  "previews": [
+    {
+      "width": 728,
+      "contentHeight": 1520,
+      "capturedHeight": 1520,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "test20-qa {\"rows\":20,\"fullMatches\":0,\"continuationMatches\":1,\"independentChecksPassed\":true,\"overflow\":false,\"details\":1}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 728,
+        "height": 1520
+      }
+    },
+    {
+      "width": 320,
+      "contentHeight": 1838,
+      "capturedHeight": 1838,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "test20-qa {\"rows\":20,\"fullMatches\":0,\"continuationMatches\":1,\"independentChecksPassed\":true,\"overflow\":false,\"details\":1}"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 320,
+        "height": 1838
+      }
+    }
+  ],
+  "detail": {
+    "width": 320,
+    "contentHeight": 2042,
+    "capturedHeight": 2042,
+    "consoleMessages": [
+      {
+        "level": "info",
+        "text": "test20-qa {\"rows\":20,\"fullMatches\":0,\"continuationMatches\":1,\"independentChecksPassed\":true,\"overflow\":false,\"details\":1}"
+      },
+      {
+        "level": "info",
+        "text": "detail-check {\"open\":true,\"hasSource\":true,\"hasQuery\":true}"
+      }
+    ],
+    "screenshot": {
+      "mimeType": "image/png",
+      "width": 320,
+      "height": 2042
+    }
+  }
+}

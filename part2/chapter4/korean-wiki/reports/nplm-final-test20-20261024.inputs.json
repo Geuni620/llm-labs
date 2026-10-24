@@ -1,0 +1,479 @@
+{
+  "kind": "FIXED_20_FINAL_MODEL_INPUTS",
+  "at": "2026-10-24T14:21:43.655970+09:00",
+  "selection": {
+    "kind": "USER_SELECTED_EXISTING_FINAL_STOP_CHECKPOINT",
+    "selected_at": "2026-10-24T11:40:32.197666+09:00",
+    "user_instruction": "4.074 기준으로 최종본으로 처리해서 저장. 가중치 별도 복제 없음.",
+    "epochs": 4.074373045675998,
+    "checkpoint": {
+      "path": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-runs/resume-cpu-20261023-r2-H128-B512-to5/latest.npz",
+      "identity": {
+        "bytes": 84145699,
+        "sha256": "87f99b98b5fe683ee3a4a9f5b033d868cb699f54b9ff97441808f39de59cdca6"
+      }
+    },
+    "config": {
+      "vocab_size": 35328,
+      "context_size": 8,
+      "embedding_dim": 64,
+      "hidden_dim": 128,
+      "batch_size": 512,
+      "seed": 42,
+      "cpu_threads": 4
+    },
+    "corpus": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328",
+    "vocabulary": "/Users/geuni/Desktop/hong-labs/part2/chapter4/korean-wiki/training-corpora/wiki-k35328/vocabulary.json",
+    "parameters_optimizer_sampler_preserved": true,
+    "finite_full_checkpoint_audit_passed": true,
+    "target_predictions": 506169692,
+    "updates": 988614,
+    "validation": null,
+    "evaluated_at": null,
+    "final_selected_weights_have_recorded_evaluation": false,
+    "last_available_evaluation": {
+      "epochs": 4.0,
+      "at": "2026-10-24T11:12:06.501088+09:00",
+      "validation": {
+        "targets": 16384,
+        "negative_log_likelihood_sum": 46370.2146499994,
+        "loss": 2.8302132965087523,
+        "perplexity": 16.949075617671763,
+        "accuracy": 0.49578857421875,
+        "content_targets": 11519,
+        "content_negative_log_likelihood_sum": 44734.62890877064,
+        "content_loss": 3.88355142883676,
+        "content_perplexity": 48.59649596573874,
+        "content_accuracy": 0.31773591457591804,
+        "evaluation_seconds": 1.1452902919845656
+      },
+      "scope": "Measured on the earlier exact 4.000-epoch weights, not the selected 4.074 checkpoint."
+    },
+    "additional_weight_copy_created": false,
+    "source_file_unchanged": true
+  },
+  "selected_descriptor_identity": {
+    "bytes": 1979,
+    "sha256": "472c216df7ef0720b3f54a05bdba8b220ff9840c10499bd98ed04c4073050d70"
+  },
+  "sampling": {
+    "top_k": 40,
+    "temperature": 0.8,
+    "max_new_tokens": 160,
+    "stop": "first generated SF ending, EOS, or token cap",
+    "selection": "One sample per predeclared prompt; no rejection or retries."
+  },
+  "tokenizer": {
+    "kiwipiepy": "0.24.0",
+    "model_type": "cong-global",
+    "numeric_policy": "SN/W_SERIAL to individual digit/SN and separator/SW"
+  },
+  "examples": [
+    {
+      "id": 1,
+      "prompt": "서울은",
+      "prompt_tokens": [
+        "서울/NNP",
+        "은/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        502,
+        21,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4201
+    },
+    {
+      "id": 2,
+      "prompt": "대한민국의 수도는",
+      "prompt_tokens": [
+        "대한민국/NNP",
+        "의/JKG",
+        "<sp>/WS",
+        "수도/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        120,
+        7,
+        4,
+        759,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4202
+    },
+    {
+      "id": 3,
+      "prompt": "부산은",
+      "prompt_tokens": [
+        "부산/NNP",
+        "은/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        1206,
+        21,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4203
+    },
+    {
+      "id": 4,
+      "prompt": "제주도는",
+      "prompt_tokens": [
+        "제주도/NNP",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        4489,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4204
+    },
+    {
+      "id": 5,
+      "prompt": "한강은",
+      "prompt_tokens": [
+        "한강/NNP",
+        "은/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        4753,
+        21,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4205
+    },
+    {
+      "id": 6,
+      "prompt": "한국의 역사는",
+      "prompt_tokens": [
+        "한국/NNP",
+        "의/JKG",
+        "<sp>/WS",
+        "역사/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        217,
+        7,
+        4,
+        271,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4206
+    },
+    {
+      "id": 7,
+      "prompt": "조선 시대에는",
+      "prompt_tokens": [
+        "조선/NNP",
+        "<sp>/WS",
+        "시대/NNG",
+        "에/JKB",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        303,
+        4,
+        201,
+        11,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4207
+    },
+    {
+      "id": 8,
+      "prompt": "이 도시는",
+      "prompt_tokens": [
+        "이/MM",
+        "<sp>/WS",
+        "도시/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        58,
+        4,
+        219,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4208
+    },
+    {
+      "id": 9,
+      "prompt": "이 지역의 인구는",
+      "prompt_tokens": [
+        "이/MM",
+        "<sp>/WS",
+        "지역/NNG",
+        "의/JKG",
+        "<sp>/WS",
+        "인구/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        58,
+        4,
+        109,
+        7,
+        4,
+        282,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4209
+    },
+    {
+      "id": 10,
+      "prompt": "이 학교는",
+      "prompt_tokens": [
+        "이/MM",
+        "<sp>/WS",
+        "학교/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        58,
+        4,
+        347,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4210
+    },
+    {
+      "id": 11,
+      "prompt": "이 회사는",
+      "prompt_tokens": [
+        "이/MM",
+        "<sp>/WS",
+        "회사/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        58,
+        4,
+        345,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4211
+    },
+    {
+      "id": 12,
+      "prompt": "이 작품은",
+      "prompt_tokens": [
+        "이/MM",
+        "<sp>/WS",
+        "작품/NNG",
+        "은/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        58,
+        4,
+        238,
+        21,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4212
+    },
+    {
+      "id": 13,
+      "prompt": "이 영화는",
+      "prompt_tokens": [
+        "이/MM",
+        "<sp>/WS",
+        "영화/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        58,
+        4,
+        161,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4213
+    },
+    {
+      "id": 14,
+      "prompt": "이 음악은",
+      "prompt_tokens": [
+        "이/MM",
+        "<sp>/WS",
+        "음악/NNG",
+        "은/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        58,
+        4,
+        328,
+        21,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4214
+    },
+    {
+      "id": 15,
+      "prompt": "과학 기술은",
+      "prompt_tokens": [
+        "과학/NNG",
+        "<sp>/WS",
+        "기술/NNG",
+        "은/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        538,
+        4,
+        261,
+        21,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4215
+    },
+    {
+      "id": 16,
+      "prompt": "컴퓨터는",
+      "prompt_tokens": [
+        "컴퓨터/NNG",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        691,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4216
+    },
+    {
+      "id": 17,
+      "prompt": "그는",
+      "prompt_tokens": [
+        "그/NP",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        59,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4217
+    },
+    {
+      "id": 18,
+      "prompt": "1987년에는",
+      "prompt_tokens": [
+        "1/SN",
+        "9/SN",
+        "8/SN",
+        "7/SN",
+        "년/NNB",
+        "에/JKB",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        14,
+        29,
+        38,
+        44,
+        24,
+        11,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4218
+    },
+    {
+      "id": 19,
+      "prompt": "2025년에는",
+      "prompt_tokens": [
+        "2/SN",
+        "0/SN",
+        "2/SN",
+        "5/SN",
+        "년/NNB",
+        "에/JKB",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        20,
+        18,
+        20,
+        36,
+        24,
+        11,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4219
+    },
+    {
+      "id": 20,
+      "prompt": "2037년에는",
+      "prompt_tokens": [
+        "2/SN",
+        "0/SN",
+        "3/SN",
+        "7/SN",
+        "년/NNB",
+        "에/JKB",
+        "는/JX",
+        "<sp>/WS"
+      ],
+      "prompt_ids": [
+        20,
+        18,
+        35,
+        44,
+        24,
+        11,
+        15,
+        4
+      ],
+      "prompt_oov_tokens": [],
+      "seed": 4220
+    }
+  ]
+}

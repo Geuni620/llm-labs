@@ -1,0 +1,1410 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{--font-size-base:14px;--font-size-normal:14px;--font-size-small:12px;--font-size-tooltip:13px;--font-size-h2:20px;--font-weight-normal:400;--font-weight-medium:500;--line-height-normal:21px;--line-height-small:16px;--radius-sm:calc(var(--radius)*.5);--radius-md:calc(var(--radius)*.75);--radius-lg:var(--radius);--radius-2xl:var(--radius);--corner-shape:round;--viz-text:var(--foreground);--viz-accent:var(--accent-foreground);--viz-series-1:var(--chart-1)}html,body{background:transparent!important}body{margin:0;color:var(--foreground);font-family:var(--font-sans);font-size:var(--font-size-base);line-height:var(--line-height-normal)}* {
+  box-sizing: border-box;
+}
+
+html > body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-weight: var(--font-weight-normal);
+}
+
+.cursor-interaction {
+  cursor: var(--cursor-interaction, pointer);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  font-weight: inherit;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+.table {
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-size: calc(var(--font-size-base) * 1.5);
+  line-height: 1.3333333333;
+}
+
+h2 {
+  font-size: calc(var(--font-size-base) * 1.25);
+  line-height: 1.4;
+}
+h3 {
+  font-size: calc(var(--font-size-base) * 1.125);
+  line-height: 1.5555555556;
+}
+h4 {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 500;
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+pre,
+pre code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(var(--font-size-base) * 0.875);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-family: var(--font-sans);
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+.table :is(th, td):not(:last-child) {
+  padding-inline-end: calc(var(--font-size-base) * 1.5);
+}
+
+.table-responsive > .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 500;
+}
+
+.table thead :is(th, td) {
+  border-bottom-color: var(--border-strong, var(--input));
+  padding-block: calc(var(--font-size-base) / 2);
+  line-height: var(--font-size-base);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+.table tbody :is(th, td) {
+  padding-block: calc(var(--font-size-base) * 0.625);
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 8px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align="right"]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align="center"]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+.widget {
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  box-shadow: 0 0 0 0.5px var(--border-strong, var(--border));
+  color: var(--foreground);
+  background: var(--background);
+}
+
+#widget > :not(.card, .widget, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  border: 1px solid var(--border);
+  corner-shape: var(--corner-shape);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-sans);
+  padding: 5px 12px;
+  border-color: color-mix(
+    in oklab,
+    light-dark(var(--primary-foreground), var(--foreground)) 5%,
+    transparent
+  );
+  border-radius: var(--radius-2xl);
+  color: light-dark(var(--primary-foreground), var(--foreground));
+  background: light-dark(var(--foreground), var(--popover));
+  box-shadow: 0 8px 18px rgb(15 23 42 / 20%);
+  letter-spacing: -0.15px;
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: color-mix(in srgb, var(--foreground) 40%, var(--muted-foreground));
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+}
+
+small,
+.text-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls > .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls > .form-label > :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+/* Match inline alignment without overriding a containing flex or grid layout. */
+.btn,
+.nav-link,
+.form-control,
+.form-select,
+.form-range,
+.form-check {
+  vertical-align: middle;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: inherit;
+  font-family: var(--font-sans);
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  border-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.btn {
+  border-color: var(--border);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-link:not(:disabled):not([aria-disabled="true"]):hover {
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.btn-primary {
+  border-color: var(--border);
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: border-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: border-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--muted-foreground);
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+/* Shared preview chrome; product styles stay inside each variant. */
+.viz-dotted-background {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--foreground) 14%, transparent) 0.8px,
+    transparent 0.8px
+  );
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.viz-carousel {
+  position: relative;
+  min-width: 0;
+}
+
+.viz-carousel:has(> .viz-carousel-controls) {
+  min-height: calc(60px + var(--viz-carousel-picker-height, 0px));
+  padding-bottom: 60px;
+}
+
+.viz-carousel > [data-variant][hidden] {
+  display: none !important;
+}
+
+.viz-carousel > [data-variant] {
+  isolation: isolate;
+}
+
+.viz-carousel-controls {
+  --viz-carousel-hover: light-dark(
+    color-mix(in srgb, var(--foreground) 5.4%, transparent),
+    color-mix(in srgb, var(--foreground) 7.8%, transparent)
+  );
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  /* Leave room for the host's design-controls launcher at the trailing edge. */
+  max-width: calc(100% - 96px);
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  /* Match the settings dropdown chrome independently of the content font size. */
+  font-size: 13px;
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Keep authored mockup button styles out of the shared carousel chrome. */
+.viz-carousel-controls button,
+.viz-carousel-picker > summary {
+  display: flex !important;
+  height: auto !important;
+  min-height: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 0 6px !important;
+  -webkit-app-region: no-drag;
+  border: 0 !important;
+  border-radius: 14px !important;
+  color: inherit !important;
+  background: transparent !important;
+  font: inherit !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viz-carousel-controls > button,
+.viz-carousel-picker > summary {
+  position: relative;
+  isolation: isolate;
+}
+
+.viz-carousel-controls > button {
+  --icon-size: 16px;
+  width: 30px !important;
+  padding: 0 !important;
+}
+
+.viz-carousel-picker > summary {
+  padding-inline: 12px !important;
+}
+
+.viz-carousel-controls .viz-carousel-caret {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin: 0;
+  color: inherit;
+  transform: rotate(180deg);
+}
+
+.viz-carousel-controls > button > svg,
+.viz-carousel-controls .viz-carousel-caret,
+.viz-carousel-count {
+  opacity: 0.5;
+}
+
+.viz-carousel-controls > button::before,
+.viz-carousel-picker > summary::before {
+  position: absolute;
+  z-index: -1;
+  inset: 3px;
+  border-radius: 12px;
+  content: "";
+  pointer-events: none;
+}
+
+.viz-carousel-controls > button:hover::before,
+.viz-carousel-picker > summary:hover::before {
+  background: var(--viz-carousel-hover);
+}
+
+.viz-carousel-controls > button,
+.viz-carousel-controls [data-lucide],
+.viz-carousel-controls .lucide {
+  flex-shrink: 0;
+}
+
+.viz-carousel-picker {
+  min-width: 0;
+}
+
+.viz-carousel-picker > summary {
+  min-width: 0;
+  list-style: none;
+}
+
+.viz-carousel-picker > summary::-webkit-details-marker {
+  display: none;
+}
+
+.viz-carousel-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.viz-carousel-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viz-carousel-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  max-height: 240px;
+  flex-direction: column;
+  gap: 2px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: 0 4px 12px light-dark(rgb(0 0 0 / 6%), rgb(0 0 0 / 25%));
+}
+
+.viz-carousel-options > button {
+  border-radius: max(0px, calc(var(--radius-lg) - 5px)) !important;
+  width: 100% !important;
+  min-height: 28px;
+  justify-content: flex-start !important;
+  padding: 4px 8px !important;
+  font-size: var(--font-size-small) !important;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.viz-carousel-options > [aria-current="true"],
+.viz-carousel-options > button:hover {
+  background: var(--viz-carousel-hover) !important;
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: calc(4px + var(--control-spacing, 12px) / 2);
+  border-color: var(--input);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--popover) 96%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4285714286;
+}
+.form-control:is(
+  [type="file"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="week"],
+  [type="color"]
+) {
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  line-height: 18px;
+}
+.form-control:is(
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="week"]
+) {
+  padding-inline: var(--control-spacing, 12px);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type="file"] {
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+  padding: 0;
+}
+
+.form-control[type="file"]::file-selector-button {
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+  min-height: calc(10px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  margin-inline-end: var(--control-spacing, 12px);
+}
+
+.form-control[type="file"]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type="color"] {
+  width: 40px;
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+  min-height: 96px;
+  padding: 8px 10px;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: none;
+}
+.form-control:disabled {
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  opacity: 1;
+}
+.form-control[aria-invalid="true"] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 20%, transparent);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  margin: 0;
+  /* The secondary icon role is 14px at compact density and 16px at web density. */
+  --icon-size: calc(10px + var(--control-spacing, 12px) / 2);
+  /* Settings dropdowns retain a 12px inset and a 4px text-to-chevron gap. */
+  padding: 0 calc(16px + var(--icon-size)) 0 12px;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    ),
+    linear-gradient(
+      135deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    );
+  background-position:
+    calc(100% - 12px - var(--icon-size) / 2) 50%,
+    calc(100% - 12px - var(--icon-size) * 0.18) 50%;
+  background-repeat: no-repeat;
+  background-size: calc(var(--icon-size) * 0.32) calc(var(--icon-size) * 0.32);
+  cursor: var(--cursor-interaction, default);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.form-select option {
+  color: var(--popover-foreground);
+  background-color: var(--popover);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.form-select:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.form-select:disabled {
+  opacity: 0.4;
+}
+
+.form-check {
+  display: flex;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+  corner-shape: round;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  width: calc(10px + var(--control-spacing, 12px) / 2);
+  height: calc(10px + var(--control-spacing, 12px) / 2);
+  border-color: var(--border-strong, var(--input));
+  border-radius: calc(var(--radius-sm) / 2);
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:is(:checked, :indeterminate) {
+  border-color: var(--border-strong, var(--input));
+  background-color: color-mix(in srgb, var(--popover) 96%, transparent);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: "";
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+  background-color: var(--foreground);
+}
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:indeterminate::before {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 65%;
+  height: 6.65%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--foreground);
+  mask: none;
+  content: "";
+}
+
+.form-check-input[type="radio"] {
+  border-radius: var(--radius-full);
+  width: 16px;
+  height: 16px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--input);
+}
+
+.form-check-input[type="radio"]:checked {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    var(--primary-foreground) 0 3px,
+    var(--foreground) 3px
+  );
+  box-shadow: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:focus-visible {
+  border-color: var(--ring);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+.form-check:not(.form-switch) .form-check-input[type="radio"]:disabled,
+.form-check:not(.form-switch)
+  .form-check-input[type="radio"]:disabled
+  + .form-check-label {
+  opacity: 0.5;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  content: "";
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+  border-color: #fff;
+  background: #fff;
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--blue);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+  outline: none;
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  accent-color: var(--primary);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  outline: none;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: transparent;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  margin-top: -9px;
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Outline the native track and thumb, preserving the larger input hit area. */
+.form-range:focus-visible::-webkit-slider-runnable-track {
+  outline: 2px auto Highlight;
+  outline-color: -webkit-focus-ring-color;
+}
+
+.form-range::-moz-range-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+.form-range:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed="true"],
+  [aria-selected="true"],
+  .is-selected
+) {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--blue);
+}
+
+.btn.viz-tile:is([aria-pressed="true"], [aria-selected="true"], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.viz-carousel-controls :is(button, summary):focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Web recipes are the default, including on renderers without inline style queries. */
+@supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
+  /* Match the host's proportional text-sm scale at every text preference. */
+  .tooltip,
+  .viz-badge,
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    font-size: if(
+      style(--corner-shape: round): round(
+          nearest,
+          calc(var(--font-size-base) * 14 / 16),
+          1px
+        );
+        else: round(nearest, calc(var(--font-size-base) * 13 / 14), 1px)
+    );
+  }
+
+  .btn,
+  .nav-link,
+  .form-select {
+    border-radius: if(
+      style(--corner-shape: round): var(--radius-full); else: var(--radius-lg)
+    );
+  }
+
+  .form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+    border-radius: if(
+      style(--corner-shape: round): calc(var(--radius-sm) / 2);
+        else: calc(var(--radius-lg) * 0.4)
+    );
+  }
+
+  .tooltip {
+    font-weight: if(
+      style(--corner-shape: round): 600; else: var(--font-weight-normal)
+    );
+  }
+}
+
+@media (pointer: coarse) {
+  .viz-carousel:has(> .viz-carousel-controls) {
+    min-height: calc(76px + var(--viz-carousel-picker-height, 0px));
+    padding-bottom: 76px;
+  }
+
+  .btn,
+  .nav-link,
+  .viz-carousel-controls button,
+  .viz-carousel-picker > summary,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+  .form-control:is(
+    [type="file"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="week"],
+    [type="time"],
+    [type="color"]
+  ) {
+    height: 44px;
+    min-height: 44px;
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+
+  .form-control[type="file"]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type="color"] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: "";
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget > svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+</style><style>:root{--viz-series-2:var(--chart-2);--viz-series-3:var(--chart-3);--viz-series-4:var(--chart-4);--viz-series-5:var(--chart-5);--viz-series-6:var(--chart-6)}</style></head><body><section id="nplm-final-test20-20261024" aria-label="최종 NPLM 실제 생성 20개와 학습 데이터 일치 검사">
+  <table class="table table-sm">
+    <caption>4.074373에폭 · 실제 생성 20개 · train 2,977,860문장 대조</caption>
+    <thead><tr><th scope="col">굵게: 입력 · 일반: 생성 · train 일치 여부</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+<style>
+  #nplm-final-test20-20261024 { color:var(--foreground); }
+  #nplm-final-test20-20261024 .sample-prompt { font-weight:500; }
+  #nplm-final-test20-20261024 .sample-surface { margin-bottom:6px; overflow-wrap:anywhere; }
+  #nplm-final-test20-20261024 .sample-lookup { display:flex; flex-wrap:wrap; gap:4px 18px; }
+  #nplm-final-test20-20261024 details { margin-top:6px; }
+  #nplm-final-test20-20261024 .sample-tokens { overflow-wrap:anywhere; margin-block:6px; }
+  #nplm-final-test20-20261024 .sample-evidence { margin-block:6px; }
+</style>
+<script type="application/json" id="nplm-final-test20-data">{"totals": {"samples": 20, "sentence_ending_reached": 20, "full_found_in_train": 0, "generated_only_found_in_train": 1, "prompt_oov_tokens": 0}, "verified": true, "examples": [{"id": 1, "prompt": "서울은", "full_surface": "서울은 대한민국에서의 1999년부터 1945년까지 1975년부터 2017년까지 31만 명 정도 증가해 7% 정도였다.", "generated_surface": "대한민국에서의 1999년부터 1945년까지 1975년부터 2017년까지 31만 명 정도 증가해 7% 정도였다.", "generated_tokens": ["대한민국/NNP", "에서/JKB", "의/JKG", "\u003csp>/WS", "1/SN", "9/SN", "9/SN", "9/SN", "년/NNB", "부터/JX", "\u003csp>/WS", "1/SN", "9/SN", "4/SN", "5/SN", "년/NNB", "까지/JX", "\u003csp>/WS", "1/SN", "9/SN", "7/SN", "5/SN", "년/NNB", "부터/JX", "\u003csp>/WS", "2/SN", "0/SN", "1/SN", "7/SN", "년/NNB", "까지/JX", "\u003csp>/WS", "3/SN", "1/SN", "만/NR", "\u003csp>/WS", "명/NNB", "\u003csp>/WS", "정도/NNG", "\u003csp>/WS", "증가/NNG", "하/XSV", "어/EC", "\u003csp>/WS", "7/SN", "%/SW", "\u003csp>/WS", "정도/NNG", "이/VCP", "었/EP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 2, "prompt": "대한민국의 수도는", "full_surface": "대한민국의 수도는 경기도 평택시 소재다.", "generated_surface": "경기도 평택시 소재다.", "generated_tokens": ["경기도/NNP", "\u003csp>/WS", "평택시/NNP", "\u003csp>/WS", "소재/NNG", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 3, "prompt": "부산은", "full_surface": "부산은 대한민국 대한민국의 축구 선수다.", "generated_surface": "대한민국 대한민국의 축구 선수다.", "generated_tokens": ["대한민국/NNP", "\u003csp>/WS", "대한민국/NNP", "의/JKG", "\u003csp>/WS", "축구/NNG", "\u003csp>/WS", "선수/NNG", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 4, "prompt": "제주도는", "full_surface": "제주도는 1864년, 1996년 3월 20일 ~ )은 대한민국의 배우로 구성돼 있다.", "generated_surface": "1864년, 1996년 3월 20일 ~ )은 대한민국의 배우로 구성돼 있다.", "generated_tokens": ["1/SN", "8/SN", "6/SN", "4/SN", "년/NNB", ",/SP", "\u003csp>/WS", "1/SN", "9/SN", "9/SN", "6/SN", "년/NNB", "\u003csp>/WS", "3/SN", "월/NNB", "\u003csp>/WS", "2/SN", "0/SN", "일/NNB", "\u003csp>/WS", "~/SO", "\u003csp>/WS", ")/SSC", "은/JX", "\u003csp>/WS", "대한민국/NNP", "의/JKG", "\u003csp>/WS", "배우/NNG", "로/JKB", "\u003csp>/WS", "구성/NNG", "되/XSV", "어/EC", "\u003csp>/WS", "있/VX", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 5, "prompt": "한강은", "full_surface": "한강은 주로 유럽 강대국 출신으로 미국 정치인들의 지원을 요청했으며, 2017년 5월 22일 새벽 3일 오전 8시 23분(1411~1446)를 역임했다.", "generated_surface": "주로 유럽 강대국 출신으로 미국 정치인들의 지원을 요청했으며, 2017년 5월 22일 새벽 3일 오전 8시 23분(1411~1446)를 역임했다.", "generated_tokens": ["주로/MAG", "\u003csp>/WS", "유럽/NNP", "\u003csp>/WS", "강대국/NNG", "\u003csp>/WS", "출신/NNG", "으로/JKB", "\u003csp>/WS", "미국/NNP", "\u003csp>/WS", "정치인/NNG", "들/XSN", "의/JKG", "\u003csp>/WS", "지원/NNG", "을/JKO", "\u003csp>/WS", "요청/NNG", "하/XSV", "었/EP", "으며/EC", ",/SP", "\u003csp>/WS", "2/SN", "0/SN", "1/SN", "7/SN", "년/NNB", "\u003csp>/WS", "5/SN", "월/NNB", "\u003csp>/WS", "2/SN", "2/SN", "일/NNB", "\u003csp>/WS", "새벽/NNG", "\u003csp>/WS", "3/SN", "일/NNB", "\u003csp>/WS", "오전/NNG", "\u003csp>/WS", "8/SN", "시/NNB", "\u003csp>/WS", "2/SN", "3/SN", "분/NNB", "(/SSO", "1/SN", "4/SN", "1/SN", "1/SN", "~/SO", "1/SN", "4/SN", "4/SN", "6/SN", ")/SSC", "을/JKO", "\u003csp>/WS", "역임/NNG", "하/XSV", "었/EP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 6, "prompt": "한국의 역사는", "full_surface": "한국의 역사는 아직 보이지 않다.", "generated_surface": "아직 보이지 않다.", "generated_tokens": ["아직/MAG", "\u003csp>/WS", "보이/VV", "지/EC", "\u003csp>/WS", "않/VX", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 7, "prompt": "조선 시대에는", "full_surface": "조선 시대에는 다음과 같은 이름이 붙었다.", "generated_surface": "다음과 같은 이름이 붙었다.", "generated_tokens": ["다음/NNG", "과/JKB", "\u003csp>/WS", "같/VA", "은/ETM", "\u003csp>/WS", "이름/NNG", "이/JKS", "\u003csp>/WS", "붙/VV", "었/EP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 8, "prompt": "이 도시는", "full_surface": "이 도시는 1960년대 중반까지 소련 간 무역을 통해 세계 정세에 대한 문제를 해결하기 위해 미국이 지원되는 것은 아니었음에도 불구하고 결국 10월 26일이다.", "generated_surface": "1960년대 중반까지 소련 간 무역을 통해 세계 정세에 대한 문제를 해결하기 위해 미국이 지원되는 것은 아니었음에도 불구하고 결국 10월 26일이다.", "generated_tokens": ["1/SN", "9/SN", "6/SN", "0/SN", "년대/NNB", "\u003csp>/WS", "중반/NNG", "까지/JX", "\u003csp>/WS", "소련/NNP", "\u003csp>/WS", "간/NNB", "\u003csp>/WS", "무역/NNG", "을/JKO", "\u003csp>/WS", "통하/VV", "어/EC", "\u003csp>/WS", "세계/NNG", "\u003csp>/WS", "정세/NNG", "에/JKB", "\u003csp>/WS", "대하/VV", "ᆫ/ETM", "\u003csp>/WS", "문제/NNG", "를/JKO", "\u003csp>/WS", "해결/NNG", "하/XSV", "기/ETN", "\u003csp>/WS", "위하/VV", "어/EC", "\u003csp>/WS", "미국/NNP", "이/JKS", "\u003csp>/WS", "지원/NNG", "되/XSV", "는/ETM", "\u003csp>/WS", "것/NNB", "은/JX", "\u003csp>/WS", "아니/VCN", "었/EP", "음/ETN", "에/JKB", "도/JX", "\u003csp>/WS", "불구/XR", "하/XSV", "고/EC", "\u003csp>/WS", "결국/MAG", "\u003csp>/WS", "1/SN", "0/SN", "월/NNB", "\u003csp>/WS", "2/SN", "6/SN", "일/NNB", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 9, "prompt": "이 지역의 인구는", "full_surface": "이 지역의 인구는 160만 명이다.", "generated_surface": "160만 명이다.", "generated_tokens": ["1/SN", "6/SN", "0/SN", "만/NR", "\u003csp>/WS", "명/NNB", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": true, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 1, "examples": [{"train_paragraph_index": 75189, "doc_key": 13320030181911954291, "array_token_offset": 6821618, "paragraph_token_offset": 50}]}, "generated_surface_match": {"count": 1, "examples": [{"shard": "part_01", "source_line": 141650, "source_sentence_index": 2, "source_paragraph_index": 37933, "doc_id": "kowiki/995215", "title": "버지니아 반도", "source_sentence": "버지니아 반도의 나머지 지역은 모두 버지니아 비치 - 노퍽 - 뉴 포트 뉴스 도시권역에 들어가 총 인구는 약 160만 명이다.", "surface_equals_source_sentence": false, "train_array_witness": {"train_paragraph_index": 75189, "doc_key": 13320030181911954291, "array_token_offset": 6821576, "paragraph_token_offset": 8}}]}}, {"id": 10, "prompt": "이 학교는", "full_surface": "이 학교는 대한민국 정부 내 정치 분야에서 다양한 현상을 보인다.", "generated_surface": "대한민국 정부 내 정치 분야에서 다양한 현상을 보인다.", "generated_tokens": ["대한민국/NNP", "\u003csp>/WS", "정부/NNG", "\u003csp>/WS", "내/NNB", "\u003csp>/WS", "정치/NNG", "\u003csp>/WS", "분야/NNG", "에서/JKB", "\u003csp>/WS", "다양/NNG", "하/XSA", "ᆫ/ETM", "\u003csp>/WS", "현상/NNG", "을/JKO", "\u003csp>/WS", "보이/VV", "ᆫ다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 11, "prompt": "이 회사는", "full_surface": "이 회사는 1900년대 후반을 발표한 적을 통해 그의 연구도 하는 것이다.", "generated_surface": "1900년대 후반을 발표한 적을 통해 그의 연구도 하는 것이다.", "generated_tokens": ["1/SN", "9/SN", "0/SN", "0/SN", "년대/NNB", "\u003csp>/WS", "후반/NNG", "을/JKO", "\u003csp>/WS", "발표/NNG", "하/XSV", "ᆫ/ETM", "\u003csp>/WS", "적/NNB", "을/JKO", "\u003csp>/WS", "통하/VV", "어/EC", "\u003csp>/WS", "그/NP", "의/JKG", "\u003csp>/WS", "연구/NNG", "도/JX", "\u003csp>/WS", "하/VV", "는/ETM", "\u003csp>/WS", "것/NNB", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 12, "prompt": "이 작품은", "full_surface": "이 작품은 또한 1407년에 이 음반은 2020년 4월 22일 대한민국 정부의 대통령 재임 중 그는 30,000명이며 미국에서 개봉한 일본의 애니메이션 시리즈의 1954년 6월부터 1986년에 완공 당시 이 곳에서 그는 또한 1870년대에 들어진 미국 내 여러 학교에서 12개의 경기에서 2골을 터뜨리며 2007 시즌 7 시즌 3회 참가했다.", "generated_surface": "또한 1407년에 이 음반은 2020년 4월 22일 대한민국 정부의 대통령 재임 중 그는 30,000명이며 미국에서 개봉한 일본의 애니메이션 시리즈의 1954년 6월부터 1986년에 완공 당시 이 곳에서 그는 또한 1870년대에 들어진 미국 내 여러 학교에서 12개의 경기에서 2골을 터뜨리며 2007 시즌 7 시즌 3회 참가했다.", "generated_tokens": ["또한/MAG", "\u003csp>/WS", "1/SN", "4/SN", "0/SN", "7/SN", "년/NNB", "에/JKB", "\u003csp>/WS", "이/MM", "\u003csp>/WS", "음반/NNG", "은/JX", "\u003csp>/WS", "2/SN", "0/SN", "2/SN", "0/SN", "년/NNB", "\u003csp>/WS", "4/SN", "월/NNB", "\u003csp>/WS", "2/SN", "2/SN", "일/NNB", "\u003csp>/WS", "대한민국/NNP", "\u003csp>/WS", "정부/NNG", "의/JKG", "\u003csp>/WS", "대통령/NNG", "\u003csp>/WS", "재임/NNG", "\u003csp>/WS", "중/NNB", "\u003csp>/WS", "그/NP", "는/JX", "\u003csp>/WS", "3/SN", "0/SN", ",/SW", "0/SN", "0/SN", "0/SN", "명/NNB", "이/VCP", "며/EC", "\u003csp>/WS", "미국/NNP", "에서/JKB", "\u003csp>/WS", "개봉/NNG", "하/XSV", "ᆫ/ETM", "\u003csp>/WS", "일본/NNP", "의/JKG", "\u003csp>/WS", "애니메이션/NNG", "\u003csp>/WS", "시리즈/NNG", "의/JKG", "\u003csp>/WS", "1/SN", "9/SN", "5/SN", "4/SN", "년/NNB", "\u003csp>/WS", "6/SN", "월/NNB", "부터/JX", "\u003csp>/WS", "1/SN", "9/SN", "8/SN", "6/SN", "년/NNB", "에/JKB", "\u003csp>/WS", "완공/NNG", "\u003csp>/WS", "당시/NNG", "\u003csp>/WS", "이/MM", "\u003csp>/WS", "곳/NNG", "에서/JKB", "\u003csp>/WS", "그/NP", "는/JX", "\u003csp>/WS", "또한/MAG", "\u003csp>/WS", "1/SN", "8/SN", "7/SN", "0/SN", "년대/NNB", "에/JKB", "\u003csp>/WS", "들/VV", "어/EC", "지/VX", "ᆫ/ETM", "\u003csp>/WS", "미국/NNP", "\u003csp>/WS", "내/NNB", "\u003csp>/WS", "여러/MM", "\u003csp>/WS", "학교/NNG", "에서/JKB", "\u003csp>/WS", "1/SN", "2/SN", "개/NNB", "의/JKG", "\u003csp>/WS", "경기/NNG", "에서/JKB", "\u003csp>/WS", "2/SN", "골/NNG", "을/JKO", "\u003csp>/WS", "터뜨리/VV", "며/EC", "\u003csp>/WS", "2/SN", "0/SN", "0/SN", "7/SN", "\u003csp>/WS", "시즌/NNG", "\u003csp>/WS", "7/SN", "\u003csp>/WS", "시즌/NNG", "\u003csp>/WS", "3/SN", "회/NNB", "\u003csp>/WS", "참가/NNG", "하/XSV", "었/EP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 13, "prompt": "이 영화는", "full_surface": "이 영화는 \"모든 작품 중인 500명 이상의 총 약 20,000명 이상의 세계 판매량 평가, 만년을 넘어 4,368명이다.", "generated_surface": "\"모든 작품 중인 500명 이상의 총 약 20,000명 이상의 세계 판매량 평가, 만년을 넘어 4,368명이다.", "generated_tokens": ["\"/SSO", "모든/MM", "\u003csp>/WS", "작품/NNG", "\u003csp>/WS", "중/NNB", "이/VCP", "ᆫ/ETM", "\u003csp>/WS", "5/SN", "0/SN", "0/SN", "명/NNB", "\u003csp>/WS", "이상/NNG", "의/JKG", "\u003csp>/WS", "총/MM", "\u003csp>/WS", "약/MM", "\u003csp>/WS", "2/SN", "0/SN", ",/SW", "0/SN", "0/SN", "0/SN", "명/NNB", "\u003csp>/WS", "이상/NNG", "의/JKG", "\u003csp>/WS", "세계/NNG", "\u003csp>/WS", "판매량/NNG", "\u003csp>/WS", "평가/NNG", ",/SP", "\u003csp>/WS", "만/NR", "년/NNB", "을/JKO", "\u003csp>/WS", "넘/VV", "어/EC", "\u003csp>/WS", "4/SN", ",/SW", "3/SN", "6/SN", "8/SN", "명/NNB", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 14, "prompt": "이 음악은", "full_surface": "이 음악은 1960년대 초반에 이미 많은 문제를 해결하기 위해 새로운 것을 의미한다.", "generated_surface": "1960년대 초반에 이미 많은 문제를 해결하기 위해 새로운 것을 의미한다.", "generated_tokens": ["1/SN", "9/SN", "6/SN", "0/SN", "년대/NNB", "\u003csp>/WS", "초반/NNG", "에/JKB", "\u003csp>/WS", "이미/MAG", "\u003csp>/WS", "많/VA", "은/ETM", "\u003csp>/WS", "문제/NNG", "를/JKO", "\u003csp>/WS", "해결/NNG", "하/XSV", "기/ETN", "\u003csp>/WS", "위하/VV", "어/EC", "\u003csp>/WS", "새롭/VA-I", "은/ETM", "\u003csp>/WS", "것/NNB", "을/JKO", "\u003csp>/WS", "의미/NNG", "하/XSV", "ᆫ다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 15, "prompt": "과학 기술은", "full_surface": "과학 기술은 1980년대 후반 중국 혁명으로 인해 프랑스 본국에서 171 km 떨어져 있다.", "generated_surface": "1980년대 후반 중국 혁명으로 인해 프랑스 본국에서 171 km 떨어져 있다.", "generated_tokens": ["1/SN", "9/SN", "8/SN", "0/SN", "년대/NNB", "\u003csp>/WS", "후반/NNG", "\u003csp>/WS", "중국/NNP", "\u003csp>/WS", "혁명/NNG", "으로/JKB", "\u003csp>/WS", "인하/VV", "어/EC", "\u003csp>/WS", "프랑스/NNP", "\u003csp>/WS", "본국/NNG", "에서/JKB", "\u003csp>/WS", "1/SN", "7/SN", "1/SN", "\u003csp>/WS", "km/SL", "\u003csp>/WS", "떨어지/VV", "어/EC", "\u003csp>/WS", "있/VX", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 16, "prompt": "컴퓨터는", "full_surface": "컴퓨터는 2008년 12월 17일 은퇴했다.", "generated_surface": "2008년 12월 17일 은퇴했다.", "generated_tokens": ["2/SN", "0/SN", "0/SN", "8/SN", "년/NNB", "\u003csp>/WS", "1/SN", "2/SN", "월/NNB", "\u003csp>/WS", "1/SN", "7/SN", "일/NNB", "\u003csp>/WS", "은퇴/NNG", "하/XSV", "었/EP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 17, "prompt": "그는", "full_surface": "그는 중국과 일본 언론들은 이 영화 회사다.", "generated_surface": "중국과 일본 언론들은 이 영화 회사다.", "generated_tokens": ["중국/NNP", "과/JC", "\u003csp>/WS", "일본/NNP", "\u003csp>/WS", "언론/NNG", "들/XSN", "은/JX", "\u003csp>/WS", "이/MM", "\u003csp>/WS", "영화/NNG", "\u003csp>/WS", "회사/NNG", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 18, "prompt": "1987년에는", "full_surface": "1987년에는 일본 제국의 영토에 편입돼 1958년에는 2015년 1월 20일에 열린 시상식이다.", "generated_surface": "일본 제국의 영토에 편입돼 1958년에는 2015년 1월 20일에 열린 시상식이다.", "generated_tokens": ["일본/NNP", "\u003csp>/WS", "제국/NNG", "의/JKG", "\u003csp>/WS", "영토/NNG", "에/JKB", "\u003csp>/WS", "편입/NNG", "되/XSV", "어/EC", "\u003csp>/WS", "1/SN", "9/SN", "5/SN", "8/SN", "년/NNB", "에/JKB", "는/JX", "\u003csp>/WS", "2/SN", "0/SN", "1/SN", "5/SN", "년/NNB", "\u003csp>/WS", "1/SN", "월/NNB", "\u003csp>/WS", "2/SN", "0/SN", "일/NNB", "에/JKB", "\u003csp>/WS", "열리/VV", "ᆫ/ETM", "\u003csp>/WS", "시상식/NNG", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 19, "prompt": "2025년에는", "full_surface": "2025년에는 1874, 1887년 동계 올림픽은 대한민국 대표팀을 대표적인 스포츠 종목이다.", "generated_surface": "1874, 1887년 동계 올림픽은 대한민국 대표팀을 대표적인 스포츠 종목이다.", "generated_tokens": ["1/SN", "8/SN", "7/SN", "4/SN", ",/SP", "\u003csp>/WS", "1/SN", "8/SN", "8/SN", "7/SN", "년/NNB", "\u003csp>/WS", "동계/NNG", "\u003csp>/WS", "올림픽/NNG", "은/JX", "\u003csp>/WS", "대한민국/NNP", "\u003csp>/WS", "대표/NNG", "팀/NNG", "을/JKO", "\u003csp>/WS", "대표/NNG", "적/XSN", "이/VCP", "ᆫ/ETM", "\u003csp>/WS", "스포츠/NNG", "\u003csp>/WS", "종목/NNG", "이/VCP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}, {"id": 20, "prompt": "2037년에는", "full_surface": "2037년에는 제28보병연대 복무를 지휘했다.", "generated_surface": "제28보병연대 복무를 지휘했다.", "generated_tokens": ["제/XPN", "2/SN", "8/SN", "보병/NNG", "연대/NNG", "\u003csp>/WS", "복무/NNG", "를/JKO", "\u003csp>/WS", "지휘/NNG", "하/XSV", "었/EP", "다/EF", "./SF"], "full_found_in_train": false, "generated_found_in_train": false, "full_token_match": {"count": 0, "examples": []}, "generated_token_match": {"count": 0, "examples": []}, "generated_surface_match": {"count": 0, "examples": []}}]}</script>
+<script>
+(() => {
+  const root = document.getElementById('nplm-final-test20-20261024');
+  const data = JSON.parse(document.getElementById('nplm-final-test20-data').textContent);
+  const tbody = root.querySelector('tbody');
+  const el = (tag, text, name) => {
+    const node = document.createElement(tag);
+    if (text !== undefined) node.textContent = text;
+    if (name) node.className = name;
+    return node;
+  };
+  for (const item of data.examples) {
+    const row = el('tr');
+    const cell = el('td');
+    const surface = el('div', undefined, 'sample-surface');
+    surface.append(document.createTextNode(`${String(item.id).padStart(2, '0')}. `));
+    if (item.full_surface.startsWith(item.prompt)) {
+      surface.append(el('b', item.prompt, 'sample-prompt'));
+      surface.append(document.createTextNode(item.full_surface.slice(item.prompt.length)));
+    } else {
+      surface.append(document.createTextNode(item.full_surface));
+    }
+    cell.append(surface);
+    const matches = el('div', undefined, 'sample-lookup');
+    matches.append(el('span', `입력 포함 전체: ${item.full_found_in_train ? '일치 있음' : '일치 없음'}`));
+    matches.append(el('span', `생성 부분만: ${item.generated_found_in_train ? '일치 있음' : '일치 없음'}`));
+    cell.append(matches);
+    if (item.generated_found_in_train || item.full_found_in_train) {
+    const details = el('details');
+    details.append(el('summary', '생성 토큰·조회 근거', 'cursor-interaction'));
+    details.append(el('div', `새로 생성한 부분: ${item.generated_surface}`, 'sample-evidence'));
+    details.append(el('div', `형태소/품사: ${item.generated_tokens.join(' ')}`, 'sample-tokens text-small'));
+    details.append(el('div', `전체 토큰열 ${item.full_token_match.count}회 · 생성 토큰열 ${item.generated_token_match.count}회`, 'sample-evidence'));
+    for (const witness of item.generated_surface_match.examples) {
+      details.append(el('div', `실제 train 원문 · ${witness.title} (${witness.doc_id})`, 'sample-evidence'));
+      details.append(el('div', witness.source_sentence, 'sample-evidence'));
+      details.append(el('div', `${witness.shard}.txt:${witness.source_line} · train 문단 ${witness.train_array_witness.train_paragraph_index}`, 'sample-evidence text-small'));
+    }
+    cell.append(details);
+    }
+    row.append(cell);
+    tbody.append(row);
+  }
+  const qa = () => {
+    window.__test20QA = {
+      rows: tbody.rows.length,
+      fullMatches: data.totals.full_found_in_train,
+      continuationMatches: data.totals.generated_only_found_in_train,
+      independentChecksPassed: data.verified,
+      overflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+      details: root.querySelectorAll('details').length
+    };
+    console.info('test20-qa ' + JSON.stringify(window.__test20QA));
+  };
+  requestAnimationFrame(qa);
+})();
+</script>
+</body></html>
